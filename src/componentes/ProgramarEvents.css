@@ -1,0 +1,164 @@
+.programar-events {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    background-size: cover; /* Ajusta la imagen para que cubra todo el área */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+.caja3{
+ 
+    margin: 10px;
+    background-color: rgba(10, 1, 1, 0.673);
+    text-align: center;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.contenedor1 {
+    display: flex;
+  }
+
+  .horacolor{
+    color: #36fa00;
+    font-size: 1.5em;
+    margin: 10px;
+    text-align: center;
+  }
+.caja{
+    width: 650px;
+    height: auto;
+    margin: 10px;
+    background-color: rgba(16, 169, 221, 0.374);
+    text-align: center;
+    border-radius: 20px;
+  }
+
+.titel1{
+    font-size: 3rem;
+    text-align: center;
+    background-image: url('./Imagenes/Colores.jpg') ;
+    background-size: cover;
+    background-clip: text;
+    color: transparent;
+    animation: animate 3s linear infinite;
+}
+
+
+
+.titel2 {
+  border-radius: 10%;
+  background-image: url('./Imagenes/Colores5.jpg');
+  border: transparent;
+  font-size: 1.5em;
+  padding: 9px 6px;
+  background-size: cover;
+  background-clip: text;
+  color: transparent;
+  animation: animate 2s linear infinite;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+@keyframes animate {
+  to {
+    background-position-x: -1300px;
+  }
+}
+
+.nombrefecha1 {
+    color: #ffffff;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 0px;
+    font-weight: lighter;
+}
+
+.textevento {
+    color: #ffffff;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: lighter;
+}
+
+    
+.content {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 20px;
+    color: #000000;
+}
+
+.selected1 {
+  background-color: #4caf4f9e !important;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 20%;
+  
+}
+.selected1:hover {
+  background-color: #45a049 !important;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.722);
+  padding: 2rem;
+  max-height: 100%;
+  overflow-y: auto;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 1400px;
+  position: relative;
+}
+
+.cerrar-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff5555;
+  border: none;
+  color: white;
+  padding: 1px 12px;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.boton-ver-eventos {
+  background-color: #4caf50;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.boton-ver-eventos:hover {
+  background-color: #45a049;
+}
+
+.titeleventst{
+  color: #ffffff;
+}
+
+

@@ -1,0 +1,98 @@
+.titelevent{
+    font-size: 2rem;
+    color: #ebeaea;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.colordescription{
+  color: #fbfbfb;
+}
+.eventodiario-container {
+  padding: 1rem;
+}
+
+.search-input{
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.titelevent {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.evento-card {
+  margin-bottom: 1rem;
+  padding: 0rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: auto;
+}
+
+.map-container {
+  margin-top: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.evento-card {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+
+.evento-overlay {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.imagen-fondo {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  filter: brightness(0.5); /* oscurece para que el texto resalte */
+}
+
+.contenido-sobre-imagen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  color: white;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.colordescription {
+  background-image: url('./Imagenes/colores64.png');
+  border: transparent;
+  padding: 9px 6px;
+  background-size: cover;
+  background-clip: text;
+  color: transparent;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  to {
+    background-position-x: -1200px;
+  }
+}
+
+.cartel-videoM{ 
+  width: 90%;
+  height: 620px;
+  border-radius: 10%;
+  box-shadow: 0 40px 18px rgba(255, 255, 255, 0.1);
+}

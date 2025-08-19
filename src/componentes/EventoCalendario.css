@@ -1,0 +1,57 @@
+.containerr{
+    background-color: black;
+    border-radius: 10%;
+    width: 1050px;
+    height: auto;
+}
+.event-detail {
+    margin-bottom: 20px;
+}
+
+
+.video-container, .map-container {
+    height: auto;
+    width: auto;
+}
+
+.bottonEvent{
+    background-color: #ccc;
+    height: 33px;
+    width: auto;
+    border-radius: 10%;
+}
+.bottonEvent:hover{
+    transform: scale(1.01);
+    background-color: yellow;
+    box-shadow: 0 0px 20px rgb(244, 2, 2);
+}
+@media (max-width: 780px) {
+    .containerr{
+        background-color: black;
+        border-radius: 10%;
+        width: 550px;
+        height: auto;
+    }
+    .event-detail {
+        margin-bottom: 20px;
+    }
+    
+    
+    .video-container, .map-container {
+        height: auto;
+        width: auto;
+    }
+    
+    .bottonEvent{
+        background-color: #ccc;
+        height: 33px;
+        width: auto;
+        border-radius: 10%;
+    }
+    .bottonEvent:hover{
+        transform: scale(1.01);
+        background-color: yellow;
+        box-shadow: 0 0px 20px rgb(244, 2, 2);
+    }
+}
+

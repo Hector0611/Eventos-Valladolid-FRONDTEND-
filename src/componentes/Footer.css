@@ -1,0 +1,119 @@
+.footer {
+    background-color: transparent;
+    color: #fff;
+    padding: 100px 60px;
+    font-size: 20px;
+    border-radius: 2%;
+    box-shadow: 0 8px 90px rgb(0, 0, 0);
+    border-top: 4px solid #ccc;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.footer-section p {
+    line-height: 1.5;
+    color: #bbb;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 2px 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ff9800;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.Facebook{
+    color: #1e4393;
+}
+.Facebook:hover {
+    color: #0026ff;
+}
+.Instagram{
+    color: #e5477c;
+}
+.Instagram:hover {
+    color: #fb0064;
+}
+.Youtube{
+    color: #ff3f3f;
+}
+.Youtube:hover {
+    color: #ff0000;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    color: #bbb;
+    font-size: 12px;
+}
+
+/* Logos */
+
+.divLogos{  
+    width: 93%;
+    height: 0%;
+    background-position: center;
+    display: flex;
+    justify-content: center; /* centra horizontal */
+    align-items: center;     /* centra vertical */
+    position:absolute;
+    
+}
+
+.divLogos1{
+    width: 100%;
+    height: 0%;
+    background-position: center;
+    display: flex;
+    justify-content: center; /* centra horizontal */
+    align-items: center;     /* centra vertical */
+    position:relative;
+}
+
+.logo-Yucatan{
+    width: 15%;
+    background-size: cover; /* Ajusta la imagen para que cubra todo el área */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    margin-top: 0%;
+}
+
+
+
+

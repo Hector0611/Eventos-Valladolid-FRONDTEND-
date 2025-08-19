@@ -1,0 +1,365 @@
+.hoteles-container {
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.titel3{
+    color: #fff;
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.titel5 {
+  text-align: center;
+  font-size: 30px; 
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+/* contenedor de imagenes y texto */
+.contenedor2 {
+  position: relative;
+  width: 100%;
+  max-width: 1500px;
+  margin: auto;
+}
+
+.modal-image {
+  width: 100%;
+  height: 400px;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Caja del texto que va sobre la imagen */
+.caja2 {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  padding: 26px;
+  color: white;
+  z-index: 4;
+  width: 40%;
+  box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+
+}
+
+.content5 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.content5 {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #ede7e7;
+  margin-top: 20px;
+}
+/* centrar imagen */
+
+ 
+.video-container {
+    margin: 0 auto;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 1500px;
+    width: 100%;
+}
+
+.info-button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.div_one1 {
+    background-color: rgba(0, 235, 20, 0.179);
+   border-radius: 5%;
+}
+
+.hotel-list {
+    width: 530px;
+    padding: 20px;
+    background-color: #0e0d0dd5;
+    border-right: 1px solid #ddd;
+    border-radius: 20%;
+}
+
+.hotel-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+.content3{  
+    font-size: 12px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hotel-list li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 5%;
+}
+.list-item{
+    height: 160px;
+    margin-bottom: 0px;
+    background-color: #1a3c0d32;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.hotel-list li:hover {
+    background-color: #234c1a;
+    box-shadow: 0 0 20px rgba(255, 5, 1, 0.6);
+}
+
+.titel5{
+    
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-top: 1px;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    justify-content: justify;
+}
+
+.content4 {
+    font-family:'Times New Roman', Times, serif ;
+    font-size: 19px;
+    margin-bottom: 20px;
+    color: #fff;
+    margin-top: 10px;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+.map-wrapper {
+    flex: 1;
+    position: relative;
+    height: 650px;
+    width: 80%;
+    
+}
+
+.hotel-info {
+    position: absolute;
+    top: 0;
+    right: -350px; /* Inicialmente oculto */
+    width: 365px;
+    height: 100%;
+    background-color: #053307d4;
+    padding: 28px;
+    border-left: 1px solid #144a22;
+    box-shadow: -1px 0 5px rgba(0, 0, 0, 0.3);
+    transition: right 4s ease; /* Transición deslizante */
+    z-index: 1000;
+}
+
+.hotel-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.hotel-info.open {
+    right: 0; /* Mostrar el panel al lado del mapa */
+}
+
+.close-button {
+    background-color: #ff4d4d;
+    left: 87%;
+    border: none;
+    color: white;
+    padding: 0px 0px;
+    font-size: 3px;
+    cursor: pointer;
+    float: right;
+    border-radius: 3px;
+}
+
+.close-button1 {
+    background-color: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    font-size: 10px;
+    cursor: pointer;
+    float: right;
+    border-radius: 3px;
+    height: fit-content;
+    width: fit-content;
+    position: absolute;
+    top: 10px;
+    left: 96%;
+}
+
+.close-button:hover {
+    background-color: #e60000;
+}
+
+.directions-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #0070dd;
+    color: white;
+    text-decoration: none;
+    border-radius: 1px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.directions-button:hover {
+    background-color: #005bb5;
+    color: #e0dddd;
+}
+
+.div_one{
+    background-color: rgba(235, 0, 0, 0.326);
+}
+
+.modal-image1 {
+  width: auto;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+/* conenido nuevo */
+
+.hotel-list {
+  width: 520px; /* o el tamaño que desees */
+  height: 90vh; /* altura fija: 90% de la altura de la pantalla */
+  overflow: hidden;
+  position: relative;
+  padding: 16px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.div_one1 {
+  max-height: 75vh; /* ajusta según tu diseño */
+  overflow-y: auto; /* scroll vertical si se pasa */
+  padding-right: 8px; /* para evitar que el scroll tape contenido */
+}
+
+/* Opcional: estiliza el scrollbar para mejor experiencia */
+.div_one1::-webkit-scrollbar {
+  width: 6px;
+}
+
+.div_one1::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 3px;
+}
+
+.hotel-nombre {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.estrellas {
+  margin-top: 4px;
+}
+
+.precio {
+  margin-top: 6px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.precio-original {
+  text-decoration: line-through;
+  color: #888888;
+  font-size: 14px;
+}
+
+.precio-descuento {
+  background-color: #00ff3c;
+  color: #155724;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 0 5px rgba(0, 255, 60, 0.5);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.titel4{  
+    color: #fff;
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.search-input1 {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}

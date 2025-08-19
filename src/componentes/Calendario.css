@@ -1,0 +1,217 @@
+/* Calendario.css */
+.titulo1{
+    
+    color: black;
+
+}
+
+.titel{
+    text-align: center;
+    font-size: 3em;
+    margin-top: 20px;
+    color: #fffefe;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.div_calendario{
+    width: 840px;
+    height: auto;
+    transition: transform 0.5s;
+    background-color: rgba(46, 139, 86, 0.49);
+    border-radius: 10%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.718);
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    color: white;    
+}
+
+.calendar-table {
+    background-image: url('./Imagenes/cenotezaki.jpg');
+    background-size: cover; /* Ajusta la imagen para que cubra todo el área */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: auto;
+    width: 800px;
+    border-collapse: collapse;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.718);
+    border-radius: 5%;
+}
+
+.calendar-table th, .calendar-table td{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 14.28%;
+    height: 70px;
+    background-color: transparent;
+    vertical-align: top;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 6px 1.5px rgb(255, 255, 255); /* Línea de borde de Bootstrap */
+    color: rgb(249, 249, 249);
+    font-size: 20px;
+}
+
+.calendar-table td:hover{   
+    background-color: rgba(0, 0, 0, 0.753); /* Cambia el color de fondo al pasar el mouse */
+    color: #fff; /* Cambia el color del texto al pasar el mouse */
+    box-shadow: 0 3px 20px rgba(198, 227, 32, 0.988);
+    border-radius: 10%;
+}
+
+.day {
+    position:relative;
+}
+
+.day-message-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 14px;
+    color: #FFA500;
+    opacity: 0.8;
+}
+
+.day-description {
+    font-size: 12px;
+    color: #333;
+    margin-top: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.empty-day {
+    background-color: #f8f9fa; /* Fondo de Bootstrap */
+}
+
+.today {
+    background-color: #ffcc00; /* Cambia este color según tus preferencias */
+    font-weight: bold; /* Opcional: para resaltar más el día actual */
+    border-radius: 5px; /* Opcional: para darle un poco de redondez a la celda */
+}
+
+
+/* Calendario.css */
+.day {
+   cursor: pointer;
+   background: #333;
+   
+}
+
+
+.day-with-event {
+    background-color: #ecf800;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.5s;
+    color: chartreuse;
+    background-color: #ecf800;
+}
+
+/* dia seleccionado con evento */
+
+.day-with-event:hover {
+    transform: scale(1.09);
+    box-shadow: 0 2 20px rgba(236, 235, 235, 0.988);
+   background-color: rgb(27, 15, 15);
+    border-radius: 10%;
+}
+
+/* Hoy */
+.day.today {
+    border: 2px solid #f80000;
+}
+
+.message-popup {
+    
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+
+/* Estilos para pantallas muy pequeñas */
+@media (max-width: 680px) {
+    .titulo1{
+        font-size: large;
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        
+    }
+    
+    .calendar1{
+        font-size: large;
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        
+    }
+    .div_calendario{
+        width: auto;
+        height: auto;
+        transition: transform 0.5s;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.718);
+        border-radius: 5%;
+    }
+    .calendar-table {
+        width: 470px;
+       
+    }
+
+    .calendar-table th, .calendar-table td {
+        
+        height: 33px; /* Altura aún más pequeña para celdas */
+        width: 8px;
+        font-size: 0.4em; /* Tamaño de fuente aún más pequeño */
+    }
+
+    .day-description {
+        
+        font-size: 6px; /* Tamaño de descripción reducido */
+    }
+}
+/* .calendar1{
+    color: black;
+} */
+
+/* izuqierda derecha */
+
+.container1 {
+    display: flex;
+    background-color: transparent;
+
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+   
+}
+.nombrefecha {
+    font-size: 2.5em;
+    ;
+    color: rgb(9, 9, 9);
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.nombrefecha1 {
+    color: #ffffff;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 0px;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.textevento {
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+.calendar1{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.textcalendar{ 
+    font-family: Arial, Helvetica, sans-serif;
+}

@@ -176,13 +176,7 @@
     border-bottom-left-radius: 10%;
     
 }
-.contorn{
-    display: grid;
-    place-items: center; /* Centra horizontal y verticalmente */
-    width: 1200px;
-    height: 180px;
-    border-radius: 10%;
-}
+
 .logo-image{
     background-size: cover; /* Ajusta la imagen para que cubra todo el área */
     background-position: center; /* Centra la imagen */
@@ -190,6 +184,7 @@
     width: 100vw; /* 100% del ancho de la ventana */
     height: 100vh; /* 100% de la altura de la ventana */
 }
+
 .LOGOVALLADOLID{
     display: grid;
     place-items: center; /* Centra horizontal y verticalmente */
@@ -214,7 +209,7 @@
 
 
 /* Ajuste para pantallas pequeñas */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .circular-menu {
         width: 100vw;
         height: 100vw;
@@ -274,6 +269,54 @@
     }
 
 
+}
+
+@media (max-width: 768px) {
+  .LogoNeutro2 {
+    background-size: cover; /* Ajusta la imagen para que cubra todo el área */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    display: flex;
+    justify-content: center; /* centra horizontal */
+    align-items: center;     /* centra vertical */
+    width: 90%;
+    height: 5%;
+  }
+
+  .header-container {
+    position: fixed;
+    top: -45px;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    z-index: 10; 
+  }
+
+  .logo-Yucatan {
+    background-size: cover; /* Ajusta la imagen para que cubra todo el área */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    margin-top: 0%;
+  }
+  .DivLogo {
+        position: relative; /* Define el contexto para posicionar elementos hijos */
+        overflow: hidden; /* Evita que se desborde */
+        background-repeat: no-repeat;  
+        display: grid;
+        place-items: center; /* Centra horizontal y verticalmente */
+        width: 10%; /* ocupa todo el ancho */
+        height: 20vh; /* ocupa casi toda la altura */
+        border-bottom-right-radius: 10%;
+        border-bottom-left-radius: 10%;
+    }
+
+    .logo-image {
+        background-size: cover; /* Ajusta la imagen */
+        background-position: center; 
+        background-repeat: no-repeat;
+        width: 10%; /* se adapta al ancho */
+        height: 10%; /* se adapta a la altura */
+    }
 }
 
 

@@ -59,7 +59,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            
+            <br />
             <div className="footer-bottom">
                 <div className='divLogos'>
                 <img

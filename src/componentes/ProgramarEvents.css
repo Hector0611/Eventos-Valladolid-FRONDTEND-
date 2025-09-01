@@ -161,4 +161,64 @@
   color: #ffffff;
 }
 
+/* =================== EVENTOS MOBILE =================== */
+@media (max-width: 768px) {
+  .programar-events {
+    padding: 15px;
+  }
+
+  .contenedor1 {
+    flex-direction: column; /* En móviles, de fila a columna */
+    align-items: center;
+  }
+
+  .caja {
+    width: 95%; /* Se ajusta al ancho de pantalla */
+    margin: 10px 0;
+  }
+
+  .caja3 {
+    padding: 15px;
+    margin: 8px 0;
+  }
+
+  .titel1 {
+    font-size: 1.1rem; /* Más pequeño en móviles */
+  }
+
+  .titel2 {
+    font-size: 1.2em;
+    padding: 6px 4px;
+  }
+
+  .nombrefecha1 {
+    font-size: 1.4em;
+  }
+
+  .textevento {
+    font-size: 1.1em;
+  }
+
+  .content {
+    font-size: 1em;
+    margin: 10px;
+  }
+
+  /* Modal en móviles */
+  .modal-content {
+    width: 95%;
+    max-width: 600px;
+    padding: 1rem;
+  }
+
+  .cerrar-modal {
+    font-size: 1.2rem;
+    padding: 1px 10px;
+  }
+
+  .boton-ver-eventos {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
 

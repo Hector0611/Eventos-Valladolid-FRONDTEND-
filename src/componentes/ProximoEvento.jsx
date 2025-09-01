@@ -128,7 +128,7 @@ const ProximoEvento = () => {
           </div>
         </>
       ) : (
-        <p>No hay eventos próximos.</p>
+        <p className="NEvent">No hay eventos próximos.</p>
       )}
     </div>
     <br />

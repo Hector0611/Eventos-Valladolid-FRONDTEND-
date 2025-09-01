@@ -5,7 +5,7 @@
   
   .main-container{
     background-image: url('./componentes/Imagenes/Fondo.png'); /* Reemplaza con la URL o ruta de tu imagen */
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.397);
     background-size: cover; /* Ajusta la imagen para que cubra todo el área */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */

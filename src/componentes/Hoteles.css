@@ -363,3 +363,47 @@
   box-sizing: border-box;
   margin-bottom: 20px;
 }
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+  .hoteles-container {
+    flex-direction: column; /* De lado a lado → arriba y abajo */
+    align-items: center;
+  }
+
+  .hotel-list {
+    width: 100%;   /* Ocupa todo el ancho */
+    height: auto;  /* Deja que crezca según el contenido */
+    border-radius: 12px;
+    margin-bottom: 20px; /* Espacio con el mapa */
+  }
+
+  .map-wrapper {
+    width: 100%;
+    height: 400px; /* Más chico en móvil */
+  }
+
+  .hotel-info {
+    width: 100%;
+    right: -100%;  /* fuera de pantalla */
+    transition: right 0.5s ease;
+  }
+  .hotel-info.open {
+    right: 0; /* entra desde la derecha */
+  }
+
+  .modal-content {
+    width: 95%;
+    max-width: none;
+  }
+
+  .titel3, .titel4, .titel5 {
+    font-size: 22px; /* Reduce títulos */
+  }
+
+  .precio-descuento {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+

@@ -278,7 +278,35 @@
     text-align: center;
   }
 
-  
+  /* Popups centrados en móvil */
+  .popup-wrapper {
+    
+    justify-content: center;
+    
+  }
+
+  .popup-overlay1 {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);  /* centrado horizontal */
+    width: 90%;                   /* ocupa casi toda la pantalla */
+    max-width: 320px;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+
+  .popup-content {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* Iconos sociales más pequeños */
+  .links_F-I-Y a svg {
+    width: 34px;
+    height: 34px;
+  }
 }
 
 

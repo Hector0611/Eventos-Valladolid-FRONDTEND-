@@ -40,10 +40,10 @@ const Header = () => {
             </button>
               
             </center>
-            <nav className="header-nav">
-                <button className="botton" onClick={() => navigateTo('/programarevents')}>Eventos</button>
-                <button className="botton" onClick={() => navigateTo('/calenYcirc')}>Eventos Diarios</button>
-                <button className="botton" onClick={() => navigateTo('/hoteles')}>Hoteles</button>
+            <nav className="header-nav1">
+                <button className="botton" onClick={() => navigateTo('/programarevents')}>Events</button>
+                <button className="botton" onClick={() => navigateTo('/calenYcirc')}>Daily Events</button>
+                <button className="botton" onClick={() => navigateTo('/hoteles')}>hotels</button>
                 {/* <button className="botton" onClick={togglePopup}>Saber más?</button> */}
 
                 <div 

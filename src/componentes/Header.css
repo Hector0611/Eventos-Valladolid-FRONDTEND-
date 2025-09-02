@@ -59,7 +59,7 @@
   background-image: url('./Imagenes/Colores5.jpg');
   border: transparent;
   font-size: 1.1em;
-  padding: 9px 6px;
+  padding: 9px 15px;
   background-size: cover;
   background-clip: text;
   color: transparent;
@@ -242,42 +242,27 @@
 
 /* 📱 Ajustes para tablets */
 @media (max-width: 768px) {
+
   .header {
-    padding: 10px 20px;          /* menos padding lateral */
-    height: 55px;               /* más compacto */
-    border-bottom-right-radius: 20%;
+    height: 50px;
+    border-bottom-right-radius: 30%;
     border-bottom-left-radius: 20%;
+    top: 50px;
   }
-
   .header-nav {
-    display: none;              /* ocultamos menú normal */
+    gap: 15px;
   }
-
+  .botton {
+    font-size: 0.3em;
+    padding: 0px 0px;
+  }
+  
   .menu-toggle {
-    display: flex;              /* mostramos hamburguesa */
+    display: flex;
   }
+  
 
-  .header-nav.mobile {
-    display: none;              /* menú colapsado */
-    flex-direction: column;
-    background-color: #273a20;
-    position: absolute;
-    top: 95px;
-    left: 0;
-    width: 100%;
-    padding: 10px 0;
-  }
-
-  .header-nav.mobile.open {
-    display: flex;              /* visible cuando está activo */
-  }
-
-  .nav-link {
-    font-size: 1.2em;
-    padding: 10px 0;
-    text-align: center;
-  }
-
+ 
   /* Popups centrados en móvil */
   .popup-wrapper {
     

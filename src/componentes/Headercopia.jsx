@@ -41,9 +41,9 @@ const Headercopia = () => {
               
             </center>
             <nav className="header-nav">
-                <button className="botton" onClick={() => navigateTo('/programarevents')}>Eventos </button>
-                <button className="botton" onClick={() => navigateTo('/calenYcirc')}>Eventos Diarios</button>
-                <button className="botton" onClick={() => navigateTo('/hoteles')}>Hoteles</button>
+                <button className="botton" onClick={() => navigateTo('/programarevents')}>Events </button>
+                <button className="botton" onClick={() => navigateTo('/calenYcirc')}>Daily Events</button>
+                <button className="botton" onClick={() => navigateTo('/hoteles')}>Hotels</button>
                 <button className="botton" onClick={togglePopup}>Saber más?</button>
                 
             </nav>

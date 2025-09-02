@@ -133,7 +133,7 @@
   letter-spacing: 7px;
   font-weight: bold;
   color: #ffffff;
-  text-shadow: 2px 2px 4px #33ff00;
+  text-shadow: 2px 2px 4px #000000;
   font-family: Arial, Helvetica, sans-serif;
   transition: color 0.3s ease;
   cursor: pointer;
@@ -148,6 +148,11 @@
   margin: 20px auto;
   margin-top: 15px;
   font-family: Arial, Helvetica, sans-serif;
+  color: #fdfdfd;
+ 
+  /* justificar */
+  text-align: justify;
+  padding: 0 11px;
 }
 
 /* =================== BOTONES =================== */
@@ -168,25 +173,28 @@
   text-decoration: underline;
 }
 
-.nav-button {
+.nav-button_left, .nav-button_right {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 5;
   font-size: 2rem;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.4);
   color: white;
   border: none;
   cursor: pointer;
   padding: 10px;
   border-radius: 50%;
 }
+.nav-button_left:hover, .nav-button_right:hover {
+  background: rgba(246, 0, 0, 0.8);
+}
 
-.nav-button.left {
+.nav-button_left {
   left: 10%;
 }
 
-.nav-button.right {
+.nav-button_right {
   right: 10%;
 }
 
@@ -279,12 +287,12 @@
     transform: translateX(130px) scale(0.9);
   }
 
-  .nav-button.left {
-    left: -1%;
+  .nav-button_left {
+    left: 0%;
   }
 
-  .nav-button.right {
-    right: -1%;
+  .nav-button_right {
+    right: 0%;
   }
   
   .historia-texto {

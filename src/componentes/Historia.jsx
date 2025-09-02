@@ -70,15 +70,16 @@ const Historia = () => {
                 <h2 className="titulo">{item.titulo}</h2>
                 <div className="historia-texto">
                   <p>{item.descripccion.slice(0, 300)}...</p>
-                  <button className="historia-link" onClick={() => handleLeerMas(item)}>Leer más</button>
+                  
                 </div>
+                <button className="historia-link" onClick={() => handleLeerMas(item)}>Leer más</button>
               </div>
             </div>
           );
         })}
 
-        <button className="nav-button left" onClick={handlePrev}>❮</button>
-        <button className="nav-button right" onClick={handleNext}>❯</button>
+        <button className="nav-button_left" onClick={handlePrev}>❮</button>
+        <button className="nav-button_right" onClick={handleNext}>❯</button>
       </div>
 
       {showModal && selectedItem && (

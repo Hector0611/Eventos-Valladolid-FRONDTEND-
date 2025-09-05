@@ -4,8 +4,8 @@
 
   
   .main-container{
-    background-image: url('./componentes/Imagenes/Fondo.png'); /* Reemplaza con la URL o ruta de tu imagen */
-    background-color: rgba(0, 0, 0, 0.397);
+    background-image: url('./componentes/Imagenes/VerdeFondo.jpg'); /* Reemplaza con la URL o ruta de tu imagen */
+    background-color: rgba(255, 255, 255, 0.414);
     background-size: cover; /* Ajusta la imagen para que cubra todo el área */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -16,7 +16,7 @@
     
     /* background-color: #e32424; */
    /*  background-image: url('./componentes/Imagenes/PATRON4.png'); */ /* Reemplaza con la URL o ruta de tu imagen */ 
-    background-color: #fcfcfc;
+    background-color: #00a86a7f;
     color: white;
     background-size: cover; /* Ajusta la imagen para que cubra todo el área */
     background-position: center; /* Centra la imagen */

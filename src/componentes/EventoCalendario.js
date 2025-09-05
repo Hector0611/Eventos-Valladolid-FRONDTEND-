@@ -56,7 +56,7 @@ const EventoCalendario = () => {
                         <div className="content-wrapper">
                             <center>
                                 {mensaje.video && showVideo && (
-                                    <div className="video-container fade-in">
+                                    <div className="video-containe">
                                         <iframe
                                             width="100%"
                                             height="360px"

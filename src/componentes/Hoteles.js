@@ -74,11 +74,11 @@ useEffect(() => {
   return (
     <div className="hoteles-container">
       <aside className="hotel-list">
-        <h3 className="titel3">Restaurantes y Hoteles</h3>
+        <h3 className="titel3">Tourist Sites</h3>
         {/* buscar hoteles por su nombre y si no busca que se reinice al borrar */}
         <input
           type="text"
-          placeholder="Buscar hotel o restaurantes ..."
+          placeholder="Search for Tourist Places..."
           onChange={(e) => {
             const searchTerm = e.target.value.toLowerCase();
             if (searchTerm) {
@@ -93,8 +93,9 @@ useEffect(() => {
         />
         <div className="div_one1">
 
-        <h3 className="titel4">Lista de Hoteles y restaurantes</h3>
-        <p className="content3">Selecciona un hotel o restaurante para ver más detalles</p>
+        <h3 className="titel4">Search Places</h3>
+        <h3 className="titel4"></h3>
+        <p className="content3">Select a location to see more details</p>
 
         <ul>
           {hoteles.map(hotel => (
@@ -260,7 +261,7 @@ useEffect(() => {
   }
 ] */}
             <button onClick={() => fetchHotelInfo(selectedHotel.id)} className="info-button" >
-              Ver más información
+              See more information
             </button>
             <a
               href={`https://www.google.com/maps/dir/?api=1&destination=${selectedHotel.latitud},${selectedHotel.longitud}`}
@@ -268,7 +269,7 @@ useEffect(() => {
               rel="noopener noreferrer"
               className="directions-button"
             >
-              Indicaciones
+              Indications
             </a>
           </div>
         </div>
@@ -290,8 +291,8 @@ useEffect(() => {
               <div className="caja2">
                 <h3 className='titel5'>{hotelInfo.nombre}</h3>
                 <p className="content5">{hotelInfo.descripcion}</p>
-                <p><strong>Calle:</strong> {hotelInfo.calle}</p>
-                <p><strong>Teléfono:</strong> {hotelInfo.numerotelf}</p>
+                <p><strong>Street:</strong> {hotelInfo.calle}</p>
+                <p><strong>Phone:</strong> {hotelInfo.numerotelf}</p>
               </div>
             </div>
             {hotelInfo.video && (

@@ -4,7 +4,7 @@ import logo1 from './Imagenes/LOGOPUEBLOMAGICOBLANCO_Mesadetrabajo1.png';
 import logo2 from './Imagenes/LOGOPUEBLOMAGCONEGRO_Mesadetrabajo1.png';
 import logo3 from './Imagenes/pngegg.png';
 import logo4 from './Imagenes/unnamed.png';
-import logo5 from './Imagenes/LOGOPOSITIVOV2.png';
+import logo5 from './Imagenes/LOGOOFICIAL.png';
 
 const Footer = () => {
     return (
@@ -63,13 +63,13 @@ const Footer = () => {
             <div className="footer-bottom">
                 <div className='divLogos'>
                 <img
-                        src={logo4}
+                        src={logo2}
                         alt={`Yucatan`}
                         className="logo-Yucatan"
                   
                   />
                   <img
-                        src={logo1}
+                        src={logo4}
                         alt={`Yucatan`}
                         className="logo-Yucatan"
                   

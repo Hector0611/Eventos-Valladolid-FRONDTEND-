@@ -10,7 +10,7 @@
 
 .caja3{ 
     margin: 0px;
-    background-color: rgba(0, 0, 0, 0.673);
+    background-color: transparent;
     text-align: center;
     border-radius: 0px;
     padding: 0px;
@@ -36,13 +36,13 @@
   }
 
 .titel1{
-    font-size: 3rem;
-    text-align: center;
-    background-image: url('./Imagenes/Colores.jpg') ;
-    background-size: cover;
-    background-clip: text;
-    color: transparent;
-    animation: animate 3s linear infinite;
+    color: #ffffff; /* texto blanco */
+  background-color: rgba(0, 0, 0, 0.5); /* fondo semitransparente oscuro */
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7); /* sombra extra */
+  font-family: 'Montserrat', sans-serif; /* tipografía clara y moderna */
+  font-weight: 700;
 }
 
 
@@ -68,20 +68,13 @@
 }
 
 .nombrefecha1 {
-    color: #ffffff;
+    color: #000000;
     font-size: 2em;
     text-align: center;
     margin-top: 0px;
     font-weight: lighter;
 }
 
-.textevento {
-    color: #ffffff;
-    font-size: 1.5em;
-    text-align: center;
-    margin-top: 10px;
-    font-weight: lighter;
-}
 
     
 .content {
@@ -93,7 +86,7 @@
 
 .selected1 {
   background-color: #4caf4f9e !important;
-  color: white;
+  color: rgb(0, 0, 0);
   cursor: pointer;
   font-weight: bold;
   border-radius: 20%;
@@ -157,8 +150,43 @@
 }
 
 .titeleventst{
-  color: #ffffff;
+  color: #000000;
 }
+/* quiero que caja5 sea como un menu de opciones como header de lado derecho */
+
+.caja5 {
+  position: relative; /* necesario para el pseudo-elemento */
+  width: 100%;
+  height: 35px;
+  margin: 10px;
+  padding: 0px 200px;
+  background-position: right;
+  border-bottom-right-radius: 40%;
+  border-bottom-left-radius: 0; /* quitamos curva izquierda */
+  overflow: hidden; /* por seguridad */
+  text-align: right;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+.caja5::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;   /* solo ocupa la mitad derecha */
+  height: 6 px;  /* grosor de la línea */
+  background: #ffffff; /* el color de la línea */
+  border-bottom-right-radius: 40%;
+}
+  .textevento {
+    color: #000000;
+    font-size: 1.2em;
+    text-align: right;
+    margin-top: 0px;
+    font-weight: lighter;
+  }
+
 
 /* =================== EVENTOS MOBILE =================== */
 @media (max-width: 768px) {

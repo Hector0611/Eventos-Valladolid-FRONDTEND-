@@ -9,21 +9,21 @@
     text-align: center;
     font-size: 3em;
     margin-top: 20px;
-    color: #fffefe;
+    color: #000000;
     font-family: Arial, Helvetica, sans-serif;
 }
-.div_calendario{
+.div_calendario{    
     width: auto ;
     height: auto;
     transition: transform 0.5s;
-    background-color: rgba(46, 139, 86, 0.49);
+    background-color: rgba(13, 139, 68, 0.49);
     border-radius: 10%;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.718);
+    box-shadow: 0 4px 20px rgba(251, 250, 250, 0.718);
     margin: 0 auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding: 20px;
-    color: white;    
+    padding: 20px;  
+    color: rgb(0, 0, 0);    
 }
 
 .calendar-table {
@@ -39,8 +39,9 @@
     border-radius: 5%;
 }
 
+
 .calendar-table th, .calendar-table td{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif; /* misma fuente para todo */
     width: 14.28%;
     height: 70px;
     background-color: transparent;
@@ -48,12 +49,12 @@
     text-align: center;
     padding: 10px;
     box-shadow: 0 6px 1.5px rgb(255, 255, 255); /* Línea de borde de Bootstrap */
-    color: rgb(249, 249, 249);
+    color: rgba(255, 255, 255, 0.87);
     font-size: 20px;
 }
 
 .calendar-table td:hover{   
-    background-color: rgba(0, 0, 0, 0.753); /* Cambia el color de fondo al pasar el mouse */
+    background-color: rgba(69, 222, 46, 0.753); /* Cambia el color de fondo al pasar el mouse */
     color: #fff; /* Cambia el color del texto al pasar el mouse */
     box-shadow: 0 3px 20px rgba(198, 227, 32, 0.988);
     border-radius: 10%;
@@ -61,6 +62,22 @@
 
 .day {
     position:relative;
+    background-color: #ffffff; /* círculo blanco */
+  color: #333333; /* número oscuro */
+  border-radius: 5%;
+  width: 35px;
+  height: 35px;
+  
+  align-items: center;
+  justify-content: center;
+  margin: 3px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.day:hover{
+    background-color: #ffd700; /* dorado maya al pasar el mouse */
+  color: #000000;
+  cursor: pointer;
 }
 
 .day-message-icon {
@@ -70,6 +87,7 @@
     font-size: 14px;
     color: #FFA500;
     opacity: 0.8;
+    
 }
 
 .day-description {
@@ -79,6 +97,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    
 }
 
 .empty-day {
@@ -99,7 +118,6 @@
    
 }
 
-
 .day-with-event {
     background-color: #ecf800;
     font-weight: bold;
@@ -116,6 +134,7 @@
     box-shadow: 0 2 20px rgba(236, 235, 235, 0.988);
    background-color: rgb(27, 15, 15);
     border-radius: 10%;
+    font-family: 'Montserrat', sans-serif; /* misma fuente para todo */
 }
 
 /* Hoy */
@@ -125,9 +144,12 @@
 
 .message-popup {
     
-    font-size: 1em;
-    color: rgb(255, 255, 255);
-    font-family: Arial, Helvetica, sans-serif;
+  background-color: #2ecc71; /* verde esmeralda */
+  color: #000000;
+  border-radius: 50%; /* círculo */
+  box-shadow: 0 0 10px #2ecc71, 0 0 20px #3498db; /* glow verde-azul cenote */
+  transition: all 0.3s ease;
+
     
 }
 
@@ -185,6 +207,14 @@
     .container {
         flex-direction: column;
     }
+    
+.message-popup {
+    
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
    
 }
 .nombrefecha {
@@ -197,21 +227,23 @@
 }
 
 .nombrefecha1 {
-    color: #ffffff;
-    font-size: 2em;
+    color: #000000;
+    font-size: 3em;
     text-align: center;
-    margin-top: 0px;
+    margin-top: 3px;
     font-weight: lighter;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.textevento {
-
+.textevento1 {
+    color: #000;
+    font-size: 1.2em;
     font-family: Arial, Helvetica, sans-serif;
 }
 .calendar1{
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .textcalendar{ 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }

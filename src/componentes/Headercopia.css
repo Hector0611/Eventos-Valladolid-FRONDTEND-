@@ -40,9 +40,11 @@
    border-radius: 20%;
    background-color: transparent;
    border: transparent;
-   color: #ffffff;
+   color: #000000;
    font-size: 16px;
    padding: 6px 8px;
+   cursor: pointer;
+   box-shadow: 0 0px 5px rgb(1, 69, 10);
  }
 
  .botton1:hover{
@@ -74,9 +76,9 @@
 
 .popup-content {
   
-   background-image: url('./Imagenes/LOGOVERSION2.png'); /* Reemplaza con la URL o ruta de tu imagen */
-   background-color: #c98cd8f0; 
-   
+   background-image: url('./Imagenes/Colores4.jpg'); /* Reemplaza con la URL o ruta de tu imagen */
+  
+
    background-position: center; /* Centra la imagen */
    background-repeat: no-repeat; /* Evita que la imagen se repita */
    border-radius: 10px;

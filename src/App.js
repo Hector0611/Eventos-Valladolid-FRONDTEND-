@@ -1,9 +1,8 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'; 
 import Header from './componentes/Header';
 import EventoCalendario from './componentes/EventoCalendario';
-import CalendarioGeneral from './componentes/CalendarioGeneral';
 import Hoteles from './componentes/Hoteles';
 import Footer from './componentes/Footer';
 import Historia from './componentes/Historia';
@@ -15,120 +14,121 @@ import ProgramarEvents from './componentes/ProgramarEvents';
 import EventoDiario from './componentes/EventoDiario';
 import Headercopia from './componentes/Headercopia';
 import Headercopia2 from './componentes/Headercopia2';
-import Cenotes from './componentes/Cenotes';
-import Conventos from './componentes/Conventos';
 import ScrollToTop from './componentes/ScrollToTop';
-
+import PrincipalRecarga from './componentes/PrincipalRecarga';
+import Conventos from './componentes/Conventos';
+import Cenotes from './componentes/Cenotes';
 
 const App = () => {
-    return (
-        <Router>
-            {<ScrollToTop />} {/* Componente para desplazar hacia arriba al cambiar de ruta */}
-            <div>
-                
-                <main className='main-container'>
-                    <center>
-                        
-                        {/* Renderiza el CircularMenu solo en la ruta principal */}
-                        <Routes>
-                            <Route 
-                                path="/" 
-                                element={
-                                    <>
-                                        <Header2 />
-                                        <Header/>
-                                       <CalendarioGeneral />
-                                       
-                                       <Historia />
-                                       <Cenotes />
-                                        <Conventos />
-                                       
-                                        
-                                    </>
-                                } 
-                            />
-                            
-                            <Route 
-                                path="/calendario/evento/:mensaje" 
-                                element={
-                                    <>
-                                        <Headercopia2 />
-                                        <Headercopia /> {/* Renderiza el Headercopia aquí */}
-                                        <EventoCalendario />
-                                        
-                                    </>
-                                } 
-                            />
-                            <Route 
-                                path="/hoteles" 
-                                element={
-                                    <>
-                                    <Headercopia2 />
-                                        <Headercopia /> {/* Renderiza el Headercopia aquí */}
-                                    <Hoteles />
-                                    
-                                        
-                                    </>
-                            } 
-                            />
-                            <Route 
-                                path="/calenYcirc"
-                                element={
-                                <>
-                                    
-                                    <Headercopia2 />
-                                    <Headercopia /> {/* Renderiza el Headercopia aquí */}  
-                                    <EventoDiario />
-                                    
-                                    {/* <CalenYcirc />  */}
-                                    
-                                </>
-                            }
-                            />
-                            <Route 
-                                path="/programarevents"
-                                element={
-                                    <>
-                                        <Headercopia2 />
-                                        <Headercopia /> {/* Renderiza el Headercopia aquí */}
-                                        <ProgramarEvents />
-                                    </>
-                                }
-                            />
-                            <Route path="/historia" element={
-                                <>  
-                                    <Headercopia2 />
-                                    <Headercopia /> {/* Renderiza el Headercopia aquí */}
-                                <Historia /> 
-                                </>
-                            } 
-                            />
-                            <Route path="/catalogo" element={
-                                <>
-                                    <Headercopia2 />
-                                    <Headercopia /> {/* Renderiza el Headercopia aquí */}
-                                <Catalogo />
-                                </>
-                                } />
-                            <Route path="/estadisticas" element={
-                                <>
-                                    <Headercopia2 />
-                                    <Headercopia /> {/* Renderiza el Headercopia aquí */}
-                                <Estadisticas />
-                                        </>
-                                } />
-                        </Routes>
-                    </center>
-                   {/* Renderiza el Footer aquí */}
-                   <ProximoEvento />
-                <Footer />
-                </main>
+  return (
+    <Router>
+      <ScrollToTop />
+      <div>
+        <main className='main-container'>
+          <center>
+            <Routes>
+              {/* Si alguien entra en "/" lo mando al splash */}
+              <Route path="/" element={<Navigate to="/loading" />} />
 
-                
-            </div>
-        </Router>
-    );
+              {/* Splash Screen */}
+              <Route path="/loading" element={
+                <>
+                <Header2 />
+                <PrincipalRecarga />
+                </>} />
+
+              {/* Página principal real */}
+              <Route 
+                path="/home" 
+                element={
+                  <>
+                    <Headercopia2 />
+                    <Headercopia />
+                    <ProgramarEvents />
+                   
+                  </>
+                } 
+              />
+
+              <Route 
+                path="/calendario/evento/:mensaje" 
+                element={
+                  <>
+                    <Headercopia2 />
+                    <Headercopia />
+                    <EventoCalendario />
+                  </>
+                } 
+              />
+
+              <Route 
+                path="/hoteles" 
+                element={
+                  <>
+                    <Headercopia2 />
+                    <Headercopia />
+                    <Hoteles />
+                  </>
+                } 
+              />
+
+              <Route 
+                path="/calenYcirc"
+                element={
+                  <>
+                    <Headercopia2 />
+                    <Headercopia />  
+                    <EventoDiario />
+                  </>
+                }
+              />
+
+              <Route 
+                path="/programarevents"
+                element={
+                  <>
+                    <Headercopia2 />
+                    <Headercopia />
+                    <ProgramarEvents />
+                  </>
+                }
+              />
+
+              <Route path="/historia" element={
+                <>  
+                  <Headercopia2 />
+                  <Headercopia />
+                   <Historia />
+                    <Conventos />
+                    <Cenotes />
+                </>
+              } />
+
+              <Route path="/catalogo" element={
+                <>
+                  <Headercopia2 />
+                  <Headercopia />
+                  <Catalogo />
+                </>
+              } />
+
+              <Route path="/estadisticas" element={
+                <>
+                  <Headercopia2 />
+                  <Headercopia />
+                  <Estadisticas />
+                </>
+              } />
+            </Routes>
+          </center>
+
+          {/* Footer global */}
+          <ProximoEvento />
+          <Footer />
+        </main>
+      </div>
+    </Router>
+  );
 };
 
 export default App;
-

@@ -21,6 +21,10 @@
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
+.house-door{
+  background-color: black;
+}
+
 /* Estado oculto y visible del header */
 .header.hidden {
   transform: translateY(-100%);
@@ -56,7 +60,7 @@
    =============== */
 .botton {
   border-radius: 10%;
-  background-image: url('./Imagenes/Colores5.jpg');
+  background-image: url('./Imagenes/Colores4.jpg');
   border: transparent;
   font-size: 1.1em;
   padding: 9px 15px;

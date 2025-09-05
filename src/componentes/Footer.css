@@ -1,6 +1,6 @@
 .footer {
     background-color: transparent;
-    color: #fff;
+    color: #000000;
     padding: 100px 60px;
     font-size: 20px;
     border-radius: 2%;
@@ -27,7 +27,7 @@
 
 .footer-section p {
     line-height: 1.5;
-    color: #bbb;
+    color: #000000;
 }
 
 .footer-section ul {
@@ -41,7 +41,7 @@
 
 .footer-section ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #000000;
     transition: color 0.3s;
 }
 

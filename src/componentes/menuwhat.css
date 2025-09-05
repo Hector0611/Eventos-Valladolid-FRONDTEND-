@@ -1,49 +1,63 @@
-.whatsapp{
-    background-color: #25D366; /* WhatsApp green */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
- 
+.AlertEvents {
+  background-color: #05f109bd;
+  border-radius: 50%;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
 }
-.whatsapp-chat-button {
+
+/* Contenedor principal del botón */
+.AlertEvents-botton {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background-color: transparent;
+  background-color: #00000090;
   border-radius: 50px;
-  padding: 12px 12px;
-  box-shadow: 0 0px 20px rgba(6, 237, 44, 0.567);
+  padding: 12px;
+  box-shadow: 0 0px 20px rgba(237, 6, 6, 0.7);
   display: flex;
   align-items: center;
   cursor: pointer;
   z-index: 9999;
-  transition: width 0.3s ease;
   overflow: hidden;
   white-space: nowrap;
-}
-.whatsapp-chat-button:hover {
-  transition: width 0.3s ease;
-  background-color: #25D366;
- 
-}
-
-.whatsapp-icon {
-  width: 40px;
-  height: 40px;
-}
-
-.chat-text {
   color: white;
-  margin-left: 8px;
-  font-size: 14px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  font-weight: bold;
+  font-size: 24px;
+  transition: all 0.5s ease;
+  animation: pulseAlert 1.5s infinite; /* efecto alerta */
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.whatsapp-chat-button.hovered .chat-text {
+/* Texto dentro */
+.AlertEvents-botton .alert-text {
+  margin-left: 10px;
   opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
+/* Estado expandido */
+.AlertEvents-botton.expanded {
+  width: auto;
+  padding-right: 20px;
+}
+
+/* Estado colapsado (solo ícono) */
+.AlertEvents-botton.collapsed {
+  width: 56px;
+  padding-right: 12px;
+}
+
+.AlertEvents-botton.collapsed .alert-text {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Efecto alerta (parpadeo/sombra) */
+@keyframes pulseAlert {
+  0% { box-shadow: 0 0 10px rgba(211, 118, 37, 0.6); }
+  50% { box-shadow: 0 0 25px rgb(211, 37, 37); }
+  100% { box-shadow: 0 0 10px rgba(0, 248, 21, 0.805); }
+}

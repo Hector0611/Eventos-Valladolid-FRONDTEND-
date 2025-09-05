@@ -2,11 +2,16 @@ import './ProgramarEvents.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+
 import './CircularMenu.css';
 import './Calendario.css';
+import './menuwhat.css';
+
 import Logo1 from './Imagenes/Iglesia.jpg';
 import Logo2 from './Imagenes/cenotezaki.jpg';
 import Logo3 from './Imagenes/fondo.gif';
+
+
 
 const ProgramarEvents = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -104,17 +109,44 @@ const ProgramarEvents = () => {
     const isSelected = (day) =>
         selectedDays.some(d => d.day === day && d.month === selectedMonth + 1);
 
+    // --- dentro de ProgramarEvents.jsx --- 
+
+        const [alertExpanded, setAlertExpanded] = useState(true); // al entrar aparece expandido
+        const [alertHover, setAlertHover] = useState(false);
+
+        useEffect(() => {
+        const timer = setTimeout(() => setAlertExpanded(false), 7000); // a los 7s se compacta
+        return () => clearTimeout(timer);
+        }, []);
+
+        // Función para abrir el modal directo con los eventos de HOY
+        const handleAlertClick = async () => {
+        try {
+            const res = await axios.get(
+            `http://localhost:3001/api/mensajes?dia_id=${today.getDate()}&mes_id=${today.getMonth() + 1}`
+            );
+            setEventosSeleccionados(res.data);
+            setShowModal(true);
+        } catch (error) {
+            console.error("Error cargando eventos de hoy:", error);
+        }
+        };
+
+
     return (
         <div className='programar-events'>
-            
+            {/* Donde LLEVA */}
+              
             <div className='caja3'>
-                <h1 className='titel1'>Ve Los Programas De Eventos Durente Tu Estadia En Valladolid</h1>
+                <h1 className='titel1'>See the Event Programs During Your Stay in Valladolid</h1>
+
                 <div className="container1">
                     <div className="left">
                         <br /><br />
                         <h3 className="nombrefecha1">Choose Month</h3>
-                        <p className='textevento'>Selecciona el mes para ver los eventos</p>
 
+                        <p className='textevento1'>Select the month to see the events</p>
+                        
                         <div className="circular-menu">
                             <div className="center-circle"></div>
                             {showMessage && (
@@ -138,6 +170,14 @@ const ProgramarEvents = () => {
                                 ))}
                             </div>
                         </div>
+                        <div style={{ textAlign: 'center', marginTop: '20px' }}>
+                                            <button
+                                                onClick={() => setShowModal(true)}
+                                                className="boton-ver-eventos"
+                                            >
+                                                View events 
+                                            </button>
+                                        </div>
                     </div>
 
                     <div className="right">
@@ -146,7 +186,7 @@ const ProgramarEvents = () => {
                                 <h1 className="calendar1">
                                     Calendar {monthsData[selectedMonth]?.nombre} {currentYear}
                                 </h1>
-                                <p className='textcalendar'>Selecciona los días que vas a estar en Valladolid</p>
+                                <p className='textcalendar'>Select the days you will be in Valladolid</p>
                             </center>
 
                             <table className="calendar-table">
@@ -190,14 +230,7 @@ const ProgramarEvents = () => {
                     </div>
 
                 </div>
-                <div style={{ textAlign: 'center', marginTop: '20px' }}>
-                                            <button
-                                                onClick={() => setShowModal(true)}
-                                                className="boton-ver-eventos"
-                                            >
-                                                Ver eventos 
-                                            </button>
-                                        </div>
+                
                        {/*  {eventosSeleccionados.length > 0 && (
                                             <div style={{ textAlign: 'center', marginTop: '20px' }}>
                                                 <button
@@ -210,6 +243,19 @@ const ProgramarEvents = () => {
                                         )} */}
              
             </div>
+            {/* aqui los cambios ya mensionados  */}
+            <div
+                    className={`AlertEvents-botton ${alertExpanded || alertHover ? 'expanded' : 'collapsed'}`}
+                    onMouseEnter={() => setAlertHover(true)}
+                    onMouseLeave={() => setAlertHover(false)}
+                    onClick={handleAlertClick}
+                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" className='AlertEvents' viewBox="0 0 16 16">
+                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5m9.954 3H2.545c-.3 0-.545.224-.545.5v1c0 .276.244.5.545.5h10.91c.3 0 .545-.224.545-.5v-1c0-.276-.244-.5-.546-.5m-2.6 5.854a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                    </svg>
+                    <span className="alert-text">See Today's Events</span>
+                </div>
+
 
             {showModal && (
   <div className="modal-overlay">

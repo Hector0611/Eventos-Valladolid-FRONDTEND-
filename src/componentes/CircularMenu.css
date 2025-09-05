@@ -1,9 +1,12 @@
 .textcalendar{
-    color: rgb(242, 242, 242);
+    color: rgb(5, 4, 4);
     font-size: 1.5em;
     text-align: center;
     margin-top: 1px;
     font-weight:lighter;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 4px #aaa;
+    font-family: 'Arial', sans-serif;
 }
 
 .circular-menu {
@@ -48,7 +51,7 @@
     width: 185px;
     height: 185px;
     background-color: #ff5722;
-    color: white;
+    color: rgb(4, 3, 3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,7 +141,7 @@
     left: 50%; /* Centrado horizontalmente */
     transform: translate(-50%, -50%); /* Centra el mensaje */
     background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
-    color: white;
+    color: rgb(12, 6, 6);
     padding: 10px 20px;
     border-radius: 8px;
     z-index: 4; /* Asegúrate de que esté por encima de otros elementos */

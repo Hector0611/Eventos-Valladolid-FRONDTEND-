@@ -45,7 +45,11 @@ const Historia = () => {
 
   return (
     <div className="historia-container">
-      <h1 className="titulo">Conoce La Historia de Valladolid Yucatán México</h1>
+       <br />
+            <br /> <br />
+            <br />
+
+      <h1 className="titel1">Conoce La Historia de Valladolid Yucatán México</h1>
 
       <div className="historia-carrusel">
         {historia.map((item, index) => {
@@ -85,7 +89,7 @@ const Historia = () => {
       {showModal && selectedItem && (
         <div className="modal-overlay">
           <div className="modal-content">
-            <button className="close-button" onClick={() => setShowModal(false)}>X</button>
+            <button className="close-button1" onClick={() => setShowModal(false)}>X</button>
             <h2 className="titulo">{selectedItem.titulo}</h2>
             <img
               src={`http://localhost:3001/${selectedItem.url_imagen}`}

@@ -3,30 +3,12 @@ import './Historia.css';
 
 const Conventos = () => {
   const [historia, setHistoria] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedItem, setSelectedItem] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const [fade, setFade] = useState(false);
 
   const handleLeerMas = (item) => {
     setSelectedItem(item);
     setShowModal(true);
-  };
-
-  const handlePrev = () => {
-    setFade(true);
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + historia.length) % historia.length);
-      setFade(false);
-    }, 300);
-  };
-
-  const handleNext = () => {
-    setFade(true);
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % historia.length);
-      setFade(false);
-    }, 100);
   };
 
   useEffect(() => {
@@ -36,56 +18,33 @@ const Conventos = () => {
       .catch((error) => console.error('Error al obtener los datos:', error));
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleNext();
-    }, 10000);
-    return () => clearInterval(interval);
-  }, [historia]);
-
   return (
     <div className="historia-container">
-      <h1 className="titulo">Conoce La Historia de Valladolid Yucatán México</h1>
+      <h1 className="titel1">Conventos e Iglesias en Valladolid</h1>
 
-      <div className="historia-carrusel">
-        {historia.map((item, index) => {
-          let className = 'historia-item hidden';
-
-          if (index === currentIndex) {
-            className = 'historia-item current';
-          } else if (index === (currentIndex + 1) % historia.length) {
-            className = 'historia-item next';
-          } else if (index === (currentIndex - 1 + historia.length) % historia.length) {
-            className = 'historia-item prev';
-          }
-
-          return (
-            <div key={index} className={`${className} ${fade ? 'fade-out' : 'fade-in'}`}>
-              <img
-                className="historia-fondo-imagen"
-                src={`http://localhost:3001/${item.url_imagen}`}
-                alt={item.titulo}
-              />
-              <div className="historia-overlay">
-                <h2 className="titulo">{item.titulo}</h2>
-                <div className="historia-texto">
-                  <p>{item.descripccion.slice(0, 300)}...</p>
-                  
-                </div>
-                <button className="historia-link" onClick={() => handleLeerMas(item)}>Leer más</button>
-              </div>
+      <div className="conventos-grid">
+        {historia.map((item, index) => (
+          <div key={index} className="convento-card">
+            <img
+              className="convento-imagen"
+              src={`http://localhost:3001/${item.url_imagen}`}
+              alt={item.titulo}
+            />
+            <div className="convento-overlay">
+              <h2 className="titulo1">{item.titulo}</h2>
+              <p>{item.descripccion.slice(0, 150)}...</p>
+              <button className="historia-link" onClick={() => handleLeerMas(item)}>
+                Leer más
+              </button>
             </div>
-          );
-        })}
-
-        <button className="nav-button_left" onClick={handlePrev}>❮</button>
-        <button className="nav-button_right" onClick={handleNext}>❯</button>
+          </div>
+        ))}
       </div>
 
       {showModal && selectedItem && (
         <div className="modal-overlay">
           <div className="modal-content">
-            <button className="close-button" onClick={() => setShowModal(false)}>X</button>
+            <button className="close-button1" onClick={() => setShowModal(false)}>X</button>
             <h2 className="titulo">{selectedItem.titulo}</h2>
             <img
               src={`http://localhost:3001/${selectedItem.url_imagen}`}
@@ -93,6 +52,14 @@ const Conventos = () => {
               className="modal-image"
             />
             <p className="modal-description">{selectedItem.descripccion}</p>
+            <a
+              href={`https://www.google.com/maps/dir/?api=1&destination=${selectedItem.latitud},${selectedItem.longitud}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="directions-button"
+            >
+              Indications
+            </a>
           </div>
         </div>
       )}

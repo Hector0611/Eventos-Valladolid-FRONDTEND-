@@ -42,10 +42,10 @@ const App = () => {
                 path="/home" 
                 element={
                   <>
-                    <Headercopia2 />
-                    <Headercopia />
+                    <Header2 />
+                    <Header />
                     <ProgramarEvents />
-                   
+                   <EventoDiario />
                   </>
                 } 
               />
@@ -54,8 +54,8 @@ const App = () => {
                 path="/calendario/evento/:mensaje" 
                 element={
                   <>
-                    <Headercopia2 />
-                    <Headercopia />
+                    <Header2 />
+                    <Header />
                     <EventoCalendario />
                   </>
                 } 
@@ -65,20 +65,22 @@ const App = () => {
                 path="/hoteles" 
                 element={
                   <>
-                    <Headercopia2 />
-                    <Headercopia />
+                    <Header2 />
+                    <Header />
                     <Hoteles />
                   </>
                 } 
               />
 
               <Route 
-                path="/calenYcirc"
+                path="/LugaresTuristicos"
                 element={
                   <>
-                    <Headercopia2 />
-                    <Headercopia />  
-                    <EventoDiario />
+                    <Header2 />
+                    <Header />  
+                    <Historia />
+                    <Conventos />
+                    <Cenotes />
                   </>
                 }
               />
@@ -87,17 +89,18 @@ const App = () => {
                 path="/programarevents"
                 element={
                   <>
-                    <Headercopia2 />
-                    <Headercopia />
+                    <Header2 />
+                    <Header />
                     <ProgramarEvents />
+                    <EventoDiario />
                   </>
                 }
               />
 
               <Route path="/historia" element={
                 <>  
-                  <Headercopia2 />
-                  <Headercopia />
+                  <Header2 />
+                  <Header />
                    <Historia />
                     <Conventos />
                     <Cenotes />
@@ -106,16 +109,16 @@ const App = () => {
 
               <Route path="/catalogo" element={
                 <>
-                  <Headercopia2 />
-                  <Headercopia />
+                  <Header2 />
+                  <Header />
                   <Catalogo />
                 </>
               } />
 
               <Route path="/estadisticas" element={
                 <>
-                  <Headercopia2 />
-                  <Headercopia />
+                  <Header2 />
+                  <Header />
                   <Estadisticas />
                 </>
               } />

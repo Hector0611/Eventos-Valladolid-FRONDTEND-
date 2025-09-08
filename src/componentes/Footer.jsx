@@ -37,7 +37,7 @@ const Footer = () => {
                         <li><a href="/estadisticas">Estadisticas de Valladolid</a></li>
                         
                     </ul>
-                </div>
+                </div>  
                 <div className="footer-section">
                     <h3>Síguenos en:</h3>
                     <div className="social-links">

@@ -5,6 +5,7 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import './Hoteles.css';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
+import { div } from 'framer-motion/client';
 
 // Icono personalizado SVG
 const hotelIcon = new L.Icon({
@@ -72,7 +73,14 @@ useEffect(() => {
 
   
   return (
+    <div>
+       <br />
+            <br /> <br />
+            <br /> <br />
     <div className="hoteles-container">
+       <br />
+            <br /> <br />
+            <br />
       <aside className="hotel-list">
         <h3 className="titel3">Tourist Sites</h3>
         {/* buscar hoteles por su nombre y si no busca que se reinice al borrar */}
@@ -313,6 +321,7 @@ useEffect(() => {
       )}
 
 
+    </div>
     </div>
   );
 };

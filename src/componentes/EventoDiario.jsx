@@ -56,21 +56,11 @@ const EventoDiario = () => {
 
     return (
         <div key={evento.id_eventdiario} className="evento-card">
-             <div className="evento-overlay">
-              
+            <br />
+           
+             <h1 className='titel1'>Daily Events</h1>
 
-                <div className="contenido-sobre-imagen">
-                
-                
-                {/* <button
-                    className="bottonEvent"
-                    onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${evento.latitud},${evento.longitud}`, "_blank")}
-                >
-                    como llegar
-                </button> */}
-                
-                </div>  
-            </div> 
+            <br />  
             <div className='Img-videoM'>
                     <img
                         src={logo2}
@@ -79,6 +69,26 @@ const EventoDiario = () => {
                   
                   />
                 </div>
+
+                <div className="contenido-sobre-imagen1">
+                
+                
+                <button
+                    className="bottonEvent2"
+                    onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=20.689720,-88.201669`, "_blank")}
+                >
+                    Indications
+
+                </button>
+                <button
+                    className="bottonEvent2"
+                    onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=20.686362823195388,-88.21000163440262`, "_blank")}
+                >
+                    Indications
+
+                </button>
+                
+                </div>  
             </div>
 
     );
@@ -88,31 +98,6 @@ const EventoDiario = () => {
                 <p className="titelevent">Cargando eventos...</p>
             )}
 
-            {/* Modal del mapa */}
-            {showMapModal && eventoActual && (
-                <div className="modal-overlay">
-                    <div className="modal-content">
-                        <button className="cerrar-modal" onClick={cerrarModalMapa}>x</button>
-                        <h2 className="titelevent">{eventoActual.titulo}</h2>
-                        <div className="map-container">
-                            <MapContainer
-                                key={eventoActual.id_eventdiario}
-                                center={[parseFloat(eventoActual.latitud), parseFloat(eventoActual.longitud)]}
-                                zoom={18}
-                                style={{ height: '800px', width: '100%' }}
-                            >
-                                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                                <Marker
-                                    position={[parseFloat(eventoActual.latitud), parseFloat(eventoActual.longitud)]}
-                                    icon={customIcon}
-                                >
-                                    <Tooltip permanent>{eventoActual.titulo}</Tooltip>
-                                </Marker>
-                            </MapContainer>
-                        </div>
-                    </div>
-                </div>
-            )}
         </div>
     );
 };

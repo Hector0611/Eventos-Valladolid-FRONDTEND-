@@ -13,7 +13,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 .div_calendario{    
-    width: auto ;
+    width: 800px;
     height: auto;
     transition: transform 0.5s;
     background-color: rgba(13, 139, 68, 0.49);
@@ -31,8 +31,8 @@
     background-size: cover; /* Ajusta la imagen para que cubra todo el área */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
-    height: auto;
-    width: 800px;
+    height: 100%;
+    width: auto;
     border-collapse: collapse;
     margin: 0 auto;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.718);
@@ -146,13 +146,12 @@
     
   background-color: #2ecc71; /* verde esmeralda */
   color: #000000;
-  border-radius: 50%; /* círculo */
+  border-radius: 20%; /* círculo */
   box-shadow: 0 0 10px #2ecc71, 0 0 20px #3498db; /* glow verde-azul cenote */
   transition: all 0.3s ease;
+    font-size: 0.6em;
 
-    
 }
-
 
 /* Estilos para pantallas muy pequeñas */
 @media (max-width: 780px) {
@@ -175,7 +174,7 @@
         border-radius: 5%;
     }
     .calendar-table {
-        width: 410px;
+        width: 100%;
        
     }
 

@@ -1,5 +1,5 @@
 .proximos-eventos-container {
-  background: linear-gradient(to right, #1c1c1c, #2b2b2b);
+  background: linear-gradient(to right, #050505, #05ed2f90);
   padding: 1rem;
   border-radius: 10px;
   max-width: 100%;
@@ -42,7 +42,7 @@
 }
 
 .evento-item {
-  background-color: #ffffff;
+  background: linear-gradient(to right, #050505, #05ed2f90);
   border-radius: 12px;
   padding: 1rem;
   width: 210px;
@@ -70,7 +70,7 @@
 }
 
 .navegacion-eventos {
-  background-color: #3cb300;
+  background: linear-gradient(to right, #0505053d, #05ed2f47);
   color: white;
   border: none;
   border-radius: 50%;
@@ -128,4 +128,19 @@
   margin-bottom: 10px;
   text-shadow: 1px 1px 2px #000;
   text-align: center;
+}
+
+.navegacion-eventos {
+  width: 45px;
+  height: 150px;
+  font-size: 1.2rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+  color: rgb(255, 247, 247);
+  border: none;
+  margin: 0 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10%;
 }

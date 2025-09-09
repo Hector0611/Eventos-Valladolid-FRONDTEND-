@@ -74,13 +74,11 @@ useEffect(() => {
   
   return (
     <div>
-       <br />
-            <br /> <br />
-            <br /> <br />
+      <div className='Separacion'> 
+
+              </div>
     <div className="hoteles-container">
-       <br />
-            <br /> <br />
-            <br />
+      
       <aside className="hotel-list">
         <h3 className="titel3">Tourist Sites</h3>
         {/* buscar hoteles por su nombre y si no busca que se reinice al borrar */}

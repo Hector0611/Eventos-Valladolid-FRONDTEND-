@@ -136,15 +136,17 @@ const ProgramarEvents = () => {
     return (
         <div className='programar-events'>
             {/* Donde LLEVA */}
-               <br />
-            <br /> <br />
-            <br /> <br /> 
+              <div className='Separacion'> 
+
+              </div>
             <div className='caja3'>
                 <h1 className='titel1'>See the Event Programs During Your Stay in Valladolid</h1>
 
                 <div className="container1">
                     <div className="left">
-                        <br /><br />
+                    <div className='Separacion1'> 
+                    
+                                  </div>
                         <h3 className="nombrefecha1">Choose Month</h3>
 
                         <p className='textevento1'>Select the month to see the events</p>
@@ -284,7 +286,7 @@ const ProgramarEvents = () => {
               </div>
 
               <div className="caja">
-                {typeof evento.video === 'string' && evento.video.includes('watch?v=') && (
+                {/* {typeof evento.video === 'string' && evento.video.includes('watch?v=') && (
                   <iframe
                     width="100%"
                     height="100%"
@@ -294,7 +296,22 @@ const ProgramarEvents = () => {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   ></iframe>
-                )}
+                )} */}
+
+                
+                {evento.video && (
+                              <div className="video-container">
+                                <iframe
+                                  width="100%"
+                                  height="400px"
+                                  src={evento.video.replace("watch?v=", "embed/")}
+                                  title="Video"
+                                  frameBorder="0"
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                  allowFullScreen
+                                ></iframe>
+                              </div>
+                            )}
               </div>
             </div>
 

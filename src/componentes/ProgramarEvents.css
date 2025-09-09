@@ -27,8 +27,8 @@
     text-align: center;
   }
 .caja{
-    width: 650px;
-    height: auto;
+    width: 100%;
+    height: 100%;
     margin: 10px;
     background-color: rgba(16, 169, 221, 0.374);
     text-align: center;
@@ -187,6 +187,24 @@
     font-weight: lighter;
   }
 
+  .Separacion{
+    height: 110px; /* Ajusta la altura según tus necesidades */
+    width: 100%;
+    background-color: transparent; /* Color de fondo para separar */
+  }
+  .Separacion1{
+    height: 40px; /* Ajusta la altura según tus necesidades */
+    width: 100%;
+    background-color: transparent; /* Color de fondo para separar */
+  }
+
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    margin: 0px 0; /* Espaciado vertical */
+  }
+
 
 /* =================== EVENTOS MOBILE =================== */
 @media (max-width: 768px) {
@@ -205,8 +223,8 @@
   }
 
   .caja3 {
-    padding: 15px;
-    margin: 8px 0;
+    padding: 0%;
+    margin: 1px 0;
   }
 
   .titel1 {
@@ -220,6 +238,8 @@
 
   .nombrefecha1 {
     font-size: 1.4em;
+     padding: 0%;
+    margin: 1px 0;
   }
 
   .textevento {
@@ -246,6 +266,23 @@
   .boton-ver-eventos {
     font-size: 0.9rem;
     padding: 8px 16px;
+  }
+  .container1{
+    flex-direction: column; /* En móviles, de fila a columna */
+    align-items: center;
+    padding: 0%;
+    margin: 1px 0;
+  }
+
+  .Separacion{
+    height: 90px; /* Ajusta la altura según tus necesidades */
+    width: 100%;
+    background-color: transparent; /* Color de fondo para separar */
+  }
+  .Separacion1{
+    height: 10px; /* Ajusta la altura según tus necesidades */
+    width: 100%;
+    background-color: transparent; /* Color de fondo para separar */
   }
 }
 

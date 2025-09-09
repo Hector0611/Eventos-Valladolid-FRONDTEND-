@@ -29,13 +29,13 @@ const Header2 = () => {
         <div>
             <div className='LogoNeutro2'>
                 <img
-                        src={logo1}
+                        src={logo5}
                         alt={`Yucatan`}
                         className="logo-Yucatan"
                   
                   />
                   <img
-                        src={logo5}
+                        src={logo2}
                         alt={`Yucatan`}
                         className="logo-Yucatan"
                   

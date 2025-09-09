@@ -45,9 +45,9 @@ const Historia = () => {
 
   return (
     <div className="historia-container">
-       <br />
-            <br /> <br />
-            <br />
+      <div className='Separacion'> 
+
+              </div>
 
       <h1 className="titel1">Conoce La Historia de Valladolid Yucatán México</h1>
 

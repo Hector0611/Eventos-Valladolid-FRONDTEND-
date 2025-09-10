@@ -263,73 +263,63 @@ const ProgramarEvents = () => {
 
             {showModal && (
   <div className="modal-overlay">
-    <div className="modal-content">
+    <div className="modal-content"> 
       <button className="cerrar-modal" onClick={() => setShowModal(false)}>x</button>
 
       {eventosSeleccionados.length === 0 ? (
         <div className="evento-info">
             <center>
-          <h2>No hay eventos seleccionados</h2>
+          <h2 className='titel1'>First you must select the days to show you the events</h2>
           </center>
         </div>
       ) : (
         eventosSeleccionados.map((evento) => (
           <div key={evento.id} className="evento-info">
-            <h1 className='titel1'>{evento.titulo}</h1>
-            <h5 className='titel2'>{evento.mensaje}</h5>
-            <h3 className='horacolor'>Fecha del Evento: {evento.mes_id}/{evento.dia_id}/2025</h3>
-            <h3 className='horacolor'>{evento.hora_inicial} a {evento.hora_final}</h3>
+            <div className="caja"> 
+                <br />
+                <h1 className='titel1'>Events: {evento.titulo}</h1>
+                <h3 className='titel1'>{evento.mensaje}</h3>
+                <h3 className='horacolor'>Fecha del Evento: {evento.mes_id}/{evento.dia_id}/2025 ---- ---- De {evento.hora_inicial} a {evento.hora_final}</h3>
 
-            <div className="contenedor1">
-              <div className="caja">
-                <p>{evento.descripcion}</p>
-              </div>
+                <center>
+                                    {/* <button className="boton-ver-eventos" onClick={irAHoteles}>Lugares Turisticos</button>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
+                                        <button 
+                                            className="boton-ver-eventos" 
+                                            onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${evento.latitud},${evento.longitud}`, "_blank")}
+                                        >
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" className="currentColor123" viewBox="0 0 16 16">
+                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                            </svg> Go to Event Location   
+                                    </button>
+                                    </center>
+                                    {evento.video && (
+                                <div className="video-container1">
+                                    <iframe
+                                    src={evento.video.replace("watch?v=", "embed/")}
+                                    title="Video"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                    ></iframe>
+                                    
+                                </div>
+                                )}
+            
 
-              <div className="caja">
-                {/* {typeof evento.video === 'string' && evento.video.includes('watch?v=') && (
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src={evento.video.replace("watch?v=", "embed/")}
-                    title="Video"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                )} */}
-
-                
-                {evento.video && (
-                              <div className="video-container">
-                                <iframe
-                                  width="100%"
-                                  height="400px"
-                                  src={evento.video.replace("watch?v=", "embed/")}
-                                  title="Video"
-                                  frameBorder="0"
-                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                  allowFullScreen
-                                ></iframe>
-                              </div>
-                            )}
-              </div>
-            </div>
-
-            <hr />
-            <center>
-              <button className="bottonEvent" onClick={irAHoteles}>hoteles o restaurantes</button>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <button 
-                className="bottonEvent" 
-                onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${evento.latitud},${evento.longitud}`, "_blank")}
-              >
-                como llegar
-              </button>
-            </center>
-            <hr />
+                <div className="">
+            
+                    
+                    <p className="texto-pre"> <h3 className='titel1'></h3>{evento.descripcion} <h3 className='titel1'></h3></p>
+            
+                </div>
+                <br />
+                </div>
+                            
           </div>
         ))
       )}
+      
     </div>
   </div>
 )}

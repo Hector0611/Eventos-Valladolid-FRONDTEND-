@@ -15,7 +15,9 @@ const Estadisticas = () => {
 
     return (
         <div>
-        
+            <div className='Separacion'> 
+
+            </div>
             
             {/* Lista de PDFs */}
             {pdfs.map(pdf => (

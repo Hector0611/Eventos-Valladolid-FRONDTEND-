@@ -52,14 +52,14 @@ const ProgramarEvents = () => {
     const irAHoteles = () => navigate('/hoteles');
 
     useEffect(() => {
-        axios.get('http://localhost:3001/api/meses')
+        axios.get('https://eventos-valladolid-backendt.onrender.com/api/meses')
             .then(res => setMonths(res.data))
             .catch(err => console.error('Error al cargar meses:', err));
     }, []);
 
     useEffect(() => {
         if (monthsData.length > 0) {
-            axios.get(`http://localhost:3001/api/dias?mes_id=${selectedMonth + 1}`)
+            axios.get(`https://eventos-valladolid-backendt.onrender.com/api/dias?mes_id=${selectedMonth + 1}`)
                 .then(res => setDays(res.data))
                 .catch(err => console.error('Error al cargar días:', err));
         }
@@ -96,7 +96,7 @@ const ProgramarEvents = () => {
 
         try {
             const requests = updatedDays.map(d =>
-                axios.get(`http://localhost:3001/api/mensajes?dia_id=${d.day}&mes_id=${d.month}`)
+                axios.get(`https://eventos-valladolid-backendt.onrender.com/api/mensajes?dia_id=${d.day}&mes_id=${d.month}`)
             );
             const responses = await Promise.all(requests);
             const allEventos = responses.flatMap(r => r.data);
@@ -123,7 +123,7 @@ const ProgramarEvents = () => {
         const handleAlertClick = async () => {
         try {
             const res = await axios.get(
-            `http://localhost:3001/api/mensajes?dia_id=${today.getDate()}&mes_id=${today.getMonth() + 1}`
+            `https://eventos-valladolid-backendt.onrender.com/api/mensajes?dia_id=${today.getDate()}&mes_id=${today.getMonth() + 1}`
             );
             setEventosSeleccionados(res.data);
             setShowModal(true);

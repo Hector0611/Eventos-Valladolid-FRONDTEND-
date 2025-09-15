@@ -30,7 +30,7 @@ const Historia = () => {
   };
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/historia')
+    fetch('https://eventos-valladolid-backendt.onrender.com/api/historia')
       .then((response) => response.json())
       .then((data) => setHistoria(data))
       .catch((error) => console.error('Error al obtener los datos:', error));
@@ -67,7 +67,7 @@ const Historia = () => {
             <div key={index} className={`${className} ${fade ? 'fade-out' : 'fade-in'}`}>
               <img
                 className="historia-fondo-imagen"
-                src={`http://localhost:3001/${item.url_imagen}`}
+                src={`https://eventos-valladolid-backendt.onrender.com/${item.url_imagen}`}
                 alt={item.titulo}
               />
               <div className="historia-overlay">
@@ -92,7 +92,7 @@ const Historia = () => {
             <button className="close-button1" onClick={() => setShowModal(false)}>X</button>
             <h2 className="titulo">{selectedItem.titulo}</h2>
             <img
-              src={`http://localhost:3001/${selectedItem.url_imagen}`}
+              src={`https://eventos-valladolid-backendt.onrender.com/${selectedItem.url_imagen}`}
               alt={selectedItem.titulo}
               className="modal-image"
             />

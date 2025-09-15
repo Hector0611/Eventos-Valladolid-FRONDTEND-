@@ -12,7 +12,7 @@ const Cenotes = () => {
   };
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/cenotes')
+    fetch('https://eventos-valladolid-backendt.onrender.com/api/cenotes')
       .then((response) => response.json())
       .then((data) => {
         console.log("Cenotes recibidos:", data);
@@ -30,7 +30,7 @@ const Cenotes = () => {
           <div key={index} className="convento-card"> {/* 👈 misma tarjeta */}
             <img
               className="convento-imagen"
-              src={`http://localhost:3001${item.url_imagen}`}
+              src={`https://eventos-valladolid-backendt.onrender.com/${item.url_imagen}`}
               alt={item.titulo}
               onError={(e) => {
                 console.error("Error cargando imagen:", item.url_imagen);
@@ -60,7 +60,7 @@ const Cenotes = () => {
             </button>
             <h2 className="titulo">{selectedItem.titulo}</h2>
             <img
-              src={`http://localhost:3001${selectedItem.url_imagen}`}
+              src={`https://eventos-valladolid-backendt.onrender.com/${selectedItem.url_imagen}`}
               alt={selectedItem.titulo}
               className="modal-image"
             />

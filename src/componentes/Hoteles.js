@@ -47,14 +47,14 @@ const [hotelInfo, setHotelInfo] = useState(null);
 const [showInfoModal, setShowInfoModal] = useState(false);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/hoteles')
+    axios.get('https://eventos-valladolid-backendt.onrender.com/api/hoteles')
       .then(response => setHoteles(response.data))
       .catch(error => console.error('Error al cargar hoteles:', error));
   }, []);
 
   const fetchHotelInfo = async (idHotel) => {
   try {
-    const res = await axios.get('http://localhost:3001/api/hotsyrest_info');
+    const res = await axios.get('https://eventos-valladolid-backendt.onrender.com/api/hotsyrest_info');
     const match = res.data.find(item => item.id_hotel === idHotel);
     setHotelInfo(match);
     setShowInfoModal(true);
@@ -66,7 +66,7 @@ const [showInfoModal, setShowInfoModal] = useState(false);
 const [hotelInfoList, setHotelInfoList] = useState([]);
 
 useEffect(() => {
-  axios.get('http://localhost:3001/api/hotsyrest_info')
+  axios.get('https://eventos-valladolid-backendt.onrender.com/api/hotsyrest_info')
     .then(res => setHotelInfoList(res.data))
     .catch(err => console.error('Error al obtener info extendida:', err));
 }, []);
@@ -90,7 +90,7 @@ useEffect(() => {
             if (searchTerm) {
               setHoteles(hoteles.filter(hotel => hotel.hotel.toLowerCase().includes(searchTerm)));
             } else {
-              axios.get('http://localhost:3001/api/hoteles')
+              axios.get('https://eventos-valladolid-backendt.onrender.com/api/hoteles')
                 .then(response => setHoteles(response.data))
                 .catch(error => console.error('Error al cargar hoteles:', error));
             }
@@ -166,7 +166,7 @@ useEffect(() => {
           {hoteles.map(hotel => {
           const info = hotelInfoList.find(i => i.id_hotel === hotel.id);
           const imgUrl = info?.img_resyhts
-            ? `http://localhost:3001${info.img_resyhts}`
+            ? `https://eventos-valladolid-backendt.onrender.com/${info.img_resyhts}`
             : null; 
 
   return (
@@ -289,7 +289,7 @@ useEffect(() => {
               <button onClick={() => setShowInfoModal(false)} className="close-button1" >X</button>
               {hotelInfo.img_resyhts && (
                 <img
-                  src={`http://localhost:3001/${hotelInfo.img_resyhts}`}
+                  src={`https://eventos-valladolid-backendt.onrender.com/${hotelInfo.img_resyhts}`}
                   alt="Imagen del Hotel o Restaurante"
                   className="modal-image"
                 />

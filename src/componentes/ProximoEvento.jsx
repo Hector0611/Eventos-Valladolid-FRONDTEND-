@@ -18,13 +18,13 @@ const ProximoEvento = () => {
     const fechaActual = new Date();
 
     axios
-      .get("http://localhost:3001/api/meses")
+      .get("https://eventos-valladolid-backendt.onrender.com/api/meses")
       .then((response) => setMeses(response.data))
       .catch((error) => console.error("Error al cargar meses:", error));
 
     Promise.all(
       Array.from({ length: 12 }, (_, i) =>
-        axios.get(`http://localhost:3001/api/dias?mes_id=${i + 1}`)
+        axios.get(`https://eventos-valladolid-backendt.onrender.com/api/dias?mes_id=${i + 1}`)
       )
     )
       .then((responses) => {
@@ -100,7 +100,7 @@ const ProximoEvento = () => {
                         {evento.imagenes && evento.imagenes.length > 0 ? (
                             <img
                               className="imagen-fondo"
-                              src={`http://localhost:3001${evento.imagenes[0].imagen_url}`}
+                              src={`https://eventos-valladolid-backendt.onrender.com/${evento.imagenes[0].imagen_url}`}
                               alt={evento.evento}
                             />
                           ) : (

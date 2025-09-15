@@ -7,7 +7,7 @@ const Estadisticas = () => {
 
     useEffect(() => {
         // Llamar a la API para obtener la lista de PDFs
-        fetch('http://localhost:3001/api/estadisticas') // Cambia la URL según tu API
+        fetch('https://eventos-valladolid-backendt.onrender.com/api/estadisticas') // Cambia la URL según tu API
             .then(response => response.json())
             .then(data => setPdfs(data))
             .catch(error => console.error('Error al cargar los PDFs:', error));
@@ -23,7 +23,7 @@ const Estadisticas = () => {
                 <div key={pdf.id} style={{ marginBottom: '20px' }}>
                 
                     <iframe
-                        src={`http://localhost:3001/${pdf.ubicacion}`} // Cambia la URL base según tu servidor
+                        src={`https://eventos-valladolid-backendt.onrender.com/${pdf.ubicacion}`} // Cambia la URL base según tu servidor
                         title={`PDF-${pdf.id}`}
                         width="100%"
                         height="640px"

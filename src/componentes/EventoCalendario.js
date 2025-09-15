@@ -26,7 +26,7 @@ const EventoCalendario = () => {
 
     useEffect(() => {
         if (dia_id && mes_id) {
-            axios.get(`http://localhost:3001/api/mensajes?dia_id=${dia_id}&mes_id=${mes_id}`)
+            axios.get(`https://eventos-valladolid-backendt.onrender.com/api/mensajes?dia_id=${dia_id}&mes_id=${mes_id}`)
                 .then(response => setMensajes(response.data))
                 .catch(error => console.error('Error al cargar mensajes:', error));
         }
@@ -45,6 +45,9 @@ const EventoCalendario = () => {
     return (
         
         <div className="containerr">
+            <div className='Separacion'> 
+
+              </div>
             <h1>{mesNombre} {dia_id} Events</h1>
             {mensajes.length > 0 ? (
                 

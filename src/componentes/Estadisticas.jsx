@@ -15,8 +15,7 @@ const Estadisticas = () => {
 
     return (
         <div>
-            <div className='Separacion'> 
-
+            <div className='Separacion'>
             </div>
             
             {/* Lista de PDFs */}

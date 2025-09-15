@@ -34,12 +34,7 @@ const Header2 = () => {
                         className="logo-Yucatan"
                   
                   />
-                  <img
-                        src={logo2}
-                        alt={`Yucatan`}
-                        className="logo-Yucatan"
-                  
-                  />
+                 
                   <img
                         src={logo4}
                         alt={`Yucatan`}

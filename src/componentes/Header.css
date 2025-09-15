@@ -70,6 +70,24 @@
   animation: animate 20s linear infinite;
   
 }
+.botton1{
+  border-radius: 10%;
+  background-image: url('./Imagenes/Colores4.jpg');
+  border: transparent;
+  font-size: 1.9em;
+  padding: 9px 15px;
+  background-size: cover;
+  background-clip: text;
+  color: transparent;
+  animation: animate 20s linear infinite;
+}
+.botton1:hover {
+  box-shadow: 0 0px 5px rgb(244, 2, 2);
+}
+
+.barra{
+  font-size: 1.5em;
+}
 
 @keyframes animate {
   to {

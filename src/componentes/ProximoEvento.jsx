@@ -96,7 +96,7 @@ const ProximoEvento = () => {
                     >
                       <div className="evento-item">
                        
-                        
+                        {/* aqui debe mostrar la imagen */}
                         {evento.imagenes && evento.imagenes.length > 0 ? (
                             <img
                               className="imagen-fondo"

@@ -65,10 +65,10 @@ const Footer = () => {
                 <img
                         src={logo2}
                         alt={`Yucatan`}
-                        className="logo-Yucatan"
+                        className="logo-Yucatan1"
                   
                   />
-                  <img
+                  {/* <img
                         src={logo4}
                         alt={`Yucatan`}
                         className="logo-Yucatan"
@@ -79,7 +79,7 @@ const Footer = () => {
                         alt={`Yucatan`}
                         className="logo-Yucatan"
                   
-                  />
+                  /> */}
                   </div>
             </div>
             

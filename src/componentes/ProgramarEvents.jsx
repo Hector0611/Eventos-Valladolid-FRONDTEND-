@@ -191,7 +191,7 @@ const ProgramarEvents = () => {
                                 onKeyDown={(e) => e.key === "Enter" && buscarEventosRango()}
                                 />
                                 <button className="fecha-boton" onClick={buscarEventosRango}>
-                                Buscar eventos
+                                Search events
                                 </button>
                             </div>
                             <hr />

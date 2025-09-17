@@ -11,8 +11,6 @@ import Logo1 from './Imagenes/Iglesia.jpg';
 import Logo2 from './Imagenes/cenotezaki.jpg';
 import Logo3 from './Imagenes/fondo.gif';
 
-
-
 const ProgramarEvents = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const images = [Logo1, Logo2, Logo3];
@@ -30,26 +28,65 @@ const ProgramarEvents = () => {
     const [showMessage, setShowMessage] = useState(true);
     const [showModal, setShowModal] = useState(false);
 
-    useEffect(() => {
-        setRotation(selectedMonth * 30);
-    }, [selectedMonth]);
-
+    useEffect(() => setRotation(selectedMonth * 30), [selectedMonth]);
     useEffect(() => {
         const timer = setTimeout(() => setShowMessage(false), 3000);
         return () => clearTimeout(timer);
     }, []);
 
-    const handleMonthClick = (index) => setSelectedMonth(index);
-
     const [monthsData, setMonths] = useState([]);
     const [days, setDays] = useState([]);
-    const [selectedDays, setSelectedDays] = useState([]);
     const [eventosSeleccionados, setEventosSeleccionados] = useState([]);
     const [currentYear] = useState(new Date().getFullYear());
     const today = new Date();
     const navigate = useNavigate();
 
-    const irAHoteles = () => navigate('/hoteles');
+    // NUEVO: Fechas seleccionadas para estancia
+    const [fechaInicio, setFechaInicio] = useState("");
+    const [fechaFin, setFechaFin] = useState("");
+
+   const buscarEventosRango = async () => {
+  if (!fechaInicio || !fechaFin) {
+    alert("Por favor selecciona ambas fechas");
+    return;
+  }
+
+  try {
+    let allEventos = [];
+
+    // Desestructuramos en AAAA-MM-DD
+    const [anioI, mesI, diaI] = fechaInicio.split("-").map(Number);
+    const [anioF, mesF, diaF] = fechaFin.split("-").map(Number);
+
+    // Variables de control
+    let dia = diaI;
+    let mes = mesI;
+
+    console.log("Rango inicial:", diaI, mesI, " → ", diaF, mesF);
+
+    while (mes < mesF || (mes === mesF && dia <= diaF)) {
+      const res = await axios.get(
+        `https://eventos-valladolid-backendt.onrender.com/api/mensajes?dia_id=${dia}&mes_id=${mes}`
+      );
+
+      allEventos = [...allEventos, ...res.data];
+
+      // Avanzar día
+      dia++;
+      if (dia > 31) {
+        dia = 1;
+        mes++;
+      }
+    }
+
+    setEventosSeleccionados(allEventos);
+    setShowModal(true);
+  } catch (error) {
+    console.error("Error al buscar eventos en rango:", error);
+  }
+};
+
+
 
     useEffect(() => {
         axios.get('https://eventos-valladolid-backendt.onrender.com/api/meses')
@@ -87,101 +124,77 @@ const ProgramarEvents = () => {
         today.getFullYear() === currentYear
     );
 
-    const handleDaySelection = async (day) => {
-        const isSelected = selectedDays.some(d => d.day === day && d.month === selectedMonth + 1);
-        const updatedDays = isSelected
-            ? selectedDays.filter(d => !(d.day === day && d.month === selectedMonth + 1))
-            : [...selectedDays, { day, month: selectedMonth + 1 }];
-        setSelectedDays(updatedDays);
-
-        try {
-            const requests = updatedDays.map(d =>
-                axios.get(`https://eventos-valladolid-backendt.onrender.com/api/mensajes?dia_id=${d.day}&mes_id=${d.month}`)
-            );
-            const responses = await Promise.all(requests);
-            const allEventos = responses.flatMap(r => r.data);
-            setEventosSeleccionados(allEventos);
-        } catch (error) {
-            console.error('Error al cargar eventos:', error);
-        }
-    };
-
-    const isSelected = (day) =>
-        selectedDays.some(d => d.day === day && d.month === selectedMonth + 1);
-
-    // --- dentro de ProgramarEvents.jsx --- 
-
-        const [alertExpanded, setAlertExpanded] = useState(true); // al entrar aparece expandido
-        const [alertHover, setAlertHover] = useState(false);
-
-        useEffect(() => {
-        const timer = setTimeout(() => setAlertExpanded(false), 7000); // a los 7s se compacta
-        return () => clearTimeout(timer);
-        }, []);
-
-        // Función para abrir el modal directo con los eventos de HOY
-        const handleAlertClick = async () => {
+    // NUEVO: Al hacer click en un día → ver eventos de ese día
+    const handleDayClick = async (day) => {
         try {
             const res = await axios.get(
-            `https://eventos-valladolid-backendt.onrender.com/api/mensajes?dia_id=${today.getDate()}&mes_id=${today.getMonth() + 1}`
+                `https://eventos-valladolid-backendt.onrender.com/api/mensajes?dia_id=${day}&mes_id=${selectedMonth + 1}`
             );
             setEventosSeleccionados(res.data);
             setShowModal(true);
         } catch (error) {
-            console.error("Error cargando eventos de hoy:", error);
+            console.error("Error cargando eventos:", error);
         }
-        };
+    };
 
+    
 
     return (
         <div className='programar-events'>
-            {/* Donde LLEVA */}
-              <div className='Separacion'> 
-
-              </div>
+            <div className='Separacion'> 
+            
+                          </div>
             <div className='caja3'>
                 <h1 className='titel1'>See the Event Programs During Your Stay in Valladolid</h1>
 
+                
+
+
                 <div className="container1">
                     <div className="left">
-                    <div className='Separacion1'> 
-                    
-                                  </div>
-                        <h3 className="nombrefecha1">Choose Month</h3>
-
-                        <p className='textevento1'>Select the month to see the events</p>
+                       
+                        <br />
                         
+                      <h3 className="nombrefecha1">Choose Month</h3>
+                        <hr />
                         <div className="circular-menu">
                             <div className="center-circle"></div>
-                            {showMessage && (
-                                <div className="message" >
-                                    Mes actual
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" className="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
-                                        <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
-                                    </svg>
-                                </div>
-                            )}
+                            {showMessage && <div className="message">Mes actual</div>}
                             <div className="outer-circle" style={{ transform: `rotate(${rotation}deg)` }}>
                                 {months.map((month, index) => (
                                     <div
                                         key={index}
                                         className={`month ${selectedMonth === index ? 'selected' : ''}`}
-                                        onClick={() => handleMonthClick(index)}
-                                        title="Haz clic apra seleccionar el mes"
+                                        onClick={() => setSelectedMonth(index)}
                                     >
                                         <span>{month}</span>
                                     </div>
                                 ))}
                             </div>
                         </div>
-                        <div style={{ textAlign: 'center', marginTop: '20px' }}>
-                                            <button
-                                                onClick={() => setShowModal(true)}
-                                                className="boton-ver-eventos"
-                                            >
-                                                View events 
-                                            </button>
-                                        </div>
+                        <hr />
+                        {/* NUEVO: Espacio debajo del título */}
+                            <h1 className="fecha-texto">Select the days you will be in Valladolid</h1>
+                
+                            <div className="fecha-inputs">
+                                
+                                <input 
+                                type="date" 
+                                value={fechaInicio} 
+                                onChange={(e) => setFechaInicio(e.target.value)} 
+                                />
+                                <span className="fecha-separador"> to </span>
+                                <input 
+                                type="date" 
+                                value={fechaFin} 
+                                onChange={(e) => setFechaFin(e.target.value)} 
+                                onKeyDown={(e) => e.key === "Enter" && buscarEventosRango()}
+                                />
+                                <button className="fecha-boton" onClick={buscarEventosRango}>
+                                Buscar eventos
+                                </button>
+                            </div>
+                            <hr />
                     </div>
 
                     <div className="right">
@@ -190,8 +203,11 @@ const ProgramarEvents = () => {
                                 <h1 className="calendar1">
                                     Calendar {monthsData[selectedMonth]?.nombre} {currentYear}
                                 </h1>
-                                <p className='textcalendar'>Select the days you will be in Valladolid</p>
+                                <hr />
                             </center>
+                            
+    
+            <br />
 
                             <table className="calendar-table">
                                 <thead>
@@ -208,20 +224,15 @@ const ProgramarEvents = () => {
                                                 return (
                                                     <td
                                                         key={index}
-                                                        className={`day ${hasEvent ? 'day-with-event' : ''} ${isToday(day) ? 'today' : ''} ${isSelected(day) ? 'selected1' : ''}`}
-                                                        onClick={day ? () => handleDaySelection(day) : null}
-                                                        title="Haz clic para seleccionar el día"
+                                                        className={`day ${hasEvent ? 'day-with-event' : ''} ${isToday(day) ? 'today' : ''}`}
+                                                        onClick={day ? () => handleDayClick(day) : null}
                                                     >
                                                         {day ? (
                                                             <>
                                                                 <div>{day}</div>
-                                                                {hasEvent && (
-                                                                    <div className="message-popup">{hasEvent}</div>
-                                                                )}
+                                                                {hasEvent && <div className="message-popup">{hasEvent}</div>}
                                                             </>
-                                                        ) : (
-                                                            <div className="empty-day"></div>
-                                                        )}
+                                                        ) : <div className="empty-day"></div>}
                                                     </td>
                                                 );
                                             })}
@@ -230,37 +241,11 @@ const ProgramarEvents = () => {
                                 </tbody>
                             </table>
                         </div>
-                        
                     </div>
-
                 </div>
-                
-                       {/*  {eventosSeleccionados.length > 0 && (
-                                            <div style={{ textAlign: 'center', marginTop: '20px' }}>
-                                                <button
-                                                    onClick={() => setShowModal(true)}
-                                                    className="boton-ver-eventos"
-                                                >
-                                                    Ver eventos 
-                                                </button>
-                                            </div>
-                                        )} */}
-             
             </div>
-            {/* aqui los cambios ya mensionados  */}
-            <div
-                    className={`AlertEvents-botton ${alertExpanded || alertHover ? 'expanded' : 'collapsed'}`}
-                    onMouseEnter={() => setAlertHover(true)}
-                    onMouseLeave={() => setAlertHover(false)}
-                    onClick={handleAlertClick}
-                    >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" className='AlertEvents' viewBox="0 0 16 16">
-                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5m9.954 3H2.545c-.3 0-.545.224-.545.5v1c0 .276.244.5.545.5h10.91c.3 0 .545-.224.545-.5v-1c0-.276-.244-.5-.546-.5m-2.6 5.854a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
-                    </svg>
-                    <span className="alert-text">See Today's Events</span>
-                </div>
 
-
+            {/* MODAL DE EVENTOS */}
             {showModal && (
   <div className="modal-overlay">
     <div className="modal-content"> 
@@ -310,7 +295,7 @@ const ProgramarEvents = () => {
                 <div className="">
             
                     
-                    <p className="texto-pre"> <h3 className='titel1'></h3>{evento.descripcion} <h3 className='titel1'></h3></p>
+                    <div className="texto-pre"> <h3 className='titel1'></h3>{evento.descripcion} <h3 className='titel1'></h3></div>
             
                 </div>
                 <br />
@@ -323,7 +308,6 @@ const ProgramarEvents = () => {
     </div>
   </div>
 )}
-
         </div>
     );
 };

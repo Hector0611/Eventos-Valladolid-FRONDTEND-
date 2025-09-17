@@ -15,7 +15,7 @@ const Cenotes = () => {
     fetch('https://eventos-valladolid-backendt.onrender.com/api/cenotes')
       .then((response) => response.json())
       .then((data) => {
-        console.log("Cenotes recibidos:", data);
+        /* console.log("Cenotes recibidos:", data); */
         setCenotes(data);
       })
       .catch((error) => console.error('Error al obtener los datos:', error));

@@ -320,3 +320,69 @@
 
 }
 
+.fecha-rango {
+  margin: 25px auto;
+  text-align: center;
+  padding: 20px;
+  background: #f9fafc;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  max-width: 600px;
+}
+
+.fecha-texto {
+  font-size: 1.6rem;
+  font-weight: 6;
+  margin-bottom: 15px;
+  color: #0a0a0a;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font: bold;
+}
+
+.fecha-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.fecha-inputs input[type="date"] {
+  padding: 5px 15px;
+  border: 3px solid #ccc;
+  border-radius: 20px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s ease;
+  background-color: transparent;
+}
+
+.fecha-inputs input[type="date"]:focus {
+  border: 1px solid #007bff;
+  box-shadow: 0px 0px 6px rgba(0,123,255,0.3);
+}
+
+.fecha-separador {
+  font-size: 1rem;
+  font-weight: 6;
+  color: #000000;
+}
+
+.fecha-boton {
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #007bff, #0056d8);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 6;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.fecha-boton:hover {
+  background: linear-gradient(135deg, #0056d8, #003c9d);
+  transform: translateY(-2px);
+}
+
+

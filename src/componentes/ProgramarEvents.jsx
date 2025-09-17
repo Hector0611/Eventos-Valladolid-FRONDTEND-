@@ -259,8 +259,8 @@ const ProgramarEvents = () => {
         </div>
       ) : (
         eventosSeleccionados.map((evento) => (
-          <div key={evento.id} className="evento-info">
-            <div className="caja"> 
+          <div key={evento.id} className="evento-if">
+            <div className="caj"> 
                 <br />
                 <h1 className='titel1'>Events: {evento.titulo}</h1>
                 <h3 className='titel1'>{evento.mensaje}</h3>

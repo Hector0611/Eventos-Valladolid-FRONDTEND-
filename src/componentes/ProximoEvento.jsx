@@ -70,9 +70,9 @@ const ProximoEvento = () => {
 
   return (
     <div>
-      <h2 className="eventtitel2">Proximos Eventos</h2>
-    <div className="proximos-eventos-container">
       
+    <div className="proximos-eventos-container">
+      <h2 className="eventtitel2">Upcoming Events</h2>
       {eventos.length > 0 ? (
         <>
           <div className="eventos-tira">
@@ -81,8 +81,8 @@ const ProximoEvento = () => {
             {eventosVisibles.map((evento, index) => {
                 const mes = meses.find((m) => m.id === evento.mes_id)?.nombre || "";
                 return (
-                  <div key={`${evento.dia}-${evento.mes_id}`}> {/* key única aquí */}
-                  <div className="evento-overlay">
+                  <div key={`${evento.dia}-${evento.mes_id}`} className="transparent"> {/* key única aquí */}
+                  
                     <button
                       className="ver-detalle-boton"
                       onClick={() => handleEventClick(evento.dia, evento.mes_id)}
@@ -105,7 +105,7 @@ const ProximoEvento = () => {
                         </div>
                       </div>
                     </button>
-                    </div>
+                    
                   </div>
                 );
               })}

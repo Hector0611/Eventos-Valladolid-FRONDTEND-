@@ -1,146 +1,147 @@
+/* Contenedor principal de próximos eventos */
 .proximos-eventos-container {
-  background: linear-gradient(to right, #050505, #05ed2f90);
-  padding: 1rem;
-  border-radius: 10px;
+  background: linear-gradient(135deg, #0b0b0b, #05ed2f20);
+  padding: 1.5rem;
+  border-radius: 15px;
   max-width: 100%;
   margin: auto;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  overflow-x: hidden;
 }
 
-.imagen-3d-avanzada{
-  display: relative;
-  width: 80%;
-  height: 60%;
-  border-radius: 1px;
-  box-shadow: 0 1px 12px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-  margin: 0 auto;
-  display: block;
-  margin-bottom: 0rem;
-  object-fit: cover;
-  cursor: pointer;
-  border-radius: 10%;
-
-}
-
+/* Título */
 .eventtitel2 {
   color: #ffffff;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  text-shadow: 1px 1px 2px #000;
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
 }
 
+.ver-detalle-boton{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+/* Contenedor de la tira de eventos */
 .eventos-tira {
   display: flex;
   gap: 15px;
   overflow-x: auto;
-  padding: 10px;
-  justify-content: center;
+  padding: 10px 8px;
+  scroll-padding-left: 8px;
+  scroll-snap-type: x mandatory; /* hace que los eventos se alineen al hacer scroll */
   scrollbar-width: thin;
+  background-color: transparent;
 }
 
+/* Cada evento */
 .evento-item {
-  background: linear-gradient(to right, #050505, #05ed2f90);
-  border-radius: 12px;
-  padding: 1rem;
-  width: 210px;
-  height: 150px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  background: linear-gradient(145deg, #111111, #05ed2f20);
+  border-radius: 15px;
+  padding: 0.5rem;
+  width: 75vw;
+  max-width: 260px;
+  height: auto;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
   font-family: 'Segoe UI', sans-serif;
   font-size: 1rem;
-  color: #333;
+  color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  transition: transform 0.3s ease;
+  justify-content: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+  scroll-snap-align: start; /* cada evento se alinea al iniciar el scroll */
+  position: relative;
+  cursor: pointer;
 }
 
 .evento-item:hover {
   transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
-.ver-detalle-boton {
-  border: none;
-  background: transparent;
-  padding: 0;
+/* Imagen de fondo */
+.imagen-fondo {
   width: 100%;
-  cursor: pointer;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  filter: brightness(0.5);
+  transition: transform 0.3s ease;
 }
 
-.navegacion-eventos {
-  background: linear-gradient(to right, #0505053d, #05ed2f47);
+.evento-item:hover .imagen-fondo {
+  transform: scale(1.03);
+}
+
+/* Contenido sobre la imagen */
+.contenido-sobre-imagen {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 10px;
   color: white;
-  border: none;
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
+  width: calc(100% - 20px);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.contenido-sobre-imagen h5 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Navegación y botones */
+.navegacion-eventos {
+  width: 40px;
+  height: 40px;
   font-size: 1rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+  color: #fff;
+  border: none;
+  margin: 0 5px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s ease, transform 0.3s ease;
+  border-radius: 50%;
+  background: rgba(5, 237, 47, 0.3);
 }
 
 .navegacion-eventos:hover {
-  background-color: #59d400;
+  background: rgba(5, 237, 47, 0.7);
   transform: scale(1.1);
 }
 
 .navegacion-eventos:disabled {
-  background-color: #888;
+  background-color: #88888800;
   cursor: not-allowed;
 }
 
+/* Responsive para pantallas muy pequeñas */
+@media screen and (max-width: 600px) {
+  .eventtitel2 {
+    font-size: 1.8rem;
+  }
 
-/* para hacer imagen fondo */
-.evento-overlay {
-  position: relative;
-  width: 10%;
-  height: auto;
-}
+  .evento-item {
+    width: 85vw;
+    height: auto;
+    padding: 0.7rem;
+  }
 
-.imagen-fondo {
-  width: 10%;
-  height: 10px;
-  object-fit: cover;
-  filter: brightness(0.5); /* oscurece para que el texto resalte */
-}
+  .imagen-fondo {
+    height: 140px;
+  }
 
-.contenido-sobre-imagen {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 20px;
-  color: white;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.NEvent{
-  font-size: 24px;
-  font-weight:lighter;
-  margin-bottom: 10px;
-  text-shadow: 1px 1px 2px #000;
-  text-align: center;
-}
-
-.navegacion-eventos {
-  width: 45px;
-  height: 150px;
-  font-size: 1.2rem;
-  transition: background 0.3s ease, transform 0.3s ease;
-  color: rgb(255, 247, 247);
-  border: none;
-  margin: 0 10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10%;
+  .contenido-sobre-imagen h5 {
+    font-size: 1rem;
+  }
 }

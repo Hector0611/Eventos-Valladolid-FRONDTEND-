@@ -99,7 +99,7 @@ const EventoCalendario = () => {
                         <button className="bottonEvent" onClick={irAHoteles}>Buscar hoteles</button>
                         <br></br>
                         <br></br>
-                        <p>{mensaje.descripcion}</p>
+                        <p dangerouslySetInnerHTML={{ __html: mensaje.descripcion }}></p>
                         <br></br>
                         <h1>-------------------------------------------------------------------------------</h1>
                         <br></br>

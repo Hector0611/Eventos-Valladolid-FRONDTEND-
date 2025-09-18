@@ -295,7 +295,12 @@ const ProgramarEvents = () => {
                 <div className="">
             
                     
-                    <div className="texto-pre"> <h3 className='titel1'></h3>{evento.descripcion} <h3 className='titel1'></h3></div>
+                    <div className="texto-pre">
+                    
+                        <div dangerouslySetInnerHTML={{ __html: evento.descripcion }}></div>
+                      
+                    </div>
+
             
                 </div>
                 <br />

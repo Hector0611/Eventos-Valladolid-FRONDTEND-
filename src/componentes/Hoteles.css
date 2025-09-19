@@ -30,12 +30,14 @@
 
 .modal-content {
   background: #fff;
-  padding: 30px;
-  width: 80%;
-  max-width: 500px;
-  border-radius: 10px;
+  padding: 24px;
+  width: 85%;
+  max-width: 600px; /* un poco más grande */
+  border-radius: 12px;
   position: relative;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
 }
+
 
 .titel5 {
   text-align: center;
@@ -135,15 +137,23 @@
     transition: background 0.3s;
     border-radius: 5%;
 }
-.list-item{
-    height: 160px;
-    margin-bottom: 0px;
-    background-color: #1a3c0d32;
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+.list-item {
+  height: auto; /* quita altura fija */
+  margin-bottom: 16px; /* más espacio entre items */
+  background-color: #1a3c0d32;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.list-item:hover {
+  background-color: #234c1a;
+  box-shadow: 0 4px 16px rgba(255, 5, 1, 0.6);
+  transform: translateY(-3px);
+}
+
 
 .hotel-list li:hover {
     background-color: #234c1a;
@@ -182,6 +192,7 @@
     position: relative;
     height: 650px;
     width: 80%;
+    background-color: transparent;
     
 }
 
@@ -206,6 +217,18 @@
 }
 .hotel-info.open {
     right: 0; /* Mostrar el panel al lado del mapa */
+}
+
+.hotel-info.open button,
+.hotel-info.open a {
+  display: inline-block;
+  margin-right: 12px; /* separación horizontal */
+  margin-top: 10px;
+}
+
+.hotel-info.open button:last-child,
+.hotel-info.open a:last-child {
+  margin-right: 0;
 }
 
 .close-button {
@@ -280,9 +303,34 @@
 
 .modal-image1 {
   width: auto;
-  height: 40px;
+  height: 90px;
   object-fit: cover;
   border-radius: 8px;
+}
+
+.tooltip-text{
+  font-size: 14px;
+  color: #fff;
+  background-color: rgba(255, 0, 0, 0.7);
+  padding: 6px 10px;
+  border-radius: 4px;
+  position: block;
+  z-index: 90;
+  white-space: nowrap;
+}
+
+.tooltip-container{ 
+  position: relative;
+  display: inline-block;
+  background-color: rgba(231, 27, 27, 0);
+  border-color: transparent;
+}
+.custom-tooltip{  
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: transparent;
+  border: none;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0);
 }
 /* conenido nuevo */
 
@@ -372,14 +420,15 @@
 }
 
 .search-input1 {
-  width: 70%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-  box-sizing: border-box;
-  margin-bottom: 20px;
+  width: 90%;
+  padding: 12px;
+  margin: 16px auto;
+  display: block;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  font-size: 15px;
 }
+
 
 /* Estilos para móviles */
 @media (max-width: 768px) {

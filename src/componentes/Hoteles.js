@@ -189,6 +189,7 @@ useEffect(() => {
       offset={[0, -40]}
       opacity={1}
       permanent={selectedHotel?.id === hotel.id}
+      className='custom-tooltip'
     >
       <div
         className="tooltip-container"

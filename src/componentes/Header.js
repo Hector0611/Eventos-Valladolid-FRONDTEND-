@@ -44,6 +44,7 @@ const Header = () => {
                 <button className="botton" onClick={() => navigateTo('/programarevents')}>Events</button>
                 <button className="botton" onClick={() => navigateTo('/LugaresTuristicos')}>Valladolid</button>
                 <button className="botton" onClick={() => navigateTo('/hoteles')}>Maps</button>
+                <button className="botton" onClick={() => navigateTo('/estadisticas')}>Revista, Rutas</button>
                 {/* <button className="botton" onClick={togglePopup}>Saber más?</button> */}
 
                 <div 
@@ -59,9 +60,9 @@ const Header = () => {
                         <div className="popup-content">
                             <h2>Más Información</h2>
                             <ul className="popup-links">
-                            <li><button onClick={() => navigateTo('/historia')}>Rutas De Valladolid</button></li>
+                            {/* <li><button onClick={() => navigateTo('/historia')}>Rutas De Valladolid</button></li> */}
                             <li><button onClick={() => navigateTo('/catalogo')}>Catálogos del Turístico</button></li>
-                            <li><button onClick={() => navigateTo('/estadisticas')}>Estadísticas de Valladolid</button></li>
+                            {/* <li><button onClick={() => navigateTo('/estadisticas')}>Estadísticas de Valladolid</button></li> */}
                             </ul>
                             <hr />
                             <h3>Siguenos En</h3>

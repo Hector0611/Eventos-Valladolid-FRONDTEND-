@@ -107,16 +107,16 @@
 }
 
 .div_one1 {
-    background-color: rgba(0, 235, 20, 0.179);
+    background-color: rgba(26, 27, 26, 0.673);
    border-radius: 5%;
 }
 
 .hotel-list {
     width: 530px;
     padding: 20px;
-    background-color: #0e0d0dd5;
-    border-right: 1px solid #ddd;
-    border-radius: 20%;
+    background-color: #0c300fa7;
+    border-right: 1px solid #000000;
+    border-radius: 15px;
 }
 
 .hotel-list ul {
@@ -185,11 +185,11 @@
     
 }
 
-.hotel-info {
+.hotel-info.open {
     position: absolute;
     top: 0;
-    right: -350px; /* Inicialmente oculto */
-    width: 365px;
+    right: -380px; /* Inicialmente oculto */
+    width: 415px;
     height: 100%;
     background-color: #053307d4;
     padding: 28px;
@@ -200,7 +200,7 @@
 }
 
 .hotel-info h2 {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 10px;
     color: #fff;
 }
@@ -220,12 +220,29 @@
     border-radius: 3px;
 }
 
+.close-button5 {
+    background-color: #ff4d4d;
+    left: 87%;
+    border: none;
+    color: white;
+    padding: 8px 13px;
+    font-size: 14px;
+    cursor: pointer;
+    float: right;
+    border-radius: 50%;
+     height: fit-content;
+    width: fit-content;
+    position: absolute;
+    top: 10px;
+    
+}
+
 .close-button1 {
     background-color: #ff4d4d;
     border: none;
     color: white;
-    padding: 8px 20px;
-    font-size: 10px;
+    padding: 8px 15px;
+    font-size: 16px;
     cursor: pointer;
     float: right;
     border-radius: 3px;

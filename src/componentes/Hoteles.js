@@ -152,9 +152,11 @@ useEffect(() => {
         </ul>
 
 
+
         </div>
         
       </aside>
+  
 
 
       <div className="map-wrapper">
@@ -235,37 +237,13 @@ useEffect(() => {
       {selectedHotel && (
         <div className="div_on">
           <div className="hotel-info open">
-            <button onClick={() => setSelectedHotel(null)} className="close-button">X</button>
+            <button onClick={() => setSelectedHotel(null)} className="close-button5">X</button>
             <h4 className="titel5">{selectedHotel.hotel}</h4>
             <p className="content4">{selectedHotel.descripcion}</p>
             <p className="content4">Location: {selectedHotel.localizacion}</p>
             <p className="content4">Website: {selectedHotel.web_hotel}</p>
             <p className="content4">Phone: {selectedHotel.telefono}</p>
             <p className="content4">Open: {selectedHotel.horario_abi} - Close: {selectedHotel.horario_cer}</p>
-
-            {/* aqui hacer el nuevo botton la nueva modal para la informacion con base ala api http://localhost:3001/api/hotsyrest_info
-            [
-  {
-    "id_hotsyrest_info": 1,
-    "id_hotel": 1,
-    "nombre": "The Blue Eco Lodge",
-    "descripcion": "nose",
-    "calle": "calle centro ",
-    "numerotelf": "985 213 32 43",
-    "video": "https://www.youtube.com/watch?v=lZS7tatdJJw",
-    "img_resyhts": "/imagen/1752162654335-690964196.gif"
-  },
-  {
-    "id_hotsyrest_info": 2,
-    "id_hotel": 3,
-    "nombre": "Maria de la luz",
-    "descripcion": "algo ",
-    "calle": "calle centro ",
-    "numerotelf": "985 213 32 43",
-    "video": "https://www.youtube.com/watch?v=xzlYXZdVKhY",
-    "img_resyhts": "/imagen/1752163989228-507198779.gif"
-  }
-] */}
             <button onClick={() => fetchHotelInfo(selectedHotel.id)} className="info-button" >
               See more information
             </button>

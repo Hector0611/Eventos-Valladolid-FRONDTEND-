@@ -48,12 +48,13 @@ const EventoCalendario = () => {
             <div className='Separacion'> 
 
               </div>
-            <h1>{mesNombre} {dia_id} Events</h1>
+            <h1 className='titel1'>Events of {mesNombre} {dia_id}, 2025 </h1>
             {mensajes.length > 0 ? (
                 
                 mensajes.map(mensaje => (
                     
                     <div key={mensaje.id} className="event-detail">
+                        <h2>{mensaje.titulo}</h2>
                         <p>{mensaje.mensaje}</p>
 
                         <div className="content-wrapper">
@@ -62,7 +63,7 @@ const EventoCalendario = () => {
                                     <div className="video-containe">
                                         <iframe
                                             width="100%"
-                                            height="360px"
+                                            height="460px"
                                             src={`${mensaje.video.replace("watch?v=", "embed/")}?autoplay=1`}
                                             title="Video de evento"
                                             frameBorder="0"
@@ -87,27 +88,34 @@ const EventoCalendario = () => {
                                 )}
                             </center>
                         </div>
-                        <button className="bottonEvent" onClick={toggleVideoMap}>
-                            {showVideo ? "Cómo llegar?" : "Regresar al video"}
-                        </button>
-                        {/* <button 
-                            className="bottonEvent" 
-                            onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${latitud},${longitud}`, "_blank")}
-                        >
-                            Indicaciones para llegar
-                        </button> */}
-                        <button className="bottonEvent" onClick={irAHoteles}>Buscar hoteles</button>
                         <br></br>
+                        <button 
+                            className="boton-ver-eventos btn-separado"
+                            onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${mensaje.latitud},${mensaje.longitud}`, "_blank")}
+                            >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" className="currentColor123" viewBox="0 0 16 16">
+                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                            </svg> 
+                            Go to Event Location   
+                            </button>
+
+                        <button className="boton-ver-eventos">Buscar hoteles</button>
+
+                      
                         <br></br>
-                        <p dangerouslySetInnerHTML={{ __html: mensaje.descripcion }}></p>
-                        <br></br>
-                        <h1>-------------------------------------------------------------------------------</h1>
+                        <div dangerouslySetInnerHTML={{ __html: mensaje.descripcion }} className='textoedicion'> 
+                     
+                        </div>
+                    
+                        <h1>---------------------------------------------------------------------------------------</h1>
                         <br></br>
                     </div>
+                    
                 ))
             ) : (
                 <p>No hay eventos disponibles para este día.</p>
             )}
+            
         </div>
     );
 };

@@ -21,14 +21,18 @@ const Estadisticas = () => {
             {/* Lista de PDFs */}
             {pdfs.map(pdf => (
                 <div key={pdf.id} style={{ marginBottom: '20px' }}>
+
+                    <h2 className='titel1' style={{ textAlign: 'center' }}>{pdf.titulo}</h2>
                 
                     <iframe
-                        src={`https://eventos-valladolid-backendt.onrender.com/${pdf.ubicacion}`} // Cambia la URL base según tu servidor
+                        src={`https://eventos-valladolid-backendt.onrender.com/${pdf.ubicacion}#zoom=page-fit`}
                         title={`PDF-${pdf.id}`}
-                        width="100%"
-                        height="640px"
-                        style={{ border: '1px solid #ccc', borderRadius: '8px' }}
+                        width="80%"
+                        height="600px"
+                        style={{ border: "1px solid #ccc", borderRadius: "8px" }}
                     ></iframe>
+
+
                 </div>
             ))}
         </div>

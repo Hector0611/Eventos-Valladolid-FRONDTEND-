@@ -1,8 +1,10 @@
 /* =================== CONTENEDORES =================== */
 .historia-container {
-  width: 80%;
+  width: 90%;
   text-align: center;
   padding: 10px;
+  border-radius: 10%;
+
 }
 
 .historia-grid {
@@ -13,7 +15,7 @@
   align-items: center;
   margin: 0 auto;
   padding: 0px;
-  max-width: 700px;
+  max-width: 200px;
   transition: transform 1s ease;
   transform: rotateY(1deg);
   transform-style: preserve-3d;
@@ -37,18 +39,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  perspective: 1000px;
+  perspective: 100px;
   margin-top: 20px;
-  margin-bottom: 40px;
-  
-  border-radius: 100px;
+  margin-bottom: 60px;
+  border-radius: 10%;
 
 }
 
 .historia-item {
   position: absolute;
   width: 900px;
-  height: 800px;
+  height: 550px;
   transition: all 1s ease;
   opacity: 0;
   transform: scale(0.8);
@@ -111,8 +112,8 @@
   object-fit: cover;
   filter: brightness(1);
   z-index: 1;
-  border-radius: 50%;
-  box-shadow: 0 0px 20px rgb(30, 2, 244);
+  border-radius: 10%;
+  box-shadow: 0 0px 20px rgb(26, 244, 2);
 }
 
 .historia-overlay {
@@ -121,7 +122,7 @@
   left: 0;
   width: 100%;
   color: white;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0), transparent);
+  background: linear-gradient(to top, rgba(16, 238, 45, 0), transparent);
   padding: 0px;
  
   z-index: 2;
@@ -167,7 +168,7 @@
 .historia-link {
   margin-top: 10px;
   padding: 8px 16px;
-  background-color: #00aa99;
+  background-color: #025409;
   color: white;
   border: none;
   border-radius: 5px;
@@ -178,7 +179,7 @@
   display: inline-block;
   transition: background-color 0.3s ease;
   margin-bottom: 20px;
-  box-shadow: 0 0px 10px rgb(30, 2, 244);
+  box-shadow: 0 0px 10px rgb(192, 244, 2);
   /* tamaño del boton  */
   font-size: 1em;
   width: 200px;
@@ -387,7 +388,7 @@
 }
 
 .historia-link {
-  background: #25D366;
+  background: #02821c;
   border: none;
   padding: 8px 12px;
   color: white;

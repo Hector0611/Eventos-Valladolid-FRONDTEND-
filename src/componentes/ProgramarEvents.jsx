@@ -146,34 +146,15 @@ const ProgramarEvents = () => {
                           </div>
             <div className='caja3'>
                 <h1 className='titel1'>See the Event Programs During Your Stay in Valladolid</h1>
-
-                
-
-
+                <hr />
                 <div className="container1">
                     <div className="left">
                        
                         <br />
                         
                       <h3 className="nombrefecha1">Choose Month</h3>
-                        <hr />
-                        <div className="circular-menu">
-                            <div className="center-circle"></div>
-                            {showMessage && <div className="message">Mes actual</div>}
-                            <div className="outer-circle" style={{ transform: `rotate(${rotation}deg)` }}>
-                                {months.map((month, index) => (
-                                    <div
-                                        key={index}
-                                        className={`month ${selectedMonth === index ? 'selected' : ''}`}
-                                        onClick={() => setSelectedMonth(index)}
-                                    >
-                                        <span>{month}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                        <hr />
-                        {/* NUEVO: Espacio debajo del título */}
+                      {/* NUEVO: Espacio debajo del título */}
+                      <hr />
                             <h1 className="fecha-texto">Select the days you will be in Valladolid</h1>
                 
                             <div className="fecha-inputs">
@@ -194,14 +175,32 @@ const ProgramarEvents = () => {
                                 Search events
                                 </button>
                             </div>
-                            <hr />
+                        <hr />
+                        <div className="circular-menu">
+                            <div className="center-circle"></div>
+                            {showMessage && <div className="message">Current month → </div>}
+                            <div className="outer-circle" style={{ transform: `rotate(${rotation}deg)` }}>
+                                {months.map((month, index) => (
+                                    <div
+                                        key={index}
+                                        className={`month ${selectedMonth === index ? 'selected' : ''}`}
+                                        onClick={() => setSelectedMonth(index)}
+                                    >
+                                        <span>{month}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <hr />
+                        
+                            
                     </div>
 
                     <div className="right">
                         <div className='div_calendario'>
                             <center>
                                 <h1 className="calendar1">
-                                    Calendar {monthsData[selectedMonth]?.nombre} {currentYear}
+                                    Calendar to {monthsData[selectedMonth]?.nombre}, {currentYear}
                                 </h1>
                                 <hr />
                             </center>

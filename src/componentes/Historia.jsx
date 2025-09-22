@@ -73,7 +73,9 @@ const Historia = () => {
               <div className="historia-overlay">
                 <h2 className="titulo">{item.titulo}</h2>
                 <div className="historia-texto">
-                  <p>{item.descripccion.slice(0, 300)}...</p>
+                  <p dangerouslySetInnerHTML={{ __html: item.descripccion.slice(0, 300) }}>
+                    
+                  </p>
                   
                 </div>
                 <button className="historia-link" onClick={() => handleLeerMas(item)}>Leer más</button>

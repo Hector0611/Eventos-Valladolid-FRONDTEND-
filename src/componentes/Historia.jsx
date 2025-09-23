@@ -71,7 +71,7 @@ const Historia = () => {
                 alt={item.titulo}
               />
               <div className="historia-overlay">
-                <h2 className="titulo">{item.titulo}</h2>
+                <h2 className="titulo5">{item.titulo}</h2>
                 <div className="historia-texto">
                   <p dangerouslySetInnerHTML={{ __html: item.descripccion.slice(0, 300) }}>
                     

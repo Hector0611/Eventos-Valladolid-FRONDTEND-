@@ -48,7 +48,7 @@ const App = () => {
                    <EventoDiario />
                   </>
                 } 
-              />
+              />  
 
               <Route 
                 path="/calendario/evento/:mensaje" 
@@ -79,8 +79,9 @@ const App = () => {
                     <Header2 />
                     <Header />  
                     <Historia />
-                    <Conventos />
                     <Cenotes />
+                    <Conventos />
+                    
                   </>
                 }
               />

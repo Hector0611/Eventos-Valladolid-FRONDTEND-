@@ -270,7 +270,7 @@ useEffect(() => {
                 <img
                   src={`https://eventos-valladolid-backendt.onrender.com/${hotelInfo.img_resyhts}`}
                   alt="Imagen del Hotel o Restaurante"
-                  className="modal-image"
+                  className="modal-image2"
                 />
               )}
               <div className="caja2">
@@ -281,10 +281,10 @@ useEffect(() => {
               </div>
             </div>
             {hotelInfo.video && (
-              <div className="video-container">
+              <div className="video-container8">
                 <iframe
                   width="1320"
-                  height="445"
+                  height="645"
                   src={hotelInfo.video.replace("watch?v=", "embed/")}
                   title="Video"
                   frameBorder="0"

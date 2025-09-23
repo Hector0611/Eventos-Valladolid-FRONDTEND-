@@ -64,10 +64,12 @@
   border: transparent;
   font-size: 1.1em;
   padding: 9px 15px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   background-size: cover;
   background-clip: text;
   color: transparent;
   animation: animate 20s linear infinite;
+  
   
 }
 .botton1{
@@ -275,8 +277,8 @@
     gap: 15px;
   }
   .botton {
-    font-size: 0.3em;
-    padding: 0px 0px;
+    font-size: 0.92em;
+    padding: 9px 12px;
   }
   
   .menu-toggle {
@@ -294,8 +296,8 @@
 
   .popup-overlay1 {
     position: fixed;
-    top: 20%;
-    left: 50%;
+    top: 80%;
+    left: 65%;
     transform: translateX(-50%);  /* centrado horizontal */
     width: 90%;                   /* ocupa casi toda la pantalla */
     max-width: 320px;

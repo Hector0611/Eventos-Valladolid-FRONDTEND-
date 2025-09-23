@@ -42,9 +42,9 @@ const Header = () => {
             </center>
             <nav className="header-nav1">
                 <button className="botton" onClick={() => navigateTo('/programarevents')}>Events</button>
-                <button className="botton" onClick={() => navigateTo('/LugaresTuristicos')}>Valladolid</button>
+                <button className="botton" onClick={() => navigateTo('/LugaresTuristicos')}>Discover</button>
                 <button className="botton" onClick={() => navigateTo('/hoteles')}>Maps</button>
-                <button className="botton" onClick={() => navigateTo('/estadisticas')}>Revista, Rutas</button>
+                <button className="botton" onClick={() => navigateTo('/estadisticas')}>Resources</button>
                 {/* <button className="botton" onClick={togglePopup}>Saber más?</button> */}
 
                 <div 

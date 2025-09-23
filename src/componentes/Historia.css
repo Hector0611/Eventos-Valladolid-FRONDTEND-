@@ -134,7 +134,7 @@
 }
 
 /* =================== TEXTO =================== */
-.titulo {
+.titulo5 {
   font-size: 2em;
   margin-bottom: 0px;
   text-align: center;
@@ -148,7 +148,14 @@
   cursor: pointer;
   margin: 2%;
   text-decoration: none;
+
+  /* 👇 Ajustes para que no se desborde */
+  max-width: 100%;        /* no se sale del contenedor */
+  white-space: normal;    /* permite saltos de línea */
+  word-wrap: break-word;  /* corta palabras largas si es necesario */
+  overflow-wrap: break-word;
 }
+
 
 .historia-texto {
   font-size: 1.4em;

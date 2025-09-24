@@ -491,8 +491,8 @@
 
     /* Botones */
     .info-button, .directions-button {
-        padding: 8px 12px;
-        font-size: 14px;
+        padding: 6px 10px;
+        font-size: 10px;
     }
 }
 

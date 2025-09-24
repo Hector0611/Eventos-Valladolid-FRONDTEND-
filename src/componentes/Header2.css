@@ -39,17 +39,18 @@
 /* 📱 Ajustes para pantallas pequeñas */
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1068px) {
   .LogoNeutro2 {
     height: 20vh;     /* más alto aún en pantallas muy chicas */
   }
 
   .header-container {
-    height: 14vh;
+    height: 10vh;
   }
 
   .logo-Yucatan {
-    width: 25%;
-    max-height: 90px;
+    width: 15%;
+    max-height: 190px;
+    margin-top: 32px;
   }
 }

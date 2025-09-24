@@ -200,7 +200,7 @@
   }
 
   .Separacion{
-    height: 110px; /* Ajusta la altura según tus necesidades */
+    height: 120px; /* Ajusta la altura según tus necesidades */
     width: 100%;
     background-color: transparent; /* Color de fondo para separar */
   }
@@ -306,7 +306,7 @@
 
 
 /* =================== EVENTOS MOBILE =================== */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .programar-events {
     padding: 15px;
   }
@@ -374,12 +374,12 @@
   }
 
   .Separacion{
-    height: 90px; /* Ajusta la altura según tus necesidades */
+    height: 100px; /* Ajusta la altura según tus necesidades */
     width: 100%;
     background-color: transparent; /* Color de fondo para separar */
   }
   .Separacion1{
-    height: 10px; /* Ajusta la altura según tus necesidades */
+    height: 0px; /* Ajusta la altura según tus necesidades */
     width: 100%;
     background-color: transparent; /* Color de fondo para separar */
   }
@@ -396,9 +396,7 @@
     font-size: 1.2em;
     margin: 10px;
   }
-  .evento-info{ 
-    
-  }
+  
 }
 
 

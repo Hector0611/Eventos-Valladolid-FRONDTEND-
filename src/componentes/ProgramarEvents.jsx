@@ -150,8 +150,7 @@ const ProgramarEvents = () => {
                 <div className="container1">
                     <div className="left">
                        
-                        <br />
-                        
+                      
                       <h3 className="nombrefecha1">Choose Month</h3>
                       {/* NUEVO: Espacio debajo del título */}
                       <hr />
@@ -206,7 +205,6 @@ const ProgramarEvents = () => {
                             </center>
                             
     
-            <br />
 
                             <table className="calendar-table">
                                 <thead>

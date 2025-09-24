@@ -126,7 +126,7 @@
 }
 
 /* Responsive para pantallas muy pequeñas */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1024px) {
   .eventtitel2 {
     font-size: 1.8rem;
   }

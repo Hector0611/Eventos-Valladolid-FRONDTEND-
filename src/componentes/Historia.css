@@ -302,7 +302,7 @@
 
 /* =================== RESPONSIVE =================== */
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
   .historia-item {
     width: 500px;
     height: 550px;

@@ -429,8 +429,76 @@
   font-size: 15px;
 }
 
+/* ===== MAPA RESPONSIVE ===== */
 
-/* 📱 Ajustes para móviles y tablets */
+/* Por defecto: mapa oculto en móviles */
+
+
+/* Pantallas medias (tablets) */
+@media  (max-width: 1124px) {
+    .hoteles-container {
+        flex-direction: row; /* lista y mapa lado a lado */
+        gap: 16px;
+    }
+
+    .hotel-list {
+        width: 32%; /* lista ocupa menos que el mapa */
+        height: 90vh; /* altura relativa a la pantalla */
+        overflow-y: auto;
+        padding: 16px;
+    }
+
+    .map-wrapper {
+        width: 55%; /* mapa más grande que la lista */
+        height: 90vh; /* altura igual a la lista */
+        flex: 1;
+    }
+
+    /* Ajuste de títulos para que no se vean gigantes */
+    .titel3, .titel4, .titel5 {
+        font-size: 28px; /* tamaño más adecuado para tablet */
+        margin-top: 10px;
+        margin-bottom: 8px;
+    }
+
+    .content4, .content5 {
+        font-size: 16px; /* texto más legible sin salirse */
+        line-height: 1.4;
+    }
+
+    .hotel-info.open{
+      width: 355px;
+    }
+
+    /* Ajuste de imágenes en tooltips o modal */
+    .modal-image1 {
+        height: 70px;
+    }
+
+    .modal-image2 {
+        height: 400px;
+    }
+
+    /* Ajuste del contenedor de texto sobre la imagen */
+    .caja2 {
+        width: 45%;
+        padding: 20px;
+        top: 8%;
+        left: 4%;
+        font-size: 14px;
+    }
+
+    /* Botones */
+    .info-button, .directions-button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+
+
+
+/* 📱 Ajustes para móviles*/
 @media (max-width: 768px) {
 
   .titel3 {

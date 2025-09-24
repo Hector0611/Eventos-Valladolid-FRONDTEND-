@@ -32,7 +32,7 @@
     text-decoration: underline;
   }
 
-@media (max-width: 720px) {
+@media (max-width: 1024px) {
    .LogoNeutro{
       width: 90px;  /* Tamaño fijo en pantallas grandes */
       height: 20px;

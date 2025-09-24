@@ -24,16 +24,16 @@
       background-size: cover; /* Ajusta la imagen para que cubra todo el área */
       background-position: center; /* Centra la imagen */
       background-repeat: no-repeat; /* Evita que la imagen se repita */
-      margin-top: 1%;
+      margin-top: 0%;
   }
 
   .logo-Yucatan1{
       background-size: cover; /* Ajusta la imagen para que cubra todo el área */
       background-position: center; /* Centra la imagen */
       background-repeat: no-repeat; /* Evita que la imagen se repita */
-      margin-top: 1%;
+      margin-top: 0%;
       width: 35%;
-      max-height: 50px;
+      max-height: 0px;
   }
 
 /* 📱 Ajustes para pantallas pequeñas */
@@ -45,11 +45,11 @@
   }
 
   .header-container {
-    height: 14vh;
+    height: 10vh;
   }
 
   .logo-Yucatan {
-    width: 35%;
-    max-height: 90px;
+    width: 25%;
+    max-height: 100px;
   }
 }

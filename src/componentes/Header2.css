@@ -45,12 +45,11 @@
   }
 
   .header-container {
-    height: 10vh;
+    height: 14vh;
   }
 
   .logo-Yucatan {
-    width: 15%;
-    max-height: 190px;
-    
+    width: 35%;
+    max-height: 90px;
   }
 }

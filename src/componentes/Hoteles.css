@@ -456,18 +456,19 @@
 
     /* Ajuste de títulos para que no se vean gigantes */
     .titel3, .titel4, .titel5 {
-        font-size: 28px; /* tamaño más adecuado para tablet */
+        font-size: 22px; /* tamaño más adecuado para tablet */
         margin-top: 10px;
         margin-bottom: 8px;
     }
 
     .content4, .content5 {
-        font-size: 16px; /* texto más legible sin salirse */
-        line-height: 1.4;
+        font-size: 10px; /* texto más legible sin salirse */
+        line-height: 1.1;
     }
 
     .hotel-info.open{
-      width: 355px;
+      width: 325px;
+      
     }
 
     /* Ajuste de imágenes en tooltips o modal */

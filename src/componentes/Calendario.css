@@ -141,11 +141,10 @@
 .day.today {
     border: 2px solid #f80000;
 }
-
-.message-popup {
     
-  background-color: #2ecc71; /* verde esmeralda */
-  color: #000000;
+.message-popup {
+color:#fff;
+  background-color: #023919a0; /* verde esmeralda */
   border-radius: 20%; /* círculo */
   box-shadow: 0 0 10px #2ecc71, 0 0 20px #3498db; /* glow verde-azul cenote */
   transition: all 0.3s ease;
@@ -209,9 +208,10 @@
     
 .message-popup {
     
-    font-size: 1em;
-    color: rgb(255, 255, 255);
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    color: rgb(0, 0, 0);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f8f9fa;
     
 }
    

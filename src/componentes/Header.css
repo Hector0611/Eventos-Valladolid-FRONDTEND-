@@ -63,14 +63,15 @@
   background-image: url('./Imagenes/Colores4.jpg');
   border: transparent;
   font-size: 1.1em;
-  padding: 9px 15px;
+  padding: 7px 15px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   background-size: cover;
   background-clip: text;
   color: transparent;
   animation: animate 20s linear infinite;
   
-  
+    /* 👇 Esto lo baja un poco */
+  margin-top: 15px; /* ajusta el valor según lo que necesites */
 }
 .botton1{
   border-radius: 10%;
@@ -82,6 +83,8 @@
   background-clip: text;
   color: transparent;
   animation: animate 20s linear infinite;
+    /* 👇 Esto lo baja un poco */
+  margin-top: 15px; /* ajusta el valor según lo que necesites */
 }
 .botton1:hover {
   box-shadow: 0 0px 5px rgb(244, 2, 2);

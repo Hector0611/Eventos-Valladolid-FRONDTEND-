@@ -23,23 +23,22 @@ const Footer = () => {
                 <div className="footer-section">
                     <h3>Sobre Nosotros</h3>
                     <p>
-                        Bienvenido a Valladolid Yucatán. Descubre eventos, lugares turísticos y más
-                        para planificar tu visita.
+                        Welcome to Valladolid, Yucatán, Mexico! Explore festivals, local events, and beautiful tourist spots that capture the spirit of this magical town. Whether you’re looking for history, adventure, or relaxation, Valladolid has something special waiting for you.
                     </p>
                 </div>
                 <div className="footer-section">
-                    <h3>Enlaces útiles</h3>
-                    <ul>
-                        <li><a href="/hoteles">Hoteles</a></li>
-                        <li><a href="/contacto">Contáctanos</a></li>
-                        <li><a href="/historia">Historia de Valladolid</a></li>
-                        <li><a href="/catalogo">Catalogos de Servicio Turistico</a></li>
-                        <li><a href="/estadisticas">Estadisticas de Valladolid</a></li>
-                        
-                    </ul>
-                </div>  
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="/hoteles">Hotels</a></li>
+                    <li><a href="/contacto">Contact Us</a></li>
+                    <li><a href="/historia">History of Valladolid</a></li>
+                    <li><a href="/catalogo">Tourism Service Directory</a></li>
+                    <li><a href="/estadisticas">Valladolid Statistics</a></li>
+                </ul>
+                </div>
+
                 <div className="footer-section">
-                    <h3>Síguenos en:</h3>
+                    <h3>Follow us on:</h3>
                     <div className="social-links">
                         <a href="https://www.facebook.com/ByVisitValladolidMX/" target="_blank" rel="noopener noreferrer">
                             <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="Facebook" viewBox="0 0 16 16">
@@ -61,11 +60,15 @@ const Footer = () => {
             </div>
             <br />
             <div className="footer-bottom">
+                <hr />
+                <br />
+              
+                <br />
                 <div className='divLogos'>
                 <img
                         src={logo2}
                         alt={`Yucatan`}
-                        className="logo-Yucatan1"
+                        className="logo-Yucatan2"
                   
                   />
                   {/* <img
@@ -81,6 +84,7 @@ const Footer = () => {
                   
                   /> */}
                   </div>
+           <br />
             </div>
             
         </footer>

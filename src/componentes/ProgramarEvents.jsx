@@ -137,8 +137,6 @@ const ProgramarEvents = () => {
         }
     };
 
-    
-
     return (
         <div className='programar-events'>
             <div className='Separacion'> 

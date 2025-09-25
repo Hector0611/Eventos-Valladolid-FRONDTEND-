@@ -1,3 +1,6 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+
+# Sitemap de tu sitio
+Sitemap: https://visitavalladolidmx.com/sitemap.xml

@@ -53,9 +53,9 @@
 }
 @media (max-width: 1024px) {
     .containerr{
-        background-color: black;
+        
         border-radius: 10%;
-        width: 550px;
+        width: 450px;
         height: auto;
     }
     .event-detail {
@@ -78,6 +78,9 @@
         transform: scale(1.01);
         background-color: yellow;
         box-shadow: 0 0px 20px rgb(244, 2, 2);
+    }
+    .textoedicion{  
+        font-size: 12px;
     }
 }
 

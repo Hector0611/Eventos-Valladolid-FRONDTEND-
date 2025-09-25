@@ -48,6 +48,7 @@ const EventoCalendario = () => {
             <div className='Separacion'> 
 
               </div>
+              <br ></br>
             <h1 className='titel1'>Events of {mesNombre} {dia_id}, 2025 </h1>
             {mensajes.length > 0 ? (
                 

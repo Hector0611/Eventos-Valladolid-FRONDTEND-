@@ -173,22 +173,27 @@ const ProgramarEvents = () => {
                                 <button className="fecha-boton" onClick={buscarEventosRango}>
                                 Search events
                                 </button>
+                                
                             </div>
                         <hr />
+                        <p className="fecha-texto">Select the month by "clicking" or "tapping"</p> 
+                        <p className="fecha-texto">this will update the calendar</p>
                         <div className="circular-menu">
+                            
                             <div className="center-circle"></div>
-                            {showMessage && <div className="message">Current month → </div>}
+                            <div className="message">Current month → </div>
                             <div className="outer-circle" style={{ transform: `rotate(${rotation}deg)` }}>
-                                {months.map((month, index) => (
-                                    <div
-                                        key={index}
-                                        className={`month ${selectedMonth === index ? 'selected' : ''}`}
-                                        onClick={() => setSelectedMonth(index)}
-                                    >
-                                        <span>{month}</span>
-                                    </div>
-                                ))}
+                            {months.map((month, index) => (
+                                <div
+                                key={index}
+                                className={`month ${selectedMonth === index ? 'selected' : ''}`}
+                                onClick={() => setSelectedMonth(index)}
+                                >
+                                <span>{month}</span>
+                                </div>
+                            ))}
                             </div>
+
                         </div>
                         <hr />
                         

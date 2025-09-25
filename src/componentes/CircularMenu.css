@@ -140,12 +140,12 @@
     top: 50%; /* Centrado verticalmente */
     left: 50%; /* Centrado horizontalmente */
     transform: translate(-50%, -50%); /* Centra el mensaje */
-    background-color: rgba(0, 0, 0, 0.459); /* Fondo semitransparente */
-    color: rgb(255, 255, 255);
+    background-color: rgba(144, 240, 120, 0.459); /* Fondo semitransparente */
+    color: rgb(0, 0, 0);
     padding: 10px 20px;
     border-radius: 8px;
     z-index: 4; /* Asegúrate de que esté por encima de otros elementos */
-    font-size: 1.2em; /* Ajusta el tamaño del texto si es necesario */
+    font-size: 1.5em; /* Ajusta el tamaño del texto si es necesario */
     transition: opacity 3s ease; /* Agrega una transición suave si deseas */
  }
  

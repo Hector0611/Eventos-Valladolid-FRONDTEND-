@@ -92,13 +92,13 @@ const Historia = () => {
         <div className="modal-overlay">
           <div className="modal-content">
             <button className="close-button1" onClick={() => setShowModal(false)}>X</button>
-            <h2 className="titulo">{selectedItem.titulo}</h2>
+            <h2 className="titel1">{selectedItem.titulo}</h2>
             <img
               src={`https://eventos-valladolid-backendt.onrender.com/${selectedItem.url_imagen}`}
               alt={selectedItem.titulo}
               className="modal-image"
             />
-            <p className="modal-description">{selectedItem.descripccion}</p>
+            <p className="texto-pre" dangerouslySetInnerHTML={{ __html: selectedItem.descripccion }}></p>
           </div>
         </div>
       )}

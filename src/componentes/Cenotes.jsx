@@ -58,13 +58,13 @@ const Cenotes = () => {
             >
               X
             </button>
-            <h2 className="titulo">{selectedItem.titulo}</h2>
+            <h2 className="titel1">{selectedItem.titulo}</h2>
             <img
               src={`https://eventos-valladolid-backendt.onrender.com/${selectedItem.url_imagen}`}
               alt={selectedItem.titulo}
               className="modal-image"
             />
-            <p className="modal-description">{selectedItem.descripccion}</p>
+            <p className="texto-pre" dangerouslySetInnerHTML={{ __html: selectedItem.descripccion }}></p>
 
             {/* Botón de indicaciones, si tu API tiene latitud/longitud */}
             {selectedItem.latitud && selectedItem.longitud && (

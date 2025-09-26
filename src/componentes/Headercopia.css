@@ -44,7 +44,7 @@
    font-size: 16px;
    padding: 6px 8px;
    cursor: pointer;
-   box-shadow: 0 0px 5px rgb(1, 69, 10);
+   
  }
 
  .botton1:hover{
@@ -175,10 +175,7 @@ a {
     text-align: center;
   }
 
-  .botton1 {
-    font-size: 14px;
-    padding: 7px 20px;
-  }
+ 
 
   /* Pop-up responsive */
   .popup-content {

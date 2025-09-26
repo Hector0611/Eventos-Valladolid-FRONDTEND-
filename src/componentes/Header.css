@@ -71,7 +71,10 @@
   animation: animate 20s linear infinite;
   
     /* 👇 Esto lo baja un poco */
-  margin-top: 15px; /* ajusta el valor según lo que necesites */
+  margin-top: 5px; /* ajusta el valor según lo que necesites */
+  
+
+ 
 }
 .botton1{
   border-radius: 10%;
@@ -84,7 +87,7 @@
   color: transparent;
   animation: animate 20s linear infinite;
     /* 👇 Esto lo baja un poco */
-  margin-top: 15px; /* ajusta el valor según lo que necesites */
+  margin-top: 5px; /* ajusta el valor según lo que necesites */
 }
 .botton1:hover {
   box-shadow: 0 0px 5px rgb(244, 2, 2);
@@ -271,6 +274,7 @@
 @media (max-width: 1024px) {
 
   .header {
+    padding: 20px 30px;
     height: 65px;
     border-bottom-right-radius: 15%;
     border-bottom-left-radius: 10%;
@@ -282,6 +286,20 @@
   .botton {
     font-size: 0.7em;
     padding: 9px 7px;
+    margin-top: 22px; /* ajusta el valor según lo que necesites */
+  }
+  .botton1{ 
+     border-radius: 10%;
+  background-image: url('./Imagenes/Colores4.jpg');
+  border: transparent;
+  font-size: 1.9em;
+  padding: 9px 15px;
+  background-size: cover;
+  background-clip: text;
+  color: transparent;
+  animation: animate 20s linear infinite;
+    /* 👇 Esto lo baja un poco */
+  margin-top: 15px; /* ajusta el valor según lo que necesites */
   }
   
   .menu-toggle {

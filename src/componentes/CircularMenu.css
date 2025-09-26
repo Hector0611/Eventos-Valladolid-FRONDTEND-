@@ -65,7 +65,7 @@
     background-size: cover; /* Ajusta la imagen para que cubra todo el área */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
-
+     box-shadow: 0 0 90px rgba(255, 87, 34, 0.6);
 }
 .center-circle:hover {
     transform: scale(1.1);
@@ -91,9 +91,6 @@
      background-position: center; /* Centra la imagen */
      background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
-
-
-
 
 /* Meses en el círculo */
 .outer-circle .month {
@@ -138,15 +135,21 @@
 .message {
     position: absolute;
     top: 50%; /* Centrado verticalmente */
-    left: 50%; /* Centrado horizontalmente */
+    left: 65%; /* Centrado horizontalmente */
     transform: translate(-50%, -50%); /* Centra el mensaje */
-    background-color: rgba(144, 240, 120, 0.629); /* Fondo semitransparente */
+    background-color: rgba(211, 202, 100, 0.779); /* Fondo semitransparente */
     color: rgb(0, 0, 0);
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 5px 15px;
+    border-radius: 15%;
     z-index: 4; /* Asegúrate de que esté por encima de otros elementos */
-    font-size: 1.1em; /* Ajusta el tamaño del texto si es necesario */
+    font-size: 1.2em; /* Ajusta el tamaño del texto si es necesario */
     transition: opacity 3s ease; /* Agrega una transición suave si deseas */
+    box-shadow: 0 0px 15px rgb(1, 91, 7);
+ }
+
+ .flecha{
+    font-size: 1.4em;
+    font-family: monospace;
  }
  
 
@@ -177,7 +180,6 @@
     height: 90vh; /* 100% de la altura de la ventana */
     border-bottom-right-radius: 10%;
     border-bottom-left-radius: 10%;
-    
 }
 
 .logo-image{
@@ -195,9 +197,6 @@
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
     position: absolute; /* Colócalo sobre las imágenes si están en un contenedor */
-    
-    
-    
     background-image: url('./Imagenes/LOGONEGATIVO.png'); /* Reemplaza con la URL o ruta de tu imagen */
     background-size: cover; /* Ajusta la imagen para que cubra todo el área */
     

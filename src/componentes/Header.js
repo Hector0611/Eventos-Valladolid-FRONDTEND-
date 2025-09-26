@@ -41,10 +41,10 @@ const Header = () => {
               
             </center>
             <nav className="header-nav1">
-                <button className="botton" onClick={() => navigateTo('/programarevents')}>Events</button>
-                <button className="botton" onClick={() => navigateTo('/LugaresTuristicos')}>Discover</button>
-                <button className="botton" onClick={() => navigateTo('/hoteles')}>Maps</button>
-                <button className="botton" onClick={() => navigateTo('/estadisticas')}>Resources</button>
+                <button className="botton" onClick={() => navigateTo('/programarevents')}>EVENTS</button>
+                <button className="botton" onClick={() => navigateTo('/LugaresTuristicos')}>DISCOVER</button>
+                <button className="botton" onClick={() => navigateTo('/hoteles')}>MAPS</button>
+                <button className="botton" onClick={() => navigateTo('/estadisticas')}>RESOURCES</button>
                 {/* <button className="botton" onClick={togglePopup}>Saber más?</button> */}
 
                 <div 
@@ -53,19 +53,19 @@ const Header = () => {
                     onMouseLeave={() => setShowPopup(false)}
                     >
                     <button className="botton">
-                        See More
+                        SEE MORE
                     </button>
                     {showPopup && (
                         <div className="popup-overlay1">
                         <div className="popup-content">
-                            <h2>Más Información</h2>
+                            <h2>More Information</h2>
                             <ul className="popup-links">
                             {/* <li><button onClick={() => navigateTo('/historia')}>Rutas De Valladolid</button></li> */}
-                            <li><button onClick={() => navigateTo('/catalogo')}>Catálogos del Turístico</button></li>
+                            {/* <li><button onClick={() => navigateTo('/catalogo')}>Tourist Catalogs</button></li> */}
                             {/* <li><button onClick={() => navigateTo('/estadisticas')}>Estadísticas de Valladolid</button></li> */}
                             </ul>
                             <hr />
-                            <h3>Siguenos En</h3>
+                            <h3>Follow us on</h3>
                             <br />
                             <center>
                             <center>

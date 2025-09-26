@@ -48,8 +48,19 @@ const Historia = () => {
       <div className='Separacion'> 
 
               </div>
+        <h1 className="titel1">Meet Valladolid, Yucatán, Mexico.</h1>
+        <br />
+        <div className="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/iw5Ur7GW4Rk"
+            title="Conoce a Valladolid, Yucatán. México"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+    <br />
 
-      <h1 className="titel1">Conoce La Historia de Valladolid Yucatán México</h1>
+      <h1 className="titel1">Learn about the history of Valladolid, Yucatan, México</h1>
 
       <div className="historia-carrusel">
         {historia.map((item, index) => {
@@ -78,7 +89,7 @@ const Historia = () => {
                   </p>
                   
                 </div>
-                <button className="historia-link" onClick={() => handleLeerMas(item)}>Leer más</button>
+                <button className="historia-link" onClick={() => handleLeerMas(item)}>Read more</button>
               </div>
             </div>
           );

@@ -21,7 +21,7 @@ const Footer = () => {
             <div className="footer-content">
                 
                 <div className="footer-section">
-                    <h3>Sobre Nosotros</h3>
+                    <h3>About us</h3>
                     <p>
                         Welcome to Valladolid, Yucatán, Mexico! Explore festivals, local events, and beautiful tourist spots that capture the spirit of this magical town. Whether you’re looking for history, adventure, or relaxation, Valladolid has something special waiting for you.
                     </p>

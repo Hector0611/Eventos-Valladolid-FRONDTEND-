@@ -277,15 +277,15 @@
     top: 50px;
   }
   .header-nav {
-    gap: 15px;
+    gap: 4px;
   }
   .botton {
     font-size: 0.7em;
-    padding: 6px 12px;
+    padding: 9px 7px;
   }
   
   .menu-toggle {
-    display: flex;
+    display: flex; 
   }
   
 

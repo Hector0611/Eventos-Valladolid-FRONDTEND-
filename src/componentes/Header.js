@@ -53,7 +53,7 @@ const Header = () => {
                     onMouseLeave={() => setShowPopup(false)}
                     >
                     <button className="botton">
-                        SEE MORE
+                        MORE
                     </button>
                     {showPopup && (
                         <div className="popup-overlay1">

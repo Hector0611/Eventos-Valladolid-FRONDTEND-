@@ -279,6 +279,9 @@
     width: 100%;  /* Que ocupen todo el ancho en móviles */
     margin-bottom: 20px; /* Espacio entre bloques */
   }
+  .message{ 
+    padding: 5px 20px;
+  }
 }
 
 

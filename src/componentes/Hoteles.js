@@ -103,7 +103,7 @@ useEffect(() => {
         <h3 className="titel4"></h3>
         <p className="content3">Select a location to see more details</p>
 
-        <ul>
+        <ul className='ul_hotel'>
           {hoteles.map(hotel => (
             <li
               key={hotel.id}

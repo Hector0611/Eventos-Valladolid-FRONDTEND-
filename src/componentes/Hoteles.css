@@ -137,7 +137,7 @@
     transition: background 0.3s;
     border-radius: 5%;
 }
-ul {
+.ul_hotel {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
   gap: 1.1rem; /* más espacio entre tarjetas */

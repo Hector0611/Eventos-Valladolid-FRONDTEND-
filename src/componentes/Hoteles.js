@@ -77,7 +77,7 @@ useEffect(() => {
       <div className='Separacion'> 
 
               </div>
-    <div className="hoteles-container">
+    <div className="hoteles-container">{/* aqui */}
       
       <aside className="hotel-list">
         <h3 className="titel3">Tourist Sites</h3>
@@ -97,7 +97,7 @@ useEffect(() => {
           }}
           className="search-input1"
         />
-        <div className="div_one1">
+        <div className="div_on">
 
         <h3 className="titel4">Search Places</h3>
         <h3 className="titel4"></h3>

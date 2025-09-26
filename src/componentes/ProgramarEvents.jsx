@@ -180,7 +180,7 @@ const ProgramarEvents = () => {
                             
                             <div className="center-circle"></div>
                             <div className="message">
-                                MONTH <span className="flecha">→</span>
+                                MONTH<span className="flecha">→</span>
                             </div>
                             <div className="outer-circle" style={{ transform: `rotate(${rotation}deg)` }}>
                             {months.map((month, index) => (

@@ -51,11 +51,12 @@
     padding: 15px;
     border-radius: 10px;
 }
+
 @media (max-width: 1024px) {
     .containerr{
         
-        border-radius: 10%;
-        width: 450px;
+        border-radius: 0%;
+        width: 380px;
         height: auto;
     }
     .event-detail {

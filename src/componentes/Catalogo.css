@@ -68,7 +68,7 @@
 }
 
 /* Modal */
-.modal {
+.modal11 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,8 +81,8 @@
   background-color: rgba(0,0,0,0.9);
 }
 
-.modal-content {
-  max-width: 50%;
+.modal-content1 {
+  max-width: 57%;
   max-height: 90%;
   border-radius: 10px;
   animation: zoomIn 0.3s ease;

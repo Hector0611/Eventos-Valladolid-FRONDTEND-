@@ -91,12 +91,12 @@ const Catalogo = () => {
 
       {/* Modal de imagen */}
       {imagenSeleccionada && (
-        <div className="modal" onClick={cerrarImagen}>
+        <div className="modal11" onClick={cerrarImagen}>
           <span className="cerrar">&times;</span>
           <button className="anterior" onClick={(e) => { e.stopPropagation(); anterior(); }}>
             &#10094;
           </button>
-          <img className="modal-content" src={imagenSeleccionada} alt="zoom" />
+          <img className="modal-content1" src={imagenSeleccionada} alt="zoom" />
           <button className="siguiente" onClick={(e) => { e.stopPropagation(); siguiente(); }}>
             &#10095;
           </button>

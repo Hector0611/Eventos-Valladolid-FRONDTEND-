@@ -63,7 +63,7 @@ const EventoCalendario = () => {
                                 {mensaje.video && showVideo && (
                                     <div className="video-containe">
                                         <iframe
-                                            width="100%"
+                                            width="80%"
                                             height="460px"
                                             src={`${mensaje.video.replace("watch?v=", "embed/")}?autoplay=1`}
                                             title="Video de evento"
@@ -100,15 +100,14 @@ const EventoCalendario = () => {
                             Go to Event Location   
                             </button>
 
-                        <button className="boton-ver-eventos">Buscar hoteles</button>
-
+                        {/* <button className="boton-ver-eventos">Buscar hoteles</button> */}
                       
                         <br></br>
                         <div dangerouslySetInnerHTML={{ __html: mensaje.descripcion }} className='textoedicion'> 
                      
                         </div>
                     
-                        <h1>---------------------------------------------------------------------------------------</h1>
+                        <h1>-----------------------------------------------------------------</h1>
                         <br></br>
                     </div>
                     

@@ -79,8 +79,10 @@
         background-color: yellow;
         box-shadow: 0 0px 20px rgb(244, 2, 2);
     }
-    .textoedicion{  
-        font-size: 12px;
+    
+    .textoedicion{
+        font-size: 10px;
     }
+
 }
 

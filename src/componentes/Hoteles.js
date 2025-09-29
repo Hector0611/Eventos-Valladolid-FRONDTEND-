@@ -157,8 +157,6 @@ useEffect(() => {
         
       </aside>
   
-
-
       <div className="map-wrapper">
         <MapContainer center={[20.690180, -88.201223]} zoom={8} style={{ height: "100%", width: "100%", left: 0, top: 0 }} scrollWheelZoom={true}>
           <TileLayer
@@ -170,7 +168,6 @@ useEffect(() => {
           const imgUrl = info?.img_resyhts
             ? `https://eventos-valladolid-backendt.onrender.com/${info.img_resyhts}`
             : null; 
-
   return (
 
     <Marker
@@ -238,34 +235,61 @@ useEffect(() => {
       {selectedHotel && (
         <div className="div_on">
           <div className="hotel-info open">
-            <button onClick={() => setSelectedHotel(null)} className="close-button5">X</button>
-            <h4 className="titel5">{selectedHotel.hotel}</h4>
-            <p className="content4">{selectedHotel.descripcion}</p>
+            <button onClick={() => setSelectedHotel(null)} className="close-button">X</button>
+            <h4 className="titel1">{selectedHotel.hotel}</h4>
+            <div className='info_content'>
+
+            <p className="content4"  > {selectedHotel.descripcion.slice(0, 200)}...</p>
             <p className="content4">Location: {selectedHotel.localizacion}</p>
-            <p className="content4">Website: {selectedHotel.web_hotel}</p>
-            <p className="content4">Phone: {selectedHotel.telefono}</p>
-            <p className="content4">Open: {selectedHotel.horario_abi} - Close: {selectedHotel.horario_cer}</p>
+            <p className="content4">Website: <a href={selectedHotel.web_hotel} target="_blank" rel="noopener noreferrer">{selectedHotel.web_hotel}</a> </p>
+            <p className="content4">Phone: {selectedHotel.telefono.slice(0,100)}...</p>
+            <p className="content41">Open: {selectedHotel.horario_abi} - Close: {selectedHotel.horario_cer}</p>
+
+            </div  >
+            <div className="botones-hotel">
             <button onClick={() => fetchHotelInfo(selectedHotel.id)} className="info-button" >
-              See more information
+              More Information
             </button>
+
             <a
               href={`https://www.google.com/maps/dir/?api=1&destination=${selectedHotel.latitud},${selectedHotel.longitud}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="directions-button"
+              className="info-button"
             >
               Indications
             </a>
+            </div>
           </div>
         </div>
       )}
      
-      {showInfoModal && hotelInfo && (
+      {showInfoModal && hotelInfo && selectedHotel &&(
         <div className="modal-overlay">
           <div className="modal-content">
                         
             <div className="contenedor2">
-              <button onClick={() => setShowInfoModal(false)} className="close-button1" >X</button>
+              <button onClick={() => setShowInfoModal(false)} className="close-button5" >X</button>
+              <h3 className='titel1'>{hotelInfo.nombre}</h3>
+              <div className="video-container8">
+                <center>
+              {hotelInfo.video && (
+              
+                <iframe
+                  width="1120"
+                  height="555"
+                  
+                  src={hotelInfo.video.replace("watch?v=", "embed/")}
+                  title="Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  
+                ></iframe>
+             
+            )}
+            </center>
+              </div>
               {hotelInfo.img_resyhts && (
                 <img
                   src={`https://eventos-valladolid-backendt.onrender.com/${hotelInfo.img_resyhts}`}
@@ -273,26 +297,32 @@ useEffect(() => {
                   className="modal-image2"
                 />
               )}
-              <div className="caja2">
-                <h3 className='titel5'>{hotelInfo.nombre}</h3>
+              <div className="caja2"> 
+                <div className='info_content'>
+                
                 <p className="content5">{hotelInfo.descripcion}</p>
-                <p><strong>Street:</strong> {hotelInfo.calle}</p>
-                <p><strong>Phone:</strong> {hotelInfo.numerotelf}</p>
+                <p className='content41'>Street: {hotelInfo.calle}</p>
+                <p className='content41'>Phone: {hotelInfo.numerotelf}</p>
+                </div>  
+              </div>
+
+              <div className="boton-centro"> 
+                <div className='info_content1'>
+                  <hr></hr>
+                <a
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${selectedHotel.latitud},${selectedHotel.longitud}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="info-button1"
+                >
+                  Indications
+                </a>
+                <hr></hr>
+                </div>
               </div>
             </div>
-            {hotelInfo.video && (
-              <div className="video-container8">
-                <iframe
-                  width="1320"
-                  height="645"
-                  src={hotelInfo.video.replace("watch?v=", "embed/")}
-                  title="Video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            )}
+            
+            
           </div>
         </div>
       )}

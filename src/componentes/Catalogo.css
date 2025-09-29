@@ -129,3 +129,13 @@
   right: 20px;
 }
 
+@media (max-width: 768px) {
+
+.modal-content1 {
+  max-width: 85%;
+  max-height: 90%;
+  border-radius: 10px;
+  animation: zoomIn 0.3s ease;
+}
+   
+}

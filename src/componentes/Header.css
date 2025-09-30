@@ -60,22 +60,19 @@
    =============== */
 .botton {
   border-radius: 10%;
-  background-image: url('./Imagenes/Colores4.jpg');
+  /* background-image: url('./Imagenes/Colores4.jpg'); */
   border: transparent;
-  font-size: 1.1em;
+  font-size: 1.2em;
   padding: 7px 15px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: fantasy;
   background-size: cover;
   background-clip: text;
-  color: transparent;
+  color: black;
   animation: animate 20s linear infinite;
-  
     /* 👇 Esto lo baja un poco */
   margin-top: 5px; /* ajusta el valor según lo que necesites */
-  
-
- 
 }
+
 .botton1{
   border-radius: 10%;
   background-image: url('./Imagenes/Colores4.jpg');
@@ -268,6 +265,7 @@
     transform: translateY(0);
   }
 }
+
 
 
 /* 📱 Ajustes para tablets */

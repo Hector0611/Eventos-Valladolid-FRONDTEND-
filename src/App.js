@@ -45,6 +45,7 @@ const App = () => {
                     <Header2 />
                     <Header />
                     <ProgramarEvents />
+                    <Catalogo />
                    <EventoDiario />
                   </>
                 } 

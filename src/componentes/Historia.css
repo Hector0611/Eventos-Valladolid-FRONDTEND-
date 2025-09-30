@@ -254,13 +254,16 @@
 }
 
 .modal-image {
-  width: 100%;
+  display: block;         /* la convierte en bloque */
+  margin: 0 auto 20px;    /* centra horizontal y mantiene separación abajo */
   height: auto;
-  max-height: 400px;
+  width: 80%;
+  max-height: 500px;
+  max-width: 100%;         /* evita que se pegue a los bordes */
   object-fit: cover;
-  margin-bottom: 20px;
-  border-radius: 10px;
+  border-radius: 45px;
 }
+
 
 .modal-description {
   font-size: 16px;
@@ -319,6 +322,50 @@
   border: none;
 }
 
+.texto-pres {
+  background-color: #2b2626d1;
+  border-radius: 35px;
+  margin: 9px auto;
+  padding: 15px 35px;
+  font-size: 1.2em;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #fff;
+  white-space: pre-wrap; /* mantiene saltos de línea y espacios */
+  line-height: 1.6;
+  max-width: auto ;
+  text-align: justify;
+}
+
+.directions-button1{
+  background-color: rgb(0, 76, 255);
+  border-radius: 25px;
+  margin: -1px;
+  padding: 10px 10px;
+  font-size: 1.5em;
+  text-align: center;
+  color: #fff;
+}
+
+.directions-button1:hover{
+  background-color: rgb(0, 0, 255);
+  color: #fff;
+}
+
+.close-button2{
+   background-color: #fa0000;
+    border: none;
+    color: white;
+    padding: 2px 14px;
+    font-size: 26px;
+    cursor: pointer;
+    float: right;
+    border-radius: 13px;
+    height: fit-content;
+    width: fit-content;
+    position: absolute;
+    top: 40px;
+    left: 94%;
+}
 
 /* =================== RESPONSIVE =================== */
 

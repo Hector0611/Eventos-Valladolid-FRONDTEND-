@@ -84,7 +84,7 @@ const App = () => {
                     
                   </>
                 }
-              />
+              /> 
 
               <Route 
                 path="/programarevents"
@@ -93,6 +93,7 @@ const App = () => {
                     <Header2 />
                     <Header />
                     <ProgramarEvents />
+                    <Catalogo />
                     <EventoDiario />
                   </>
                 }

@@ -55,9 +55,9 @@ const Catalogo = () => {
 
   return (
     <div className="catalogo-container">
-        <div className='Separacion'> 
+       {/*  <div className='Separacion'> 
         
-                      </div>
+                      </div> */}
       <h1 className="titel1">October Nights Catalog</h1>
 
       {/* Botones de idioma */}

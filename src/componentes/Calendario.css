@@ -208,7 +208,9 @@ color:#000000;
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
+        
     }
+    
     
 .message-popup {
     
@@ -216,6 +218,7 @@ color:#000000;
     color: rgb(0, 0, 0);
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: #f8f9fa;
+    
     
 }
    

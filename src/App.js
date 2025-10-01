@@ -1,6 +1,10 @@
-import React from 'react';
 import './App.css';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'; 
+
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Header from './componentes/Header';
 import EventoCalendario from './componentes/EventoCalendario';
 import Hoteles from './componentes/Hoteles';
@@ -20,7 +24,34 @@ import Conventos from './componentes/Conventos';
 import Cenotes from './componentes/Cenotes';
 
 const App = () => {
+
+  // Ejemplo de notificación al cargar la página
+  useEffect(() => {
+    // 🔔 Toastify (dentro de la web)
+    toast.info("🎉 Nuevo evento agregado recientemente", {
+      position: "top-right",
+      autoClose: 4000,
+      theme: "colored",
+    });
+
+    // 🔔 Notificación nativa del navegador
+    if ("Notification" in window) {
+      if (Notification.permission === "granted") {
+        new Notification("🎉 Hay nuevos eventos disponibles en la página!");
+      } else if (Notification.permission !== "denied") {
+        Notification.requestPermission().then((permission) => {
+          if (permission === "granted") {
+            new Notification("🎉 Notificaciones activadas. Te avisaremos de lo nuevo!");
+          }
+        });
+      }
+    }
+  }, []);
+
+
+  
   return (
+    
     <Router>
       <ScrollToTop />
       <div>
@@ -130,6 +161,7 @@ const App = () => {
 
           {/* Footer global */}
           <ProximoEvento />
+          <ToastContainer />
           <Footer />
         </main>
       </div>

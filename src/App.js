@@ -161,7 +161,7 @@ const App = () => {
 
           {/* Footer global */}
           <ProximoEvento />
-          <ToastContainer />
+         
           <Footer />
         </main>
       </div>

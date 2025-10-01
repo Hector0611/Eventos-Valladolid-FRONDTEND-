@@ -67,7 +67,7 @@
   font-family: fantasy;
   background-size: cover;
   background-clip: text;
-  color: black;
+  color: black; /* transparent */
   animation: animate 20s linear infinite;
     /* 👇 Esto lo baja un poco */
   margin-top: 5px; /* ajusta el valor según lo que necesites */

@@ -290,19 +290,19 @@ useEffect(() => {
             )}
             </center>
               </div>
-              {hotelInfo.img_resyhts && (
+              {/* {hotelInfo.img_resyhts && (
                 <img
                   src={`https://eventos-valladolid-backendt.onrender.com/${hotelInfo.img_resyhts}`}
                   alt="Imagen del Hotel o Restaurante"
                   className="modal-image2"
                 />
-              )}
+              )} */}
               <div className="caja2"> 
                 <div className='info_content'>
                 
-                <p className="content5">{hotelInfo.descripcion}</p>
-                <p className='content41'>Street: {hotelInfo.calle}</p>
-                <p className='content41'>Phone: {hotelInfo.numerotelf}</p>
+                <p className="content5" >{hotelInfo.descripcion}</p>
+                <p className='content5'>Street: {hotelInfo.calle}</p>
+                <p className='content5'>Phone: {hotelInfo.numerotelf}</p>
                 </div>  
               </div>
 

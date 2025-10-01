@@ -265,8 +265,8 @@ const ProgramarEvents = () => {
             <div className="caj"> 
                 <br />
                 <h1 className='titel1'>Events: {evento.titulo}</h1>
-                <h3 className='titel1'>{evento.mensaje}</h3>
-                <h3 className='horacolor'>Fecha del Evento: {evento.mes_id}/{evento.dia_id}/2025 ---- ---- De {evento.hora_inicial} a {evento.hora_final}</h3>
+                <h3 className='titel3'>{evento.mensaje}</h3>
+                <h3 className='horacolor'>Event Date: {evento.dia_id}/{evento.mes_id}/2025 From {evento.hora_inicial} to {evento.hora_final}</h3>
 
                 <center>
                                     {/* <button className="boton-ver-eventos" onClick={irAHoteles}>Lugares Turisticos</button>
@@ -275,23 +275,22 @@ const ProgramarEvents = () => {
                                             className="boton-ver-eventos" 
                                             onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${evento.latitud},${evento.longitud}`, "_blank")}
                                         >
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" className="currentColor123" viewBox="0 0 16 16">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="currentColor123" viewBox="0 0 16 16">
                                                 <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
                                             </svg> Go to Event Location   
                                     </button>
                                     </center>
-                                    {evento.video && (
-                                <div className="video-container1">
-                                    <iframe
-                                    src={evento.video.replace("watch?v=", "embed/")}
-                                    title="Video"
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                    ></iframe>
-                                    
-                                </div>
-                                )}
+                                    {/* {evento.video && (
+                                        <div className="video-container1">
+                                            <iframe
+                                            src={evento.video.replace("watch?v=", "embed/")}
+                                            title="Video"
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowFullScreen
+                                            ></iframe>
+                                        </div>
+                                )} */}
             
 
                 <div className="">
@@ -302,10 +301,7 @@ const ProgramarEvents = () => {
                         <div dangerouslySetInnerHTML={{ __html: evento.descripcion }}></div>
                       
                     </div>
-
-            
                 </div>
-                <br />
                 </div>
                             
           </div>

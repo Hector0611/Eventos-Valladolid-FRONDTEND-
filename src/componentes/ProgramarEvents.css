@@ -21,10 +21,12 @@
   }
 
   .horacolor{
-    color: #fa0000;
+    color: #6aff00;
     font-size: 1.8em;
     margin: 20px;
     text-align: center;
+    background-color: #002d02;
+    border-radius: 19px;
   }
 
   .currentColor123{
@@ -34,7 +36,7 @@
 
 .caj{
   
-    background-color: rgba(123, 235, 123, 0.533);
+    background-color: rgba(4, 47, 4, 0.533);
     text-align: center;
     border-radius: 20px;
    margin-top: 20px;
@@ -133,21 +135,21 @@
 
 .cerrar-modal {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 13%;
+  right: 50px;
   background-color: #ff0000;
   border: none;
   color: white;
   padding: 1px 12px;
-  font-size: 1.4rem;
-  border-radius: 50%;
+  font-size: 1.6em;
+  border-radius: 15px;
   cursor: pointer;
 }
 
 .boton-ver-eventos {
-  background-color: #4caf50;
+  background-color: #018105;
   color: white;
-  font-size: 1rem;
+  font-size: 1.4rem;
   padding: 10px 20px;
   border: none;
   border-radius: 8px;
@@ -157,13 +159,13 @@
 }
 
 .boton-ver-eventos:hover {
-  background-color: #45a049;
+  background-color: #014e03;
 }
 
 .titeleventst{
   color: #000000;
 }
-/* quiero que caja5 sea como un menu de opciones como header de lado derecho */
+
 
 .caja5 {
   position: relative; /* necesario para el pseudo-elemento */

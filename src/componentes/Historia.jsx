@@ -58,6 +58,22 @@ const Historia = () => {
             allowFullScreen
           ></iframe>
         </div>
+        {/* JSON-LD para SEO del video */}
+  <script type="application/ld+json">
+    {`
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Conoce a Valladolid, Yucatán. México",
+      "description": "Descubre Valladolid, Yucatán: su cultura, historia, cenotes y tradiciones en este video.",
+      "thumbnailUrl": "https://img.youtube.com/vi/iw5Ur7GW4Rk/maxresdefault.jpg",
+      "uploadDate": "2025-09-24",
+      "duration": "PT3M20S",
+      "embedUrl": "https://www.youtube.com/embed/iw5Ur7GW4Rk",
+      "contentUrl": "https://visitavalladolidmx.com/"
+    }
+    `}
+  </script>
     <br />
 
       <h1 className="titel1">Learn about the history of Valladolid, Yucatan, México</h1>

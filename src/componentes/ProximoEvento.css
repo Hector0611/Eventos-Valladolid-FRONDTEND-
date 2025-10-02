@@ -7,6 +7,7 @@
   margin: auto;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
   overflow-x: hidden;
+  z-index: 0; /* Siempre encima */
 }
 
 /* Título */
@@ -17,12 +18,14 @@
   text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
+  z-index: 0; /* Siempre encima */
 }
 
 .ver-detalle-boton{
   background-color: transparent;
   border: none;
   cursor: pointer;
+  z-index: 0; /* Siempre encima */
 }
 /* Contenedor de la tira de eventos */
 .eventos-tira {
@@ -34,6 +37,7 @@
   scroll-snap-type: x mandatory; /* hace que los eventos se alineen al hacer scroll */
   scrollbar-width: thin;
   background-color: transparent;
+  z-index: 1; /* Siempre encima */
 }
 
 /* Cada evento */
@@ -56,11 +60,13 @@
   scroll-snap-align: start; /* cada evento se alinea al iniciar el scroll */
   position: relative;
   cursor: pointer;
+  z-index: 1; /* Siempre encima */
 }
 
 .evento-item:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  z-index: 1; /* Siempre encima */
 }
 
 /* Imagen de fondo */
@@ -71,6 +77,7 @@
   border-radius: 12px;
   filter: brightness(0.5);
   transition: transform 0.3s ease;
+  z-index: 1; /* Siempre encima */
 }
 
 .evento-item:hover .imagen-fondo {
@@ -85,7 +92,7 @@
   padding: 10px;
   color: white;
   width: calc(100% - 20px);
-  z-index: 2;
+ z-index: 1; /* Siempre encima */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -96,6 +103,7 @@
   margin: 0;
   font-size: 1.1rem;
   font-weight: 600;
+  z-index: 1; /* Siempre encima */
 }
 
 /* Navegación y botones */
@@ -113,6 +121,7 @@
   justify-content: center;
   border-radius: 50%;
   background: rgba(5, 237, 47, 0.3);
+  z-index: 1; /* Siempre encima */
 }
 
 .navegacion-eventos:hover {
@@ -123,6 +132,7 @@
 .navegacion-eventos:disabled {
   background-color: #88888800;
   cursor: not-allowed;
+  
 }
 
 /* Responsive para pantallas muy pequeñas */

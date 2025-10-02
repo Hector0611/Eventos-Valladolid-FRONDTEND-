@@ -34,7 +34,7 @@ const App = () => {
       theme: "colored",
     });
 
-    // 🔔 Notificación nativa del navegador
+   /*  // 🔔 Notificación nativa del navegador
     if ("Notification" in window) {
       if (Notification.permission === "granted") {
         new Notification("🎉 Hay nuevos eventos disponibles en la página!");
@@ -45,7 +45,7 @@ const App = () => {
           }
         });
       }
-    }
+    } */
   }, []);
 
 

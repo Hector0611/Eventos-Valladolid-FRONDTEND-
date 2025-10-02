@@ -43,6 +43,7 @@
     text-decoration: none;
     color: #000000;
     transition: color 0.3s;
+    font-size: 1.3rem;
 }
 
 .footer-section ul li a:hover {

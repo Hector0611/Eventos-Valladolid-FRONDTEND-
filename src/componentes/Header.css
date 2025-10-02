@@ -17,8 +17,9 @@
   position: fixed;
   top: 50px;
   left: 0;
-  z-index: 1000;
+   z-index: 9999; /* Siempre encima */
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.66);
 }
 
 .house-door{
@@ -273,10 +274,10 @@
 
   .header {
     padding: 20px 30px;
-    height: 65px;
+    height: 55px;
     border-bottom-right-radius: 15%;
-    border-bottom-left-radius: 10%;
-    top: 50px;
+    border-bottom-left-radius: 15%;
+   
   }
   .header-nav {
     gap: 4px;
@@ -284,7 +285,7 @@
   .botton {
     font-size: 0.7em;
     padding: 9px 7px;
-    margin-top: 22px; /* ajusta el valor según lo que necesites */
+    margin-top: 10px; /* ajusta el valor según lo que necesites */
   }
   .botton1{ 
      border-radius: 10%;
@@ -297,7 +298,7 @@
   color: transparent;
   animation: animate 20s linear infinite;
     /* 👇 Esto lo baja un poco */
-  margin-top: 15px; /* ajusta el valor según lo que necesites */
+  margin-top: 10px; /* ajusta el valor según lo que necesites */
   }
   
   .menu-toggle {

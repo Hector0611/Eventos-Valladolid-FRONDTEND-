@@ -149,7 +149,7 @@ const ProgramarEvents = () => {
                     <div className="left">
                        
                       
-                      <h3 className="nombrefecha1">Choose Month</h3>
+                      <h3 className="calendar1">Choose Month</h3>
                       {/* NUEVO: Espacio debajo del título */}
                       <hr />
                             <h1 className="fecha-texto">Select the days you will be in Valladolid</h1>

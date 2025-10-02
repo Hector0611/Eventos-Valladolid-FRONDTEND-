@@ -67,6 +67,7 @@
     background-repeat: no-repeat; /* Evita que la imagen se repita */
      box-shadow: 0 0 90px rgba(255, 87, 34, 0.6);
 }
+
 .center-circle:hover {
     transform: scale(1.1);
     box-shadow: 0 0 30px rgba(255, 87, 34, 0.6);

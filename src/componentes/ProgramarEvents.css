@@ -140,10 +140,13 @@
   background-color: #ff0000;
   border: none;
   color: white;
-  padding: 1px 12px;
-  font-size: 1.6em;
+  padding: 0px 14px;
+  font-size: 2.1em;
   border-radius: 15px;
   cursor: pointer;
+}
+.cerrar-modal:hover {
+  background-color: #cc0000;
 }
 
 .boton-ver-eventos {
@@ -304,10 +307,18 @@
   background: linear-gradient(135deg, #0056d8, #003c9d);
   transform: translateY(-2px);
 }
+.fecha{
+  font-size: 4.5rem;
+  background-color: #018105;
+  border-radius: 25px;
+}
 
 
 /* =================== EVENTOS MOBILE =================== */
 @media (max-width: 1024px) {
+  .fecha{
+  font-size: 2.5rem;
+}
   .programar-events {
     padding: 15px;
   }
@@ -360,7 +371,9 @@
 
   .cerrar-modal {
     font-size: 1.2rem;
-    padding: 1px 10px;
+    padding: 6px 12px;
+    top: 10%;
+  right: 20px;
   }
 
   .boton-ver-eventos {

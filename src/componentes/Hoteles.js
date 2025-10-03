@@ -32,7 +32,6 @@ const FlyToHotel = ({ hotel }) => {
       }
     }
   }, [hotel, map]);
-
   return null;
 };
 
@@ -80,7 +79,9 @@ useEffect(() => {
     <div className="hoteles-container">{/* aqui */}
       
       <aside className="hotel-list">
-        <h3 className="titel3">Tourist Sites</h3>
+       < hr></hr>
+        <h3 className="titel1">Search Places</h3>
+       < hr></hr>
         {/* buscar hoteles por su nombre y si no busca que se reinice al borrar */}
         <input
           type="text"
@@ -99,7 +100,7 @@ useEffect(() => {
         />
         <div className="div_on">
 
-        <h3 className="titel4">Search Places</h3>
+        < hr></hr>
         <h3 className="titel4"></h3>
         <p className="content3">Select a location to see more details</p>
 
@@ -131,7 +132,7 @@ useEffect(() => {
                 })()}
               </div>
 
-              <div className="precio">
+              {/* <div className="precio">
                 {hotel.precio_descuento ? (
                   <>
                     <span className="precio-original">
@@ -146,12 +147,10 @@ useEffect(() => {
                     ${parseFloat(hotel.precio).toFixed(2)}
                   </span>
                 )}
-              </div>
+              </div> */}
             </li>
           ))}
         </ul>
-
-
 
         </div>
         

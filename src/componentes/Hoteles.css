@@ -520,6 +520,66 @@
   border: 0;
 }
 
+.caj2 {
+  background: #f9f9f9ce;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 900px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  white-space: pre-wrap; /* mantiene saltos de línea y espacios */
+}
+
+.info_content11 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.info_content11 p {
+  margin: 10px 0;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.info_content11 .titulo11 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.info_content11 .descripcion11 {
+  font-size: 15px;
+  color: #555;
+}
+
+.info_content11 .telefono11 {
+  color: #27ae60;
+  font-weight: 500;
+}
+
+.info_content11 .servicios11 {
+  color: #2980b9;
+  font-style: italic;
+}
+
+.info_content11 .precio11 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e67e22;
+}
+
+.info_content11 .menu11 {
+  color: #8e44ad;
+}
+
+.info_content11 .consejos11 {
+  color: #16a085;
+  font-weight: 500;
+}
+
+
 /* ===== MAPA RESPONSIVE ===== */
 
 /* Por defecto: mapa oculto en móviles */

@@ -269,7 +269,8 @@ useEffect(() => {
                         
             <div className="contenedor2">
               <button onClick={() => setShowInfoModal(false)} className="close-button5" >X</button>
-              <h3 className='titel1'>{hotelInfo.nombre}</h3>
+              <h3 className='titel1'>{selectedHotel.hotel}</h3>
+             
               <div className="video-container8">
                 <center>
               {hotelInfo.video && (
@@ -289,22 +290,6 @@ useEffect(() => {
             )}
             </center>
               </div>
-              {/* {hotelInfo.img_resyhts && (
-                <img
-                  src={`https://eventos-valladolid-backendt.onrender.com/${hotelInfo.img_resyhts}`}
-                  alt="Imagen del Hotel o Restaurante"
-                  className="modal-image2"
-                />
-              )} */}
-              <div className="caja2"> 
-                <div className='info_content'>
-                
-                <p className="content5" >{hotelInfo.descripcion}</p>
-                <p className='content5'>Street: {hotelInfo.calle}</p>
-                <p className='content5'>Phone: {hotelInfo.numerotelf}</p>
-                </div>  
-              </div>
-
               <div className="boton-centro"> 
                 <div className='info_content1'>
                   <hr></hr>
@@ -319,6 +304,38 @@ useEffect(() => {
                 <hr></hr>
                 </div>
               </div>
+              {/* {hotelInfo.img_resyhts && (
+                <img
+                  src={`https://eventos-valladolid-backendt.onrender.com/${hotelInfo.img_resyhts}`}
+                  alt="Imagen del Hotel o Restaurante"
+                  className="modal-image2"
+                />
+              )} */}
+              <div className="caj2"> 
+                <div className="info_content11">
+                  <p className="descripcion11">{selectedHotel.descripcion}</p>
+                  <hr />
+                  <p className="descripcion11">{hotelInfo.nombre}</p>
+                  <hr />
+
+                  <p className="telefono11">📞 {selectedHotel.telefono}</p>
+                  <hr />
+
+                  <p className="servicios11">✨ {hotelInfo.descripcion}</p>
+                  <hr />
+
+                  <p className="precio11">💰 ${selectedHotel.precio} MX</p>
+                  <hr />
+
+                  <p className="menu11">🍽️ {hotelInfo.calle}</p>
+                  <hr />
+
+                  <p className="consejos11">💡 {hotelInfo.numerotelf}</p>
+                </div>  
+              </div>
+
+
+              
             </div>
             
             

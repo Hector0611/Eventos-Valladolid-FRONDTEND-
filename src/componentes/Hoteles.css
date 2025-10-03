@@ -25,7 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 1001;
 }
 
 .modal-content {
@@ -36,6 +36,7 @@
   border-radius: 12px;
   position: relative;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+  z-index: 1001;
 }
 
 
@@ -51,6 +52,7 @@
   width: 100%;
   max-width: 1500px;
   margin: auto;
+  z-index: 1001;
 }
 
 .modal-image2 {
@@ -709,6 +711,7 @@
     width: 85%;
     padding: 16px;
     
+    
   }
 
   .modal-image2 {
@@ -734,6 +737,7 @@
 
     background-color: green;
     border-radius: 12px;
+    
 }
 
 .content5{
@@ -793,7 +797,7 @@
     padding: 16px;
     border-radius: 12px 12px 0 0;
     overflow-y: auto;
-    z-index: 999999;
+    z-index: 9999;
   }
 
   .hotel-info h2 {

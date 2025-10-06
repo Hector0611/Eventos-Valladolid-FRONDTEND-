@@ -234,7 +234,11 @@ useEffect(() => {
       {selectedHotel && (
         <div className="div_on">
           <div className="hotel-info open">
-            <button onClick={() => setSelectedHotel(null)} className="close-button">X</button>
+            <button onClick={() => setSelectedHotel(null)} className="close-button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
+                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                </svg>
+            </button>
             <h4 className="titel1">{selectedHotel.hotel}</h4>
             <div className='info_content'>
 
@@ -268,7 +272,11 @@ useEffect(() => {
           <div className="modal-content">
                         
             <div className="contenedor2">
-              <button onClick={() => setShowInfoModal(false)} className="close-button5" >X</button>
+              <button onClick={() => setShowInfoModal(false)} className="close-button5" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
+                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                </svg>
+              </button>
               <h3 className='titel1'>{selectedHotel.hotel}</h3>
              
               <div className="video-container8">

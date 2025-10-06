@@ -22,6 +22,7 @@ import ScrollToTop from './componentes/ScrollToTop';
 import PrincipalRecarga from './componentes/PrincipalRecarga';
 import Conventos from './componentes/Conventos';
 import Cenotes from './componentes/Cenotes';
+import Contactanos from './componentes/Contactanos';
 
 const App = () => {
 
@@ -180,6 +181,18 @@ const App = () => {
                   <Header2 />
                   <Header />
                   <Estadisticas />
+
+                  {/* Footer global */}
+          <ProximoEvento />
+         
+          <Footer />
+                </>
+              } />
+              <Route path="/contacto" element={
+                <>
+                  <Header2 />
+                  <Header />
+                  <Contactanos />
 
                   {/* Footer global */}
           <ProximoEvento />

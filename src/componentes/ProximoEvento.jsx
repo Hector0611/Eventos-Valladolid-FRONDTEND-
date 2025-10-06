@@ -3,8 +3,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./ProximoEvento.css";
 
-
-
 const ProximoEvento = () => {
   const [eventos, setEventos] = useState([]);
   const [meses, setMeses] = useState([]);
@@ -65,8 +63,6 @@ const ProximoEvento = () => {
     pagina * eventosPorPagina,
     (pagina + 1) * eventosPorPagina
   );
-
-  
 
   return (
     <div>

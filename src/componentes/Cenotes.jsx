@@ -60,7 +60,7 @@ const Cenotes = () => {
                 <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
                 </svg>
             </button>
-            <h2 className="titel1">{selectedItem.titulo}</h2>
+            <h2 className="titel1 tituls">{selectedItem.titulo}</h2>
             <img
               src={`https://eventos-valladolid-backendt.onrender.com/${selectedItem.url_imagen}`}
               alt={selectedItem.titulo}

@@ -78,6 +78,10 @@ const App = () => {
                     <ProgramarEvents />
                     <Catalogo />
                    <EventoDiario />
+                   {/* Footer global */}
+          <ProximoEvento />
+         
+          <Footer />
                   </>
                 } 
               />  
@@ -89,6 +93,7 @@ const App = () => {
                     <Header2 />
                     <Header />
                     <EventoCalendario />
+
                   </>
                 } 
               />
@@ -100,6 +105,10 @@ const App = () => {
                     <Header2 />
                     <Header />
                     <Hoteles />
+                    {/* Footer global */}
+          <ProximoEvento />
+         
+          <Footer />
                   </>
                 } 
               />
@@ -113,6 +122,10 @@ const App = () => {
                     <Historia />
                     <Cenotes />
                     <Conventos />
+                    {/* Footer global */}
+          <ProximoEvento />
+         
+          <Footer />
                     
                   </>
                 }
@@ -127,6 +140,10 @@ const App = () => {
                     <ProgramarEvents />
                     <Catalogo />
                     <EventoDiario />
+                    {/* Footer global */}
+          <ProximoEvento />
+         
+          <Footer />
                   </>
                 }
               />
@@ -138,6 +155,10 @@ const App = () => {
                    <Historia />
                     <Conventos />
                     <Cenotes />
+                    {/* Footer global */}
+          <ProximoEvento />
+         
+          <Footer />
                 </>
               } />
 
@@ -146,6 +167,11 @@ const App = () => {
                   <Header2 />
                   <Header />
                   <Catalogo />
+
+                  {/* Footer global */}
+          <ProximoEvento />
+         
+          <Footer />
                 </>
               } />
 
@@ -154,15 +180,17 @@ const App = () => {
                   <Header2 />
                   <Header />
                   <Estadisticas />
+
+                  {/* Footer global */}
+          <ProximoEvento />
+         
+          <Footer />
                 </>
               } />
             </Routes>
           </center>
 
-          {/* Footer global */}
-          <ProximoEvento />
-         
-          <Footer />
+          
         </main>
       </div>
     </Router>

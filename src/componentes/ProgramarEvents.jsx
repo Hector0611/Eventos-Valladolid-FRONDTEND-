@@ -271,7 +271,7 @@ const ProgramarEvents = () => {
                 <div key={evento.id} className="evento-if">
                   <div className="caj">
                     <br />
-                    <h1 className="fecha">{evento.dia_id}/{evento.mes_id}/2025</h1>
+                    <h1 className="fecha">{monthsData[selectedMonth]?.nombre || months[selectedMonth]} {evento.dia_id}, 2025</h1>
                     <h1 className="titel1">Events: {evento.titulo}</h1>
                     <h3 className="titel5">{evento.mensaje}</h3>
                     <hr />

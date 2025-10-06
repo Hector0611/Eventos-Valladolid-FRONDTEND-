@@ -323,17 +323,38 @@
 }
 
 .texto-pres {
-  background-color: #2b2626d1;
+  background-color: #e3e2e2d1;
   border-radius: 35px;
   margin: 9px auto;
   padding: 15px 35px;
   font-size: 1.2em;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: #fff;
+  color: #000000;
   white-space: pre-wrap; /* mantiene saltos de línea y espacios */
   line-height: 1.6;
   max-width: auto ;
   text-align: justify;
+}
+
+.tituls{
+  
+  margin-bottom: 0px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-weight: bold;
+
+
+  transition: color 0.3s ease;
+ 
+  margin: 0%;
+  text-decoration: none;
+
+  /* 👇 Ajustes para que no se desborde */
+  max-width: 100%;        /* no se sale del contenedor */
+  white-space: normal;    /* permite saltos de línea */
+  word-wrap: break-word;  /* corta palabras largas si es necesario */
+  overflow-wrap: break-word;
 }
 
 .directions-button1{
@@ -355,7 +376,7 @@
    background-color: #fa0000;
     border: none;
     color: white;
-    padding: 2px 14px;
+    padding: 2px 8px;
     font-size: 26px;
     cursor: pointer;
     float: right;
@@ -397,6 +418,7 @@
     margin-top: 10px;
    
   }
+
   .titulo {
     font-size: 1em;
     letter-spacing: 4px;
@@ -407,9 +429,9 @@
     text-align: center;
     word-wrap: break-word;
     max-height: 80%;
-    max-width: 90%;
-    
+    max-width: 90%; 
   }
+
   .close-button2{
 
     padding: 2px 14px;

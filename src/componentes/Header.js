@@ -60,8 +60,8 @@ const Header = () => {
                         <div className="popup-content">
                             <h2>More Information</h2>
                             <ul className="popup-links">
-                            {/* <li><button onClick={() => navigateTo('/historia')}>Rutas De Valladolid</button></li> */}
-                            <li><button onClick={() => navigateTo('/catalogo')}>October Nights Catalog</button></li>
+                            <li><button onClick={() => navigateTo('/Contacto')}>Contact us</button></li>
+                            {/* <li><button onClick={() => navigateTo('/catalogo')}>October Nights Catalog</button></li> */}
                             {/* <li><button onClick={() => navigateTo('/estadisticas')}>Estadísticas de Valladolid</button></li> */}
                             </ul>
                             <hr />

@@ -20,16 +20,16 @@ const Contactanos = () => {
 
   return (
     <div>
-      {/* <div className="Separacion"></div> */}
+      <div className="Separacion"></div>
 
       <div className="contact-main">
         {/* Sección del formulario */}
         <div className="contact-card">
-          <h2>Contáctanos</h2>
-          <p>Envíanos un mensaje y te responderemos lo antes posible.</p>
+          <h2>Contact us</h2>
+          <p>Send us a message and we'll get back to you as soon as possible.</p>
 
           <form onSubmit={handleSubmit}>
-            <label>Nombre</label>
+            <label>Name</label>
             <input
               type="text"
               name="nombre"
@@ -38,7 +38,7 @@ const Contactanos = () => {
               required
             />
 
-            <label>Correo electrónico</label>
+            <label>Email</label>
             <input
               type="email"
               name="email"
@@ -47,7 +47,7 @@ const Contactanos = () => {
               required
             />
 
-            <label>Mensaje</label>
+            <label>Message</label>
             <textarea
               name="mensaje"
               value={form.mensaje}
@@ -56,32 +56,39 @@ const Contactanos = () => {
               required
             ></textarea>
 
-            <button type="submit">Enviar mensaje</button>
+            <button type="submit">Send message</button>
           </form>
 
-          <div className="socials">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
-          </div>
+         
 
-          <div className="contact-info">
-            <p><FaPhoneAlt /> +52 999 123 4567</p>
-            <p><FaEnvelope /> contacto@valladolidmx.com</p>
-          </div>
+         
 
-          <button className="back-btn" onClick={() => navigate("/")}>Volver al inicio</button>
+          {/* <button className="back-btn" onClick={() => navigate("/")}>Volver al inicio</button> */}
         </div>
 
         {/* Sección del mapa */}
         <div className="contact-map">
-          <h3>¿Dónde estamos?</h3>
+          <h2>Follow us on: </h2>
+           <div className="socials">
+              
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" ><FaFacebook className="Facebook"/></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram className="Instagram"/></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><FaYoutube className="Youtube"/></a>
+          </div>
+
+           <div className="contact-info">
+            <p><FaPhoneAlt /> +52 999 123 4567</p>
+            <p><FaEnvelope /> contacto@valladolidmx.com</p>
+          </div>
+          <h3>Where are we?</h3>
           <iframe
             title="Ubicación Valladolid"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.7780165189987!2d-88.201182824118!3d20.68969899941171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f518b6aa2e9cd47%3A0xa05bfc7cfb2b4c0a!2sValladolid%2C%20Yucat%C3%A1n!5e0!3m2!1ses!2smx!4v1715647320982!5m2!1ses!2smx"
+            src="https://www.google.com/maps?q=20.689706468240633,-88.20104897181673&hl=es&z=16&output=embed"
             allowFullScreen=""
             loading="lazy"
           ></iframe>
+
+
         </div>
       </div>
     </div>

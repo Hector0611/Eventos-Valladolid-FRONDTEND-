@@ -314,6 +314,82 @@
   border-radius: 25px;
 }
 
+.eventoDiario {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: 15px auto;
+  max-width: 360px;
+  font-size: 0.85rem;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+  transition: transform 0.2s ease;
+}
+
+.eventoDiario1 {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: 15px auto;
+  max-width: 560px;
+  font-size: 1.5rem;
+  color: #000000;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px); 
+  transition: transform 0.2s ease;
+}
+
+.eventoDiario:hover {
+  transform: translateY(-3px);
+}
+
+.eventoDiario p {
+  margin: 4px 0;
+  line-height: 1.3;
+  font-weight: 300;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.bottonEvents {
+  background: linear-gradient(135deg, #00c853, #009624);
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bottonEvents1 {
+  background: linear-gradient(135deg, #00c853, #009624);
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bottonEvents:hover {
+  background: linear-gradient(135deg, #00e676, #00c853);
+  transform: scale(1.05);
+}
+
+.bottonEvents1:hover {
+  background: linear-gradient(135deg, #00e676, #00c853);
+  transform: scale(1.05);
+}
+
+
 
 /* =================== EVENTOS MOBILE =================== */
 @media (max-width: 1024px) {

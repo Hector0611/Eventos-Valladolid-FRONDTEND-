@@ -263,7 +263,24 @@ const ProgramarEvents = () => {
             {eventosSeleccionados.length === 0 ? (
               <div className="evento-info">
                 <center>
-                  <h2 className="titel1">First you must select the days to show you the events</h2>
+                  <div className='eventoDiario1'>
+                        <p>Every day there is video mapping in the center and Sisal</p>
+                        <p>The schedule is from 9:00 p.m. "Spanish"</p>
+                        <p>The schedule is from 9:20 p.m. "English"</p>
+                        <button
+                            className="bottonEvents1"
+                            onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=20.689720,-88.201669`, "_blank")}
+                        >
+                            Indications "Centro"
+
+                        </button>
+                        <button
+                            className="bottonEvents1"
+                            onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=20.686362823195388,-88.21000163440262`, "_blank")}
+                        >
+                            Indications "Sisal"
+                        </button>
+                    </div>
                 </center>
               </div>
             ) : (
@@ -296,6 +313,25 @@ const ProgramarEvents = () => {
                     </center>
                     <div className="texto-pre">
                       <div dangerouslySetInnerHTML={{ __html: evento.descripcion }}></div>
+                      
+                    </div>
+                    <div className='eventoDiario'>
+                        <p>Every day there is video mapping in the center and Sisal</p>
+                        <p>The schedule is from 9:00 p.m. "Spanish"</p>
+                        <p>The schedule is from 9:20 p.m. "English"</p>
+                        <button
+                            className="bottonEvents"
+                            onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=20.689720,-88.201669`, "_blank")}
+                        >
+                            Indications "Centro"
+
+                        </button>
+                        <button
+                            className="bottonEvents"
+                            onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=20.686362823195388,-88.21000163440262`, "_blank")}
+                        >
+                            Indications "Sisal"
+                        </button>
                     </div>
                   </div>
                 </div>

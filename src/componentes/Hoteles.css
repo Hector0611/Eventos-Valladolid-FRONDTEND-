@@ -683,7 +683,7 @@
     /* Botones */
     .info-button, .directions-button {
         padding: 6px 10px;
-        font-size: 10px;
+        font-size: 15px;
     }
 }
 
@@ -793,7 +793,7 @@
     top: 0;
     right: 0;
     width: 100%;
-    height: 65%;
+    height: 62%;
     padding: 16px;
     border-radius: 12px 12px 0 0;
     overflow-y: auto;

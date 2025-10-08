@@ -80,7 +80,7 @@ useEffect(() => {
       
       <aside className="hotel-list">
        < hr></hr>
-        <h3 className="titel1">Search Places</h3>
+        <h3 className="tititulo">Search Places</h3>
        < hr></hr>
         {/* buscar hoteles por su nombre y si no busca que se reinice al borrar */}
         <input

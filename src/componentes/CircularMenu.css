@@ -178,9 +178,9 @@
     display: grid;
     place-items: center; /* Centra horizontal y verticalmente */
     width: auto; /* 100% del ancho de la ventana */
-    height: 90vh; /* 100% de la altura de la ventana */
-    border-bottom-right-radius: 10%;
-    border-bottom-left-radius: 10%;
+    height: auto; /* 100% de la altura de la ventana */
+    border-bottom-right-radius: 0%;
+    border-bottom-left-radius: 0%;
 }
 
 .logo-image{

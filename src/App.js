@@ -29,7 +29,7 @@ const App = () => {
   // Ejemplo de notificación al cargar la página
   useEffect(() => {
     // 🔔 Toastify (dentro de la web)
-    toast.info("🎉 Nuevo evento agregado recientemente", {
+    toast.info("🎉 New event recently added", {
       position: "top-right",
       autoClose: 4000,
       theme: "colored",
@@ -79,6 +79,7 @@ const App = () => {
                     <ProgramarEvents />
                     <Catalogo />
                    <EventoDiario />
+                   <ToastContainer />
                    {/* Footer global */}
           <ProximoEvento />
          

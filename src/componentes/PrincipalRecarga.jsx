@@ -1,43 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './CircularMenu.css';
-import './menuwhat.css';
-import Logo3 from './Imagenes/Valladolidencantar01.gif';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./CircularMenu.css";
+import "./menuwhat.css";
+import Logo3 from "./Imagenes/Valladolidencantar01.mp4";
 
 const PrincipalRecarga = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const navigate = useNavigate();
+  const [fadeOut, setFadeOut] = useState(false);
 
-  const images = [Logo3];
-
-  // Carrusel (aunque ahora solo tienes 1 imagen)
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Cambia cada 5s (ajústalo si quieres)
+    // Activa la animación de salida después de 5 segundos
+    const fadeTimer = setTimeout(() => {
+      setFadeOut(true);
+    }, 5500);
 
-    return () => clearInterval(interval);
-  }, [images.length]);
+    // Redirige al home después de 6 segundos
+    const navTimer = setTimeout(() => {
+      navigate("/home");
+    }, 6000);
 
-  // Redirigir después de 7 segundos
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      navigate("/home"); // envía a la página inicial
-    }, 5800);
-
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(navTimer);
+    };
   }, [navigate]);
 
   return (
-    <div className="contenedor">
-      <div className="DivLogo">
-        <img
-          src={images[currentImageIndex]}
-          alt={`Imagen ${currentImageIndex + 1}`}
-          className="logo-image"
-        />
-      </div>
-
+    <div className={`contenedor-video ${fadeOut ? "fade-out" : ""}`}>
+      <video
+        className="video-fondo"
+        src={Logo3}
+        autoPlay
+        muted
+        playsInline
+        loop
+      ></video>
     </div>
   );
 };

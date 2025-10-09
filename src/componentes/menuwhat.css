@@ -1,63 +1,44 @@
-.AlertEvents {
-  background-color: #05f109bd;
-  border-radius: 50%;
-  padding: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgb(255, 255, 255);
-}
-
-/* Contenedor principal del botón */
-.AlertEvents-botton {
+.contenedor-video {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #00000090;
-  border-radius: 50px;
-  padding: 12px;
-  box-shadow: 0 0px 20px rgba(237, 6, 6, 0.7);
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  white-space: nowrap;
-  color: white;
-  font-weight: bold;
-  font-size: 24px;
-  transition: all 0.5s ease;
-  animation: pulseAlert 1.5s infinite; /* efecto alerta */
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-/* Texto dentro */
-.AlertEvents-botton .alert-text {
-  margin-left: 10px;
-  opacity: 1;
-  transition: opacity 0.5s ease;
+.video-fondo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  outline: none;
+  pointer-events: none; /* Evita clics o pausas */
 }
 
-/* Estado expandido */
-.AlertEvents-botton.expanded {
-  width: auto;
-  padding-right: 20px;
-}
-
-/* Estado colapsado (solo ícono) */
-.AlertEvents-botton.collapsed {
-  width: 56px;
-  padding-right: 12px;
-}
-
-.AlertEvents-botton.collapsed .alert-text {
+/* 🔄 Animación de salida (giro + desvanecimiento) */
+.fade-out {
   opacity: 0;
-  pointer-events: none;
+  transform: scale(1.1) rotate(5deg);
 }
 
-/* Efecto alerta (parpadeo/sombra) */
-@keyframes pulseAlert {
-  0% { box-shadow: 0 0 10px rgba(211, 118, 37, 0.6); }
-  50% { box-shadow: 0 0 25px rgb(211, 37, 37); }
-  100% { box-shadow: 0 0 10px rgba(0, 248, 21, 0.805); }
+/* (Opcional) Efecto de entrada suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.contenedor-video {
+  animation: fadeIn 1s ease-in;
 }

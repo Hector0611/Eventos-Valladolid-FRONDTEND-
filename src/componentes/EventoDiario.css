@@ -28,11 +28,12 @@
 
 .evento-card {
   margin-bottom: 1rem;
-  padding: 0rem;
+  padding: 12px 12px;
   border-radius: 5px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   height: auto;
+  background-color: rgb(0, 0, 0);
 }
 
 .map-container {
@@ -44,7 +45,7 @@
   position: relative;
   overflow: hidden;
   margin-bottom: 20px;
-  border-radius: 12px;
+  border-radius: 22px;
 }
 
 .evento-overlay {
@@ -63,8 +64,8 @@
 
 .contenido-sobre-imagen1 {
   position: absolute;
-  width: 200%;
-  height: 0%;
+  width: 100%;
+  height: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -73,28 +74,105 @@
   padding: 20px;
 }
 
-.bottonEvent2{
-  background-color: #4caf4f7e; /* Verde */
+/* Botón 1 */
+.bottonEvent2 {
+  background-image: url("/src/componentes/Imagenes/iglesia1.png");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   border: none;
   color: white;
-  padding: 10px 115px;
+  padding: 250px 480px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  position: absolute;
   font-size: 20px;
-  margin: 20px 250px;
+  top: 22%;
+  left: 42%;
   cursor: pointer;
   border-radius: 12px;
-  transition-duration: 0.4s;
-  /* tamaño del botton */
-  height: 60px;
+  transition: all 0.4s ease;
+  /* Para tooltip */
+}
 
-}
 .bottonEvent2:hover {
-  background-color: rgb(4, 248, 77); 
-  color: black; 
-  border: 2px solid #4CAF50;
+  transform: scale(1.2);
 }
+
+/* Tooltip para bottonEvent2 */
+.bottonEvent2::after {
+  content: "Directions to get there";
+  position: absolute;
+  top: 90%;
+  left: 37%; /* a la derecha del botón */
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  font-size: 24px;
+}
+
+.bottonEvent2:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(5px);
+}
+
+/* Botón 2 */
+.bottonEvent22 {
+  background-image: url("/src/componentes/Imagenes/iglesia2.png");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  color: white;
+  padding: 250px 480px;
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+  font-size: 20px;
+  top: 74%;
+  left: 18%;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  /* Para tooltip */
+}
+
+.bottonEvent22:hover {
+  transform: scale(1.2);
+}
+
+/* Tooltip para bottonEvent22 */
+.bottonEvent22::after {
+  content: "Directions to get there";
+  position: absolute;
+  top: 74%;
+  left: 37%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  font-size: 24px;
+}
+
+.bottonEvent22:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(5px);
+}
+
+
 
 .colordescription {
   background-image: url('./Imagenes/colores64.png');
@@ -114,7 +192,7 @@
 
 .cartel-videoM{ 
   width: 90%;
-  height: 620px;
+  height: auto;
   border-radius: 10%;
   box-shadow: 0 90px 58px rgb(255, 0, 0);
 }
@@ -130,9 +208,23 @@
     height: auto;
   }
   .bottonEvent2{
-    padding: 5px 50px;
+    padding: 110px 100px;
     font-size: 10px;
     margin: 35px 65px;
     height: 25px;
+  }
+  .bottonEvent22{
+    padding: 100px 200px;
+    left: 10%;
+  }
+  .bottonEvent2::after {
+    font-size: 16px;
+    top: 85%;
+    left: 7%;
+  }
+  .bottonEvent22::after {
+    font-size: 16px;
+    top: 75%;
+    left: 27%;
   }
 }

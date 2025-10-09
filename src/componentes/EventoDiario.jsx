@@ -33,22 +33,22 @@ const EventoDiario = () => {
                     className="bottonEvent2"
                     onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=20.689720,-88.201669`, "_blank")}
                 >
-                    Indications
+                    
 
                 </button>
                 <button
-                    className="bottonEvent2"
+                    className="bottonEvent22"
                     onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=20.686362823195388,-88.21000163440262`, "_blank")}
                 >
-                    Indications
+                    
 
                 </button>
                 
                 </div>  
-                <details>
+               {/*  <details>
                     <summary>Conoces Valladolid</summary>
                     <p>hola Valladolid</p>
-                </details>
+                </details> */}
             </div>
 
     );

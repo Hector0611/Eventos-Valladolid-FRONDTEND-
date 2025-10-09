@@ -199,7 +199,9 @@ color:#000000;
 
 .container1 {
     display: flex;
-    background-color: transparent;
+    background-color: rgba(252, 250, 250, 0.84);
+    padding: 15px 28px;
+    border-radius: 18px;
 
 }
 

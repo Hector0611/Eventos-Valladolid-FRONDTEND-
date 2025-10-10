@@ -120,11 +120,13 @@
 }
 
 .modal-content {
-   background-image: url('./Imagenes/fondo1.jpg'); /* Reemplaza con la URL o ruta de tu imagen */
+   background-image: url('./Imagenes/Fondo66.jpg'); /* Reemplaza con la URL o ruta de tu imagen */
     background-color: rgba(252, 0, 0, 0.414);
     background-size: cover; /* Ajusta la imagen para que cubra todo el área */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-repeat: repeat-y;
+  background-size: 100% auto; /* Se ajusta al ancho, repitiéndose hacia abajo */
   padding: 2rem;
   max-height: 100%;
   overflow-y: auto;
@@ -205,7 +207,7 @@
   }
 
   .Separacion{
-    height: 112px; /* Ajusta la altura según tus necesidades */
+    height: 119px; /* Ajusta la altura según tus necesidades */
     width: 100%;
     background-color: transparent; /* Color de fondo para separar */
   }
@@ -469,7 +471,7 @@
   }
 
   .Separacion{
-    height: 115px; /* Ajusta la altura según tus necesidades */
+    height: 90px; /* Ajusta la altura según tus necesidades */
     width: 100%;
     background-color: transparent; /* Color de fondo para separar */
   }

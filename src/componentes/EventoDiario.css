@@ -93,21 +93,23 @@
   cursor: pointer;
   border-radius: 12px;
   transition: all 0.4s ease;
-  /* Para tooltip */
+  animation: pulseAnimation 2s infinite ease-in-out; /* animación sutil */
 }
 
+/* Hover: amplía y brilla */
 .bottonEvent2:hover {
   transform: scale(1.2);
+ 
 }
 
-/* Tooltip para bottonEvent2 */
+/* Tooltip */
 .bottonEvent2::after {
-  content: "Directions to get there";
+  content: "Indicaciones para llegar";
   position: absolute;
   top: 90%;
-  left: 37%; /* a la derecha del botón */
+  left: 37%;
   transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
   padding: 6px 12px;
   border-radius: 6px;
@@ -142,21 +144,22 @@
   cursor: pointer;
   border-radius: 12px;
   transition: all 0.4s ease;
-  /* Para tooltip */
+  animation: pulseAnimation 2s infinite ease-in-out;
 }
 
 .bottonEvent22:hover {
   transform: scale(1.2);
+
 }
 
-/* Tooltip para bottonEvent22 */
+/* Tooltip botón 2 */
 .bottonEvent22::after {
-  content: "Directions to get there";
+  content: "Indicaciones para llegar";
   position: absolute;
   top: 74%;
   left: 37%;
   transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
   padding: 6px 12px;
   border-radius: 6px;
@@ -171,6 +174,23 @@
   opacity: 1;
   transform: translateY(-50%) translateX(5px);
 }
+
+/* 🔹 Animación de latido sutil */
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
 
 
 
@@ -202,25 +222,68 @@
   transition-duration: 0.4s;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1224px) {
+  .cartel-videoM {
+    width: 100%;
+    height: auto;
+  }
+
+  /* ✅ Usamos tamaños relativos en lugar de píxeles fijos */
+  .bottonEvent2 {
+    width: clamp(380px, 10vw, 450px);   /* ajusta entre 80px y 150px */
+    height: clamp(485px, 5vh, 250px);   /* ajusta entre 25px y 50px */
+    padding: 0;                       /* sin padding para mantener proporción */
+    font-size: clamp(10px, 1.5vw, 14px);
+    margin: 2vh 3vw;
+    top: 18%;
+    left: 50%;
+  }
+
+  .bottonEvent22 {
+    width: clamp(660px, 10vw, 150px);
+    height: clamp(485px, 5vh, 50px);
+    padding: 0;
+    font-size: clamp(10px, 1.5vw, 14px);
+    left: 15%;
+    top: 68%;
+  }
+
+  /* ✅ Tooltip ajustable y centrado automáticamente */
+  .bottonEvent2::after{
+    font-size: clamp(20px, 1.3vw, 16px);
+    top: 90%;        /* aparece justo debajo del botón */
+    left: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+}
+
+
+
+@media (max-width: 768px) {
   .cartel-videoM {
     width: 100%;
     height: auto;
   }
   .bottonEvent2{
-    padding: 110px 100px;
+    width: clamp(150px, 10vw, 50px);   /* ajusta entre 80px y 150px */
+    height: clamp(255px, 5vh, 50px);   /* ajusta entre 25px y 50px */
+    padding: 10px 10px;
     font-size: 10px;
-    margin: 35px 65px;
-    height: 25px;
+    margin: 35px 45px;
+
   }
   .bottonEvent22{
-    padding: 100px 200px;
-    left: 10%;
+    width: clamp(380px, 10vw, 450px);   /* ajusta entre 80px y 150px */
+    height: clamp(185px, 5vh, 250px);   /* ajusta entre 25px y 50px */
+    padding: 70px 100px;
+    top: 75%;
+    left: 8%;
   }
   .bottonEvent2::after {
     font-size: 16px;
     top: 85%;
-    left: 7%;
+    left: -10%;
   }
   .bottonEvent22::after {
     font-size: 16px;
@@ -228,3 +291,5 @@
     left: 27%;
   }
 }
+
+

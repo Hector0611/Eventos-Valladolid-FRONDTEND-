@@ -15,7 +15,7 @@
     height: auto;
     transition: transform 0.5s;
     background-color: rgba(13, 139, 68, 0);
-    border-radius: 10%;
+    border-radius: 0%;
     box-shadow: 0 4px 20px rgba(255, 2, 2, 0);
     margin: 0 auto;
     margin-top: 0px;
@@ -25,44 +25,58 @@
 }
 
 .calendar-table {
-    background-image: url('./Imagenes/3.jpg');
+   /*  background-image: url('./Imagenes/Calendario.jpg');
     background-size: cover; /* Ajusta la imagen para que cubra todo el área */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+
+  /*   background-repeat: repeat-y;
+    background-size: 100% auto;  *//* Se ajusta al ancho, repitiéndose hacia abajo */ 
+   
     height: 100%;
     width: auto;
     border-collapse: collapse;
     margin: 0 auto;
-    box-shadow: 0 10px 30px rgba(255, 1, 1, 0.718);
-    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(17, 184, 64, 0.718);
+    border-radius: 10px;
+    
 }
 
 
 .calendar-table th, .calendar-table td{
     font-family: 'Montserrat', sans-serif; /* misma fuente para todo */
-    width: 14.28%;
-    height: 70px;
+    width: 14%;
+    height: 75px;
     background-color: transparent;
     vertical-align: top;
     text-align: center;
-    padding: 10px;
-    box-shadow: 0 6px 1.5px rgb(255, 255, 255); /* Línea de borde de Bootstrap */
-    color: rgba(255, 255, 255, 0.87);
+    padding: 10px 15px;
+    box-shadow: 0 1px 1px rgb(0, 0, 0); /* Línea de borde de Bootstrap */
+    color: rgba(0, 0, 0, 0.87);
     font-size: 20px;
+     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* misma fuente para todo */
 }
 
 .calendar-table td:hover{   
-    background-color: rgba(255, 255, 255, 0.862); /* Cambia el color de fondo al pasar el mouse */
+    background-color: rgba(66, 236, 32, 0.255); /* Cambia el color de fondo al pasar el mouse */
     color: #000000; /* Cambia el color del texto al pasar el mouse */
-    box-shadow: 0 3px 20px rgba(250, 250, 250, 0);
+    box-shadow: 0 6px 20px rgba(250, 250, 250, 0);
     border-radius: 30%;
 }
+
+.calendar-table th{
+    background: rgba(255, 255, 255, 0.871);
+    color: black;
+    border-radius: 0px;
+    box-shadow: 0 2.5px 5px rgb(0, 0, 0); /* Línea de borde de Bootstrap */
+    align-items: center;
+}
+
+
 
 .day {
     position:relative;
     background-color: #ffffff; /* círculo blanco */
   color: #333333; /* número oscuro */
-  border-radius: 5%;
+  border-radius: 10%;
   width: 35px;
   height: 35px;
   
@@ -71,6 +85,7 @@
   margin: 3px;
   font-weight: 600;
   transition: all 0.3s ease;
+  
 }
 .day:hover{
     background-color: #ffd700; /* dorado maya al pasar el mouse */
@@ -113,6 +128,7 @@
 .day {
    cursor: pointer;
    background: #333;
+  border: 2px solid #00000013;
    
 }
 
@@ -123,6 +139,8 @@
     transition: transform 0.5s;
     color: chartreuse;
     background-color: #ecf800;
+    
+    
 }
 
 /* dia seleccionado con evento */
@@ -133,11 +151,12 @@
    background-color: rgb(27, 15, 15);
     border-radius: 10%;
     font-family: 'Montserrat', sans-serif; /* misma fuente para todo */
+    
 }
 
 /* Hoy */
 .day.today {
-    border: 2px solid #f80000;
+    border: 3px solid #f80000;
 }
     
 .message-popup {
@@ -199,7 +218,7 @@ color:#000000;
 
 .container1 {
     display: flex;
-    background-color: rgba(252, 250, 250, 0.84);
+    background-color: rgba(236, 231, 231, 0.815);
     padding: 15px 28px;
     border-radius: 18px;
 
@@ -254,3 +273,4 @@ color:#000000;
 .textcalendar{ 
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+

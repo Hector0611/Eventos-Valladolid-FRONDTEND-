@@ -125,7 +125,7 @@ const ProgramarEvents = () => {
     const event = days.find(
       (d) => d.dia === day && d.mes_id === selectedMonth + 1
     );
-    return event ? event.evento || event.mensaje || "" : null;
+    return event ? event.evento || event.mensaje || "Daily Events" : null;
   };
 
   const isToday = (day) =>
@@ -264,23 +264,45 @@ const ProgramarEvents = () => {
               <div className="evento-info">
                 <center>
                   <div className='eventoDiario1'>
-                        <p>Every day there is video mapping in the center and Sisal</p>
-                        <p>The schedule is from 9:00 p.m. "Spanish"</p>
-                        <p>The schedule is from 9:20 p.m. "English"</p>
-                        <button
-                            className="bottonEvents1"
-                            onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=20.689720,-88.201669`, "_blank")}
-                        >
-                            Indications "Centro"
+                    <div className='eventoDiario1'>
+                    <p>Every day there is video mapping in the center and Sisal</p>
+                    <p>The schedule is from 9:00 p.m. "Spanish"</p>
+                    <p>The schedule is from 9:20 p.m. "English"</p>
 
-                        </button>
-                        <button
-                            className="bottonEvents1"
-                            onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=20.686362823195388,-88.21000163440262`, "_blank")}
-                        >
-                            Indications "Sisal"
-                        </button>
-                    </div>
+                    <button
+                      className="bottonEvents1"
+                      onClick={() =>
+                        window.open(
+                          `https://www.google.com/maps/dir/?api=1&destination=20.689720,-88.201669`,
+                          "_blank"
+                        )
+                      }
+                    >
+                      Indications "Centro"
+                    </button>
+
+                    <button
+                      className="bottonEvents1"
+                      onClick={() =>
+                        window.open(
+                          `https://www.google.com/maps/dir/?api=1&destination=20.686362823195388,-88.21000163440262`,
+                          "_blank"
+                        )
+                      }
+                    >
+                      Indications "Sisal"
+                    </button>
+
+                    {/* ✅ Botón para abrir el PDF local */}
+                    <button
+                      className="bottonEvents1"
+                      onClick={() => window.open(`${process.env.PUBLIC_URL}/pdfs/Hoteles.pdf`, "_blank")}
+                    >
+                      📄 Ver Hoteles
+                    </button>
+                  </div>
+                  </div>
+
                 </center>
               </div>
             ) : (

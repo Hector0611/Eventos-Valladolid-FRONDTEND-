@@ -35,6 +35,9 @@
 
 .logo-Yucatan {
   margin-top: 0;
+  width: 50%;
+  max-height: 100px;
+  height: auto;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -52,7 +55,7 @@
   }
 
   .logo-Yucatan {
-    width: 25%;
-    max-height: 100px;
+    width: 80%;
+   
   }
 }

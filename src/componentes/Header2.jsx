@@ -4,6 +4,7 @@ import './Header2.css';
 import logo3 from './Imagenes/pngegg.png';
 import logo4 from './Imagenes/unnamed.png';
 import logo5 from './Imagenes/LOGOOFICIAL.png';
+import logo6 from './Imagenes/LogosValladolid.jpg';
 
 const Header2 = () => {
   const location = useLocation();
@@ -41,9 +42,9 @@ const Header2 = () => {
     <header className={`header-container ${showHeader ? "visible" : "hidden"}`}>
       <div className="header-content">
         <div className='LogoNeutro2'>
-          <img src={logo5} alt="Yucatan" className="logo-Yucatan" />
-          <img src={logo4} alt="Yucatan" className="logo-Yucatan" />
-          <img src={logo3} alt="Yucatan" className="logo-Yucatan" />
+          <img src={logo6} alt="Yucatan" className="logo-Yucatan" />
+          {/* <img src={logo4} alt="Yucatan" className="logo-Yucatan" />
+          <img src={logo3} alt="Yucatan" className="logo-Yucatan" /> */}
         </div>
       </div>
     </header>

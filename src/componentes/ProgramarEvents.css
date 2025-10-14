@@ -390,6 +390,48 @@
   background: linear-gradient(135deg, #00e676, #00c853);
   transform: scale(1.05);
 }
+.evento-container1 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap; /* Para que en pantallas pequeñas se acomode debajo */
+}
+
+.eventoDiario11 {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px 15px;
+
+  max-width: 560px;
+  font-size: 1.5rem;
+  color: #000000;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px); 
+  transition: transform 0.2s ease;
+}
+
+.hoteles-section1 {
+   background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px 15px;
+  max-width: 560px;
+  font-size: 1.5rem;
+  color: #000000;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px); 
+  transition: transform 0.2s ease;
+}
+
+.hoteles-section1 h3 {
+  margin-bottom: 10px;
+  color: #030504;
+}
+
 
 
 /* =================== EVENTOS MOBILE =================== */

@@ -21,6 +21,11 @@ import logo66 from './Imagenes/ImgTempo/6.6.jpg';
 import logo77 from './Imagenes/ImgTempo/7.jpg';
 import logo88 from './Imagenes/ImgTempo/8.8.jpg';
 
+/* Folleto */
+import logoDiaMuertos from './Imagenes/ImgTempo/DiaMuertos.jpg';
+import { img } from 'framer-motion/client';
+
+
 const Catalogo = () => {
   const [idioma, setIdioma] = useState("es");
   const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
@@ -87,6 +92,14 @@ const Catalogo = () => {
             <img src={img} alt={`catalogo-${index}`} />
           </div>
         ))}
+      </div>
+<hr />
+
+      <div className="folleto">
+        <h1 className='titel1'>Dia de Muertos</h1>
+        {/* poner img de folleto dia de muertos */}
+        <img src={logoDiaMuertos} alt="Folleto Dia de Muertos" className="folleto-img" />
+       
       </div>
 
       {/* Modal de imagen */}

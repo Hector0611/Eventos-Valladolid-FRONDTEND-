@@ -262,49 +262,53 @@ const ProgramarEvents = () => {
 
             {eventosSeleccionados.length === 0 ? (
               <div className="evento-info">
-                <center>
-                  <div className='eventoDiario1'>
-                    <div className='eventoDiario1'>
-                    <p>Every day there is video mapping in the center and Sisal</p>
-                    <p>The schedule is from 9:00 p.m. "Spanish"</p>
-                    <p>The schedule is from 9:20 p.m. "English"</p>
+                
+                  <div className="evento-container1">
+                    {/* Columna izquierda: eventos diarios */}
+                    <div className="eventoDiario11">
+                      <p>Every day there is video mapping in the center and Sisal</p>
+                      <p>The schedule is from 9:00 p.m. "Spanish"</p>
+                      <p>The schedule is from 9:20 p.m. "English"</p>
 
-                    <button
-                      className="bottonEvents1"
-                      onClick={() =>
-                        window.open(
-                          `https://www.google.com/maps/dir/?api=1&destination=20.689720,-88.201669`,
-                          "_blank"
-                        )
-                      }
-                    >
-                      Indications "Centro"
-                    </button>
+                      <button
+                        className="bottonEvents1"
+                        onClick={() =>
+                          window.open(
+                            `https://www.google.com/maps/dir/?api=1&destination=20.689720,-88.201669`,
+                            "_blank"
+                          )
+                        }
+                      >
+                        Indications "Centro"
+                      </button>
 
-                    <button
-                      className="bottonEvents1"
-                      onClick={() =>
-                        window.open(
-                          `https://www.google.com/maps/dir/?api=1&destination=20.686362823195388,-88.21000163440262`,
-                          "_blank"
-                        )
-                      }
-                    >
-                      Indications "Sisal"
-                    </button>
+                      <button
+                        className="bottonEvents1"
+                        onClick={() =>
+                          window.open(
+                            `https://www.google.com/maps/dir/?api=1&destination=20.686362823195388,-88.21000163440262`,
+                            "_blank"
+                          )
+                        }
+                      >
+                        Indications "Sisal"
+                      </button>
+                    </div>
 
-                    {/* ✅ Botón para abrir el PDF local */}
-                    <button
-                      className="bottonEvents1"
-                      onClick={() => window.open(`${process.env.PUBLIC_URL}/pdfs/Hoteles.pdf`, "_blank")}
-                    >
-                      📄 Ver Hoteles
-                    </button>
+                    {/* Columna derecha: botón de hoteles */}
+                    <div className="hoteles-section1">
+                      <h3>¿Buscas hoteles?</h3>
+                      <button
+                        className="bottonEvents1"
+                        onClick={() => window.open(`${process.env.PUBLIC_URL}/pdfs/Hoteles.pdf`, "_blank")}
+                      >
+                        📄 Ver Hoteles
+                      </button>
+                    </div>
                   </div>
-                  </div>
-
-                </center>
+             
               </div>
+
             ) : (
               eventosSeleccionados.map((evento) => (
                 <div key={evento.id} className="evento-if">
@@ -337,24 +341,53 @@ const ProgramarEvents = () => {
                       <div dangerouslySetInnerHTML={{ __html: evento.descripcion }}></div>
                       
                     </div>
-                    <div className='eventoDiario'>
-                        <p>Every day there is video mapping in the center and Sisal</p>
-                        <p>The schedule is from 9:00 p.m. "Spanish"</p>
-                        <p>The schedule is from 9:20 p.m. "English"</p>
-                        <button
-                            className="bottonEvents"
-                            onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=20.689720,-88.201669`, "_blank")}
-                        >
-                            Indications "Centro"
+                    <div className="evento-info">
+                
+                  <div className="evento-container1">
+                    {/* Columna izquierda: eventos diarios */}
+                    <div className="eventoDiario11">
+                      <p>Every day there is video mapping in the center and Sisal</p>
+                      <p>The schedule is from 9:00 p.m. "Spanish"</p>
+                      <p>The schedule is from 9:20 p.m. "English"</p>
 
-                        </button>
-                        <button
-                            className="bottonEvents"
-                            onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=20.686362823195388,-88.21000163440262`, "_blank")}
-                        >
-                            Indications "Sisal"
-                        </button>
+                      <button
+                        className="bottonEvents1"
+                        onClick={() =>
+                          window.open(
+                            `https://www.google.com/maps/dir/?api=1&destination=20.689720,-88.201669`,
+                            "_blank"
+                          )
+                        }
+                      >
+                        Indications "Centro"
+                      </button>
+
+                      <button
+                        className="bottonEvents1"
+                        onClick={() =>
+                          window.open(
+                            `https://www.google.com/maps/dir/?api=1&destination=20.686362823195388,-88.21000163440262`,
+                            "_blank"
+                          )
+                        }
+                      >
+                        Indications "Sisal"
+                      </button>
                     </div>
+
+                    {/* Columna derecha: botón de hoteles */}
+                    <div className="hoteles-section1">
+                      <h3>¿Buscas hoteles?</h3>
+                      <button
+                        className="bottonEvents1"
+                        onClick={() => window.open(`${process.env.PUBLIC_URL}/pdfs/Hoteles.pdf`, "_blank")}
+                      >
+                        📄 Ver Hoteles
+                      </button>
+                    </div>
+                  </div>
+             
+              </div>
                   </div>
                 </div>
               ))

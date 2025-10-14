@@ -11,6 +11,7 @@
 
 .Titulo{
     text-align: center;
+    margin: 10px 0px;
 }
 
 .texto{
@@ -18,6 +19,17 @@
     padding: 20px 20px;
     background-color: #a6f863ae;
     border-radius: 20px;
+}
+.texto1 li{
+    text-align: justify;
+    padding: 5px;
+    background-color: #f8c471ae;
+    border-radius: 20px;
+}
+.texto1 li:hover{
+    background-color: #ff9800;
+    
+    transition: 0.3s;
 }
 
 .footer-content {
@@ -59,10 +71,16 @@
     color: #000000;
     transition: color 0.3s;
     font-size: 1.3rem;
+    background-color: #f8c471ae;
+    padding: 1px 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer-section ul li a:hover {
-    color: #ff9800;
+    color: #000000;
 }
 
 .social-links a {
@@ -122,8 +140,8 @@
     position:relative;
 }
 
-.logo-Yucatan{
-    width: 15%;
+.logo-Yucatan1{
+    width: 30%;
     background-size: cover; /* Ajusta la imagen para que cubra todo el área */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -137,6 +155,72 @@
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     margin-top: 0%;
 }
+
+/* estilos para el pie de página / derechos reservados */
+.derechos_reservados {
+  display: inline-flex;           /* mantiene el texto y el svg alineados */
+  align-items: center;            /* centra verticalmente el svg con el texto */
+  gap: 0.5rem;                    /* separación entre texto e icono */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-size: 0.95rem;             /* tamaño legible en desktop */
+  color: #ffffff;                 /* color del texto (ajusta según tu fondo) */
+  background: rgba(0,0,0,0.35);   /* fondo sutil tipo etiqueta (opcional) */
+  padding: 0.45rem 0.9rem;        /* espacio interior */
+  border-radius: 10px;            /* esquinas redondeadas */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+  margin: 1rem auto;              /* separación superior/inferior, centrado en bloque */
+  display: flex;
+  justify-content: center;        /* si lo pones como bloque centrará el contenido */
+  max-width: 100%;                /* evita desbordes */
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  white-space: nowrap;            /* evita saltos de línea si quieres que sea una sola línea */
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+/* icono SVG hereda el color del texto */
+.derechos_reservados svg {
+  width: 1rem;                    /* controla tamaño del icono */
+  height: 1rem;
+  flex-shrink: 0;
+  fill: currentColor;             /* importante para que el path tome el color definido */
+  vertical-align: middle;
+  transition: transform 220ms ease, opacity 160ms ease;
+  opacity: 0.95;
+}
+
+/* efecto sutil al pasar el ratón */
+.derechos_reservados:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+.derechos_reservados:hover svg {
+  transform: scale(1.08) rotate(-6deg);
+  opacity: 1;
+}
+
+/* versión para pantallas pequeñas */
+@media (max-width: 520px) {
+  .derechos_reservados {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.6rem;
+    white-space: normal;          /* permitir que el texto haga salto en móvil */
+    text-align: center;
+  }
+  .derechos_reservados svg {
+    width: 1.05rem;
+    height: 1.05rem;
+  }
+}
+
+/* variante clara (si tu fondo es claro) — úsala añadiendo .light en el contenedor */
+.derechos_reservados.light {
+  color: #222;
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+
 /* =================== FOOTER MOBILE =================== */
 @media screen and (max-width: 1024px) {
   .footer {
@@ -187,7 +271,12 @@
    }
 
    .logo-Yucatan2{  
-    width: 45%;
+    width: 65%;
+    margin-top: 0%;
+   }
+
+   .logo-Yucatan1{  
+    width: 65%;
     margin-top: 0%;
    }
   

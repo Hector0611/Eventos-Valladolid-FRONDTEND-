@@ -13,11 +13,12 @@ const Footer = () => {
                 <img
                         src={logo5}
                         alt={`Yucatan`}
-                        className="logo-Yucatan"
+                        className="logo-Yucatan1"
                   
                   />
                   </div>
 <br />
+<hr />
             <div className="footer-content">
                 
                 <div className="footer-section">
@@ -28,7 +29,7 @@ const Footer = () => {
                 </div>
                 <div className="footer-section">
                 <h3 className='Titulo'>Useful Links</h3>
-                <ul>
+                <ul className='texto1'>
                     <li><a href="/hoteles">Hotels</a></li>
                     <li><a href="/contacto">Contact Us</a></li>
                     <li><a href="/historia">History of Valladolid</a></li>
@@ -38,9 +39,10 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-section Titulo">
-                    <h3 className='Titulo'>Follow us on:</h3>
+                    <h3 className='Titulo'>Contact us</h3>
                     <p><FaPhoneAlt /> +52 - - -  - - -  - - - - </p>
                     <p><FaEnvelope /> - - - - - - - -@valladolidmx.com</p>
+                    <h3 className='Titulo'>Follow us on:</h3>
                     <div className="social-links Titulo">
                         <a href="https://www.facebook.com/ByVisitValladolidMX/" target="_blank" rel="noopener noreferrer">
                             <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="Facebook" viewBox="0 0 16 16">
@@ -59,12 +61,18 @@ const Footer = () => {
                         </a>
                     </div>
                 </div>
+               
             </div>
-            <br />
+             <p className='derechos_reservados'>All Rights Reserved for the Municipality of Valladolid, Yucatán 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-r-circle" viewBox="0 0 16 16">
+                     <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.5 4.002h3.11c1.71 0 2.741.973 2.741 2.46 0 1.138-.667 1.94-1.495 2.24L11.5 12H9.98L8.52 8.924H6.836V12H5.5zm1.335 1.09v2.777h1.549c.995 0 1.573-.463 1.573-1.36 0-.913-.596-1.417-1.537-1.417z"/>
+                </svg> 
+            </p>
+
             <div className="footer-bottom">
                 <hr />
                 <br />
-              
+              <br />
                 <br />
                 <div className='divLogos'>
                 <img

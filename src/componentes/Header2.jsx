@@ -4,7 +4,7 @@ import './Header2.css';
 import logo3 from './Imagenes/pngegg.png';
 import logo4 from './Imagenes/unnamed.png';
 import logo5 from './Imagenes/LOGOOFICIAL.png';
-import logo6 from './Imagenes/LogosValladolid.jpg';
+import logo6 from './Imagenes/LogosValladolid.png';
 
 const Header2 = () => {
   const location = useLocation();

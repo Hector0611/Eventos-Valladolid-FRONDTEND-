@@ -43,7 +43,7 @@ const Header = () => {
             <nav className="header-nav1">
                 {/* <button className="botton" onClick={() => navigateTo('/programarevents')}>EVENTS</button> */}
                 <button className="botton" onClick={() => navigateTo('/LugaresTuristicos')}>DISCOVER</button>
-                <button className="botton" onClick={() => navigateTo('/hoteles')}>MAPS</button>
+                {/* <button className="botton" onClick={() => navigateTo('/hoteles')}>MAPS</button> */}
                 <button className="botton" onClick={() => navigateTo('/estadisticas')}>RESOURCES</button>
                 {/* <button className="botton" onClick={togglePopup}>Saber más?</button> */}
 

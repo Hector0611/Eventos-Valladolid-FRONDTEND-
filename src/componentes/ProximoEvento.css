@@ -1,7 +1,7 @@
 /* 🌈 Contenedor principal de próximos eventos */
 .proximos-eventos-container {
   position: relative; /* Necesario para que ::before se posicione dentro */
-  background: linear-gradient(270deg, #000000, #0be3d5,#000000, #4ae94a, #000000);
+  background: linear-gradient(270deg, #00000093, #0be3d5e4,#000000a8, #4ae94af3, #000000c8);
   padding: 1.5rem;
   border-radius: 15px;
   max-width: 100%;
@@ -9,6 +9,7 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
   overflow: hidden;
   z-index: 0;
+  
   animation: gradientAnimation 15s ease infinite;
 }
 
@@ -23,7 +24,7 @@
   background-image: url('/src/componentes/Imagenes/PATRON2.png');
   background-repeat: repeat-y;
   background-size: 100% auto; /* Se ajusta al ancho, repitiéndose verticalmente */
-  opacity: 0.75; /* 🔹 Ajusta la transparencia del patrón */
+  opacity: 0.5; /* 🔹 Ajusta la transparencia del patrón */
   z-index: -1; /* Se coloca detrás del contenido */
 }
 

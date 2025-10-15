@@ -262,11 +262,11 @@ const ProgramarEvents = () => {
 
             {eventosSeleccionados.length === 0 ? (
               <div className="evento-info">
-                
+                <h1 className='titel6'>Daily Events</h1>
                   <div className="evento-container1">
                     {/* Columna izquierda: eventos diarios */}
                     <div className="eventoDiario11">
-                      <p>Every day there is video mapping in the center and Sisal</p>
+                      <h2 className='titel1'>Every day there is video mapping</h2>
                       <p>The schedule is from 9:00 p.m. "Spanish"</p>
                       <p>The schedule is from 9:20 p.m. "English"</p>
 
@@ -342,11 +342,12 @@ const ProgramarEvents = () => {
                       
                     </div>
                     <div className="evento-info">
-                
+                <h1 className='titel1'>Daily Events</h1>
                   <div className="evento-container1">
+                    
                     {/* Columna izquierda: eventos diarios */}
                     <div className="eventoDiario11">
-                      <p>Every day there is video mapping in the center and Sisal</p>
+                      <h2 className='titel1'>Every day there is video mapping in the center and Sisal</h2>
                       <p>The schedule is from 9:00 p.m. "Spanish"</p>
                       <p>The schedule is from 9:20 p.m. "English"</p>
 

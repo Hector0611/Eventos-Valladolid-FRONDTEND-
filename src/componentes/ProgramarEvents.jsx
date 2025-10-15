@@ -270,6 +270,8 @@ const ProgramarEvents = () => {
                       <p>The schedule is from 9:00 p.m. "Spanish"</p>
                       <p>The schedule is from 9:20 p.m. "English"</p>
 
+                      <h3 className='titel1'>Directions to get there</h3>
+
                       <button
                         className="bottonEvents1"
                         onClick={() =>
@@ -279,7 +281,7 @@ const ProgramarEvents = () => {
                           )
                         }
                       >
-                        Indications "Centro"
+                        Church of San Servacio
                       </button>
 
                       <button
@@ -291,7 +293,7 @@ const ProgramarEvents = () => {
                           )
                         }
                       >
-                        Indications "Sisal"
+                        Church of San Bernardino
                       </button>
                     </div>
 

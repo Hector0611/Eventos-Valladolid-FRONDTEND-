@@ -552,6 +552,14 @@
     font-size: 1.2em;
     margin: 10px;
   }
+  .evento-container1{ 
+    flex-direction: column; /* En móviles, de fila a columna */
+    align-items: center;
+    padding: 0%;
+    margin: 1px 0;
+    width: 100%;
+    height: auto; 
+  }
 
   .titel6{  
     font-size: 1.5rem; /* Más pequeño en móviles */
@@ -559,8 +567,9 @@
   }
 
   .bottonEvents1 {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     padding: 4px 2px;
+    max-width: 320px;
   }
   
 }

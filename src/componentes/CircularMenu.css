@@ -215,7 +215,7 @@
 @media (max-width: 768px) {
     .circular-menu {
         width: auto;
-        height: 90vw;
+        height: 70vw;
         background-color: transparent;
     }
     .midle-circle{
@@ -233,10 +233,9 @@
         height: 105vw;
     }
     .outer-circle .month {
-        width: 22vw;
-        height: 20vw;
+        width: 15vw;
+        height: 18vw;
         font-size: 3vw;
-        
     }
     .outer-circle .month:nth-child(1) { transform: rotate(0deg) translate(33vw); }
     .outer-circle .month:nth-child(2) { transform: rotate(-30deg) translate(33vw); }

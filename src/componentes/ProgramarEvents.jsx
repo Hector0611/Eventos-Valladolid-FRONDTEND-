@@ -154,11 +154,14 @@ const ProgramarEvents = () => {
       <div className="caja3">
         <h1 className="titel1">See the Event Programs During Your Stay in Valladolid</h1>
         <hr />
-
+        <h1 className="calendar1">
+               {monthsData[selectedMonth]?.nombre || months[selectedMonth]} {currentYear} Calendar
+                </h1>
         <div className="container1">
           {/* 🔹 Selección de rango y mes */}
+          
           <div className="left">
-            <h3 className="calendar1">Choose Month</h3>
+      
             <hr />
             <h1 className="fecha-texto">Select the days you will be in Valladolid</h1>
 
@@ -200,21 +203,15 @@ const ProgramarEvents = () => {
           {/* ✅ Calendario corregido */}
           <div className="right">
             <div className="div_calendario">
-              <center>
-                <h1 className="calendar1">
-               {monthsData[selectedMonth]?.nombre || months[selectedMonth]} {currentYear} Calendar
-                </h1>
-                <hr />
-              </center>
 
               <table key={`${selectedMonth}-${currentYear}`} className="calendar-table">
                 <thead>
                   <tr>
                     <th>Mon_day_</th>
-                    <th>Tues_day</th>
+                    <th>Tuesday_</th>
                     <th>Wed_day_</th>
                     <th>Thursdy_</th>
-                    <th>Fri_day_</th>
+                    <th>Friday_</th>
                     <th>Saturdy_</th>
                     <th>Sun_day_</th>
 

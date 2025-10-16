@@ -160,17 +160,28 @@
 }
     
 .message-popup {
-color:#000000;
-  background-color: #ffffff; /* verde esmeralda */
-  border-radius: 10%; /* círculo */
-  box-shadow: 0 0 10px #2ecc71, 0 0 10px #3498db; /* glow verde-azul cenote */
+  color: #000;
+  background-color: #fffffffd;
+  border-radius: 10%;
   transition: all 0.3s ease;
-    font-size: 0.6em;
+  font-size: 0.6em;
+
+  /* ✅ Tamaño fijo  */
+  width: auto;     /* ajusta según lo que necesites  */
+  height: 65px;    /* igual altura para todos */
+ 
+  /* ✅ Centrar texto dentro del div */
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center;     /* vertical */
+  text-align: center;      /* para texto en varias líneas */
 }
-.message-popup:hover{
-    box-shadow: 0 0 10px #2ecc7000, 0 0 10px #3498db00; /* glow verde-azul cenote */
-    background-color: #f6f5f500; /* verde esmeralda */
+
+.message-popup:hover {
+  box-shadow: 0 0 10px #2ecc7000, 0 0 10px #3498db00;
+  
 }
+
 
 
 /* Estilos para pantallas muy pequeñas */
@@ -235,13 +246,12 @@ color:#000000;
     
     
 .message-popup {
-    
+   
+  height: 35px;    /* igual altura para todos */
     font-size: 0.7em;
     color: rgb(0, 0, 0);
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: #f8f9fa;
-    
-    
 }
    
 }

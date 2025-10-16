@@ -190,11 +190,12 @@ color:#000000;
         width: 100%;
         height: auto;
         transition: transform 0.5s;
-        box-shadow: 0 0px 20px rgba(0, 0, 0, 0.718);
         border-radius: 5%;
+    
+        
     }
     .calendar-table {
-        width: 100%;
+        width: auto;
        
     }
 

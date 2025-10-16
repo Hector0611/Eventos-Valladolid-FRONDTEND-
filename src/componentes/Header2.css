@@ -2,6 +2,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+   object-fit: cover; /* ✅ se adapta sin deformarse */
   display: flex;
   justify-content: center;
   align-items: center;

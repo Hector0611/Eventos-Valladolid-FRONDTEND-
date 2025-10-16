@@ -229,13 +229,14 @@
         font-size: 4vw;
     }
     .outer-circle {
-        width: 123vw;
-        height: 123vw;
+        width: 105vw;
+        height: 105vw;
     }
     .outer-circle .month {
         width: 22vw;
         height: 20vw;
         font-size: 3vw;
+        
     }
     .outer-circle .month:nth-child(1) { transform: rotate(0deg) translate(33vw); }
     .outer-circle .month:nth-child(2) { transform: rotate(-30deg) translate(33vw); }
@@ -277,7 +278,7 @@
   }
 
   .left, .right {
-    width: 100%;  /* Que ocupen todo el ancho en móviles */
+    width: 95%;  /* Que ocupen todo el ancho en móviles */
     margin-bottom: 20px; /* Espacio entre bloques */
   }
   .message{ 

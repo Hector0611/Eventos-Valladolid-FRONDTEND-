@@ -266,10 +266,9 @@ const ProgramarEvents = () => {
                   <div className="evento-container1">
                     {/* Columna izquierda: eventos diarios */}
                     <div className="eventoDiario11">
-                      <h2 className='titel1'>Every day there is video mapping</h2>
+                      <h2 className='titel1'>Every day there is video mapping</h2> 
                       <p>The schedule is from 9:00 p.m. "Spanish"</p>
                       <p>The schedule is from 9:20 p.m. "English"</p>
-
                       <h3 className='titel1'>Directions to get there</h3>
 
                       <button
@@ -281,11 +280,11 @@ const ProgramarEvents = () => {
                           )
                         }
                       >
-                        Church of San Servacio
+                        San Servacio
                       </button>
 
                       <button
-                        className="bottonEvents1"
+                        className="bottonEvents2"
                         onClick={() =>
                           window.open(
                             `https://www.google.com/maps/dir/?api=1&destination=20.686362823195388,-88.21000163440262`,
@@ -293,7 +292,7 @@ const ProgramarEvents = () => {
                           )
                         }
                       >
-                        Church of San Bernardino
+                          San Bernardino
                       </button>
                     </div>
 
@@ -301,7 +300,7 @@ const ProgramarEvents = () => {
                     <div className="hoteles-section1">
                       <h3>¿Buscas hoteles?</h3>
                       <button
-                        className="bottonEvents1"
+                        className="bottonEvent"
                         onClick={() => window.open(`${process.env.PUBLIC_URL}/pdfs/Hoteles.pdf`, "_blank")}
                       >
                         📄 Ver Hoteles
@@ -353,6 +352,8 @@ const ProgramarEvents = () => {
                       <p>The schedule is from 9:00 p.m. "Spanish"</p>
                       <p>The schedule is from 9:20 p.m. "English"</p>
 
+                      <h3 className='titel1'>Directions to get there</h3>
+
                       <button
                         className="bottonEvents1"
                         onClick={() =>
@@ -362,11 +363,11 @@ const ProgramarEvents = () => {
                           )
                         }
                       >
-                        Indications "Centro"
+                        San Servacio
                       </button>
 
                       <button
-                        className="bottonEvents1"
+                        className="bottonEvents2"
                         onClick={() =>
                           window.open(
                             `https://www.google.com/maps/dir/?api=1&destination=20.686362823195388,-88.21000163440262`,
@@ -374,7 +375,7 @@ const ProgramarEvents = () => {
                           )
                         }
                       >
-                        Indications "Sisal"
+                          San Bernardino
                       </button>
                     </div>
 
@@ -382,7 +383,7 @@ const ProgramarEvents = () => {
                     <div className="hoteles-section1">
                       <h3>¿Buscas hoteles?</h3>
                       <button
-                        className="bottonEvents1"
+                        className="bottonEvent"
                         onClick={() => window.open(`${process.env.PUBLIC_URL}/pdfs/Hoteles.pdf`, "_blank")}
                       >
                         📄 Ver Hoteles

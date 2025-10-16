@@ -10,7 +10,7 @@
 }
 
 .caja3{ 
-    margin: 0px;
+    margin: 5px;
     background-color: transparent;
     text-align: center;
     border-radius: 0px;
@@ -359,6 +359,7 @@
 
 .bottonEvents {
   background: linear-gradient(135deg, #00c853, #009624);
+  background-image: url("/src/componentes/Imagenes/Boton_1.png");
   border: none;
   color: white;
   padding: 6px 12px;
@@ -369,27 +370,81 @@
   transition: all 0.3s ease;
 }
 
+.bottonEvents:hover {
+  /* background: linear-gradient(135deg, #00e676, #00c853); */
+  transform: scale(1.05);
+}
+/* boton 1 */
 .bottonEvents1 {
-  background: linear-gradient(135deg, #00c853, #009624);
+  background-image: url("/src/componentes/Imagenes/Boton_1.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   border: none;
-  color: white;
-  padding: 6px 12px;
+  
+  /* ✅ Texto alineado a la izquierda */
+  text-align: right;
+  padding: 12px 15px 12px 45px; /* top, right, bottom, left */
+  
   border-radius: 6px;
-  margin: 5px;
+  margin: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #000000; /* opcional: color del texto */
+}
+
+/* Efecto hover opcional */
+.bottonEvents1:hover {
+  background-color: #ecf00c8f;
+  transform: scale(1.05);
+  filter: brightness(1.1);
+  box-shadow: 0 4px 15px rgba(239, 4, 227, 0.996);
+}
+
+
+/* boton2 */
+
+.bottonEvents2 {
+  
+  background-image: url("/src/componentes/Imagenes/Boton_2.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%; /* Se ajusta al ancho, repitiéndose hacia abajo */
+  border: none;
+
+  /* ✅ Texto alineado a la izquierda */
+  text-align: right;
+  padding: 12px 15px 12px 45px; /* top, right, bottom, left */
+ 
+  border-radius: 6px;
+  margin: 8px;
   font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.bottonEvents:hover {
-  background: linear-gradient(135deg, #00e676, #00c853);
+
+.bottonEvents2:hover {
+  /* background: linear-gradient(135deg, #00e676, #00c853); */
   transform: scale(1.05);
+  filter: brightness(1.1);
+  box-shadow: 0 4px 15px rgba(239, 223, 4, 0.996);
+  background-color: #d50cf057;
 }
 
-.bottonEvents1:hover {
-  background: linear-gradient(135deg, #00e676, #00c853);
-  transform: scale(1.05);
+.bottonEvent{ 
+
+  border: none;
+
+  /* ✅ Texto alineado a la izquierda */
+  
+  border-radius: 6px;
+  margin: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+
+
 .evento-container1 {
   display: flex;
   justify-content: center;
@@ -568,10 +623,14 @@
 
   .bottonEvents1 {
     font-size: 0.6rem;
-    padding: 4px 2px;
+    padding: 8px 5px 8px 25px; /* top, right, bottom, left */
     max-width: 320px;
   }
-  
+  .bottonEvents2 {
+    font-size: 0.6rem;
+    padding: 8px 5px 8px 25px; /* top, right, bottom, left */
+    max-width: 320px;
+  }
 }
 
 

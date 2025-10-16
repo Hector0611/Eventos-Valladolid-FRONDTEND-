@@ -31,7 +31,7 @@
   /*   background-repeat: repeat-y;
     background-size: 100% auto;  *//* Se ajusta al ancho, repitiéndose hacia abajo */ 
    
-    height: 100%;
+    height: 90%;
     width: auto;
     border-collapse: collapse;
     margin: 0 auto;
@@ -43,12 +43,12 @@
 
 .calendar-table th, .calendar-table td{
     font-family: 'Montserrat', sans-serif; /* misma fuente para todo */
-    width: 14%;
-    height: 75px;
+    width: 12%;
+    height: 55px;
     background-color: transparent;
     vertical-align: top;
     text-align: center;
-    padding: 10px 15px;
+    padding: 5px 15px;
     box-shadow: 0 1px 1px rgb(0, 0, 0); /* Línea de borde de Bootstrap */
     color: rgba(0, 0, 0, 0.87);
     font-size: 20px;
@@ -187,10 +187,10 @@ color:#000000;
         
     }
     .div_calendario{
-        width: auto;
+        width: 100%;
         height: auto;
         transition: transform 0.5s;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.718);
+        box-shadow: 0 0px 20px rgba(0, 0, 0, 0.718);
         border-radius: 5%;
     }
     .calendar-table {
@@ -200,9 +200,11 @@ color:#000000;
 
     .calendar-table th, .calendar-table td {
         
-        height: 33px; /* Altura aún más pequeña para celdas */
-        width: 8px;
-        font-size: 0.4em; /* Tamaño de fuente aún más pequeño */
+        height: 10px; /* Altura aún más pequeña para celdas */
+        padding: 7px 5px; /* Relleno reducido */
+        
+        
+        font-size: 0.5em; /* Tamaño de fuente aún más pequeño */
     }
 
     .day-description {

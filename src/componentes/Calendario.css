@@ -202,10 +202,10 @@ color:#000000;
     .calendar-table th, .calendar-table td {
         
         height: 10px; /* Altura aún más pequeña para celdas */
-        padding: 7px 5px; /* Relleno reducido */
+        padding: 8px 5px; /* Relleno reducido */
         
         
-        font-size: 0.5em; /* Tamaño de fuente aún más pequeño */
+        font-size: 0.45em; /* Tamaño de fuente aún más pequeño */
     }
 
     .day-description {

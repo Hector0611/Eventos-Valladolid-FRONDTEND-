@@ -1,89 +1,122 @@
-.containerr{
-    background-color: rgba(255, 255, 255, 0);
-    border-radius: 10%;
-    width: 1050px;
-    height: auto;
-    color: black;
-
-}
-.event-detail {
-    margin-bottom: 20px;
+.evento-calendario-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  font-family: "Poppins", sans-serif;
 }
 
-
-.video-container, .map-container {
-    height: auto;
-    width: auto;
-    margin-bottom: 20px;
-    border-radius: 10%;
+.titulo-evento {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #00bcd4;
+  padding-bottom: 10px;
 }
 
-.bottonEvent{
-    background-color: #ccc;
-    height: 33px;
-    width: auto;
-    border-radius: 10%;
-}
-.bottonEvent:hover{
-    transform: scale(1.01);
-    background-color: yellow;
-    box-shadow: 0 0px 20px rgb(244, 2, 2);
+.card-evento {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+  padding: 25px;
+  margin-bottom: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn-separado {
-  margin-right: 10px; /* Ajusta el espacio a tu gusto */
-}
-.textoedicion{  
-    text-align: justify;
-    text-justify: inter-word;
-    margin-left: 20px;
-    margin-right: 20px;
-    font-size: 18px;
-    color: rgb(0, 0, 0);
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    line-height: 1.6;
-    letter-spacing: 0.5px;
-    word-spacing: 1px;
-    text-indent: 30px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    background-color: #cccccc90;
-    padding: 15px;
-    border-radius: 10px;
+.card-evento:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
-@media (max-width: 1024px) {
-    .containerr{
-        
-        border-radius: 0%;
-        width: 380px;
-        height: auto;
-    }
-    .event-detail {
-        margin-bottom: 20px;
-    }
-    
-    
-    .video-container, .map-container {
-        height: auto;
-        width: auto;
-    }
-    
-    .bottonEvent{
-        background-color: #ccc;
-        height: 33px;
-        width: auto;
-        border-radius: 10%;
-    }
-    .bottonEvent:hover{
-        transform: scale(1.01);
-        background-color: yellow;
-        box-shadow: 0 0px 20px rgb(244, 2, 2);
-    }
-    
-    .textoedicion{
-        font-size: 10px;
-    }
-
+.titulo-card {
+  font-size: 1.5rem;
+  color: #0b7285;
+  margin-bottom: 10px;
 }
 
+.mensaje-card {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.media-wrapper {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 420px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.map-container {
+  height: 420px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.botones-accion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-principal {
+  background: linear-gradient(90deg, #00bcd4, #0288d1);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-principal:hover {
+  background: linear-gradient(90deg, #0288d1, #00bcd4);
+  transform: scale(1.05);
+}
+
+.btn-secundario {
+  background: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-secundario:hover {
+  background: #e0f7fa;
+}
+
+.descripcion-card {
+  margin-top: 20px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.no-eventos {
+  text-align: center;
+  color: #777;
+  font-size: 1.1rem;
+  margin-top: 50px;
+}

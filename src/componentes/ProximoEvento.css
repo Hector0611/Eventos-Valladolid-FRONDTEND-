@@ -1,219 +1,199 @@
-/* 🌈 Contenedor principal de próximos eventos */
+/* 🌟 Contenedor principal */
 .proximos-eventos-container {
-  position: relative; /* Necesario para que ::before se posicione dentro */
-  background: linear-gradient(270deg, #00000093, #0be3d5e4,#000000a8, #4ae94af3, #000000c8);
-  padding: 1.5rem;
-  border-radius: 15px;
-  max-width: 100%;
-  margin: auto;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  padding: 60px 20px;
+  background: linear-gradient(180deg, #fffefead, #f3f7fac3);
+  text-align: center;
+  font-family: "Poppins", sans-serif;
   overflow: hidden;
-  z-index: 0;
-  
-  animation: gradientAnimation 15s ease infinite;
+  position: relative;
 }
 
-/* 🌀 Patrón sobre el fondo */
-.proximos-eventos-container::before {
+/* 🌟 Título principal */
+.eventtitel2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.eventtitel2::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; /* Ocupar todo el contenedor */
-  background-image: url('/src/componentes/Imagenes/PATRON2.png');
-  background-repeat: repeat-y;
-  background-size: 100% auto; /* Se ajusta al ancho, repitiéndose verticalmente */
-  opacity: 0.5; /* 🔹 Ajusta la transparencia del patrón */
-  z-index: -1; /* Se coloca detrás del contenido */
+  bottom: -8px;
+  left: 50%;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #10b981, #3b82f6);
+  transform: translateX(-50%);
+  border-radius: 5px;
 }
 
-
-/* Título */
-.eventtitel2 {
-  color: #ffffff;
-  font-size: 2.4rem;
-  margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
-  font-family: 'Segoe UI', sans-serif;
-  text-align: center;
-  z-index: 0; /* Siempre encima */
-  background-color: rgba(0, 0, 0, 0.566);
-  padding: 10px;
-  border-radius: 20px;
-}
-
-.ver-detalle-boton{
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 0; /* Siempre encima */
-}
-/* Contenedor de la tira de eventos */
+/* 🌟 Contenedor tipo carrusel */
 .eventos-tira {
   display: flex;
-  gap: 15px;
+  gap: 25px;
   overflow-x: auto;
-  padding: 40px 28px;
-  scroll-padding-left: 8px;
-  scroll-snap-type: x mandatory; /* hace que los eventos se alineen al hacer scroll */
+  scroll-behavior: smooth;
+  padding-bottom: 15px;
   scrollbar-width: thin;
-  background-color: transparent;
-  z-index: 1; /* Siempre encima */
+  scrollbar-color: #10b981 #e5e7eb;
 }
 
-/* Cada evento */
-.evento-item {
-  background: linear-gradient(145deg, #111111, #05ed2f20);
-  border-radius: 15px;
-  padding: 0.5rem;
-  width: 75vw;
-  max-width: 260px;
-  height: auto;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 1rem;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* 🌟 Estilo de la barra de desplazamiento */
+.eventos-tira::-webkit-scrollbar {
+  height: 8px;
+}
+
+.eventos-tira::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  border-radius: 10px;
+}
+
+.eventos-tira::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #10b981, #3b82f6);
+  border-radius: 10px;
+}
+
+/* 🌟 Cada tarjeta de evento */
+.transparent {
+  min-width: 260px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
-  scroll-snap-align: start; /* cada evento se alinea al iniciar el scroll */
-  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  z-index: 1; /* Siempre encima */
 }
 
-.evento-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  z-index: 1; /* Siempre encima */
+.transparent:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
 }
 
-/* Imagen de fondo */
+/* 🌟 Imagen del evento */
 .imagen-fondo {
   width: 100%;
   height: 160px;
   object-fit: cover;
-  border-radius: 12px;
-  filter: brightness(0.5);
-  transition: transform 0.3s ease;
-  z-index: 1; /* Siempre encima */
+  transition: transform 0.5s ease;
 }
 
-.sin-imagen{
-   width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 12px;
-  filter: brightness(0.5);
-  transition: transform 0.3s ease;
-  z-index: 1; /* Siempre encima */
+.transparent:hover .imagen-fondo {
+  transform: scale(1.05);
 }
 
-.evento-item:hover .imagen-fondo {
-  transform: scale(1.03);
-}
-
-/* Contenido sobre la imagen */
+/* 🌟 Contenido del evento */
 .contenido-sobre-imagen {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  padding: 10px;
-  color: white;
-  width: calc(100% - 20px);
- z-index: 1; /* Siempre encima */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  padding: 15px 20px;
+  background: #f8fafc;
+  text-align: center;
 }
 
 .contenido-sobre-imagen h5 {
-  margin: 0;
   font-size: 1.1rem;
+  color: #0f172a;
   font-weight: 600;
-  z-index: 1; /* Siempre encima */
+  margin-bottom: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-/* Navegación y botones */
-.navegacion-eventos {
-  width: 40px;
-  height: 40px;
-  font-size: 1rem;
-  transition: background 0.3s ease, transform 0.3s ease;
+.contenido-sobre-imagen span {
+  font-size: 0.9rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+/* 🌟 Evento actual (hoy) */
+.evento-hoy {
+  background: linear-gradient(135deg, #10b981, #3b82f6);
   color: #fff;
-  border: none;
-  margin: 0 5px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(5, 237, 47, 0.3);
-  z-index: 1; /* Siempre encima */
-}
-
-.navegacion-eventos:hover {
-  background: rgba(5, 237, 47, 0.7);
-  transform: scale(1.1);
-}
-
-.navegacion-eventos:disabled {
-  background-color: #88888800;
-  cursor: not-allowed;
-  
-}
-
-/* 🔹 Evento del día actual (resaltado) */
-.evento-hoy .evento-item {
-  border: 3px solid #ff0000;
-  box-shadow: 0 0 25px #ff4000, 0 0 50px rgba(255, 0, 0, 0.3);
-  animation: glowPulse 2s infinite ease-in-out;
-}
-
-@keyframes glowPulse {
-  0% {
-    box-shadow: 0 0 15px #f700ff, 0 0 30px rgba(0, 255, 115, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 35px #ff0000, 0 0 70px rgba(0, 255, 115, 0.6);
-  }
-  100% {
-    box-shadow: 0 0 15px #ff00fb, 0 0 30px rgba(0, 255, 115, 0.2);
-  }
-}
-
-/* 🔹 Botón del evento de hoy */
-.boton-hoy {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
   transform: scale(1.05);
-  transition: transform 0.3s ease;
 }
 
-.boton-hoy:hover {
-  transform: scale(1.1);
+.evento-hoy .contenido-sobre-imagen {
+  background: transparent;
+}
+
+.evento-hoy h5 {
+  color: #ffffff;
+}
+
+.evento-hoy .imagen-fondo {
+  filter: brightness(0.85);
+}
+
+/* 🌟 Botón del evento */
+.ver-detalle-boton {
+  border: none;
+  background: transparent;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* 🌟 Texto cuando no hay eventos */
+.NEvent {
+  color: #64748b;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+/* 🌟 Animación de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.transparent {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.evento-hoy-banner {
+  background: linear-gradient(90deg, #ff9800, #f44336);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  animation: pulse 2s infinite;
+  cursor: pointer;
+}
+
+.evento-hoy-nombre {
+  text-decoration: underline;
+  color: #fff;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
 }
 
 
-/* Responsive para pantallas muy pequeñas */
-@media screen and (max-width: 1024px) {
+/* 🌟 Responsivo */
+@media (max-width: 768px) {
   .eventtitel2 {
     font-size: 1.8rem;
   }
 
-  .evento-item {
-    width: 85vw;
-    height: auto;
-    padding: 0.7rem;
-  }
-
-  .imagen-fondo {
-    height: 140px;
-  }
-
-  .contenido-sobre-imagen h5 {
-    font-size: 1rem;
+  .transparent {
+    min-width: 220px;
   }
 }

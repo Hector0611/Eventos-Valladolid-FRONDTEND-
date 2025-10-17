@@ -48,7 +48,7 @@ const Historia = () => {
       <div className='Separacion'> 
 
               </div>
-        <h1 className="titel1">Meet Valladolid, Yucatán, Mexico.</h1>
+        <h1 className="titel111">Meet Valladolid, Yucatán, Mexico.</h1>
         <br />
         <div className="video-container">
           <iframe
@@ -76,7 +76,7 @@ const Historia = () => {
   </script>
     <br />
 
-      <h1 className="titel1">Learn about the history of Valladolid, Yucatan, México</h1>
+      <h1 className="titel111">Learn about the history of Valladolid, Yucatan, México</h1>
 
       <div className="historia-carrusel">
         {historia.map((item, index) => {
@@ -100,8 +100,12 @@ const Historia = () => {
               <div className="historia-overlay">
                 <h2 className="titulo5">{item.titulo}</h2>
                 <div className="historia-texto">
-                  <p dangerouslySetInnerHTML={{ __html: item.descripccion.slice(0, 300) }}>
-                    
+
+                  
+                  <p>
+                    {item.descripccion
+                  ? item.descripccion.replace(/<[^>]*>/g, '').slice(0, 150) + '...'
+                  : 'Sin descripción'}
                   </p>
                   
                 </div>
@@ -116,20 +120,20 @@ const Historia = () => {
       </div>
 
       {showModal && selectedItem && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <button className="close-button2 " onClick={() => setShowModal(false)}>
+        <div className="modal-overlay11">
+          <div className="modal-content11">
+            <button className="close-button222 " onClick={() => setShowModal(false)}>
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="xbutton" viewBox="0 0 16 16">
                 <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
                 </svg>
             </button>
-            <h2 className="titel1 tituls">{selectedItem.titulo}</h2>
+            <h2 className="titel111 tituls">{selectedItem.titulo}</h2>
             <img
               src={`https://eventos-valladolid-backendt.onrender.com/${selectedItem.url_imagen}`}
               alt={selectedItem.titulo}
-              className="modal-image"
+              className="modal-image11"
             />
-            <p className="texto-pre" dangerouslySetInnerHTML={{ __html: selectedItem.descripccion }}></p>
+            <p className="texto-pre11" dangerouslySetInnerHTML={{ __html: selectedItem.descripccion }}></p>
           </div>
         </div>
       )}

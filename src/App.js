@@ -123,7 +123,7 @@ const App = () => {
                     <Header />  
                     <Historia />
                     <Cenotes />
-                    <Conventos />
+                    {/* <Conventos /> */}
                     {/* Footer global */}
           <ProximoEvento />
          

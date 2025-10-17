@@ -178,33 +178,46 @@
   100% { transform: scale(1); }
 }
 
-/* 🌟 Responsivo */
+/* 🌟 Ajustes para tablets y móviles (768px) */
 @media (max-width: 768px) {
-  .eventtitel2 {
-    font-size: 1.8rem;
+
+  /* Imagen más compacta y proporcional */
+   .imagen-fondo {
+    height: 100px;          /* altura más compacta */
+    width: 100%;            /* que llene el ancho de la tarjeta */
+    object-fit: cover;      /* recorta solo lo necesario manteniendo proporción */
+    border-radius: 12px;
   }
+
   .transparent {
-    min-width: 220px;
-  }
-  .contenido-sobre-imagen h5 {
-    font-size: 1rem;
-  }
-  .contenido-sobre-imagen span {
-    font-size: 0.8rem;
+    min-width: 160px;       /* ancho más ajustado para ver todo el cuadro */
   }
 
-}
+  /* Contenedor más compacto */
+  .proximos-eventos-container {
+    padding: 40px 10px;
+  }
 
-@media (max-width: 480px) {
   .eventtitel2 {
     font-size: 1.5rem;
   }
+
+  .eventtitel2::after {
+    width: 100px;
+  }
+
+  .eventos-tira {
+    gap: 12px;
+  }
+
   .transparent {
-    min-width: 180px;
+    min-width: 140px;     /* Tarjetas más pequeñas */
   }
+
   .contenido-sobre-imagen h5 {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
+
   .contenido-sobre-imagen span {
     font-size: 0.75rem;
   }

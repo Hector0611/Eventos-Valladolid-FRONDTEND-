@@ -45,16 +45,8 @@ const EventoCalendario = () => {
             <div className="media-wrapper">
               {mensaje.video && showVideo ? (
                 <div className="video-container fade-in">
-                  <iframe
-                    src={`${mensaje.video.replace("watch?v=", "embed/")}?autoplay=1`}
-                    title="Event Video"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              ) : mensaje.latitud && mensaje.longitud ? (
-                <div className="map-container fade-in">
+                  
+
                   <iframe
                     title="Ubicación del evento"
                     width="100%"
@@ -65,13 +57,23 @@ const EventoCalendario = () => {
                     src={`https://www.google.com/maps?q=${mensaje.latitud},${mensaje.longitud}&hl=es&z=16&output=embed`}
                   ></iframe>
                 </div>
+              ) : mensaje.latitud && mensaje.longitud ? (
+                <div className="map-container fade-in">
+                  <iframe
+                    src={`${mensaje.video.replace("watch?v=", "embed/")}?autoplay=1`}
+                    title="Event Video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
               ) : null}
             </div>
 
             <div className="botones-accion">
               {mensaje.video && mensaje.latitud && mensaje.longitud && (
                 <button className="btn-secundario" onClick={toggleVideoMap}>
-                  {showVideo ? "Show Location" : "Show Video"}
+                  {showVideo ? "Show Video" : "Show Location"}
                 </button>
               )}
               {mensaje.latitud && mensaje.longitud && (

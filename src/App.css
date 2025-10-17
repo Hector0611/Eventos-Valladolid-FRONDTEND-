@@ -14,7 +14,7 @@
   overflow: hidden;
 
   /* Fondo con gradiente animado */
-  background: linear-gradient(270deg, #83f86c, #0be3d5, #4ae94a, #f0f1f0);
+  background-color: transparent;
   background-size: 800% 800%;
   animation: gradientAnimation 15s ease infinite;
   -webkit-text-size-adjust: 100%; /* Evita que iOS cambie el tamaño del texto */
@@ -36,16 +36,16 @@
   background-size: 100% auto; /* Se ajusta al ancho, repitiéndose hacia abajo */
 
   filter: blur(0px);
-  opacity: 1;
+  opacity: 0.5;
   z-index: 0; /* Asegura que quede detrás del contenido */
 }
 
 /* Animación del gradiente */
-@keyframes gradientAnimation {  
+/* @keyframes gradientAnimation {  
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
+} */
 
 
 .main-container > * {
@@ -67,7 +67,7 @@
     
     /* background-color: #e32424; */
    /*  background-image: url('./componentes/Imagenes/PATRON4.png'); */ /* Reemplaza con la URL o ruta de tu imagen */ 
-    background-color: #00a86a7f;
+    
     color: white;
     background-size: cover; /* Ajusta la imagen para que cubra todo el área */
     background-position: center; /* Centra la imagen */

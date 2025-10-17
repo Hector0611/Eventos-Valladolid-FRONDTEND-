@@ -326,6 +326,16 @@ const ProgramarEvents = () => {
                       Event Date: {evento.dia_id}/{evento.mes_id}/2025 From {evento.hora_inicial} to {evento.hora_final}
                     </h3>
                     <center>
+
+                       <iframe
+                    title="Ubicación del evento"
+                    width="100%"
+                    height="420"
+                    style={{ border: 0, borderRadius: "12px" }}
+                    loading="lazy"
+                    allowFullScreen
+                    src={`https://www.google.com/maps?q=${evento.latitud},${evento.longitud}&hl=es&z=16&output=embed`}
+                  ></iframe>
                       <button
                         className="boton-ver-eventos"
                         onClick={() =>

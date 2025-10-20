@@ -47,7 +47,7 @@ const Cenotes = () => {
               </p>
 
               <button className="historia-link1" onClick={() => handleLeerMas(item)}>
-                Leer más
+                More
               </button>
             </div>
           </div>

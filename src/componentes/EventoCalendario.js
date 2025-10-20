@@ -71,11 +71,11 @@ const EventoCalendario = () => {
             </div>
 
             <div className="botones-accion">
-              {mensaje.video && mensaje.latitud && mensaje.longitud && (
+              {/* {mensaje.video && mensaje.latitud && mensaje.longitud && (
                 <button className="btn-secundario" onClick={toggleVideoMap}>
                   {showVideo ? "Show Video" : "Show Location"}
                 </button>
-              )}
+              )} */}
               {mensaje.latitud && mensaje.longitud && (
                 <button
                   className="btn-principal"

@@ -581,6 +581,10 @@
   font-weight: 500;
 }
 
+.content4 a {
+  text-decoration: none;
+  color: #84baf1;
+}
 
 /* ===== MAPA RESPONSIVE ===== */
 

@@ -325,6 +325,17 @@ const ProgramarEvents = () => {
                     <h3 className="horacolor">
                       Event Date: {evento.dia_id}/{evento.mes_id}/2025 From {evento.hora_inicial} to {evento.hora_final}
                     </h3>
+                    <p className="evento-enlace">
+                        🌐 Website:{' '}
+                        <a 
+                          href={evento.video} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="enlace-web"
+                        >
+                          Visit page
+                        </a>
+                      </p>
                     <center>
 
                        <iframe
@@ -336,6 +347,8 @@ const ProgramarEvents = () => {
                     allowFullScreen
                     src={`https://www.google.com/maps?q=${evento.latitud},${evento.longitud}&hl=es&z=16&output=embed`}
                   ></iframe>
+
+                  <hr />
                       <button
                         className="boton-ver-eventos"
                         onClick={() =>
@@ -350,6 +363,9 @@ const ProgramarEvents = () => {
                         </svg>
                         Go to Event Location
                       </button>
+
+                      
+
                     </center>
                     <div className="texto-pre">
                       <div dangerouslySetInnerHTML={{ __html: evento.descripcion }}></div>

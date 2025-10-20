@@ -78,7 +78,7 @@ const App = () => {
                     <Header />
                     <ProgramarEvents />
                     <Catalogo />
-                   <EventoDiario />
+                    <EventoDiario />
                    <ToastContainer />
                    {/* Footer global */}
           <ProximoEvento />

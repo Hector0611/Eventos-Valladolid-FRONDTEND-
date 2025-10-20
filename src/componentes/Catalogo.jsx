@@ -23,6 +23,9 @@ import logo88 from './Imagenes/ImgTempo/8.8.jpg';
 
 /* Folleto */
 import logoDiaMuertos from './Imagenes/ImgTempo/DiaMuertos.jpg';
+
+import LaVidayCeiba from './Imagenes/ImgTempo/LaVidayCeiba.jpeg';
+
 import { img } from 'framer-motion/client';
 
 
@@ -94,6 +97,14 @@ const Catalogo = () => {
         ))}
       </div>
 <hr />
+
+<div className="folleto">
+        <h1 className='titel1'>La Vida y La Ceiba</h1>
+        {/* poner img de folleto dia de muertos */}
+        <img src={LaVidayCeiba} alt="Folleto Dia de Muertos" className="folleto-img" />
+       
+      </div>
+      <br />
 
       <div className="folleto">
         <h1 className='titel1'>Dia de Muertos</h1>

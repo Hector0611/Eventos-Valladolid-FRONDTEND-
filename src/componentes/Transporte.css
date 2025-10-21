@@ -1,0 +1,75 @@
+.transporte-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.transporte-container h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: #004080;
+}
+
+.transporte-section {
+  margin-bottom: 50px;
+}
+
+.transporte-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0066cc;
+  border-bottom: 2px solid #0066cc;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  flex: 1 1 300px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #004080;
+}
+
+.card p {
+  margin: 5px 0;
+}
+
+.card a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.card iframe {
+  width: 100%;
+  height: 200px;
+  border: 0;
+  margin-top: 10px;
+  border-radius: 8px;
+}

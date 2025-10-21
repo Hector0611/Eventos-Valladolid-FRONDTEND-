@@ -23,6 +23,8 @@ import PrincipalRecarga from './componentes/PrincipalRecarga';
 import Conventos from './componentes/Conventos';
 import Cenotes from './componentes/Cenotes';
 import Contactanos from './componentes/Contactanos';
+import PoliciaPage from './componentes/Policia';
+import Transporte from './componentes/Transporte';
 
 const App = () => {
 
@@ -96,6 +98,34 @@ const App = () => {
                     <Header />
                     <EventoCalendario />
 
+                  </>
+                } 
+              />
+              <Route 
+                path="/policia" 
+                element={
+                  <>
+                    <Header2 />
+                    <Header />
+                    <PoliciaPage />
+                    {/* Footer global */}
+     {/*      <ProximoEvento /> */}
+         
+          <Footer />
+                  </>
+                } 
+              />
+              <Route 
+                path="/transporte" 
+                element={
+                  <>
+                    <Header2 />
+                    <Header />
+                    <Transporte />
+                    {/* Footer global */}
+          <ProximoEvento />
+         
+          <Footer />
                   </>
                 } 
               />

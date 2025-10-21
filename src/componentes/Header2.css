@@ -61,6 +61,7 @@
   margin-left: 10px;
   left: 90%;
   z-index: 99999999;
+  
 }
 
 .translate-label {
@@ -72,6 +73,13 @@
 .google-translate-btn {
   transform: scale(1.5); /* más pequeño si quieres */
   transform-origin: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.google-translate-btn:hover {
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.655);
+
 }
 
 
@@ -91,5 +99,10 @@
   .logo-Yucatan {
     width: 80%;
    
+  }
+
+  .google-translate-container {
+    left: 88%;
+    top: 15%;
   }
 }

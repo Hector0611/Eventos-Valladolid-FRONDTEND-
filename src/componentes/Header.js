@@ -55,7 +55,7 @@ const Header = () => {
                 <nav className="header-nav1">
                     <button className="botton" onClick={() => navigateTo('/LugaresTuristicos')}>DISCOVER</button>
                     <button className="botton" onClick={() => navigateTo('/estadisticas')}>RESOURCES</button>
-
+                    {/* <button className="botton" onClick={() => navigateTo('/transporte')}>TRANSPORT</button> */}
                     <div
                         className="popup-wrapper"
                         onMouseEnter={() => setShowPopup(true)}
@@ -69,6 +69,8 @@ const Header = () => {
                                     <ul className="popup-links">
                                         <li><button onClick={() => navigateTo('/Contacto')}>Contact us</button></li>
                                     </ul>
+                                    <hr />
+                                    {/* <button onClick={() => navigateTo('/Policia')}>Policia</button> */}
                                     <hr />
                                     <h3>Follow us on</h3>
                                     <br />

@@ -45,8 +45,20 @@ const Header2 = () => {
           <img src={logo6} alt="Yucatan" className="logo-Yucatan" />
           {/* <img src={logo4} alt="Yucatan" className="logo-Yucatan" />
           <img src={logo3} alt="Yucatan" className="logo-Yucatan" /> */}
+          
         </div>
+        <div className="google-translate-container">
+          
+          
+          <div id="google_translate_element" className="google-translate-btn">
+            
+          </div>
+        </div>
+
+        
       </div>
+
+       
     </header>
   );
 };

@@ -3,47 +3,101 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="./favicon.ico" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
-     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="theme-color" content="#000000" />
 
-    <!-- SEO DESCRIPTIONS -->
     <meta name="description" content="Descubre Valladolid, Yucatán: historia, cultura, cenotes, hoteles y rutas turísticas." />
     <meta name="keywords" content="Valladolid, Yucatán, turismo, hoteles, cenotes, historia, viajes, México" />
-    
-    <!-- English version -->
-    <meta name="description" lang="en" content="Discover Valladolid, Yucatán: history, culture, cenotes, hotels, and tourist routes." />
-    <meta name="keywords" lang="en" content="Valladolid, Yucatán, tourism, hotels, cenotes, history, travel, Mexico" />
 
-    <!-- HREFLANG for bilingual SEO -->
-    <link rel="alternate" href="https://visitavalladolidmx.com/" hreflang="es" />
-    <link rel="alternate" href="https://visitavalladolidmx.com/" hreflang="en" />
-    <link rel="alternate" href="https://visitavalladolidmx.com/" hreflang="x-default" />
+    <meta name="google" content="notranslate">
 
-    <!-- Open Graph (para compartir en redes) -->
-    <meta property="og:title" content="Visit Valladolid - Turismo en Yucatán" />
-    <meta property="og:description" content="Explora la magia de Valladolid, Yucatán: historia, cultura y naturaleza." />
-    <meta property="og:image" content="%PUBLIC_URL%/logo192.png" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_MX" />
-    <meta property="og:locale:alternate" content="en_US" />
 
-    <!-- Apple / PWA -->
-    <link rel="apple-touch-icon" href="./logo192.png" />
-    <link rel="manifest" href="./manifest.json" />
-
-    <!-- Título -->
     <title>Visit Valladolid | Turismo en Yucatán</title>
 
-    <!-- Bootstrap -->
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+
+    <!-- Traductor de Google -->
+    <style>
+      /* 🔹 Oculta la barra superior del traductor */
+      .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+      }
+      body {
+        top: 0px !important;
+      }
+
+      /* 🔹 Oculta el logo y textos de "Google Translate" */
+      .goog-logo-link,
+      .goog-te-gadget span {
+        display: none !important;
+      }
+
+      /* 🔹 Limpia el diseño del menú */
+      .goog-te-gadget {
+        font-size: 0;
+      }
+
+      /* 🔹 Estilo simple del selector */
+      .goog-te-combo {
+        font-size: 14px !important;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 4px;
+        background-color: #fff;
+      }
+
+      /* 🔹 Oculta el tooltip flotante de Google Translate */
+      .goog-tooltip,
+      .goog-tooltip:hover,
+      .goog-text-highlight,
+      .goog-te-balloon-frame,
+      .goog-te-menu-value span {
+        display: none !important;
+      }
+
+      /* 🔹 Evita que Google inserte el menú al seleccionar texto */
+      iframe[id^=":"] {
+        display: none !important;
+      }
+
+      /* 🔹 También oculta cualquier frame que Google pueda inyectar */
+      iframe.goog-te-menu-frame {
+        display: none !important;
+      }
+    </style>
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'en,es,fr,de,it,pt',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+
+        // 🔹 Remueve los iframes que Google inserta (barra y menús)
+        setTimeout(() => {
+          const frames = document.querySelectorAll('iframe');
+          frames.forEach(f => {
+            if (f.src.includes('translate.googleapis.com') || f.className.includes('goog-te-banner-frame')) {
+              f.remove();
+            }
+          });
+        }, 2000);
+      }
+    </script>
+
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
   </head>
+
   <body>
     <noscript>Debes habilitar JavaScript para ejecutar esta aplicación.</noscript>
     <div id="root"></div>
+    <div id="google_translate_element" style="position: fixed; bottom: 10px; right: 10px; z-index: 9999;"></div>
   </body>
 </html>

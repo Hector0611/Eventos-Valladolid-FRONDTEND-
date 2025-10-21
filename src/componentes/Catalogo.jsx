@@ -28,6 +28,12 @@ import LaVidayCeiba from './Imagenes/ImgTempo/LaVidayCeiba.jpeg';
 
 import JuanBalam from './Imagenes/ImgTempo/JuanBalam.jpeg';
 
+/* FIESTA DE MI PUEBLO */
+
+import Fiesta1 from './Imagenes/ImgTempo/LaFiestaPueblo1.jpeg';
+
+import Fiesta2 from './Imagenes/ImgTempo/LaFiestaPueblo2.jpeg';
+
 import { img } from 'framer-motion/client';
 
 
@@ -108,8 +114,16 @@ const Catalogo = () => {
       </div>
       <br />
 
+      <div className="folleto">
+        <h1 className='titel1'>The Festival of My Town</h1>
+        {/* poner img de folleto dia de muertos */}
+        <img src={Fiesta1} alt="Folleto Dia de Muertos" className="folleto-img" />
+       
+      </div>
+      <br />
+
 <div className="folleto">
-        <h1 className='titel1'>La Vid y La Ceiba</h1>
+        <h1 className='titel1'>The vine and the ceiba</h1>
         {/* poner img de folleto dia de muertos */}
         <img src={LaVidayCeiba} alt="Folleto Dia de Muertos" className="folleto-img" />
        

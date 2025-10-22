@@ -210,3 +210,100 @@
     gap: 15px;
   }
 }
+
+/* 🌐 MOBILE DESIGN */
+@media (max-width: 600px) {
+  .policia-header {
+    padding: 12px 0;
+    text-align: center;
+  }
+
+  .header-content1 {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-left {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .header-icon {
+    font-size: 22px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .header-buttons a {
+    display: inline-block;
+    padding: 6px 10px;
+    font-size: 13px;
+    margin: 4px;
+  }
+
+  .policia-main {
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+
+  .main-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .card {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .contact-item {
+   /*  flex-direction: column; */
+    /* align-items: flex-start; */
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .contact-badge {
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .contact-buttons a {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 13px;
+
+  }
+
+  .texto {
+    font-size: 13px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .report-form input,
+  .report-form textarea {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .btn-submit {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .map-placeholder {
+    height: 200px;
+    font-size: 14px;
+  }
+
+  .policia-footer {
+    font-size: 13px;
+    padding: 15px;
+  }
+}
+

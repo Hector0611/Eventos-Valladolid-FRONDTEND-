@@ -70,7 +70,7 @@ const Header = () => {
                                         <li><button onClick={() => navigateTo('/Contacto')}>Contact us</button></li>
                                     </ul>
                                     <hr />
-                                    <button onClick={() => navigateTo('/Policia')}>Policia</button>
+                                    {/* <button onClick={() => navigateTo('/Policia')}>Policia</button> */}
                                     <hr />
                                     <h3>Follow us on</h3>
                                     <br />

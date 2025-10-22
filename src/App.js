@@ -25,6 +25,7 @@ import Cenotes from './componentes/Cenotes';
 import Contactanos from './componentes/Contactanos';
 import PoliciaPage from './componentes/Policia';
 import Transporte from './componentes/Transporte';
+import AnuncioEmergente from './componentes/AnuncioEmergente';
 
 const App = () => {
 
@@ -82,6 +83,7 @@ const App = () => {
                     <Catalogo />
                     <EventoDiario />
                    <ToastContainer />
+                   {/*  <AnuncioEmergente /> */}
                    {/* Footer global */}
           <ProximoEvento />
          

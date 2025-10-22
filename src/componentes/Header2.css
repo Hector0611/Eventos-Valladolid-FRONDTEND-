@@ -59,7 +59,8 @@
   gap: 8px;
   justify-content: flex-start;
   margin-left: 10px;
-  left: 90%;
+  left: 95%;
+  top: 470%;
   z-index: 99999999;
   
 }
@@ -103,6 +104,6 @@
 
   .google-translate-container {
     left: 88%;
-    top: 15%;
+    top: 940%;
   }
 }

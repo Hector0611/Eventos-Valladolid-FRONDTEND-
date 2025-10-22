@@ -5,29 +5,29 @@ export default function Policia() {
   const contacts = [
     {
       id: 1,
-      title: "Policía",
-      description: "Atención 24/7 — Respuesta inmediata",
+      title: "Police",
+      description: "24/7 Support — Immediate Response",
       phone: "+52 985 856 1234",
       whatsapp: "+52 985 856 1234",
-      badge: "EMERGENCIA",
-      hours: "24 horas",
+      badge: "EMERGENCY",
+      hours: "24 hours",
     },
     {
       id: 2,
-      title: "Secretaría de Seguridad",
-      description: "Línea para denuncias y seguimiento de reportes",
+      title: "Secretariat of Security",
+      description: "Line for reporting and follow-up of reports",
       phone: "+5219982345678",
       whatsapp: "+5219982345678",
-      badge: "DENUNCIAS",
-      hours: "Lun–Dom: 06:00–24:00",
+      badge: "COMPLAINTS",
+      hours: "Mon–Sun: 06:00–24:00",
     },
     {
       id: 3,
-      title: "Atención Ciudadana",
-      description: "Consultas, orientación y vinculación con servicios",
+      title: "Citizen Attention",
+      description: "Consultations, guidance and linkage to services",
       phone: "+52 985 106 4327",
       whatsapp: "+52 985 106 4327",
-      badge: "INFORMACION",
+      badge: "INFORMATION",
       hours: "9:00–18:00",
     },
   ];
@@ -43,14 +43,14 @@ export default function Policia() {
           <div className="header-left">
             <div className="header-icon">📍</div>
             <div>
-              <h1>Policía Municipal - Valladolid</h1>
-              <p>Contacto y líneas de atención</p>
+              <h1>Municipal Police - Valladolid</h1>
+              <p>Contact and help lines</p>
             </div>
           </div>
 
           <div className="header-buttons">
             <a href="tel:+52985 856 1234" className="btn-call">
-              📞 Llamar a emergencias
+              📞 Call emergency services
             </a>
             <a
               href="https://wa.me/52985 856 1234"
@@ -70,9 +70,9 @@ export default function Policia() {
           {/* Contactos */}
           <div className="contact-section">
             <div className="card">
-              <h2>Líneas de contacto</h2>
+              <h2>Lines of contact</h2>
               <p className="text-muted">
-                Si hay una emergencia, favor de llamar al número principal o usar el botón de WhatsApp.
+                If there is an emergency, please call the main number or use the WhatsApp button.
               </p>
 
               <div className="contact-list">
@@ -83,12 +83,12 @@ export default function Policia() {
                       <div className="texto">
                         <h3>{c.title}</h3>
                         <p>{c.description}</p>
-                        <p className="hours">Horario: {c.hours}</p>
+                        <p className="hours">Schedule: {c.hours}</p>
                       </div>
                     </div>
                     <div className="contact-buttons">
                       <a href={`tel:${c.phone}`} className="btn-call-small">
-                        📞 Llamar
+                        📞 Call
                       </a>
                       <a
                         href={`https://wa.me/${c.whatsapp.replace(/[^0-9]/g, "")}`}
@@ -131,34 +131,34 @@ export default function Policia() {
           {/* Aside */}
           <aside className="aside-section">
             <div className="card">
-              <h3>Atención rápida</h3>
+              <h3>Quick attention</h3>
               <ul>
-                <li>Policía local: <strong>+52 985 856 1234</strong></li>
-                <li>Bomberos: <strong>+52 985 856 12 34</strong></li>
-                <li>Ambulancias: <strong>+52 --- --- -- --</strong></li>
-                <li>Denuncia anónima: <strong>--- --- -- --</strong></li>
+                <li>Local police: <strong>+52 985 856 1234</strong></li>
+                <li>Firefighters: <strong>+52 985 856 12 34</strong></li>
+                <li>Ambulances: <strong>+52 --- --- -- --</strong></li>
+                <li>Anonymous complaint: <strong>--- --- -- --</strong></li>
               </ul>
             </div>
 
             <div className="card">
-              <h3>Ubicación</h3>
-              <p className="text-muted">Oficina principal — Valladolid</p>
+              <h3>Location</h3>
+              <p className="text-muted">Main Office — Valladolid</p>
               <div className="map-placeholder">[Mapa integrado aquí]</div>
             </div>
 
             <div className="card">
-              <h3>Horarios de atención</h3>
-              <p>Oficina administrativa: Lun–Vie 9:00–18:00</p>
+              <h3>Opening hours</h3>
+              <p>Administrative office: Mon–Fri 9:00–18:00</p>
             </div>
           </aside>
         </section>
       </main>
 
       <footer className="policia-footer">
-        <p>© {new Date().getFullYear()} Policía Municipal — Valladolid</p>
+        <p>© {new Date().getFullYear()} Municipal Police — Valladolid</p>
         <p>
-          📧 <a href="mailto:info@policia.valladolid.mx">info@policia.valladolid.mx</a> |{" "}
-          <a href="#">Política de privacidad</a>
+          📧 <a href="mailto:info@policia.valladolid.mx">---@-----.valladolid.mx</a> |{" "}
+          <a href="#">Privacy Policy</a>
         </p>
       </footer>
     </div>

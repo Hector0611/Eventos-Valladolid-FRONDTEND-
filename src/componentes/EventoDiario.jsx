@@ -14,7 +14,7 @@ const EventoDiario = () => {
         <div className="evento-card">
             <br />
            
-             <h1 className='titel1'>Daily Events</h1>
+             <h1 className='texto_EVETODIARIO'>Daily Events</h1>
 
             <br />  
             <div className='Img-videoM'>
@@ -33,14 +33,14 @@ const EventoDiario = () => {
                     className="bottonEvent2"
                     onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=20.689720,-88.201669`, "_blank")}
                 >
-                    
+                    <p className='texto_indicaciones1'>Indications</p>
 
                 </button>
                 <button
                     className="bottonEvent22"
                     onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=20.686362823195388,-88.21000163440262`, "_blank")}
                 >
-                    
+                    <p className='texto_indicaciones'>Indications</p>
 
                 </button>
                 

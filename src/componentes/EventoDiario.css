@@ -104,7 +104,7 @@
 
 /* Tooltip */
 .bottonEvent2::after {
-  content: "Indicaciones para llegar";
+
   position: absolute;
   top: 90%;
   left: 37%;
@@ -154,7 +154,7 @@
 
 /* Tooltip botón 2 */
 .bottonEvent22::after {
-  content: "Indicaciones para llegar";
+ 
   position: absolute;
   top: 74%;
   left: 37%;
@@ -173,6 +173,36 @@
 .bottonEvent22:hover::after {
   opacity: 1;
   transform: translateY(-50%) translateX(5px);
+}
+
+.texto_indicaciones{  
+  /* Para que este abajo de la img del boton */
+  position: absolute;
+  top: 70%;
+  left: 37%;
+  font-size: 3.5rem;
+  background-color: black;
+  border-radius: 20%;
+
+}
+
+.texto_indicaciones1{  
+  /* Para que este abajo de la img del boton */
+  position: absolute;
+  top: 70%;
+  left: 37%;
+  font-size: 3.5rem;
+  background-color: black;
+  border-radius: 20%;
+
+}
+
+.texto_EVETODIARIO{
+  position: relative;
+  font-size: 3.5rem;
+  color: #fbfbfb;
+  text-align: center;
+  margin-top: 20px;
 }
 
 /* 🔹 Animación de latido sutil */
@@ -256,6 +286,22 @@
     transform: translateX(-50%);
     white-space: nowrap;
   }
+  .texto_indicaciones{  
+  /* Para que este abajo de la img del boton */
+  top: 70%;
+  left: 39%;
+  font-size: 1.2rem;
+
+
+}
+.texto_indicaciones1{  
+  /* Para que este abajo de la img del boton */
+  top: 70%;
+  left: 22%;
+  font-size: 1.2rem;
+
+
+}
 }
 
 
@@ -290,6 +336,26 @@
     top: 75%;
     left: 27%;
   }
+  .texto_indicaciones{  
+  /* Para que este abajo de la img del boton */
+  top: 70%;
+  left: 39%;
+  font-size: 1.2rem;
+
+
+}
+.texto_indicaciones1{  
+  /* Para que este abajo de la img del boton */
+  top: 70%;
+  left: 22%;
+  font-size: 1.2rem;
+
+
+}
+
+.texto_EVETODIARIO{
+  font-size: 2rem;
+}
 }
 
 

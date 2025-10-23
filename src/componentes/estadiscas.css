@@ -1,36 +1,110 @@
-.titulo_contenido{
-    color: black;
+/* ===============================
+   ESTILO GENERAL
+================================*/
+body {
+  background: #f4f7fc;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  margin: 0;
+  padding: 0;
 }
 
+.Separacion {
+  height: 40px;
+}
+
+/* ===============================
+   CONTENEDOR PRINCIPAL
+================================*/
 .pdf-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
-  margin-top: 30px;
+  padding: 20px;
 }
 
+/* ===============================
+   TARJETAS DE PDF
+================================*/
 .pdf-item {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  width: 550px;
+  max-width: 95%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
   text-align: center;
 }
 
+.pdf-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* ===============================
+   TÍTULO DEL PDF
+================================*/
+.titel1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #004085;
+  text-align: center;
+  margin: 20px 10px 10px 10px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 8px;
+}
+
+/* ===============================
+   PORTADA DEL PDF
+================================*/
 .pdf-cover {
-  border-radius: 12px;
-  overflow: hidden;
-  border: 2px solid #ddd;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: inline-block;
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eef3fb;
+  border-top: 1px solid #e0e6ef;
+  border-bottom: 1px solid #e0e6ef;
+  padding: 20px 0;
+  transition: background 0.3s ease;
 }
 
 .pdf-cover:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  background: #d9e7ff;
 }
 
-.titel1 {
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: #333;
+.pdf-cover canvas {
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ===============================
+   ENLACE
+================================*/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover .titel1 {
+  color: #0056b3;
+}
+
+/* ===============================
+   RESPONSIVE
+================================*/
+@media (max-width: 768px) {
+  .pdf-item {
+    width: 95%;
+  }
+
+  .titel1 {
+    font-size: 1.2rem;
+  }
+
+  .pdf-cover {
+    padding: 10px;
+  }
 }

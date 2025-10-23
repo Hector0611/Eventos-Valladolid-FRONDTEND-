@@ -22,7 +22,7 @@ const Estadisticas = () => {
       <div className="pdf-list">
         {pdfs.map(pdf => (
           <div key={pdf.id} className="pdf-item">
-            <h2 className="titel1">{pdf.titulo}</h2>
+            <h2 className="titel">{pdf.titulo}</h2>
 
             {/* Portada generada automáticamente */}
             <a
@@ -33,7 +33,7 @@ const Estadisticas = () => {
               <div className="pdf-cover">
                 <Document
                   file={`https://eventos-valladolid-backendt.onrender.com/${pdf.ubicacion}`}
-                  loading={<p>Cargando portada...</p>}
+                  loading={<p>Loading cover...</p>}
                 >
                   <Page
                     pageNumber={1}

@@ -19,13 +19,21 @@
      align-items: center;
      justify-content: center;
      position: relative;
-     width: 480px;  /* Tamaño fijo en pantallas grandes */
+     width: 390px;  /* Tamaño fijo en pantallas grandes */
      height: 370px;
      overflow: hidden;
      transition: transform 0.5s;
- 
+    background-color: transparent;
      border-radius: 10%;
      border: 5cm;
+     /* centrar todo el contenido */
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 10px;  
+        color: rgb(0, 0, 0);
+      
+
  }
 
 
@@ -138,14 +146,15 @@
     top: 50%; /* Centrado verticalmente */
     left: 65%; /* Centrado horizontalmente */
     transform: translate(-50%, -50%); /* Centra el mensaje */
-    background-color: rgba(211, 202, 100, 0.779); /* Fondo semitransparente */
+    background-color: rgba(211, 202, 100, 0.823); /* Fondo semitransparente */
     color: rgb(0, 0, 0);
-    padding: 5px 15px;
-    border-radius: 15%;
+    padding: 10px 25px;
+    border-radius: 25%;
     z-index: 4; /* Asegúrate de que esté por encima de otros elementos */
     font-size: 1.2em; /* Ajusta el tamaño del texto si es necesario */
     transition: opacity 3s ease; /* Agrega una transición suave si deseas */
-    box-shadow: 0 0px 15px rgb(1, 91, 7);
+    box-shadow: 0 0px 15px rgb(0, 0, 0);
+    font-weight: 900;
  }
 
  .flecha{
@@ -200,7 +209,6 @@
     position: absolute; /* Colócalo sobre las imágenes si están en un contenedor */
     background-image: url('./Imagenes/LOGONEGATIVO.png'); /* Reemplaza con la URL o ruta de tu imagen */
     background-size: cover; /* Ajusta la imagen para que cubra todo el área */
-    
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     width: 800px;
     height: 176px;
@@ -281,7 +289,7 @@
     margin-bottom: 20px; /* Espacio entre bloques */
   }
   .message{ 
-    padding: 1px 35px;
+    padding: 10px 35px;
   }
 }
 

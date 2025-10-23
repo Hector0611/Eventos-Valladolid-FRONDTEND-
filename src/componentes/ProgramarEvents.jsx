@@ -14,7 +14,7 @@ import Logo3 from './Imagenes/fondo.gif';
 const ProgramarEvents = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [Logo1, Logo2, Logo3];
-
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % images.length);
@@ -150,20 +150,24 @@ const ProgramarEvents = () => {
   // ===========================
   return (
     <div className="programar-events">
-      <div className="Separacion"></div>
+      <div className="Separacion">
+
+      </div>
       <div className="caja3">
-        <h1 className="titel1">See the Event Programs During Your Stay in Valladolid</h1>
+        <h1 className="titutulo">See the Event Programs During Your Stay in Valladolid</h1>
         <hr />
-        <h1 className="calendar1">
+
+        <div className='color_fondo'>
+        <h1 className="calendario1">
                {monthsData[selectedMonth]?.nombre || months[selectedMonth]} {currentYear} Calendar
                 </h1>
         <div className="container1">
           {/* 🔹 Selección de rango y mes */}
           
-          <div className="left">
+          <div className="">
       
             <hr />
-            <h1 className="fecha-texto">Select the days you will be in Valladolid</h1>
+            <h1 className="fecha-texto1">Select the days you will be in Valladolid</h1>
 
             <div className="fecha-inputs">
               <input type="date" value={fechaInicio} onChange={(e) => setFechaInicio(e.target.value)} />
@@ -199,6 +203,7 @@ const ProgramarEvents = () => {
               </div>
             </div>
           </div>
+          <br />
 
           {/* ✅ Calendario corregido */}
           <div className="right">
@@ -251,6 +256,8 @@ const ProgramarEvents = () => {
             </div>
           </div>
         </div>
+        {/* aqui */}
+</div>
       </div>
 
       {/* Modal de eventos */}

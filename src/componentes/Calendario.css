@@ -232,10 +232,8 @@
 
 .container1 {
     display: flex;
-    background-color: rgba(236, 231, 231, 0.815);
     padding: 15px 28px;
     border-radius: 18px;
-
 }
 
 @media (max-width: 768px) {

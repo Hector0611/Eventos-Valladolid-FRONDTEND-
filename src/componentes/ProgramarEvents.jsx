@@ -164,7 +164,7 @@ const ProgramarEvents = () => {
         <div className="container1">
           {/* 🔹 Selección de rango y mes */}
           
-          <div className="">
+          <div className="NoesNada">
       
             <hr />
             <h1 className="fecha-texto1">Select the days you will be in Valladolid</h1>

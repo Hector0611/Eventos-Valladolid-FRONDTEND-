@@ -581,6 +581,10 @@
   box-shadow: 0 14px 18px rgba(0, 0, 0, 0.1);
 }
 
+.NoesNada{
+  padding: 10px 20px;
+}
+
 /* =================== EVENTOS MOBILE =================== */
 @media (max-width: 1024px) {
   .fecha{
@@ -706,6 +710,10 @@
     padding: 8px 5px 8px 25px; /* top, right, bottom, left */
     max-width: 320px;
   }
+
+  .NoesNada{
+  padding: 0px 0px;
+}
 }
 
 

@@ -15,7 +15,7 @@
   border-bottom-left-radius: 15%;
   border-bottom: 3px solid #000000;
   position: fixed;
-  top: 65px;
+  top: 70px;
   left: 0;
    z-index: 9999; /* Siempre encima */
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;

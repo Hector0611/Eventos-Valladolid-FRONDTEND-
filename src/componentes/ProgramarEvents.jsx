@@ -3,6 +3,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+
 import './CircularMenu.css';
 import './Calendario.css';
 import './menuwhat.css';
@@ -10,10 +11,13 @@ import './menuwhat.css';
 import Logo1 from './Imagenes/Iglesia.jpg';
 import Logo2 from './Imagenes/cenotezaki.jpg';
 import Logo3 from './Imagenes/fondo.gif';
+import { div } from 'framer-motion/client';
 
 const ProgramarEvents = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [Logo1, Logo2, Logo3];
+  const [loading, setLoading] = useState(false);
+
   
   useEffect(() => {
     const interval = setInterval(() => {
@@ -43,38 +47,42 @@ const ProgramarEvents = () => {
   // ===========================
   // 🔍 Buscar eventos por rango
   // ===========================
-  const buscarEventosRango = async () => {
-    if (!fechaInicio || !fechaFin) {
-      alert("Por favor selecciona ambas fechas");
-      return;
-    }
+ const buscarEventosRango = async () => {
+  if (!fechaInicio || !fechaFin) {
+    alert("Por favor selecciona ambas fechas");
+    return;
+  }
 
-    try {
-      let allEventos = [];
-      const [anioI, mesI, diaI] = fechaInicio.split("-").map(Number);
-      const [anioF, mesF, diaF] = fechaFin.split("-").map(Number);
+  setLoading(true);
+  try {
+    let allEventos = [];
+    const [anioI, mesI, diaI] = fechaInicio.split("-").map(Number);
+    const [anioF, mesF, diaF] = fechaFin.split("-").map(Number);
 
-      let dia = diaI;
-      let mes = mesI;
+    let dia = diaI;
+    let mes = mesI;
 
-      while (mes < mesF || (mes === mesF && dia <= diaF)) {
-        const res = await axios.get(
-          `https://eventos-valladolid-backendt.onrender.com/api/mensajes?dia_id=${dia}&mes_id=${mes}`
-        );
-        allEventos = [...allEventos, ...res.data];
-        dia++;
-        if (dia > 31) {
-          dia = 1;
-          mes++;
-        }
+    while (mes < mesF || (mes === mesF && dia <= diaF)) {
+      const res = await axios.get(
+        `https://eventos-valladolid-backendt.onrender.com/api/mensajes?dia_id=${dia}&mes_id=${mes}`
+      );
+      allEventos = [...allEventos, ...res.data];
+      dia++;
+      if (dia > 31) {
+        dia = 1;
+        mes++;
       }
-
-      setEventosSeleccionados(allEventos);
-      setShowModal(true);
-    } catch (error) {
-      console.error("Error al buscar eventos en rango:", error);
     }
-  };
+
+    setEventosSeleccionados(allEventos);
+    setShowModal(true);
+  } catch (error) {
+    console.error("Error al buscar eventos en rango:", error);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   // ===========================
   // Cargar meses y días
@@ -178,7 +186,14 @@ const ProgramarEvents = () => {
                 onChange={(e) => setFechaFin(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && buscarEventosRango()}
               />
-              <button className="fecha-boton" onClick={buscarEventosRango}>Search events</button>
+              <button
+                  className={`fecha-boton ${loading ? "loading" : ""}`}
+                  onClick={buscarEventosRango}
+                  disabled={loading}
+                >
+                  {loading ? <div className="spinner"></div> : "Search events"}
+                </button>
+
             </div>
 
             <hr />
@@ -271,54 +286,11 @@ const ProgramarEvents = () => {
             </button>
 
             {eventosSeleccionados.length === 0 ? (
-              <div className="evento-info">
-                <h1 className='titel6'>Daily Events</h1>
-                  <div className="evento-container1">
-                    {/* Columna izquierda: eventos diarios */}
-                    <div className="eventoDiario11">
-                      <h2 className='titel1'>Every day there is video mapping</h2> 
-                      <p>The schedule is from 9:00 p.m. "Spanish"</p>
-                      <p>The schedule is from 9:20 p.m. "English"</p>
-                      <h3 className='titel1'>Directions to get there</h3>
-
-                      <button
-                        className="bottonEvents1"
-                        onClick={() =>
-                          window.open(
-                            `https://www.google.com/maps/dir/?api=1&destination=20.689720,-88.201669`,
-                            "_blank"
-                          )
-                        }
-                      >
-                        San Servacio
-                      </button>
-
-                      <button
-                        className="bottonEvents2"
-                        onClick={() =>
-                          window.open(
-                            `https://www.google.com/maps/dir/?api=1&destination=20.686362823195388,-88.21000163440262`,
-                            "_blank"
-                          )
-                        }
-                      >
-                          San Bernardino
-                      </button>
-                    </div>
-
-                    {/* Columna derecha: botón de hoteles */}
-                    <div className="hoteles-section1">
-                      <h3>¿Buscas hoteles?</h3>
-                      <button
-                        className="bottonEvent"
-                        onClick={() => window.open(`${process.env.PUBLIC_URL}/pdfs/Hoteles.pdf`, "_blank")}
-                      >
-                        📄 Ver Hoteles
-                      </button>
-                    </div>
-                  </div>
-             
+              <div className="no-events">
+                <h2 className="titulo5">There are no events scheduled for these days</h2>
+                <p className="titulo1"></p>
               </div>
+
 
             ) : (
               eventosSeleccionados.map((evento) => (
@@ -378,6 +350,19 @@ const ProgramarEvents = () => {
                       <div dangerouslySetInnerHTML={{ __html: evento.descripcion }}></div>
                       
                     </div>
+
+
+                    
+                  </div>
+                </div>
+              )
+            
+            )
+            
+            )
+            
+            }
+             {/* Aqui eventos diarios que se repiten en todos los eventos */}
                     <div className="evento-info">
                 <h1 className='titel1'>Daily Events</h1>
                   <div className="evento-container1">
@@ -428,11 +413,8 @@ const ProgramarEvents = () => {
                   </div>
              
               </div>
-                  </div>
-                </div>
-              ))
-            )}
           </div>
+         
         </div>
       )}
     </div>

@@ -361,9 +361,10 @@ const ProgramarEvents = () => {
             )
             
             )
-            
             }
+            
              {/* Aqui eventos diarios que se repiten en todos los eventos */}
+            
                     <div className="evento-info1">
                 <h1 className='titel11'>Daily Events</h1>
                   <div className="evento-container11">

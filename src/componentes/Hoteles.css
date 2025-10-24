@@ -354,7 +354,7 @@
     background-color: rgba(235, 0, 0, 0.326);
 }
 
-.modal-image1 {
+.modal-image111 {
   width: auto;
   height: 90px;
   object-fit: cover;
@@ -586,6 +586,12 @@
   color: #84baf1;
 }
 
+.shop{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
 /* ===== MAPA RESPONSIVE ===== */
 
 /* Por defecto: mapa oculto en móviles */
@@ -629,7 +635,7 @@
     }
 
     /* Ajuste de imágenes en tooltips o modal */
-    .modal-image1 {
+    .modal-image11 {
         height: 70px;
     }
 

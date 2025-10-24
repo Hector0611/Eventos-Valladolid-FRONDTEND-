@@ -7,12 +7,21 @@ import './Hoteles.css';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 import { div } from 'framer-motion/client';
 
+/* Iconos  */
+import logo3 from './Imagenes/Hotel.png';
+import logo4 from './Imagenes/restaurante.png';
+import logo5 from './Imagenes/sitiosarque.png';
+
+
 // Icono personalizado SVG
 const hotelIcon = new L.Icon({
-  iconUrl: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" class="bi bi-geo-alt-fill" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/></svg>',
-  iconSize: [30, 45],
-  iconAnchor: [15, 45],
+  iconUrl: logo3,
+  iconSize: [40, 40],
+  iconAnchor: [20, 40],
+  popupAnchor: [0, -40]
 });
+
+/*  */
 
 // Componente para mover la vista del mapa
 const FlyToHotel = ({ hotel }) => {
@@ -157,7 +166,7 @@ useEffect(() => {
       </aside>
   
       <div className="map-wrapper">
-        <MapContainer center={[20.690180, -88.201223]} zoom={8} style={{ height: "100%", width: "100%", left: 0, top: 0 }} scrollWheelZoom={true}>
+        <MapContainer center={[20.690180, -88.201223]} zoom={10} style={{ height: "100%", width: "100%", left: 0, top: 0 }} scrollWheelZoom={true}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; OpenStreetMap contributors'
@@ -195,7 +204,7 @@ useEffect(() => {
         }}
       >
         {imgUrl && (
-            <img src={imgUrl} alt={hotel.hotel} className="modal-image1" />
+            <img src={imgUrl} alt={hotel.hotel} className="modal-image111" />
           )}
         <br />
         <span className="tooltip-text">{hotel.hotel}</span>

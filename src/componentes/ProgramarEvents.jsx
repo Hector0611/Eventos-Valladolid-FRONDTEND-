@@ -3,7 +3,6 @@ import React, { useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-
 import './CircularMenu.css';
 import './Calendario.css';
 import './menuwhat.css';
@@ -304,17 +303,19 @@ const ProgramarEvents = () => {
                     <h3 className="horacolor">
                       Event Date: {evento.dia_id}/{evento.mes_id}/2025 From {evento.hora_inicial} to {evento.hora_final}
                     </h3>
-                    <p className="evento-enlace">
-                        🌐 Website:{' '}
-                        <a 
-                          href={evento.video} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="enlace-web"
-                        >
-                          Visit page
-                        </a>
-                      </p>
+                    {evento.video && (
+                        <p className="evento-enlace">
+                          🌐 Website:{' '}
+                          <a
+                            href={evento.video}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="enlace-web"
+                          >
+                            Visit page
+                          </a>
+                        </p>
+                      )}
                     <center>
 
                        <iframe
@@ -363,20 +364,20 @@ const ProgramarEvents = () => {
             
             }
              {/* Aqui eventos diarios que se repiten en todos los eventos */}
-                    <div className="evento-info">
-                <h1 className='titel1'>Daily Events</h1>
-                  <div className="evento-container1">
+                    <div className="evento-info1">
+                <h1 className='titel11'>Daily Events</h1>
+                  <div className="evento-container11">
                     
                     {/* Columna izquierda: eventos diarios */}
-                    <div className="eventoDiario11">
-                      <h2 className='titel1'>Every day there is video mapping in the center and Sisal</h2>
+                    <div className="eventoDiario111">
+                      <h2 className='titel11'>Every day there is video mapping in the center and Sisal</h2>
                       <p>The schedule is from 9:00 p.m. "Spanish"</p>
                       <p>The schedule is from 9:20 p.m. "English"</p>
 
-                      <h3 className='titel1'>Directions to get there</h3>
+                      <h3 className='titel11'>Directions to get there</h3>
 
                       <button
-                        className="bottonEvents1"
+                        className="bottonEvents11"
                         onClick={() =>
                           window.open(
                             `https://www.google.com/maps/dir/?api=1&destination=20.689720,-88.201669`,
@@ -388,7 +389,7 @@ const ProgramarEvents = () => {
                       </button>
 
                       <button
-                        className="bottonEvents2"
+                        className="bottonEvents22"
                         onClick={() =>
                           window.open(
                             `https://www.google.com/maps/dir/?api=1&destination=20.686362823195388,-88.21000163440262`,
@@ -401,10 +402,10 @@ const ProgramarEvents = () => {
                     </div>
 
                     {/* Columna derecha: botón de hoteles */}
-                    <div className="hoteles-section1">
+                    <div className="hoteles-section11">
                       <h3>¿Buscas hoteles?</h3>
                       <button
-                        className="bottonEvent"
+                        className="bottonEvent1"
                         onClick={() => window.open(`${process.env.PUBLIC_URL}/pdfs/Hoteles.pdf`, "_blank")}
                       >
                         📄 Ver Hoteles
@@ -413,6 +414,8 @@ const ProgramarEvents = () => {
                   </div>
              
               </div>
+
+                  {/*  */}
           </div>
          
         </div>

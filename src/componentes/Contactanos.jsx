@@ -77,8 +77,8 @@ const Contactanos = () => {
           </div>
 
            <div className="contact-info">
-            <p><FaPhoneAlt /> +52 999 123 4567</p>
-            <p><FaEnvelope /> contacto@valladolidmx.com</p>
+            <p><FaPhoneAlt /> +52 --- --- -- --</p>
+            <p><FaEnvelope /> ------@gmail.com</p>
           </div>
           <h3>Where are we?</h3>
           <iframe

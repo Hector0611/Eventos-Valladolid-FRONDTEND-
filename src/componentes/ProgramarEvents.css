@@ -625,6 +625,107 @@
   animation: girar 0.9s linear infinite;
 }
 
+
+/* Contenedor principal */
+.evento-info1 {
+  background: linear-gradient(135deg, #f5f7fa9e, #c3cfe290);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Título principal */
+.titel11 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Contenedor de columnas */
+.evento-container11 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+/* Columna izquierda: eventos diarios */
+.eventoDiario111 {
+  flex: 1;
+  min-width: 280px;
+  background-color: #ffffff;
+  border-left: 6px solid #3498db;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.eventoDiario111 h2,
+.eventoDiario111 h3 {
+  color: #34495e;
+  margin-bottom: 0.5rem;
+}
+
+.eventoDiario111 p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0.3rem 0;
+}
+
+/* Botones de direcciones */
+.bottonEvents11,
+.bottonEvents22 {
+  display: inline-block;
+  margin: 0.5rem 0.5rem 0 0;
+  padding: 0.6rem 1.2rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.bottonEvents11:hover,
+.bottonEvents22:hover {
+  background-color: #2980b9;
+}
+
+/* Columna derecha: hoteles */
+.hoteles-section11 {
+  flex: 0.8;
+  min-width: 220px;
+  background-color: #ecf0f1;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 6px solid #e67e22;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.hoteles-section11 h3 {
+  color: #e67e22;
+  margin-bottom: 1rem;
+}
+
+/* Botón de hoteles */
+.bottonEvent1 {
+  padding: 0.6rem 1.2rem;
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.bottonEvent1:hover {
+  background-color: #d35400;
+}
+
 @keyframes girar {
   to {
     transform: rotate(360deg);

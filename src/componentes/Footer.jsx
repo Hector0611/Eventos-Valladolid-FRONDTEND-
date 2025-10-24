@@ -30,11 +30,11 @@ const Footer = () => {
                 <div className="footer-section">
                 <h3 className='Titulo'>Useful Links</h3>
                 <ul className='texto1'>
-                    <li><a href="/hoteles">Hotels</a></li>
+                    {/* <li><a href="/hoteles">Maps</a></li> */}
                     <li><a href="/contacto">Contact Us</a></li>
-                    <li><a href="/historia">History of Valladolid</a></li>
-                    <li><a href="/catalogo">Tourism Service Directory</a></li>
-                    <li><a href="/estadisticas">Valladolid Statistics</a></li>
+                    <li><a href="/LugaresTuristicos">History of Valladolid</a></li>
+                    <li><a href="/estadisticas">Tourism Service Directory</a></li>
+                    {/* <li><a href="/estadisticas">Valladolid Statistics</a></li> */}
                 </ul>
                 </div>
 

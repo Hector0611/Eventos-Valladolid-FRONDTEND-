@@ -19,6 +19,7 @@
   max-width: 600px;
   height: auto;
   transition: transform 0.3s ease;
+  padding: 10px;
 }
 
 .folleto-img:hover {

@@ -24,6 +24,7 @@ import logo88 from './Imagenes/ImgTempo/8.8.jpg'; */
 
 /* Folletos */
 import logoDiaMuertos from './Imagenes/ImgTempo/DiaMuertos.jpg';
+import logoDiaMuertosingles from './Imagenes/ImgTempo/DiaMuertosIngles.jpg';
 import LaVidayCeiba from './Imagenes/ImgTempo/LaVidayCeiba.jpeg';
 import JuanBalam from './Imagenes/ImgTempo/JuanBalam.jpeg';
 import Fiesta1 from './Imagenes/ImgTempo/LaFiestaPueblo1.jpeg';
@@ -119,6 +120,8 @@ const Catalogo = () => {
         <p className='TextoHanal'>Hanal Pixán is a Mayan tradition from the Yucatán Peninsula celebrated from October 31st to November 2nd to honor the deceased. The name means "food of the souls" and involves preparing offerings with traditional food and altars to welcome the souls of ancestors, believing they return to visit their families during these days. Each day is dedicated to a different group of deceased: October 31st for children, November 1st for adults, and November 2nd for all deceased in general.</p>
 
         <img src={logoDiaMuertos} alt="Día de Muertos" className="folleto-img rounded shadow" />
+
+        <img src={logoDiaMuertosingles} alt="Día de Muertos" className="folleto-img rounded shadow" />
       </div>
 
       <div className="folleto text-center mb-5">

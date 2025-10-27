@@ -3,24 +3,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Catalogo.css';
 
 /* Español */
-import logo1 from './Imagenes/ImgTempo/1.jpg';
+/* import logo1 from './Imagenes/ImgTempo/1.jpg';
 import logo2 from './Imagenes/ImgTempo/2.jpg';
 import logo3 from './Imagenes/ImgTempo/3.jpg';
 import logo4 from './Imagenes/ImgTempo/4.jpg';
 import logo5 from './Imagenes/ImgTempo/5.jpg';
 import logo6 from './Imagenes/ImgTempo/6.jpg';
 import logo7 from './Imagenes/ImgTempo/7.jpg';
-import logo8 from './Imagenes/ImgTempo/8.jpg';
+import logo8 from './Imagenes/ImgTempo/8.jpg'; */
 
 /* Inglés */
-import logo11 from './Imagenes/ImgTempo/1.1.jpg';
+/* import logo11 from './Imagenes/ImgTempo/1.1.jpg';
 import logo22 from './Imagenes/ImgTempo/2.2.jpg';
 import logo33 from './Imagenes/ImgTempo/3.3.jpg';
 import logo44 from './Imagenes/ImgTempo/4.4.jpg';
 import logo55 from './Imagenes/ImgTempo/5.5.jpg';
 import logo66 from './Imagenes/ImgTempo/6.6.jpg';
 import logo77 from './Imagenes/ImgTempo/7.jpg';
-import logo88 from './Imagenes/ImgTempo/8.8.jpg';
+import logo88 from './Imagenes/ImgTempo/8.8.jpg'; */
 
 /* Folletos */
 import logoDiaMuertos from './Imagenes/ImgTempo/DiaMuertos.jpg';
@@ -28,9 +28,10 @@ import LaVidayCeiba from './Imagenes/ImgTempo/LaVidayCeiba.jpeg';
 import JuanBalam from './Imagenes/ImgTempo/JuanBalam.jpeg';
 import Fiesta1 from './Imagenes/ImgTempo/LaFiestaPueblo1.jpeg';
 import Fiesta2 from './Imagenes/ImgTempo/LaFiestaPueblo2.jpeg';
+import sabores from './Imagenes/ImgTempo/EventosNoviembre.jpg';
 
 const Catalogo = () => {
-  const [idioma, setIdioma] = useState("es");
+  /* const [idioma, setIdioma] = useState("es");
   const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
   const [indice, setIndice] = useState(0);
 
@@ -58,7 +59,7 @@ const Catalogo = () => {
     const nuevoIndice = (indice - 1 + imagenes[idioma].length) % imagenes[idioma].length;
     setIndice(nuevoIndice);
     setImagenSeleccionada(imagenes[idioma][nuevoIndice]);
-  };
+  }; */
 
   return (
     <div className="catalogo-container container py-5">
@@ -113,12 +114,20 @@ const Catalogo = () => {
       </div>
 
       <div className="folleto text-center mb-5">
-        <h2 className="fw-bold mb-3">Día de Muertos</h2>
+        <h2 className="fw-bold mb-3">Hanal Pixán</h2>
+
+        <p className='TextoHanal'>Hanal Pixán is a Mayan tradition from the Yucatán Peninsula celebrated from October 31st to November 2nd to honor the deceased. The name means "food of the souls" and involves preparing offerings with traditional food and altars to welcome the souls of ancestors, believing they return to visit their families during these days. Each day is dedicated to a different group of deceased: October 31st for children, November 1st for adults, and November 2nd for all deceased in general.</p>
+
         <img src={logoDiaMuertos} alt="Día de Muertos" className="folleto-img rounded shadow" />
       </div>
 
+      <div className="folleto text-center mb-5">
+        <h2 className="fw-bold mb-3">Sabores del Mas Alla</h2>
+        <img src={sabores} alt="The Vine and The Ceiba" className="folleto-img rounded shadow" />
+      </div>
+
       {/* Modal de imagen */}
-      {imagenSeleccionada && (
+      {/* {imagenSeleccionada && (
         <div className="modal11" onClick={cerrarImagen}>
           <span className="cerrar">&times;</span>
           <button className="anterior" onClick={anterior}>
@@ -129,7 +138,7 @@ const Catalogo = () => {
             &#10095;
           </button>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

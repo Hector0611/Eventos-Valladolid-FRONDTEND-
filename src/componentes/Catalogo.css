@@ -90,6 +90,15 @@
 .cerrar:hover {
   color: #dc3545;
 }
+
+.TextoHanal{
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+  text-align: justify;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
 @media (max-width: 768px) {
   .anterior, .siguiente {
     font-size: 1.5rem;

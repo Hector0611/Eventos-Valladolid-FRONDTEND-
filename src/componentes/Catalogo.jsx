@@ -62,11 +62,10 @@ const Catalogo = () => {
 
   return (
     <div className="catalogo-container container py-5">
-      <h1 className="text-center mb-4 display-5 fw-bold ">
+      {/* <h1 className="text-center mb-4 display-5 fw-bold ">
         October Nights Catalog
       </h1>
 
-      {/* Botones de idioma */}
       <div className="text-center mb-5">
         <div className="btn-group">
           <button
@@ -84,7 +83,7 @@ const Catalogo = () => {
         </div>
       </div>
 
-      {/* Galería */}
+      
       <div className="row g-4">
         {imagenes[idioma].map((img, index) => (
           <div key={index} className="col-6 col-md-3">
@@ -93,15 +92,15 @@ const Catalogo = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
 
       <hr className="my-5" />
 
       {/* Secciones Folletos */}
-      <div className="folleto text-center mb-5">
+      {/* <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Juan Balam</h2>
         <img src={JuanBalam} alt="Juan Balam" className="folleto-img rounded shadow" />
-      </div>
+      </div> */}
 
       <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">The Festival of My Town</h2>

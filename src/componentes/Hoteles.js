@@ -1,372 +1,226 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';  
 import axios from 'axios';
 import { MapContainer, TileLayer, Marker, Tooltip, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import './Hoteles.css';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
-import { div } from 'framer-motion/client';
 
-/* Iconos  */
 import logo3 from './Imagenes/Hotel.png';
-import logo4 from './Imagenes/restaurante.png';
 import logo5 from './Imagenes/sitiosarque.png';
+import logoCenote from './Imagenes/restaurante.png';
 
+const hotelIcon = new L.Icon({ iconUrl: logo3, iconSize: [40, 40], iconAnchor: [20, 40], popupAnchor: [0, -40] });
+const sitioIcon = new L.Icon({ iconUrl: logo5, iconSize: [40, 40], iconAnchor: [20, 40], popupAnchor: [0, -40] });
+const cenoteIcon = new L.Icon({ iconUrl: logoCenote, iconSize: [40, 40], iconAnchor: [20, 40], popupAnchor: [0, -40] });
 
-// Icono personalizado SVG
-const hotelIcon = new L.Icon({
-  iconUrl: logo3,
-  iconSize: [40, 40],
-  iconAnchor: [20, 40],
-  popupAnchor: [0, -40]
-});
-
-/*  */
-
-// Componente para mover la vista del mapa
-const FlyToHotel = ({ hotel }) => {
+const FlyToLocation = ({ location }) => {
   const map = useMap();
-
   useEffect(() => {
-    if (hotel && map) {
-      const lat = parseFloat(hotel.latitud);
-      const lng = parseFloat(hotel.longitud);
-      if (!isNaN(lat) && !isNaN(lng)) {
-        const offsetLng = lng - - 0.0017; // Ajusta este valor según lo necesites
-        try {
-          map.flyTo([lat,  offsetLng], 17, { duration: 3 });
-        } catch (error) {
-          console.error('Error flyTo:', error);
-        }
-      }
+    if (location && map) {
+      const lat = parseFloat(location.latitud);
+      const lng = parseFloat(location.longitud);
+      if (!isNaN(lat) && !isNaN(lng)) map.flyTo([lat, lng], 17, { duration: 2.5 });
     }
-  }, [hotel, map]);
+  }, [location, map]);
   return null;
 };
 
-
 const Hoteles = () => {
   const [hoteles, setHoteles] = useState([]);
+  const [sitios, setSitios] = useState([]);
+  const [cenotes, setCenotes] = useState([]);
   const [selectedHotel, setSelectedHotel] = useState(null);
-  
-  const [hoveredHotel, setHoveredHotel] = useState(null);
-  /* compoenetes para hotel y restaurantes informacion */
-const [hotelInfo, setHotelInfo] = useState(null);
-const [showInfoModal, setShowInfoModal] = useState(false);
+  const [selectedSitio, setSelectedSitio] = useState(null);
+  const [selectedCenote, setSelectedCenote] = useState(null);
+  const [openSection, setOpenSection] = useState('');
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredResults, setFilteredResults] = useState([]);
 
   useEffect(() => {
-    axios.get('https://eventos-valladolid-backendt.onrender.com/api/hoteles')
-      .then(response => setHoteles(response.data))
-      .catch(error => console.error('Error al cargar hoteles:', error));
+    const handleResize = () => setIsMobile(window.innerWidth <= 1024);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const fetchHotelInfo = async (idHotel) => {
-  try {
-    const res = await axios.get('https://eventos-valladolid-backendt.onrender.com/api/hotsyrest_info');
-    const match = res.data.find(item => item.id_hotel === idHotel);
-    setHotelInfo(match);
-    setShowInfoModal(true);
-  } catch (err) {
-    console.error('Error al obtener info extendida:', err);
-  }
-};
+  useEffect(() => {
+    axios.get('https://eventos-valladolid-backendt.onrender.com/api/hoteles').then(res => setHoteles(res.data));
+    axios.get('https://eventos-valladolid-backendt.onrender.com/api/sitios').then(res => setSitios(res.data));
+    axios.get('https://eventos-valladolid-backendt.onrender.com/api/cenote_mapa').then(res => setCenotes(res.data));
+  }, []);
 
-const [hotelInfoList, setHotelInfoList] = useState([]);
+  const renderStars = (estrellas) => {
+    const fullStars = Math.floor(estrellas);
+    const hasHalfStar = estrellas % 1 >= 0.5;
+    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+    return (
+      <>
+        {[...Array(fullStars)].map((_, i) => <FaStar key={i} color="gold" />)}
+        {hasHalfStar && <FaStarHalfAlt color="gold" />}
+        {[...Array(emptyStars)].map((_, i) => <FaRegStar key={i} color="gold" />)}
+      </>
+    );
+  };
 
-useEffect(() => {
-  axios.get('https://eventos-valladolid-backendt.onrender.com/api/hotsyrest_info')
-    .then(res => setHotelInfoList(res.data))
-    .catch(err => console.error('Error al obtener info extendida:', err));
-}, []);
+  const handleSearch = (e) => {
+    const value = e.target.value.toLowerCase();
+    setSearchTerm(value);
+    if (!value.trim()) return setFilteredResults([]);
+    const hotelMatches = hoteles.filter(h => h.hotel.toLowerCase().includes(value)).map(h => ({ type: 'Hotel', name: h.hotel, data: h }));
+    const sitioMatches = sitios.filter(s => s.sitio_arqueologico.toLowerCase().includes(value)).map(s => ({ type: 'Archaeological Site', name: s.sitio_arqueologico, data: s }));
+    const cenoteMatches = cenotes.filter(c => c.cenote.toLowerCase().includes(value)).map(c => ({ type: 'Cenote', name: c.cenote, data: c }));
+    setFilteredResults([...hotelMatches, ...sitioMatches, ...cenoteMatches]);
+  };
 
-  
+  const renderInfoPanel = (item, type) => {
+    if (!item) return null;
+    return (
+      <div className={`hotel-info open ${isMobile ? 'mobile-info' : ''}`}>
+        {!isMobile && <button onClick={() => { type === 'Hotel' ? setSelectedHotel(null) : type === 'Sitio' ? setSelectedSitio(null) : setSelectedCenote(null); }} className="close-button">✖</button>}
+        <h4>{type === 'Hotel' ? item.hotel : type === 'Sitio' ? item.sitio_arqueologico : item.cenote}</h4>
+        <p>{item.descripcion}</p>
+        <p>📍 {item.localizacion}</p>
+        {item.web_hotel || item.web_sitio || item.web_cenote ? (
+          <p>🌐 <a href={item.web_hotel || item.web_sitio || item.web_cenote} target="_blank" rel="noopener noreferrer">{item.web_hotel || item.web_sitio || item.web_cenote}</a></p>
+        ) : null}
+        {item.telefono && <p>📞 {item.telefono}</p>}
+        {item.horario_abi && <p>🕒 {item.horario_abi} - {item.horario_cer}</p>}
+        {item.precio && <p>💰 Price: ${item.precio} MX</p>}
+        <div className="botones-hotel">
+          <a href={`https://www.google.com/maps/dir/?api=1&destination=${item.latitud},${item.longitud}`} target="_blank" rel="noopener noreferrer" className="info-button">
+            Indications
+          </a>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div>
-      <div className='Separacion'> 
-
-              </div>
-    <div className="hoteles-container">{/* aqui */}
-      
-      <aside className="hotel-list">
-       < hr></hr>
-        <h3 className="tititulo">Search Places</h3>
-       < hr></hr>
-        {/* buscar hoteles por su nombre y si no busca que se reinice al borrar */}
-        <input
-          type="text"
-          placeholder="Search for Tourist Places..."
-          onChange={(e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            if (searchTerm) {
-              setHoteles(hoteles.filter(hotel => hotel.hotel.toLowerCase().includes(searchTerm)));
-            } else {
-              axios.get('https://eventos-valladolid-backendt.onrender.com/api/hoteles')
-                .then(response => setHoteles(response.data))
-                .catch(error => console.error('Error al cargar hoteles:', error));
-            }
-          }}
-          className="search-input1"
-        />
-        <div className="div_on">
-
-        < hr></hr>
-        <h3 className="titel4"></h3>
-        <p className="content3">Select a location to see more details</p>
-
-        <ul className='ul_hotel'>
-          {hoteles.map(hotel => (
-            <li
-              key={hotel.id}
-              onClick={() => setSelectedHotel(hotel)} 
-              className='list-item'
-            >
-              <strong className="hotel-nombre">{hotel.hotel}</strong>
-              <div className="estrellas">
-                {(() => {
-                  const fullStars = Math.floor(hotel.estrellas);
-                  const hasHalfStar = hotel.estrellas % 1 >= 0.5;
-                  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-
-                  return (
-                    <>
-                      {[...Array(fullStars)].map((_, i) => (
-                        <FaStar key={`full-${i}`} color="gold" size={16} />
-                      ))}
-                      {hasHalfStar && <FaStarHalfAlt key="half" color="gold" size={16} />}
-                      {[...Array(emptyStars)].map((_, i) => (
-                        <FaRegStar key={`empty-${i}`} color="gold" size={16} />
-                      ))}
-                    </>
-                  );
-                })()}
-              </div>
-
-              {/* <div className="precio">
-                {hotel.precio_descuento ? (
-                  <>
-                    <span className="precio-original">
-                      ${parseFloat(hotel.precio).toFixed(2)}
-                    </span>
-                    <span className="precio-descuento">
-                      ${parseFloat(hotel.precio_descuento).toFixed(2)}
-                    </span>
-                  </>
-                ) : (
-                  <span className="precio-descuento">
-                    ${parseFloat(hotel.precio).toFixed(2)}
-                  </span>
-                )}
-              </div> */}
-            </li>
-          ))}
-        </ul>
-
-        </div>
-        
-      </aside>
-  
-      <div className="map-wrapper">
-        <MapContainer center={[20.690180, -88.201223]} zoom={10} style={{ height: "100%", width: "100%", left: 0, top: 0 }} scrollWheelZoom={true}>
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; OpenStreetMap contributors'
-          />
-          {hoteles.map(hotel => {
-          const info = hotelInfoList.find(i => i.id_hotel === hotel.id);
-          const imgUrl = info?.img_resyhts
-            ? `https://eventos-valladolid-backendt.onrender.com/${info.img_resyhts}`
-            : null; 
-  return (
-
-    <Marker
-  key={hotel.id}
-  position={[parseFloat(hotel.latitud), parseFloat(hotel.longitud)]}
-  icon={hotelIcon}
-  eventHandlers={{
-    mouseover: () => setHoveredHotel(hotel),
-    mouseout: () => setHoveredHotel(null),
-    click: () => setSelectedHotel(hotel),
-  }}
->
-  {(hoveredHotel?.id === hotel.id || selectedHotel?.id === hotel.id) && (
-    <Tooltip
-      direction="top"
-      offset={[0, -40]}
-      opacity={1}
-      permanent={selectedHotel?.id === hotel.id}
-      className='custom-tooltip'
-    >
-      <div
-        className="tooltip-container"
-        onClick={(e) => {
-          e.stopPropagation(); // evita que el clic cierre el tooltip
-          setSelectedHotel(hotel);
-        }}
-      >
-        {imgUrl && (
-            <img src={imgUrl} alt={hotel.hotel} className="modal-image111" />
+      <div className="Separacion"></div>
+      <div className="hoteles-container">
+        <aside className="hotel-list">
+          <hr /><h3 className="tititulo">Search Places</h3><hr />
+          <input type="text" placeholder="Search..." onChange={handleSearch} value={searchTerm} className="search-input1" />
+          {filteredResults.length > 0 && (
+            <ul className="search-suggestions">
+              {filteredResults.map((item, idx) => (
+                <li key={idx} onClick={() => { item.type === 'Hotel' ? setSelectedHotel(item.data) : item.type === 'Archaeological Site' ? setSelectedSitio(item.data) : setSelectedCenote(item.data); setFilteredResults([]); setSearchTerm(item.name); }}>
+                  <strong>{item.name}</strong> <span className="search-type">{item.type}</span>
+                </li>
+              ))}
+            </ul>
           )}
-        <br />
-        <span className="tooltip-text">{hotel.hotel}</span>
-      </div>
-    </Tooltip>
-  )}
-</Marker>
-
-    /* <Marker
-      key={hotel.id}
-      position={[parseFloat(hotel.latitud), parseFloat(hotel.longitud)]}
-      icon={hotelIcon} // o el ícono rojo que ya tienes
-      eventHandlers={{
-        mouseover: () => setHoveredHotel(hotel),
-        mouseout: () => setHoveredHotel(null),
-        click: () => setSelectedHotel(hotel),
-      }}
-    >
-      <Tooltip direction="top" offset={[0, -40]} opacity={1}>
-        <div className="tooltip-container">
-          {imgUrl && (
-            <img src={imgUrl} alt={hotel.hotel} className="modal-image1" />
-          )}
-          <br />
-          <span className="tooltip-text">{hotel.hotel}</span>
-        </div>
-      </Tooltip>
-    </Marker> */
-  );
-})}
-
-          <FlyToHotel hotel={selectedHotel} />
-        </MapContainer>
-      </div>
-
-      {selectedHotel && (
-        <div className="div_on">
-          <div className="hotel-info open">
-            <button onClick={() => setSelectedHotel(null)} className="close-button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
-                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-                </svg>
-            </button>
-            <h4 className="titel1">{selectedHotel.hotel}</h4>
-            <div className='info_content'>
-
-            <p className="content4"  > {selectedHotel.descripcion.slice(0, 200)}...</p>
-            <p className="content4">Location: {selectedHotel.localizacion}</p>
-            <p className="content4">Website: <a href={selectedHotel.web_hotel} target="_blank" rel="noopener noreferrer">{selectedHotel.web_hotel}</a> </p>
-            <p className="content4">Phone: {selectedHotel.telefono.slice(0,100)}...</p>
-            <p className="content41">Open: {selectedHotel.horario_abi} - Close: {selectedHotel.horario_cer}</p>
-
-            </div  >
-            <div className="botones-hotel">
-            <button onClick={() => fetchHotelInfo(selectedHotel.id)} className="info-button" >
-              More Information
-            </button>
-
-            <a
-              href={`https://www.google.com/maps/dir/?api=1&destination=${selectedHotel.latitud},${selectedHotel.longitud}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="info-button"
-            >
-              Indications
-            </a>
-            </div>
-          </div>
-        </div>
-      )}
-     
-      {showInfoModal && hotelInfo && selectedHotel &&(
-        <div className="modal-overlay">
-          <div className="modal-content">
-                        
-            <div className="contenedor2">
-              <button onClick={() => setShowInfoModal(false)} className="close-button5" >
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
-                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-                </svg>
-              </button>
-              <h3 className='titel1'>{selectedHotel.hotel}</h3>
-             
-              <div className="video-container8">
-                <center>
-              {hotelInfo.video && (
-              
-                <iframe
-                  width="1120"
-                  height="555"
-                  
-                  src={hotelInfo.video.replace("watch?v=", "embed/")}
-                  title="Video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  
-                ></iframe>
-             
+          {/* Hoteles */}
+          <div className="accordion-section">
+            <h4 className="titel4" onClick={() => setOpenSection(openSection === 'hoteles' ? null : 'hoteles')}>
+              🏨 Hotels <span className={`arrow ${openSection === 'hoteles' ? 'open' : ''}`}>▼</span>
+            </h4>
+            {openSection === 'hoteles' && (
+              <ul className="ul_hotel">{hoteles.map(h => <li key={h.id} onClick={() => setSelectedHotel(h)} className="list-item"><strong>{h.hotel}</strong><div className="estrellas">{renderStars(h.estrellas)}</div></li>)}</ul>
             )}
-            </center>
-              </div>
-              <div className="boton-centro"> 
-                <div className='info_content1'>
-                  <hr></hr>
-                <a
-                  href={`https://www.google.com/maps/dir/?api=1&destination=${selectedHotel.latitud},${selectedHotel.longitud}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="info-button1"
-                >
-                  Indications
-                </a>
-                <hr></hr>
-                </div>
-              </div>
-              {/* {hotelInfo.img_resyhts && (
-                <img
-                  src={`https://eventos-valladolid-backendt.onrender.com/${hotelInfo.img_resyhts}`}
-                  alt="Imagen del Hotel o Restaurante"
-                  className="modal-image2"
-                />
-              )} */}
-              <div className="caj2"> 
-                <div className="info_content11">
-                  <p className="descripcion11">{selectedHotel.descripcion}</p>
-                  <hr />
-                  <p className="descripcion11">{hotelInfo.nombre}</p>
-                  <hr />
-
-                  <p className="telefono11">📞 {selectedHotel.telefono}</p>
-                  <hr />
-
-                  <p className="servicios11">✨ {hotelInfo.descripcion}</p>
-                  <hr />
-
-                  <p className="precio11">💰 ${selectedHotel.precio} MX</p>
-                  <hr />
-
-                  <p className="menu11">🍽️ {hotelInfo.calle}</p>
-                  <hr />
-
-                  <p className="consejos11">💡 {hotelInfo.numerotelf}</p>
-                </div>  
-              </div>
-
-
-              
-            </div>
-            
-            
           </div>
-        </div>
-      )}
+          {/* Sitios */}
+          <div className="accordion-section">
+            <h4 className="titel4" onClick={() => setOpenSection(openSection === 'sitios' ? null : 'sitios')}>
+              🏛️ Archaeological Sites <span className={`arrow ${openSection === 'sitios' ? 'open' : ''}`}>▼</span>
+            </h4>
+            {openSection === 'sitios' && (
+              <ul className="ul_hotel">{sitios.map(s => <li key={s.id} onClick={() => setSelectedSitio(s)} className="list-item"><strong>{s.sitio_arqueologico}</strong></li>)}</ul>
+            )}
+          </div>
+          {/* Cenotes */}
+          <div className="accordion-section">
+            <h4 className="titel4" onClick={() => setOpenSection(openSection === 'cenotes' ? null : 'cenotes')}>
+              🏞️ Cenotes <span className={`arrow ${openSection === 'cenotes' ? 'open' : ''}`}>▼</span>
+            </h4>
+            {openSection === 'cenotes' && (
+              <ul className="ul_hotel">{cenotes.map(c => <li key={c.id} onClick={() => setSelectedCenote(c)} className="list-item"><strong>{c.cenote}</strong><div className="estrellas">{renderStars(c.estrellas)}</div></li>)}</ul>
+            )}
+          </div>
+        </aside>
+
+        <div className="map-wrapper">
+  <MapContainer
+  center={[20.69018, -88.201223]}
+  zoom={9}
+  style={{ height: isMobile ? '400px' : '600px', width: '100%' }}
+>
+  <TileLayer
+    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    attribution="&copy; OpenStreetMap contributors"
+  />
+
+  {/* Hoteles */}
+  {hoteles.map(h => (
+    <Marker
+      key={h.id}
+      position={[parseFloat(h.latitud), parseFloat(h.longitud)]}
+      icon={hotelIcon}
+      eventHandlers={{ click: () => setSelectedHotel(h) }}
+    >
+      <Tooltip direction="top" offset={[0, -35]} opacity={0.9} permanent={false}>
+        {h.hotel}
+      </Tooltip>
+    </Marker>
+  ))}
+
+  {/* Sitios arqueológicos */}
+  {sitios.map(s => (
+    <Marker
+      key={s.id}
+      position={[parseFloat(s.latitud), parseFloat(s.longitud)]}
+      icon={sitioIcon}
+      eventHandlers={{ click: () => setSelectedSitio(s) }}
+    >
+      <Tooltip direction="top" offset={[0, -35]} opacity={0.9} permanent={false}>
+        {s.sitio_arqueologico}
+      </Tooltip>
+    </Marker>
+  ))}
+
+  {/* Cenotes */}
+  {cenotes.map(c => (
+    <Marker
+      key={c.id}
+      position={[parseFloat(c.latitud), parseFloat(c.longitud)]}
+      icon={cenoteIcon}
+      eventHandlers={{ click: () => setSelectedCenote(c) }}
+    >
+      <Tooltip direction="top" offset={[0, -35]} opacity={0.9} permanent={false}>
+        {c.cenote}
+      </Tooltip>
+    </Marker>
+  ))}
+
+  <FlyToLocation location={selectedHotel || selectedSitio || selectedCenote} />
+</MapContainer>
 
 
-    </div>
+  {/* Panel de información: modal en PC, debajo del mapa en mobile */}
+  {/* Panel de información: modal en PC, debajo del mapa en mobile */}
+{isMobile ? (
+  <div className="mobile-info-container">
+    {selectedHotel && renderInfoPanel(selectedHotel, 'Hotel')}
+    {selectedSitio && renderInfoPanel(selectedSitio, 'Sitio')}
+    {selectedCenote && renderInfoPanel(selectedCenote, 'Cenote')}
+  </div>
+) : (
+  <>
+    {selectedHotel && <div className="div_on">{renderInfoPanel(selectedHotel, 'Hotel')}</div>}
+    {selectedSitio && <div className="div_on">{renderInfoPanel(selectedSitio, 'Sitio')}</div>}
+    {selectedCenote && <div className="div_on">{renderInfoPanel(selectedCenote, 'Cenote')}</div>}
+  </>
+)}
+
+</div>
+
+      </div>
+
+     
     </div>
   );
 };
 
 export default Hoteles;
-
-
-

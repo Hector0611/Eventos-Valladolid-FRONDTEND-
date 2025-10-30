@@ -87,6 +87,9 @@ const center = {
       info: "El cobro del taxi es: </br> 40 (MXN) para los cuadrantes que tiene alado </br> 45 (MXN) si pasa mas de dos cuadrantes </br> 50 (MXN) si pasa mas de 3 cuadrantes </br> 55 (MXN) si pasa mas de 4 cuadrantes </br></br> Nota: SI SE PASA DE LOS CUADRANTES PINTADOS EL COBRO ES DE 60 (MXN) 'SOLO SI SIGUE DENTRO DE LA CIUDAD'" },
   ];
 
+  const [activoIndex, setActivoIndex] = useState(null);
+
+
   return (
     <div className="transporte-container">
            <div className='Separacion'> 
@@ -94,30 +97,11 @@ const center = {
                       </div>
       <h1>Transporte en Valladolid</h1>
 
-
-      {/* <div className="mapa-container">
-  <div className="mapadevalladolid">
-    <img src={mapa} alt="Mapa de Valladolid" className="mapa-image" />
-
-    <img src={centro} alt="Centro" className="centro" title="Centro Histórico" />
-    <img src={santalucia} alt="Santa Lucia" className="santalucia" title="Barrio de Santa Lucía" />
-    <img src={candelaria} alt="Candelaria" className="candelaria" title="Barrio de la Candelaria" />
-    <img src={bacalar} alt="Bacalar" className="bacalar" title="Colonia Bacalar" />
-    <img src={crusverde} alt="Cruz Verde" className="crusverde" title="Cruz Verde" />
-    <img src={sanjuan} alt="San Juan" className="sanjuan" title="Barrio de San Juan" />
-    <img src={oaxaqueña} alt="Oaxaqueña" className="oaxaqueña" title="Colonia Oaxaqueña" />
-    <img src={militar} alt="Militar" className="militar" title="Zona Militar" />
-    <img src={orquedeas} alt="Orquedeas" className="orquedeas" title="Colonia Orquídeas" />
-
-  </div>
-
-  <div className="info-box">
-    <h3>Información del mapa</h3>
-    <p>Aquí puedes poner texto o botones sin mover el mapa.</p>
-  </div>
-</div> */}
-
 <div>
+<div className="info-box">
+        <h3>Información del mapa</h3>
+        <p>Haz clic en una zona del mapa para ver más detalles.</p>
+      </div>
 
 <div className="mapadevalladolid">
         <img src={mapa} alt="Mapa de Valladolid" className="mapa-image" />
@@ -128,16 +112,16 @@ const center = {
             src={lugar.img}
             alt={lugar.nombre}
             title={lugar.nombre}
-            className={lugar.clase}
-            onClick={() => setModalInfo(lugar)}
+            className={`${lugar.clase} ${activoIndex === index ? "activo" : ""}`}
+            onClick={() => {
+              setModalInfo(lugar);       // Abre el modal
+              setActivoIndex(index);     // Marca esta zona como activa
+            }}
           />
         ))}
       </div>
 
-      <div className="info-box">
-        <h3>Información del mapa</h3>
-        <p>Haz clic en una zona del mapa para ver más detalles.</p>
-      </div>
+      
       {modalInfo && (
         <div className="modal-overlay" onClick={() => setModalInfo(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -151,43 +135,6 @@ const center = {
   
 </div>
 
-
-      
-      <section className="transporte-section">
-        <h2>Taxis</h2>
-        <div className="cards">
-          {taxis.map((taxi, index) => (
-            <div key={index} className="card">
-              <h3>{taxi.nombre}</h3>
-              <p>Teléfono: <a href={`tel:${taxi.telefono}`}>{taxi.telefono}</a></p>
-              <p>Ubicación: {taxi.ubicacion}</p>
-              <iframe
-                title={`mapa-taxi-${index}`}
-                src={`https://www.google.com/maps?q=${encodeURIComponent(taxi.ubicacion)}&output=embed`}
-                loading="lazy"
-              ></iframe>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="transporte-section">
-        <h2>Autobuses</h2>
-        <div className="cards">
-          {autobuses.map((bus, index) => (
-            <div key={index} className="card">
-              <h3>{bus.nombre}</h3>
-              <p>Teléfono: <a href={`tel:${bus.telefono}`}>{bus.telefono}</a></p>
-              <p>Ubicación: {bus.ubicacion}</p>
-              <iframe
-                title={`mapa-bus-${index}`}
-                src={`https://www.google.com/maps?q=${encodeURIComponent(bus.ubicacion)}&output=embed`}
-                loading="lazy"
-              ></iframe>
-            </div>
-          ))}
-        </div>
-      </section>
     </div>
   );
 }

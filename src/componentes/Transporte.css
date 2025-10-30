@@ -303,3 +303,12 @@
   transform: scale(1.01);        /* Ligeramente más grande */
   transition: transform 0.2s, opacity 0.2s;
 }
+
+@media (max-width: 1224px){
+
+  .mapadevalladolid {
+
+  width: 100%;
+
+}
+}

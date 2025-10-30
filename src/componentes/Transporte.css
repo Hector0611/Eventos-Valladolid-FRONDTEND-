@@ -73,3 +73,228 @@
   margin-top: 10px;
   border-radius: 8px;
 }
+
+.mapa-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mapadevalladolid {
+  position: relative; /* 👈 Esto es clave */
+  width: 100%;
+  overflow: hidden;
+}
+
+.mapa-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.info-box {
+  margin-top: 20px;
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+
+.centro {
+  position: absolute;
+  width: 21.2%;
+  height: auto;
+  top: 42.5%;
+  left: 41.6%;
+  border-radius: 8px;
+  z-index: 1;
+  opacity: 1;
+  cursor: pointer;
+  opacity: 0.2;
+}
+
+.centro:hover {
+  transform: scale(1.01);
+  opacity: 1;
+}
+
+.santalucia {
+  position: absolute;
+  width: 26.2%;
+  height: auto;
+  top: 19.5%;
+  left: 39.7%;
+  border-radius: 8px;
+  z-index: 2;
+  opacity: 0.2;
+  cursor: pointer;
+}
+
+.santalucia:hover {
+  transform: scale(1.01);
+  opacity: 1;
+}
+
+.candelaria{  
+  position: absolute;
+  width: 24.6%;
+  height: auto;
+  top: 23%;
+  left: 17.5%;
+  border-radius: 8px;
+  z-index: 3;
+  opacity: 0.2;
+  cursor: pointer;
+}
+.candelaria:hover {
+  transform: scale(1.01);
+  opacity: 1;
+}
+
+.bacalar {
+  position: absolute;
+  width: 33.8%;
+  height: auto;
+  top: 33%;
+  left: 9.6%;
+  border-radius: 8px;
+  z-index: 2;
+  opacity: 0.2;
+  cursor: pointer;
+}
+.bacalar:hover {
+  transform: scale(1.01);
+  opacity: 1;
+}
+
+.crusverde {
+  position: absolute;
+  width: 23.4%;
+  height: auto;
+  top: 59%;
+  left: 22%;
+  border-radius: 8px;
+  z-index: 5;
+  opacity: 0.2;
+  cursor: pointer;
+}
+.crusverde:hover {
+  transform: scale(1.01);
+  opacity: 1;
+}
+
+.sanjuan {
+  position: absolute;
+  width: 21.8%;
+  height: auto;
+  top: 67.5%;
+  left: 42%;
+  border-radius: 8px;
+  z-index: 4;
+  opacity: 0.2;
+  cursor: pointer;
+} 
+.sanjuan:hover {
+  transform: scale(1.01);
+  opacity: 1;
+}
+
+.oaxaqueña {
+  position: absolute;
+  width: 21%;
+  height: auto;
+  top: 61%;
+  left: 59.5%;
+  border-radius: 8px;
+  z-index: 3;
+  opacity: 0.2;
+  cursor: pointer;
+}
+.oaxaqueña:hover {
+  transform: scale(1.01);
+  opacity: 1;
+}
+
+.militar {
+  position: absolute;
+  width: 22.7%;
+  height: auto;
+  top: 42%;
+  left: 59.5%;
+  border-radius: 8px;
+  z-index: 2;
+  opacity: 0.2;
+  cursor: pointer;
+}
+.militar:hover {
+  transform: scale(1.01);
+  opacity: 1;
+}
+
+.orquedeas {
+  position: absolute;
+  width: 22.8%;
+  height: auto;
+  top: 15%;
+  left: 61%;
+  border-radius: 8px;
+  z-index: 1;
+  opacity: 0.2;
+  cursor: pointer;
+}
+
+.orquedeas:hover {
+  transform: scale(1.01);
+  opacity: 1;
+}
+
+
+.mapa-container {
+  position: relative;
+  text-align: center;
+}
+
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+}
+
+.modal-content button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background: #0078ff;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.modal-content button:hover {
+  background: #005fcc;
+}

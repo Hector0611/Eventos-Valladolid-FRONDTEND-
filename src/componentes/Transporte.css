@@ -95,10 +95,10 @@
 
 .info-box {
   margin-top: 20px;
-  background: #f9f9f9;
+
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+ 
   text-align: center;
 }
 
@@ -258,7 +258,7 @@
 
 
 /* Modal */
-.modal-overlay {
+.modal-overlay11 {
   position: fixed;
   top: 0;
   left: 0;
@@ -271,7 +271,7 @@
   z-index: 100;
 }
 
-.modal-content {
+.modal-content11 {
   background: white;
   padding: 20px 30px;
   border-radius: 10px;
@@ -281,11 +281,11 @@
   text-align: center;
 }
 
-.modal-content h2 {
+.modal-content11 h2 {
   margin-bottom: 10px;
 }
 
-.modal-content button {
+.modal-content11 button {
   margin-top: 15px;
   padding: 8px 16px;
   background: #0078ff;
@@ -294,7 +294,7 @@
   border-radius: 6px;
   cursor: pointer;
 }
-.modal-content button:hover {
+.modal-content11 button:hover {
   background: #005fcc;
 }
 

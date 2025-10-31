@@ -28,7 +28,7 @@ import logoDiaMuertosingles from './Imagenes/ImgTempo/DiaMuertosIngles.jpg';
 import LaVidayCeiba from './Imagenes/ImgTempo/LaVidayCeiba.jpeg';
 import JuanBalam from './Imagenes/ImgTempo/JuanBalam.jpeg';
 import Fiesta1 from './Imagenes/ImgTempo/LaFiestaPueblo1.jpeg';
-import Fiesta2 from './Imagenes/ImgTempo/LaFiestaPueblo2.jpeg';
+import julieta from './Imagenes/ImgTempo/Julieta.jpg';
 import sabores from './Imagenes/ImgTempo/EventosNoviembre.jpg';
 
 const Catalogo = () => {
@@ -104,15 +104,12 @@ const Catalogo = () => {
         <img src={JuanBalam} alt="Juan Balam" className="folleto-img rounded shadow" />
       </div> */}
 
-      <div className="folleto text-center mb-5">
+      {/* <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">The Festival of My Town</h2>
         <img src={Fiesta1} alt="The Festival of My Town" className="folleto-img rounded shadow" />
-      </div>
+      </div> */}
 
-      <div className="folleto text-center mb-5">
-        <h2 className="fw-bold mb-3">The Vine and The Ceiba</h2>
-        <img src={LaVidayCeiba} alt="The Vine and The Ceiba" className="folleto-img rounded shadow" />
-      </div>
+     
 
       <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Hanal Pixán</h2>
@@ -127,6 +124,16 @@ const Catalogo = () => {
       <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Sabores del Mas Alla</h2>
         <img src={sabores} alt="The Vine and The Ceiba" className="folleto-img rounded shadow" />
+      </div>
+
+      <div className="folleto text-center mb-5">
+        <h2 className="fw-bold mb-3">Julieta Venegas</h2>
+        <img src={julieta} alt="The Vine and The Ceiba" className="folleto-img rounded shadow" />
+      </div>
+
+       <div className="folleto text-center mb-5">
+        <h2 className="fw-bold mb-3">The Vine and The Ceiba</h2>
+        <img src={LaVidayCeiba} alt="The Vine and The Ceiba" className="folleto-img rounded shadow" />
       </div>
 
       {/* Modal de imagen */}

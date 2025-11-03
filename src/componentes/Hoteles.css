@@ -43,7 +43,7 @@ body {
 
 .search-input1 {
   width: 85%;
-  margin: 0 auto 15px;
+  margin: 0 auto ;
   padding: 10px 15px;
   border: 1px solid #dadce0;
   border-radius: 25px;
@@ -204,21 +204,6 @@ body {
   margin-top: 15px;
 }
 
-.info-button {
-  display: inline-block;
-  background-color: #1a73e8;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.info-button:hover {
-  background-color: #155ab6;
-  transform: translateY(-2px);
-}
 
 /* ====== SECCIONES DESPLEGABLES ====== */
 .accordion-section {
@@ -285,6 +270,27 @@ body {
   z-index: 10;
 }
 
+/* Contenedor de sugerencias */
+.search-suggestions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 250px; /* altura máxima antes de hacer scroll */
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  position: absolute; /* se superpone sobre otros elementos */
+  width: 90%; /* ocupa casi todo el ancho en mobile */
+  z-index: 1000; /* sobrepone al resto */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  /* centrar el div */
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+/* Cada elemento de la lista */
 .search-suggestions li {
   padding: 10px 15px;
   cursor: pointer;
@@ -306,6 +312,23 @@ body {
   border-radius: 12px;
   margin-left: 10px;
 }
+
+/* Ajuste específico para mobile */
+@media (max-width: 1024px) {
+  .search-input1 {
+    width: 90%; /* ocupa casi todo el ancho */
+    margin: 0 auto;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    /* centrar todo */
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 
 /* ====== PANEL MOBILE ====== */
 .mobile-info-container {
@@ -366,6 +389,52 @@ body {
   }
 }
 
+/* Barra lateral scrollable */
+.scrollable-sidebar {
+  height: 600px; /* altura fija igual al mapa */
+  overflow-y: auto;
+  padding-right: 10px; /* para el scroll */
+}
+
+/* Para las listas dentro de cada sección */
+.scrollable-items {
+  max-height: 250px; /* muestra aprox 4 hoteles/sitios visibles */
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+/* Ajuste opcional para los grid-items */
+.grid-item {
+  padding: 8px 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.grid-item:hover {
+  background-color: #f0f0f0;
+}
+
+.info-button p{
+  display: inline-block;
+  background-color: #0d14e3ac;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.info-button p:hover {
+  background-color: #0a0fb8;
+ 
+}
+
+.info-button.accordion-section {
+  background-color: #25b615;
+  transform: translateY(-2px);
+}
+
 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 1024px) {
@@ -375,7 +444,7 @@ body {
 
   .hotel-list {
     width: 100%;
-    max-height: 40vh;
+    max-height: 52vh;
     box-shadow: none;
     border-bottom: 1px solid #ddd;
   }
@@ -393,4 +462,5 @@ body {
     border-left: none;
     border-top: 1px solid #ddd;
   }
+  
 }

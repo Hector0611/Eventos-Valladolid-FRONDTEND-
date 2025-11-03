@@ -1,314 +1,336 @@
+/* ===========================================
+   CONTENEDOR GENERAL
+=========================================== */
 .transporte-container {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
   padding: 20px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Poppins", sans-serif;
+  color: #1b1b1b;
+}
+
+/* TÍTULO */
+.transporte-container h1 {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  color: #004aad;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  text-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* ===========================================
+   PANEL DE INFORMACIÓN
+=========================================== */
+.info-box {
+  background: rgba(255,255,255,0.7);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.4);
+  animation: fadeIn 0.6s ease;
+}
+
+.info-box h3 {
+  font-size: 22px;
+  color: #004aad;
+  margin-bottom: 5px;
+}
+
+.info-box p {
+  font-size: 16px;
   color: #333;
 }
 
-.transporte-container h1 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2.5rem;
-  color: #004080;
+/* Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.transporte-section {
-  margin-bottom: 50px;
-}
+/* ===========================================
+   MAPA LEAFLET
+=========================================== */
 
-.transporte-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #0066cc;
-  border-bottom: 2px solid #0066cc;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.card {
-  flex: 1 1 300px;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.card h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  color: #004080;
-}
-
-.card p {
-  margin: 5px 0;
-}
-
-/* .card a {
-  color: #0066cc;
-  text-decoration: none;
-} */
-
-.card a:hover {
-  text-decoration: underline;
-}
-
-.card iframe {
-  width: 100%;
-  height: 200px;
-  border: 0;
-  margin-top: 10px;
-  border-radius: 8px;
-}
-
-.mapa-container {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.mapadevalladolid {
-  position: relative; /* 👈 Esto es clave */
-  width: 60%;
+/* Contenedor del mapa centrado */
+.leaflet-container {
+  width: 80%;
+  height: 500px;
+  margin: 0 auto 24px;
+  border-radius: 14px;
   overflow: hidden;
+  box-shadow: 0 8px 30px rgba(2,12,35,0.12);
+  border: 1px solid rgba(0, 74, 173, 0.08);
 }
 
+/* Mejora visual de los popups */
+.leaflet-popup-content-wrapper {
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(2,12,35,0.12);
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+.leaflet-popup-content {
+  color: #222;
+}
+.leaflet-popup-tip {
+  background: white;
+}
+
+/* Estilos para polígonos (colores por defecto si no se pasan) */
+.leaflet-interactive {
+  transition: fill-opacity 0.25s ease, stroke 0.2s ease, filter 0.15s ease;
+}
+
+/* Hover global para polígonos */
+.leaflet-interactive:hover {
+  filter: brightness(1.05);
+  cursor: pointer;
+}
+
+/* ===========================================
+   LEYENDA / CONTROLES
+=========================================== */
+.map-legend {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  z-index: 999;
+  background: rgba(255,255,255,0.85);
+  padding: 10px 12px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(2,12,35,0.08);
+  font-size: 13px;
+  color: #222;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+.map-legend .item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.map-legend .swatch {
+  width: 16px;
+  height: 12px;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* ===========================================
+   IMÁGENES / CUADRANTES (si las usas)
+=========================================== */
+.mapadevalladolid {
+  position: relative; /* clave para posicion absoluto hijos */
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto 20px;
+}
+
+/* imagen de base */
 .mapa-image {
   width: 100%;
-  height: auto;
   display: block;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(2,12,35,0.08);
+  border: 1px solid rgba(0,0,0,0.04);
 }
 
-.info-box {
-  margin-top: 20px;
-
-  padding: 15px;
-  border-radius: 8px;
- 
-  text-align: center;
-}
-
-
-.centro { 
-  position: absolute; 
-  width: 21.2%; 
-  height: auto; 
-  top: 42.5%; 
-  left: 41.6%; 
-  border-radius: 8px; 
-  z-index: 1; 
-  opacity: 1; 
-  cursor: pointer; 
-  opacity: 0.2; 
-} 
-.centro:hover { 
-  transform: scale(1.01); 
-  opacity: 1; 
-}
-
-.santalucia {
+/* estilos base para iconos sobre el mapa */
+.mapadevalladolid img[class] {
   position: absolute;
-  width: 26.2%;
-  height: auto;
-  top: 19.5%;
-  left: 39.7%;
-  border-radius: 8px;
-  z-index: 2;
-  opacity: 0.2;
+  transition: transform 0.18s ease, opacity 0.18s ease, filter 0.18s ease;
+  transform-origin: center center;
+  opacity: 0.65;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.12));
   cursor: pointer;
 }
 
-.santalucia:hover {
-  transform: scale(1.01);
-  opacity: 1;
-}
-
-.candelaria{  
-  position: absolute;
-  width: 24.6%;
-  height: auto;
-  top: 23%;
-  left: 17.5%;
+/* ejemplo de clase activa (seleccionada) */
+.activo {
+  opacity: 1 !important;
+  transform: scale(1.06) !important;
   border-radius: 8px;
-  z-index: 3;
-  opacity: 0.2;
-  cursor: pointer;
-}
-.candelaria:hover {
-  transform: scale(1.01);
-  opacity: 1;
+  outline: 3px solid rgba(255, 193, 7, 0.18);
+  filter: drop-shadow(0 8px 22px rgba(255,193,7,0.12));
 }
 
-.bacalar {
+/* tooltip simple encima (si no usas title nativo) */
+.tooltiptext {
   position: absolute;
-  width: 33.8%;
-  height: auto;
-  top: 33%;
-  left: 9.6%;
-  border-radius: 8px;
-  z-index: 2;
-  opacity: 0.2;
-  cursor: pointer;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s;
 }
-.bacalar:hover {
-  transform: scale(1.01);
+.mapadevalladolid .tooltip:hover .tooltiptext,
+.mapadevalladolid img:hover + .tooltiptext {
   opacity: 1;
 }
 
-.crusverde {
-  position: absolute;
-  width: 23.4%;
-  height: auto;
-  top: 59%;
-  left: 22%;
-  border-radius: 8px;
-  z-index: 5;
-  opacity: 0.2;
-  cursor: pointer;
-}
-.crusverde:hover {
-  transform: scale(1.01);
-  opacity: 1;
-}
-
-.sanjuan {
-  position: absolute;
-  width: 21.8%;
-  height: auto;
-  top: 67.5%;
-  left: 42%;
-  border-radius: 8px;
-  z-index: 4;
-  opacity: 0.2;
-  cursor: pointer;
-} 
-.sanjuan:hover {
-  transform: scale(1.01);
-  opacity: 1;
-}
-
-.oaxaqueña {
-  position: absolute;
-  width: 21%;
-  height: auto;
-  top: 61%;
-  left: 59.5%;
-  border-radius: 8px;
-  z-index: 3;
-  opacity: 0.2;
-  cursor: pointer;
-}
-.oaxaqueña:hover {
-  transform: scale(1.01);
-  opacity: 1;
-}
-
-.militar {
-  position: absolute;
-  width: 22.7%;
-  height: auto;
-  top: 42%;
-  left: 59.5%;
-  border-radius: 8px;
-  z-index: 2;
-  opacity: 0.2;
-  cursor: pointer;
-}
-.militar:hover {
-  transform: scale(1.01);
-  opacity: 1;
-}
-
-.orquedeas {
-  position: absolute;
-  width: 22.8%;
-  height: auto;
-  top: 15%;
-  left: 61%;
-  border-radius: 8px;
-  z-index: 1;
-  opacity: 0.2;
-  cursor: pointer;
-}
-
-.orquedeas:hover {
-  transform: scale(1.01);
-  opacity: 1;
-}
-
-
-.mapa-container {
-  position: relative;
-  text-align: center;
-}
-
-
-/* Modal */
+/* ===========================================
+   MODAL (mejorado)
+=========================================== */
 .modal-overlay11 {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  inset: 0;
+  background: rgba(6,12,30,0.55);
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 100;
+  justify-content: center;
+  z-index: 1200;
+  animation: fadeIn 0.18s ease;
 }
 
 .modal-content11 {
-  background: white;
-  padding: 20px 30px;
-  border-radius: 10px;
-  width: 400px;
-  max-width: 90%;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  text-align: center;
+  width: 520px;
+  max-width: 92%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,255,0.96));
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 18px 50px rgba(2,12,35,0.28);
+  border: 1px solid rgba(0,0,0,0.06);
+  animation: popIn 0.16s ease;
+  font-family: "Poppins", sans-serif;
 }
 
 .modal-content11 h2 {
-  margin-bottom: 10px;
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  color: #0b3a91;
+  letter-spacing: 0.2px;
 }
-
+.modal-content11 p {
+  font-size: 15px;
+  color: #222;
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
 .modal-content11 button {
-  margin-top: 15px;
-  padding: 8px 16px;
-  background: #0078ff;
+  display: inline-block;
+  background: linear-gradient(90deg,#0066ff,#004aad);
+  color: #fff;
   border: none;
-  color: white;
-  border-radius: 6px;
+  padding: 10px 14px;
+  border-radius: 9px;
   cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0,74,173,0.18);
+  transition: transform 0.12s ease, box-shadow 0.12s;
 }
-.modal-content11 button:hover {
-  background: #005fcc;
+.modal-content11 button:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,74,173,0.22); }
+
+/* animaciones */
+@keyframes popIn {
+  from { transform: scale(0.98); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
-.activo {
-  opacity: 1 !important;         /* Siempre visible */
-  transform: scale(1.01);        /* Ligeramente más grande */
-  transition: transform 0.2s, opacity 0.2s;
+/* ===========================================
+   LISTADOS DE TAXIS / AUTOBUSES
+=========================================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
 }
 
-@media (max-width: 1224px){
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,250,255,0.95));
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(2,12,35,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+.card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(2,12,35,0.08); }
 
-  .mapadevalladolid {
+.card h3 { margin: 0 0 6px 0; color: #004aad; font-size: 16px; }
+.card p { margin: 0 0 8px 0; color: #333; font-size: 14px; }
 
+/* iframe en cards */
+.card iframe {
   width: 100%;
+  height: 140px;
+  border-radius: 8px;
+  border: 0;
+  margin-top: 8px;
+}
 
+/* ===========================================
+   BOTONES AUXILIARES
+=========================================== */
+.btn {
+  display: inline-block;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(2,12,35,0.06);
+  cursor: pointer;
+  font-weight: 600;
+  color: #004aad;
 }
+.btn.primary {
+  background: linear-gradient(90deg,#0066ff,#0050d1);
+  color: white;
+  border: none;
+  box-shadow: 0 10px 28px rgba(0,74,173,0.14);
 }
+
+/* ===========================================
+   RESPONSIVE
+=========================================== */
+@media (max-width: 980px) {
+  .leaflet-container, .mapadevalladolid, .info-box { width: 95%; }
+  .map-legend { right: 10px; top: 12px; font-size: 12px; }
+  .modal-content11 { padding: 16px; width: 92%; }
+}
+
+@media (max-width: 640px) {
+  .transporte-container h1 { font-size: 22px; }
+  .leaflet-container { height: 420px; }
+  .card iframe { height: 120px; }
+  .mapadevalladolid img[class] { opacity: 0.75; }
+}
+
+/* ===========================================
+   UTILS
+=========================================== */
+.kicker {
+  display: inline-block;
+  background: rgba(0,74,173,0.08);
+  color: #004aad;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.small-muted { font-size: 13px; color: #666; margin-top: 6px; }
+
+.zona-activa {
+  filter: brightness(1.25);
+  stroke-width: 4px !important;
+}
+
+
+/* fin CSS */

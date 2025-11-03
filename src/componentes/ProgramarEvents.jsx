@@ -163,6 +163,7 @@ const ProgramarEvents = () => {
       <div className="caja3">
         <h1 className="titutulo">See the Event Programs During Your Stay in Valladolid</h1>
         <hr />
+        <br />
 
         <div className='color_fondo'>
         <h1 className="calendario1">

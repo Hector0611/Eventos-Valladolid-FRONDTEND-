@@ -122,7 +122,7 @@ const center = {
 
   {
     nombre: "Cuadrante 2",
-    color: "black",
+    color: "Violet",
     coords: [
       [20.695912891678635, -88.20553621844088],
       [20.69824763365078, -88.20588460477538],
@@ -288,8 +288,8 @@ const center = {
     ],
   },
   {
-    nombre: "Centro Historico (Cuadrante 1)",
-    color: "Violet",
+    nombre: "Centro Histórico (Cuadrante 1)",
+    color: "black",
     coords: [
       
       [20.68720137291697, -88.19458864335935],
@@ -372,9 +372,25 @@ const center = {
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
       {zonas.map((zona, i) => (
-        <Polygon key={i} positions={zona.coords} color={zona.color}>
-          <Popup>{zona.nombre}</Popup>
-        </Polygon>
+        <Polygon
+  key={i}
+  positions={zona.coords}
+  color={zona.color}
+  eventHandlers={{
+    click: () => {
+      // Buscar la info del cuadrante
+      const infoLugar = lugares.find((l) => l.nombre.includes(zona.nombre));
+
+      if (infoLugar) {
+        setModalInfo(infoLugar);
+        setActivoIndex(lugares.indexOf(infoLugar));
+      }
+    }
+  }}
+>
+  <Popup>{zona.nombre}</Popup>
+</Polygon>
+
       ))}
     </MapContainer>
 
@@ -413,10 +429,6 @@ const center = {
         </div>
       )}
 
-      
-
-
-  
 </div>
 
     </div>

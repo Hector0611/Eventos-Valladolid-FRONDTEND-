@@ -74,9 +74,10 @@ body {
   border-radius: 10%;
   /* background-image: url('./Imagenes/Colores4.jpg'); */
   border: transparent;
-  font-size: 1.2em;
+  font-size: 1em;
   padding: 7px 15px;
-  font-family: fantasy;
+  font-weight: 700;
+  
   background-size: cover;
   background-clip: text;
   color: black; /* transparent */

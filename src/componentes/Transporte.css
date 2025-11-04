@@ -1,336 +1,236 @@
-/* ===========================================
-   CONTENEDOR GENERAL
-=========================================== */
-.transporte-container {
-  width: 100%;
-  max-width: 1300px;
-  margin: auto;
-  padding: 20px;
-  font-family: "Poppins", sans-serif;
-  color: #1b1b1b;
+/* Transporte.css - Estilos modernos y responsivos */
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --accent:#2d9cdb;
+  --muted:#6b7280;
+  --primary-text:#1f2937;
+  --border: #e6edf3;
+  --success: #16a34a;
+  --danger: #ef4444;
 }
 
-/* TÍTULO */
-.transporte-container h1 {
-  text-align: center;
-  font-size: 34px;
-  font-weight: 700;
-  color: #004aad;
-  margin-bottom: 25px;
-  letter-spacing: 1px;
-  text-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+
+.transporte-root{
+  max-width:1200px;
+  margin:20px auto;
+  padding:18px;
+  background:var(--bg);
+  border-radius:12px;
+  box-shadow: 0 6px 20px rgba(30,41,59,0.06);
 }
 
-/* ===========================================
-   PANEL DE INFORMACIÓN
-=========================================== */
-.info-box {
-  background: rgba(255,255,255,0.7);
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  border: 1px solid rgba(255,255,255,0.4);
-  animation: fadeIn 0.6s ease;
+.title{
+  text-align:center;
+  margin:0 0 14px;
+  color:var(--primary-text);
+  font-size:22px;
+  letter-spacing:0.2px;
+  font-weight: 900;
+  font-size: 2.5rem;
 }
 
-.info-box h3 {
-  font-size: 22px;
-  color: #004aad;
-  margin-bottom: 5px;
+.top-row{
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+  margin-bottom:18px;
 }
 
-.info-box p {
-  font-size: 16px;
-  color: #333;
+/* left panel */
+.left-panel{
+  width:320px;
+  min-width:260px;
 }
 
-/* Animación */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+.info-box{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:14px;
+  border-radius:10px;
+  box-shadow: 0 4px 12px rgba(15,23,42,0.04);
 }
 
-/* ===========================================
-   MAPA LEAFLET
-=========================================== */
+.info-box h3{
+  margin:0 0 8px;
+  font-size:16px;
+}
+.info-box p.small{ color:var(--muted); font-size:12px; margin-top:8px; }
 
-/* Contenedor del mapa centrado */
-.leaflet-container {
-  width: 80%;
-  height: 500px;
-  margin: 0 auto 24px;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 8px 30px rgba(2,12,35,0.12);
-  border: 1px solid rgba(0, 74, 173, 0.08);
+.selectors{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+  flex-direction:column;
 }
-
-/* Mejora visual de los popups */
-.leaflet-popup-content-wrapper {
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(2,12,35,0.12);
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
+.selectors label{
+  display:flex;
+  flex-direction:column;
+  font-size:13px;
+  color:var(--muted);
 }
-.leaflet-popup-content {
-  color: #222;
-}
-.leaflet-popup-tip {
-  background: white;
+.selectors select{
+  margin-top:6px;
+  padding:8px 10px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:transparent;
 }
 
-/* Estilos para polígonos (colores por defecto si no se pasan) */
-.leaflet-interactive {
-  transition: fill-opacity 0.25s ease, stroke 0.2s ease, filter 0.15s ease;
+/* actions */
+.actions{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-top:12px;
+  flex-wrap:wrap;
+   display:flex;
+  align-items:center;
+}
+.btn{
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+
+}
+.btn:hover{
+  background:#0003b9;
+  color: #f7f9fb;
+}
+.btn.ghost{
+  background:#0055fe;
+  color:var(--primary-text);
+}
+.btn.outline{
+  background: rgb(0, 0, 255);
+  border:1px solid var(--border);
+  color:var(--primary-text);
+}
+.mini-btn{
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:6px 8px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:12px;
 }
 
-/* Hover global para polígonos */
-.leaflet-interactive:hover {
-  filter: brightness(1.05);
-  cursor: pointer;
+/* map panel */
+.map-panel{
+  flex:1;
+  min-width:420px;
+  background:var(--card);
+  border-radius:10px;
+  padding:6px;
+  border:1px solid var(--border);
+  box-shadow: 0 6px 18px rgba(17,24,39,0.03);
 }
 
-/* ===========================================
-   LEYENDA / CONTROLES
-=========================================== */
-.map-legend {
-  position: absolute;
-  top: 18px;
-  right: 24px;
-  z-index: 999;
-  background: rgba(255,255,255,0.85);
-  padding: 10px 12px;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(2,12,35,0.08);
-  font-size: 13px;
-  color: #222;
-  border: 1px solid rgba(0,0,0,0.05);
+/* tabla */
+.tabla-section{
+  margin-top:18px;
+  background:transparent;
 }
-.map-legend .item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 6px;
+.tabla-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:8px;
 }
-.map-legend .swatch {
-  width: 16px;
-  height: 12px;
-  border-radius: 3px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
-  border: 1px solid rgba(0,0,0,0.06);
+.tabla-wrapper{
+  overflow:auto;
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:12px;
+  border-radius:10px;
 }
+.tarifas-table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:720px;
+}
+.tarifas-table th, .tarifas-table td{
+  padding:8px 10px;
+  border-bottom:1px solid #f1f5f9;
+  text-align:center;
+  font-size:14px;
+}
+.tarifas-table thead th{
+  background:linear-gradient(90deg, #ffffff, #f8fbff);
+  position: sticky;
+  top:0;
+  z-index:2;
+}
+.tarifas-table th:first-child{
+  text-align:left;
+  padding-left:12px;
+}
+.celda{
+  cursor:pointer;
+  transition: background .15s, transform .08s;
+}
+.celda:hover{ transform: translateY(-2px); box-shadow: 0 6px 14px rgba(16,24,40,0.04); }
+.celda-selected{
+  background: linear-gradient(90deg, rgba(45,156,219,0.12), rgba(46,204,113,0.06));
+  border-radius:6px;
+  font-weight:700;
+  color:var(--primary-text);
+}
+.celda-origen-row{ outline: 1px dashed rgba(45,156,219,0.14); }
+.celda-dest-col{ outline: 1px dashed rgba(230,126,34,0.12); }
 
-/* ===========================================
-   IMÁGENES / CUADRANTES (si las usas)
-=========================================== */
-.mapadevalladolid {
-  position: relative; /* clave para posicion absoluto hijos */
-  width: 80%;
-  max-width: 900px;
-  margin: 0 auto 20px;
+/* modal */
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  background: rgba(5,10,15,0.35);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
 }
-
-/* imagen de base */
-.mapa-image {
-  width: 100%;
-  display: block;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(2,12,35,0.08);
-  border: 1px solid rgba(0,0,0,0.04);
+.modal{
+  background:var(--card);
+  padding:18px;
+  border-radius:10px;
+  width:min(720px, 95%);
+  border:1px solid var(--border);
+  box-shadow: 0 20px 50px rgba(16,24,40,0.3);
 }
+.modal h2{ margin:0 0 8px; }
+.modal-actions{ display:flex; gap:10px; margin-top:12px; flex-wrap:wrap; }
 
-/* estilos base para iconos sobre el mapa */
-.mapadevalladolid img[class] {
-  position: absolute;
-  transition: transform 0.18s ease, opacity 0.18s ease, filter 0.18s ease;
-  transform-origin: center center;
-  opacity: 0.65;
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.12));
-  cursor: pointer;
-}
+/* small helpers */
+.info-msg{ margin-top:8px; padding:8px; background:#fff7ed; border-radius:8px; color:#92400e; font-size:13px; border:1px solid #ffedd5; }
+.resultado{ margin-left:10px; font-weight:700; }
 
-/* ejemplo de clase activa (seleccionada) */
-.activo {
-  opacity: 1 !important;
-  transform: scale(1.06) !important;
-  border-radius: 8px;
-  outline: 3px solid rgba(255, 193, 7, 0.18);
-  filter: drop-shadow(0 8px 22px rgba(255,193,7,0.12));
-}
 
-/* tooltip simple encima (si no usas title nativo) */
-.tooltiptext {
-  position: absolute;
-  bottom: 110%;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  background: rgba(0,0,0,0.8);
-  color: #fff;
-  padding: 6px 10px;
+.cuadrante-label {
+  font-size: 18px;
+  font-weight: bold;
+  background: rgba(14, 97, 232, 0.626);
+  padding: 3px 8px;
   border-radius: 6px;
-  font-size: 12px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.18s;
-}
-.mapadevalladolid .tooltip:hover .tooltiptext,
-.mapadevalladolid img:hover + .tooltiptext {
-  opacity: 1;
-}
-
-/* ===========================================
-   MODAL (mejorado)
-=========================================== */
-.modal-overlay11 {
-  position: fixed;
-  inset: 0;
-  background: rgba(6,12,30,0.55);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1200;
-  animation: fadeIn 0.18s ease;
-}
-
-.modal-content11 {
-  width: 520px;
-  max-width: 92%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,255,0.96));
-  border-radius: 14px;
-  padding: 22px;
-  box-shadow: 0 18px 50px rgba(2,12,35,0.28);
-  border: 1px solid rgba(0,0,0,0.06);
-  animation: popIn 0.16s ease;
-  font-family: "Poppins", sans-serif;
-}
-
-.modal-content11 h2 {
-  margin: 0 0 8px 0;
-  font-size: 20px;
-  color: #0b3a91;
-  letter-spacing: 0.2px;
-}
-.modal-content11 p {
-  font-size: 15px;
-  color: #222;
-  line-height: 1.45;
-  margin-bottom: 18px;
-}
-.modal-content11 button {
-  display: inline-block;
-  background: linear-gradient(90deg,#0066ff,#004aad);
-  color: #fff;
-  border: none;
-  padding: 10px 14px;
-  border-radius: 9px;
-  cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 8px 20px rgba(0,74,173,0.18);
-  transition: transform 0.12s ease, box-shadow 0.12s;
-}
-.modal-content11 button:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,74,173,0.22); }
-
-/* animaciones */
-@keyframes popIn {
-  from { transform: scale(0.98); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-/* ===========================================
-   LISTADOS DE TAXIS / AUTOBUSES
-=========================================== */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
-  margin-top: 18px;
-}
-
-.card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,250,255,0.95));
-  padding: 12px;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(2,12,35,0.06);
-  border: 1px solid rgba(0,0,0,0.04);
-  transition: transform 0.12s, box-shadow 0.12s;
-}
-.card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(2,12,35,0.08); }
-
-.card h3 { margin: 0 0 6px 0; color: #004aad; font-size: 16px; }
-.card p { margin: 0 0 8px 0; color: #333; font-size: 14px; }
-
-/* iframe en cards */
-.card iframe {
-  width: 100%;
-  height: 140px;
-  border-radius: 8px;
-  border: 0;
-  margin-top: 8px;
-}
-
-/* ===========================================
-   BOTONES AUXILIARES
-=========================================== */
-.btn {
-  display: inline-block;
-  background: white;
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(0,0,0,0.06);
-  box-shadow: 0 6px 18px rgba(2,12,35,0.06);
-  cursor: pointer;
-  font-weight: 600;
-  color: #004aad;
-}
-.btn.primary {
-  background: linear-gradient(90deg,#0066ff,#0050d1);
-  color: white;
-  border: none;
-  box-shadow: 0 10px 28px rgba(0,74,173,0.14);
-}
-
-/* ===========================================
-   RESPONSIVE
-=========================================== */
-@media (max-width: 980px) {
-  .leaflet-container, .mapadevalladolid, .info-box { width: 95%; }
-  .map-legend { right: 10px; top: 12px; font-size: 12px; }
-  .modal-content11 { padding: 16px; width: 92%; }
-}
-
-@media (max-width: 640px) {
-  .transporte-container h1 { font-size: 22px; }
-  .leaflet-container { height: 420px; }
-  .card iframe { height: 120px; }
-  .mapadevalladolid img[class] { opacity: 0.75; }
-}
-
-/* ===========================================
-   UTILS
-=========================================== */
-.kicker {
-  display: inline-block;
-  background: rgba(0,74,173,0.08);
-  color: #004aad;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 12px;
-  margin-bottom: 8px;
-}
-.small-muted { font-size: 13px; color: #666; margin-top: 6px; }
-
-.zona-activa {
-  filter: brightness(1.25);
-  stroke-width: 4px !important;
+  color: #ffffff;
+  font-weight: 800;
+  border: 1px solid rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
 }
 
 
-/* fin CSS */
+@media (max-width: 980px){
+  .top-row { flex-direction:column; }
+  .left-panel{ width:100%; order:2; }
+  .map-panel{ order:1; width:100%; min-width:unset; }
+  .tarifas-table{ min-width:700px; }
+
+  .title{
+    font-size:28px;
+  }
+}

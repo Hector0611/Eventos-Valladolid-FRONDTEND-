@@ -435,6 +435,10 @@ body {
   transform: translateY(-2px);
 }
 
+.texto_item {
+  text-align: justify;
+}
+
 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 1024px) {

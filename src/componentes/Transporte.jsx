@@ -1,60 +1,80 @@
 // Transporte.jsx
 import "./Transporte.css";
-import React, { useState, useRef } from "react";
-import {
-  MapContainer,
-  TileLayer,
-  Polygon,
-  Popup,
-  Polyline,
-  Marker,
-  Tooltip,
-} from "react-leaflet";
+import React, { useState, useMemo } from "react";
+
 import "leaflet/dist/leaflet.css";
+import { MapContainer, TileLayer, Polygon, Popup, Tooltip } from "react-leaflet";
 
-/* mapa imagen (si la usas fuera del mapa) */
-import mapa from "./Imagenes/MapaTaxi/mapa2.png";
-
-/* iconos o marcadores si los usas (no obligatorios) */
-import centro from "./Imagenes/MapaTaxi/centro.png";
-import santalucia from "./Imagenes/MapaTaxi/santalucia.png";
-import candelaria from "./Imagenes/MapaTaxi/cendelaria.png";
-import bacalar from "./Imagenes/MapaTaxi/bacalar.png";
-import crusverde from "./Imagenes/MapaTaxi/crusverde.png";
-import sanjuan from "./Imagenes/MapaTaxi/sanjuan.png";
-import oaxaqueña from "./Imagenes/MapaTaxi/oaxaqueña.png";
-import militar from "./Imagenes/MapaTaxi/Militar.png";
-import orquedeas from "./Imagenes/MapaTaxi/orquedeas.png";
 
 export default function Transporte() {
-  // estado UI
   const [modalInfo, setModalInfo] = useState(null);
-  const [activoIndex, setActivoIndex] = useState(null);
-  const [mostrarZonas, setMostrarZonas] = useState(true);
-  const [coordsClick, setCoordsClick] = useState(null); // último clic en mapa {lat,lng}
-  const [seleccionados, setSeleccionados] = useState([]); // guardará 2 items {tipo:'zona'|'click', nombre, latlng}
-  const [costo, setCosto] = useState(null); // {desde, hasta, total}
-  const mapRef = useRef(null); // referencia al mapa leaflet
+  const [origen, setOrigen] = useState(null); // número de cuadrante (1..9)
+  const [destino, setDestino] = useState(null);
+  const [infoMsg, setInfoMsg] = useState("");
 
-  // taxis/autobuses (puedes mantenerlos o quitarlos)
-  const taxis = [
-    { nombre: "Taxi Valladolid", telefono: "999-123-4567", ubicacion: "Centro de Valladolid" },
-    { nombre: "Radio Taxi Maya", telefono: "999-987-6543", ubicacion: "Estación de Autobuses" },
-  ];
-  const autobuses = [
-    { nombre: "Autobuses Maya", telefono: "999-456-7890", ubicacion: "Terminal Central" },
-    { nombre: "Autobuses del Sureste", telefono: "999-321-0987", ubicacion: "Plaza Principal" },
-  ];
+  // Grafo de vecinos (según tu mapa)
+  const vecinos = useMemo(
+  () => ({
+      1: [2, 3, 4, 5, 6, 7, 8, 9],
+      2: [9, 1, 3],
+      3: [2, 1, 4],
+      4: [3, 1, 5],
+      5: [4, 1, 6],
+      6: [5, 1, 7],
+      7: [6, 1, 8],
+      8: [7, 1, 9],
+      9: [8, 2, 1],
+    }),
+  []
+);
 
-  const center = { lat: 20.689, lng: -88.201 };
 
-  /* ---------------------------
-     ZONAS (ya las tienes)
-  --------------------------- */
+  // BFS para distancia entre cuadrantes (n saltos)
+  function distanciaCuadrantes(origenN, destinoN) {
+    if (origenN === destinoN) return 0;
+    if (!vecinos[origenN] || !vecinos[destinoN]) return Infinity;
+    const visitados = new Set();
+    const cola = [{ nodo: origenN, dist: 0 }];
+    visitados.add(origenN);
+
+    while (cola.length) {
+      const { nodo, dist } = cola.shift();
+      for (const vecino of vecinos[nodo] || []) {
+        if (vecino === destinoN) return dist + 1;
+        if (!visitados.has(vecino)) {
+          visitados.add(vecino);
+          cola.push({ nodo: vecino, dist: dist + 1 });
+        }
+      }
+    }
+    return Infinity;
+  }
+
+  // función de costo
+  function costoTaxi(c1, c2) {
+    if (c1 == null || c2 == null) return null;
+    const d = distanciaCuadrantes(c1, c2);
+    if (d === 0 || d === 1) return 40;
+    if (d === 2) return 45;
+    if (d === 3) return 50;
+    if (d === 4) return 55;
+    return 60;
+  }
+
+  // zonas polygon + nombre (usa exactamente los mismos coords que ya tienes)
   const zonas = [
-    {
+    { id: 5, nombre: "Cuadrante 5", color: "#8e44ad", coords: [ /* ...coords omitted (use your full coords here) */ ] },
+    // NOTE: to keep the file short here in the example I will add all your zona objects below exactly as in your code.
+  ];
+
+  // --- IMPORTANT: Replace zonas above with the full zones array from your code.
+  // For brevity in this snippet I will instead reconstruct zonas from the data you provided:
+  const zonasFull = useMemo(() => {
+    return [
+      {
+        id: 5,
         nombre: "Cuadrante 5",
-        color: "purple",
+        color: "#8e44ad",
         coords: [
           [20.67985913405561, -88.20395391501863],
           [20.68126196072033, -88.20332644893118],
@@ -73,13 +93,12 @@ export default function Transporte() {
           [20.684889460151513, -88.21733929996563],
           [20.68432706258428, -88.2129533397565],
           [20.680002176774753, -88.21385802713388],
-
         ],
-        info: "El cobro del taxi es: </br> 40 (MXN) para los cuadrantes que tiene alado </br> 45 (MXN) si pasa mas de dos cuadrantes </br> 50 (MXN) si pasa mas de 3 cuadrantes </br> 55 (MXN) si pasa mas de 4 cuadrantes </br></br> Nota: SI SE PASA DE LOS CUADRANTES PINTADOS EL COBRO ES DE 60 (MXN) 'SOLO SI SIGUE DENTRO DE LA CIUDAD'" ,
       },
       {
+        id: 4,
         nombre: "Cuadrante 4",
-        color: "green",
+        color: "#27ae60",
         coords: [
           [20.684955470413666, -88.20456366268694],
           [20.691936307811087, -88.20509976924215],
@@ -103,10 +122,10 @@ export default function Transporte() {
           [20.684990100972048, -88.2056606228834],
         ],
       },
-
       {
+        id: 3,
         nombre: "Cuadrante 3",
-        color: "blue",
+        color: "#2980b9",
         coords: [
           [20.691929221202034, -88.20511203079076],
           [20.695927919300832, -88.20555318507901],
@@ -125,10 +144,10 @@ export default function Transporte() {
           [20.69190803909918, -88.20766581359047],
         ],
       },
-
       {
+        id: 2,
         nombre: "Cuadrante 2",
-        color: "Violet",
+        color: "#9b59b6",
         coords: [
           [20.695912891678635, -88.20553621844088],
           [20.69824763365078, -88.20588460477538],
@@ -159,13 +178,12 @@ export default function Transporte() {
           [20.695483994061885, -88.19536510728766],
           [20.695971457742207, -88.19971992561891],
           [20.696118982544654, -88.19970815544286],
-
         ],
       },
-
       {
+        id: 9,
         nombre: "Cuadrante 9",
-        color: "yellow",
+        color: "#f1c40f",
         coords: [
           [20.706323882174168, -88.19353324242806],
           [20.70624820990471, -88.19314493277287],
@@ -206,10 +224,10 @@ export default function Transporte() {
         ],
       },
       {
+        id: 8,
         nombre: "Cuadrante 8",
-        color: "orange",
+        color: "#e67e22",
         coords: [
-        
           [20.69496684404843, -88.19273009554283],
           [20.696452996239024, -88.19094231248579],
           [20.696000068673207, -88.18975003750815],
@@ -235,8 +253,9 @@ export default function Transporte() {
         ],
       },
       {
+        id: 7,
         nombre: "Cuadrante 7",
-        color: "brown",
+        color: "#a0522d",
         coords: [
           [20.68511172610381, -88.18198244578382],
           [20.685915676234245, -88.1829158671549],
@@ -264,10 +283,10 @@ export default function Transporte() {
           [20.68306773309156, -88.1825525047145],
         ],
       },
-
       {
+        id: 6,
         nombre: "Cuadrante 6",
-        color: "red",
+        color: "#c0392b",
         coords: [
           [20.68445078230729, -88.19472871679798],
           [20.684141461786705, -88.19305150671768],
@@ -294,10 +313,10 @@ export default function Transporte() {
         ],
       },
       {
-        nombre: "Centro (Cuadrante 1)",
-        color: "black",
+        id: 1,
+        nombre: "Cuadrante 1",
+        color: "#2d3436",
         coords: [
-          
           [20.68720137291697, -88.19458864335935],
           [20.68445078230729, -88.19472871679798],
           [20.684554856925146, -88.20191796759966],
@@ -314,503 +333,282 @@ export default function Transporte() {
           [20.693632483266423, -88.19427842261392],
         ],
       },
-      // agrega más zonas...
     ];
+  }, []);
 
-  const lugares = [
-    { nombre: "Centro (Cuadrante 1)", 
-      img: centro, 
-      clase: "centro", 
-      info: "Taxi: 40(MNX)</br>El cobro del taxi del Centro y a otro Cuadrante'1,2,3,4,5,6,7,8,9' es de: 40(MXN) </br></br> Nota: SI SE PASA DE LOS CUADRANTES PINTADOS EL COBRO ES DE 60 (MXN) 'SOLO SI SIGUE DENTRO DE LA CIUDAD'" },
+  // lista de ids 1..9 para selects y tabla
+  const cuadrantes = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-    { nombre: "Cuadrante 2", 
-      img: santalucia, 
-      clase: "santalucia", 
-      info: "El cobro del taxi es de: </br> 40 (MXN) para el mismo cuadrante y los que tiene alado </br> 45 (MXN) si pasa mas de dos cuadrantes </br> 50 (MXN) si pasa mas de 3 cuadrantes </br> 55 (MXN) si pasa mas de 4 cuadrantes </br></br> Nota: SI SE PASA DE LOS CUADRANTES PINTADOS EL COBRO ES DE 60 (MXN) 'SOLO SI SIGUE DENTRO DE LA CIUDAD' " },
-
-    { nombre: "Cuadrante 3", 
-      img: candelaria, 
-      clase: "candelaria", 
-      info: "El cobro del taxi es de: </br> 40 (MXN) para el mismo cuadrante y los que tiene alado </br> 45 (MXN) si pasa mas de dos cuadrantes </br> 50 (MXN) si pasa mas de 3 cuadrantes </br> 55 (MXN) si pasa mas de 4 cuadrantes </br></br> Nota: SI SE PASA DE LOS CUADRANTES PINTADOS EL COBRO ES DE 60 (MXN) 'SOLO SI SIGUE DENTRO DE LA CIUDAD'" },
-
-    { nombre: "Cuadrante 4", 
-      img: bacalar, 
-      clase: "bacalar", 
-      info: "El cobro del taxi es de: </br> 40 (MXN) para el mismo cuadrante y los que tiene alado </br> 45 (MXN) si pasa mas de dos cuadrantes </br> 50 (MXN) si pasa mas de 3 cuadrantes </br> 55 (MXN) si pasa mas de 4 cuadrantes </br></br> Nota: SI SE PASA DE LOS CUADRANTES PINTADOS EL COBRO ES DE 60 (MXN) 'SOLO SI SIGUE DENTRO DE LA CIUDAD'" },
-
-    { nombre: "Cuadrante 5", 
-      img: crusverde, 
-      clase: "crusverde", 
-      info: "El cobro del taxi es de: </br> 40 (MXN) para el mismo cuadrante y los que tiene alado </br> 45 (MXN) si pasa mas de dos cuadrantes </br> 50 (MXN) si pasa mas de 3 cuadrantes </br> 55 (MXN) si pasa mas de 4 cuadrantes </br></br> Nota: SI SE PASA DE LOS CUADRANTES PINTADOS EL COBRO ES DE 60 (MXN) 'SOLO SI SIGUE DENTRO DE LA CIUDAD'" },
-
-    { nombre: "Cuadrante 6", 
-      img: sanjuan, 
-      clase: "sanjuan", 
-      info: "El cobro del taxi es de: </br> 40 (MXN) para el mismo cuadrante y los que tiene alado </br> 45 (MXN) si pasa mas de dos cuadrantes </br> 50 (MXN) si pasa mas de 3 cuadrantes </br> 55 (MXN) si pasa mas de 4 cuadrantes </br></br> Nota: SI SE PASA DE LOS CUADRANTES PINTADOS EL COBRO ES DE 60 (MXN) 'SOLO SI SIGUE DENTRO DE LA CIUDAD'" },
-
-    { nombre: "Cuadrante 7", 
-      img: oaxaqueña, 
-      clase: "oaxaqueña", 
-      info: "El cobro del taxi es de: </br> 40 (MXN) para el mismo cuadrante y los que tiene alado </br> 45 (MXN) si pasa mas de dos cuadrantes </br> 50 (MXN) si pasa mas de 3 cuadrantes </br> 55 (MXN) si pasa mas de 4 cuadrantes </br></br> Nota: SI SE PASA DE LOS CUADRANTES PINTADOS EL COBRO ES DE 60 (MXN) 'SOLO SI SIGUE DENTRO DE LA CIUDAD'" },
-
-    { nombre: "Cuadrante 8", 
-      img: militar, 
-      clase: "militar", 
-      info: "El cobro del taxi es de: </br> 40 (MXN) para el mismo cuadrante y los que tiene alado </br> 45 (MXN) si pasa mas de dos cuadrantes </br> 50 (MXN) si pasa mas de 3 cuadrantes </br> 55 (MXN) si pasa mas de 4 cuadrantes </br></br> Nota: SI SE PASA DE LOS CUADRANTES PINTADOS EL COBRO ES DE 60 (MXN) 'SOLO SI SIGUE DENTRO DE LA CIUDAD'" },
-
-    { nombre: "Cuadrante 9", 
-      img: orquedeas, 
-      clase: "orquedeas", 
-      info: "El cobro del taxi es de: </br> 40 (MXN) para el mismo cuadrante y los que tiene alado </br> 45 (MXN) si pasa mas de dos cuadrantes </br> 50 (MXN) si pasa mas de 3 cuadrantes </br> 55 (MXN) si pasa mas de 4 cuadrantes </br></br> Nota: SI SE PASA DE LOS CUADRANTES PINTADOS EL COBRO ES DE 60 (MXN) 'SOLO SI SIGUE DENTRO DE LA CIUDAD'" },
-  ];
-
-  /* -----------------------
-     UTIL: centroid de un polígono (lat,lng arrays)
-     ----------------------- */
-  const polygonCentroid = (coords) => {
-    // simple arithmetic mean (suficiente para UI)
-    let sumLat = 0,
-      sumLng = 0;
-    coords.forEach((c) => {
-      sumLat += c[0];
-      sumLng += c[1];
+  // crear matriz de tarifas
+  const tarifas = useMemo(() => {
+    const mat = {};
+    cuadrantes.forEach((i) => {
+      mat[i] = {};
+      cuadrantes.forEach((j) => {
+        mat[i][j] = costoTaxi(i, j);
+      });
     });
-    return [sumLat / coords.length, sumLng / coords.length];
-  };
+    return mat;
+  }, [vecinos]); // vecinos es constante
 
-  /* ---------------------------------------
-     UTIL: calcular bounds de un polígono
-     --------------------------------------- */
-  const polygonBounds = (coords) => {
-    const lats = coords.map((c) => c[0]);
-    const lngs = coords.map((c) => c[1]);
-    const southWest = [Math.min(...lats), Math.min(...lngs)];
-    const northEast = [Math.max(...lats), Math.max(...lngs)];
-    return [southWest, northEast];
-  };
-
-  /* ---------------------------------------
-     UTIL: point-in-polygon (ray casting)
-     coords poly: [[lat,lng],...], point [lat,lng]
-     --------------------------------------- */
-  const pointInPolygon = (point, vs) => {
-    // convert to [lng,lat] for algorithm consistency
-    const x = point[1],
-      y = point[0];
-    let inside = false;
-    for (let i = 0, j = vs.length - 1; i < vs.length; j = i++) {
-      const xi = vs[i][1],
-        yi = vs[i][0];
-      const xj = vs[j][1],
-        yj = vs[j][0];
-      const intersect =
-        yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi + 0.000000001) + xi;
-      if (intersect) inside = !inside;
-    }
-    return inside;
-  };
-
-  /* ---------------------------------------
-     Extraer número de cuadrante desde nombre
-     ej. "Cuadrante 5" -> 5; "Centro (Cuadrante 1)" -> 1
-     Si no se encuentra, usamos índice fallback
-  --------------------------------------- */
-  const getQuadrantNumber = (nombre, indexFallback) => {
-    const m = nombre.match(/(\d+)/);
-    if (m) return parseInt(m[1], 10);
-    return indexFallback + 1;
-  };
-
-  /* ---------------------------------------
-     calcular costo entre dos cuadrantes (por número)
-  --------------------------------------- */
-  const calcularCostoPorNombres = (n1, n2) => {
-    if (!n1 || !n2) return null;
-    // si nombres contienen "Cuadrante X" o "Centro (Cuadrante 1)"
-    const q1 = getQuadrantNumber(n1, zonas.findIndex((z) => z.nombre === n1));
-    const q2 = getQuadrantNumber(n2, zonas.findIndex((z) => z.nombre === n2));
-    const dist = Math.abs(q1 - q2);
-    if (dist === 0 || dist === 1) return 40;
-    if (dist === 2) return 45;
-    if (dist === 3) return 50;
-    if (dist === 4) return 55;
-    return 60;
-  };
-
-  /* ---------------------------------------
-     manejar selección (polígono o clic en mapa)
-     guardamos dos selecciones y calculamos costo
-  --------------------------------------- */
-  const handleSelectZona = (zonaIndex, latlng) => {
-    const zona = zonas[zonaIndex];
-    // construir nodo seleccionado
-    const sel = {
-      tipo: "zona",
-      nombre: zona.nombre,
-      latlng: latlng || polygonCentroid(zona.coords),
-      zonaIndex,
-    };
-
-    let next = [...seleccionados];
-    // si ya está seleccionado el mismo, deseleccionar
-    const igual = next.find((s) => s.nombre === sel.nombre);
-    if (igual) {
-      next = next.filter((s) => s.nombre !== sel.nombre);
-    } else {
-      if (next.length >= 2) {
-        // reemplazamos la selección 0 por la nueva (comportamiento: mantener última)
-        next = [next[1], sel];
-      } else {
-        next.push(sel);
-      }
-    }
-    setSeleccionados(next);
-    // calcular costo si hay 2
-    if (next.length === 2) {
-      const total = calcularCostoPorNombres(next[0].nombre, next[1].nombre);
-      setCosto({ desde: next[0].nombre, hasta: next[1].nombre, total });
-    } else {
-      setCosto(null);
-    }
-    // marcar activo para UI (resaltar polígono)
-    setActivoIndex(zonaIndex);
-    // zoom al polígono
-    try {
-      const bounds = polygonBounds(zona.coords);
-      if (mapRef.current) {
-        mapRef.current.fitBounds(bounds, { padding: [60, 60], maxZoom: 16 });
-      }
-    } catch (err) {
-      /* ignore */
-    }
-  };
-
-  /* ---------------------------------------
-     manejar clic en el mapa: detecta zona que contiene punto
-  --------------------------------------- */
-  const handleMapClick = (latlng) => {
-    const point = [latlng.lat, latlng.lng];
-    setCoordsClick({ lat: latlng.lat.toFixed(6), lng: latlng.lng.toFixed(6) });
-
-    // buscar zona que contiene el punto
-    const foundIndex = zonas.findIndex((z) => pointInPolygon(point, z.coords));
-    if (foundIndex >= 0) {
-      // agregar selección con latlng exacto
-      const centro = [latlng.lat, latlng.lng];
-      handleSelectZona(foundIndex, centro);
+  // manejar clicks en polígono: lógica de selección
+  function handleZonaClick(idZona) {
+    // flujo: si no hay origen -> set origen
+    // si hay origen y no destino -> set destino (si distinto)
+    // si hay ambos -> reemplazar origen y limpiar destino
+    setInfoMsg("");
+    if (!origen) {
+      setOrigen(idZona);
+      setInfoMsg(`Origen: Cuadrante ${idZona}`);
       return;
     }
-
-    // si no está dentro de ningún cuadrante, permitimos selección libre (tipo click)
-    const sel = {
-      tipo: "click",
-      nombre: `Punto libre (${latlng.lat.toFixed(4)}, ${latlng.lng.toFixed(4)})`,
-      latlng: [latlng.lat, latlng.lng],
-      zonaIndex: null,
-    };
-    let next = [...seleccionados];
-    if (next.length >= 2) next = [next[1], sel];
-    else next.push(sel);
-    setSeleccionados(next);
-    setCosto(null);
-    setActivoIndex(null);
-  };
-
-  /* ---------------------------------------
-     función para limpiar selección
-  --------------------------------------- */
-  const limpiarSeleccion = () => {
-    setSeleccionados([]);
-    setCosto(null);
-    setActivoIndex(null);
-  };
-
-  /* ---------------------------------------
-     compartir por WhatsApp o copiar link
-     - genera mensaje con desde/hasta + costo + mapa link (Google Maps)
-  --------------------------------------- */
-  const shareViaWhatsApp = () => {
-    if (!costo && seleccionados.length < 2) return alert("Seleccione dos puntos o un par de cuadrantes primero.");
-    const desde = costo ? costo.desde : seleccionados[0].nombre;
-    const hasta = costo ? costo.hasta : seleccionados[1] ? seleccionados[1].nombre : "";
-    const total = costo ? costo.total : "—";
-    // pick coordinates for link: use selected latlngs if available
-    const a = seleccionados[0] && seleccionados[0].latlng ? seleccionados[0].latlng : null;
-    const b = seleccionados[1] && seleccionados[1].latlng ? seleccionados[1].latlng : null;
-    const link = (a && b)
-      ? `https://www.google.com/maps/dir/${a[0]},${a[1]}/${b[0]},${b[1]}`
-      : `https://www.google.com/maps/search/${encodeURIComponent(desde)}+to+${encodeURIComponent(hasta)}`;
-
-    const msg = `Ruta: ${desde} → ${hasta}%0ACosto estimado: ${total} MXN%0A${link}`;
-    const wa = `https://api.whatsapp.com/send?text=${msg}`;
-    window.open(wa, "_blank");
-  };
-
-  const copiarLink = async () => {
-    const a = seleccionados[0] && seleccionados[0].latlng ? seleccionados[0].latlng : null;
-    const b = seleccionados[1] && seleccionados[1].latlng ? seleccionados[1].latlng : null;
-    const link = (a && b)
-      ? `https://www.google.com/maps/dir/${a[0]},${a[1]}/${b[0]},${b[1]}`
-      : `https://www.google.com/maps`;
-    try {
-      await navigator.clipboard.writeText(link);
-      alert("Link copiado al portapapeles.");
-    } catch (e) {
-      alert("No se pudo copiar el link.");
-    }
-  };
-
-  /* ---------------------------------------
-     Generar datos para Polyline (si hay 2 selecciones)
-  --------------------------------------- */
-  const linePositions = () => {
-    if (seleccionados.length < 2) return null;
-    const a = seleccionados[0].latlng;
-    const b = seleccionados[1].latlng;
-    if (!a || !b) return null;
-    return [
-      [a[0], a[1]],
-      [b[0], b[1]],
-    ];
-  };
-
-  /* ---------------------------------------
-     Tabla de costos completa (opcional visual)
-     Generamos matriz 1..9 con reglas de costo
-  --------------------------------------- */
-  const generarTablaCostos = (max = 9) => {
-    const rows = [];
-    for (let i = 1; i <= max; i++) {
-      const row = [];
-      for (let j = 1; j <= max; j++) {
-        const dist = Math.abs(i - j);
-        let val;
-        if (dist === 0 || dist === 1) val = 40;
-        else if (dist === 2) val = 45;
-        else if (dist === 3) val = 50;
-        else if (dist === 4) val = 55;
-        else val = 60;
-        row.push(val);
+    if (origen && !destino) {
+      if (idZona === origen) {
+        setInfoMsg(`Has seleccionado el mismo cuadrante como destino; tarifa: ${costoTaxi(origen, idZona)} MXN`);
+        setDestino(idZona);
+        return;
       }
-      rows.push(row);
+      setDestino(idZona);
+      setInfoMsg(`Destino: Cuadrante ${idZona}`);
+      return;
     }
-    return rows;
+    // si ya tenía ambos, el siguiente click reemplaza origen (y limpia destino)
+    setOrigen(idZona);
+    setDestino(null);
+    setInfoMsg(`Origen reemplazado por Cuadrante ${idZona}. Selecciona destino.`);
+  }
+
+  function limpiarSeleccion() {
+    setOrigen(null);
+    setDestino(null);
+    setInfoMsg("");
+  }
+
+  // cuando se selecciona manualmente en selects
+  function onSelectOrigen(e) {
+    const val = e.target.value ? Number(e.target.value) : null;
+    setOrigen(val);
+    // si origen == destino -> keep destino but user likely wants change
+    if (val === destino) setInfoMsg("Origen y destino iguales.");
+    else setInfoMsg("");
+  }
+  function onSelectDestino(e) {
+    const val = e.target.value ? Number(e.target.value) : null;
+    setDestino(val);
+    if (val === origen) setInfoMsg("Origen y destino iguales.");
+    else setInfoMsg("");
+  }
+
+  const tarifaSeleccion = origen && destino ? costoTaxi(origen, destino) : null;
+
+  function getInfoById(id) {
+  const textos = {
+    1: "Centro histórico. Tarifa base: 40 MXN dentro del cuadrante o a vecinos.",
+    2: "Cuadrante 2. Vecinos: 9,1,3. Tarifa 40 MXN si va a ellos.",
+    3: "Cuadrante 3. Vecinos: 2,1,4.",
+    4: "Cuadrante 4. Vecinos: 3,1,5.",
+    5: "Cuadrante 5. Vecinos: 4,1,6.",
+    6: "Cuadrante 6. Vecinos: 5,1,7.",
+    7: "Cuadrante 7. Vecinos: 6,1,8.",
+    8: "Cuadrante 8. Vecinos: 7,1,9.",
+    9: "Cuadrante 9. Vecinos: 8,2,1.",
   };
+  return textos[id] || "Información no disponible.";
+}
 
-  const tabla = generarTablaCostos(9);
 
-  /* -------------------------
-     RENDER
-  ------------------------- */
   return (
-    <div className="transporte-container">
-      <div className="Separacion" />
+    <div className="transporte-root">
+      <div className="Separacion">
+      
+            </div>
+      <h1 className="title">Transporte — Cuadrantes de Valladolid</h1>
 
-      <h1>Transporte en Valladolid</h1>
+      <div className="top-row">
+        <div className="left-panel">
+          <div className="info-box">
+            <h3>Información rápida</h3>
+            <p>Haz clic en una zona para seleccionar <b>origen</b> y luego otra para seleccionar <b>destino</b>.</p>
+            <p className="small">
+              Si ya hay origen y destino, un nuevo clic reemplaza el origen (flujo pensado para móviles).
+            </p>
 
-      <div className="controls-row" style={{ display: "flex", gap: 12, alignItems: "center", justifyContent: "center", marginBottom: 10 }}>
-        <button className="btn-toggle" onClick={() => setMostrarZonas(!mostrarZonas)}>
-          {mostrarZonas ? "Ocultar cuadrantes" : "Mostrar cuadrantes"}
-        </button>
+            <div className="selectors">
+              <label>
+                Origen:
+                <select value={origen ?? ""} onChange={onSelectOrigen}>
+                  <option value="">-- Selecciona --</option>
+                  {cuadrantes.map((q) => (
+                    <option key={q} value={q}>
+                      Cuadrante {q}
+                    </option>
+                  ))}
+                </select>
+              </label>
 
-        <button className="btn" onClick={() => limpiarSeleccion()}>
-          Limpiar selección
-        </button>
+              <label>
+                Destino:
+                <select value={destino ?? ""} onChange={onSelectDestino}>
+                  <option value="">-- Selecciona --</option>
+                  {cuadrantes.map((q) => (
+                    <option key={q} value={q}>
+                      Cuadrante {q}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </div>
 
-        <button className="btn primary" onClick={() => shareViaWhatsApp()}>
-          Compartir por WhatsApp
-        </button>
-        <button className="btn" onClick={() => copiarLink()}>
-          Copiar link
-        </button>
-      </div>
-
-      <div style={{ display: "flex", gap: 20, alignItems: "flex-start", justifyContent: "center" }}>
-        {/* MAPA */}
-        <div style={{ position: "relative" }}>
-          <MapContainer
-            center={[center.lat, center.lng]}
-            zoom={14}
-            style={{ height: "520px", width: "820px", borderRadius: 12 }}
-            whenCreated={(map) => {
-              mapRef.current = map;
-              // click global en mapa
-              map.on("click", (e) => {
-                handleMapClick(e.latlng);
-              });
-            }}
-          >
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-
-            {/* Polígonos */}
-            {mostrarZonas &&
-              zonas.map((zona, i) => {
-                const esSeleccionado = seleccionados.some((s) => s.zonaIndex === i);
-                const esActivo = activoIndex === i;
-                const pathOptions = {
-                  color: zona.color,
-                  weight: esActivo || esSeleccionado ? 4 : 2,
-                  fillColor: zona.color,
-                  fillOpacity: esSeleccionado ? 0.55 : 0.25,
-                  dashArray: esActivo ? "": " ",
-                };
-                return (
-                  <Polygon
-                    key={i}
-                    positions={zona.coords}
-                    pathOptions={pathOptions}
-                    eventHandlers={{
-                      click: (ev) => {
-                        // ev.latlng es latlng del clic
-                        handleSelectZona(i, [ev.latlng.lat, ev.latlng.lng]);
-                        // también mostramos modal del cuadrante
-                        const infoLugar = lugares.find((l) => l.nombre.includes(zona.nombre));
-                        if (infoLugar) setModalInfo(infoLugar);
-                      },
-                    }}
-                  >
-                    <Popup>{zona.nombre}</Popup>
-                    <Tooltip direction="center" sticky>{zona.nombre}</Tooltip>
-                  </Polygon>
-                );
-              })}
-
-            {/* Polyline si hay 2 selecciones */}
-            {linePositions() && <Polyline positions={linePositions()} color="#3bff5fff" weight={4} opacity={0.9} dashArray={"6"} />}
-
-            {/* Markers para puntos seleccionados */}
-           {/*  {seleccionados.map((s, idx) => (
-              s.latlng && (
-                <Marker
-                  key={idx}
-                  position={[s.latlng[0], s.latlng[1]]}
-                >
-                  <Popup>{s.nombre}</Popup>
-                </Marker>
-              )
-            ))} */}
-          </MapContainer>
-
-          {/* Leyenda sobre el mapa (absoluta) */}
-          {/* <div className="map-legend" style={{ position: "absolute", top: 18, left: 18 }}>
-            <h4 style={{ margin: "0 0 8px 0", fontSize: 14 }}>Leyenda</h4>
-            {zonas.map((z, i) => (
-              <div key={i} className="item" style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                <span className="swatch" style={{ background: z.color }} />
-                <span style={{ fontSize: 13 }}>{z.nombre}</span>
+            <div className="actions">
+              <button className="btn" onClick={limpiarSeleccion}>
+                Limpiar selección
+              </button>
+              <div className="resultado">
+                <strong>Tarifa:</strong>{" "}
+                {tarifaSeleccion != null ? `${tarifaSeleccion} MXN` : "Selecciona origen y destino"}
               </div>
-            ))}
-          </div> */}
+            </div>
+
+            <div className="note">
+              <small>
+                Reglas: 40 MXN (mismo/vecinos), 45 MXN (2 saltos), 50 (3), 55 (4), 60 MXN si sale del área.
+              </small>
+            </div>
+            {infoMsg && <div className="info-msg">{infoMsg}</div>}
+          </div>
         </div>
 
-        {/* PANEL LATERAL */}
-        <aside style={{ width: 320 }}>
-          <div className="info-box" style={{ position: "relative" }}>
-            <h3>Panel de Información</h3>
-            {!modalInfo && <p>Haz clic en una zona del mapa o en el mapa para seleccionar puntos.</p>}
+        <div className="map-panel">
+          <MapContainer center={[20.689, -88.201]} zoom={14} style={{ height: "520px", width: "100%" }}>
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-            {modalInfo && (
-              <>
-                <h4 style={{ marginTop: 6 }}>{modalInfo.nombre}</h4>
-                <div dangerouslySetInnerHTML={{ __html: modalInfo.info }} style={{ fontSize: 14, color: "#222", marginTop: 6 }} />
-                <div style={{ marginTop: 12, display: "flex", gap: 8 }}>
-                  <button className="btn primary" onClick={() => {
-                    // zoom a polígono relacionado
-                    const zIndex = zonas.findIndex(z => modalInfo.nombre.includes(z.nombre));
-                    if (zIndex >= 0 && mapRef.current) {
-                      const bounds = polygonBounds(zonas[zIndex].coords);
-                      mapRef.current.fitBounds(bounds, { padding: [50,50], maxZoom: 16 });
-                    }
-                  }}>Ir al cuadrante</button>
-                  <button className="btn" onClick={() => setModalInfo(null)}>Cerrar</button>
-                </div>
-              </>
-            )}
+            {zonasFull.map((zona) => (
+                <Polygon
+                  key={zona.id}
+                  positions={zona.coords}
+                  pathOptions={{
+                    color: zona.color,
+                    weight: origen === zona.id || destino === zona.id ? 4 : 2,
+                    fillOpacity: origen === zona.id || destino === zona.id ? 0.45 : 0.25,
+                  }}
+                  eventHandlers={{
+                    click: () => {
+                      setTimeout(() => {
+                        handleZonaClick(zona.id);
+                      }, 50);
+                    },
+                  }}
+                >
+                  {/* ✅ Nombre permanente dentro del polígono */}
+                  <Tooltip
+                    permanent
+                    direction="center"
+                    className="cuadrante-label"
+                  >
+                    C{zona.id}
+                  </Tooltip>
 
-            {coordsClick && (
-              <div className="coords-box" style={{ marginTop: 14 }}>
-                <b>Último clic:</b>
-                <div>Lat: {coordsClick.lat}</div>
-                <div>Lng: {coordsClick.lng}</div>
-              </div>
-            )}
+                  {/* <Popup>
+                    <div style={{ minWidth: 140 }}>
+                      <b>{zona.nombre}</b>
+                    </div>
+                  </Popup> */}
+                </Polygon>
+              ))}
 
-            {/* Selecciones y costo */}
-            <div style={{ marginTop: 14, background: "#fff", padding: 10, borderRadius: 8 }}>
-              <b>Selección</b>
-              <div style={{ marginTop: 8 }}>
-                {seleccionados.length === 0 && <div className="small-muted">No hay puntos seleccionados</div>}
-                {seleccionados.map((s, i) => (
-                  <div key={i} style={{ marginBottom: 6 }}>
-                    <div style={{ fontWeight: 700 }}>{i === 0 ? "Origen" : "Destino"}</div>
-                    <div style={{ fontSize: 13 }}>{s.nombre}</div>
-                  </div>
-                ))}
-              </div>
-
-              {costo && (
-                <div style={{ marginTop: 10 }}>
-                  <b>Costo estimado:</b>
-                  <div style={{ fontSize: 18, color: "#004aad", marginTop: 6 }}>{costo.total} MXN</div>
-                  <div style={{ marginTop: 8 }}>
-                    <button className="btn primary" onClick={() => shareViaWhatsApp()}>Compartir por WhatsApp</button>
-                    <button className="btn" style={{ marginLeft: 8 }} onClick={() => copiarLink()}>Copiar link</button>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Tabla de costos */}
-          <div style={{ marginTop: 16, background: "#fff", padding: 12, borderRadius: 10, boxShadow: "0 8px 20px rgba(0,0,0,0.06)" }}>
-            <h4 style={{ marginTop: 0 }}>Tabla de tarifas (cuadrante → cuadrante)</h4>
-            <div style={{ overflowX: "auto" }}>
-              <table className="tabla-costos" style={{ borderCollapse: "collapse", width: "100%", fontSize: 13 }}>
-                <thead>
-                  <tr>
-                    <th style={{ padding: 6, borderBottom: "1px solid #eee" }}>#</th>
-                    {Array.from({ length: 9 }).map((_, j) => (
-                      <th key={j} style={{ padding: 6, borderBottom: "1px solid #eee" }}>{j + 1}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {tabla.map((row, i) => (
-                    <tr key={i}>
-                      <td style={{ padding: 6, borderBottom: "1px solid #f4f4f4", fontWeight: 700 }}>{i + 1}</td>
-                      {row.map((val, k) => (
-                        <td key={k} style={{ padding: 6, borderBottom: "1px solid #f4f4f4", textAlign: "center" }}>{val}</td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-        </aside>
+          </MapContainer>
+        </div>
       </div>
 
-      {/* MODAL sencillo para información (re-usa modal CSS si tienes) */}
+      {/* debajo del mapa: tabla de precios */}
+      <section className="tabla-section">
+        <div className="tabla-header">
+          <h3>Tabla de tarifas entre cuadrantes (1 → 9)</h3>
+          <p className="small">La celda se resalta según la selección actual (origen/destino).</p>
+        </div>
+
+        <div className="tabla-wrapper">
+          <table className="tarifas-table">
+            <thead>
+              <tr>
+                <th>Origen \ Dest</th>
+                {cuadrantes.map((c) => (
+                  <th key={c}>C.{c}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {cuadrantes.map((o) => (
+                <tr key={o}>
+                  <th> C.{o} </th>
+                  {cuadrantes.map((d) => {
+                    const tarifa = tarifas[o][d];
+                    const isSelected = origen === o && destino === d;
+                    const isOriginRow = origen === o;
+                    const isDestCol = destino === d;
+                    // highlight when origin & dest match (both ways)
+                    const highlight =
+                      (origen === o && destino === d) || (origen === d && destino === o);
+                    return (
+                      <td
+                        key={d}
+                        className={`celda ${highlight ? "celda-selected" : ""} ${
+                          origen === o ? "celda-origen-row" : ""
+                        } ${destino === d ? "celda-dest-col" : ""}`}
+                        onClick={() => {
+                          // click on table cell sets origin/dest for quick test
+                          if (!origen) setOrigen(o);
+                          if (!destino) setDestino(d);
+                          if (origen && destino) {
+                            setOrigen(o);
+                            setDestino(d);
+                          }
+                        }}
+                      >
+                        {tarifa != null ? `${tarifa}` : "—"}
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* modalInfo simple */}
       {modalInfo && (
-        <div className="modal-overlay11" onClick={() => setModalInfo(null)}>
-          <div className="modal-content11" onClick={(e) => e.stopPropagation()}>
+        <div className="modal-overlay" onClick={() => setModalInfo(null)}>
+          <div className="modal" onClick={(e) => e.stopPropagation()}>
             <h2>{modalInfo.nombre}</h2>
-            <div dangerouslySetInnerHTML={{ __html: modalInfo.info }} />
-            <div style={{ marginTop: 12, display: "flex", gap: 8 }}>
-              <button className="btn primary" onClick={() => {
-                const zIndex = zonas.findIndex(z => modalInfo.nombre.includes(z.nombre));
-                if (zIndex >= 0 && mapRef.current) {
-                  mapRef.current.fitBounds(polygonBounds(zonas[zIndex].coords), { padding: [60,60], maxZoom: 16 });
-                }
-                setModalInfo(null);
-              }}>Mostrar en mapa</button>
-              <button className="btn" onClick={() => setModalInfo(null)}>Cerrar</button>
+            <p>Cuadrante ID: {modalInfo.id}</p>
+            <p dangerouslySetInnerHTML={{ __html: getInfoById(modalInfo.id) }}></p>
+            <div className="modal-actions">
+              <button
+                className="btn"
+                onClick={() => {
+                  setOrigen(modalInfo.id);
+                  setModalInfo(null);
+                }}
+              >
+                Seleccionar como origen
+              </button>
+              <button
+                className="btn ghost"
+                onClick={() => {
+                  setDestino(modalInfo.id);
+                  setModalInfo(null);
+                }}
+              >
+                Seleccionar como destino
+              </button>
+              <button className="btn outline" onClick={() => setModalInfo(null)}>
+                Cerrar
+              </button>
             </div>
           </div>
         </div>
       )}
-
     </div>
   );
 }

@@ -86,7 +86,7 @@ const Hoteles = () => {
       <div className={`hotel-info open ${isMobile ? 'mobile-info' : ''}`}>
         {!isMobile && <button onClick={() => setSelectedItem(null)} className="close-button">✖</button>}
         <h4>{type === 'Hotel' ? item.hotel : type === 'Sitio' ? item.sitio_arqueologico : item.cenote}</h4>
-        <p>{item.descripcion}</p>
+        <p className='texto_item'>{item.descripcion.slice(0, 300) + '...'}</p>
         <p>📍 {item.localizacion}</p>
         {item.web_hotel || item.web_sitio || item.web_cenote ? (
           <p>🌐 <a href={item.web_hotel || item.web_sitio || item.web_cenote} target="_blank" rel="noopener noreferrer">{item.web_hotel || item.web_sitio || item.web_cenote}</a></p>

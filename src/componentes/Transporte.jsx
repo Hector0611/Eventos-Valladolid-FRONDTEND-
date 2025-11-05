@@ -422,7 +422,7 @@ export default function Transporte() {
       <div className="Separacion">
       
             </div>
-      <h1 className="title">Transporte — Cuadrantes de Valladolid</h1>
+      <h1 className="title">Transporte (TAXI) — Cuadrantes de Valladolid</h1>
 
       <div className="top-row">
         <div className="left-panel">
@@ -575,40 +575,19 @@ export default function Transporte() {
           </table>
         </div>
       </section>
+<hr />
+      <div className="NumTaxiDiv">
+        <h1 className="title">Numero de telefonos para el Taxi</h1>
+        <p className="NumTaxiP">A continuacion se muestran algunos numeros de telefono para pedir un taxi en Valladolid:</p>
+        <ul className="NumTaxiUl">
+          <li>Radio Taxi Valladolid: +52 985 856 1234</li>
+          <li>Taxi Ejecutivo Valladolid: +52 985 856 5678</li>
+          <li>Servicio de Taxi Central: +52 985 856 9101</li>
+          <li>Taxi Seguro Valladolid: +52 985 856 1122</li>
+          <li>Taxi Rápido Valladolid: +52 985 856 3344</li>
+        </ul>
 
-      {/* modalInfo simple */}
-      {modalInfo && (
-        <div className="modal-overlay" onClick={() => setModalInfo(null)}>
-          <div className="modal" onClick={(e) => e.stopPropagation()}>
-            <h2>{modalInfo.nombre}</h2>
-            <p>Cuadrante ID: {modalInfo.id}</p>
-            <p dangerouslySetInnerHTML={{ __html: getInfoById(modalInfo.id) }}></p>
-            <div className="modal-actions">
-              <button
-                className="btn"
-                onClick={() => {
-                  setOrigen(modalInfo.id);
-                  setModalInfo(null);
-                }}
-              >
-                Seleccionar como origen
-              </button>
-              <button
-                className="btn ghost"
-                onClick={() => {
-                  setDestino(modalInfo.id);
-                  setModalInfo(null);
-                }}
-              >
-                Seleccionar como destino
-              </button>
-              <button className="btn outline" onClick={() => setModalInfo(null)}>
-                Cerrar
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      </div>
     </div>
   );
 }

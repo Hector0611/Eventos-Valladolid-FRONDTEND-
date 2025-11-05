@@ -1,0 +1,137 @@
+/* ================================
+   ESTILO PROFESIONAL PARA ESTADÍSTICAS 2025
+   ================================ */
+
+:root {
+  --bg: #f5f7fa00;
+  --card: #ffffff1a;
+  --text: #1f2937;
+  --text-muted: #6b7280;
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --border: #e5e7eb;
+  --shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.estadisticas-container {
+  max-width: 900px;
+  margin: 25px auto;
+  padding: 25px 30px;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.6s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+/* TÍTULO PRINCIPAL */
+.titulo-estadisticas {
+  text-align: center;
+  font-size: 2.4rem;
+  color: var(--text);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* SUBTÍTULO */
+.subtitulo-estadisticas {
+  text-align: center;
+  font-size: 1.15rem;
+  margin-bottom: 25px;
+  color: var(--text-muted);
+}
+
+/* TABLA */
+.tabla-estadisticas {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+/* ENCABEZADOS */
+.tabla-estadisticas thead th {
+  background: var(--primary);
+  color: white;
+  padding: 15px;
+  font-size: 1.1rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.tabla-estadisticas th:first-child {
+  border-radius: 12px 0 0 0;
+}
+.tabla-estadisticas th:last-child {
+  border-radius: 0 12px 0 0;
+}
+
+/* FILAS */
+.tabla-estadisticas td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  font-size: 1.05rem;
+  color: var(--text);
+  background: white;
+  transition: background 0.25s ease;
+}
+
+.tabla-estadisticas tr:hover td {
+  background: #eef4ff; /* azul muy suave */
+}
+
+/* BOTÓN PDF */
+.btn-pdf {
+  padding: 8px 14px;
+  background: var(--primary);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-pdf::before {
+  content: "📄";
+  font-size: 1.2rem;
+}
+
+.btn-pdf:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(37,99,235,0.3);
+}
+
+/* ANIMACIÓN */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .estadisticas-container {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .titulo-estadisticas {
+    font-size: 1.9rem;
+  }
+
+  .tabla-estadisticas td, 
+  .tabla-estadisticas th {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .btn-pdf {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+}

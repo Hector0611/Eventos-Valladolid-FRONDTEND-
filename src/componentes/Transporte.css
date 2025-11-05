@@ -1,6 +1,6 @@
 /* Transporte.css - Estilos modernos y responsivos */
 :root{
-  --bg:#f7f9fb;
+  --bg:#f7f9fb75;
   --card:#ffffff;
   --accent:#2d9cdb;
   --muted:#6b7280;
@@ -223,14 +223,247 @@ body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helv
   box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
 }
 
-
-@media (max-width: 980px){
-  .top-row { flex-direction:column; }
-  .left-panel{ width:100%; order:2; }
-  .map-panel{ order:1; width:100%; min-width:unset; }
-  .tarifas-table{ min-width:700px; }
-
-  .title{
-    font-size:28px;
-  }
+/* ======== CONTENEDOR PRINCIPAL ======== */
+.NumTaxiDiv {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 25px 30px;
+    background: #ffffffee;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+    font-family: "Poppins", sans-serif;
+    transition: all 0.3s ease;
 }
+
+.NumTaxiDiv:hover {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* ======== TÍTULO ======== */
+.NumTaxiDiv .title {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* ======== DESCRIPCIÓN ======== */
+.NumTaxiP {
+    text-align: center;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* ======== LISTA ======== */
+.NumTaxiUl {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.NumTaxiUl li {
+    background: #f8f8f8;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 1.05em;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border-left: 5px solid #2ecc71;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+/* ICONO DE TELÉFONO AUTOMÁTICO */
+.NumTaxiUl li::before {
+    content: "📞";
+    font-size: 1.2em;
+}
+
+/* HOVER EFECTO */
+.NumTaxiUl li:hover {
+    background: #e9fbe9;
+    transform: translateX(5px);
+    border-left-color: #27ae60;
+}
+
+/* ======== RESPONSIVO ======== */
+@media (max-width: 650px) {
+    .NumTaxiDiv {
+        padding: 20px;
+    }
+
+    .NumTaxiDiv .title {
+        font-size: 1.6em;
+    }
+
+    .NumTaxiP {
+        font-size: 1em;
+    }
+
+    .NumTaxiUl li {
+        font-size: 0.95em;
+        padding: 12px 15px;
+    }
+}
+
+
+/* ✅ MOBILE OPTIMIZADO */
+@media (max-width: 768px) {
+
+    .transporte-root {
+        margin: 10px;
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .title {
+        font-size: 1.7rem;
+        margin-bottom: 12px;
+    }
+
+    /* ✅ Elementos en columna */
+    .top-row {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    /* PANEL IZQUIERDO */
+    .left-panel {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .info-box {
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .info-box h3 {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .selectors {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .selectors label {
+        font-size: 14px;
+    }
+
+    .selectors select {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .actions {
+        justify-content: center;
+        gap: 8px;
+        margin-top: 10px;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+
+    .resultado {
+        width: 100%;
+        text-align: center;
+        margin: 8px 0 0 0;
+        font-size: 1.1rem;
+    }
+
+    /* ✅ MAPA RESPONSIVO */
+    .map-panel {
+        width: 100%;
+        min-width: 100%;
+        padding: 4px;
+        border-radius: 10px;
+    }
+
+    .map-panel .leaflet-container {
+        height: 380px !important;
+        border-radius: 10px;
+    }
+
+    /* ✅ TABLA DE TARIFAS – SCROLL MEJORADO */
+    .tabla-section {
+        margin-top: 18px;
+    }
+
+    .tabla-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 6px;
+    }
+
+    .tabla-wrapper {
+        padding: 8px;
+        border-radius: 10px;
+    }
+
+    .tarifas-table {
+        min-width: 620px; /* Dejamos scroll horizontal */
+        font-size: 13px;
+    }
+
+    .tarifas-table th,
+    .tarifas-table td {
+        padding: 6px;
+        font-size: 13px;
+    }
+
+    /* ✅ Modal ajustado a móviles */
+    .modal {
+        width: 94%;
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .modal-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* ✅ Etiquetas flotantes en el mapa */
+    .cuadrante-label {
+        font-size: 14px;
+        padding: 2px 6px;
+    }
+
+    /* ✅ Lista de teléfonos responsiva */
+    .NumTaxiDiv {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .NumTaxiDiv .title {
+        font-size: 1.8rem;
+    }
+
+    .NumTaxiUl li {
+        padding: 12px;
+        font-size: 1em;
+        border-left-width: 4px;
+    }
+
+    
+}
+
+
+

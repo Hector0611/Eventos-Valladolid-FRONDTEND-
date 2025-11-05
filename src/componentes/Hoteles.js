@@ -6,13 +6,15 @@ import L from 'leaflet';
 import './Hoteles.css';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 
-import logo3 from './Imagenes/Hotel.png';
-import logo5 from './Imagenes/sitiosarque.png';
-import logoCenote from './Imagenes/restaurante.png';
+import logo3 from './Imagenes/maps/Hospedaje.png';
+import logo5 from './Imagenes/maps/Arqueologicas.png';
+import logoCenote from './Imagenes/maps/Restaurantes.png';
 
-const hotelIcon = new L.Icon({ iconUrl: logo3, iconSize: [40, 40], iconAnchor: [20, 40], popupAnchor: [0, -40] });
-const sitioIcon = new L.Icon({ iconUrl: logo5, iconSize: [40, 40], iconAnchor: [20, 40], popupAnchor: [0, -40] });
-const cenoteIcon = new L.Icon({ iconUrl: logoCenote, iconSize: [40, 40], iconAnchor: [20, 40], popupAnchor: [0, -40] });
+import oficina from './Imagenes/maps/OFICINA_DE_TURISMO.png';
+
+const hotelIcon = new L.Icon({ iconUrl: logo3, iconSize: [35, 45], iconAnchor: [20, 40], popupAnchor: [0, -40] });
+const sitioIcon = new L.Icon({ iconUrl: logo5, iconSize: [35, 45], iconAnchor: [20, 40], popupAnchor: [0, -40] });
+const cenoteIcon = new L.Icon({ iconUrl: logoCenote, iconSize: [35, 45], iconAnchor: [20, 40], popupAnchor: [0, -40] });
 
 const FlyToLocation = ({ location }) => {
   const map = useMap();

@@ -15,7 +15,7 @@
     border-radius: 0px;
     padding: 0px;
     font-family: 'Courier New', Courier, monospace;
-    font-weight: 700;
+    font-weight: 1000;
 }
 
 .titutulo{
@@ -440,7 +440,6 @@
   filter: brightness(1.1);
   box-shadow: 0 4px 15px rgba(239, 4, 227, 0.996);
 }
-
 
 /* boton2 */
 

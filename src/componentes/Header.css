@@ -256,32 +256,135 @@ body {
   transform: scale(1.2);       /* Efecto al pasar el mouse */
 
 }
+/* === BOTÓN FLOTANTE === */
+.btn-transporte-fixed {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    top: 79%;
 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 900;
 
-/* =======================
-   Animaciones personalizadas
-   ======================= */
-@keyframes fadeIn {
-  from {
+    background: linear-gradient(135deg, #000000, #27ae60);
+    color: rgb(251, 255, 1);
+    padding: 12px 16px;
+    border-radius: 40px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    cursor: pointer;
+    z-index: 9999;
+
+    transition: all 0.5s ease;
+
+    /* ✅ IMPORTANTE: permite redimensionar al contenido */
+    width: max-content;
+    height: max-content;
+    transition: all 0.5s ease;
+}
+
+/* ✅ Texto oculto (al pasar 5s) */
+.btn-transporte-fixed.hide-text .btn-text {
     opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
+    max-width: 0;
+    transform: translateX(-10px);
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.4s ease;
+}
+
+/* ✅ El botón se hace pequeño cuando no hay texto */
+.btn-transporte-fixed.hide-text {
+    padding: 12px;
+    gap: 0;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+}
+
+/* ✅ Texto visible al entrar a la página */
+.btn-transporte-fixed.show-text .btn-text {
     opacity: 1;
-    transform: translateY(0);
-  }
+    max-width: 200px;
+    transform: translateX(0);
+    transition: all 0.4s ease;
 }
 
-@keyframes slideDown {
-  from {
-    transform: translateY(-20px);
-  }
-  to {
-    transform: translateY(0);
-  }
+/* ✅ EL EFECTO CLAVE → al pasar el mouse vuelve a aparecer el texto */
+.btn-transporte-fixed:hover .btn-text {
+    opacity: 1;
+    max-width: 200px;
+    transform: translateX(0);
 }
 
+/* ✅ El botón se expande automáticamente al volver el texto */
+.btn-transporte-fixed:hover {
+    padding: 12px 16px;
+    gap: 10px;
+    border-radius: 40px;
+}
 
+/* === BOTÓN === */
+.btn-transporte-fixed1 {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: linear-gradient(135deg, #000000, #17e7e7);
+    color: rgb(255, 2, 2);
+    padding: 12px 16px;
+    border-radius: 40px;
+    font-weight: 900;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    cursor: pointer;
+    z-index: 9999;
+
+    transition: all 0.5s ease;
+}
+
+/* ✅ Texto oculto (al pasar 5s) */
+.btn-transporte-fixed1.hide-text .btn-text {
+    opacity: 0;
+    max-width: 0;
+    transform: translateX(-10px);
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.4s ease;
+}
+
+/* ✅ El botón se hace pequeño cuando no hay texto */
+.btn-transporte-fixed1.hide-text {
+    padding: 12px;
+    gap: 0;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+}
+
+/* ✅ Texto visible al entrar a la página */
+.btn-transporte-fixed1.show-text .btn-text {
+    opacity: 1;
+    max-width: 200px;
+    transform: translateX(0);
+    transition: all 0.4s ease;
+}
+
+/* ✅ EL EFECTO CLAVE → al pasar el mouse vuelve a aparecer el texto */
+.btn-transporte-fixed1:hover .btn-text {
+    opacity: 1;
+    max-width: 200px;
+    transform: translateX(0);
+}
+
+/* ✅ El botón se expande automáticamente al volver el texto */
+.btn-transporte-fixed1:hover {
+    padding: 12px 16px;
+    gap: 10px;
+    border-radius: 40px;
+}
 
 /* 📱 Ajustes para tablets */
 @media (max-width: 1024px) {
@@ -350,7 +453,8 @@ body {
   .links_F-I-Y a svg {
     width: 38px;
     height: 38px;
-  }
+    }
+    
 }
 
 

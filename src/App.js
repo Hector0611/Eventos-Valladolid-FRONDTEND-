@@ -26,6 +26,7 @@ import Contactanos from './componentes/Contactanos';
 import PoliciaPage from './componentes/Policia';
 import Transporte from './componentes/Transporte';
 import AnuncioEmergente from './componentes/AnuncioEmergente';
+import Turismo from './componentes/Turismo';
 
 const App = () => {
 
@@ -134,7 +135,7 @@ const App = () => {
               />
 
               <Route 
-                path="/hoteles" 
+                path="/mapa" 
                 element={
                   <>
                     <Header2 />
@@ -222,6 +223,20 @@ const App = () => {
           <Footer />
                 </>
               } />
+
+              <Route path="/turismo" element={
+                <>
+                  <Header2 />
+                  <Header />
+                  <Turismo />
+
+                  {/* Footer global */}
+          <ProximoEvento />
+         
+          <Footer />
+                </>
+              } />
+              
               <Route path="/contacto" element={
                 <>
                   <Header2 />

@@ -52,6 +52,7 @@
     box-shadow: 0 1px 1px rgb(0, 0, 0); /* Línea de borde de Bootstrap */
     color: rgba(0, 0, 0, 0.87);
     font-size: 20px;
+    
      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* misma fuente para todo */
 }
 
@@ -63,14 +64,13 @@
 }
 
 .calendar-table th{
-    background: rgba(255, 255, 255, 0.871);
-    color: black;
+    background: rgba(255, 0, 0, 0.871);
+    color: rgb(255, 255, 255);
+    
     border-radius: 0px;
     box-shadow: 0 2.5px 5px rgb(0, 0, 0); /* Línea de borde de Bootstrap */
     align-items: center;
 }
-
-
 
 .day {
     position:relative;

@@ -423,8 +423,6 @@ body {
     display: flex; 
   }
   
-
- 
   /* Popups centrados en móvil */
   .popup-wrapper {
     
@@ -455,6 +453,10 @@ body {
     height: 38px;
     }
     
+    .btn-transporte-fixed{
+      top: 79%;
+    }
+
 }
 
 

@@ -25,8 +25,6 @@ const Header = () => {
         navigate(path);
     };
 
-    
-
     useEffect(() => {
         let lastScrollY = window.scrollY;
         let ticking = false;

@@ -416,6 +416,48 @@ export default function Transporte() {
   return textos[id] || "Información no disponible.";
 }
 
+const taxisES = [
+    { nombre: "Radio Taxi Valladolid", tel: "+529858561234" },
+    { nombre: "Taxi Ejecutivo Valladolid", tel: "+529858565678" },
+    { nombre: "Servicio de Taxi Central", tel: "+529858569101" },
+    { nombre: "Taxi Seguro Valladolid", tel: "+529858561122" },
+    { nombre: "Taxi Rápido Valladolid", tel: "+529858563344" },
+  ];
+
+  const taxisEN = [
+    { nombre: "Radio Taxi Valladolid", tel: "+529858561234" },
+    { nombre: "Executive Taxi Valladolid", tel: "+529858565678" },
+    { nombre: "Central Taxi Service", tel: "+529858569101" },
+    { nombre: "Safe Taxi Valladolid", tel: "+529858561122" },
+    { nombre: "Fast Taxi Valladolid", tel: "+529858563344" },
+  ];
+
+  const renderLista = (lista) =>
+    lista.map((t, i) => (
+      <li key={i}>
+        <div className="taxi-info">
+          <strong>{t.nombre}</strong>
+
+          <div className="taxi-buttons">
+            {/* Llamar */}
+            <a href={`tel:${t.tel}`} className="btn-call">
+              📞 Llamar
+            </a>
+
+            {/* WhatsApp */}
+            <a
+              href={`https://wa.me/${t.tel}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ws"
+            >
+              💬 WhatsApp
+            </a>
+          </div>
+        </div>
+      </li>
+    ));
+
 
   return (
     <div className="transporte-root">
@@ -576,18 +618,25 @@ export default function Transporte() {
         </div>
       </section>
 <hr />
+      <div className="NumTaxiGrid">
+      {/* Español */}
       <div className="NumTaxiDiv">
-        <h1 className="title">Numero de telefonos para el Taxi</h1>
-        <p className="NumTaxiP">A continuacion se muestran algunos numeros de telefono para pedir un taxi en Valladolid:</p>
-        <ul className="NumTaxiUl">
-          <li>Radio Taxi Valladolid: +52 985 856 1234</li>
-          <li>Taxi Ejecutivo Valladolid: +52 985 856 5678</li>
-          <li>Servicio de Taxi Central: +52 985 856 9101</li>
-          <li>Taxi Seguro Valladolid: +52 985 856 1122</li>
-          <li>Taxi Rápido Valladolid: +52 985 856 3344</li>
-        </ul>
-
+        <h1 className="title">Números de Taxi (ES)</h1>
+        <p className="NumTaxiP">
+          A continuación se muestran algunos números para pedir taxi en Valladolid:
+        </p>
+        <ul className="NumTaxiUl">{renderLista(taxisES)}</ul>
       </div>
+
+      {/* Inglés */}
+      <div className="NumTaxiDiv">
+        <h1 className="title">Taxi Phone Numbers (EN)</h1>
+        <p className="NumTaxiP">
+          Below are some phone numbers to request a taxi in Valladolid:
+        </p>
+        <ul className="NumTaxiUl">{renderLista(taxisEN)}</ul>
+      </div>
+    </div>
     </div>
   );
 }

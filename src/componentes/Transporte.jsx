@@ -621,7 +621,7 @@ const taxisES = [
       <div className="NumTaxiGrid">
       {/* Español */}
       <div className="NumTaxiDiv">
-        <h1 className="title">Números de Taxi (ES)</h1>
+        <h1 className="title">Números de Taxi (ES)</h1> 
         <p className="NumTaxiP">
           A continuación se muestran algunos números para pedir taxi en Valladolid:
         </p>

@@ -261,7 +261,7 @@ body {
     position: fixed;
     bottom: 25px;
     left: 25px;
-    top: 79%;
+    top: 83%;
 
     display: flex;
     align-items: center;
@@ -296,9 +296,9 @@ body {
 
 /* ✅ El botón se hace pequeño cuando no hay texto */
 .btn-transporte-fixed.hide-text {
-    padding: 12px;
+    padding: 6px;
     gap: 0;
-    border-radius: 50%;
+    border-radius: 20%;
     transition: all 0.4s ease;
 }
 
@@ -319,9 +319,9 @@ body {
 
 /* ✅ El botón se expande automáticamente al volver el texto */
 .btn-transporte-fixed:hover {
-    padding: 12px 16px;
+    padding: 6px;
     gap: 10px;
-    border-radius: 40px;
+    border-radius: 20%;
 }
 
 /* === BOTÓN === */
@@ -358,9 +358,9 @@ body {
 
 /* ✅ El botón se hace pequeño cuando no hay texto */
 .btn-transporte-fixed1.hide-text {
-    padding: 12px;
+    padding: 6px;
     gap: 0;
-    border-radius: 50%;
+    border-radius: 20%;
     transition: all 0.4s ease;
 }
 
@@ -381,9 +381,9 @@ body {
 
 /* ✅ El botón se expande automáticamente al volver el texto */
 .btn-transporte-fixed1:hover {
-    padding: 12px 16px;
+    padding: 6px;
     gap: 10px;
-    border-radius: 40px;
+    border-radius: 20%;
 }
 
 /* 📱 Ajustes para tablets */
@@ -454,7 +454,8 @@ body {
     }
     
     .btn-transporte-fixed{
-      top: 79%;
+      top: 82%;
+      
     }
 
 }

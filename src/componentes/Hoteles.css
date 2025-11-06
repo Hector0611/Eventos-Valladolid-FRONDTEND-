@@ -253,22 +253,7 @@ body {
 }
 
 /* ====== SUBMENÚ DE SUGERENCIAS ====== */
-.search-suggestions {
-  position: relative;
-  margin: 0 auto;
-  width: 85%;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  list-style: none;
-  padding: 5px 0;
-  margin-top: 5px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-height: 220px;
-  overflow-y: auto;
-  animation: fadeIn 0.2s ease;
-  z-index: 10;
-}
+
 
 /* Contenedor de sugerencias */
 .search-suggestions {
@@ -281,11 +266,11 @@ body {
   border-radius: 8px;
   background: #fff;
   position: absolute; /* se superpone sobre otros elementos */
-  width: 90%; /* ocupa casi todo el ancho en mobile */
+  width: 30%; /* ocupa casi todo el ancho en mobile */
   z-index: 1000; /* sobrepone al resto */
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   /* centrar el div */
-  left: 50%;
+  left: 16%;
   transform: translateX(-50%);
 
 }

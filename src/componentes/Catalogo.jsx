@@ -30,6 +30,7 @@ import JuanBalam from './Imagenes/ImgTempo/JuanBalam.jpeg';
 import Fiesta1 from './Imagenes/ImgTempo/LaFiestaPueblo1.jpeg';
 import julieta from './Imagenes/ImgTempo/Julieta.jpg';
 import sabores from './Imagenes/ImgTempo/EventosNoviembre.jpg';
+import obrateatro from './Imagenes/ImgTempo/ObraTeatro.jpeg';
 
 const Catalogo = () => {
   /* const [idioma, setIdioma] = useState("es");
@@ -124,6 +125,11 @@ const Catalogo = () => {
       <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Sabores del Mas Alla</h2>
         <img src={sabores} alt="The Vine and The Ceiba" className="folleto-img rounded shadow" />
+      </div>
+
+      <div className="folleto text-center mb-5">
+        <h2 className="fw-bold mb-3">Obra de teatro</h2>
+        <img src={obrateatro} alt="The Vine and The Ceiba" className="folleto-img rounded shadow" />
       </div>
 
       <div className="folleto text-center mb-5">

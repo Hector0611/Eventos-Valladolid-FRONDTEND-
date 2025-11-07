@@ -441,7 +441,7 @@ const taxisES = [
           <div className="taxi-buttons">
             {/* Llamar */}
             <a href={`tel:${t.tel}`} className="btn-call">
-              📞 Llamar
+              📞 Call
             </a>
 
             {/* WhatsApp */}
@@ -464,37 +464,37 @@ const taxisES = [
       <div className="Separacion">
       
             </div>
-      <h1 className="title">Transporte (TAXI) — Cuadrantes de Valladolid</h1>
+      <h1 className="title">Transportation (TAXI) — Valladolid Quadrants</h1>
 
       <div className="top-row">
         <div className="left-panel">
           <div className="info-box">
-            <h3>Información rápida</h3>
-            <p>Haz clic en una zona para seleccionar <b>origen</b> y luego otra para seleccionar <b>destino</b>.</p>
+            <h3>Quick information</h3>
+            <p>Click on an area to select <b>origin</b> and then another one to select <b>destination</b>.</p>
             <p className="small">
-              Si ya hay origen y destino, un nuevo clic reemplaza el origen (flujo pensado para móviles).
+              If there is already a source and destination, a new click replaces the source (flow designed for mobile devices).
             </p>
 
             <div className="selectors">
               <label>
-                Origen:
+              Origin:
                 <select value={origen ?? ""} onChange={onSelectOrigen}>
-                  <option value="">-- Selecciona --</option>
+                  <option value="">-- Select --</option>
                   {cuadrantes.map((q) => (
                     <option key={q} value={q}>
-                      Cuadrante {q}
+                      Quadrant {q}
                     </option>
                   ))}
                 </select>
               </label>
 
               <label>
-                Destino:
+                Destination:
                 <select value={destino ?? ""} onChange={onSelectDestino}>
-                  <option value="">-- Selecciona --</option>
+                  <option value="">-- Select --</option>
                   {cuadrantes.map((q) => (
                     <option key={q} value={q}>
-                      Cuadrante {q}
+                      Quadrant {q}
                     </option>
                   ))}
                 </select>
@@ -503,17 +503,17 @@ const taxisES = [
 
             <div className="actions">
               <button className="btn" onClick={limpiarSeleccion}>
-                Limpiar selección
+                Clear selection
               </button>
               <div className="resultado">
                 <strong>Tarifa:</strong>{" "}
-                {tarifaSeleccion != null ? `${tarifaSeleccion} MXN` : "Selecciona origen y destino"}
+                {tarifaSeleccion != null ? `${tarifaSeleccion} MXN` : "Price"}
               </div>
             </div>
 
             <div className="note">
               <small>
-                Reglas: 40 MXN (mismo/vecinos), 45 MXN (2 saltos), 50 (3), 55 (4), 60 MXN si sale del área.
+               Rules: 40 MXN (same/neighbors), 45 MXN (2 jumps), 50 (3), 55 (4), 60 MXN if you leave the area.
               </small>
             </div>
             {infoMsg && <div className="info-msg">{infoMsg}</div>}
@@ -565,15 +565,15 @@ const taxisES = [
       {/* debajo del mapa: tabla de precios */}
       <section className="tabla-section">
         <div className="tabla-header">
-          <h3>Tabla de tarifas entre cuadrantes (1 → 9)</h3>
-          <p className="small">La celda se resalta según la selección actual (origen/destino).</p>
+          <h3>Rate table between quadrants (1 → 9)</h3>
+          <p className="small">The cell is highlighted according to the current selection (source/destination).</p>
         </div>
 
         <div className="tabla-wrapper">
           <table className="tarifas-table">
             <thead>
               <tr>
-                <th>Origen \ Dest</th>
+                <th>Origin \ Dest</th>
                 {cuadrantes.map((c) => (
                   <th key={c}>C.{c}</th>
                 ))}
@@ -621,9 +621,9 @@ const taxisES = [
       <div className="NumTaxiGrid">
       {/* Español */}
       <div className="NumTaxiDiv">
-        <h1 className="title">Números de Taxi (ES)</h1> 
+        <h1 className="title">Taxi Numbers (ES)</h1> 
         <p className="NumTaxiP">
-          A continuación se muestran algunos números para pedir taxi en Valladolid:
+          Below are some numbers to call for a taxi in Valladolid:
         </p>
         <ul className="NumTaxiUl">{renderLista(taxisES)}</ul>
       </div>

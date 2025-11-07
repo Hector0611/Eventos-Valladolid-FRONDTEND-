@@ -7,17 +7,17 @@ export default function Policia() {
       id: 1,
       title: "Police",
       description: "24/7 Support — Immediate Response",
-      phone: "+52 985 856 1234",
-      whatsapp: "+52 985 856 1234",
+      phone: "+52 985 856 21 00",
+      whatsapp: "+52 985 856 21 00", /* quitar */
       badge: "EMERGENCY",
       hours: "24 hours",
     },
     {
       id: 2,
-      title: "Secretariat of Security",
-      description: "Line for reporting and follow-up of reports",
-      phone: "+5219982345678",
-      whatsapp: "+5219982345678",
+      title: "Secretariat of Security 'Num. 060'",
+      description: "Line for reporting and follow-up of reports   ",
+      phone: "930 32 00",
+      whatsapp: "+5219982345678", /* quitar */
       badge: "COMPLAINTS",
       hours: "Mon–Sun: 06:00–24:00",
     },
@@ -49,17 +49,17 @@ export default function Policia() {
           </div>
 
           <div className="header-buttons">
-            <a href="tel:+52985 856 1234" className="btn-call">
+            <a href="tel:+52 985 856 21 00" className="btn-call">
               📞 Call emergency services
             </a>
-            <a
+            {/* <a
               href="https://wa.me/52985 856 1234"
               target="_blank"
               rel="noreferrer"
               className="btn-whatsapp"
             >
               💬 WhatsApp
-            </a>
+            </a> */}
           </div>
         </div>
       </header>
@@ -90,14 +90,14 @@ export default function Policia() {
                       <a href={`tel:${c.phone}`} className="btn-call-small">
                         📞 Call
                       </a>
-                      <a
+                      {/* <a
                         href={`https://wa.me/${c.whatsapp.replace(/[^0-9]/g, "")}`}
                         target="_blank"
                         rel="noreferrer"
                         className="btn-whatsapp-small"
                       >
                         💬 WhatsApp
-                      </a>
+                      </a> */}
                     </div>
                   </div>
                 ))}
@@ -133,17 +133,24 @@ export default function Policia() {
             <div className="card">
               <h3>Quick attention</h3>
               <ul>
-                <li>Local police: <strong>+52 985 856 1234</strong></li>
+                <li>Local police: <strong>+52 985 856 21 00</strong></li>
                 <li>Firefighters: <strong>+52 985 856 12 34</strong></li>
-                <li>Ambulances: <strong>+52 --- --- -- --</strong></li>
-                <li>Anonymous complaint: <strong>--- --- -- --</strong></li>
+                <li>Cruz Roja: <strong>+52 985 856 24 13</strong></li>
+                <li>Anonymous complaint: <strong>089</strong></li>
               </ul>
             </div>
 
             <div className="card">
               <h3>Location</h3>
               <p className="text-muted">Main Office — Valladolid</p>
-              <div className="map-placeholder">[Mapa integrado aquí]</div>
+              <div className="map-placeholder">
+                <iframe
+                  title="Ubicación de la Policía Municipal de Valladolid"
+                  src="https://www.google.com/maps?q=20.70591095612285, -88.1970215526098&hl=en&z=15&output=embed"
+                  allowFullScreen=""
+                  loading="lazy"
+                ></iframe>
+              </div>
             </div>
 
             <div className="card">
@@ -157,7 +164,7 @@ export default function Policia() {
       <footer className="policia-footer">
         <p>© {new Date().getFullYear()} Municipal Police — Valladolid</p>
         <p>
-          📧 <a href="mailto:info@policia.valladolid.mx">---@-----.valladolid.mx</a> |{" "}
+          {/* 📧 <a href="mailto:info@policia.valladolid.mx">---@-----.valladolid.mx</a> |{" "} */}
           <a href="#">Privacy Policy</a>
         </p>
       </footer>

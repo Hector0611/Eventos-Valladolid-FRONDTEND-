@@ -8,7 +8,7 @@ import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 
 import logo3 from './Imagenes/maps/Hospedaje.png';
 import logo5 from './Imagenes/maps/Arqueologicas.png';
-import logoCenote from './Imagenes/maps/Restaurantes.png';
+import logoCenote from './Imagenes/maps/Cenote.png';
 import oficina from './Imagenes/maps/OFICINA_DE_TURISMO.png';
 
 
@@ -16,13 +16,6 @@ import oficina from './Imagenes/maps/OFICINA_DE_TURISMO.png';
 const hotelIcon = new L.Icon({ iconUrl: logo3, iconSize: [35, 45], iconAnchor: [20, 40] });
 const sitioIcon = new L.Icon({ iconUrl: logo5, iconSize: [35, 45], iconAnchor: [20, 40] });
 const cenoteIcon = new L.Icon({ iconUrl: logoCenote, iconSize: [35, 45], iconAnchor: [20, 40] });
-
-const oficinaIcon = new L.Icon({
-  iconUrl: oficina,
-  iconSize: [35, 45],
-  iconAnchor: [20, 40],
-  popupAnchor: [0, -40]
-});
 
 
 // ====================== FLY TO ============================
@@ -50,9 +43,18 @@ const Hoteles = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
 
+  const [activeTooltip, setActiveTooltip] = useState(null);
+
+const oficinaIcon = new L.Icon({
+  iconUrl: oficina,
+  iconSize: [35, 45],
+  iconAnchor: [20, 40],
+  popupAnchor: [0, -40]
+});
+
   // -------- Oficina de turismo (dato local) --------
   const oficinaTurismo = {
-    id: "oficina_turismo",
+    id: "oficina_marker",
     type: "Oficina",
     nombre: "Tourist Office ",
     descripcion: "Atención al visitante, orientación turística, mapas, apoyo al viajero e información cultural.",
@@ -165,8 +167,8 @@ const Hoteles = () => {
         </div>
       </div>
     );
+    
   };
-
 
   // =====================================================
   // ====================== RETURN ========================
@@ -195,7 +197,14 @@ const Hoteles = () => {
             {filteredResults.length > 0 && (
               <ul className="search-suggestions">
                 {filteredResults.map((item, idx) => (
-                  <li key={idx} onClick={() => setSelectedItem(item)}>
+                  <li 
+                    key={idx} 
+                    onClick={() => {
+                      setSelectedItem(item);
+                      setActiveTooltip(item.data.id);
+                    }}
+                  >
+
                     <strong>{item.name}</strong> <span className="search-type">{item.type}</span>
                   </li>
                 ))}
@@ -265,12 +274,7 @@ const Hoteles = () => {
             )}
           </div>
 
-
-          
         </aside>
-
-
-
         {/* ------------------------------------------------
            MAPA
         ------------------------------------------------ */}
@@ -288,22 +292,48 @@ const Hoteles = () => {
                 key={h.id}
                 position={[parseFloat(h.latitud), parseFloat(h.longitud)]}
                 icon={hotelIcon}
-                eventHandlers={{ click: () => setSelectedItem({ type: "Hotel", data: h }) }}
+                eventHandlers={{
+                  click: () => {
+                    setSelectedItem({ type: "Hotel", data: h });
+                    setActiveTooltip(h.id);
+                  } 
+                }}
               >
-                <Tooltip direction="top" offset={[-2, -38]} opacity={0.9} permanent={false}>{h.hotel}</Tooltip>
+                <Tooltip 
+                  direction="top"
+                  offset={[-2, -38]}
+                  opacity={0.9}
+                  permanent={activeTooltip === h.id}
+                >
+                  {h.id}-{h.hotel}
+                </Tooltip>
               </Marker>
+
             ))}
 
             {/* Sitios */}
             {sitios.map(s => (
               <Marker
-                key={s.id}
-                position={[parseFloat(s.latitud), parseFloat(s.longitud)]}
-                icon={sitioIcon}
-                eventHandlers={{ click: () => setSelectedItem({ type: "Sitio", data: s }) }}
-              >
-                <Tooltip direction="top" offset={[-2, -38]} opacity={0.9} permanent={false}>{s.sitio_arqueologico}</Tooltip>
-              </Marker>
+                  key={s.id}
+                  position={[parseFloat(s.latitud), parseFloat(s.longitud)]}
+                  icon={sitioIcon}
+                  eventHandlers={{
+                    click: () => {
+                      setSelectedItem({ type: "Sitio", data: s });
+                      setActiveTooltip(s.id);
+                    }
+                  }}
+                >
+                  <Tooltip 
+                    direction="top"
+                    offset={[-2, -38]}
+                    opacity={0.9}
+                    permanent={activeTooltip === s.id}
+                  >
+                    {s.sitio_arqueologico}
+                  </Tooltip>
+                </Marker>
+
             ))}
 
             {/* Cenotes */}
@@ -312,21 +342,47 @@ const Hoteles = () => {
                 key={c.id}
                 position={[parseFloat(c.latitud), parseFloat(c.longitud)]}
                 icon={cenoteIcon}
-                eventHandlers={{ click: () => setSelectedItem({ type: "Cenote", data: c }) }}
+                eventHandlers={{ 
+                  click: () => {
+                    setSelectedItem({ type: "Cenote", data: c });
+                    setActiveTooltip(c.id);
+                  }
+                }}
               >
-                <Tooltip direction="top" offset={[-2, -38]} opacity={0.9} permanent={false}>{c.cenote}</Tooltip>
+                <Tooltip 
+                  direction="top"
+                  offset={[-2, -38]}
+                  opacity={0.9}
+                  permanent={activeTooltip === c.id}
+                >
+                  {c.cenote}
+                </Tooltip>
               </Marker>
+
             ))}
 
             {/* Oficina de Turismo */}
             <Marker
-              key="oficina_turismo"
-              position={[oficinaTurismo.latitud, oficinaTurismo.longitud]}
-              icon={oficinaIcon}
-              eventHandlers={{ click: () => setSelectedItem({ type: "Oficina", data: oficinaTurismo }) }}
-            >
-              <Tooltip direction="top" offset={[-2, -38]} opacity={0.9} permanent={false}>Tourist Office</Tooltip>
-            </Marker>
+                key="oficina_marker"
+                position={[oficinaTurismo.latitud, oficinaTurismo.longitud]}
+                icon={oficinaIcon}
+                eventHandlers={{
+                  click: () => {
+                    setSelectedItem({ type: "Oficina", data: oficinaTurismo });
+                    setActiveTooltip(oficinaTurismo.id);
+                  }
+                }}
+              >
+                <Tooltip 
+                  direction="top"
+                  offset={[-2, -38]}
+                  opacity={0.9}
+                  permanent={activeTooltip === "oficina_marker"}
+                >
+                  Tourist Office
+                </Tooltip>
+              </Marker>
+
 
             <FlyToLocation location={selectedItem?.data} />
           </MapContainer>

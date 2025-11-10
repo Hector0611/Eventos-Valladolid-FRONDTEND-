@@ -1,0 +1,169 @@
+/* ===============================
+   GALERÍA DE DESTINOS
+=============================== */
+
+.destino-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.destino-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.25s ease;
+}
+.destino-item:hover {
+  transform: scale(1.03);
+}
+
+.destino-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.destino-item:hover .destino-img {
+  transform: scale(1.07);
+}
+
+.destino-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: white;
+}
+.destino-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+/* ===============================
+   MODAL
+=============================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 15px;
+}
+
+.modal-content {
+  position: relative;
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 95vh;
+  overflow-y: auto;
+  animation: show 0.35s ease;
+}
+
+@keyframes show {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.modal-info {
+  margin-top: 15px;
+}
+.modal-info h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+.modal-info p {
+  margin: 6px 0;
+  font-size: 1rem;
+  color: #444;
+}
+.modal-tel {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* ===============================
+   BOTONES DEL MODAL
+=============================== */
+.btn-prev,
+.btn-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s;
+}
+.btn-prev:hover,
+.btn-next:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.btn-prev { left: -10px; }
+.btn-next { right: -10px; }
+
+/* BOTÓN CERRAR */
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4b4b;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-close:hover {
+  background: #e00000;
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+@media (max-width: 600px) {
+  .destino-img {
+    height: 160px;
+  }
+  .modal-img {
+    height: 240px;
+  }
+  .btn-prev,
+  .btn-next {
+    width: 38px;
+    height: 38px;
+    font-size: 1.6rem;
+  }
+}

@@ -144,7 +144,7 @@ const Catalogo = () => {
 
       <h1 className="text-center mb-4 display-5 fw-bold ">
         Expo Feria Valladolid 2026
-      </h1>
+      </h1> 
 
       <div className="row g-4">
         {imagenes[idioma].map((img, index) => (

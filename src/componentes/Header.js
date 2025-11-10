@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
 
-
-
 const Header = () => {
     const [showPopup, setShowPopup] = useState(false);
     const [showMenu, setShowMenu] = useState(true);
@@ -82,7 +80,8 @@ const Header = () => {
                                     <h2>More Information</h2>
                                     <ul className="popup-links">
                                         <li><button onClick={() => navigateTo('/Contacto')}>Contact us</button></li>
-                                        <li><button onClick={() => navigateTo('/turismo')}>ESTADISTICAS TURÍSTICO</button></li>
+                                        <li><button onClick={() => navigateTo('/turismo')}>TOURISM STATISTICS</button></li>
+                                        <li><button onClick={() => navigateTo('/destinos')}>DESTINATION LOCATIONS</button></li>
                                     </ul>
                                     <hr />
                                     {/* <button onClick={() => navigateTo('/Policia')}>Policia</button> */}

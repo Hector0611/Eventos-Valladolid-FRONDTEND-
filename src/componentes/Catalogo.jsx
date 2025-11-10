@@ -22,6 +22,16 @@ import logo66 from './Imagenes/ImgTempo/6.6.jpg';
 import logo77 from './Imagenes/ImgTempo/7.jpg';
 import logo88 from './Imagenes/ImgTempo/8.8.jpg'; */
 
+/* Feria */
+import feria1 from './Imagenes/ImgTempo/Feria3.jpg';
+import feria2 from './Imagenes/ImgTempo/Feria8.jpg';
+import feria3 from './Imagenes/ImgTempo/Feria2.jpg';
+import feria4 from './Imagenes/ImgTempo/Feria5.jpg';
+import feria5 from './Imagenes/ImgTempo/Feria9.jpg';
+import feria6 from './Imagenes/ImgTempo/Feria4.jpg';
+import feria7 from './Imagenes/ImgTempo/Feria1.jpg';
+import feria8 from './Imagenes/ImgTempo/Feria6.jpg';
+
 /* Folletos */
 import logoDiaMuertos from './Imagenes/ImgTempo/DiaMuertos.jpg';
 import logoDiaMuertosingles from './Imagenes/ImgTempo/DiaMuertosIngles.jpg';
@@ -33,13 +43,13 @@ import sabores from './Imagenes/ImgTempo/EventosNoviembre.jpg';
 import obrateatro from './Imagenes/ImgTempo/ObraTeatro.jpeg';
 
 const Catalogo = () => {
-  /* const [idioma, setIdioma] = useState("es");
+  const [idioma, setIdioma] = useState("es");
   const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
   const [indice, setIndice] = useState(0);
 
   const imagenes = {
-    es: [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8],
-    en: [logo11, logo22, logo33, logo44, logo55, logo66, logo77, logo88]
+    es: [feria1, feria2, feria3, feria4, feria5, feria6, feria7, feria8],
+    
   };
 
   const abrirImagen = (index) => {
@@ -61,15 +71,13 @@ const Catalogo = () => {
     const nuevoIndice = (indice - 1 + imagenes[idioma].length) % imagenes[idioma].length;
     setIndice(nuevoIndice);
     setImagenSeleccionada(imagenes[idioma][nuevoIndice]);
-  }; */
+  };
 
   return (
     <div className="catalogo-container container py-5">
-      {/* <h1 className="text-center mb-4 display-5 fw-bold ">
-        October Nights Catalog
-      </h1>
+      
 
-      <div className="text-center mb-5">
+      {/* <div className="text-center mb-5">
         <div className="btn-group">
           <button
             className={`btn btn-outline-primary ${idioma === "es" ? "active" : ""}`}
@@ -84,18 +92,10 @@ const Catalogo = () => {
             English
           </button>
         </div>
-      </div>
+      </div> */}
 
       
-      <div className="row g-4">
-        {imagenes[idioma].map((img, index) => (
-          <div key={index} className="col-6 col-md-3">
-            <div className="card shadow-sm border-0 h-100" onClick={() => abrirImagen(index)}>
-              <img src={img} alt={`catalogo-${index}`} className="card-img-top img-hover" />
-            </div>
-          </div>
-        ))}
-      </div> */}
+      
 
       <hr className="my-5" />
 
@@ -112,7 +112,7 @@ const Catalogo = () => {
 
      
 
-      <div className="folleto text-center mb-5">
+      {/* <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Hanal Pixán</h2>
 
         <p className='TextoHanal'>Hanal Pixán is a Mayan tradition from the Yucatán Peninsula celebrated from October 31st to November 2nd to honor the deceased. The name means "food of the souls" and involves preparing offerings with traditional food and altars to welcome the souls of ancestors, believing they return to visit their families during these days. Each day is dedicated to a different group of deceased: October 31st for children, November 1st for adults, and November 2nd for all deceased in general.</p>
@@ -125,7 +125,7 @@ const Catalogo = () => {
       <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Sabores del Mas Alla</h2>
         <img src={sabores} alt="The Vine and The Ceiba" className="folleto-img rounded shadow" />
-      </div>
+      </div> */}
 
       <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Obra de teatro</h2>
@@ -142,8 +142,22 @@ const Catalogo = () => {
         <img src={LaVidayCeiba} alt="The Vine and The Ceiba" className="folleto-img rounded shadow" />
       </div>
 
+      <h1 className="text-center mb-4 display-5 fw-bold ">
+        Expo Feria Valladolid 2026
+      </h1>
+
+      <div className="row g-4">
+        {imagenes[idioma].map((img, index) => (
+          <div key={index} className="col-6 col-md-3">
+            <div className="card shadow-sm border-0 h-100" onClick={() => abrirImagen(index)}>
+              <img src={img} alt={`catalogo-${index}`} className="card-img-top img-hover" />
+            </div>
+          </div>
+        ))}
+      </div>
+
       {/* Modal de imagen */}
-      {/* {imagenSeleccionada && (
+      {imagenSeleccionada && (
         <div className="modal11" onClick={cerrarImagen}>
           <span className="cerrar">&times;</span>
           <button className="anterior" onClick={anterior}>
@@ -154,7 +168,7 @@ const Catalogo = () => {
             &#10095;
           </button>
         </div>
-      )} */}
+      )}
     </div>
   );
 };

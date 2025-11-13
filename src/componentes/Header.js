@@ -81,7 +81,7 @@ const Header = () => {
                                     <ul className="popup-links">
                                         <li><button onClick={() => navigateTo('/Contacto')}>Contact us</button></li>
                                         <li><button onClick={() => navigateTo('/turismo')}>TOURISM STATISTICS</button></li>
-                                        <li><button onClick={() => navigateTo('/destinos')}>DESTINATION LOCATIONS</button></li>
+                                        {/* <li><button onClick={() => navigateTo('/destinos')}>DESTINATION LOCATIONS</button></li> */}
                                     </ul>
                                     <hr />
                                     {/* <button onClick={() => navigateTo('/Policia')}>Policia</button> */}

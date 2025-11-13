@@ -1,7 +1,7 @@
 /* ===============================
    GALERÍA DE DESTINOS
 =============================== */
-
+/* 
 .destino-galeria {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -43,11 +43,11 @@
   margin: 0;
   font-size: 1.2rem;
 }
-
+ */
 /* ===============================
    MODAL
 =============================== */
-.modal-overlay {
+/* .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -101,11 +101,11 @@
   font-weight: bold;
   font-size: 1.1rem;
 }
-
+ */
 /* ===============================
    BOTONES DEL MODAL
 =============================== */
-.btn-prev,
+/* .btn-prev,
 .btn-next {
   position: absolute;
   top: 50%;
@@ -130,9 +130,9 @@
 
 .btn-prev { left: -10px; }
 .btn-next { right: -10px; }
-
+ */
 /* BOTÓN CERRAR */
-.btn-close {
+/* .btn-close {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -150,10 +150,10 @@
   background: #e00000;
 }
 
-/* ===============================
+ *//* ===============================
    RESPONSIVE
 =============================== */
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .destino-img {
     height: 160px;
   }
@@ -167,3 +167,4 @@
     font-size: 1.6rem;
   }
 }
+ */

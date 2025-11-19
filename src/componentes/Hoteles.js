@@ -223,7 +223,7 @@ const oficinaIcon = new L.Icon({
 
 
           {/* Hoteles */}
-          <div className="accordion-section">
+          {/* <div className="accordion-section">
             <h4 className="titel4" onClick={() => setOpenSection(openSection === 'hoteles' ? null : 'hoteles')}>
               🏨 Hotels <span className={`arrow ${openSection === 'hoteles' ? 'open' : ''}`}>▼</span>
             </h4>
@@ -237,7 +237,7 @@ const oficinaIcon = new L.Icon({
                 ))}
               </div>
             )}
-          </div>
+          </div> */}
 
 
           {/* Sitios */}

@@ -127,7 +127,7 @@ const Catalogo = () => {
         <img src={sabores} alt="The Vine and The Ceiba" className="folleto-img rounded shadow" />
       </div> */}
 
-      <div className="folleto text-center mb-5">
+      {/* <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Obra de teatro</h2>
         <img src={obrateatro} alt="The Vine and The Ceiba" className="folleto-img rounded shadow" />
       </div>
@@ -135,7 +135,7 @@ const Catalogo = () => {
       <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Julieta Venegas</h2>
         <img src={julieta} alt="The Vine and The Ceiba" className="folleto-img rounded shadow" />
-      </div>
+      </div> */}
 
        <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">The Vine and The Ceiba</h2>

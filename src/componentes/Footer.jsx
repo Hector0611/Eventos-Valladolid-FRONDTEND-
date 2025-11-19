@@ -41,7 +41,7 @@ const Footer = () => {
                 <div className="footer-section Titulo">
                     <h3 className='Titulo'>Contact us</h3>
                     <p><FaPhoneAlt /> +52 985 856 25 51  <br /> EXT: 114</p>
-                    <p><FaEnvelope /> visitavalladolitmx@gmail.com</p>
+                    <p><FaEnvelope /> visitavalladolidmx@gmail.com</p>
                     <h3 className='Titulo'>Follow us on:</h3>
                     <div className="social-links Titulo">
                         <a href="https://www.facebook.com/ByVisitValladolidMX/" target="_blank" rel="noopener noreferrer">

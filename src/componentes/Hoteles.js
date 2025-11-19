@@ -57,10 +57,10 @@ const oficinaIcon = new L.Icon({
     id: "oficina_marker",
     type: "Oficina",
     nombre: "Tourist Office ",
-    descripcion: "Atención al visitante, orientación turística, mapas, apoyo al viajero e información cultural.",
+    descripcion: "Visitor services, tourist information, maps, traveler support and cultural information.",
     latitud: 20.68977712995606,
     longitud: -88.20095224099595,
-    localizacion: "Centro de Valladolid, Yucatán",
+    localizacion: "Downtown Valladolid, Yucatán, Mexico ",
     telefono: "+52 985 856 1234",
     horario_abi: "08:00",
     horario_cer: "20:00",
@@ -106,7 +106,7 @@ const oficinaIcon = new L.Icon({
     if (!value.trim()) return setFilteredResults([]);
 
     const hotelMatches = hoteles.filter(h => h.hotel.toLowerCase().includes(value))
-      .map(h => ({ type: 'Hotel', name: h.hotel, data: h }));
+      .map(h => ({ type: 'visit', name: h.hotel, data: h }));
 
     const sitioMatches = sitios.filter(s => s.sitio_arqueologico.toLowerCase().includes(value))
       .map(s => ({ type: 'Sitio', name: s.sitio_arqueologico, data: s }));
@@ -128,7 +128,7 @@ const oficinaIcon = new L.Icon({
     if (!item) return null;
 
     const nombreMostrar =
-      type === 'Hotel' ? item.hotel :
+      type === 'visit' ? item.hotel :
       type === 'Sitio' ? item.sitio_arqueologico :
       type === 'Cenote' ? item.cenote :
       item.nombre;
@@ -222,22 +222,7 @@ const oficinaIcon = new L.Icon({
           </div>
 
 
-          {/* Hoteles */}
-          {/* <div className="accordion-section">
-            <h4 className="titel4" onClick={() => setOpenSection(openSection === 'hoteles' ? null : 'hoteles')}>
-              🏨 Hotels <span className={`arrow ${openSection === 'hoteles' ? 'open' : ''}`}>▼</span>
-            </h4>
-            {openSection === 'hoteles' && (
-              <div className="grid-container scrollable-items">
-                {hoteles.map(h => (
-                  <div key={h.id} onClick={() => setSelectedItem({ type: "Hotel", data: h })} className="grid-item">
-                    <strong>{h.hotel}</strong>
-                    <div className="estrellas">{renderStars(h.estrellas)}</div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div> */}
+          
 
 
           {/* Sitios */}
@@ -268,6 +253,23 @@ const oficinaIcon = new L.Icon({
                   <div key={c.id} onClick={() => setSelectedItem({ type: "Cenote", data: c })} className="grid-item">
                     <strong>{c.cenote}</strong>
                     <div className="estrellas">{renderStars(c.estrellas)}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Hoteles */}
+          <div className="accordion-section">
+            <h4 className="titel4" onClick={() => setOpenSection(openSection === 'hoteles' ? null : 'hoteles')}>
+              🏨 visit places <span className={`arrow ${openSection === 'hoteles' ? 'open' : ''}`}>▼</span>
+            </h4>
+            {openSection === 'hoteles' && (
+              <div className="grid-container scrollable-items">
+                {hoteles.map(h => (
+                  <div key={h.id} onClick={() => setSelectedItem({ type: "Hotel", data: h })} className="grid-item">
+                    <strong>{h.hotel}</strong>
+                    <div className="estrellas">{renderStars(h.estrellas)}</div>
                   </div>
                 ))}
               </div>

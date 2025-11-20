@@ -59,10 +59,6 @@ const Contactanos = () => {
             <button type="submit">Send message</button>
           </form>
 
-         
-
-         
-
           {/* <button className="back-btn" onClick={() => navigate("/")}>Volver al inicio</button> */}
         </div>
 
@@ -77,8 +73,9 @@ const Contactanos = () => {
           </div>
 
            <div className="contact-info">
-            <p><FaPhoneAlt /> +52 --- --- -- --</p>
-            <p><FaEnvelope /> ------@gmail.com</p>
+            <p><FaPhoneAlt /> +52 985 856 25 51</p>
+            <p> Ext:114 </p>
+            <p><FaEnvelope />visitavalladolidmx@gmail.com</p>
           </div>
           <h3>Where are we?</h3>
           <iframe

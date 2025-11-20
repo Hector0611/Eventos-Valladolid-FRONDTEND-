@@ -360,11 +360,10 @@ const ProgramarEvents = () => {
               )
             
             )
-            
             )
             }
             
-             {/* Aqui eventos diarios que se repiten en todos los eventos */}
+             {/* Aqui eventos diarios que se repiten en todos los eventos */} 
             
                     <div className="evento-info1">
                 <h1 className='titel11'>Daily Events</h1>
@@ -383,7 +382,7 @@ const ProgramarEvents = () => {
                         onClick={() =>
                           window.open(
                             `https://www.google.com/maps/dir/?api=1&destination=20.689720,-88.201669`,
-                            "_blank"
+                            "-_blank"
                           )
                         }
                       >

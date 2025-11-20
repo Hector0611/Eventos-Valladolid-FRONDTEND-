@@ -57,7 +57,7 @@ const oficinaIcon = new L.Icon({
     id: "oficina_marker",
     type: "Oficina",
     nombre: "Tourist Office ",
-    descripcion: "Visitor services, tourist information, maps, traveler support and cultural information.",
+    descripcion: "The Tourism Office provides essential support for travelers, offering maps, local attraction information, cultural details, and personalized guidance. Staff members help visitors plan activities, learn about the region’s history, and navigate Valladolid and its surroundings. It is a reliable source for tourist information, visitor services, and general traveler assistance.",
     latitud: 20.68977712995606,
     longitud: -88.20095224099595,
     localizacion: "Downtown Valladolid, Yucatán, Mexico ",

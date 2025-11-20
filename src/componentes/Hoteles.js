@@ -134,39 +134,40 @@ const oficinaIcon = new L.Icon({
       item.nombre;
 
     return (
-      <div className={`hotel-info open ${isMobile ? 'mobile-info' : ''}`}>
-        {!isMobile && <button onClick={() => setSelectedItem(null)} className="close-button">✖</button>}
+  <div className="panel-content">
+    {!isMobile && <button onClick={() => setSelectedItem(null)} className="close-button">✖</button>}
 
-        <h4>{nombreMostrar}</h4>
+    <h4>{nombreMostrar}</h4>
 
-        <p className='texto_item'>
-          {item.descripcion?.slice ? item.descripcion.slice(0, 300) + "..." : item.descripcion}
-        </p>
+    <p className='texto_item'>
+      {item.descripcion?.slice ? item.descripcion.slice(0, 300) + "..." : item.descripcion}
+    </p>
 
-        <p>📍 {item.localizacion}</p>
+    <p>📍 {item.localizacion}</p>
 
-         {item.web_hotel || item.web_sitio || item.web_cenote ? (
-          <p>🌐 <a href={item.web_hotel || item.web_sitio || item.web_cenote} target="_blank" rel="noopener noreferrer">{item.web_hotel || item.web_sitio || item.web_cenote}</a></p>
-        ) : null}
+    {item.web_hotel || item.web_sitio || item.web_cenote ? (
+      <p>🌐 <a href={item.web_hotel || item.web_sitio || item.web_cenote} target="_blank" rel="noopener noreferrer">{item.web_hotel || item.web_sitio || item.web_cenote}</a></p>
+    ) : null}
 
-        {item.telefono && <p>📞 {item.telefono}</p>}
+    {item.telefono && <p>📞 {item.telefono}</p>}
 
-        {item.horario_abi && (
-          <p>🕒 {item.horario_abi} - {item.horario_cer}</p>
-        )}
+    {item.horario_abi && (
+      <p>🕒 {item.horario_abi} - {item.horario_cer}</p>
+    )}
 
-        <div className="botones-hotel">
-          <a
-            href={`https://www.google.com/maps/dir/?api=1&destination=${item.latitud},${item.longitud}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="info-button"
-          >
-            <p>Indications</p>
-          </a>
-        </div>
-      </div>
-    );
+    <div className="botones-hotel">
+      <a
+        href={`https://www.google.com/maps/dir/?api=1&destination=${item.latitud},${item.longitud}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="info-button"
+      >
+        <p>Indications</p>
+      </a>
+    </div>
+  </div>
+);
+
     
   };
 
@@ -391,13 +392,18 @@ const oficinaIcon = new L.Icon({
 
 
           {/* Panel info */}
+          {/* PANEL DE INFORMACIÓN */}
           {isMobile ? (
             <div className="mobile-info-container">
               {selectedItem && renderInfoPanel(selectedItem.data, selectedItem.type)}
             </div>
           ) : (
-            selectedItem && <div className="div_on">{renderInfoPanel(selectedItem.data, selectedItem.type)}</div>
+            <div className={`side-panel ${selectedItem ? 'open' : ''}`}>
+              <button className="close-button" onClick={() => setSelectedItem(null)}>✖</button>
+              {selectedItem && renderInfoPanel(selectedItem.data, selectedItem.type)}
+            </div>
           )}
+
 
         </div>
       </div>

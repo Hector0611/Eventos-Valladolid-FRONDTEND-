@@ -403,7 +403,7 @@ const ProgramarEvents = () => {
                     </div>
 
                     {/* Columna derecha: botón de hoteles */}
-                    <div className="hoteles-section11">
+                    {/* <div className="hoteles-section11">
                       <h3>¿Buscas hoteles?</h3>
                       <button
                         className="bottonEvent1"
@@ -411,7 +411,7 @@ const ProgramarEvents = () => {
                       >
                         📄 Ver Hoteles
                       </button>
-                    </div>
+                    </div> */}
                   </div>
              
               </div>

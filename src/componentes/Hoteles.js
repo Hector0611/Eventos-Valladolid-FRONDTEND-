@@ -223,9 +223,6 @@ const oficinaIcon = new L.Icon({
           </div>
 
 
-          
-
-
           {/* Sitios */}
           <div className="accordion-section">
             <h4 className="titel4" onClick={() => setOpenSection(openSection === 'sitios' ? null : 'sitios')}>

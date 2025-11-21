@@ -23,24 +23,28 @@ import logo77 from './Imagenes/ImgTempo/7.jpg';
 import logo88 from './Imagenes/ImgTempo/8.8.jpg'; */
 
 /* Feria */
-import feria1 from './Imagenes/ImgTempo/Feria3.jpg';
-import feria2 from './Imagenes/ImgTempo/Feria8.jpg';
-import feria3 from './Imagenes/ImgTempo/Feria2.jpg';
-import feria4 from './Imagenes/ImgTempo/Feria5.jpg';
-import feria5 from './Imagenes/ImgTempo/Feria9.jpg';
-import feria6 from './Imagenes/ImgTempo/Feria4.jpg';
-import feria7 from './Imagenes/ImgTempo/Feria1.jpg';
-import feria8 from './Imagenes/ImgTempo/Feria6.jpg';
+import feria1 from './Imagenes/ImgTempo/Feria3.jpg';/* 24 de enero */
+import feria2 from './Imagenes/ImgTempo/Feria8.jpg';/* 25 de enero */
+import feria3 from './Imagenes/ImgTempo/Feria2.jpg';/* 31 de enero */
+import feria4 from './Imagenes/ImgTempo/Feria5.jpg';/* 1 de febrero */
+import feria5 from './Imagenes/ImgTempo/Feria9.jpg';/* 1 de febrero */
+import feria6 from './Imagenes/ImgTempo/Feria4.jpg';/* 2 de febrero */
+import feria7 from './Imagenes/ImgTempo/Feria1.jpg';/* 6 de febrero */
+import feria8 from './Imagenes/ImgTempo/Feria6.jpg';/* 7 de febrero */
 
 /* Folletos */
+/* ya pasaron */
 import logoDiaMuertos from './Imagenes/ImgTempo/DiaMuertos.jpg';
 import logoDiaMuertosingles from './Imagenes/ImgTempo/DiaMuertosIngles.jpg';
-import LaVidayCeiba from './Imagenes/ImgTempo/LaVidayCeiba.jpeg';
 import JuanBalam from './Imagenes/ImgTempo/JuanBalam.jpeg';
 import Fiesta1 from './Imagenes/ImgTempo/LaFiestaPueblo1.jpeg';
 import julieta from './Imagenes/ImgTempo/Julieta.jpg';
 import sabores from './Imagenes/ImgTempo/EventosNoviembre.jpg';
 import obrateatro from './Imagenes/ImgTempo/ObraTeatro.jpeg';
+
+
+/* no an pasado */
+import LaVidayCeiba from './Imagenes/ImgTempo/LaVidayCeiba.jpeg'; /* 29 de Noviembre */
 
 const Catalogo = () => {
   const [idioma, setIdioma] = useState("es");
@@ -75,6 +79,9 @@ const Catalogo = () => {
 
   return (
     <div className="catalogo-container container py-5">
+      <br />
+
+      <h1 className='folletos'>BROCHURES</h1>
       
 
       {/* <div className="text-center mb-5">
@@ -97,7 +104,7 @@ const Catalogo = () => {
       
       
 
-      <hr className="my-5" />
+      <hr/>
 
       {/* Secciones Folletos */}
       {/* <div className="folleto text-center mb-5">
@@ -138,13 +145,15 @@ const Catalogo = () => {
       </div> */}
 
        <div className="folleto text-center mb-5">
-        <h2 className="fw-bold mb-3">The Vine and The Ceiba</h2>
+        <h2 className="text-center mb-4 display-5 fw-bold ">The Vine and The Ceiba</h2>
         <img src={LaVidayCeiba} alt="The Vine and The Ceiba" className="folleto-img rounded shadow" />
       </div>
 
       <h1 className="text-center mb-4 display-5 fw-bold ">
         Expo Feria Valladolid 2026
       </h1> 
+
+      
 
       <div className="row g-4">
         {imagenes[idioma].map((img, index) => (
@@ -155,6 +164,16 @@ const Catalogo = () => {
           </div>
         ))}
       </div>
+<br />
+      <div className="map-placeholder1">
+                <iframe
+                  title="Ubicación de la Policía Municipal de Valladolid"
+                  src="https://www.google.com/maps?q=20.67112532591333, -88.2286181270485&hl=en&z=13&output=embed"
+                  allowFullScreen=""
+                  loading="lazy"
+                ></iframe>
+      </div>
+      <hr />
 
       {/* Modal de imagen */}
       {imagenSeleccionada && (
@@ -163,7 +182,8 @@ const Catalogo = () => {
           <button className="anterior" onClick={anterior}>
             &#10094;
           </button>
-          <img className="modal-content1" src={imagenSeleccionada} alt="zoom" />
+          <img className="modal-content11" src={imagenSeleccionada} alt="zoom" />
+          
           <button className="siguiente" onClick={siguiente}>
             &#10095;
           </button>

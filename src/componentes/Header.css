@@ -1,4 +1,4 @@
-/* ========================
+  /* ========================
    Estilos base del Header
    ======================== */
 .header {
@@ -204,12 +204,26 @@ body {
 .popup-content {
   background: transparent;
   text-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
 }
 .popup-links button:hover,
 .popup-contacts a:hover {
-  color: #0056b3;
+  color: #f3f3f3;
+  text-shadow: 0 0 10px #000000;
 }
 
+.h2more{
+  color: #ffffff;
+  text-shadow: 0 0 20px #000000;
+}
+
+.textocontent{
+  color: #000000;
+  font-weight: 700;
+  font-size: 1.2em;
+  text-shadow: 0cm 0cm 0.2cm #ffffff;
+}
 /* =====================
    Sección botón menú
    ===================== */

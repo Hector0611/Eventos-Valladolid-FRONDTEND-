@@ -67,7 +67,7 @@ const Header = () => {
                     <button className="botton" onClick={() => navigateTo('/LugaresTuristicos')}>DISCOVER</button>
                     <button className="botton" onClick={() => navigateTo('/estadisticas')}>RESOURCES</button>
                     <button className="botton" onClick={() => navigateTo('/mapa')}>MAPS</button>
-                    
+                    {/* /puebloscercanos */}
                     <div
                         className="popup-wrapper"
                         onMouseEnter={() => setShowPopup(true)}
@@ -77,16 +77,17 @@ const Header = () => {
                         {showPopup && (
                             <div className="popup-overlay1">
                                 <div className="popup-content">
-                                    <h2>More Information</h2>
+                                    <h2 className='h2more'>More Information</h2>
                                     <ul className="popup-links">
-                                        <li><button onClick={() => navigateTo('/Contacto')}>Contact us</button></li>
-                                        <li><button onClick={() => navigateTo('/turismo')}>TOURISM STATISTICS</button></li>
+                                        <li><button className='textocontent' onClick={() => navigateTo('/Contacto')}>CONTACT US</button></li>
+                                        <li><button className='textocontent' onClick={() => navigateTo('/estadisticas')}>RESOURCES</button></li>
+                                        <li><button className='textocontent' onClick={() => navigateTo('/turismo')}>TOURISM STATISTICS</button></li>
                                         {/* <li><button onClick={() => navigateTo('/destinos')}>DESTINATION LOCATIONS</button></li> */}
                                     </ul>
                                     <hr />
                                     {/* <button onClick={() => navigateTo('/Policia')}>Policia</button> */}
                                     <hr />
-                                    <h3>Follow us on</h3>
+                                    <h3 className='h2more'>Follow us on</h3>
                                     <br />
                                     <center>
                                         <div className='links_F-I-Y'>

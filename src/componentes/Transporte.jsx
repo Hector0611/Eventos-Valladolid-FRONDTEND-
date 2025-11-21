@@ -637,6 +637,18 @@ const taxisES = [
         <ul className="NumTaxiUl">{renderLista(taxisEN)}</ul>
       </div>
     </div>
+     {/* <div>
+        <h1>Taxis para Cenotes </h1>
+        <p> </p>
+        <div className="map-placeholder2">
+                <iframe
+                  title="Ubicación de la Policía Municipal de Valladolid"
+                  src="https://www.google.com/maps?q=20.70591095612285, -88.1970215526098&hl=en&z=15&output=embed"
+                  allowFullScreen=""
+                  loading="lazy"
+                ></iframe>
+              </div>  
+      </div> */}
     </div>
   );
 }

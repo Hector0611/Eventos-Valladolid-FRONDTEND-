@@ -582,6 +582,25 @@ body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helv
   background: #1ebe57;
 }
 
+.map-placeholder2{  
+  width: 100%;
+  height: 300px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-size: 1.2em;
+}
+
+.map-placeholder2 iframe{
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
 /* Responsive botones en columnas */
 @media (max-width: 500px) {
   .taxi-buttons {

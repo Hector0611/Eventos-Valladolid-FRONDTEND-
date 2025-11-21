@@ -1,0 +1,133 @@
+/* ------------------------------- */
+/* Diseño general del contenedor   */
+/* ------------------------------- */
+
+.pueblos-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Título */
+.pueblos-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+/* ------------------------------- */
+/* Tarjetas de pueblos             */
+/* ------------------------------- */
+
+.pueblo-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+  border: 1px solid #e3e3e3;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pueblo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+  border-color: #c9c9c9;
+}
+
+.pueblo-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 8px;
+}
+
+.pueblo-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Grid responsivo */
+.pueblos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+/* ------------------------------- */
+/* Panel del pueblo seleccionado   */
+/* ------------------------------- */
+
+.pueblo-info {
+  margin-top: 30px;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  border: 1px solid #e0e0e0;
+}
+
+.pueblo-info h3 {
+  font-size: 26px;
+  color: #2c3e50;
+  margin-bottom: 12px;
+}
+
+.pueblo-info p {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+/* ------------------------------- */
+/* Mapa                             */
+/* ------------------------------- */
+
+.leaflet-container {
+  width: 100%;
+  height: 330px;
+  border-radius: 14px;
+  margin-top: 12px;
+  border: 2px solid #dfe6e9;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+  overflow: hidden;
+}
+
+/* ------------------------------- */
+/* Botón de cerrar selección        */
+/* ------------------------------- */
+
+.pueblo-close-btn {
+  background: #e74c3c;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  transition: background 0.25s ease;
+}
+
+.pueblo-close-btn:hover {
+  background: #c0392b;
+}
+
+/* ------------------------------- */
+/* Animación                       */
+/* ------------------------------- */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.pueblo-info {
+  animation: fadeIn 0.4s ease-out;
+}

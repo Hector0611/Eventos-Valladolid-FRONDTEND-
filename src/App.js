@@ -28,6 +28,7 @@ import Transporte from './componentes/Transporte';
 import AnuncioEmergente from './componentes/AnuncioEmergente';
 import Turismo from './componentes/Turismo';
 import Destinos from './componentes/Destinos';
+import PueblosCercanos from './componentes/PueblosCercanos';
 
 const App = () => {
 
@@ -265,6 +266,18 @@ const App = () => {
             <Footer />
                   </>
                 } />
+              <Route path="/puebloscercanos" element={
+                <>
+                  <Header2 />
+                  <Header />
+                  <PueblosCercanos />
+
+                  {/* Footer global */}
+          <ProximoEvento />
+         
+          <Footer />
+                </>
+              } />  
             </Routes>
           </center>
 

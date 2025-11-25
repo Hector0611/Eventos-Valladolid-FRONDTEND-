@@ -1,12 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import './Historia.css';
 
+import Logo1 from './Imagenes/ImagenesDescobere/Valladolid.png';
+import Logo2 from './Imagenes/ImagenesDescobere/Cenote3.jpg';
+import Logo3 from './Imagenes/ImagenesDescobere/Tradiciones.jpg';
+
 const Historia = () => {
   const [historia, setHistoria] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedItem, setSelectedItem] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [fade, setFade] = useState(false);
+  const imagenes = [Logo1, Logo2, Logo3];
+  const [index, setIndex] = useState(0);
+
+  // Cambia automáticamente cada 4 segundos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % imagenes.length);
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleLeerMas = (item) => {
     setSelectedItem(item);
@@ -45,10 +60,27 @@ const Historia = () => {
 
   return (
     <div className="historia-container">
-      <div className='Separacion'> 
+<div className='Separacion'></div>
+<h1 className="titel111">Meet Valladolid, Yucatán, Mexico.</h1>
+      <div 
+  className="slider-full-container"
+  onMouseMove={(e) => {
+    const x = (e.clientX / window.innerWidth - 0.75) * 40;
+    const y = (e.clientY / window.innerHeight - 0.75) * 40;
+    e.currentTarget.style.transform = `translate(${x}px, ${y}px)`;
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = "translate(0px, 0px)";
+  }}
+>
+  <img
+    src={imagenes[index]}
+    alt="Slider Valladolid"
+    className="slider-full-img"
+  />
 
-              </div>
-        <h1 className="titel111">Meet Valladolid, Yucatán, Mexico.</h1>
+</div>
+    <hr />
         <br />
         <div className="video-container">
           <iframe

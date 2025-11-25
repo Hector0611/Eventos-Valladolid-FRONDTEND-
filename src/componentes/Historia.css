@@ -263,6 +263,26 @@
   line-height: 1.7;
 }
 
+/* Contenedor del slider */
+.slider-full-container {
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+  transition: transform 0.15s linear;
+}
+
+/* Imagen que hace el efecto */
+.slider-full-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none; /* evita que la imagen bloquee el mouse */
+  user-select: none;
+}
+
+
 /* 🧩 ANIMACIONES EXTRA */
 @keyframes slideUp {
   from { transform: translateY(50px); opacity: 0; }

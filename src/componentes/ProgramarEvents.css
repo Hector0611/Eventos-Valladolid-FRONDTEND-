@@ -9,19 +9,19 @@
 }
 
 .calendario1{
-    margin: 5px;
+    margin: 0px;
     background-color: transparent;
     text-align: center;
     border-radius: 0px;
-    padding: 0px;
+    padding: 20px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 1000;
 }
 
 .titutulo{
-  color: #000000; /* texto blanco */
-  background-color: rgba(255, 255, 255, 0.832); /* fondo semitransparente oscuro */
-  padding: 10px 20px;
+  color: #ffffff; /* texto blanco */
+  background-color: rgba(0, 0, 0, 0.832); /* fondo semitransparente oscuro */
+  padding: 20px 10px;
   border-radius: 10px;
   font-family: 'Montserrat', sans-serif; /* tipografía clara y moderna */
   font-weight: 900;
@@ -575,9 +575,14 @@
 }
 
 .color_fondo{
-  background-color: rgba(255, 255, 255, 0.904);
-  border-radius: 15px;
-  box-shadow: 0 14px 18px rgba(0, 0, 0, 0.1);
+  
+ /*  background-image: url("/src//componentes/Imagenes/FondoCalendario.png");
+ background-repeat: no-repeat;
+  background-size: 100% 100%; /* Se ajusta al ancho, repitiéndose hacia abajo */ 
+  padding: 20px;
+  background-color: rgba(254, 254, 254, 0.641) ;
+  border-radius: 35px;
+  box-shadow: 0 34px 28px rgba(255, 0, 0, 0.852);
 }
 
 .NoesNada{

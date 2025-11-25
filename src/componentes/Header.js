@@ -45,7 +45,6 @@ const Header = () => {
                 ticking = true;
             }
         };
-
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -65,8 +64,9 @@ const Header = () => {
 
                 <nav className="header-nav1">
                     <button className="botton" onClick={() => navigateTo('/LugaresTuristicos')}>DISCOVER</button>
-                    <button className="botton" onClick={() => navigateTo('/estadisticas')}>RESOURCES</button>
+                   {/*  <button className="botton" onClick={() => navigateTo('/estadisticas')}>RESOURCES</button> */}
                     <button className="botton" onClick={() => navigateTo('/mapa')}>MAPS</button>
+                    <button className="botton" onClick={() => navigateTo('/puebloscercanos ')}>TOWNS</button>
                     {/* /puebloscercanos */}
                     <div
                         className="popup-wrapper"

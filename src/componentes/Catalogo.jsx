@@ -37,13 +37,15 @@ import feria8 from './Imagenes/ImgTempo/Feria6.jpg';/* 7 de febrero */
 import logoDiaMuertos from './Imagenes/ImgTempo/DiaMuertos.jpg';
 import logoDiaMuertosingles from './Imagenes/ImgTempo/DiaMuertosIngles.jpg';
 import JuanBalam from './Imagenes/ImgTempo/JuanBalam.jpeg';
-import Fiesta1 from './Imagenes/ImgTempo/LaFiestaPueblo1.jpeg';
+
 import julieta from './Imagenes/ImgTempo/Julieta.jpg';
 import sabores from './Imagenes/ImgTempo/EventosNoviembre.jpg';
 import obrateatro from './Imagenes/ImgTempo/ObraTeatro.jpeg';
 
 
 /* no an pasado */
+import Fiesta1 from './Imagenes/ImgTempo/LaFiestaPueblo1.jpeg'; /* 28 de Noviembre */
+import Fiesta2 from './Imagenes/ImgTempo/LaFiestaPueblo2.jpeg'; /* 28 de Noviembre */
 import LaVidayCeiba from './Imagenes/ImgTempo/LaVidayCeiba.jpeg'; /* 29 de Noviembre */
 
 const Catalogo = () => {
@@ -112,10 +114,11 @@ const Catalogo = () => {
         <img src={JuanBalam} alt="Juan Balam" className="folleto-img rounded shadow" />
       </div> */}
 
-      {/* <div className="folleto text-center mb-5">
+      <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">The Festival of My Town</h2>
         <img src={Fiesta1} alt="The Festival of My Town" className="folleto-img rounded shadow" />
-      </div> */}
+        <img src={Fiesta2} alt="The Festival of My Town" className="folleto-img rounded shadow" />
+      </div>
 
      
 
@@ -146,33 +149,52 @@ const Catalogo = () => {
 
        <div className="folleto text-center mb-5">
         <h2 className="text-center mb-4 display-5 fw-bold ">The Vine and The Ceiba</h2>
-        <img src={LaVidayCeiba} alt="The Vine and The Ceiba" className="folleto-img rounded shadow" />
+        <div
+          style={{ cursor: "pointer" }}
+        >
+          <a
+            href="https://www.lavidylaceiba.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}  // ← IMPORTANTE
+          >
+            <img src={LaVidayCeiba} alt="The Vine and The Ceiba" className="folleto-img rounded shadow" />
+          </a>
+        </div>
+
+        
       </div>
 
-      <h1 className="text-center mb-4 display-5 fw-bold ">
-        Expo Feria Valladolid 2026
-      </h1> 
+      <h1 className="text-center mb-4 display-5 fw-bold">
+  Expo Feria Valladolid 2026
+</h1> 
 
-      
+<div className="row g-4">
+  {imagenes[idioma].map((img, index) => (
+    <div key={index} className="col-6 col-md-3">
+      <div className="card shadow-sm border-0 h-100" onClick={() => abrirImagen(index)}>
+        <img src={img} alt={`catalogo-${index}`} className="card-img-top img-hover" />
+      </div>
+    </div>
+  ))}
+</div>
+<hr />
 
-      <div className="row g-4">
-        {imagenes[idioma].map((img, index) => (
-          <div key={index} className="col-6 col-md-3">
-            <div className="card shadow-sm border-0 h-100" onClick={() => abrirImagen(index)}>
-              <img src={img} alt={`catalogo-${index}`} className="card-img-top img-hover" />
-            </div>
-          </div>
-        ))}
-      </div>
-<br />
-      <div className="map-placeholder1">
-                <iframe
-                  title="Ubicación de la Policía Municipal de Valladolid"
-                  src="https://www.google.com/maps?q=20.67112532591333, -88.2286181270485&hl=en&z=13&output=embed"
-                  allowFullScreen=""
-                  loading="lazy"
-                ></iframe>
-      </div>
+<div className="map">
+  <h2 className="map-title">
+    🗺️ Location of the Valladolid Expo Feria 2026
+  </h2>
+
+  <div className="map-placeholder1">
+    <iframe
+      title="Ubicación Expo Feria Valladolid"
+      src="https://www.google.com/maps?q=20.67112532591333,-88.2286181270485&hl=en&z=13&output=embed"
+      allowFullScreen=""
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
+
       <hr />
 
       {/* Modal de imagen */}

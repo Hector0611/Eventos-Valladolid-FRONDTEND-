@@ -6,10 +6,11 @@ import L from 'leaflet';
 import './Hoteles.css';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 
-import logo3 from './Imagenes/maps/Hospedaje.png';
+import logo3 from './Imagenes/maps/Museo.png';
 import logo5 from './Imagenes/maps/Arqueologicas.png';
 import logoCenote from './Imagenes/maps/Cenote.png';
 import oficina from './Imagenes/maps/OFICINA_DE_TURISMO.png';
+
 
 
 // ====================== ICONOS ============================
@@ -281,7 +282,7 @@ const oficinaIcon = new L.Icon({
         <div className="map-wrapper">
           <MapContainer
             center={[20.69018, -88.201223]}
-            zoom={9}
+            zoom={11}
             style={{ height: isMobile ? '400px' : '600px', width: '100%' }}
           >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />

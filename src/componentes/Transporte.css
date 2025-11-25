@@ -1,6 +1,6 @@
 /* Transporte.css - Estilos modernos y responsivos */
 :root{
-  --bg:#f7f9fb75;
+  --bg:#f7f9fb;
   --card:#ffffff;
   --accent:#2d9cdb;
   --muted:#6b7280;
@@ -18,6 +18,7 @@ body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helv
   padding:18px;
   background:var(--bg);
   border-radius:12px;
+  background-color: rgba(255, 255, 255, 0.786);
   box-shadow: 0 6px 20px rgba(30,41,59,0.06);
 }
 
@@ -584,7 +585,7 @@ body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helv
 
 .map-placeholder2{  
   width: 100%;
-  height: 300px;
+  height: 350px;
   background: #e2e8f0;
   border-radius: 10px;
   display: flex;
@@ -608,5 +609,144 @@ body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helv
   }
 }
 
+/* --- PANEL VERTICAL FIJO (siempre al centro de la pantalla) --- */
+.panel-vertical {
+  position: fixed;     /* <-- CAMBIO IMPORTANTE */
+  left: 0;
+  top: 50%;            /* <-- SIEMPRE EN EL MEDIO */
+  transform: translateY(-50%);
+  width: 60px; 
+  background: #2c3e50;
+  border-radius: 0 10px 10px 0;
+  padding: 5px 0;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  cursor: pointer;
+  z-index: 9999;
+}
 
 
+/* AL PASAR EL MOUSE SE ABRE */
+.panel-vertical:hover {
+  width: 360px;
+}
+
+/* TEXTO VERTICAL (panel cerrado) */
+.texto-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.MapsCordenadas {
+  margin-top: 0px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  background: linear-gradient(135deg, #0056b9, #003f8c);
+  padding: 12px 14px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.25);
+  transition: 
+    background 0.35s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  max-width: 250px;
+}
+
+.MapsCordenadas:hover {
+  background: linear-gradient(135deg, #00159c, #0030a8);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+/* --- TEXTO NORMAL CUANDO EL PANEL SE ABRE --- */
+.panel-vertical:hover .texto-vertical {
+  writing-mode: horizontal-tb;
+  transform: rotate(0deg);
+  padding-left: 15px;
+  padding-top: 5px;
+  font-size: 30px;
+}
+
+/* CONTENIDO QUE APARECE */
+.contenido-hover {
+  display: none;
+  padding: 10px;
+  color: white;
+}
+
+.panel-vertical:hover .contenido-hover {
+  display: block;
+}
+
+/* ITEMS */
+.item-cenote {
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  font-size: 14px;
+}
+
+.item-cenote strong {
+  color: #f1c40f;
+  font-size: 15px;
+}
+
+.item-cenote p {
+  margin: 4px 0 0 0;
+}
+
+
+/* --- MOBILE VERSION --- */
+@media (max-width: 768px) {
+
+  /* PANEL EN MOBILE: ABAJO IZQUIERDA */
+  .panel-vertical {
+    width: 8%;
+  }
+
+  /* CUANDO SE TOCA (simulación hover para mobile usando active) */
+  .panel-vertical:active {
+    width: 85%;
+    height: auto;
+    border-radius: 15px;
+    padding: 12px;
+  }
+
+  /* AL ABRIRSE, MUESTRA CONTENIDO */
+  .panel-vertical:active .contenido-hover {
+    display: block;
+    margin-top: 10px;
+  }
+
+  /* CONTENIDO OCULTO POR DEFECTO */
+  .contenido-hover {
+    display: none;
+  }
+
+  /* ITEMS MÁS COMPACTOS */
+  .item-cenote {
+    font-size: 13px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+  }
+
+  .item-cenote strong {
+    font-size: 14px;
+  }
+
+  .MapsCordenadas {
+    max-width: 95%;
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+}

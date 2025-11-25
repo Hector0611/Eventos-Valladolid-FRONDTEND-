@@ -28,6 +28,40 @@ export default function Transporte() {
   []
 );
 
+// INFO DE CENOTES
+const cenotesInfo = [
+  {
+    nombre: "Cenote Oxman and Zací",
+    detalle: "Any taxi in Valladolid can take you. Approximate fare: 40-60 MXN",
+    coords: null, 
+  },
+
+  {
+    nombre: "ADO bus zone for Chichen Itza and Cenote Ik Kil",
+    coords: [20.69084499529565, -88.20476455875774],
+    detalle: "$",
+  },
+
+  {
+    nombre: "Taxi Zone for the X'kekén and Samula Cenotes 'Chichimila'",
+    coords: [20.69026692508492, -88.2036340390216],
+    detalle: "$",
+  },
+  
+  {
+    nombre: "Taxi area for Cenote Suytun 'Chemax'",
+    coords: [20.689499053312982, -88.19791982658512],
+    detalle: "$",
+  },
+  
+  {
+    nombre: "Taxi area for Ek Balam and Cenotes Hubiku, Xcanché and Chinkankan 'Temozón'",
+    coords: [20.691873645506956, -88.20296783003911],
+    detalle: "$",
+  },
+];
+
+
 
   // BFS para distancia entre cuadrantes (n saltos)
   function distanciaCuadrantes(origenN, destinoN) {
@@ -464,6 +498,33 @@ const taxisES = [
       <div className="Separacion">
       
             </div>
+
+             {/* PANEL VERTICAL PARA CENOTES */}
+          <div className="panel-vertical">
+            <div className="texto-vertical">Transportation</div>
+
+            <div className="contenido-hover">
+              {cenotesInfo.map((c, index) => (
+                <div key={index} className="item-cenote">
+                  <strong>{c.nombre}</strong>
+                  <p>{c.detalle}</p>
+                <br />
+                  {c.coords && (
+                    <a
+                    /* https://www.google.com/maps/dir/?api=1&destination=${c.coords[0]},${c.coords[1]} */
+                      href={`https://www.google.com/maps/dir/?api=1&destination=${c.coords[0]},${c.coords[1]}`}  
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="MapsCordenadas"
+                    >
+                      📍 View on Google Maps
+                    </a>
+                  )}
+                  <br />
+                </div>
+              ))}
+            </div>
+          </div>
       <h1 className="title">Transportation (TAXI) — Valladolid Quadrants</h1>
 
       <div className="top-row">
@@ -519,6 +580,8 @@ const taxisES = [
             {infoMsg && <div className="info-msg">{infoMsg}</div>}
           </div>
         </div>
+        
+       
 
         <div className="map-panel">
           <MapContainer center={[20.689, -88.201]} zoom={14} style={{ height: "520px", width: "100%" }}>
@@ -637,18 +700,34 @@ const taxisES = [
         <ul className="NumTaxiUl">{renderLista(taxisEN)}</ul>
       </div>
     </div>
-     {/* <div>
-        <h1>Taxis para Cenotes </h1>
-        <p> </p>
-        <div className="map-placeholder2">
-                <iframe
-                  title="Ubicación de la Policía Municipal de Valladolid"
-                  src="https://www.google.com/maps?q=20.70591095612285, -88.1970215526098&hl=en&z=15&output=embed"
-                  allowFullScreen=""
-                  loading="lazy"
-                ></iframe>
-              </div>  
-      </div> */}
+     <div>
+      {/* Nuevo para cenotes Taxis */}
+        {/* Panel Lateral de Cenotes */}
+          {/* <div className="panel-info">
+            <h3>Cenotes y cómo llegar</h3>
+
+            {cenotesInfo.map((c, i) => (
+              <div key={i} className="info-item">
+                <h4>{c.nombre}</h4>
+                <p>{c.detalle}</p>
+
+                {c.coords ? (
+                  <a
+                    className="btn-ir"
+                    href={`https://www.google.com/maps/dir/?api=1&destination=${c.coords[0]},${c.coords[1]}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Indicaciones
+                  </a>
+                ) : (
+                  <span className="no-coords"></span>
+                )}
+              </div>
+            ))}
+          </div> */}
+
+      </div>
     </div>
   );
 }

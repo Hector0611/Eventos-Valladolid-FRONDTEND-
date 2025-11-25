@@ -146,7 +146,7 @@ export default function Policia() {
               <div className="map-placeholder">
                 <iframe
                   title="Ubicación de la Policía Municipal de Valladolid"
-                  src="https://www.google.com/maps?q=20.70591095612285, -88.1970215526098&hl=en&z=15&output=embed"
+                  src="https://www.google.com/maps?q=20.70591095612285,-88.1970215526098&hl=en&z=15&output=embed"
                   allowFullScreen=""
                   loading="lazy"
                 ></iframe>

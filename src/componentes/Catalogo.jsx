@@ -23,6 +23,8 @@ import logo77 from './Imagenes/ImgTempo/7.jpg';
 import logo88 from './Imagenes/ImgTempo/8.8.jpg'; */
 
 /* Feria */
+import feria01 from './Imagenes/ImgTempo/Feria0.1.jpeg';/* 11 de enero */
+import feria0 from './Imagenes/ImgTempo/Feria0.jpeg';/* 23 de enero */
 import feria1 from './Imagenes/ImgTempo/Feria3.jpg';/* 24 de enero */
 import feria2 from './Imagenes/ImgTempo/Feria8.jpg';/* 25 de enero */
 import feria3 from './Imagenes/ImgTempo/Feria2.jpg';/* 31 de enero */
@@ -54,7 +56,7 @@ const Catalogo = () => {
   const [indice, setIndice] = useState(0);
 
   const imagenes = {
-    es: [feria1, feria2, feria3, feria4, feria5, feria6, feria7, feria8],
+    es: [feria01,feria0,feria1, feria2, feria3, feria4, feria5, feria6, feria7, feria8],
     
   };
 

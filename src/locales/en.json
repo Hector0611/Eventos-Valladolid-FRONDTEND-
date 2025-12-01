@@ -1,0 +1,16 @@
+{
+  "header": {
+    "discover": "DISCOVER",
+    "maps": "MAPS",
+    "towns": "TOWNS",
+    "more": "MORE",
+    "moreInfo": "MORE INFORMATION",
+    "contact": "CONTACT US",
+    "resources": "RESOURCES",
+    "stats": "TOURISM STATISTICS",
+    "follow": "FOLLOW US ON",
+    "transport":"TRANSPORT",
+    "police":"POLICE"
+
+  }
+}

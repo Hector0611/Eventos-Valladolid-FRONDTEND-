@@ -1,0 +1,15 @@
+{
+  "header": {
+    "discover": "DESCRUBRIR",
+    "maps": "MAPAS",
+    "towns": "PUEBLOS",
+    "more": "MAS",
+    "moreInfo": "MAS INFORMACIÓN",
+    "contact": "CONTACTANOS",
+    "resources": "RECURSOS",
+    "stats": "ESTADÍSTICAS DE TURISMO",
+    "follow": "SIGUENOS EN",
+    "transport":"TRANSPORTE",
+    "police":"POLICIA"
+  }
+}

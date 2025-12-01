@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
+import { useTranslation } from "react-i18next";
+
 
 const Header = () => {
     const [showPopup, setShowPopup] = useState(false);
     const [showMenu, setShowMenu] = useState(true);
     const navigate = useNavigate();
     const [showText, setShowText] = useState(true);
+    const { t } = useTranslation();
+
 
    useEffect(() => {
     const timer = setTimeout(() => {
@@ -63,31 +67,31 @@ const Header = () => {
                 </center>
 
                 <nav className="header-nav1">
-                    <button className="botton" onClick={() => navigateTo('/LugaresTuristicos')}>DISCOVER</button>
+                    <button className="botton" onClick={() => navigateTo('/LugaresTuristicos')}>{t("header.discover")}</button>
                    {/*  <button className="botton" onClick={() => navigateTo('/estadisticas')}>RESOURCES</button> */}
-                    <button className="botton" onClick={() => navigateTo('/mapa')}>MAPS</button>
-                    <button className="botton" onClick={() => navigateTo('/puebloscercanos ')}>TOWNS</button>
+                    <button className="botton" onClick={() => navigateTo('/mapa')}>{t("header.maps")}</button>
+                    <button className="botton" onClick={() => navigateTo('/puebloscercanos ')}>{t("header.towns")}</button>
                     {/* /puebloscercanos */}
                     <div
                         className="popup-wrapper"
                         onMouseEnter={() => setShowPopup(true)}
                         onMouseLeave={() => setShowPopup(false)}
                     >
-                        <button className="botton">MORE</button>
+                        <button className="botton">{t("header.more")}</button>
                         {showPopup && (
                             <div className="popup-overlay1">
                                 <div className="popup-content">
-                                    <h2 className='h2more'>More Information</h2>
+                                    <h2 className='h2more'>{t("header.moreInfo")}</h2>
                                     <ul className="popup-links">
-                                        <li><button className='textocontent' onClick={() => navigateTo('/Contacto')}>CONTACT US</button></li>
-                                        <li><button className='textocontent' onClick={() => navigateTo('/estadisticas')}>RESOURCES</button></li>
-                                        <li><button className='textocontent' onClick={() => navigateTo('/turismo')}>TOURISM STATISTICS</button></li>
+                                        <li><button className='textocontent' onClick={() => navigateTo('/Contacto')}> {t("header.contact")}</button></li>
+                                        <li><button className='textocontent' onClick={() => navigateTo('/estadisticas')}>{t("header.resources")}</button></li>
+                                        <li><button className='textocontent' onClick={() => navigateTo('/turismo')}>{t("header.stats")}</button></li>
                                         {/* <li><button onClick={() => navigateTo('/destinos')}>DESTINATION LOCATIONS</button></li> */}
                                     </ul>
                                     <hr />
                                     {/* <button onClick={() => navigateTo('/Policia')}>Policia</button> */}
                                     <hr />
-                                    <h3 className='h2more'>Follow us on</h3>
+                                    <h3 className='h2more'>{t("header.follow")}</h3>
                                     <br />
                                     <center>
                                         <div className='links_F-I-Y'>
@@ -127,7 +131,7 @@ const Header = () => {
                         <path d="M6 1a1 1 0 0 0-1 1v1h-.181A2.5 2.5 0 0 0 2.52 4.515l-.792 1.848a.8.8 0 0 1-.38.404c-.5.25-.855.715-.965 1.262L.05 9.708a2.5 2.5 0 0 0-.049.49v.413c0 .814.39 1.543 1 1.997V14.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1.338c1.292.048 2.745.088 4 .088s2.708-.04 4-.088V14.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1.892c.61-.454 1-1.183 1-1.997v-.413q0-.248-.049-.49l-.335-1.68a1.8 1.8 0 0 0-.964-1.261.8.8 0 0 1-.381-.404l-.792-1.848A2.5 2.5 0 0 0 11.181 3H11V2a1 1 0 0 0-1-1zM4.819 4h6.362a1.5 1.5 0 0 1 1.379.91l.792 1.847a1.8 1.8 0 0 0 .853.904c.222.112.381.32.43.564l.336 1.679q.03.146.029.294v.413a1.48 1.48 0 0 1-1.408 1.484c-1.555.07-3.786.155-5.592.155s-4.037-.084-5.592-.155A1.48 1.48 0 0 1 1 10.611v-.413q0-.148.03-.294l.335-1.68a.8.8 0 0 1 .43-.563c.383-.19.685-.511.853-.904l.792-1.848A1.5 1.5 0 0 1 4.82 4Z"/>
                     </svg>
 
-                    <span className="btn-text">TRANSPORT</span>
+                    <span className="btn-text">{t("header.transport")}</span>
 
             </div>
 
@@ -139,7 +143,7 @@ const Header = () => {
                         <path d="M15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0m-12.2 1.182a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
                     </svg>
 
-                    <span className="btn-text">POLICE</span>
+                    <span className="btn-text">{t("header.police")}</span>
                 </div>
 
 

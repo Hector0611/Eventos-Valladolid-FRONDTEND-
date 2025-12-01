@@ -3,6 +3,12 @@ import React, { useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+import { useTranslation } from "react-i18next";
+
+
+import { translateField } from '../utils/translateField';
+
+
 import './CircularMenu.css';
 import './Calendario.css';
 import './menuwhat.css';
@@ -16,6 +22,7 @@ const ProgramarEvents = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [Logo1, Logo2, Logo3];
   const [loading, setLoading] = useState(false);
+  const { i18n } = useTranslation();
 
   
   useEffect(() => {
@@ -138,17 +145,31 @@ const ProgramarEvents = () => {
     today.getMonth() === selectedMonth &&
     today.getFullYear() === currentYear;
 
-  const handleDayClick = async (day) => {
-    try {
-      const res = await axios.get(
-        `https://eventos-valladolid-backendt.onrender.com/api/mensajes?dia_id=${day}&mes_id=${selectedMonth + 1}`
-      );
-      setEventosSeleccionados(res.data);
-      setShowModal(true);
-    } catch (error) {
-      console.error("Error cargando eventos:", error);
-    }
-  };
+ const handleDayClick = async (day) => {
+  try {
+    const res = await axios.get(
+      `https://eventos-valladolid-backendt.onrender.com/api/mensajes?dia_id=${day}&mes_id=${selectedMonth + 1}`
+    );
+
+    const data = res.data;
+
+    // 🔥 Traducir cada mensaje según el idioma activo
+    const traducidos = await Promise.all(
+      data.map(async (item) => ({
+        ...item,
+        mensaje: await translateField(item.mensaje),
+        descripcion: await translateField(item.descripcion || ""),
+      }))
+    );
+
+    setEventosSeleccionados(traducidos);
+    setShowModal(true);
+
+  } catch (error) {
+    console.error("Error cargando eventos:", error);
+  }
+};
+
 
   // ===========================
   // 🧩 Render principal

@@ -23,12 +23,13 @@ import PrincipalRecarga from './componentes/PrincipalRecarga';
 import Conventos from './componentes/Conventos';
 import Cenotes from './componentes/Cenotes';
 import Contactanos from './componentes/Contactanos';
-import PoliciaPage from './componentes/Policia';
+import PoliciaPage from './componentes/Policia';  
 import Transporte from './componentes/Transporte';
 import AnuncioEmergente from './componentes/AnuncioEmergente';
 import Turismo from './componentes/Turismo';
 import Destinos from './componentes/Destinos';
 import PueblosCercanos from './componentes/PueblosCercanos';
+import LanguageSwitcher from './componentes/LanguageSwitcher';
 
 const App = () => {
 
@@ -82,10 +83,13 @@ const App = () => {
                   <>
                     <Header2 />
                     <Header />
+                    <LanguageSwitcher />
                     <ProgramarEvents />
+                    
                     <Catalogo />
                     <EventoDiario />
                    <ToastContainer />
+                    
                    {/*  <AnuncioEmergente /> */}
                    {/* Footer global */}
           <ProximoEvento />
@@ -276,6 +280,7 @@ const App = () => {
           <ProximoEvento />
          
           <Footer />
+
                 </>
               } />  
             </Routes>

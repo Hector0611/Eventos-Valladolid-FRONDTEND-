@@ -47,11 +47,9 @@ const Hoteles = () => {
 
   const [activeTooltip, setActiveTooltip] = useState(null);
   const [hotsyrestInfo, setHotsyrestInfo] = useState([]);
+
   const [showModal, setShowModal] = useState(false);
-
-
-  
-
+  const [selectedHotel, setSelectedHotel] = useState(null);
 
 const oficinaIcon = new L.Icon({
   iconUrl: oficina,
@@ -153,9 +151,9 @@ const oficinaIcon = new L.Icon({
 
     <h4>{nombreMostrar}</h4>
 
-    <p className='texto_item'>
-      {item.descripcion?.slice ? item.descripcion.slice(0, 300) + "..." : item.descripcion}
-    </p>
+ 
+
+    <p className="texto_item" dangerouslySetInnerHTML={{ __html: item.descripcion.slice(0,300)+" ..." }}></p>
 
     <p>📍 {item.localizacion}</p>
 
@@ -179,79 +177,25 @@ const oficinaIcon = new L.Icon({
         <p>Indications</p>
       </a>
       {/* NUEVO BOTÓN */}
-  <button
-    className="info-button"
-    onClick={() => setShowModal(true)}
-  >
-    Más Info
-  </button>
+        <button
+        className="boton-masinfo"
+        onClick={() => {
+          setSelectedHotel(item);   // guardas todo el hotel
+          setShowModal(true);       // abres modal
+        }}
+      >
+        Más Info
+      </button>
+
     </div>
-    {extra && (
-                <div className="hotel-extra-box">
-                  <h4>Additional Information</h4>
-
-                  {extra.img_resyhts && (
-                    <img 
-                      src={`https://eventos-valladolid-backendt.onrender.com${extra.img_resyhts}`} 
-                      alt="hotel info" 
-                      className="extra-img"
-                    />
-                  )}
-
-                  <p>{extra.nombre}</p>
-                  <p>{extra.descripcion}</p>
-
-                  {extra.numerotelf && <p>📞 {extra.numerotelf}</p>}
-                  {extra.video && (
-                    <p>
-                      🎥 <a href={extra.video} target="_blank" rel="noopener noreferrer">Video</a>
-                    </p>
-                  )}
-
-                  {extra.calle && <p>📍 {extra.calle}</p>}
-                </div>
-              )}
+ 
   </div>
 );
 
     
   };
 
-  {/* ======================= MODAL ======================= */}
-{showModal && selectedItem && (
-  <div className="custom-modal">
-    <div className="modal-content">
-      <button className="close-modal" onClick={() => setShowModal(false)}>✖</button>
-
-      <h2>Información detallada</h2>
-
-      {/* INFORMACIÓN EXTENDIDA */}
-      {selectedItem.extra ? (
-        <>
-          {selectedItem.extra.img_resyhts && (
-            <img
-              src={`https://eventos-valladolid-backendt.onrender.com${selectedItem.extra.img_resyhts}`}
-              className="modal-img"
-              alt="info"
-            />
-          )}
-
-          <p><strong>{selectedItem.extra.nombre}</strong></p>
-          <p>{selectedItem.extra.descripcion}</p>
-
-          {selectedItem.extra.numerotelf && <p>📞 {selectedItem.extra.numerotelf}</p>}
-          {selectedItem.extra.video && (
-            <p>🎥 <a href={selectedItem.extra.video} target="_blank">Ver Video</a></p>
-          )}
-        </>
-      ) : (
-        <p>No hay información adicional.</p>
-      )}
-    </div>
-  </div>
-)}
-
-
+  
   // =====================================================
   // ====================== RETURN ========================
   // =====================================================
@@ -391,7 +335,7 @@ const oficinaIcon = new L.Icon({
                     mouseover: () => {
                       setActiveTooltip(h.id);
                     }
-                  }}
+                    }}
                 >
 
                 <Tooltip 
@@ -503,6 +447,63 @@ const oficinaIcon = new L.Icon({
             
           )
           }
+
+          {/* ======================= MODAL ======================= */}
+
+  {showModal && selectedHotel && (
+  <div className="modal-over1">
+    <div className="modal-cont1">
+
+      <button className="modal-clo1" onClick={() => setShowModal(false)}>
+        ✖
+      </button>
+
+      <h2>{selectedHotel.hotel}</h2>
+
+      <br></br>
+
+      <p className="texto-pres1" dangerouslySetInnerHTML={{ __html: selectedHotel.descripcion }}></p>
+
+      <p> {selectedHotel.localizacion}</p>
+
+
+      {selectedHotel.info_imagen && (
+        <img
+          src={`https://eventos-valladolid-backendt.onrender.com${selectedHotel.info_imagen}`}
+          alt="Imagen del hotel"
+          className="modal-ima1"
+        />
+      )}
+
+      {selectedHotel.info_nombre && (
+        <p> {selectedHotel.info_nombre}</p>
+      )}
+
+      {selectedHotel.info_descripcion && (
+        <div>
+          <strong>Detailed information:</strong>
+          <pre className="modal-pr1">{selectedHotel.info_descripcion}</pre>
+        </div>
+      )}
+
+      {selectedHotel.info_calle && (
+        <p><strong></strong> {selectedHotel.info_calle}</p>
+      )}
+
+      {selectedHotel.info_telefono && selectedHotel.info_telefono !== "" && (
+       
+        <p className="texto-pres1" dangerouslySetInnerHTML={{ __html: selectedHotel.info_telefono}}></p>
+      )}
+
+      {selectedHotel.info_video && selectedHotel.info_video !== "" && (
+        <video controls width="100%">
+          <source src={`http://localhost:3001${selectedHotel.info_video}`} type="video/mp4" />
+        </video>
+      )}
+
+    </div>
+  </div>
+)}
           
 
         </div>

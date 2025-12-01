@@ -511,7 +511,6 @@ const taxisES = [
                 <br />
                   {c.coords && (
                     <a
-                    /* https://www.google.com/maps/dir/?api=1&destination=${c.coords[0]},${c.coords[1]} */
                       href={`https://www.google.com/maps/dir/?api=1&destination=${c.coords[0]},${c.coords[1]}`}  
                       target="_blank"
                       rel="noopener noreferrer"
@@ -612,12 +611,6 @@ const taxisES = [
                   >
                     C{zona.id}
                   </Tooltip>
-
-                  {/* <Popup>
-                    <div style={{ minWidth: 140 }}>
-                      <b>{zona.nombre}</b>
-                    </div>
-                  </Popup> */}
                 </Polygon>
               ))}
 
@@ -701,31 +694,6 @@ const taxisES = [
       </div>
     </div>
      <div>
-      {/* Nuevo para cenotes Taxis */}
-        {/* Panel Lateral de Cenotes */}
-          {/* <div className="panel-info">
-            <h3>Cenotes y cómo llegar</h3>
-
-            {cenotesInfo.map((c, i) => (
-              <div key={i} className="info-item">
-                <h4>{c.nombre}</h4>
-                <p>{c.detalle}</p>
-
-                {c.coords ? (
-                  <a
-                    className="btn-ir"
-                    href={`https://www.google.com/maps/dir/?api=1&destination=${c.coords[0]},${c.coords[1]}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Indicaciones
-                  </a>
-                ) : (
-                  <span className="no-coords"></span>
-                )}
-              </div>
-            ))}
-          </div> */}
 
       </div>
     </div>

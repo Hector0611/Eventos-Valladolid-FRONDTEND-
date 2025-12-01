@@ -10,11 +10,12 @@ import logo3 from './Imagenes/maps/Museo.png';
 import logo5 from './Imagenes/maps/Arqueologicas.png';
 import logoCenote from './Imagenes/maps/Cenote.png';
 import oficina from './Imagenes/maps/OFICINA_DE_TURISMO.png';
+import hotel from './Imagenes/maps/Hospedaje.png';
 
 
 
 // ====================== ICONOS ============================
-const hotelIcon = new L.Icon({ iconUrl: logo3, iconSize: [35, 45], iconAnchor: [20, 40] });
+const hotelIcon = new L.Icon({ iconUrl: hotel, iconSize: [35, 45], iconAnchor: [20, 40] });
 const sitioIcon = new L.Icon({ iconUrl: logo5, iconSize: [35, 45], iconAnchor: [20, 40] });
 const cenoteIcon = new L.Icon({ iconUrl: logoCenote, iconSize: [35, 45], iconAnchor: [20, 40] });
 
@@ -45,6 +46,12 @@ const Hoteles = () => {
   const [filteredResults, setFilteredResults] = useState([]);
 
   const [activeTooltip, setActiveTooltip] = useState(null);
+  const [hotsyrestInfo, setHotsyrestInfo] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+
+
+  
+
 
 const oficinaIcon = new L.Icon({
   iconUrl: oficina,
@@ -82,6 +89,8 @@ const oficinaIcon = new L.Icon({
     axios.get('https://eventos-valladolid-backendt.onrender.com/api/hoteles').then(res => setHoteles(res.data));
     axios.get('https://eventos-valladolid-backendt.onrender.com/api/sitios').then(res => setSitios(res.data));
     axios.get('https://eventos-valladolid-backendt.onrender.com/api/cenote_mapa').then(res => setCenotes(res.data));
+    axios.get('https://eventos-valladolid-backendt.onrender.com/api/hotsyrest_info').then(res => setHotsyrestInfo(res.data));
+
   }, []);
 
 
@@ -107,7 +116,7 @@ const oficinaIcon = new L.Icon({
     if (!value.trim()) return setFilteredResults([]);
 
     const hotelMatches = hoteles.filter(h => h.hotel.toLowerCase().includes(value))
-      .map(h => ({ type: 'visit', name: h.hotel, data: h }));
+      .map(h => ({ type: 'Hotel', name: h.hotel, data: h }));
 
     const sitioMatches = sitios.filter(s => s.sitio_arqueologico.toLowerCase().includes(value))
       .map(s => ({ type: 'Sitio', name: s.sitio_arqueologico, data: s }));
@@ -129,12 +138,16 @@ const oficinaIcon = new L.Icon({
     if (!item) return null;
 
     const nombreMostrar =
-      type === 'visit' ? item.hotel :
+      type === 'Hotel' ? item.hotel :
       type === 'Sitio' ? item.sitio_arqueologico :
       type === 'Cenote' ? item.cenote :
       item.nombre;
+    
+    const extra = item.extra; // información extendida
+
 
     return (
+
   <div className="panel-content">
     {!isMobile && <button onClick={() => setSelectedItem(null)} className="close-button">✖</button>}
 
@@ -165,16 +178,84 @@ const oficinaIcon = new L.Icon({
       >
         <p>Indications</p>
       </a>
+      {/* NUEVO BOTÓN */}
+  <button
+    className="info-button"
+    onClick={() => setShowModal(true)}
+  >
+    Más Info
+  </button>
     </div>
+    {extra && (
+                <div className="hotel-extra-box">
+                  <h4>Additional Information</h4>
+
+                  {extra.img_resyhts && (
+                    <img 
+                      src={`https://eventos-valladolid-backendt.onrender.com${extra.img_resyhts}`} 
+                      alt="hotel info" 
+                      className="extra-img"
+                    />
+                  )}
+
+                  <p>{extra.nombre}</p>
+                  <p>{extra.descripcion}</p>
+
+                  {extra.numerotelf && <p>📞 {extra.numerotelf}</p>}
+                  {extra.video && (
+                    <p>
+                      🎥 <a href={extra.video} target="_blank" rel="noopener noreferrer">Video</a>
+                    </p>
+                  )}
+
+                  {extra.calle && <p>📍 {extra.calle}</p>}
+                </div>
+              )}
   </div>
 );
 
     
   };
 
+  {/* ======================= MODAL ======================= */}
+{showModal && selectedItem && (
+  <div className="custom-modal">
+    <div className="modal-content">
+      <button className="close-modal" onClick={() => setShowModal(false)}>✖</button>
+
+      <h2>Información detallada</h2>
+
+      {/* INFORMACIÓN EXTENDIDA */}
+      {selectedItem.extra ? (
+        <>
+          {selectedItem.extra.img_resyhts && (
+            <img
+              src={`https://eventos-valladolid-backendt.onrender.com${selectedItem.extra.img_resyhts}`}
+              className="modal-img"
+              alt="info"
+            />
+          )}
+
+          <p><strong>{selectedItem.extra.nombre}</strong></p>
+          <p>{selectedItem.extra.descripcion}</p>
+
+          {selectedItem.extra.numerotelf && <p>📞 {selectedItem.extra.numerotelf}</p>}
+          {selectedItem.extra.video && (
+            <p>🎥 <a href={selectedItem.extra.video} target="_blank">Ver Video</a></p>
+          )}
+        </>
+      ) : (
+        <p>No hay información adicional.</p>
+      )}
+    </div>
+  </div>
+)}
+
+
   // =====================================================
   // ====================== RETURN ========================
   // =====================================================
+  
   return (
     <div>
       <div className="Separacion"></div>
@@ -223,7 +304,7 @@ const oficinaIcon = new L.Icon({
          
           </div>
 
-
+            
           {/* Sitios */}
           <div className="accordion-section">
             <h4 className="titel4" onClick={() => setOpenSection(openSection === 'sitios' ? null : 'sitios')}>
@@ -261,16 +342,24 @@ const oficinaIcon = new L.Icon({
           {/* Hoteles */}
           <div className="accordion-section">
             <h4 className="titel4" onClick={() => setOpenSection(openSection === 'hoteles' ? null : 'hoteles')}>
-              🏨 visit places <span className={`arrow ${openSection === 'hoteles' ? 'open' : ''}`}>▼</span>
+              🏨 Hotel <span className={`arrow ${openSection === 'hoteles' ? 'open' : ''}`}>▼</span>
             </h4>
             {openSection === 'hoteles' && (
               <div className="grid-container scrollable-items">
                 {hoteles.map(h => (
-                  <div key={h.id} onClick={() => setSelectedItem({ type: "Hotel", data: h })} className="grid-item">
+                  <div
+                    key={h.id}
+                    onClick={() => {
+                      const extraInfo = hotsyrestInfo.find(info => info.id_hotel === h.id);
+                      setSelectedItem({ type: "Hotel", data: h, extra: extraInfo });
+                    }}
+                    className="grid-item"
+                  >
                     <strong>{h.hotel}</strong>
                     <div className="estrellas">{renderStars(h.estrellas)}</div>
                   </div>
                 ))}
+
               </div>
             )}
           </div>
@@ -290,16 +379,21 @@ const oficinaIcon = new L.Icon({
             {/* Hoteles */}
             {hoteles.map(h => (
               <Marker
-                key={h.id}
-                position={[parseFloat(h.latitud), parseFloat(h.longitud)]}
-                icon={hotelIcon}
-                eventHandlers={{
-                  click: () => {
-                    setSelectedItem({ type: "Hotel", data: h });
-                    setActiveTooltip(h.id);
-                  } 
-                }}
-              >
+                  key={h.id}
+                  position={[parseFloat(h.latitud), parseFloat(h.longitud)]}
+                  icon={hotelIcon}
+                  eventHandlers={{
+                    click: () => {
+                      const extraInfo = hotsyrestInfo.find(info => info.id_hotel === h.id);
+                      setSelectedItem({ type: "Hotel", data: h, extra: extraInfo });
+                      setActiveTooltip(h.id);
+                    },
+                    mouseover: () => {
+                      setActiveTooltip(h.id);
+                    }
+                  }}
+                >
+
                 <Tooltip 
                   direction="top"
                   offset={[-2, -38]}
@@ -363,26 +457,28 @@ const oficinaIcon = new L.Icon({
             ))}
 
             {/* Oficina de Turismo */}
+            {/* Oficina de Turismo */}
             <Marker
-                key="oficina_marker"
-                position={[oficinaTurismo.latitud, oficinaTurismo.longitud]}
-                icon={oficinaIcon}
-                eventHandlers={{
-                  click: () => {
-                    setSelectedItem({ type: "Oficina", data: oficinaTurismo });
-                    setActiveTooltip(oficinaTurismo.id);
-                  }
-                }}
+              key="oficina_marker"
+              position={[oficinaTurismo.latitud, oficinaTurismo.longitud]}
+              icon={oficinaIcon}
+              eventHandlers={{
+                click: () => {
+                  setSelectedItem({ type: "Oficina", data: oficinaTurismo });
+                  setActiveTooltip(oficinaTurismo.id);
+                }
+              }}
+            >
+              <Tooltip
+                direction="top"
+                offset={[-2, -38]}
+                opacity={0.9}
+                permanent={activeTooltip === oficinaTurismo.id}
               >
-                <Tooltip 
-                  direction="top"
-                  offset={[-2, -38]}
-                  opacity={0.9}
-                  permanent={activeTooltip === "oficina_marker"}
-                >
-                  Tourist Office
-                </Tooltip>
-              </Marker>
+                {oficinaTurismo.nombre}
+              </Tooltip>
+            </Marker>
+
 
 
             <FlyToLocation location={selectedItem?.data} />
@@ -395,13 +491,19 @@ const oficinaIcon = new L.Icon({
             <div className="mobile-info-container">
               {selectedItem && renderInfoPanel(selectedItem.data, selectedItem.type)}
             </div>
+            
           ) : (
             <div className={`side-panel ${selectedItem ? 'open' : ''}`}>
               <button className="close-button" onClick={() => setSelectedItem(null)}>✖</button>
               {selectedItem && renderInfoPanel(selectedItem.data, selectedItem.type)}
-            </div>
-          )}
+              
 
+            </div>
+
+            
+          )
+          }
+          
 
         </div>
       </div>

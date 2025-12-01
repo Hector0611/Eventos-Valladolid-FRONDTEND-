@@ -46,9 +46,9 @@ import obrateatro from './Imagenes/ImgTempo/ObraTeatro.jpeg';
 
 
 /* no an pasado */
-import Fiesta1 from './Imagenes/ImgTempo/LaFiestaPueblo1.jpeg'; /* 28 de Noviembre */
-import Fiesta2 from './Imagenes/ImgTempo/LaFiestaPueblo2.jpeg'; /* 28 de Noviembre */
-import LaVidayCeiba from './Imagenes/ImgTempo/LaVidayCeiba.jpeg'; /* 29 de Noviembre */
+/* import Fiesta1 from './Imagenes/ImgTempo/LaFiestaPueblo1.jpeg'; /* 28 de Noviembre 
+import Fiesta2 from './Imagenes/ImgTempo/LaFiestaPueblo2.jpeg';  28 de Noviembre */ 
+/* import LaVidayCeiba from './Imagenes/ImgTempo/LaVidayCeiba.jpeg';  *//* 29 de Noviembre */
 
 const Catalogo = () => {
   const [idioma, setIdioma] = useState("es");
@@ -116,11 +116,11 @@ const Catalogo = () => {
         <img src={JuanBalam} alt="Juan Balam" className="folleto-img rounded shadow" />
       </div> */}
 
-      <div className="folleto text-center mb-5">
+     {/*  <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">The Festival of My Town</h2>
         <img src={Fiesta1} alt="The Festival of My Town" className="folleto-img rounded shadow" />
         <img src={Fiesta2} alt="The Festival of My Town" className="folleto-img rounded shadow" />
-      </div>
+      </div> */} 
 
      
 
@@ -149,7 +149,7 @@ const Catalogo = () => {
         <img src={julieta} alt="The Vine and The Ceiba" className="folleto-img rounded shadow" />
       </div> */}
 
-       <div className="folleto text-center mb-5">
+       {/* <div className="folleto text-center mb-5">
         <h2 className="text-center mb-4 display-5 fw-bold ">The Vine and The Ceiba</h2>
         <div
           style={{ cursor: "pointer" }}
@@ -158,14 +158,14 @@ const Catalogo = () => {
             href="https://www.lavidylaceiba.com"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}  // ← IMPORTANTE
+            onClick={(e) => e.stopPropagation()}  
           >
             <img src={LaVidayCeiba} alt="The Vine and The Ceiba" className="folleto-img rounded shadow" />
           </a>
         </div>
 
         
-      </div>
+      </div> */}
 
       <h1 className="text-center mb-4 display-5 fw-bold">
   Expo Feria Valladolid 2026

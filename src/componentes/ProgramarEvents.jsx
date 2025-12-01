@@ -81,8 +81,6 @@ const ProgramarEvents = () => {
     setLoading(false);
   }
 };
-
-
   // ===========================
   // Cargar meses y días
   // ===========================

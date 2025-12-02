@@ -309,18 +309,18 @@ body {
 .leaflet-tooltip {
   background-color: rgba(0, 123, 255, 0.85); /* Azul semitransparente */
   color: #fff; /* Texto blanco */
-  font-weight: bold;
+  font-weight: 700;
   padding: 5px 10px;
   border-radius: 8px; /* Bordes redondeados */
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  font-size: 14px;
+  font-size: 12px;
   pointer-events: none; /* Evita que interfiera con el mouse */
   transition: all 0.2s ease;
 }
 
 /* Flecha del tooltip */
 .leaflet-tooltip:before {
-  border-top-color: rgba(0, 123, 255, 0.85);
+  border-top-color: rgba(0, 0, 0, 0.85);
 }
 
 /* Opcional: efecto de aparición */
@@ -328,6 +328,12 @@ body {
   transform: translateY(-3px);
   opacity: 0;
   animation: fadeInTooltip 0.3s forwards;
+}
+
+.leaflet-tooltip:hover {
+  transform: translateY(0);
+  opacity: 1;
+  background-color: #fbfbff;
 }
 
 @keyframes fadeInTooltip {

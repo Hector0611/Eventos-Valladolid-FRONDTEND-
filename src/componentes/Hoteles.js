@@ -156,7 +156,7 @@ const restauranteIcon = new L.Icon({
       type === 'Hotel' ? item.hotel :
       type === 'Sitio' ? item.sitio_arqueologico :
       type === 'Cenote' ? item.cenote :
-      type === 'Restaurante' ? item.hotel :
+      type === 'Restaurante' ? item.hotel : 
       item.nombre;
     
     const extra = item.extra; // información extendida
@@ -351,38 +351,44 @@ const restauranteIcon = new L.Icon({
             center={[20.69018, -88.201223]}
             zoom={11}
             style={{ height: isMobile ? '400px' : '600px', width: '100%' }}
+            closePopupOnClick={false}
+            closeOnClick={false}
+
           >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
             {/* Hoteles */}
             {hoteles.map(h => (
               <Marker
-                  key={h.id}
-                  position={[parseFloat(h.latitud), parseFloat(h.longitud)]}
-                  icon={hotelIcon}
-                  eventHandlers={{
-                    click: () => {
-                      const extraInfo = hotsyrestInfo.find(info => info.id_hotel === h.id);
-                      setSelectedItem({ type: "Hotel", data: h, extra: extraInfo });
-                      setActiveTooltip(h.id);
-                    },
-                    mouseover: () => {
-                      setActiveTooltip(h.id);
-                    }
-                    }}
-                >
+                key={h.id}
+                position={[parseFloat(h.latitud), parseFloat(h.longitud)]}
+                icon={hotelIcon}
+                eventHandlers={{
+                  click: () => {
+                    const extraInfo = hotsyrestInfo.find(info => info.id_hotel === h.id);
+                    setSelectedItem({ type: "Hotel", data: h, extra: extraInfo });
 
-                <Tooltip 
+                    // 🔥 Forzar render del tooltip permanente
+                    setTimeout(() => setActiveTooltip(h.id), 0);
+                  }
+                }}
+              >
+                <Tooltip
                   direction="top"
                   offset={[-2, -38]}
                   opacity={0.9}
-                  permanent={activeTooltip === h.id}
+                  permanent={true} // Se mantiene siempre visible
                 >
-                  {h.id}-{h.hotel}
+                  {/* <img
+                    src={`https://eventos-valladolid-backendt.onrender.com${h.info_imagen}`}
+                    alt="Imagen del hotel"
+                    className="modal-ima1"
+                  /> <br></br> */}
+                  {h.hotel}
                 </Tooltip>
               </Marker>
-
             ))}
+
 
             {/* Sitios */}
             {sitios.map(s => (
@@ -401,8 +407,14 @@ const restauranteIcon = new L.Icon({
                     direction="top"
                     offset={[-2, -38]}
                     opacity={0.9}
-                    permanent={activeTooltip === s.id}
+                    permanent={true} /* s.id === activeTooltip */ 
                   >
+                    {/* <img
+                      src={`https://eventos-valladolid-backendt.onrender.com${s.img_resyhts}`}
+                      alt="Imagen del sitio arqueológico"
+                      className="modal-ima1"
+                    />
+                    <br></br> */}
                     {s.sitio_arqueologico}
                   </Tooltip>
                 </Marker>
@@ -426,7 +438,7 @@ const restauranteIcon = new L.Icon({
                   direction="top"
                   offset={[-2, -38]}
                   opacity={0.9}
-                  permanent={activeTooltip === c.id}
+                  permanent={true}
                 >
                   {c.cenote}
                 </Tooltip>
@@ -451,7 +463,7 @@ const restauranteIcon = new L.Icon({
                     direction="top"
                     offset={[-2, -38]}
                     opacity={0.9}
-                    permanent={activeTooltip === r.id}
+                    permanent={true}
                   >
                     {r.hotel}
                   </Tooltip>
@@ -476,7 +488,7 @@ const restauranteIcon = new L.Icon({
                 direction="top"
                 offset={[-2, -38]}
                 opacity={0.9}
-                permanent={activeTooltip === oficinaTurismo.id}
+                permanent={true}
               >
                 {oficinaTurismo.nombre}
               </Tooltip>

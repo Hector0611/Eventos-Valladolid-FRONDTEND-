@@ -185,16 +185,16 @@ const ProgramarEvents = () => {
    
 
         <div className='color_fondo'>
-        <h1 className="calendario1">
+        <h2 className="calendario1">
                {monthsData[selectedMonth]?.nombre || months[selectedMonth]} {currentYear} Calendar
-                </h1>
+                </h2>
         <div className="container1">
           {/* 🔹 Selección de rango y mes */}
           
           <div className="NoesNada">
       
             <hr />
-            <h1 className="fecha-texto1">Select the days you will be in Valladolid</h1>
+            <h3 className="fecha-texto1">Select the days you will be in Valladolid</h3>
 
             <div className="fecha-inputs">
               <input type="date" value={fechaInicio} onChange={(e) => setFechaInicio(e.target.value)} />
@@ -384,12 +384,12 @@ const ProgramarEvents = () => {
              {/* Aqui eventos diarios que se repiten en todos los eventos */} 
             
                     <div className="evento-info1">
-                <h1 className='titel11'>Daily Events</h1>
+                <h2 className='titel11'>Daily Events</h2>
                   <div className="evento-container11">
                     
                     {/* Columna izquierda: eventos diarios */}
                     <div className="eventoDiario111">
-                      <h2 className='titel11'>Every day there is video mapping in the center and Sisal</h2>
+                      <h3 className='titel11'>Every day there is video mapping in the center and Sisal</h3>
                       <p>The schedule is from 9:00 p.m. "Spanish"</p>
                       <p>The schedule is from 9:20 p.m. "English"</p>
 

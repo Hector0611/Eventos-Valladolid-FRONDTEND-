@@ -85,7 +85,7 @@ const Catalogo = () => {
     <div className="catalogo-container container py-5">
       <br />
 
-      <h1 className='folletos'>BROCHURES</h1>
+      <h2 className='folletos'>BROCHURES</h2>
       
 
       {/* <div className="text-center mb-5">
@@ -167,9 +167,9 @@ const Catalogo = () => {
         
       </div> */}
 
-      <h1 className="text-center mb-4 display-5 fw-bold">
+      <h3 className="text-center mb-4 display-5 fw-bold">
   Expo Feria Valladolid 2026
-</h1> 
+</h3> 
 
 <div className="row g-4">
   {imagenes[idioma].map((img, index) => (
@@ -183,9 +183,9 @@ const Catalogo = () => {
 <hr />
 
 <div className="map">
-  <h2 className="map-title">
+  <h3 className="map-title">
     🗺️ Location of the Valladolid Expo Feria 2026
-  </h2>
+  </h3>
 
   <div className="map-placeholder1">
     <iframe

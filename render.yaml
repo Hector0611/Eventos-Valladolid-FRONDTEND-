@@ -1,0 +1,10 @@
+services:
+  - type: static
+    name: eventos-valladolid
+    env: static
+    buildCommand: "npm install --legacy-peer-deps && npm run build"
+    publishPath: "build"
+    staticPublishPath: "build"
+    pullRequestPreviewsEnabled: true
+    buildFilter:
+      paths: ["src/**", "public/**", "package.json", "tailwind.config.js"]

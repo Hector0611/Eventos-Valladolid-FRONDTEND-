@@ -11,6 +11,8 @@ import logo5 from './Imagenes/maps/Arqueologicas.png';
 import logoCenote from './Imagenes/maps/Cenote.png';
 import oficina from './Imagenes/maps/OFICINA_DE_TURISMO.png';
 import hotel from './Imagenes/maps/Hospedaje.png';
+/* restaurante */
+import restauranteIconUrl from './Imagenes/maps/Restaurantes.png';
 
 
 
@@ -50,6 +52,8 @@ const Hoteles = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [selectedHotel, setSelectedHotel] = useState(null);
+  const [restaurantes, setRestaurantes] = useState([]);
+
 
 const oficinaIcon = new L.Icon({
   iconUrl: oficina,
@@ -57,6 +61,13 @@ const oficinaIcon = new L.Icon({
   iconAnchor: [20, 40],
   popupAnchor: [0, -40]
 });
+
+const restauranteIcon = new L.Icon({
+  iconUrl: restauranteIconUrl,
+  iconSize: [35, 45],
+  iconAnchor: [20, 40]
+});
+
 
   // -------- Oficina de turismo (dato local) --------
   const oficinaTurismo = {
@@ -88,6 +99,8 @@ const oficinaIcon = new L.Icon({
     axios.get('https://eventos-valladolid-backendt.onrender.com/api/sitios').then(res => setSitios(res.data));
     axios.get('https://eventos-valladolid-backendt.onrender.com/api/cenote_mapa').then(res => setCenotes(res.data));
     axios.get('https://eventos-valladolid-backendt.onrender.com/api/hotsyrest_info').then(res => setHotsyrestInfo(res.data));
+    axios.get('https://eventos-valladolid-backendt.onrender.com/api/restaurante').then(res => setRestaurantes(res.data));
+
 
   }, []);
 
@@ -122,12 +135,16 @@ const oficinaIcon = new L.Icon({
     const cenoteMatches = cenotes.filter(c => c.cenote.toLowerCase().includes(value))
       .map(c => ({ type: 'Cenote', name: c.cenote, data: c }));
 
+    const restauranteMatches = restaurantes.filter(r => r.hotel.toLowerCase().includes(value))
+      .map(r => ({ type: 'Restaurante', name: r.hotel, data: r }));
+
+
     const oficinaMatch =
       oficinaTurismo.nombre.toLowerCase().includes(value)
         ? [{ type: "Oficina", name: oficinaTurismo.nombre, data: oficinaTurismo }]
         : [];
 
-    setFilteredResults([...hotelMatches, ...sitioMatches, ...cenoteMatches, ...oficinaMatch]);
+    setFilteredResults([...hotelMatches, ...sitioMatches, ...cenoteMatches, ...oficinaMatch, ...restauranteMatches]);
   };
 
 
@@ -139,6 +156,7 @@ const oficinaIcon = new L.Icon({
       type === 'Hotel' ? item.hotel :
       type === 'Sitio' ? item.sitio_arqueologico :
       type === 'Cenote' ? item.cenote :
+      type === 'Restaurante' ? item.hotel :
       item.nombre;
     
     const extra = item.extra; // información extendida
@@ -191,14 +209,8 @@ const oficinaIcon = new L.Icon({
  
   </div>
 );
-
     
   };
-
-  
-  // =====================================================
-  // ====================== RETURN ========================
-  // =====================================================
   
   return (
     <div>
@@ -307,6 +319,28 @@ const oficinaIcon = new L.Icon({
               </div>
             )}
           </div>
+          
+          {/* Restaurantes */}
+            <div className="accordion-section">
+              <h4 className="titel4" onClick={() => setOpenSection(openSection === 'restaurantes' ? null : 'restaurantes')}>
+                🍽️ Restaurants <span className={`arrow ${openSection === 'restaurantes' ? 'open' : ''}`}>▼</span>
+              </h4>
+
+              {openSection === 'restaurantes' && (
+                <div className="grid-container scrollable-items">
+                  {restaurantes.map(r => (
+                    <div
+                      key={r.id}
+                      onClick={() => setSelectedItem({ type: "Restaurante", data: r })}
+                      className="grid-item"
+                    >
+                      <strong>{r.hotel}</strong>
+                      <div className="estrellas">{renderStars(r.estrellas)}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
 
         </aside>
         {/* ------------------------------------------------
@@ -399,6 +433,31 @@ const oficinaIcon = new L.Icon({
               </Marker>
 
             ))}
+
+            {/* Restaurantes */}
+              {restaurantes.map(r => (
+                <Marker
+                  key={r.id}
+                  position={[parseFloat(r.latitud), parseFloat(r.longitud)]}
+                  icon={restauranteIcon}
+                  eventHandlers={{
+                    click: () => {
+                      setSelectedItem({ type: "Restaurante", data: r });
+                      setActiveTooltip(r.id);
+                    }
+                  }}
+                >
+                  <Tooltip
+                    direction="top"
+                    offset={[-2, -38]}
+                    opacity={0.9}
+                    permanent={activeTooltip === r.id}
+                  >
+                    {r.hotel}
+                  </Tooltip>
+                </Marker>
+              ))}
+
 
             {/* Oficina de Turismo */}
             {/* Oficina de Turismo */}

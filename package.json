@@ -42,6 +42,7 @@
       "react-app/jest"
     ]
   },
+  "legacy-peer-deps": true,
   "browserslist": {
     "production": [
       ">0.2%",

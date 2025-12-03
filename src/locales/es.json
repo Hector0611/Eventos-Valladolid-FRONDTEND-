@@ -11,5 +11,16 @@
     "follow": "SIGUENOS EN",
     "transport":"TRANSPORTE",
     "police":"POLICIA"
+  },
+  "footer": {
+    "about": "Sobre nosotros",
+    "text1": "¡Bienvenido a Valladolid, Yucatán, México! Explora festivales, eventos locales y hermosos lugares turísticos que capturan el espíritu de este mágico pueblo. Ya sea que busques historia, aventura o relajación, Valladolid tiene algo especial esperándote.",
+    "useful": "Enlaces Útiles",
+    "contact": "Contáctanos",
+    "history" : "Historia de Valladolid",
+    "tourism" : "Directorio de Servicios Turísticos",
+    "contactu" : "Contáctanos",
+    "follow" : "Síguenos en:",
+    "text2" : "Todos los Derechos Reservados para el Municipio de Valladolid, Yucatán V: 1.6.2"
   }
 }

@@ -14,17 +14,20 @@
     text-align: center;
     border-radius: 0px;
     padding: 20px;
-    font-family: 'Courier New', Courier, monospace;
     font-size: 2.8rem;
-    font-weight: 1000;
+    font-weight: 900;
+    color: #EF426F;
+    text-shadow: 1px 3px 0px #060000;
+    letter-spacing: 2px;
 }
 
 .titutulo{
   color: #ffffff; /* texto blanco */
-  background-color: rgba(0, 0, 0, 0.832); /* fondo semitransparente oscuro */
+  background-color: #206561; /* fondo semitransparente oscuro */
   padding: 20px 10px;
   border-radius: 10px;
   font-family: 'Montserrat', sans-serif; /* tipografía clara y moderna */
+  text-shadow: 1px 3px 0px #060000;
   font-weight: 900;
 }
 
@@ -291,7 +294,7 @@
   color: #0a0a0a;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font: bold;
-
+  
 }
 
 .fecha-texto1 {
@@ -301,6 +304,7 @@
   color: #0a0a0a;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font: bold;
+  
 
 }
 

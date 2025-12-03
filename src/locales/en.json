@@ -12,5 +12,16 @@
     "transport":"TRANSPORT",
     "police":"POLICE"
 
+  },
+  "footer": {
+    "about": "About us",
+    "text1": "Welcome to Valladolid, Yucatán, Mexico! Explore festivals, local events, and beautiful tourist spots that capture the spirit of this magical town. Whether you’re looking for history, adventure, or relaxation, Valladolid has something special waiting for you.",
+    "useful": "Useful Links",
+    "contact": "Contact Us",
+    "history" : "History of Valladolid",
+    "tourism" : "Tourism Service Directory",
+    "contactu" : "Contact Us",
+    "follow" : "Follow us on:",
+    "text2" : "All Rights Reserved for the Municipality of Valladolid, Yucatán V: 1.6.2"
   }
 }

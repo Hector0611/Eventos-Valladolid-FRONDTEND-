@@ -6,7 +6,12 @@ import logo2 from './Imagenes/LOGOPUEBLOMAGCONEGRO_Mesadetrabajo1.png';
 import logo5 from './Imagenes/LOGOOFICIAL.png';
 import { FaFacebook, FaInstagram, FaYoutube, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
+import { useTranslation } from "react-i18next";
+
 const Footer = () => {
+
+    const { t } = useTranslation();
+
     return (
         <footer className="footer">
             <div className='divLogos1'>                
@@ -22,27 +27,27 @@ const Footer = () => {
             <div className="footer-content">
                 
                 <div className="footer-section">
-                    <h3 className='Titulo'>About us</h3>
+                    <h3 className='Titulo'>{t("footer.about")}</h3>
                     <p className='texto2'>
-                        Welcome to Valladolid, Yucatán, Mexico! Explore festivals, local events, and beautiful tourist spots that capture the spirit of this magical town. Whether you’re looking for history, adventure, or relaxation, Valladolid has something special waiting for you.
+                    {t("footer.text1")}
                     </p>
                 </div>
                 <div className="footer-section">
-                <h3 className='Titulo'>Useful Links</h3>
+                <h3 className='Titulo'>{t("footer.useful")}</h3>
                 <ul className='texto1'>
                     {/* <li><a href="/hoteles">Maps</a></li> */}
-                    <li><a href="/contacto">Contact Us</a></li>
-                    <li><a href="/LugaresTuristicos">History of Valladolid</a></li>
-                    <li><a href="/estadisticas">Tourism Service Directory</a></li>
+                    <li><a href="/contacto">{t("footer.contact")}</a></li>
+                    <li><a href="/LugaresTuristicos">{t("footer.history")}</a></li>
+                    <li><a href="/estadisticas">{t("footer.tourism")}</a></li>
                     {/* <li><a href="/estadisticas">Valladolid Statistics</a></li> */}
                 </ul>
                 </div>
 
                 <div className="footer-section Titulo">
-                    <h3 className='Titulo'>Contact us</h3>
+                    <h3 className='Titulo'>{t("footer.contactu")}</h3>
                     <p><FaPhoneAlt /> +52 985 856 25 51  <br /> EXT: 114</p>
                     <p><FaEnvelope /> visitavalladolidmx@gmail.com</p>
-                    <h3 className='Titulo'>Follow us on:</h3>
+                    <h3 className='Titulo'>{t("footer.follow")}</h3>
                     <div className="social-links Titulo">
                         <a href="https://www.facebook.com/ByVisitValladolidMX/" target="_blank" rel="noopener noreferrer">
                             <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="Facebook" viewBox="0 0 16 16">
@@ -63,7 +68,7 @@ const Footer = () => {
                 </div>
                
             </div>
-             <p className='derechos_reservados'>All Rights Reserved for the Municipality of Valladolid, Yucatán V: 1.6.0 
+             <p className='derechos_reservados'>© {new Date().getFullYear()} {t("footer.text2")} 
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-r-circle" viewBox="0 0 16 16">
                      <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.5 4.002h3.11c1.71 0 2.741.973 2.741 2.46 0 1.138-.667 1.94-1.495 2.24L11.5 12H9.98L8.52 8.924H6.836V12H5.5zm1.335 1.09v2.777h1.549c.995 0 1.573-.463 1.573-1.36 0-.913-.596-1.417-1.537-1.417z"/>
                 </svg> 

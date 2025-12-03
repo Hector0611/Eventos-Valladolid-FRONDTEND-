@@ -409,7 +409,7 @@ const restauranteIcon = new L.Icon({
                     opacity={0.9}
                     permanent={true} /* s.id === activeTooltip */ 
                   >
-                    {/* <img
+                   {/*  <img
                       src={`https://eventos-valladolid-backendt.onrender.com${s.img_resyhts}`}
                       alt="Imagen del sitio arqueológico"
                       className="modal-ima1"

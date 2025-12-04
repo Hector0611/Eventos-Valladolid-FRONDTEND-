@@ -23,5 +23,14 @@
     "contactu" : "Contact Us",
     "follow" : "Follow us on:",
     "text2" : "All Rights Reserved for the Municipality of Valladolid, Yucatán V: 1.6.2"
+  },
+   "historia": {
+    "title": "Meet Valladolid, Yucatán, Mexico",
+    "subtitle": "Learn about the history of Valladolid, Yucatan, México",
+    "readMore": "Read more"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error loading"
   }
 }

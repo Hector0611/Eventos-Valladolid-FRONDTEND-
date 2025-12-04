@@ -22,5 +22,15 @@
     "contactu" : "Contáctanos",
     "follow" : "Síguenos en:",
     "text2" : "Todos los Derechos Reservados para el Municipio de Valladolid, Yucatán V: 1.6.2"
+  },
+  "historia": {
+    "title": "Conoce Valladolid, Yucatán, México",
+    "subtitle": "Conoce la historia de Valladolid, Yucatán, México",
+    "readMore": "Leer más"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error al cargar"
   }
+  
 }

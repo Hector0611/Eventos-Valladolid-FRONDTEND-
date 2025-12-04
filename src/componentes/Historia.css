@@ -282,6 +282,25 @@
   user-select: none;
 }
 
+/* src/components/Historia.css - agregar al final */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.no-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-size: 1.2rem;
+  color: #999;
+}
+
 
 /* 🧩 ANIMACIONES EXTRA */
 @keyframes slideUp {

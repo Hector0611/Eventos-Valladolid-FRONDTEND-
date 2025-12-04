@@ -42,6 +42,10 @@ const App = () => {
       theme: "colored",
     });
 
+    // Al inicio de tu App.js o componente principal
+
+  
+
    /*  // 🔔 Notificación nativa del navegador
     if ("Notification" in window) {
       if (Notification.permission === "granted") {
@@ -55,6 +59,13 @@ const App = () => {
       }
     } */
   }, []);
+
+  // Al inicio de tu App.js o componente principal
+useEffect(() => {
+  console.log('Contenido HTML lang:', document.documentElement.lang);
+  console.log('Cookies actuales:', document.cookie);
+  console.log('Idioma guardado:', localStorage.getItem('preferredLanguage'));
+}, []);
 
 
   
@@ -161,6 +172,7 @@ const App = () => {
                   <>
                     <Header2 />
                     <Header />  
+                     {/* <LanguageSwitcher /> */}
                     <Historia />
                     <Cenotes />
                     {/* <Conventos /> */}
@@ -194,6 +206,7 @@ const App = () => {
                 <>  
                   <Header2 />
                   <Header />
+                 
                    <Historia />
                     <Conventos />
                     <Cenotes />

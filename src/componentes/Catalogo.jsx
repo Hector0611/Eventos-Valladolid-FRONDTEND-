@@ -35,6 +35,7 @@ import feria7 from './Imagenes/ImgTempo/Feria1.jpg';/* 6 de febrero */
 import feria8 from './Imagenes/ImgTempo/Feria6.jpg';/* 7 de febrero */
 
 /* Folletos */
+import murem from './Imagenes/ImgTempo/Murem_exposicion.jpg';
 /* ya pasaron */
 import logoDiaMuertos from './Imagenes/ImgTempo/DiaMuertos.jpg';
 import logoDiaMuertosingles from './Imagenes/ImgTempo/DiaMuertosIngles.jpg';
@@ -116,11 +117,10 @@ const Catalogo = () => {
         <img src={JuanBalam} alt="Juan Balam" className="folleto-img rounded shadow" />
       </div> */}
 
-     {/*  <div className="folleto text-center mb-5">
-        <h2 className="fw-bold mb-3">The Festival of My Town</h2>
-        <img src={Fiesta1} alt="The Festival of My Town" className="folleto-img rounded shadow" />
-        <img src={Fiesta2} alt="The Festival of My Town" className="folleto-img rounded shadow" />
-      </div> */} 
+    <div className="folleto text-center mb-5">
+        <h2 className="fw-bold mb-3">Opening of the exhibition "The Torchbearers"</h2>
+        <img src={murem} alt="The Festival of My Town" className="folleto-img rounded shadow" />
+      </div> *
 
      
 

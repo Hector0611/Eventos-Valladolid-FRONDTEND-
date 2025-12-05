@@ -60,12 +60,6 @@ const App = () => {
     } */
   }, []);
 
-  // Al inicio de tu App.js o componente principal
-useEffect(() => {
-  console.log('Contenido HTML lang:', document.documentElement.lang);
-  console.log('Cookies actuales:', document.cookie);
-  console.log('Idioma guardado:', localStorage.getItem('preferredLanguage'));
-}, []);
 
 
   

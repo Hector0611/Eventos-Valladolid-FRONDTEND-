@@ -246,13 +246,13 @@ const ProgramarEvents = () => {
               <table key={`${selectedMonth}-${currentYear}`} className="calendar-table">
                 <thead>
                   <tr>
-                    <th>Monday</th> 
-                    <th>Tuesday</th> 
-                    <th>Wednesday</th> 
-                    <th>Thursday</th> 
-                    <th>Friday</th> 
-                    <th>Saturday</th>
-                    <th>Sunday</th>
+                    <th className='dias'>Monday</th> 
+                    <th className='dias'>Tuesday</th> 
+                    <th className='dias'>Wednesday</th> 
+                    <th className='dias'>Thursday</th> 
+                    <th className='dias'>Friday</th> 
+                    <th className='dias'>Saturday</th>
+                    <th className='dias'>Sunday</th>
                   </tr>
                 </thead>
                 <tbody>

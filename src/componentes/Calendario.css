@@ -50,7 +50,7 @@
     vertical-align: top;
     text-align: center;
     padding: 5px 15px;
-    box-shadow: 0 1px 1px rgb(0, 0, 0); /* Línea de borde de Bootstrap */
+    box-shadow: 1px 1px 1px rgb(0, 0, 0); /* Línea de borde de Bootstrap */
     color: rgba(0, 0, 0, 0.87);
     font-size: 20px;
     
@@ -65,11 +65,11 @@
 }
 
 .calendar-table th{
-    background: rgba(255, 0, 0, 0.871);
+    background: #00000078;
     color: rgb(255, 255, 255);
     
     border-radius: 0px;
-    box-shadow: 0 2.5px 5px rgb(0, 0, 0); /* Línea de borde de Bootstrap */
+    box-shadow: 1px 2.5px 5px rgb(255, 255, 255); /* Línea de borde de Bootstrap */
     align-items: center;
 }
 

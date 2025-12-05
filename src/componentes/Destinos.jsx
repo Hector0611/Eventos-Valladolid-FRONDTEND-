@@ -66,7 +66,7 @@ export default function Destino() {
             <button className="btn-prev" onClick={prev}>←</button>
             <button className="btn-next" onClick={next}>→</button>
 
-            {/* Cerrar */}
+             {/* Cerrar */}
             <button className="btn-close" onClick={() => setSelected(null)}>✖</button>
           </div>
         </div>

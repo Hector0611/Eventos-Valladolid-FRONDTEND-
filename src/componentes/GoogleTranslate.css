@@ -216,18 +216,8 @@ iframe[id*="goog-te"] {
     font-size: 13px;
   }
   
-  .language-dropdown {
-    min-width: 140px;
-  }
 }
 
-@media (max-width: 480px) {
-  .language-btn {
-    min-width: auto;
-    padding: 8px;
-  }
-  
-  .language-name {
-    display: none;
-  }
-}
+
+
+

@@ -4,6 +4,8 @@ import './Historia.css';
 import Logo1 from './Imagenes/ImagenesDescobere/Valladolid.png';
 import Logo2 from './Imagenes/ImagenesDescobere/Cenote3.jpg';
 import Logo3 from './Imagenes/ImagenesDescobere/Tradiciones.jpg';
+import Logo4 from './Imagenes/ImagenesDescobere/Cenote4.jpg';
+import Logo5 from './Imagenes/ImagenesDescobere/Cenote5.jpg';
 
 const Historia = () => {
   const [historia, setHistoria] = useState([]);
@@ -11,7 +13,7 @@ const Historia = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [fade, setFade] = useState(false);
-  const imagenes = [Logo1, Logo2, Logo3];
+  const imagenes = [Logo1, Logo2, Logo3, Logo4, Logo5];
   const [index, setIndex] = useState(0);
 
   // Cambia automáticamente cada 4 segundos

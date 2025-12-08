@@ -11,13 +11,15 @@
 
 /* 🏛️ TÍTULOS */
 .titel111 {
-  font-size: 2.6rem;
-  font-weight: 700;
-  color: #05668d;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #206561;
   margin-bottom: 5px;
   text-transform: uppercase;
   letter-spacing: 2px;
   animation: slideDown 0.8s ease;
+  padding: 10px 30px;
+  text-shadow: 1px 1px 0px rgb(0, 0, 0);
 }
 
 .tituls {

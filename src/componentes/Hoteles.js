@@ -346,7 +346,7 @@ const restauranteIcon = new L.Icon({
         {/* ------------------------------------------------
            MAPA
         ------------------------------------------------ */}
-        <div className="map-wrapper">
+        <div className="map-wrapper notranslate" translate="no">
           <MapContainer
             center={[20.69018, -88.201223]}
             zoom={11}

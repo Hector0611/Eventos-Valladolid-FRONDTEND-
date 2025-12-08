@@ -541,6 +541,13 @@ body {
   text-align: left;
 }
 
+.notranslate {
+  translate: no;
+}
+
+.goog-te-banner-frame.skiptranslate { display: none !important; }
+body { top: 0px !important; }
+
 
 
 /* ====== RESPONSIVE ====== */

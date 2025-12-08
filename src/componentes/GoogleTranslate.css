@@ -1,9 +1,4 @@
-/* GoogleTranslate.css */
-.google-translate-wrapper {
-  position: relative;
-  z-index: 99999;
-}
-
+/* Botón e interfaz */
 .language-selector {
   position: relative;
   display: inline-block;
@@ -27,50 +22,34 @@
   justify-content: space-between;
 }
 
-.language-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-}
-
-.language-btn:active {
-  transform: translateY(0);
-}
-
-.language-flag {
-  font-size: 18px;
-}
-
-.language-name {
-  flex-grow: 1;
-  text-align: left;
-  padding: 0 8px;
-}
-
-.dropdown-arrow {
-  font-size: 10px;
-  transition: transform 0.3s ease;
-}
-
-.dropdown-arrow.rotated {
-  transform: rotate(180deg);
-}
-
-.language-dropdown {
+.dropdown {
   position: absolute;
-  top: 100%;
-  right: 0;
-  margin-top: 8px;
   background: white;
-  border: 1px solid #e0e0e0;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   min-width: 160px;
-  z-index: 100001;
-  overflow: hidden;
-  animation: slideDown 0.3s ease;
+  margin-top: 8px;
+  z-index: 999999;
+  animation: slideDown 0.25s ease;
 }
 
+.dropdown-item {
+  padding: 12px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item.active {
+  background: #667eea;
+  color: white;
+}
+
+/* ANIMACIÓN */
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -82,142 +61,35 @@
   }
 }
 
-.dropdown-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  padding: 12px 16px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  text-align: left;
-  transition: all 0.2s ease;
-  color: #333;
-  border-bottom: 1px solid #f5f5f5;
-  background-color: #e0e0e0;
-}
+/* >>>>>>>>>>>>>>>> IMPORTANTE <<<<<<<<<<<<<<<< */
+/* Ocultar Google Translate sin borrar nodos */
 
-.dropdown-item:last-child {
-  border-bottom: none;
-}
-
-.dropdown-item:hover {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  color: #667eea;
-}
-
-.dropdown-item.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  font-weight: 600;
-}
-
-/* ESTILOS CRÍTICOS PARA OCULTAR GOOGLE TRANSLATE */
-/* Estos son importantes para ocultar todos los elementos */
-.goog-te-banner-frame {
-  display: none !important;
+.goog-te-banner-frame,
+.goog-te-menu-frame,
+.goog-te-gadget,
+.goog-te-combo,
+.goog-logo-link,
+.skiptranslate,
+.goog-te-ftab,
+.goog-te-ftab-frame {
+  opacity: 0 !important;
   visibility: hidden !important;
+  pointer-events: none !important;
   height: 0 !important;
   width: 0 !important;
-  overflow: hidden !important;
-}
-
-.goog-te-gadget {
-  display: none !important;
-  visibility: hidden !important;
-  font-size: 0 !important;
-  height: 0 !important;
-  width: 0 !important;
+  border: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-.goog-te-gadget-simple {
-  display: none !important;
-  visibility: hidden !important;
-}
-
-.goog-te-gadget-icon {
-  display: none !important;
-  visibility: hidden !important;
-}
-
-.goog-te-menu-value {
-  display: none !important;
-  visibility: hidden !important;
-}
-
-.goog-te-menu-value span {
-  display: none !important;
-  visibility: hidden !important;
-}
-
-.goog-te-gadget-simple img {
-  display: none !important;
-  visibility: hidden !important;
-}
-
-.goog-te-ftab-frame {
-  display: none !important;
-  visibility: hidden !important;
-}
-
-.goog-te-combo {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  width: 0 !important;
-  height: 0 !important;
-  position: absolute !important;
-  left: -9999px !important;
-}
-
-body {
-  top: 0px !important;
-  position: static !important;
-}
-
-/* Eliminar cualquier margen que Google añada */
-.skiptranslate {
-  display: none !important;
-  visibility: hidden !important;
-}
-
-/* Para evitar que aparezcan tooltips */
-.goog-tooltip {
-  display: none !important;
-  visibility: hidden !important;
-}
-
-.goog-text-highlight {
-  background: none !important;
-  box-shadow: none !important;
-}
-
-/* Ocultar cualquier iframe de Google */
-iframe[src*="translate.googleapis.com"],
+/* iframes de Google */
+iframe[src*="translate"],
 iframe[class*="goog-te"],
 iframe[id*="goog-te"] {
-  display: none !important;
+  opacity: 0 !important;
   visibility: hidden !important;
-  width: 0 !important;
+  pointer-events: none !important;
   height: 0 !important;
-  border: none !important;
+  width: 0 !important;
+  border: 0 !important;
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .language-btn {
-    min-width: 120px;
-    padding: 8px 12px;
-    font-size: 13px;
-  }
-  
-}
-
-
-
-

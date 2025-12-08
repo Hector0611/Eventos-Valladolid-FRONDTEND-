@@ -547,18 +547,18 @@ const restauranteIcon = new L.Icon({
       )}
 
       {selectedHotel.info_nombre && (
-        <p> {selectedHotel.info_nombre}</p>
+        <p className="texto-pres1" dangerouslySetInnerHTML={{ __html: selectedHotel.info_nombre }}></p>
       )}
 
       {selectedHotel.info_descripcion && (
         <div>
           <strong>Detailed information:</strong>
-          <pre className="modal-pr1">{selectedHotel.info_descripcion}</pre>
+          <pre className="modal-pr1" dangerouslySetInnerHTML={{ __html: selectedHotel.info_descripcion }}></pre>
         </div>
       )}
 
       {selectedHotel.info_calle && (
-        <p><strong></strong> {selectedHotel.info_calle}</p>
+        <p className="texto-pres1" dangerouslySetInnerHTML={{ __html: selectedHotel.info_calle }}></p>
       )}
 
       {selectedHotel.info_telefono && selectedHotel.info_telefono !== "" && (
@@ -575,7 +575,6 @@ const restauranteIcon = new L.Icon({
     </div>
   </div>
 )}
-          
 
         </div>
       </div>

@@ -119,10 +119,10 @@ const Catalogo = () => {
         <img src={JuanBalam} alt="Juan Balam" className="folleto-img rounded shadow" />
       </div> */}
 
-    <div className="folleto text-center mb-5">
-        <h2 className="fw-bold mb-3">Opening of the exhibition "The Torchbearers"</h2>
-        <img src={murem} alt="The Festival of My Town" className="folleto-img rounded shadow" />
-      </div> 
+    {/*  <div className="folleto text-center mb-5">
+          <h2 className="fw-bold mb-3">Opening of the exhibition "The Torchbearers"</h2>
+          <img src={murem} alt="The Festival of My Town" className="folleto-img rounded shadow" />
+        </div>  */}
 
       <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Christmas Concert</h2>

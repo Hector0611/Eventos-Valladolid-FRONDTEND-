@@ -110,6 +110,7 @@ const App = () => {
                   <>
                     <Header2 />
                     <Header />
+                    <LanguageSwitcher />
                     <EventoCalendario />
 
                   </>
@@ -135,6 +136,7 @@ const App = () => {
                   <>
                     <Header2 />
                     <Header />
+                    <LanguageSwitcher />
                     <Transporte />
                     
                     {/* Footer global */}
@@ -151,6 +153,7 @@ const App = () => {
                   <>
                     <Header2 />
                     <Header />
+                    <LanguageSwitcher />
                     <Hoteles />
                     {/* Footer global */}
           <ProximoEvento />
@@ -166,6 +169,7 @@ const App = () => {
                   <>
                     <Header2 />
                     <Header />  
+                    <LanguageSwitcher />
                      {/* <LanguageSwitcher /> */}
                     <Historia />
                     <Cenotes />
@@ -185,6 +189,7 @@ const App = () => {
                   <>
                     <Header2 />
                     <Header />
+                    <LanguageSwitcher />
                     <ProgramarEvents />
                     <Catalogo />
                     <EventoDiario />
@@ -200,6 +205,7 @@ const App = () => {
                 <>  
                   <Header2 />
                   <Header />
+                  <LanguageSwitcher />
                  
                    <Historia />
                     <Conventos />
@@ -215,6 +221,7 @@ const App = () => {
                 <>
                   <Header2 />
                   <Header />
+                  <LanguageSwitcher />
                   <Catalogo />
 
                   {/* Footer global */}
@@ -228,6 +235,7 @@ const App = () => {
                 <>
                   <Header2 />
                   <Header />
+                  <LanguageSwitcher />
                   <Estadisticas />
 
                   {/* Footer global */}
@@ -241,6 +249,7 @@ const App = () => {
                 <>
                   <Header2 />
                   <Header />
+                  <LanguageSwitcher />
                   <Turismo />
 
                   {/* Footer global */}
@@ -256,6 +265,7 @@ const App = () => {
                 <>
                   <Header2 />
                   <Header />
+                  <LanguageSwitcher />
                   <Contactanos />
 
                   {/* Footer global */}
@@ -269,6 +279,7 @@ const App = () => {
                 <>
                   <Header2 />
                   <Header />
+                  <LanguageSwitcher />
                   <Destinos />
 
                   {/* Footer global */}
@@ -281,6 +292,7 @@ const App = () => {
                 <>
                   <Header2 />
                   <Header />
+                  <LanguageSwitcher />
                   <PueblosCercanos />
 
                   {/* Footer global */}

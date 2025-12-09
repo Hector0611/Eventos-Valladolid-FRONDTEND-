@@ -22,7 +22,7 @@
   justify-content: space-between;
   gap: 6px;
   width: 100%;
-  padding: 4px 5px; /* menos padding en móvil */
+  padding: 10px 15px; /* menos padding en móvil */
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border: none;
   border-radius: 12px;

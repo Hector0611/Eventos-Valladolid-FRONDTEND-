@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import './Historia.css';
 
 import Logo1 from './Imagenes/ImagenesDescobere/Valladolid.png';
@@ -13,39 +13,40 @@ const Historia = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [fade, setFade] = useState(false);
-  const imagenes = [Logo1, Logo2, Logo3, Logo4, Logo5];
   const [index, setIndex] = useState(0);
 
-  // Cambia automáticamente cada 4 segundos
+  const imagenes = useMemo(() => [Logo1, Logo2, Logo3, Logo4, Logo5], []);
+
+  // Slider principal
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % imagenes.length);
     }, 6000);
-
     return () => clearInterval(interval);
-  }, []);
+  }, [imagenes.length]);
 
-  const handleLeerMas = (item) => {
+  const handleLeerMas = useCallback((item) => {
     setSelectedItem(item);
     setShowModal(true);
-  };
+  }, []);
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     setFade(true);
     setTimeout(() => {
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + historia.length) % historia.length);
+      setCurrentIndex((prev) => (prev - 1 + historia.length) % historia.length);
       setFade(false);
-    }, 300);
-  };
+    }, 250);
+  }, [historia.length]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setFade(true);
     setTimeout(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % historia.length);
+      setCurrentIndex((prev) => (prev + 1) % historia.length);
       setFade(false);
-    }, 100);
-  };
+    }, 250);
+  }, [historia.length]);
 
+  // Fetch solo una vez
   useEffect(() => {
     fetch('https://eventos-valladolid-backendt.onrender.com/api/historia')
       .then((response) => response.json())
@@ -53,97 +54,85 @@ const Historia = () => {
       .catch((error) => console.error('Error al obtener los datos:', error));
   }, []);
 
+  // Auto-carrusel historia
   useEffect(() => {
-    const interval = setInterval(() => {
-      handleNext();
-    }, 10000);
+    if (historia.length === 0) return;
+
+    const interval = setInterval(() => handleNext(), 10000);
     return () => clearInterval(interval);
-  }, [historia]);
+  }, [historia.length, handleNext]);
 
   return (
     <div className="historia-container">
-<div className='Separacion'></div>
-<h1 className="titel111">Meet Valladolid, Yucatán, Mexico.</h1>
-      <div 
-  className="slider-full-container"
-  onMouseMove={(e) => {
-    const x = (e.clientX / window.innerWidth - 0.75) * 40;
-    const y = (e.clientY / window.innerHeight - 0.75) * 40;
-    e.currentTarget.style.transform = `translate(${x}px, ${y}px)`;
-  }}
-  onMouseLeave={(e) => {
-    e.currentTarget.style.transform = "translate(0px, 0px)";
-  }}
->
-  <img
-    src={imagenes[index]}
-    alt="Slider Valladolid"
-    className="slider-full-img"
-  />
+      <div className='Separacion'></div>
+      <h1 className="titel111">Meet Valladolid, Yucatán, Mexico.</h1>
 
-</div>
-    <hr />
-        <br />
-        <div className="video-container">
-          <iframe
-            src="https://www.youtube.com/embed/iw5Ur7GW4Rk"
-            title="Conoce a Valladolid, Yucatán. México"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
-        {/* JSON-LD para SEO del video */}
-  <script type="application/ld+json">
-    {`
-    {
-      "@context": "https://schema.org",
-      "@type": "VideoObject",
-      "name": "Conoce a Valladolid, Yucatán. México",
-      "description": "Descubre Valladolid, Yucatán: su cultura, historia, cenotes y tradiciones en este video.",
-      "thumbnailUrl": "https://img.youtube.com/vi/iw5Ur7GW4Rk/maxresdefault.jpg",
-      "uploadDate": "2025-09-24",
-      "duration": "PT3M20S",
-      "embedUrl": "https://www.youtube.com/embed/iw5Ur7GW4Rk",
-      "contentUrl": "https://visitavalladolidmx.com/"
-    }
-    `}
-  </script>
-    <br />
+      {/* SLIDER DE PORTADA */}
+      <div
+        className="slider-full-container"
+        onMouseMove={(e) => {
+          const x = (e.clientX / window.innerWidth - 0.75) * 40;
+          const y = (e.clientY / window.innerHeight - 0.75) * 40;
+          e.currentTarget.style.transform = `translate(${x}px, ${y}px)`;
+        }}
+        onMouseLeave={(e) => (e.currentTarget.style.transform = 'translate(0px, 0px)')}
+      >
+        <img
+          src={imagenes[index]}
+          alt="Slider Valladolid"
+          className="slider-full-img"
+          loading="lazy"
+        />
+      </div>
+
+      <hr />
+      <br />
+
+      {/* VIDEO 1 */}
+      <div className="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/iw5Ur7GW4Rk"
+          title="Conoce a Valladolid, Yucatán. México"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          loading="lazy"
+          allowFullScreen
+        ></iframe>
+      </div>
+
+      <br />
 
       <h1 className="titel111">Learn about the history of Valladolid, Yucatan, México</h1>
 
+      {/* CARRUSEL HISTORIA */}
       <div className="historia-carrusel">
-        {historia.map((item, index) => {
-          let className = 'historia-item hidden';
-
-          if (index === currentIndex) {
-            className = 'historia-item current';
-          } else if (index === (currentIndex + 1) % historia.length) {
-            className = 'historia-item next';
-          } else if (index === (currentIndex - 1 + historia.length) % historia.length) {
-            className = 'historia-item prev';
-          }
+        {historia.map((item, i) => {
+          let className = "historia-item hidden";
+          if (i === currentIndex) className = "historia-item current";
+          else if (i === (currentIndex + 1) % historia.length) className = "historia-item next";
+          else if (i === (currentIndex - 1 + historia.length) % historia.length) className = "historia-item prev";
 
           return (
-            <div key={index} className={`${className} ${fade ? 'fade-out' : 'fade-in'}`}>
+            <div key={i} className={`${className} ${fade ? "fade-out" : "fade-in"}`}>
               <img
                 className="historia-fondo-imagen"
                 src={`https://eventos-valladolid-backendt.onrender.com/${item.url_imagen}`}
                 alt={item.titulo}
+                loading="lazy"
               />
               <div className="historia-overlay">
                 <h2 className="titulo5">{item.titulo}</h2>
-                <div className="historia-texto">
 
-                  
+                <div className="historia-texto">
                   <p>
                     {item.descripccion
-                  ? item.descripccion.replace(/<[^>]*>/g, '').slice(0, 150) + '...'
-                  : 'Sin descripción'}
+                      ? item.descripccion.replace(/<[^>]*>/g, "").slice(0, 150) + "..."
+                      : "Sin descripción"}
                   </p>
-                  
                 </div>
-                <button className="historia-link" onClick={() => handleLeerMas(item)}>Read more</button>
+
+                <button className="historia-link" onClick={() => handleLeerMas(item)}>
+                  Read more
+                </button>
               </div>
             </div>
           );
@@ -153,21 +142,38 @@ const Historia = () => {
         <button className="nav-button_right" onClick={handleNext}>❯</button>
       </div>
 
+      {/* VIDEO 2 */}
+      <div className="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/jbeHlcISQbQ"
+          title="FIESTAS DE YUCATÁN"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+
+      {/* MODAL */}
       {showModal && selectedItem && (
         <div className="modal-overlay11">
           <div className="modal-content11">
-            <button className="close-button222 " onClick={() => setShowModal(false)}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="xbutton" viewBox="0 0 16 16">
-                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-                </svg>
+            <button className="close-button222" onClick={() => setShowModal(false)}>
+              ✖
             </button>
+
             <h2 className="titel111 tituls">{selectedItem.titulo}</h2>
+
             <img
               src={`https://eventos-valladolid-backendt.onrender.com/${selectedItem.url_imagen}`}
               alt={selectedItem.titulo}
               className="modal-image11"
+              loading="lazy"
             />
-            <p className="texto-pre11" dangerouslySetInnerHTML={{ __html: selectedItem.descripccion }}></p>
+
+            <p
+              className="texto-pre11"
+              dangerouslySetInnerHTML={{ __html: selectedItem.descripccion }}
+            ></p>
           </div>
         </div>
       )}

@@ -1,20 +1,19 @@
 .traduccion{
-    font-size: 14px;
+
     z-index: 99999999999999999999;
     position: fixed;
     top: 15px;
     right: 10px;
-    border-radius: 5px;
-    padding: 5px 20px;
+
 
 }
 
 @media (max-width: 600px) {
     .traduccion{
-        font-size: 12px;
-        padding: 1px 1px;
-        top: 1%;
-        right: 1px;
+
+        padding: 0px 0px;
+        top: 0%;
+        right: 0%;
     }
 
 }

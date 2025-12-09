@@ -582,7 +582,7 @@ const taxisES = [
         
        
 
-        <div className="map-panel">
+        <div className="map-panel notranslate " translate="no">
           <MapContainer center={[20.689, -88.201]} zoom={14} style={{ height: "520px", width: "100%" }}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 

@@ -502,11 +502,16 @@ body {
 }
 
 .modal-cont1 {
-  background-color: #ffffff;
+  background-image: url("/src/componentes/Imagenes/Fondo66.jpg");
+    background-repeat: repeat-y;
+  background-size: 100% auto; /* Se ajusta al ancho, repitiéndose hacia abajo */
+  
+
+  color: #050202;
   padding: 20px;
   border-radius: 12px;
   width: 90%;
-  max-width: 900px;
+  max-width: 1000px;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
@@ -539,6 +544,15 @@ body {
   margin-bottom: 15px;
   position: right;
   text-align: left;
+}
+
+.texto-pres1{
+  text-align: justify;
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  background-color: #ffffffdd ;
+  padding: 15px 20px;
 }
 
 .notranslate {

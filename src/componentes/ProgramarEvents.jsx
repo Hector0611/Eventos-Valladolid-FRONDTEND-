@@ -16,6 +16,7 @@ import './menuwhat.css';
 import Logo1 from './Imagenes/Iglesia.jpg';
 import Logo2 from './Imagenes/cenotezaki.jpg';
 import Logo3 from './Imagenes/fondo.gif';
+import Logo4 from './Imagenes/ImgTempo/12diciembre.png';
 import { div } from 'framer-motion/client';
 
 const ProgramarEvents = () => {
@@ -385,7 +386,9 @@ const ProgramarEvents = () => {
             
                     <div className="evento-info1">
                 <h2 className='titel11'>Daily Events</h2>
+                <img src={Logo4} alt="Eventos Diarios" className="evento-imagen11" />
                   <div className="evento-container11">
+                    
                     
                     {/* Columna izquierda: eventos diarios */}
                     <div className="eventoDiario111">

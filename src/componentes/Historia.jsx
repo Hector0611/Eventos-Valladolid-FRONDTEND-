@@ -156,7 +156,7 @@ const Historia = () => {
       {/* MODAL */}
       {showModal && selectedItem && (
         <div className="modal-overlay11">
-          <div className="modal-content11">
+          <div className="modal-content14">
             <button className="close-button222" onClick={() => setShowModal(false)}>
               ✖
             </button>

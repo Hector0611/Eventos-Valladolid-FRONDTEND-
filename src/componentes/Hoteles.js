@@ -535,7 +535,7 @@ const restauranteIcon = new L.Icon({
 
       <p className="texto-pres1" dangerouslySetInnerHTML={{ __html: selectedHotel.descripcion }}></p>
 
-      <p> {selectedHotel.localizacion}</p>
+      <p className="texto-pres1"> {selectedHotel.localizacion}</p>
 
 
       {selectedHotel.info_imagen && (

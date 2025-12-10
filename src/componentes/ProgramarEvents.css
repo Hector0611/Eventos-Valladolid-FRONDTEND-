@@ -741,6 +741,15 @@
   background-color: #d35400;
 }
 
+.evento-imagen11{ 
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 @keyframes girar {
   to {
     transform: rotate(360deg);

@@ -252,7 +252,7 @@ const restauranteIcon = new L.Icon({
           </div>
             <hr />
           {/* Oficina de Turismo */}
-          <div className="accordion-section">
+          <div className="accordion-section">x
             <h4 className="titel4" onClick={() => setSelectedItem({ type: "Oficina", data: oficinaTurismo })}>
               🏢 Tourist Office 
             </h4>

@@ -17,7 +17,7 @@ import Logo1 from './Imagenes/Iglesia.jpg';
 import Logo2 from './Imagenes/cenotezaki.jpg';
 import Logo3 from './Imagenes/fondo.gif';
 import Logo4 from './Imagenes/ImgTempo/12diciembre.png';
-import { div } from 'framer-motion/client';
+
 
 const ProgramarEvents = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -46,7 +46,6 @@ const ProgramarEvents = () => {
   const [eventosSeleccionados, setEventosSeleccionados] = useState([]);
   const [currentYear] = useState(new Date().getFullYear());
   const today = new Date();
-  const navigate = useNavigate();
 
   const [fechaInicio, setFechaInicio] = useState("");
   const [fechaFin, setFechaFin] = useState("");
@@ -197,7 +196,7 @@ const ProgramarEvents = () => {
             <hr />
             <h3 className="fecha-texto1">Select the days you will be in Valladolid</h3>
 
-            <div className="fecha-inputs">
+            <div className="fecha-inputs"> 
               <input type="date" value={fechaInicio} onChange={(e) => setFechaInicio(e.target.value)} />
               <span className="fecha-separador"> to </span>
               <input
@@ -382,7 +381,7 @@ const ProgramarEvents = () => {
             )
             }
             
-             {/* Aqui eventos diarios que se repiten en todos los eventos */} 
+             {/* Aqui eventos diarios que se repiten en todos los eventos */}
             
                     <div className="evento-info1">
                 <h2 className='titel11'>Daily Events</h2>
@@ -403,7 +402,7 @@ const ProgramarEvents = () => {
                         onClick={() =>
                           window.open(
                             `https://www.google.com/maps/dir/?api=1&destination=20.689720,-88.201669`,
-                            "-_blank"
+                            "_blank"
                           )
                         }
                       >

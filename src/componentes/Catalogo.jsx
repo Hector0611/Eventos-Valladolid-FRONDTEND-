@@ -39,14 +39,15 @@ import murem from './Imagenes/ImgTempo/Murem_exposicion.jpg';
 import NavidasCon from './Imagenes/ImgTempo/NavidasCon.jpeg';
 import Dance1 from './Imagenes/ImgTempo/Dance1.jpeg';
 import cancelacion from './Imagenes/ImgTempo/12diciembre.png';
+import perla from './Imagenes/ImgTempo/Perla.jpeg';
 /* ya pasaron */
-import logoDiaMuertos from './Imagenes/ImgTempo/DiaMuertos.jpg';
+/* import logoDiaMuertos from './Imagenes/ImgTempo/DiaMuertos.jpg';
 import logoDiaMuertosingles from './Imagenes/ImgTempo/DiaMuertosIngles.jpg';
 import JuanBalam from './Imagenes/ImgTempo/JuanBalam.jpeg';
 
 import julieta from './Imagenes/ImgTempo/Julieta.jpg';
 import sabores from './Imagenes/ImgTempo/EventosNoviembre.jpg';
-import obrateatro from './Imagenes/ImgTempo/ObraTeatro.jpeg';
+import obrateatro from './Imagenes/ImgTempo/ObraTeatro.jpeg'; */
 
 
 /* no an pasado */
@@ -153,6 +154,19 @@ const Catalogo = () => {
             if (confirmGo) {
               window.open(
                 "https://www.google.com/maps/place/Plaza+Casa+De+La+Cultura+Valladolid/@20.690064,-88.2012433,21z/data=!4m6!3m5!1s0x8f510ada12b80cb5:0x31656d2d56bdd2!8m2!3d20.6901533!4d-88.2011122!16s%2Fg%2F11ckd371_d?hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOC4wIKXMDSoASAFQAw%3D%3D",
+                "_blank"
+              );
+            }
+          }}/>
+      </div>
+
+       <div className="folleto text-center mb-5">
+        <h2 className="fw-bold mb-3">Painting Exhibition</h2>
+        <img src={perla} alt="The Festival of My Town" className="folleto-img rounded shadow"  style={{ cursor: "pointer" }} onClick={() => {
+            const confirmGo = window.confirm("Do you want to go to the location?");
+            if (confirmGo) {
+              window.open(
+                "https://www.google.com/maps/@20.6899157,-88.2010884,21z?hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOC4wIKXMDSoASAFQAw%3D%3D",
                 "_blank"
               );
             }

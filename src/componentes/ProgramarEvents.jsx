@@ -212,7 +212,6 @@ const ProgramarEvents = () => {
                 >
                   {loading ? <div className="spinner"></div> : "Search events"}
                 </button>
-
             </div>
 
             <hr />

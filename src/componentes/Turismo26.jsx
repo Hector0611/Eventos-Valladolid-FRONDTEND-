@@ -1,27 +1,28 @@
 import React, { useState } from "react";
 import "./Estadisticas2025.css";
 
-export default function Estadisticas2025() {
+export default function Turismo26() {
 
-  const PASSWORD = "Valla2025!"; // ← Cambia aquí la contraseña
+  const PASSWORD = "Valla2026!"; // ← Contraseña para 2026
 
   const [pdfToOpen, setPdfToOpen] = useState(null);
   const [passwordInput, setPasswordInput] = useState("");
   const [error, setError] = useState("");
 
+  // LISTA DE PDFs DEL 2026
   const meses = [
-    { nombre: "Enero", pdf: "/pdfs/2025/" },
-    { nombre: "Febrero", pdf: "/pdfs/2025/" },
-    { nombre: "Marzo", pdf: "/pdfs/2025/" },
-    { nombre: "Abril", pdf: "/pdfs/2025/" },
-    { nombre: "Mayo", pdf: "/pdfs/2025/" },
-    { nombre: "Junio", pdf: "/pdfs/2025/" },
-    { nombre: "Julio", pdf: "/pdfs/2025/" },
-    { nombre: "Agosto", pdf: "/pdfs/2025/AGOSTO_PDF.pdf" },
-    { nombre: "Septiembre", pdf: "/pdfs/2025/SEPTIEMBRE_PDF.pdf" },
-    { nombre: "Octubre", pdf: "/pdfs/2025/OCTUBRE_PDF.pdf" },
-    { nombre: "Noviembre", pdf: "/pdfs/2025/NOVIEMBRE_PDF.pdf" },
-    { nombre: "Diciembre", pdf: "/pdfs/2025/" },
+    { nombre: "Enero", pdf: "/pdfs/2026/ENERO_2026.pdf" },
+    { nombre: "Febrero", pdf: "/pdfs/2026/FEBRERO_2026.pdf" },
+    { nombre: "Marzo", pdf: "/pdfs/2026/MARZO_2026.pdf" },
+    { nombre: "Abril", pdf: "/pdfs/2026/ABRIL_2026.pdf" },
+    { nombre: "Mayo", pdf: "/pdfs/2026/MAYO_2026.pdf" },
+    { nombre: "Junio", pdf: "/pdfs/2026/JUNIO_2026.pdf" },
+    { nombre: "Julio", pdf: "/pdfs/2026/JULIO_2026.pdf" },
+    { nombre: "Agosto", pdf: "/pdfs/2026/AGOSTO_2026.pdf" },
+    { nombre: "Septiembre", pdf: "/pdfs/2026/SEPTIEMBRE_2026.pdf" },
+    { nombre: "Octubre", pdf: "/pdfs/2026/OCTUBRE_2026.pdf" },
+    { nombre: "Noviembre", pdf: "/pdfs/2026/NOVIEMBRE_2026.pdf" },
+    { nombre: "Diciembre", pdf: "/pdfs/2026/DICIEMBRE_2026.pdf" },
   ];
 
   const abrirConPassword = (pdf) => {
@@ -41,9 +42,9 @@ export default function Estadisticas2025() {
 
   return (
     <div className="estadisticas-container">
-      <div className="Separacion"></div>
+     
 
-      <h1 className="titulo-estadisticas">Statistics 2025</h1>
+      <h1 className="titulo-estadisticas">Statistics 2026</h1>
       <p className="subtitulo-estadisticas">
         DIRECTORATE OF ECONOMIC AND TOURISM DEVELOPMENT
       </p>
@@ -73,7 +74,7 @@ export default function Estadisticas2025() {
         </tbody>
       </table>
 
-      {/* MODAL DE CONTRASEÑA */}
+      {/* MODAL PARA CONTRASEÑA */}
       {pdfToOpen && (
         <div className="modal-overlay-stats" onClick={() => setPdfToOpen(null)}>
           <div className="modal-stats" onClick={(e) => e.stopPropagation()}>

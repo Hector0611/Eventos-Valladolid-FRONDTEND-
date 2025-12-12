@@ -7,20 +7,20 @@ export default function Policia() {
       id: 1,
       title: "Police",
       description: "24/7 Support — Immediate Response",
-      phone: "+52 985 856 21 00",
+      phone: "+52 985 856 12 34",
       whatsapp: "+52 985 856 21 00", /* quitar */
       badge: "EMERGENCY",
       hours: "24 hours",
     },
-    {
+    /* {
       id: 2,
       title: "Secretariat of Security 'Num. 060'",
       description: "Line for reporting and follow-up of reports   ",
       phone: "930 32 00",
-      whatsapp: "+5219982345678", /* quitar */
+      whatsapp: "+5219982345678", /* quitar
       badge: "COMPLAINTS",
       hours: "Mon–Sun: 06:00–24:00",
-    },
+    }, */
     {
       id: 3,
       title: "Citizen Attention",
@@ -133,7 +133,7 @@ export default function Policia() {
             <div className="card">
               <h3>Quick attention</h3>
               <ul>
-                <li>Local police: <strong>+52 985 856 21 00</strong></li>
+                <li>Local police: <strong>+52 985 856 12 34</strong></li>
                 <li>Firefighters: <strong>+52 985 856 12 34</strong></li>
                 <li>Cruz Roja: <strong>+52 985 856 24 13</strong></li>
                 <li>Anonymous complaint: <strong>089</strong></li>

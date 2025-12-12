@@ -39,6 +39,7 @@ import murem from './Imagenes/ImgTempo/Murem_exposicion.jpg';
 import NavidasCon from './Imagenes/ImgTempo/NavidasCon.jpeg';
 import Dance1 from './Imagenes/ImgTempo/Dance1.jpeg';
 import cancelacion from './Imagenes/ImgTempo/12diciembre.png';
+import cancelacion2 from './Imagenes/ImgTempo/24y31diceimbre.jpeg';
 import perla from './Imagenes/ImgTempo/Perla.jpeg';
 /* ya pasaron */
 /* import logoDiaMuertos from './Imagenes/ImgTempo/DiaMuertos.jpg';
@@ -124,6 +125,7 @@ const Catalogo = () => {
       <div className="folleto text-center mb-5">
           <h2 className="fw-bold mb-3"></h2>
           <img src={cancelacion} alt="The Festival of My Town" className="folleto-img rounded shadow" />
+          <img src={cancelacion2} alt="The Festival of My Town" className="folleto-img rounded shadow" />
         </div> 
 
     <div className="folleto text-center mb-5">

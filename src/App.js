@@ -30,6 +30,7 @@ import Turismo from './componentes/Turismo';
 import Destinos from './componentes/Destinos';
 import PueblosCercanos from './componentes/PueblosCercanos';
 import LanguageSwitcher from './componentes/LanguageSwitcher';
+import Turismo26 from './componentes/Turismo26';
 
 const App = () => {
 
@@ -251,6 +252,7 @@ const App = () => {
                   <Header />
                   <LanguageSwitcher />
                   <Turismo />
+                  <Turismo26 />
 
                   {/* Footer global */}
           <ProximoEvento />

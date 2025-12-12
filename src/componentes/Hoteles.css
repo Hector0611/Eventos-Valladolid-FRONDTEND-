@@ -555,6 +555,10 @@ body {
   padding: 15px 20px;
 }
 
+.sitranslate {
+  translate: yes;
+}
+
 .notranslate {
   translate: no;
 }

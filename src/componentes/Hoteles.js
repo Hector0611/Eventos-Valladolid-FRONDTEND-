@@ -164,7 +164,7 @@ const restauranteIcon = new L.Icon({
 
     return (
 
-  <div className="panel-content">
+  <div className="panel-content sitranslate" translate="yes">
     {!isMobile && <button onClick={() => setSelectedItem(null)} className="close-button">✖</button>}
 
     <h4>{nombreMostrar}</h4>
@@ -252,7 +252,7 @@ const restauranteIcon = new L.Icon({
           </div>
             <hr />
           {/* Oficina de Turismo */}
-          <div className="accordion-section">x
+          <div className="accordion-section">
             <h4 className="titel4" onClick={() => setSelectedItem({ type: "Oficina", data: oficinaTurismo })}>
               🏢 Tourist Office 
             </h4>
@@ -522,7 +522,7 @@ const restauranteIcon = new L.Icon({
           {/* ======================= MODAL ======================= */}
 
   {showModal && selectedHotel && (
-  <div className="modal-over1">
+  <div className="modal-over1 sitranslate" translate="yes">
     <div className="modal-cont1">
 
       <button className="modal-clo1" onClick={() => setShowModal(false)}>

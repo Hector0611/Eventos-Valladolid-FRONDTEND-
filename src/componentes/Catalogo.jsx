@@ -147,7 +147,7 @@ const Catalogo = () => {
 
 
 
-      <div className="folleto text-center mb-5">
+      {/* <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Christmas Concert</h2>
         <img src={NavidasCon} alt="The Festival of My Town" className="folleto-img rounded shadow"  style={{ cursor: "pointer" }} onClick={() => {
             const confirmGo = window.confirm("Do you want to go to the location?");
@@ -158,7 +158,7 @@ const Catalogo = () => {
               );
             }
           }}/>
-      </div>
+      </div> */}
 
        <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Painting Exhibition</h2>

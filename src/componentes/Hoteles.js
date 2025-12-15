@@ -69,6 +69,8 @@ const restauranteIcon = new L.Icon({
 });
 
 
+
+
   // -------- Oficina de turismo (dato local) --------
   const oficinaTurismo = {
     id: "oficina_marker",
@@ -148,6 +150,8 @@ const restauranteIcon = new L.Icon({
   };
 
 
+
+
   // ---------------- Render PANEL ----------------
   const renderInfoPanel = (item, type) => {
     if (!item) return null;
@@ -160,6 +164,9 @@ const restauranteIcon = new L.Icon({
       item.nombre;
     
     const extra = item.extra; // información extendida
+
+
+  
 
 
     return (
@@ -521,7 +528,7 @@ const restauranteIcon = new L.Icon({
 
           {/* ======================= MODAL ======================= */}
 
-  {showModal && selectedHotel && (
+  {showModal && selectedHotel && cenotes && (
   <div className="modal-over1 sitranslate" translate="yes">
     <div className="modal-cont1">
 
@@ -529,7 +536,13 @@ const restauranteIcon = new L.Icon({
         ✖
       </button>
 
-      <h2>{selectedHotel.hotel}</h2>
+      <h2>
+        {selectedHotel.hotel ||
+        selectedHotel.cenote ||
+        selectedHotel.sitio_arqueologico ||
+        selectedHotel.nombre}
+      </h2>
+
 
       <br></br>
 
@@ -538,33 +551,91 @@ const restauranteIcon = new L.Icon({
       <p className="texto-pres1"> {selectedHotel.localizacion}</p>
 
 
-      {selectedHotel.info_imagen && (
-        <img
-          src={`https://eventos-valladolid-backendt.onrender.com${selectedHotel.info_imagen}`}
-          alt="Imagen del hotel"
-          className="modal-ima1"
-        />
-      )}
+    
 
-      {selectedHotel.info_nombre && (
-        <p className="texto-pres1" dangerouslySetInnerHTML={{ __html: selectedHotel.info_nombre }}></p>
-      )}
+{(selectedHotel.info_imagen || selectedHotel.img_resyhts) && (
+  <img
+    src={`https://eventos-valladolid-backendt.onrender.com${
+      selectedHotel.info_imagen || selectedHotel.img_resyhts
+    }`}
+    alt="Imagen del lugar"
+    className="modal-ima1"
+  />
+)}
 
-      {selectedHotel.info_descripcion && (
+
+      {(selectedHotel.info_nombre || selectedHotel.actividades_recomendadas) && (
+          <>
+            {selectedHotel.info_nombre && (
+              <p
+                className="texto-pres1"
+                dangerouslySetInnerHTML={{ __html: selectedHotel.info_nombre }}
+              />
+            )}
+
+            {selectedHotel.actividades_recomendadas && (
+              <p
+                className="texto-pres1"
+                dangerouslySetInnerHTML={{ __html: selectedHotel.actividades_recomendadas }}
+              />
+            )}
+          </>
+        )}
+
+
+      {(selectedHotel.info_descripcion || selectedHotel.servicios_destacados) && (
         <div>
           <strong>Detailed information:</strong>
-          <pre className="modal-pr1" dangerouslySetInnerHTML={{ __html: selectedHotel.info_descripcion }}></pre>
+
+          {selectedHotel.info_descripcion && (
+            <pre
+              className="modal-pr1"
+              dangerouslySetInnerHTML={{ __html: selectedHotel.info_descripcion }}
+            />
+          )}
+
+          {selectedHotel.servicios_destacados && (
+            <pre
+              className="modal-pr1"
+              dangerouslySetInnerHTML={{ __html: selectedHotel.servicios_destacados }}
+            />
+          )}
         </div>
       )}
 
-      {selectedHotel.info_calle && (
+
+      {(selectedHotel.info_calle || selectedHotel.menu_gastronomico) && (
+        <>
+        {selectedHotel.info_calle && (
         <p className="texto-pres1" dangerouslySetInnerHTML={{ __html: selectedHotel.info_calle }}></p>
+        )}
+        {selectedHotel.menu_gastronomico &&(
+        <p className="texto-pres1" dangerouslySetInnerHTML={{ __html: selectedHotel.menu_gastronomico }}></p>
+
+        )}
+        </>
       )}
 
-      {selectedHotel.info_telefono && selectedHotel.info_telefono !== "" && (
-       
-        <p className="texto-pres1" dangerouslySetInnerHTML={{ __html: selectedHotel.info_telefono}}></p>
-      )}
+      
+
+      {(selectedHotel.info_telefono || selectedHotel.consejos_del_lugar) && (
+  <div>
+    
+    {selectedHotel.info_telefono && (
+      <p
+        className="texto-pres1"
+        dangerouslySetInnerHTML={{ __html: selectedHotel.info_telefono }}
+      />
+    )}
+
+    {selectedHotel.consejos_del_lugar && (
+      <p
+        className="texto-pres1"
+        dangerouslySetInnerHTML={{ __html: selectedHotel.consejos_del_lugar }}
+      />
+    )}
+  </div>
+)}
 
       {selectedHotel.info_video && selectedHotel.info_video !== "" && (
         <video controls width="100%">

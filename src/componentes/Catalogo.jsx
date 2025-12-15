@@ -124,7 +124,7 @@ const Catalogo = () => {
 
       <div className="folleto text-center mb-5">
           <h2 className="fw-bold mb-3"></h2>
-          <img src={cancelacion} alt="The Festival of My Town" className="folleto-img rounded shadow" />
+          {/* <img src={cancelacion} alt="The Festival of My Town" className="folleto-img rounded shadow" /> */}
           <img src={cancelacion2} alt="The Festival of My Town" className="folleto-img rounded shadow" />
         </div> 
 

@@ -129,7 +129,7 @@ const Catalogo = () => {
         </div> 
 
     <div className="folleto text-center mb-5">
-      <h2 className="fw-bold mb-3">Opening of the exhibition "The Torchbearers" indefinite time</h2>
+      <h2 className="fw-bold mb-3"> Exhibition "The Torchbearers" indefinite time</h2>
         <img
           src={murem}
           alt="The Festival of My Town"

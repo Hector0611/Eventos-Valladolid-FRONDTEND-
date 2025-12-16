@@ -270,8 +270,8 @@ body {
 
 /* Ajuste específico para mobile */
 @media (max-width: 1024px) {
-  .search-input1 {
-    width: 90%; /* ocupa casi todo el ancho */
+  .search-input11{
+    width: 100%; /* ocupa casi todo el ancho */
     margin: 0 auto;
     display: block;
     padding: 8px 12px;
@@ -703,6 +703,12 @@ body { top: 0px !important; }
     transform: none;
     border-left: none;
     border-top: 1px solid #ddd;
+  }
+  
+  .search-suggestions{
+    width: 80%; /* ocupa casi todo el ancho en mobile */
+    left: 50%;
+    transform: translateX(-50%);
   }
   
 }

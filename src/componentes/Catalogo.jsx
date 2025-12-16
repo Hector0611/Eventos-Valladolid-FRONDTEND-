@@ -28,11 +28,14 @@ import feria0 from './Imagenes/ImgTempo/Feria0.jpeg';/* 23 de enero */
 import feria1 from './Imagenes/ImgTempo/Feria3.jpg';/* 24 de enero */
 import feria2 from './Imagenes/ImgTempo/Feria8.jpg';/* 25 de enero */
 import feria3 from './Imagenes/ImgTempo/Feria2.jpg';/* 31 de enero */
+import feria35 from './Imagenes/ImgTempo/Feria3.5.png';/* 1 de enero */
 import feria4 from './Imagenes/ImgTempo/Feria5.jpg';/* 1 de febrero */
 import feria5 from './Imagenes/ImgTempo/Feria9.jpg';/* 1 de febrero */
+import feria55 from './Imagenes/ImgTempo/Feria5.5.png';/* 2 de febrero */
 import feria6 from './Imagenes/ImgTempo/Feria4.jpg';/* 2 de febrero */
 import feria7 from './Imagenes/ImgTempo/Feria1.jpg';/* 6 de febrero */
 import feria8 from './Imagenes/ImgTempo/Feria6.jpg';/* 7 de febrero */
+import feria9 from './Imagenes/ImgTempo/Feria10.png';/* 8 de febrero */
 
 /* Folletos */
 import murem from './Imagenes/ImgTempo/Murem_exposicion.jpg';
@@ -41,6 +44,8 @@ import Dance1 from './Imagenes/ImgTempo/Dance1.jpeg';
 import cancelacion from './Imagenes/ImgTempo/12diciembre.png';
 import cancelacion2 from './Imagenes/ImgTempo/24y31diceimbre.jpeg';
 import perla from './Imagenes/ImgTempo/Perla.jpeg';
+import coro from './Imagenes/ImgTempo/Coro.png';
+
 /* ya pasaron */
 /* import logoDiaMuertos from './Imagenes/ImgTempo/DiaMuertos.jpg';
 import logoDiaMuertosingles from './Imagenes/ImgTempo/DiaMuertosIngles.jpg';
@@ -62,7 +67,7 @@ const Catalogo = () => {
   const [indice, setIndice] = useState(0);
 
   const imagenes = {
-    es: [feria01,feria0,feria1, feria2, feria3, feria4, feria5, feria6, feria7, feria8],
+    es: [feria01, feria0, feria1, feria2, feria3, feria35, feria4, feria5, feria55, feria6, feria7, feria8, feria9],
     
   };
 
@@ -169,6 +174,19 @@ const Catalogo = () => {
             if (confirmGo) {
               window.open(
                 "https://www.google.com/maps/@20.6899157,-88.2010884,21z?hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOC4wIKXMDSoASAFQAw%3D%3D",
+                "_blank"
+              );
+            }
+          }}/>
+      </div>
+
+       <div className="folleto text-center mb-5">
+        <h2 className="fw-bold mb-3">Christmas Choir</h2>
+        <img src={coro} alt="The Festival of My Town" className="folleto-img rounded shadow"  style={{ cursor: "pointer" }} onClick={() => {
+            const confirmGo = window.confirm("Do you want to go to the location?");
+            if (confirmGo) {
+              window.open(
+                "https://www.google.com/maps/place/Casa+de+los+Venados/@20.6892118,-88.2008784,17z/data=!3m1!4b1!4m6!3m5!1s0x8f510ada18b2c4d9:0x9de0105da27f9bd!8m2!3d20.6892118!4d-88.2008784!16s%2Fg%2F1hc1vby3h?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
                 "_blank"
               );
             }

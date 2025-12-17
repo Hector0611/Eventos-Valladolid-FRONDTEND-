@@ -45,6 +45,7 @@ import cancelacion from './Imagenes/ImgTempo/12diciembre.png';
 import cancelacion2 from './Imagenes/ImgTempo/24y31diceimbre.jpeg';
 import perla from './Imagenes/ImgTempo/Perla.jpeg';
 import coro from './Imagenes/ImgTempo/Coro.png';
+import MurenN from './Imagenes/ImgTempo/Muren.jpeg';
 
 /* ya pasaron */
 /* import logoDiaMuertos from './Imagenes/ImgTempo/DiaMuertos.jpg';
@@ -183,6 +184,19 @@ const Catalogo = () => {
        <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Christmas Choir</h2>
         <img src={coro} alt="The Festival of My Town" className="folleto-img rounded shadow"  style={{ cursor: "pointer" }} onClick={() => {
+            const confirmGo = window.confirm("Do you want to go to the location?");
+            if (confirmGo) {
+              window.open(
+                "https://www.google.com/maps/place/Casa+de+los+Venados/@20.6892118,-88.2008784,17z/data=!3m1!4b1!4m6!3m5!1s0x8f510ada18b2c4d9:0x9de0105da27f9bd!8m2!3d20.6892118!4d-88.2008784!16s%2Fg%2F1hc1vby3h?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+                "_blank"
+              );
+            }
+          }}/>
+      </div>
+
+      <div className="folleto text-center mb-5">
+        <h2 className="fw-bold mb-3">Round trip routes: The story between Valladolid and Temozón</h2>
+        <img src={MurenN} alt="The Festival of My Town" className="folleto-img rounded shadow"  style={{ cursor: "pointer" }} onClick={() => {
             const confirmGo = window.confirm("Do you want to go to the location?");
             if (confirmGo) {
               window.open(

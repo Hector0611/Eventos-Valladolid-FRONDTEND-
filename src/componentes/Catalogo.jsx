@@ -32,6 +32,9 @@ import agustin3 from './Imagenes/ImgTempo/A.G.3.jpeg';
 import agustin4 from './Imagenes/ImgTempo/A.G.1.1.jpeg';
 import agustin5 from './Imagenes/ImgTempo/A.G.2.2.jpeg';
 import agustin6 from './Imagenes/ImgTempo/A.G.3.3.jpeg';
+
+/* muluk */
+import muluk1 from './Imagenes/ImgTempo/Muluk1.jpeg';
 /* meson del marques */
 
 import meson1 from './Imagenes/ImgTempo/Meson1.jpeg';
@@ -162,6 +165,7 @@ const Catalogo = () => {
 
 <hr />
 <div className="gallery-section text-center mb-5">
+  <h2 className='titel5'>Cenote Events</h2>
   <h2 className="gallery-title">Cenote Suytun</h2>
 
   <div className="gallery-grid">
@@ -181,6 +185,7 @@ const Catalogo = () => {
 <hr />
 
 <div className="gallery-section text-center mb-5">
+  <h2 className='titel5'>Restaurant Event</h2>
   <h2 className="gallery-title">Agustín Gusto</h2>
 
   <div className="gallery-grid">
@@ -218,6 +223,20 @@ const Catalogo = () => {
       alt="Agustín Gusto - Imagen 3"
       className="gallery-img"
     />
+  </div>
+</div>
+
+<div className="gallery-section text-center mb-5">
+  <h2 className="gallery-title">Muluk "Coffee and Bar"</h2>
+
+  <div className="gallery-grid">
+
+    <img
+      src={muluk1}
+      alt="Agustín Gusto - Imagen 1"
+      className="gallery-img4"
+    />
+    
   </div>
 </div>
 

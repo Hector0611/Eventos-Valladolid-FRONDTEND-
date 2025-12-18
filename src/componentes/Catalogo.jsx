@@ -165,7 +165,7 @@ const Catalogo = () => {
 
 <hr />
 <div className="gallery-section text-center mb-5">
-  <h2 className='titel5'>Cenote Events</h2>
+  <h2 className='titel7'>Cenote Events</h2>
   <h2 className="gallery-title">Cenote Suytun</h2>
 
   <div className="gallery-grid">
@@ -185,7 +185,7 @@ const Catalogo = () => {
 <hr />
 
 <div className="gallery-section text-center mb-5">
-  <h2 className='titel5'>Restaurant Event</h2>
+  <h2 className='titel7'>Restaurant Event</h2>
   <h2 className="gallery-title">Agustín Gusto</h2>
 
   <div className="gallery-grid">

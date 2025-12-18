@@ -2,25 +2,6 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Catalogo.css';
 
-/* Español */
-/* import logo1 from './Imagenes/ImgTempo/1.jpg';
-import logo2 from './Imagenes/ImgTempo/2.jpg';
-import logo3 from './Imagenes/ImgTempo/3.jpg';
-import logo4 from './Imagenes/ImgTempo/4.jpg';
-import logo5 from './Imagenes/ImgTempo/5.jpg';
-import logo6 from './Imagenes/ImgTempo/6.jpg';
-import logo7 from './Imagenes/ImgTempo/7.jpg';
-import logo8 from './Imagenes/ImgTempo/8.jpg'; */
-
-/* Inglés */
-/* import logo11 from './Imagenes/ImgTempo/1.1.jpg';
-import logo22 from './Imagenes/ImgTempo/2.2.jpg';
-import logo33 from './Imagenes/ImgTempo/3.3.jpg';
-import logo44 from './Imagenes/ImgTempo/4.4.jpg';
-import logo55 from './Imagenes/ImgTempo/5.5.jpg';
-import logo66 from './Imagenes/ImgTempo/6.6.jpg';
-import logo77 from './Imagenes/ImgTempo/7.jpg';
-import logo88 from './Imagenes/ImgTempo/8.8.jpg'; */
 
 /* Feria */
 import feria01 from './Imagenes/ImgTempo/Feria0.1.jpeg';/* 11 de enero */
@@ -37,30 +18,45 @@ import feria7 from './Imagenes/ImgTempo/Feria1.jpg';/* 6 de febrero */
 import feria8 from './Imagenes/ImgTempo/Feria6.jpg';/* 7 de febrero */
 import feria9 from './Imagenes/ImgTempo/Feria10.png';/* 8 de febrero */
 
+/* Eventos Cenotes */
+
+import suytun1 from './Imagenes/ImgTempo/Suyrun1.jpeg';
+import suytun2 from './Imagenes/ImgTempo/Suytun2.jpeg';
+
+/*Cenas Navidad y año Nuevo */
+/* agustin */
+import agustin1 from './Imagenes/ImgTempo/A.gusto1.jpeg';
+import agustin2 from './Imagenes/ImgTempo/A.G.2.jpeg';
+import agustin3 from './Imagenes/ImgTempo/A.G.3.jpeg';
+
+import agustin4 from './Imagenes/ImgTempo/A.G.1.1.jpeg';
+import agustin5 from './Imagenes/ImgTempo/A.G.2.2.jpeg';
+import agustin6 from './Imagenes/ImgTempo/A.G.3.3.jpeg';
+/* meson del marques */
+
+import meson1 from './Imagenes/ImgTempo/Meson1.jpeg';
+import meson2 from './Imagenes/ImgTempo/Meson2.jpeg';
+
+/* Don divblo */
+
+import don1 from './Imagenes/ImgTempo/Don1.jpeg';
+import don2 from './Imagenes/ImgTempo/Don2.png';
+
+/* paladar */
+
+import paladar1 from './Imagenes/ImgTempo/paladar1.jpeg';
+import paladar2 from './Imagenes/ImgTempo/paladar2.jpeg';
+import paladar3 from './Imagenes/ImgTempo/paladar3.jpeg';
+
 /* Folletos */
 import murem from './Imagenes/ImgTempo/Murem_exposicion.jpg';
-import NavidasCon from './Imagenes/ImgTempo/NavidasCon.jpeg';
 import Dance1 from './Imagenes/ImgTempo/Dance1.jpeg';
-import cancelacion from './Imagenes/ImgTempo/12diciembre.png';
 import cancelacion2 from './Imagenes/ImgTempo/24y31diceimbre.jpeg';
 import perla from './Imagenes/ImgTempo/Perla.jpeg';
 import coro from './Imagenes/ImgTempo/Coro.png';
 import MurenN from './Imagenes/ImgTempo/Muren.jpeg';
 
-/* ya pasaron */
-/* import logoDiaMuertos from './Imagenes/ImgTempo/DiaMuertos.jpg';
-import logoDiaMuertosingles from './Imagenes/ImgTempo/DiaMuertosIngles.jpg';
-import JuanBalam from './Imagenes/ImgTempo/JuanBalam.jpeg';
 
-import julieta from './Imagenes/ImgTempo/Julieta.jpg';
-import sabores from './Imagenes/ImgTempo/EventosNoviembre.jpg';
-import obrateatro from './Imagenes/ImgTempo/ObraTeatro.jpeg'; */
-
-
-/* no an pasado */
-/* import Fiesta1 from './Imagenes/ImgTempo/LaFiestaPueblo1.jpeg'; /* 28 de Noviembre 
-import Fiesta2 from './Imagenes/ImgTempo/LaFiestaPueblo2.jpeg';  28 de Noviembre */ 
-/* import LaVidayCeiba from './Imagenes/ImgTempo/LaVidayCeiba.jpeg';  *//* 29 de Noviembre */
 
 const Catalogo = () => {
   const [idioma, setIdioma] = useState("es");
@@ -97,7 +93,7 @@ const Catalogo = () => {
     <div className="catalogo-container container py-5">
       <br />
 
-      <h2 className='folletos'>BROCHURES</h2>
+      <h2 className='folletos'>Events Catalog</h2>
       
 
       {/* <div className="text-center mb-5">
@@ -134,6 +130,162 @@ const Catalogo = () => {
           <img src={cancelacion2} alt="The Festival of My Town" className="folleto-img rounded shadow" />
         </div> 
 
+         <h3 className="text-center mb-4 display-5 fw-bold">
+  Expo Feria Valladolid 2026
+</h3> 
+
+<div className="row g-4">
+  {imagenes[idioma].map((img, index) => (
+    <div key={index} className="col-6 col-md-3">
+      <div className="card shadow-sm border-0 h-100" onClick={() => abrirImagen(index)}>
+        <img src={img} alt={`catalogo-${index}`} className="card-img-top img-hover" />
+      </div>
+    </div>
+  ))}
+</div>
+<hr />
+
+<div className="map">
+  <h3 className="map-title">
+    🗺️ Location of the Valladolid Expo Feria 2026
+  </h3>
+
+  <div className="map-placeholder1">
+    <iframe
+      title="Ubicación Expo Feria Valladolid"
+      src="https://www.google.com/maps?q=20.67112532591333,-88.2286181270485&hl=en&z=13&output=embed"
+      allowFullScreen=""
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
+
+<hr />
+<div className="gallery-section text-center mb-5">
+  <h2 className="gallery-title">Cenote Suytun</h2>
+
+  <div className="gallery-grid">
+    <img
+      src={suytun1}
+      alt="Agustín Gusto - Imagen 1"
+      className="gallery-img2"
+    />
+    <img
+      src={suytun2}
+      alt="Agustín Gusto - Imagen 2"
+      className="gallery-img2"
+    />
+    
+  </div>
+</div>
+<hr />
+
+<div className="gallery-section text-center mb-5">
+  <h2 className="gallery-title">Agustín Gusto</h2>
+
+  <div className="gallery-grid">
+    <img
+      src={agustin1}
+      alt="Agustín Gusto - Imagen 1"
+      className="gallery-img"
+    />
+    <img
+      src={agustin3}
+      alt="Agustín Gusto - Imagen 2"
+      className="gallery-img"
+    />
+    <img
+      src={agustin2}
+      alt="Agustín Gusto - Imagen 3"
+      className="gallery-img"
+    />
+  </div>
+  <hr />
+
+  <div className="gallery-grid">
+    <img
+      src={agustin6}
+      alt="Agustín Gusto - Imagen 1"
+      className="gallery-img"
+    />
+    <img
+      src={agustin4}
+      alt="Agustín Gusto - Imagen 2"
+      className="gallery-img"
+    />
+    <img
+      src={agustin5}
+      alt="Agustín Gusto - Imagen 3"
+      className="gallery-img"
+    />
+  </div>
+</div>
+
+
+<div className="gallery-section text-center mb-5">
+  <h2 className="gallery-title">Meson del Marques</h2>
+
+  <div className="gallery-grid">
+    <img
+      src={meson1}
+      alt="Agustín Gusto - Imagen 1"
+      className="gallery-img1"
+    />
+    <img
+      src={meson2}
+      alt="Agustín Gusto - Imagen 2"
+      className="gallery-img1"
+    />
+    
+  </div>
+</div>
+
+<div className="gallery-section text-center mb-5">
+  <h2 className="gallery-title">Don Divblo</h2>
+
+  <div className="gallery-grid">
+    <img
+      src={don1}
+      alt="Agustín Gusto - Imagen 1"
+      className="gallery-img1"
+    />
+    <img
+      src={don2}
+      alt="Agustín Gusto - Imagen 2"
+      className="gallery-img1"
+    />
+    
+  </div>
+</div>
+
+<div className="gallery-section text-center mb-5">
+  <h2 className="gallery-title">Paladar de Cura</h2>
+
+  <div className="gallery-grid">
+    <img
+      src={paladar1}
+      alt="Agustín Gusto - Imagen 1"
+      className="gallery-img"
+    />
+    <img
+      src={paladar2}
+      alt="Agustín Gusto - Imagen 2"
+      className="gallery-img"
+    />
+    <img
+      src={paladar3}
+      alt="Agustín Gusto - Imagen 3"
+      className="gallery-img"
+    />
+  </div>
+
+</div>
+
+
+
+
+      <hr />
+
     <div className="folleto text-center mb-5">
       <h2 className="fw-bold mb-3"> Exhibition "The Torchbearers" indefinite time</h2>
         <img
@@ -152,7 +304,8 @@ const Catalogo = () => {
           }}
         />
       </div>
-
+      
+      
 
 
       {/* <div className="folleto text-center mb-5">
@@ -265,37 +418,7 @@ const Catalogo = () => {
         
       </div> */}
 
-      <h3 className="text-center mb-4 display-5 fw-bold">
-  Expo Feria Valladolid 2026
-</h3> 
-
-<div className="row g-4">
-  {imagenes[idioma].map((img, index) => (
-    <div key={index} className="col-6 col-md-3">
-      <div className="card shadow-sm border-0 h-100" onClick={() => abrirImagen(index)}>
-        <img src={img} alt={`catalogo-${index}`} className="card-img-top img-hover" />
-      </div>
-    </div>
-  ))}
-</div>
-<hr />
-
-<div className="map">
-  <h3 className="map-title">
-    🗺️ Location of the Valladolid Expo Feria 2026
-  </h3>
-
-  <div className="map-placeholder1">
-    <iframe
-      title="Ubicación Expo Feria Valladolid"
-      src="https://www.google.com/maps?q=20.67112532591333,-88.2286181270485&hl=en&z=13&output=embed"
-      allowFullScreen=""
-      loading="lazy"
-    ></iframe>
-  </div>
-</div>
-
-      <hr />
+     
 
       {/* Modal de imagen */}
       {imagenSeleccionada && (

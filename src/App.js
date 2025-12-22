@@ -87,7 +87,7 @@ const App = () => {
                 path="/home" 
                 element={
                   <>
-                    <Header2 />
+                
                     <Header />
                     <LanguageSwitcher />
                     <ProgramarEvents />

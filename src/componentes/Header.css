@@ -1,45 +1,96 @@
-  /* ========================
-   Estilos base del Header
+/* ========================
+   RESET / PERFORMANCE
    ======================== */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 110px;
-  background-color: #273a2000;
-  color: #000000;
-  width: 100%;
-  height: 60px;
-  box-sizing: border-box;
-  border-bottom-right-radius: 30%;
-  border-bottom-left-radius: 15%;
-  border-bottom: 3px solid #000000;
-  position: fixed;
-  top: 70px;
-  left: 0;
-   z-index: 9999; /* Siempre encima */
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  background-color: rgba(255, 255, 255, 0.66);
-}
-
 body {
   -webkit-overflow-scrolling: touch;
 }
 
-.header {
+.header,
+.header-top {
   backface-visibility: hidden;
   -webkit-transform: translateZ(0);
   transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
 }
 
-
-.house-door{
-  background-color: rgb(255, 255, 255);
+/* ========================
+   HEADER SUPERIOR (LOGOS)
+   ======================== */
+.header-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  background-color: rgba(255, 255, 255, 0.66);
+  z-index: 9998;
 }
 
-/* Estado oculto y visible del header */
-.header.hidden {
+.header-top.hidden {
   transform: translateY(-100%);
+  opacity: 0;
+}
+
+.header-top.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.header-top-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Logo */
+.header-logo {
+  width: 40%;
+  max-height: 190px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Google Translate */
+.google-translate-container {
+  position: fixed;
+  left: 95%;
+  top: 15%;
+  z-index: 999999;
+}
+
+.google-translate-btn {
+  transform: scale(1.5);
+  transform-origin: left;
+  box-shadow: 0 4px 8px rgba(0,0,0,.2);
+}
+
+.google-translate-btn:hover {
+  box-shadow: 0 4px 8px rgba(255,0,0,.65);
+}
+
+/* ========================
+   HEADER INFERIOR (MENÚ)
+   ======================== */
+.header {
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  width: 100%;
+  height: 56px;
+
+  padding: 16px 110px;
+  background-color: rgba(255, 255, 255, 0.66);
+  color: #000;
+
+  border-bottom-right-radius: 30%;
+  border-bottom-left-radius: 15%;
+  border-bottom: 3px solid #000;
+
+  z-index: 9999;
+}
+
+.header.hidden {
+  transform: translateY(-120%);
   opacity: 0;
 }
 
@@ -49,140 +100,73 @@ body {
 }
 
 /* =====================
-   Navegación principal
+   NAVEGACIÓN
    ===================== */
 .header-nav {
   display: flex;
-  gap: 25px;
+  align-items: center;
+  width: 100%;
+  padding: 0 12px;
 }
 
-.nav-link {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1em;
+/* IZQUIERDA */
+.nav-left {
+  display: flex;
+  align-items: center;
 }
 
-.nav-link:hover {
-  color: #ffffff;
-  box-shadow: 0 0px 20px rgb(244, 2, 2);
+/* DERECHA */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto; /* 🔥 EMPUJA TODO A LA DERECHA */
 }
 
-/* ===============
-   Botón genérico
-   =============== */
-.botton {
-  border-radius: 10%;
-  /* background-image: url('./Imagenes/Colores4.jpg'); */
-  border: transparent;
-  font-size: 1em;
-  padding: 7px 15px;
-  font-weight: 700;
-  
-  background-size: cover;
-  background-clip: text;
-  color: black; /* transparent */
-  animation: animate 20s linear infinite;
-    /* 👇 Esto lo baja un poco */
-  margin-top: 5px; /* ajusta el valor según lo que necesites */
-}
 
-.botton1{
-  border-radius: 10%;
-  background-image: url('./Imagenes/Colores4.jpg');
-  border: transparent;
-  font-size: 1.9em;
-  padding: 9px 15px;
-  background-size: cover;
-  background-clip: text;
-  color: transparent;
-  animation: animate 20s linear infinite;
-    /* 👇 Esto lo baja un poco */
-  margin-top: 5px; /* ajusta el valor según lo que necesites */
-}
-.botton1:hover {
-  box-shadow: 0 0px 5px rgb(244, 2, 2);
-}
-
-.barra{
-  font-size: 1.5em;
-}
-
+/* =====================
+   BOTONES
+   ===================== */
 @keyframes animate {
   to {
     background-position-x: -20px;
   }
 }
 
-.botton:hover {
+.botton2 {
+  border-radius: 10%;
+  border: transparent;
+  font-size: 1em;
+  padding: 7px 10px;
+  font-weight: 700;
+  color: black;
+  animation: animate 20s linear infinite;
+  margin-top: -5px;
+  background-color: transparent;
+}
+
+.botton2:hover {
+  box-shadow: 0 0px 5px rgb(244, 2, 2);
+}
+
+.botton1 {
+  border-radius: 10%;
+  background-image: url('./Imagenes/Colores4.jpg');
+  font-size: 1.9em;
+  padding: 5px 15px;
+  background-clip: text;
+  color: transparent;
+  animation: animate 20s linear infinite;
+   margin-top: -5px;
+}
+
+.botton1:hover {
   box-shadow: 0 0px 5px rgb(244, 2, 2);
 }
 
 /* =====================
-   Botón hamburguesa
+   POPUP "MÁS"
    ===================== */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 4px;
-}
-
-.menu-toggle span {
-  height: 3px;
-  width: 25px;
-  background: white;
-  border-radius: 2px;
-}
-
-/* =====================
-   Navegación colapsada
-   ===================== */
-.header-nav.mobile {
-  display: none;
-  flex-direction: column;
-  background-color: #273a20;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  padding: 10px 0;
-  z-index: 999;
-}
-
-.header-nav.mobile.open {
-  display: flex;
-}
-
-/* ==========================
-   Contenedor del logo fondo
-   ========================== */
-.contenedor {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  height: 100dvh; /* sobrescribe si es compatible */
-
-  overflow: hidden;
-  z-index: 1;
-}
-
-.DivLogo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.logo-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* ======================
-   Popup o menú flotante
-   ====================== */
 .popup-wrapper {
   position: relative;
   display: inline-block;
@@ -192,257 +176,278 @@ body {
 .popup-overlay1 {
   position: absolute;
   top: 102%;
-  left: -240%;  
-  background-color: transparent;
-  padding: 0px;
-  border-radius: 5px;
-
-  z-index: 2000;
+  left: -240%;
   width: 360px;
+  z-index: 2000;
   animation: fadeIn 0.3s ease-in-out;
 }
+
 .popup-content {
-  background: transparent;
   text-align: center;
   font-size: 1.5rem;
   font-weight: 800;
 }
-.popup-links button:hover,
-.popup-contacts a:hover {
-  color: #f3f3f3;
-  text-shadow: 0 0 10px #000000;
-}
 
-.h2more{
+.h2more {
   color: #ffffff;
-  text-shadow: 0 0 20px #000000;
+  text-shadow: 0 0 20px #000;
 }
 
-.textocontent{
-  color: #000000;
+.textocontent1 {
+  color: #000;
   font-weight: 700;
-  font-size: 1.2em;
-  text-shadow: 0cm 0cm 0.2cm #ffffff;
-}
-/* =====================
-   Sección botón menú
-   ===================== */
-.menu-section {
-  position: relative;
-  display: inline-block;
-  margin-top: 20px;
-}
-
-.menu-button {
-  background-color: #0066cc;
-  color: rgb(0, 0, 0);
-  padding: 2px 2px;
+  font-size: 0.6em;
+  text-align: left;        /* ← ALINEA EL TEXTO */
+  width: 100%;             /* ← OCUPA TODO EL ANCHO */
+  
+  text-shadow: 0 0 0.2cm #fff;
+  background-color: transparent;
   border: none;
+  margin: 0px;
+  
+ 
+}
+.textocontent1:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 5px rgb(0, 0, 0);
   cursor: pointer;
 }
 
-/* ========================
-   Estilo específico extra
-   ======================== */
-.header_container5 {
-  background-color: #030f1c;
-}
-
-/* ==========================
-   Estilos para etiquetas <a>
-   ========================== */
-
+/* =====================
+   REDES SOCIALES
+   ===================== */
 .links_F-I-Y {
   display: flex;
-  justify-content: center;     /* Centra horizontalmente */
-  align-items: center;         /* Centra verticalmente si es necesario */
-  gap: 20px;                   /* Espacio entre íconos */
-  margin: 0px 0;              /* Espacio vertical exterior */
+  justify-content: center;
+  gap: 20px;
 }
 
 .links_F-I-Y a svg {
   width: 46px;
   height: 46px;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .links_F-I-Y a:hover svg {
-  transform: scale(1.2);       /* Efecto al pasar el mouse */
-
-}
-/* === BOTÓN FLOTANTE === */
-.btn-transporte-fixed {
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
-    top: 83%;
-
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 900;
-
-    background: linear-gradient(135deg, #000000, #27ae60);
-    color: rgb(251, 255, 1);
-    padding: 6px;
-    border-radius: 20%;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-    cursor: pointer;
-    z-index: 9999;
-
-    transition: all 0.5s ease;
-
-    /* ✅ IMPORTANTE: permite redimensionar al contenido */
-    width: max-content;
-    height: max-content;
-    transition: all 0.5s ease;
+  transform: scale(1.2);
 }
 
-/* ✅ Texto oculto (al pasar 5s) */
-.btn-transporte-fixed.hide-text .btn-text {
-    opacity: 0;
-    max-width: 0;
-    transform: translateX(-10px);
-    overflow: hidden;
-    white-space: nowrap;
-    transition: all 0.4s ease;
+/* =====================
+   BOTONES FLOTANTES
+   ===================== */
+
+
+/* Texto flotante */
+.btn-text {
+  white-space: nowrap;
 }
 
-/* ✅ El botón se hace pequeño cuando no hay texto */
-.btn-transporte-fixed.hide-text {
-    padding: 6px;
-    gap: 0;
-    border-radius: 20%;
-    transition: all 0.4s ease;
+.hide-text .btn-text {
+  opacity: 0;
+  max-width: 0;
+  transform: translateX(-10px);
+  overflow: hidden;
 }
 
-/* ✅ Texto visible al entrar a la página */
-.btn-transporte-fixed.show-text .btn-text {
-    opacity: 1;
-    max-width: 200px;
-    transform: translateX(0);
-    transition: all 0.4s ease;
-}
-
-/* ✅ EL EFECTO CLAVE → al pasar el mouse vuelve a aparecer el texto */
-.btn-transporte-fixed:hover .btn-text {
-    opacity: 1;
-    max-width: 200px;
-    transform: translateX(0);
-}
-
-/* ✅ El botón se expande automáticamente al volver el texto */
-.btn-transporte-fixed:hover {
-    padding: 6px;
-    gap: 10px;
-    border-radius: 20%;
-}
-
-/* === BOTÓN === */
-.btn-transporte-fixed1 {
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
-
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    background: linear-gradient(135deg, #000000, #17e7e7);
-    color: rgb(255, 2, 2);
-    padding: 6px;
-    border-radius: 20%;
-    font-weight: 900;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-    cursor: pointer;
-    z-index: 9999;
-
-    transition: all 0.5s ease;
-}
-
-/* ✅ Texto oculto (al pasar 5s) */
-.btn-transporte-fixed1.hide-text .btn-text {
-    opacity: 0;
-    max-width: 0;
-    transform: translateX(-10px);
-    overflow: hidden;
-    white-space: nowrap;
-    transition: all 0.4s ease;
-}
-
-/* ✅ El botón se hace pequeño cuando no hay texto */
-.btn-transporte-fixed1.hide-text {
-    padding: 6px;
-    gap: 0;
-    border-radius: 20%;
-    transition: all 0.4s ease;
-}
-
-/* ✅ Texto visible al entrar a la página */
-.btn-transporte-fixed1.show-text .btn-text {
-    opacity: 1;
-    max-width: 200px;
-    transform: translateX(0);
-    transition: all 0.4s ease;
-}
-
-/* ✅ EL EFECTO CLAVE → al pasar el mouse vuelve a aparecer el texto */
+.show-text .btn-text,
+.btn-transporte-fixed:hover .btn-text,
 .btn-transporte-fixed1:hover .btn-text {
-    opacity: 1;
-    max-width: 200px;
-    transform: translateX(0);
+  opacity: 1;
+  max-width: 200px;
+  transform: translateX(0);
 }
 
-/* ✅ El botón se expande automáticamente al volver el texto */
+/* nuevo */
+/* CONTENEDOR BASE (AMBOS BOTONES) */
+.btn-transporte-fixed,
+.btn-transporte-fixed1 {
+  position: fixed;
+  left: 16px;          /* posición lateral */
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 14px;
+  border-radius: 30px;
+  background: #2d331f;
+  color: #fff;
+
+  font-size: 1.2em;
+  cursor: pointer;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+/* 🚕 TRANSPORTE (ARRIBA) */
+.btn-transporte-fixed {
+  bottom: 110px; /* MÁS ARRIBA */
+}
+
+/* 🚓 POLICÍA (ABAJO) */
+.btn-transporte-fixed1 {
+  bottom: 55px; /* MÁS ABAJO */
+  background: #e1fdd5;
+  color: #000;
+}
+
+/* TEXTO */
+.btn-text {
+  font-size: 0.9em;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+/* MOSTRAR TEXTO */
+.show-text .btn-text {
+  opacity: 1;
+  max-width: 200px;
+}
+
+/* OCULTAR TEXTO */
+.hide-text .btn-text {
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+}
+
+/* EFECTO HOVER */
+.btn-transporte-fixed:hover,
 .btn-transporte-fixed1:hover {
-    padding: 6px;
-    gap: 10px;
-    border-radius: 20%;
+  transform: translateY(-3px) scale(1.03);
+}
+
+.taxi{
+  color: yellow;
+}
+.policia{
+  color: green;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .btn-transporte-fixed,
+  .btn-transporte-fixed1 {
+    right: 12px;
+    padding: 8px 12px;
+    font-size: 1.1em;
+  }
+
+  .btn-transporte-fixed {
+    bottom: 100px;
+  }
+
+  .btn-transporte-fixed1 {
+    bottom: 45px;
+  }
+}
+
+
+/* =====================
+   MOBILE (≤ 768px)
+   ===================== */
+@media (max-width: 1068px) {
+
+  /* ===== HEADER TOP ===== */
+  .header-top {
+    height: 55px;
+  }
+
+  .header-top-content {
+    justify-content: center;
+    padding: 0 0px;
+  }
+
+  .header-logo {
+    width: 65%;
+    max-height: 80px;
+  }
+
+  /* Google translate */
+  .google-translate-container {
+    left: auto;
+    right: 5px;
+    top: 72px;
+    transform: scale(0.9);
+  }
+
+  /* ===== HEADER MENU ===== */
+  .header {
+    top: 55px;
+    height: auto;
+    padding: 0px 15px;
+    border-bottom-left-radius: 12%;
+    border-bottom-right-radius: 12%;
+  }
+
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    padding: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+  }
+
+  .header-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ===== BOTONES ===== */
+  .botton1 {
+    
+    font-size: 1.6em;
+    padding: 4px 8px;
+  }
+
+  .botton2 {
+    font-size: 0.85em;
+    padding: 6px 8px;
+    white-space: nowrap;
+  }
+
+  /* ===== POPUP MÁS ===== */
+  .popup-wrapper {
+    position: static;
+  }
+
+  .popup-overlay1 {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px;
+    animation: slideUp 0.3s ease;
+  }
+
+  .popup-content {
+    font-size: 1rem;
+    border-radius: 12px;
+    padding: 12px;
+  }
+
+  .textocontent1 {
+    font-size: 0.75em;
+    padding: 8px;
+  }
+
+  /* ===== REDES ===== */
+  .links_F-I-Y a svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  
 }
 
 /* 📱 Ajustes para tablets */
 @media (max-width: 1024px) {
 
-  .header {
-    padding: 20px 30px;
-    height: 50px;
-    border-bottom-right-radius: 15%;
-    border-bottom-left-radius: 15%;
-    top: 42px;
-   
-  }
-  .header-nav {
-    gap: 4px;
-  }
-  .botton {
-    font-size: 0.7em;
-    padding: 9px 7px;
-    margin-top: 10px; /* ajusta el valor según lo que necesites */
-  }
-  .botton1{ 
-     border-radius: 10%;
-  background-image: url('./Imagenes/Colores4.jpg');
-  border: transparent;
-  font-size: 1.9em;
-  padding: 9px 15px;
-  background-size: cover;
-  background-clip: text;
-  color: transparent;
-  animation: animate 20s linear infinite;
-    /* 👇 Esto lo baja un poco */
-  margin-top: 10px; /* ajusta el valor según lo que necesites */
-  }
-  
-  .menu-toggle {
-    display: flex; 
-  }
-  
-  /* Popups centrados en móvil */
-  .popup-wrapper {
-    
-    justify-content: center;
-    
-  }
+
 
   .popup-overlay1 {
     position: fixed;
@@ -467,11 +472,19 @@ body {
     height: 38px;
     }
     
-    .btn-transporte-fixed{
-      top: 85%;
-      
-    }
+   
 
 }
 
+/* ===== ANIMACIÓN POPUP MOBILE ===== */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 

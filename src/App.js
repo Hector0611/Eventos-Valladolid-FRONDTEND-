@@ -91,6 +91,8 @@ const App = () => {
                     <Header />
                     <LanguageSwitcher />
                     <ProgramarEvents />
+
+                    <Cenotes />
                     
                     <Catalogo />
                     <EventoDiario />
@@ -173,7 +175,7 @@ const App = () => {
                     <LanguageSwitcher />
                      {/* <LanguageSwitcher /> */}
                     <Historia />
-                    <Cenotes />
+                    
                     {/* <Conventos /> */}
                     {/* Footer global */}
           <ProximoEvento />

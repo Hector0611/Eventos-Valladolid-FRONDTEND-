@@ -185,7 +185,7 @@ const Catalogo = () => {
 <hr />
 
 <div className="gallery-section text-center mb-5">
-  <h2 className='titel7'>Restaurant Event</h2>
+  <h2 className='titel7d'>Restaurant Event</h2>
   <h2 className="gallery-title">Agustín Gusto</h2>
 
   <div className="gallery-grid">
@@ -340,7 +340,7 @@ const Catalogo = () => {
           }}/>
       </div> */}
 
-       <div className="folleto text-center mb-5">
+       {/* <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Painting Exhibition</h2>
         <img src={perla} alt="The Festival of My Town" className="folleto-img rounded shadow"  style={{ cursor: "pointer" }} onClick={() => {
             const confirmGo = window.confirm("Do you want to go to the location?");
@@ -351,9 +351,9 @@ const Catalogo = () => {
               );
             }
           }}/>
-      </div>
+      </div> */}
 
-       <div className="folleto text-center mb-5">
+       {/* <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Christmas Choir</h2>
         <img src={coro} alt="The Festival of My Town" className="folleto-img rounded shadow"  style={{ cursor: "pointer" }} onClick={() => {
             const confirmGo = window.confirm("Do you want to go to the location?");
@@ -364,9 +364,9 @@ const Catalogo = () => {
               );
             }
           }}/>
-      </div>
+      </div> */}
 
-      <div className="folleto text-center mb-5">
+     {/*  <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Round trip routes: The story between Valladolid and Temozón</h2>
         <img src={MurenN} alt="The Festival of My Town" className="folleto-img rounded shadow"  style={{ cursor: "pointer" }} onClick={() => {
             const confirmGo = window.confirm("Do you want to go to the location?");
@@ -377,9 +377,9 @@ const Catalogo = () => {
               );
             }
           }}/>
-      </div>
+      </div> */}
 
-      <div className="folleto text-center mb-5">
+      {/* <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Just Dance</h2>
         <img src={Dance1} alt="The Festival of My Town" className="folleto-img rounded shadow" style={{ cursor: "pointer" }} onClick={() => {
             const confirmGo = window.confirm("Do you want to go to the location?");
@@ -390,7 +390,7 @@ const Catalogo = () => {
               );
             }
           }} />
-      </div> 
+      </div>  */}
 
      
 

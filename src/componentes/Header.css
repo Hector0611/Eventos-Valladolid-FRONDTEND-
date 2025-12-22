@@ -330,7 +330,7 @@ body {
 @media (max-width: 768px) {
   .btn-transporte-fixed,
   .btn-transporte-fixed1 {
-    right: 12px;
+    left: 12px;
     padding: 8px 12px;
     font-size: 1.1em;
   }

@@ -1,0 +1,109 @@
+.LogoNeutro2 {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+   object-fit: cover; /* ✅ se adapta sin deformarse */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  background-color: rgba(255, 255, 255, 0.66);
+  z-index: 9998;
+}
+
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0px;
+  width: 100%;
+  height: 20%;
+  z-index: 9998;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+
+.header-container {
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+/* ✅ Oculto al hacer scroll hacia abajo */
+.header-container.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* ✅ Visible al subir */
+.header-container.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.logo-Yucatan {
+  margin-top: 0;
+  width: 40%;
+  max-height: 190px;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 9998;
+}
+
+.google-translate-container {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-start;
+  margin-left: 10px;
+  left: 95%;
+  top: 470%;
+  z-index: 99999999;
+  
+}
+
+.translate-label {
+  font-size: 24px;
+  color: #333;
+  font-weight: 500;
+}
+
+.google-translate-btn {
+  transform: scale(1.5); /* más pequeño si quieres */
+  transform-origin: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.google-translate-btn:hover {
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.655);
+
+}
+
+
+
+
+/* 📱 Ajustes para pantallas pequeñas */
+@media (max-width: 1068px) {
+  .LogoNeutro2 {
+    height: 6vh;
+  }
+  
+
+  .header-container {
+    height: 10vh;
+  }
+
+  .logo-Yucatan {
+    width: 80%;
+   
+  }
+
+  .google-translate-container {
+    left: 88%;
+    top: 900%;
+  }
+}

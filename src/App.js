@@ -111,7 +111,7 @@ const App = () => {
                 path="/calendario/evento/:mensaje" 
                 element={
                   <>
-                    <Header2 />
+                   
                     <Header />
                     <LanguageSwitcher />
                     <EventoCalendario />
@@ -123,7 +123,7 @@ const App = () => {
                 path="/policia" 
                 element={
                   <>
-                    <Header2 />
+                   
                     <Header />
                     <PoliciaPage />
                     {/* Footer global */}
@@ -137,7 +137,7 @@ const App = () => {
                 path="/transporte" 
                 element={
                   <>
-                    <Header2 />
+                  
                     <Header />
                     <LanguageSwitcher />
                     <Transporte />
@@ -154,7 +154,7 @@ const App = () => {
                 path="/mapa" 
                 element={
                   <>
-                    <Header2 />
+                
                     <Header />
                     <LanguageSwitcher />
                     <Hoteles />
@@ -170,7 +170,7 @@ const App = () => {
                 path="/LugaresTuristicos"
                 element={
                   <>
-                    <Header2 />
+                 
                     <Header />  
                     <LanguageSwitcher />
                      {/* <LanguageSwitcher /> */}
@@ -190,7 +190,7 @@ const App = () => {
                 path="/programarevents"
                 element={
                   <>
-                    <Header2 />
+            
                     <Header />
                     <LanguageSwitcher />
                     <ProgramarEvents />
@@ -206,7 +206,7 @@ const App = () => {
 
               <Route path="/historia" element={
                 <>  
-                  <Header2 />
+             
                   <Header />
                   <LanguageSwitcher />
                  
@@ -222,7 +222,7 @@ const App = () => {
 
               <Route path="/catalogo" element={
                 <>
-                  <Header2 />
+               
                   <Header />
                   <LanguageSwitcher />
                   <Catalogo />
@@ -236,7 +236,7 @@ const App = () => {
 
               <Route path="/estadisticas" element={
                 <>
-                  <Header2 />
+             
                   <Header />
                   <LanguageSwitcher />
                   <Estadisticas />
@@ -250,7 +250,7 @@ const App = () => {
 
               <Route path="/turismo" element={
                 <>
-                  <Header2 />
+             
                   <Header />
                   <LanguageSwitcher />
                   <Turismo />
@@ -267,7 +267,7 @@ const App = () => {
               
               <Route path="/contacto" element={
                 <>
-                  <Header2 />
+                 
                   <Header />
                   <LanguageSwitcher />
                   <Contactanos />
@@ -281,7 +281,7 @@ const App = () => {
 
               <Route path="/destinos" element={
                 <>
-                  <Header2 />
+                
                   <Header />
                   <LanguageSwitcher />
                   <Destinos />
@@ -294,7 +294,7 @@ const App = () => {
                 } />
               <Route path="/puebloscercanos" element={
                 <>
-                  <Header2 />
+               
                   <Header />
                   <LanguageSwitcher />
                   <PueblosCercanos />

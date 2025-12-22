@@ -194,6 +194,84 @@
   color: #333;
 }
 
+
+
+/* PÁRRAFOS */
+p {
+  margin: 22px 0 10px;
+  font-size: 1.05rem;
+}
+
+/* TÍTULOS DE SECCIÓN (los <p> que van antes de listas) */
+p + ul {
+  margin-top: 10px;
+}
+
+p:not(:first-of-type) {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #1f5f5b;
+  border-left: 4px solid #1f5f5b;
+  padding-left: 10px;
+}
+
+/* LISTAS */
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* TEXTO DESTACADO */
+strong {
+  color: #000;
+}
+
+/* LINKS GENERALES */
+a {
+  color: #0a7c73;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LINKS DE TELÉFONO Y EMAIL */
+a[href^="tel"],
+a[href^="mailto"] {
+  font-weight: 600;
+}
+
+/* REDES SOCIALES (links dentro del bloque Social Media) */
+li a[target="_blank"] {
+  margin-right: 6px;
+}
+
+/* SALTOS DE LÍNEA MÁS AIREADOS */
+br {
+  line-height: 1.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  p {
+    font-size: 1rem;
+  }
+
+  ul li {
+    font-size: 0.95rem;
+  }
+}
+
+
+
 /* ✨ Animaciones */
 @keyframes fadeIn {
   from { opacity: 0; }

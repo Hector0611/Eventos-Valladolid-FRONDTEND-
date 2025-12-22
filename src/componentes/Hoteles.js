@@ -165,10 +165,6 @@ const restauranteIcon = new L.Icon({
     
     const extra = item.extra; // información extendida
 
-
-  
-
-
     return (
 
   <div className="panel-content sitranslate" translate="yes">
@@ -176,17 +172,22 @@ const restauranteIcon = new L.Icon({
 
     <h4>{nombreMostrar}</h4>
 
- 
-
     <p className="texto_item" dangerouslySetInnerHTML={{ __html: item.descripcion.slice(0,300)+" ..." }}></p>
 
-    <p>📍 {item.localizacion}</p>
+    {/* <p>📍 {item.localizacion}</p> */}
 
     {item.web_hotel || item.web_sitio || item.web_cenote ? (
-      <p>🌐 <a href={item.web_hotel || item.web_sitio || item.web_cenote} target="_blank" rel="noopener noreferrer">{item.web_hotel || item.web_sitio || item.web_cenote}</a></p>
+      <p> <a href={item.web_hotel || item.web_sitio || item.web_cenote} target="_blank" rel="noopener noreferrer" className='weblink' >{item.web_hotel || item.web_sitio || item.web_cenote}</a></p>
     ) : null}
 
-    {item.telefono && <p>📞 {item.telefono}</p>}
+    {item.telefono && (
+      <p>
+        <a href={`tel:+52${item.telefono}`}>
+          {item.telefono}
+        </a>
+      </p>
+    )}
+
 
     {item.horario_abi && (
       <p>🕒 {item.horario_abi} - {item.horario_cer}</p>

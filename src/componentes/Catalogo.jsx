@@ -58,6 +58,7 @@ import cancelacion2 from './Imagenes/ImgTempo/24y31diceimbre.jpeg';
 import perla from './Imagenes/ImgTempo/Perla.jpeg';
 import coro from './Imagenes/ImgTempo/Coro.png';
 import MurenN from './Imagenes/ImgTempo/Muren.jpeg';
+import xcopek from './Imagenes/ImgTempo/Xcopecl.jpeg';
 
 
 
@@ -164,6 +165,22 @@ const Catalogo = () => {
 </div>
 
 <hr />
+
+
+<div className="folleto text-center mb-5">
+        <h2 className="fw-bold mb-3">Xcopek</h2>
+        <img src={xcopek} alt="The Festival of My Town" className="folleto-img rounded shadow"  style={{ cursor: "pointer" }} onClick={() => {
+            const confirmGo = window.confirm("Do you want to go to the location?");
+            if (confirmGo) {
+              window.open(
+                "https://www.google.com/maps/place/Xkopek,+Parque+Apícola/@20.6783811,-88.1964472,21z/data=!4m9!3m8!1s0x8f510ae81a4fd38b:0x3e89df62f61105ff!5m2!4m1!1i2!8m2!3d20.6784256!4d-88.1965808!16s%2Fg%2F11c53j1w0w?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+                "_blank"
+              );
+            }
+          }}/>
+      </div>
+
+      <hr />
 <div className="gallery-section text-center mb-5">
   <h2 className='titel7'>Cenote Events</h2>
   <h2 className="gallery-title">Cenote Suytun</h2>
@@ -327,18 +344,7 @@ const Catalogo = () => {
       
 
 
-      {/* <div className="folleto text-center mb-5">
-        <h2 className="fw-bold mb-3">Christmas Concert</h2>
-        <img src={NavidasCon} alt="The Festival of My Town" className="folleto-img rounded shadow"  style={{ cursor: "pointer" }} onClick={() => {
-            const confirmGo = window.confirm("Do you want to go to the location?");
-            if (confirmGo) {
-              window.open(
-                "https://www.google.com/maps/place/Plaza+Casa+De+La+Cultura+Valladolid/@20.690064,-88.2012433,21z/data=!4m6!3m5!1s0x8f510ada12b80cb5:0x31656d2d56bdd2!8m2!3d20.6901533!4d-88.2011122!16s%2Fg%2F11ckd371_d?hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOC4wIKXMDSoASAFQAw%3D%3D",
-                "_blank"
-              );
-            }
-          }}/>
-      </div> */}
+      
 
        {/* <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Painting Exhibition</h2>

@@ -71,9 +71,9 @@ const Historia = () => {
       <div
         className="slider-full-container"
         onMouseMove={(e) => {
-          const x = (e.clientX / window.innerWidth - 0.75) * 40;
-          const y = (e.clientY / window.innerHeight - 0.75) * 40;
-          e.currentTarget.style.transform = `translate(${x}px, ${y}px)`;
+          const x = (e.clientX / window.innerWidth - 0.75) * 90;
+          /* const y = (e.clientY / window.innerHeight - 0.75) * 90; */
+          e.currentTarget.style.transform = `translate(${x}px)`;
         }}
         onMouseLeave={(e) => (e.currentTarget.style.transform = 'translate(0px, 0px)')}
       >

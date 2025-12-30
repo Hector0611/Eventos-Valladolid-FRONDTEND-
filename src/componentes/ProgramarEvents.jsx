@@ -182,8 +182,6 @@ const ProgramarEvents = () => {
       <div className="caja3">
         <h1 className="titutulo">See the Event Programs During Your Stay in Valladolid</h1>
         <hr />
-   
-
         <div className='color_fondo'>
         <h2 className="calendario1">
                {monthsData[selectedMonth]?.nombre || months[selectedMonth]} {currentYear} Calendar
@@ -369,8 +367,6 @@ const ProgramarEvents = () => {
                       <div dangerouslySetInnerHTML={{ __html: evento.descripcion }}></div>
                       
                     </div>
-
-
                     
                   </div>
                 </div>

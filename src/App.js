@@ -31,6 +31,8 @@ import Destinos from './componentes/Destinos';
 import PueblosCercanos from './componentes/PueblosCercanos';
 import LanguageSwitcher from './componentes/LanguageSwitcher';
 import Turismo26 from './componentes/Turismo26';
+import Destino from './componentes/Destino';
+import MapaSin from './componentes/MapaSin';
 
 const App = () => {
 
@@ -92,6 +94,8 @@ const App = () => {
                     <LanguageSwitcher />
                     <ProgramarEvents />
 
+        
+
                     <Cenotes />
                     
                     <Catalogo />
@@ -149,6 +153,21 @@ const App = () => {
                   </>
                 } 
               />
+
+              <Route path="/mapasin" element={
+                <>
+                 
+                
+                  <LanguageSwitcher />
+                  <MapaSin />
+
+                  {/* Footer global */}
+          <ProximoEvento />
+         
+ 
+                </>
+              } />
+
 
               <Route 
                 path="/mapa" 

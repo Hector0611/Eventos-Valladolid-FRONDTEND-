@@ -181,7 +181,7 @@ const Catalogo = () => {
       </div>
 
       <hr />
-<div className="gallery-section text-center mb-5">
+{/* <div className="gallery-section text-center mb-5">
   <h2 className='titel7'>Cenote Events</h2>
   <h2 className="gallery-title">Cenote Suytun</h2>
 
@@ -199,7 +199,7 @@ const Catalogo = () => {
     
   </div>
 </div>
-<hr />
+<hr /> */}
 
 <div className="gallery-section text-center mb-5">
   <h2 className='titel7d'>Restaurant Event</h2>

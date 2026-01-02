@@ -128,11 +128,7 @@ const Catalogo = () => {
         <img src={JuanBalam} alt="Juan Balam" className="folleto-img rounded shadow" />
       </div> */}
 
-      <div className="folleto text-center mb-5">
-          <h2 className="fw-bold mb-3"></h2>
-          {/* <img src={cancelacion} alt="The Festival of My Town" className="folleto-img rounded shadow" /> */}
-          <img src={cancelacion2} alt="The Festival of My Town" className="folleto-img rounded shadow" />
-        </div> 
+  
 
          <h3 className="text-center mb-4 display-5 fw-bold">
   Expo Feria Valladolid 2026
@@ -167,7 +163,7 @@ const Catalogo = () => {
 <hr />
 
 
-<div className="folleto text-center mb-5">
+{/* <div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Xcopek</h2>
         <img src={xcopek} alt="The Festival of My Town" className="folleto-img rounded shadow"  style={{ cursor: "pointer" }} onClick={() => {
             const confirmGo = window.confirm("Do you want to go to the location?");
@@ -178,7 +174,7 @@ const Catalogo = () => {
               );
             }
           }}/>
-      </div>
+      </div> */}
 
       <hr />
 {/* <div className="gallery-section text-center mb-5">
@@ -201,48 +197,7 @@ const Catalogo = () => {
 </div>
 <hr /> */}
 
-<div className="gallery-section text-center mb-5">
-  <h2 className='titel7d'>Restaurant Event</h2>
-  <h2 className="gallery-title">Agustín Gusto</h2>
 
-  <div className="gallery-grid">
-   
-   {/*  <img
-      src={agustin3}
-      alt="Agustín Gusto - Imagen 2"
-      className="gallery-img"
-    />
-    <img
-      src={agustin2}
-      alt="Agustín Gusto - Imagen 3"
-      className="gallery-img"
-    /> */}
-  </div>
-  <hr />
-
-  <div className="gallery-grid">
-     <img
-      src={agustin1}
-      alt="Agustín Gusto - Imagen 1"
-      className="gallery-img"
-    />
-    <img
-      src={agustin6}
-      alt="Agustín Gusto - Imagen 1"
-      className="gallery-img"
-    />
-    <img
-      src={agustin4}
-      alt="Agustín Gusto - Imagen 2"
-      className="gallery-img"
-    />
-    <img
-      src={agustin5}
-      alt="Agustín Gusto - Imagen 3"
-      className="gallery-img"
-    />
-  </div>
-</div>
 
 {/* <div className="gallery-section text-center mb-5">
   <h2 className="gallery-title">Muluk "Coffee and Bar"</h2>
@@ -259,66 +214,6 @@ const Catalogo = () => {
 </div> */}
 
 
-<div className="gallery-section text-center mb-5">
-  <h2 className="gallery-title">Meson del Marques</h2>
-
-  <div className="gallery-grid">
-    <img
-      src={meson1}
-      alt="Agustín Gusto - Imagen 1"
-      className="gallery-img1"
-    />
-    <img
-      src={meson2}
-      alt="Agustín Gusto - Imagen 2"
-      className="gallery-img1"
-    />
-    
-  </div>
-</div>
-
-<div className="gallery-section text-center mb-5">
-  <h2 className="gallery-title">Don Divblo</h2>
-
-  <div className="gallery-grid">
-    <img
-      src={don1}
-      alt="Agustín Gusto - Imagen 1"
-      className="gallery-img1"
-    />
-    <img
-      src={don2}
-      alt="Agustín Gusto - Imagen 2"
-      className="gallery-img1"
-    />
-    
-  </div>
-</div>
-
-<div className="gallery-section text-center mb-5">
-  <h2 className="gallery-title">Paladar de Cura</h2>
-
-  <div className="gallery-grid">
-    <img
-      src={paladar1}
-      alt="Agustín Gusto - Imagen 1"
-      className="gallery-img"
-    />
-    <img
-      src={paladar2}
-      alt="Agustín Gusto - Imagen 2"
-      className="gallery-img"
-    />
-    <img
-      src={paladar3}
-      alt="Agustín Gusto - Imagen 3"
-      className="gallery-img"
-    />
-  </div>
-
-</div>
-
-      <hr />
 
    {/*  <div className="folleto text-center mb-5">
       <h2 className="fw-bold mb-3"> Exhibition "The Torchbearers" indefinite time</h2>

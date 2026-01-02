@@ -192,12 +192,15 @@
 .modal-content22 {
   background: #ffffff;
   width: 90%;
-  max-width: 520px;
+  max-width: 620px;
+  max-height: 95vh;        /* 🔑 límite de altura */
+  overflow-y: auto;        /* 🔑 scroll vertical */
   border-radius: 14px;
   padding: 25px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   animation: modalScale 0.3s ease;
 }
+
 
 .modal-content22 h2 {
   margin-bottom: 10px;

@@ -158,8 +158,8 @@ const App = () => {
                 <>
                  
                 
-                  <LanguageSwitcher />
-                  <MapaSin />
+                 
+                  <Destino />
 
                   {/* Footer global */}
           <ProximoEvento />

@@ -75,7 +75,7 @@ const Header = () => {
 
   {/* ➡ DERECHA */}
   <div className="nav-right">
-    <button className="botton2" onClick={() => navigateTo("/LugaresTuristicos")}>
+    <button className="botton2" onClick={() => navigateTo("/lugares-turisticos")}>
         
       {t("header.discover")}
     </button>

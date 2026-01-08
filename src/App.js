@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { HelmetProvider } from "react-helmet-async";
+
 import Header from './componentes/Header';
 import EventoCalendario from './componentes/EventoCalendario';
 import Hoteles from './componentes/Hoteles';
@@ -33,6 +35,7 @@ import LanguageSwitcher from './componentes/LanguageSwitcher';
 import Turismo26 from './componentes/Turismo26';
 import Destino from './componentes/Destino';
 import MapaSin from './componentes/MapaSin';
+import Home from "./pages/Home";
 
 const App = () => {
 
@@ -67,7 +70,7 @@ const App = () => {
 
   
   return (
-    
+    <HelmetProvider>
     <Router>
       <ScrollToTop />
       <div>
@@ -85,33 +88,7 @@ const App = () => {
                 </>} />
 
               {/* Página principal real */}
-              <Route 
-                path="/home" 
-                
-                element={
-                  
-                  <>
-                
-                    <Header />
-                    <LanguageSwitcher />
-                    <ProgramarEvents />
-
-        
-
-                    <Cenotes />
-                    
-                    <Catalogo />
-                    <EventoDiario />
-                   <ToastContainer />
-                    
-                   {/*  <AnuncioEmergente /> */}
-                   {/* Footer global */}
-          <ProximoEvento />
-         
-          <Footer />
-                  </>
-                } 
-              />  
+              <Route path="/home" element={<Home />} />
 
               <Route 
                 path="/calendario/evento/:mensaje" 
@@ -334,6 +311,7 @@ const App = () => {
         </main>
       </div>
     </Router>
+    </HelmetProvider>
   );
 };
 

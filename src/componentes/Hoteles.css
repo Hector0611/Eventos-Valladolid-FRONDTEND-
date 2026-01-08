@@ -428,8 +428,8 @@ body {
 /* PANEL SUPERPUESTO SOBRE EL MAPA */
 .side-panel {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 70px;
+  right: 3px;
   width: 400px;
   max-height: 85vh;
   background: #ffffff;
@@ -453,6 +453,7 @@ body {
   float: right;
   cursor: pointer;
   font-size: 18px;
+  top: 40px;
   border-radius: 8px;
   padding: 5px 10px;
 }
@@ -674,6 +675,49 @@ li br {
   text-decoration: none;
 
 }
+
+.map-filters {
+  display: flex;
+
+  padding: 10px;
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.map-filters button {
+  display: flex;
+  align-items: center;     /* centra vertical */
+  justify-content: center; /* centra horizontal */
+
+  border: 1px solid #0d6efd;
+  background: white;
+  color: #0d6efd;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.map-filters button:hover {
+  background: #ff05059f;
+  color: white;
+}
+
+.map-filters button.active {
+  background: #0d6efd;
+  color: white;
+}
+
+.sepa2{
+  height: 10px;
+}
+
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   p {
@@ -687,6 +731,22 @@ li br {
   ul > li {
     font-size: 0.95rem;
   }
+  .map-filters {
+    justify-content: center;
+  }
+  .map-filters button {
+    padding: 5px 8px;
+    font-size: 0.7rem;
+  }
+  .map-filters button.active {
+    padding: 5px 10px;
+    font-size: 0.7rem;
+  }
+  .sepa2{
+    height: 5px;
+  }
+
+
 }
 
 

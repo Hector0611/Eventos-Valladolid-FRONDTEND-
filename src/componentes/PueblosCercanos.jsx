@@ -4,6 +4,7 @@ import "./PueblosCercanos.css";
 const pueblosData = [
   { 
     nombre: "Popolá", /* Ya esta */
+    imagen: "/Imagenes/pueblos/popola.jpg",
     lat: 20.732804107412726, 
     lon: -88.23743513676239, 
     descripcion: "Popolá is a small town and police station located in the municipality of Valladolid, in the eastern part of the state of Yucatán, Mexico. It is located a few kilometers from the municipal seat, the historic city of Valladolid.",
@@ -19,6 +20,7 @@ const pueblosData = [
 
   { 
     nombre: "Kanxoc", /* Ya esta */
+    imagen: "/Imagenes/pueblos/kanxoc.jpg",
     lat: 20.616813239438272, 
     lon: -88.0982796370819, 
     descripcion: "Kanxoc (K'anxok, 'place of warriors') is a Mayan town of great historical and cultural importance.",
@@ -34,6 +36,7 @@ const pueblosData = [
 
   { 
     nombre: "Yalcobá", /* Ya esta */
+    imagen: "/Imagenes/pueblos/yalcoba.jpg",
     lat: 20.79088451479788, 
     lon: -88.03731988895876, 
     descripcion: "Yalcobá is a rural Mayan community known for its cenotes and traditional lifestyle.",
@@ -49,6 +52,7 @@ const pueblosData = [
 
   { 
     nombre: "Xocén", /* Ya esta */
+    imagen: "/Imagenes/pueblos/xocen.jpg",
     lat: 20.599118702169775,
     lon: -88.16337045901277,
     descripcion: "Xocén is considered the 'Center of the World' by its inhabitants.",
@@ -64,6 +68,7 @@ const pueblosData = [
 
   { 
     nombre: "Tesoco", /* Ya esta */
+    imagen: "/Imagenes/pueblos/tesoco.jpg",
     lat: 20.721765389671624,
     lon: -88.15411447359732,
     descripcion: "Tesoco is a town whose name means 'here it ends' in the Mayan language.",
@@ -79,6 +84,7 @@ const pueblosData = [
 
   { 
     nombre: "Tikuch", /* Ya esta */
+    imagen: "/Imagenes/pueblos/tikuch.jpg",
     lat: 20.702500398122268,
     lon: -88.11271614543378,
     descripcion: "Tikuch is a rural community strongly connected to Mayan traditions.",
@@ -94,6 +100,7 @@ const pueblosData = [
 
   { 
     nombre: "Dzitnup", /* Ya esta */
+    imagen: "/Imagenes/pueblos/dzitnup.jpg",
     lat: 20.647015722281402,
     lon: -88.24465470160732,
     descripcion: "Dzitnup is known for the famous cenotes Samulá and X'Kekén.",
@@ -109,6 +116,7 @@ const pueblosData = [
 
   { 
     nombre: "Tahmuy", /* Ya esta */
+    imagen: "/Imagenes/pueblos/tahmuy.jpg",
     lat: 20.75949905733302,
     lon: -88.14177916612304,
     descripcion: "Tahmuy is a quiet town reflecting the traditional rural life of Yucatán.",
@@ -124,6 +132,7 @@ const pueblosData = [
 
   { 
     nombre: "Pixoy", /* Ya esta */
+    imagen: "/Imagenes/pueblos/pixoy.jpg",
     lat: 20.7159794047854,
     lon: -88.26286021459926,
     descripcion: "Pixoy is named after the native Pixoy tree and preserves strong Mayan identity.",
@@ -139,6 +148,7 @@ const pueblosData = [
 
   {
     nombre: "Nohsuytun", /* Ya esta */
+    imagen: "/Imagenes/pueblos/nohsuytun.jpg",
     lat: 20.435320260108373,
     lon: -88.09584988101533,
     descripcion: "Nohsuytun is a small Mayan community near Valladolid.",
@@ -154,6 +164,7 @@ const pueblosData = [
 
   { 
     nombre: "Ebtún", /* Ya esta */
+    imagen: "/Imagenes/pueblos/ebtun.jpg",
     lat: 20.665682917935,
     lon: -88.26092570160516,
     descripcion: "Ebtún is recognized for its artisan tradition and historical importance.",
@@ -169,6 +180,7 @@ const pueblosData = [
 
   { 
     nombre: "Xuilub", /* Ya esta */
+    imagen: "/Imagenes/pueblos/xuilub.jpg",
     lat: 20.417623583921447,
     lon: -88.03007469314717,
     descripcion: "Xuilub is a small rural community with strong Mayan roots.",
@@ -184,6 +196,7 @@ const pueblosData = [
 
   {
     nombre: "Yalcón", /* Ya esta */
+    imagen: "/Imagenes/pueblos/yalcon.jpg",
     lat: 20.417623583921447,
     lon: -88.03007469314717,
     descripcion: "Yalcón is a small rural community with strong Mayan roots.",
@@ -199,6 +212,7 @@ const pueblosData = [
 
   {
     nombre: "Tixhualactún", /* Ya esta */
+    imagen: "/Imagenes/pueblos/tixhualactun.jpg",
     lat: 20.417623583921447,
     lon: -88.03007469314717,
     descripcion: "Tixhualactún is a small rural community with strong Mayan roots.",
@@ -226,8 +240,17 @@ export default function PueblosCercanos() {
       <div className="pueblos-grid">
         {pueblosData.map((pueblo) => (
           <div className="pueblo-card animate-fade-up" key={pueblo.nombre}>
-            
+
             <h3>{pueblo.nombre}</h3>
+
+            {/* IMAGEN */}
+            <div className="pueblo-img">
+              <img src={pueblo.imagen} alt={pueblo.nombre} />
+           
+              <hr />
+            </div>
+            <br />
+            
             <p className="distancia">{pueblo.distancia}</p>
             <p>{pueblo.descripcion}</p>
 
@@ -281,6 +304,14 @@ export default function PueblosCercanos() {
       <div className="modal-glow" />
 
       <h2 className="modal-title">{modalData.nombre}</h2>
+
+       {/* IMAGEN */}
+            <div className="pueblo-img2">
+              <img src={modalData.imagen} alt={modalData.nombre} />
+           
+              <hr />
+            </div>
+            <br />
 
       <p className="modal-description">
         {modalData.descripcion}

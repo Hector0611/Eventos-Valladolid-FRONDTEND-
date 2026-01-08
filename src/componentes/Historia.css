@@ -1,4 +1,6 @@
-/* 🎨 CONTENEDOR PRINCIPAL */
+/* =================================================
+   🎨 CONTENEDOR PRINCIPAL
+================================================= */
 .historia-container {
   background: linear-gradient(135deg, #f5f9ff9e, #e8f6ef9c);
   padding: 15px 25px;
@@ -9,7 +11,9 @@
   animation: fadeIn 1s ease;
 }
 
-/* 🏛️ TÍTULOS */
+/* =================================================
+   🏛️ TÍTULOS
+================================================= */
 .titel111 {
   font-size: 2.5rem;
   font-weight: 900;
@@ -17,16 +21,18 @@
   margin-bottom: 5px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  animation: slideDown 0.8s ease;
   padding: 10px 30px;
   text-shadow: 1px 1px 0px rgb(0, 0, 0);
+  animation: slideDown 0.8s ease;
 }
 
 .tituls {
   color: #023047;
 }
 
-/* 🎥 VIDEO EMBED */
+/* =================================================
+   🎥 VIDEO EMBED SIMPLE
+================================================= */
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -46,31 +52,33 @@
 
 .video-container iframe {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   border: none;
 }
 
-/* 📜 CARRUSEL HISTÓRICO */
+/* =================================================
+   📜 CARRUSEL HISTÓRICO
+================================================= */
 .historia-carrusel {
   position: relative;
   width: 90%;
   max-width: 1100px;
-  margin: 40px auto;
   height: 600px;
+  margin: 40px auto;
   overflow: hidden;
   border-radius: 25px;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
   background-color: #fff;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
 }
 
-/* 🖼 ELEMENTOS DEL CARRUSEL */
+/* =================================================
+   🖼 ITEMS DEL CARRUSEL
+================================================= */
 .historia-item {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -92,7 +100,9 @@
   transform: scale(1.1);
 }
 
-/* 🖼 FONDO DE IMAGEN */
+/* =================================================
+   🖼 IMAGEN DE FONDO
+================================================= */
 .historia-fondo-imagen {
   width: 100%;
   height: 100%;
@@ -105,13 +115,15 @@
   transform: scale(1.05);
 }
 
-/* 🌄 CAPA DE TEXTO */
+/* =================================================
+   🌄 OVERLAY DE TEXTO
+================================================= */
 .historia-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 30px;
   width: 100%;
+  padding: 30px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
   color: #fff;
   text-align: left;
@@ -128,11 +140,13 @@
   font-size: 1rem;
   line-height: 1.6;
   color: #f0f0f0;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   margin-bottom: 20px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-/* 🔘 BOTÓN "READ MORE" */
+/* =================================================
+   🔘 BOTÓN READ MORE
+================================================= */
 .historia-link {
   background: linear-gradient(135deg, #00b4d8, #48cae4);
   color: #fff;
@@ -150,7 +164,9 @@
   transform: scale(1.05);
 }
 
-/* 🧭 BOTONES DE NAVEGACIÓN */
+/* =================================================
+   🧭 BOTONES DE NAVEGACIÓN
+================================================= */
 .nav-button_left,
 .nav-button_right {
   position: absolute;
@@ -158,39 +174,31 @@
   transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.85);
   border: none;
+  width: 50px;
+  height: 50px;
   font-size: 2rem;
   color: #05668d;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
   cursor: pointer;
   z-index: 3;
   transition: all 0.3s ease;
 }
 
+.nav-button_left { left: 20px; }
+.nav-button_right { right: 20px; }
+
 .nav-button_left:hover,
 .nav-button_right:hover {
   background: #00b4d8;
-  color: white;
+  color: #fff;
   transform: translateY(-50%) scale(1.1);
 }
 
-.nav-button_left {
-  left: 20px;
-}
-
-.nav-button_right {
-  right: 20px;
-}
-
-/* 🔮 EFECTOS DE FADE */
-.fade-in {
-  animation: fadeIn 0.8s ease;
-}
-
-.fade-out {
-  animation: fadeOut 0.8s ease;
-}
+/* =================================================
+   🔮 EFECTOS DE FADE
+================================================= */
+.fade-in { animation: fadeIn 0.8s ease; }
+.fade-out { animation: fadeOut 0.8s ease; }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(1.05); }
@@ -202,13 +210,12 @@
   to { opacity: 0; transform: scale(1.05); }
 }
 
-/* 🌙 MODAL */
+/* =================================================
+   🌙 MODAL
+================================================= */
 .modal-overlay11 {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(5, 5, 5, 0.8);
   display: flex;
   justify-content: center;
@@ -220,17 +227,17 @@
 .modal-content14 {
   background: #ffffff;
   background-image: url("/src/componentes/Imagenes/Fondo66.jpg");
-    background-repeat: repeat-y;
-  background-size: 100% auto; /* Se ajusta al ancho, repitiéndose hacia abajo */
+  background-repeat: repeat-y;
+  background-size: 100% auto;
   border-radius: 20px;
-  max-width: 1000px;
   width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
   padding: 35px;
+  overflow-y: auto;
   position: relative;
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
   animation: slideUp 0.6s ease;
-  overflow-y: auto;
-  max-height: 90vh;
 }
 
 /* ❌ BOTÓN CERRAR */
@@ -241,19 +248,18 @@
   background: none;
   border: none;
   cursor: pointer;
-  transition: transform 0.3s ease;
-  color: red;
   font-size: 1.5rem;
+  color: red;
+  transition: transform 0.3s ease;
 }
 
 .close-button222:hover {
   transform: rotate(90deg) scale(1.1);
 }
 
-.xbutton {
-  color: #ff4d4d;
-}
-
+/* =================================================
+   🖼 MODAL CONTENIDO
+================================================= */
 .modal-image11 {
   width: 100%;
   height: 340px;
@@ -262,19 +268,20 @@
   margin-bottom: 20px;
 }
 
-/* 📖 TEXTO EN MODAL */
 .texto-pre11 {
   text-align: justify;
   font-size: 1rem;
-  color: #333;
   line-height: 1.7;
+  color: #333;
   background-color: #ffffffd2;
   padding: 15px 20px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Contenedor del slider */
+/* =================================================
+   🎞 SLIDER FULL
+================================================= */
 .slider-full-container {
   width: 100%;
   height: 70vh;
@@ -284,66 +291,104 @@
   transition: transform 0.15s linear;
 }
 
-/* Imagen que hace el efecto */
 .slider-full-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  pointer-events: none; /* evita que la imagen bloquee el mouse */
+  pointer-events: none;
   user-select: none;
 }
 
-/* src/components/Historia.css - agregar al final */
-.loading-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
-  font-size: 1.2rem;
-  color: #666;
-}
-
+/* =================================================
+   ⏳ ESTADOS
+================================================= */
+.loading-container,
 .no-data {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 300px;
   font-size: 1.2rem;
-  color: #999;
 }
 
+.loading-container { color: #666; }
+.no-data { color: #999; }
 
-/* 🧩 ANIMACIONES EXTRA */
-@keyframes slideUp {
-  from { transform: translateY(50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+/* =================================================
+   🎥 VIDEO + INFO LAYOUT
+================================================= */
+.video-info-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1300px;
+  margin: 60px auto;
+  padding: 10px;
 }
 
-@keyframes slideDown {
-  from { transform: translateY(-30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+.video-info-section.reverse {
+  flex-direction: row-reverse;
 }
 
-/* 📱 RESPONSIVO */
+.video-box {
+  flex: 1;
+}
+
+.video-box iframe {
+  width: 100%;
+  height: 355px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.video-info {
+  flex: 1;
+  padding: 10px 20px;
+}
+
+.video-info h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #14532d;
+  font-family: Georgia,'Times New Roman',Times,serif;
+  font-weight: 800;
+}
+
+.video-info p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #1f2937;
+  text-align: justify;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =================================================
+   📱 RESPONSIVE
+================================================= */
 @media (max-width: 768px) {
-  .titel111 {
-    font-size: 1.8rem;
+
+  .titel111 { font-size: 1.8rem; }
+
+  .video-info-section,
+  .video-info-section.reverse {
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px auto;
   }
 
-  .historia-carrusel11 {
-    height: 400px;
+  .video-box iframe {
+    width: 360px;
+    height: 260px;
   }
 
-  .historia-overlay11 {
-    padding: 10px;
+  .video-info h2 {
+    font-size: 1.6em;
+    text-align: left;
   }
 
-  .titulo5 {
-    font-size: 1.4rem;
-  }
-
-  .historia-texto11 p {
-    font-size: 0.9rem;
+  .video-info p {
+    font-size: 1em;
+    text-align: left;
   }
 
   .nav-button_left,
@@ -352,4 +397,17 @@
     height: 40px;
     font-size: 1.5rem;
   }
+}
+
+/* =================================================
+   🧩 ANIMACIONES EXTRA
+================================================= */
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }

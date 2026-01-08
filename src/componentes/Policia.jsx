@@ -44,7 +44,7 @@ export default function Policia() {
             <div className="header-icon">📍</div>
             <div>
               <h1>Municipal Police - Valladolid</h1>
-              <p>Contact and help lines</p>
+              <p1>Contact and help lines</p1>
             </div>
           </div>
 

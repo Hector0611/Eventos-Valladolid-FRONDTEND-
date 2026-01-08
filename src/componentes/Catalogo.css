@@ -1,12 +1,17 @@
+/* ======================================================
+   CONTENEDOR GENERAL
+====================================================== */
 .catalogo-container {
   background-color: #f9fafc5f;
   min-height: 100vh;
 }
 
-
+/* ======================================================
+   IMÁGENES CON HOVER
+====================================================== */
 .img-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .img-hover:hover {
@@ -18,27 +23,26 @@
   width: 90%;
   max-width: 600px;
   height: auto;
-  transition: transform 0.3s ease;
   padding: 10px;
+  transition: transform 0.3s ease;
 }
 
 .folleto-img:hover {
   transform: scale(1.03);
 }
 
-/* Modal */
+/* ======================================================
+   MODAL
+====================================================== */
 .modal11 {
-  display: flex;
   position: fixed;
+  inset: 0;
   z-index: 9999;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.968);
+  display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 60px;
+  background-color: rgba(0, 0, 0, 0.968);
 }
 
 .modal-content11 {
@@ -50,73 +54,99 @@
   animation: fadeIn 0.5s;
 }
 
-.map-placeholder1{
+/* ======================================================
+   MAPA
+====================================================== */
+.map-placeholder1 {
   width: 60%;
   height: 400px;
   margin-bottom: 30px;
   border-radius: 15px;
   overflow: hidden;
 }
+
 .map-placeholder1 iframe {
   width: 100%;
   height: 100%;
   border: none;
 }
+
+/* ======================================================
+   ANIMACIONES
+====================================================== */
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-/* Botones de navegación en modal */
-.anterior, .siguiente {
-  cursor: pointer;
+/* ======================================================
+   BOTONES DE NAVEGACIÓN DEL MODAL
+====================================================== */
+.anterior,
+.siguiente {
   position: absolute;
   top: 50%;
-  color: rgb(0, 0, 0);
-  font-size: 4rem;
-  padding: 10px;
-  user-select: none;
-  border: none;
-  background: none;
   z-index: 999999;
-}
-
-.anterior:hover, .siguiente:hover {
-  color: #0d6efd;
+  cursor: pointer;
+  font-size: 4rem;
+  font-weight: 900;
+  padding: 0 12px;
+  color: #000;
+  background: none;
+  border: none;
+  user-select: none;
 }
 
 .anterior {
   left: 5%;
+  background-color: white;
+  border-radius: 30%;
 }
 
 .siguiente {
   right: 5%;
+  background-color: white;
+  border-radius: 30%;
+}
+
+.anterior:hover,
+.siguiente:hover {
+  color: #0d6efd;
 }
 
 .cerrar {
   position: absolute;
-  top: 20px;
-  right: 40px;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
+  top: -45px;
+  right: 47%;
+  font-size: 5rem;
   font-weight: bold;
+  color: white;
+  cursor: pointer;
 }
 
 .cerrar:hover {
   color: #dc3545;
 }
 
-.TextoHanal{
+/* ======================================================
+   TEXTOS
+====================================================== */
+.TextoHanal {
   max-width: 600px;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 20px;
   text-align: justify;
   font-size: 1.1rem;
-  color: #333;
   line-height: 1.6;
+  color: #333;
 }
 
-.folletos{
+.folletos {
   text-align: center;
   margin-bottom: 30px;
   font-size: 4rem;
@@ -124,96 +154,26 @@
   color: #0d6efd;
 }
 
-/* CONTENEDOR */
-.gallery-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 16px;
-}
-
-/* TÍTULO */
-.gallery-title {
-  font-size: 1.8rem;
-  font-weight: 700;
+.titel7 {
+  font-size: 2.5rem;
+  font-weight: bold;
   margin-bottom: 20px;
-  color: #1f2937;
+  color: #0d6efd;
 }
 
-/* GRID DE IMÁGENES */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-}
-
-/* IMÁGENES */
-.gallery-img {
-  width: 100%;
-  height: 460px;
-  object-fit: cover;
-  border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* EFECTO HOVER */
-.gallery-img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
-}
-
-
-
-/* CONTENEDOR */
-.gallery-section1 {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 16px;
-}
-
-/* TÍTULO */
-.gallery-title1 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #1f2937;
-}
-
-/* GRID DE IMÁGENES */
-.gallery-grid1 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-}
-
-/* IMÁGENES */
-.gallery-img1 {
-  width: 100%;
-  height: 760px;
-  object-fit: cover;
-  border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* EFECTO HOVER */
-.gallery-img1:hover {
-  transform: scale(1.03);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
-}
-
-
-
-/* CONTENEDOR */
+/* ======================================================
+   GALERÍA BASE
+====================================================== */
+.gallery-section,
+.gallery-section1,
 .gallery-section2 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 10px 16px;
 }
 
-/* TÍTULO */
+.gallery-title,
+.gallery-title1,
 .gallery-title2 {
   font-size: 1.8rem;
   font-weight: 700;
@@ -221,81 +181,85 @@
   color: #1f2937;
 }
 
-/* GRID DE IMÁGENES */
+.gallery-grid,
+.gallery-grid1,
 .gallery-grid2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 16px;
 }
 
-/* IMÁGENES */
-.gallery-img2 {
+/* ======================================================
+   IMÁGENES DE GALERÍA
+====================================================== */
+.gallery-img,
+.gallery-img1,
+.gallery-img2,
+.gallery-img4 {
   width: 100%;
-  height: 560px;
   object-fit: cover;
   border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* EFECTO HOVER */
-.gallery-img2:hover {
+.gallery-img {
+  height: 460px;
+}
+
+.gallery-img1 {
+  height: 760px;
+}
+
+.gallery-img2 {
+  height: 560px;
+}
+
+.gallery-img4 {
+  height: 1260px;
+}
+
+.gallery-img:hover,
+.gallery-img1:hover,
+.gallery-img2:hover,
+.gallery-img4:hover {
   transform: scale(1.03);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
 }
 
-.gallery-img4{
-  width: 100%;
-  height: 1260px;
-  object-fit: cover;
-  border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.titel7{
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #0d6efd;
-}
-
-
-
-
+/* ======================================================
+   RESPONSIVE
+====================================================== */
 @media (max-width: 768px) {
-  .anterior, .siguiente {
+
+  .anterior,
+  .siguiente {
     font-size: 3rem;
     padding: 2px;
-  
   }
 
   .cerrar {
-    font-size: 1.5rem;
-    top: 10px;
-    right: 20px;
+    font-size: 4rem;
+    top: -17px;
+    right: 42%;
   }
 
-  .modal-content11{
+  .modal-content11 {
     max-width: 90%;
   }
 
-  .map-placeholder1{
+  .map-placeholder1,
+  .map-placeholder1 iframe {
     width: 100%;
     height: 300px;
   }
 
-  .map-placeholder1 iframe{ 
-    height: 300px;
-  }
-
   .gallery-img1 {
-    height: 590px;  
+    height: 590px;
   }
 
   .gallery-img2 {
-    height: 390px;  
+    height: 390px;
   }
 }

@@ -8,7 +8,6 @@ import { useTranslation } from "react-i18next";
 
 import { translateField } from '../utils/translateField';
 
-
 import './CircularMenu.css';
 import './Calendario.css';
 import './menuwhat.css';
@@ -275,7 +274,7 @@ const ProgramarEvents = () => {
                                 </>
                               ) : (
                                 <div className="empty-day"></div>
-                              )}
+                              )}  
                             </td>
                           );
                         })}
@@ -288,7 +287,7 @@ const ProgramarEvents = () => {
         </div>
         {/* aqui */}
 </div>
-      </div>
+      </div>  
 
       {/* Modal de eventos */}
       {showModal && (
@@ -302,7 +301,7 @@ const ProgramarEvents = () => {
 
             {eventosSeleccionados.length === 0 ? (
               <div className="no-events">
-                <h2 className="titulo5">There are no events scheduled for these days</h2>
+            
                 <p className="titulo1"></p>
               </div>
 
@@ -313,12 +312,17 @@ const ProgramarEvents = () => {
                   <div className="caj">
                     <br />
                     <h1 className="fecha">{monthsData[selectedMonth]?.nombre || months[selectedMonth]} {evento.dia_id}, 2025</h1>
-                    <h1 className="titel1">Events: {evento.titulo}</h1>
-                    <h3 className="titel5">{evento.mensaje}</h3>
+                    <div className='cajaMensaje'>
+                      
+                      <h2 className="titel66">Events: {evento.titulo}</h2>
+                      <p className="TextoMens">{evento.mensaje}</p>
+                    
                     <hr />
                     <h3 className="horacolor">
                       Event Date: {evento.dia_id}/{evento.mes_id}/2025 From {evento.hora_inicial} to {evento.hora_final}
                     </h3>
+                    </div>
+                    <br />
                     {evento.video && (
                         <p className="evento-enlace">
                           🌐 Website:{' '}
@@ -341,11 +345,11 @@ const ProgramarEvents = () => {
                     style={{ border: 0, borderRadius: "12px" }}
                     loading="lazy"
                     allowFullScreen
-                    src={`https://www.google.com/maps?q=${evento.latitud},${evento.longitud}&hl=es&z=16&output=embed`}
+                    src={`https://www.google.com/maps?q=${evento.latitud},${evento.longitud}&hl=en&z=16&output=embed`}
                   ></iframe>
 
                   <hr />
-                      <button
+                      {/* <button
                         className="boton-ver-eventos"
                         onClick={() =>
                           window.open(
@@ -357,14 +361,14 @@ const ProgramarEvents = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="currentColor123" viewBox="0 0 16 16">
                           <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
                         </svg>
-                        Go to Event Location
-                      </button>
+                        Location
+                      </button> */}
 
                       
 
                     </center>
-                    <div className="texto-pre">
-                      <div dangerouslySetInnerHTML={{ __html: evento.descripcion }}></div>
+                    <div className="texto-pre61">
+                      <p dangerouslySetInnerHTML={{ __html: evento.descripcion }}></p>
                       
                     </div>
                     
@@ -416,17 +420,6 @@ const ProgramarEvents = () => {
                           San Bernardino
                       </button>
                     </div>
-
-                    {/* Columna derecha: botón de hoteles */}
-                    {/* <div className="hoteles-section11">
-                      <h3>¿Buscas hoteles?</h3>
-                      <button
-                        className="bottonEvent1"
-                        onClick={() => window.open(`${process.env.PUBLIC_URL}/pdfs/Hoteles.pdf`, "_blank")}
-                      >
-                        📄 Ver Hoteles
-                      </button>
-                    </div> */}
                   </div>
              
               </div>

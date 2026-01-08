@@ -498,6 +498,7 @@ const taxisES = [
       <div className="Separacion">
       
             </div>
+          
 
              {/* PANEL VERTICAL PARA CENOTES */}
           <div className="panel-vertical">
@@ -507,7 +508,7 @@ const taxisES = [
               {cenotesInfo.map((c, index) => (
                 <div key={index} className="item-cenote">
                   <strong>{c.nombre}</strong>
-                  <p>{c.detalle}</p>
+                  <p className="textoDetalleTaxi">{c.detalle}</p>
                 <br />
                   {c.coords && (
                     <a
@@ -619,7 +620,7 @@ const taxisES = [
       </div>
 
       {/* debajo del mapa: tabla de precios */}
-      <section className="tabla-section">
+      {/* <section className="tabla-section">
         <div className="tabla-header">
           <h3>Rate table between quadrants (1 → 9)</h3>
           <p className="small">The cell is highlighted according to the current selection (source/destination).</p>
@@ -672,7 +673,7 @@ const taxisES = [
             </tbody>
           </table>
         </div>
-      </section>
+      </section> */}
 <hr />
       <div className="NumTaxiGrid">
       {/* Español */}

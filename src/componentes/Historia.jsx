@@ -89,15 +89,28 @@ const Historia = () => {
       <br />
 
       {/* VIDEO 1 */}
-      <div className="video-container">
-        <iframe
-          src="https://www.youtube.com/embed/iw5Ur7GW4Rk"
-          title="Conoce a Valladolid, Yucatán. México"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          loading="lazy"
-          allowFullScreen
-        ></iframe>
+      {/* VIDEO 1 */}
+      <div className="video-info-section">
+        <div className="video-box">
+          <iframe
+            src="https://www.youtube.com/embed/iw5Ur7GW4Rk"
+            title="Conoce Valladolid, Yucatán"
+            loading="lazy"
+            allowFullScreen
+          ></iframe>
+        </div>
+
+        <div className="video-info">
+          <h2>Discover Valladolid</h2>
+          <p>
+            This video introduces Valladolid, Yucatán — a magical town full of cenotes,
+            colonial architecture, gastronomy, culture, and unforgettable experiences.
+            Learn what to visit, where to go, and why Valladolid is one of Mexico’s most
+            charming destinations.
+          </p>
+        </div>
       </div>
+
 
       <br />
 
@@ -143,15 +156,27 @@ const Historia = () => {
       </div>
 
       {/* VIDEO 2 */}
-      <div className="video-container">
-        <iframe
-          src="https://www.youtube.com/embed/jbeHlcISQbQ"
-          title="FIESTAS DE YUCATÁN"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+      {/* VIDEO 2 */}
+      <div className="video-info-section reverse">
+        <div className="video-info">
+          <h2>Festivities & Traditions of Yucatán</h2>
+          <p>
+            Explore the vibrant traditions of Yucatán: religious celebrations,
+            traditional dances, local fairs, music, and ancestral customs that define
+            the Mayan and Yucatecan identity.
+          </p>
+        </div>
+
+        <div className="video-box">
+          <iframe
+            src="https://www.youtube.com/embed/jbeHlcISQbQ"
+            title="Fiestas y Tradiciones de Yucatán"
+            loading="lazy"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
+
 
       {/* MODAL */}
       {showModal && selectedItem && (

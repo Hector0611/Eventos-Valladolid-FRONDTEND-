@@ -54,6 +54,9 @@ const Hoteles = () => {
   const [selectedHotel, setSelectedHotel] = useState(null);
   const [restaurantes, setRestaurantes] = useState([]);
 
+  const [mapFilter, setMapFilter] = useState("ALL");
+
+
 
 const oficinaIcon = new L.Icon({
   iconUrl: oficina,
@@ -355,6 +358,29 @@ const restauranteIcon = new L.Icon({
            MAPA
         ------------------------------------------------ */}
         <div className="map-wrapper notranslate" translate="no">
+          <div className='sepa2'></div>
+          <div className="map-filters">
+            <button onClick={() => setMapFilter("ALL")} className={mapFilter==="ALL" ? "active" : ""}>
+              🌍 All
+            </button>
+
+            <button onClick={() => setMapFilter("HOTEL")} className={mapFilter==="HOTEL" ? "active" : ""}>
+              🏨 Hotels
+            </button>
+
+            <button onClick={() => setMapFilter("CENOTE")} className={mapFilter==="CENOTE" ? "active" : ""}>
+              🏞️ Cenotes
+            </button>
+
+            <button onClick={() => setMapFilter("SITIO")} className={mapFilter==="SITIO" ? "active" : ""}>
+              🏛️ Sites
+            </button>
+
+            <button onClick={() => setMapFilter("RESTAURANTE")} className={mapFilter==="RESTAURANTE" ? "active" : ""}>
+              🍽️ Restaurants
+            </button>
+          </div>
+
           <MapContainer
             center={[20.69018, -88.201223]}
             zoom={11}
@@ -366,7 +392,7 @@ const restauranteIcon = new L.Icon({
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
             {/* Hoteles */}
-            {hoteles.map(h => (
+            { (mapFilter === "ALL" || mapFilter === "HOTEL") && hoteles.map(h => (
               <Marker
                 key={h.id}
                 position={[parseFloat(h.latitud), parseFloat(h.longitud)]}
@@ -399,7 +425,7 @@ const restauranteIcon = new L.Icon({
 
 
             {/* Sitios */}
-            {sitios.map(s => (
+            { (mapFilter === "ALL" || mapFilter === "SITIO")  && sitios.map(s => (
               <Marker
                   key={s.id}
                   position={[parseFloat(s.latitud), parseFloat(s.longitud)]}
@@ -430,7 +456,7 @@ const restauranteIcon = new L.Icon({
             ))}
 
             {/* Cenotes */}
-            {cenotes.map(c => (
+            { (mapFilter === "ALL" || mapFilter === "CENOTE") && cenotes.map(c => (
               <Marker
                 key={c.id}
                 position={[parseFloat(c.latitud), parseFloat(c.longitud)]}
@@ -455,7 +481,7 @@ const restauranteIcon = new L.Icon({
             ))}
 
             {/* Restaurantes */}
-              {restaurantes.map(r => (
+              { (mapFilter === "ALL" || mapFilter === "RESTAURANTE")  && restaurantes.map(r => (
                 <Marker
                   key={r.id}
                   position={[parseFloat(r.latitud), parseFloat(r.longitud)]}

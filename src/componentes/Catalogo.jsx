@@ -18,49 +18,8 @@ import feria7 from './Imagenes/ImgTempo/Feria1.jpg';/* 6 de febrero */
 import feria8 from './Imagenes/ImgTempo/Feria6.jpg';/* 7 de febrero */
 import feria9 from './Imagenes/ImgTempo/Feria10.png';/* 8 de febrero */
 
-/* Eventos Cenotes */
-
-import suytun1 from './Imagenes/ImgTempo/Suyrun1.jpeg';
-import suytun2 from './Imagenes/ImgTempo/Suytun2.jpeg';
-
-/*Cenas Navidad y año Nuevo */
-/* agustin */
-import agustin1 from './Imagenes/ImgTempo/A.gusto1.jpeg';
-import agustin2 from './Imagenes/ImgTempo/A.G.2.jpeg';
-import agustin3 from './Imagenes/ImgTempo/A.G.3.jpeg';
-
-import agustin4 from './Imagenes/ImgTempo/A.G.1.1.jpeg';
-import agustin5 from './Imagenes/ImgTempo/A.G.2.2.jpeg';
-import agustin6 from './Imagenes/ImgTempo/A.G.3.3.jpeg';
-
-/* muluk */
-import muluk1 from './Imagenes/ImgTempo/Muluk1.jpeg';
-/* meson del marques */
-
-import meson1 from './Imagenes/ImgTempo/Meson1.jpeg';
-import meson2 from './Imagenes/ImgTempo/Meson2.jpeg';
-
-/* Don divblo */
-
-import don1 from './Imagenes/ImgTempo/Don1.jpeg';
-import don2 from './Imagenes/ImgTempo/Don2.png';
-
-/* paladar */
-
-import paladar1 from './Imagenes/ImgTempo/paladar1.jpeg';
-import paladar2 from './Imagenes/ImgTempo/paladar2.jpeg';
-import paladar3 from './Imagenes/ImgTempo/paladar3.jpeg';
-
-/* Folletos */
-import murem from './Imagenes/ImgTempo/Murem_exposicion.jpg';
-import Dance1 from './Imagenes/ImgTempo/Dance1.jpeg';
-import cancelacion2 from './Imagenes/ImgTempo/24y31diceimbre.jpeg';
-import perla from './Imagenes/ImgTempo/Perla.jpeg';
-import coro from './Imagenes/ImgTempo/Coro.png';
-import MurenN from './Imagenes/ImgTempo/Muren.jpeg';
-import xcopek from './Imagenes/ImgTempo/Xcopecl.jpeg';
-
-
+/* Xcopeck */
+import xcopek from './Imagenes/ImgTempo/Xcopek.jpg';
 
 const Catalogo = () => {
   const [idioma, setIdioma] = useState("es");
@@ -163,7 +122,7 @@ const Catalogo = () => {
 <hr />
 
 
-{/* <div className="folleto text-center mb-5">
+<div className="folleto text-center mb-5">
         <h2 className="fw-bold mb-3">Xcopek</h2>
         <img src={xcopek} alt="The Festival of My Town" className="folleto-img rounded shadow"  style={{ cursor: "pointer" }} onClick={() => {
             const confirmGo = window.confirm("Do you want to go to the location?");
@@ -174,7 +133,7 @@ const Catalogo = () => {
               );
             }
           }}/>
-      </div> */}
+      </div>
 
       <hr />
 {/* <div className="gallery-section text-center mb-5">

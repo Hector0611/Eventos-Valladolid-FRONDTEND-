@@ -278,6 +278,36 @@
   border: none;
 }
 
+/* IMAGEN */
+.pueblo-img {
+  position: relative;
+  height: 190px;
+}
+
+.pueblo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20%;
+}
+.pueblo-img img:hover {
+  transform: scale(1.05);
+  transition: transform 0.4s ease;
+}
+
+/* img del modal */
+
+.pueblo-img2 {
+  position: relative;
+  height: 500px;
+}
+
+.pueblo-img2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20%;
+}
 
 
 /* RESPONISIVO */

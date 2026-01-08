@@ -295,6 +295,10 @@ body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helv
     border-left-color: #27ae60;
 }
 
+.textoDetalleTaxi{
+  color: #ffffff
+}
+
 /* ======== RESPONSIVO ======== */
 @media (max-width: 650px) {
     .NumTaxiDiv {
@@ -560,11 +564,12 @@ body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helv
 .btn-ws {
   padding: 8px 14px;
   border-radius: 8px;
-  color: white;
+  color: rgb(0, 0, 0);
   font-weight: 600;
   text-decoration: none;
   transition: 0.25s ease;
   font-size: 0.9em;
+  background-color: #0003b9;
 }
 
 .btn-call {

@@ -87,7 +87,9 @@ const App = () => {
               {/* Página principal real */}
               <Route 
                 path="/home" 
+                
                 element={
+                  
                   <>
                 
                     <Header />
@@ -186,7 +188,7 @@ const App = () => {
               />
 
               <Route 
-                path="/LugaresTuristicos"
+                path="/lugares-turisticos"
                 element={
                   <>
                  

@@ -68,6 +68,8 @@ const App = () => {
 
 
 
+
+
   
   return (
     <HelmetProvider>
@@ -77,18 +79,21 @@ const App = () => {
         <main className='main-container'>
           <center>
             <Routes>
-              {/* Si alguien entra en "/" lo mando al splash */}
-              <Route path="/" element={<Navigate to="/loading" />} />
+              {/* Splash */}
+                <Route path="/loading" element={
+                  <>
+                
+                    <Header2 />
+                    <PrincipalRecarga />
+                  </>
+                } />
 
-              {/* Splash Screen */}
-              <Route path="/loading" element={
-                <>
-                <Header2 />
-                <PrincipalRecarga />
-                </>} />
+                {/* HOME REAL */}
+                <Route path="/" element={<Home />} />
 
-              {/* Página principal real */}
-              <Route path="/home" element={<Home />} />
+                {/* /home SOLO REDIRECCIONA */}
+                <Route path="/home" element={<Navigate to="/" replace />} />
+
 
               <Route 
                 path="/calendario/evento/:mensaje" 

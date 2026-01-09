@@ -4,6 +4,7 @@ import "./CircularMenu.css";
 import "./menuwhat.css";
 import Video1 from "./Imagenes/Valladolidencantar01.mp4";   // versión PC
 import Video2 from "./Imagenes/Valladolidencantar011.mp4";  // versión móvil
+import { Helmet } from "react-helmet-async";
 
 const PrincipalRecarga = () => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const PrincipalRecarga = () => {
     const fadeTimer = setTimeout(() => setFadeOut(true), 5500);
 
     // Redirección
-    const navTimer = setTimeout(() => navigate("/home"), 6000);
+    const navTimer = setTimeout(() => navigate("/"), 6000);
 
     // Limpiar efectos
     return () => {
@@ -34,6 +35,9 @@ const PrincipalRecarga = () => {
   }, [navigate]);
 
   return (
+<>  <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
     <div className={`contenedor-video ${fadeOut ? "fade-out" : ""}`}>
       <video
         className="video-fondo"
@@ -44,6 +48,7 @@ const PrincipalRecarga = () => {
         loop
       ></video>
     </div>
+  </>
   );
 };
 

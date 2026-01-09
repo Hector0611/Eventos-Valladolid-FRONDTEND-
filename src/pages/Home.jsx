@@ -9,8 +9,20 @@ import EventoDiario from "../componentes/EventoDiario";
 import ProximoEvento from "../componentes/ProximoEvento";
 import Footer from "../componentes/Footer";
 import { ToastContainer } from "react-toastify";
+import { useEffect } from "react";
 
-export default function home() {
+
+export default function Home() {
+
+
+ useEffect(() => {
+  const seen = sessionStorage.getItem("splash_seen");
+  if (!seen) {
+    sessionStorage.setItem("splash_seen", "true");
+    window.location.replace("/loading");
+  }
+}, []);
+
   return (
     <>
       {/* 🔹 SEO SOLO PARA /home */}
@@ -22,7 +34,7 @@ export default function home() {
         />
         <link
           rel="canonical"
-          href="https://visitavalladolidmx.com/home"
+          href="https://visitavalladolidmx.com/"
         />
       </Helmet>
 

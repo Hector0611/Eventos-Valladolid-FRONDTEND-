@@ -72,6 +72,9 @@ const Cenotes = () => {
               ✕
             </button>
 
+            <br />
+            <hr />
+
             <h2 className="titel11 tituls1">{selectedItem.titulo}</h2>
 
             {/* 🖼️ / 🗺️ SLIDER */}

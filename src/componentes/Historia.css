@@ -393,6 +393,7 @@
 
   .nav-button_left,
   .nav-button_right {
+    top: 35%;
     width: 40px;
     height: 40px;
     font-size: 1.5rem;

@@ -131,7 +131,7 @@
   width: 90%;
   max-width: 1000px;
   border-radius: 20px;
-  padding: 30px;
+  padding: 20px;
   position: relative;
   max-height: 90vh;
   overflow-y: auto;
@@ -145,12 +145,14 @@
 .close-button22 {
   position: absolute;
   top: 15px;
-  right: 20px;
+  right: 42%;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 2rem;
   transition: transform 0.3s ease;
+  font-weight: 800;
+  color: red;
 }
 
 .close-button22:hover {
@@ -173,7 +175,8 @@
   height: 400px;
   overflow: hidden;
   border-radius: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  position: relative;
 }
 
 .media-track {
@@ -188,21 +191,44 @@
 }
 
 .media-panel {
-  width: 50%;
+  flex: 0 0 50%;
   height: 100%;
+  position: relative;
 }
 
 .image-panel img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 .map-panel iframe {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   border: none;
 }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .media-slider {
+    height: 300px;
+  }
+
+
+  .map-panel iframe {
+  position: absolute;
+  inset: 0;
+  width: 50%;
+  height: 100%;
+  border: none;
+}
+}
+
+
 
 /* =====================================================
    🔘 BOTÓN VIEW MAP
@@ -285,9 +311,6 @@ a:hover {
     padding: 20px;
   }
 
-  .media-slider {
-    height: 220px;
-  }
 
   .historia-link1 {
     padding: 8px 15px;

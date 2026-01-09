@@ -22,7 +22,7 @@ export default function Home() {
         />
         <link
           rel="canonical"
-          href="https://visitavalladolidmx.com/"
+          href="https://visitavalladolidmx.com/home"
         />
       </Helmet>
 

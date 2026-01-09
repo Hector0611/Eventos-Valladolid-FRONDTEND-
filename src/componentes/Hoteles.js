@@ -562,7 +562,8 @@ const restauranteIcon = new L.Icon({
       <button className="modal-clo1" onClick={() => setShowModal(false)}>
         ✖
       </button>
-
+ <br></br>
+ <hr></hr>
       <h2>
         {selectedHotel.hotel ||
         selectedHotel.cenote ||

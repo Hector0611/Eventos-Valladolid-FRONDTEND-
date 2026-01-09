@@ -35,7 +35,10 @@ import LanguageSwitcher from './componentes/LanguageSwitcher';
 import Turismo26 from './componentes/Turismo26';
 import Destino from './componentes/Destino';
 import MapaSin from './componentes/MapaSin';
+
+/* Pages */
 import Home from "./pages/Home";
+import Seo from './pages/Seo';
 
 const App = () => {
 
@@ -111,6 +114,7 @@ const App = () => {
                 path="/policia" 
                 element={
                   <>
+                    <Seo title="Policia" description="Contacto de la policia en Valladolid" canonical="https://visitavalladolidmx.com/policia"/>
                    
                     <Header />
                     <PoliciaPage />
@@ -125,6 +129,7 @@ const App = () => {
                 path="/transporte" 
                 element={
                   <>
+                    <Seo title="Transporte" description="Información sobre transporte en Valladolid" canonical="https://visitavalladolidmx.com/transporte"/>
                   
                     <Header />
                     <LanguageSwitcher />
@@ -157,6 +162,12 @@ const App = () => {
                 path="/mapa" 
                 element={
                   <>
+
+                  <Seo
+                      title="Hotels and Map | Visit Valladolid"
+                      description="Find hotels, locations and routes in Valladolid, Yucatán."
+                      canonical="https://visitavalladolidmx.com/mapa"
+                    />
                 
                     <Header />
                     <LanguageSwitcher />
@@ -173,6 +184,11 @@ const App = () => {
                 path="/lugares-turisticos"
                 element={
                   <>
+                    <Seo
+                      title="Tourist Places | Visit Valladolid"
+                      description="Explore top tourist attractions in Valladolid, Yucatán."
+                      canonical="https://visitavalladolidmx.com/lugares-turisticos"
+                    />
                  
                     <Header />  
                     <LanguageSwitcher />
@@ -193,6 +209,11 @@ const App = () => {
                 path="/programarevents"
                 element={
                   <>
+                    <Seo
+                      title="Event Schedule | Visit Valladolid"
+                      description="Check out the event schedule in Valladolid, Yucatán."
+                      canonical="https://visitavalladolidmx.com/programarevents"
+                    />
             
                     <Header />
                     <LanguageSwitcher />
@@ -209,7 +230,12 @@ const App = () => {
 
               <Route path="/historia" element={
                 <>  
-             
+                <Seo
+                      title="Historia | Visit Valladolid"
+                      description="Descubre la historia de Valladolid, Yucatán."
+                      canonical="https://visitavalladolidmx.com/historia"
+                    />
+
                   <Header />
                   <LanguageSwitcher />
                  
@@ -225,11 +251,15 @@ const App = () => {
 
               <Route path="/catalogo" element={
                 <>
-               
+                <Seo
+                      title="Catalogo | Visit Valladolid"
+                      description="Descubre el catalogo de eventos en Valladolid."
+                      canonical="https://visitavalladolidmx.com/catalogo"
+                    />
+
                   <Header />
                   <LanguageSwitcher />
                   <Catalogo />
-
                   {/* Footer global */}
           <ProximoEvento />
          
@@ -239,6 +269,11 @@ const App = () => {
 
               <Route path="/estadisticas" element={
                 <>
+                <Seo
+                      title="Estadisticas | Visit Valladolid"
+                      description="Estadisticas de turismo en Valladolid, Yucatán."
+                      canonical="https://visitavalladolidmx.com/estadisticas"
+                    />
              
                   <Header />
                   <LanguageSwitcher />
@@ -253,6 +288,11 @@ const App = () => {
 
               <Route path="/turismo" element={
                 <>
+                <Seo
+                      title="Turismo | Visit Valladolid"
+                      description="Información turística de Valladolid, Yucatán."
+                      canonical="https://visitavalladolidmx.com/turismo"
+                    />
              
                   <Header />
                   <LanguageSwitcher />
@@ -270,6 +310,11 @@ const App = () => {
               
               <Route path="/contacto" element={
                 <>
+                <Seo
+                      title="Contacto | Visit Valladolid"
+                      description="Contáctanos para más información sobre Valladolid, Yucatán."
+                      canonical="https://visitavalladolidmx.com/contacto"
+                    />
                  
                   <Header />
                   <LanguageSwitcher />
@@ -284,6 +329,11 @@ const App = () => {
 
               <Route path="/destinos" element={
                 <>
+                <Seo
+                      title="Destinos | Visit Valladolid"
+                      description="Descubre los destinos cercanos a Valladolid, Yucatán."
+                      canonical="https://visitavalladolidmx.com/destinos"
+                    />
                 
                   <Header />
                   <LanguageSwitcher />
@@ -297,6 +347,11 @@ const App = () => {
                 } />
               <Route path="/puebloscercanos" element={
                 <>
+                <Seo
+                      title="Pueblos Cercanos | Visit Valladolid"
+                      description="Explora los pueblos cercanos a Valladolid, Yucatán."
+                      canonical="https://visitavalladolidmx.com/puebloscercanos"
+                    />
                
                   <Header />
                   <LanguageSwitcher />

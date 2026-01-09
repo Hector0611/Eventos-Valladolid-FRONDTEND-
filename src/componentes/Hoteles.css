@@ -520,7 +520,7 @@ body {
 
 .modal-clo1 {
   position: absolute;
-  right: 40%;
+  right: 47%;
   top: 10px;
   background: #ff4444;
   border: none;
@@ -745,6 +745,10 @@ li br {
   }
   .sepa2{
     height: 5px;
+  }
+
+  .modal-clo1 {
+    right: 43%;
   }
 
 

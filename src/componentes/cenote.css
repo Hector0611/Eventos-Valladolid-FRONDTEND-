@@ -145,7 +145,7 @@
 .close-button22 {
   position: absolute;
   top: 15px;
-  right: 42%;
+  right: 47%;
   background: none;
   border: none;
   cursor: pointer;
@@ -225,6 +225,10 @@
   width: 50%;
   height: 100%;
   border: none;
+}
+
+.close-button22 {
+  right: 40%;
 }
 }
 

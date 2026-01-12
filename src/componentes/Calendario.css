@@ -8,7 +8,7 @@
 .titel {
   text-align: center;
   font-size: 3em;
-  margin-top: 20px;
+  margin-top: 00px;
   color: #000;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -19,11 +19,11 @@
 .div_calendario {    
   width: 800px;
   height: auto;
-  margin: 0 auto 10px;
+  margin: 0 auto 0px;
   padding: 0;
   background: linear-gradient(180deg, #f9fafb, #ffffff);
   border-radius: 0;
-  box-shadow: 0 4px 20px rgba(255, 2, 2, 0);
+  box-shadow: 0 4px 10px rgba(255, 2, 2, 0);
   transition: transform 0.5s;
   color: rgb(0, 0, 0);    
 }
@@ -45,7 +45,7 @@
 .calendar-table td {
   width: 12%;
   height: 55px;
-  padding: 5px 15px;
+  padding: 5px 10px;
   text-align: center;
   vertical-align: top;
   background-color: transparent;
@@ -75,7 +75,7 @@
   position: relative;
   width: 35px;
   height: 35px;
-  margin: 3px;
+  margin: 0px;
   background-color: #f3f4f6; /* gris claro */
   color: #1f2937; /* gris oscuro */
   border-radius: 10%;
@@ -125,7 +125,7 @@
 .day-description {
   font-size: 12px;
   color: #333;
-  margin-top: 4px;
+  margin-top: 0px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -159,7 +159,7 @@
   font-size: 2.5em;
   color: rgb(9, 9, 9);
   text-align: center;
-  margin: 10px 0;
+  margin: 0px 0;
 }
 
 .nombrefecha1 {

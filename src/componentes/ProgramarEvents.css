@@ -255,19 +255,47 @@
   box-shadow: 0 4px 18px rgba(0, 252, 84, 0.949);
 }
 
-.texto-pre61 p {
+.texto-pre61 {
     white-space: pre-line; /* respeta saltos de línea y espacios */
     color: #ffffff;
-    font-size: 1em;
     text-align: left;
     margin: 20px;
-    font-weight: lighter;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: rgba(12, 39, 7, 0.973);
-    padding: 10px;
-    border-radius: 15px;
-    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.94);
+    background-color: rgba(7, 39, 19, 0.973);
+    border-radius: 10px;
+    padding: 15px;
+   
+}
+
+.texto-pre61 p {
+  color: #ffffff;
+  font-size: 1.2em;
+  text-align: left;
+  margin: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: rgba(7, 39, 19, 0.973);
+  padding: 10px;
+  border-radius: 15px;
+  font-weight: 600;
+}
+
+
+.texto-pre61 ul {
+    margin-bottom: 8px; /* espacio entre elementos de la lista */
+    color: #fffcfc;
+    font-size: 1em;
     font-weight: 600;
+    padding: 5px 50px;
+    background-color: rgba(0, 0, 0, 0.705);
+    
+  }
+
+  .texto-pre61 a {
+    color: #fffcfc;
+}
+
+.texto-pre61 a:hover {
+    text-decoration: underline;
+    color: #00ff00;
 }
 
 .fecha-rango {

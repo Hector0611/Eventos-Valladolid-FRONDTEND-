@@ -259,20 +259,19 @@
     white-space: pre-line; /* respeta saltos de línea y espacios */
     color: #ffffff;
     text-align: left;
-    margin: 20px;
-    background-color: rgba(7, 39, 19, 0.973);
+background-color: rgba(249, 249, 249, 0.933);
     border-radius: 10px;
     padding: 15px;
    
 }
 
 .texto-pre61 p {
-  color: #ffffff;
-  font-size: 1.2em;
+  color: #000000;
+  font-size: 1.5em;
   text-align: left;
-  margin: 20px;
+  margin: 10px;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  background-color: rgba(7, 39, 19, 0.973);
+  background-color: rgba(249, 249, 249, 0);
   padding: 10px;
   border-radius: 15px;
   font-weight: 600;
@@ -280,22 +279,34 @@
 
 
 .texto-pre61 ul {
-    margin-bottom: 8px; /* espacio entre elementos de la lista */
-    color: #fffcfc;
+ position: relative;
+    padding-left: 20px; /* Espacio para las viñetas */
+    margin-left: 20px;
+  
+  left: 2%;
+    margin-bottom: 10px; /* espacio entre elementos de la lista */
+    color: #000000;
     font-size: 1em;
+    max-width: fit-content;
     font-weight: 600;
-    padding: 5px 50px;
-    background-color: rgba(0, 0, 0, 0.705);
+    padding: 25px 60px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 15px;
+    box-shadow: none;
+  
     
   }
 
   .texto-pre61 a {
-    color: #fffcfc;
+    color: #000000;
 }
 
 .texto-pre61 a:hover {
     text-decoration: underline;
-    color: #00ff00;
+    color: #fbfbfb;
+    background-color: rgba(7, 7, 7, 0.712);
+    padding: 15px 20px;
+    border-radius: 10px;
 }
 
 .fecha-rango {

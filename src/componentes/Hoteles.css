@@ -453,7 +453,8 @@ body {
   float: right;
   cursor: pointer;
   font-size: 18px;
-  top: 40px;
+  top: 10px;
+  right: 44%;
   border-radius: 8px;
   padding: 5px 10px;
 }

@@ -172,7 +172,7 @@ const restauranteIcon = new L.Icon({
 
   <div className="panel-content sitranslate" translate="yes">
     {!isMobile && <button onClick={() => setSelectedItem(null)} className="close-button">✖</button>}
-
+    <hr></hr>
     <h4>{nombreMostrar}</h4>
 
     <p className="texto_item" dangerouslySetInnerHTML={{ __html: item.descripcion.slice(0,300)+" ..." }}></p>

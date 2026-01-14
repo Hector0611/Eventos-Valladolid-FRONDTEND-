@@ -259,7 +259,7 @@
     white-space: pre-line; /* respeta saltos de línea y espacios */
     color: #ffffff;
     text-align: left;
-background-color: rgba(249, 249, 249, 0.933);
+    background-color: rgba(249, 249, 249, 0.933);
     border-radius: 10px;
     padding: 15px;
    
@@ -267,7 +267,7 @@ background-color: rgba(249, 249, 249, 0.933);
 
 .texto-pre61 p {
   color: #000000;
-  font-size: 1.5em;
+  font-size: 1em;
   text-align: left;
   margin: 10px;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -298,9 +298,12 @@ background-color: rgba(249, 249, 249, 0.933);
   }
 
   .texto-pre61 a {
-    color: #000000;
-}
+    color: #ff0000;
+    text-decoration: none;
+    text-decoration: underline;
+    font-size: 1rem;
 
+}
 .texto-pre61 a:hover {
     text-decoration: underline;
     color: #fbfbfb;

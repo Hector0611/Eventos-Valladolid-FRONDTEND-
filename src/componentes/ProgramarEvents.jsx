@@ -23,6 +23,8 @@ const ProgramarEvents = () => {
   const images = [Logo1, Logo2, Logo3];
   const [loading, setLoading] = useState(false);
   const { i18n } = useTranslation();
+  const [showMap, setShowMap] = useState(false);
+
 
   
   useEffect(() => {
@@ -290,7 +292,7 @@ const ProgramarEvents = () => {
       </div>  
 
       {/* Modal de eventos */}
-      {showModal && (
+      {showModal &&  (
         <div className="modal-overlay">
           <div className="modal-content">
             <button className="cerrar-modal" onClick={() => setShowModal(false)}>
@@ -337,6 +339,8 @@ const ProgramarEvents = () => {
                         </p>
                       )}
                     <center>
+
+                    {/* quiero hacer que dias muestre las imagenes que tiene para correspondeer al mensaje evento */}
 
                        <iframe
                     title="Ubicación del evento"

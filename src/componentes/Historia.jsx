@@ -194,7 +194,7 @@ const Historia = () => {
               className="modal-image11"
               loading="lazy"
             />
-
+  
             <p
               className="texto-pre11"
               dangerouslySetInnerHTML={{ __html: selectedItem.descripccion }}

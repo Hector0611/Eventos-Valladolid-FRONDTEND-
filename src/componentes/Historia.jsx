@@ -7,6 +7,14 @@ import Logo3 from './Imagenes/ImagenesDescobere/Tradiciones.jpg';
 import Logo4 from './Imagenes/ImagenesDescobere/Cenote4.jpg';
 import Logo5 from './Imagenes/ImagenesDescobere/Cenote5.jpg';
 
+
+/* San Roque */
+import SanroquePortada from './Imagenes/MuseoSanRoque/Portada.jpeg';
+import SanRoque1 from './Imagenes/MuseoSanRoque/1.jpeg';
+import SanRoque2 from './Imagenes/MuseoSanRoque/2.jpeg';
+import SanRoque3 from './Imagenes/MuseoSanRoque/3.jpeg';
+import SanRoque4 from './Imagenes/MuseoSanRoque/4.jpeg';
+
 const Historia = () => {
   const [historia, setHistoria] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -14,6 +22,7 @@ const Historia = () => {
   const [showModal, setShowModal] = useState(false);
   const [fade, setFade] = useState(false);
   const [index, setIndex] = useState(0);
+const [showMap, setShowMap] = useState(false);
 
   const imagenes = useMemo(() => [Logo1, Logo2, Logo3, Logo4, Logo5], []);
 
@@ -62,6 +71,37 @@ const Historia = () => {
     return () => clearInterval(interval);
   }, [historia.length, handleNext]);
 
+  const [indice, setIndice] = useState(0);
+  const [galeriaActual, setGaleriaActual] = useState([]);
+  const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
+
+     
+  const sanRoqueImgs = [SanRoque1, SanRoque2, SanRoque3, SanRoque4];
+ 
+
+  const abrirImagen = (galeria, index) => {
+    setGaleriaActual(galeria);
+    setIndice(index);
+    setImagenSeleccionada(galeria[index]);
+  };
+
+  const cerrarImagen = () => setImagenSeleccionada(null);
+
+  const siguiente = (e) => {
+    e.stopPropagation();
+    const nuevo = (indice + 1) % galeriaActual.length;
+    setIndice(nuevo);
+    setImagenSeleccionada(galeriaActual[nuevo]);
+  };
+
+  const anterior = (e) => {
+    e.stopPropagation();
+    const nuevo = (indice - 1 + galeriaActual.length) % galeriaActual.length;
+    setIndice(nuevo);
+    setImagenSeleccionada(galeriaActual[nuevo]);
+  };
+
+
   return (
     <div className="historia-container">
       <div className='Separacion'></div>
@@ -85,8 +125,7 @@ const Historia = () => {
         />
       </div>
 
-      <hr />
-      <br />
+      
 
       {/* VIDEO 1 */}
       {/* VIDEO 1 */}
@@ -113,6 +152,7 @@ const Historia = () => {
 
 
       <br />
+
 
       <h1 className="titel111">Learn about the history of Valladolid, Yucatan, México</h1>
 
@@ -200,6 +240,14 @@ const Historia = () => {
               dangerouslySetInnerHTML={{ __html: selectedItem.descripccion }}
             ></p>
           </div>
+        </div>
+      )}
+       {/* MODAL */}
+      {imagenSeleccionada && (
+        <div className="modal11" onClick={cerrarImagen}>
+          <button className="anterior" onClick={anterior}>&#10094;</button>
+          <img className="modal-content11" src={imagenSeleccionada} />
+          <button className="siguiente" onClick={siguiente}>&#10095;</button>
         </div>
       )}
     </div>

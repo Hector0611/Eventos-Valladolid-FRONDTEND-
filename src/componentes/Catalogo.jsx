@@ -29,6 +29,13 @@ import xcopek from './Imagenes/ImgTempo/Xcopek.jpg';
 /* CristoBury */
 import CristoBury from './Imagenes/ImgTempo/CristoBury.png';
 
+/* San Roque */
+import SanroquePortada from './Imagenes/MuseoSanRoque/Portada.jpeg';
+import SanRoque1 from './Imagenes/MuseoSanRoque/1.jpeg';
+import SanRoque2 from './Imagenes/MuseoSanRoque/2.jpeg';
+import SanRoque3 from './Imagenes/MuseoSanRoque/3.jpeg';
+import SanRoque4 from './Imagenes/MuseoSanRoque/4.jpeg';
+
 const Catalogo = () => {
   const [indice, setIndice] = useState(0);
   const [galeriaActual, setGaleriaActual] = useState([]);
@@ -44,14 +51,15 @@ const Catalogo = () => {
         setShowModal(true);
         setShowMap(false);
       };
-
+  const carnavalImgs = [Carnaval1, Carnaval2, Carnaval3];
   const feriaImgs = [
     feria01, feria0, feria1, feria2, feria3,
     feria35, feria4, feria5, feria55, feria6,
     feria7, feria8, feria9
   ];
 
-  const carnavalImgs = [Carnaval1, Carnaval2, Carnaval3];
+  const sanRoqueImgs = [SanRoque1, SanRoque2, SanRoque3, SanRoque4];
+
 
   const abrirImagen = (galeria, index) => {
     setGaleriaActual(galeria);
@@ -143,6 +151,75 @@ const Catalogo = () => {
           <button className="siguiente" onClick={siguiente}>&#10095;</button>
         </div>
       )}
+
+      <hr />
+              
+        {/* 🖼️ / 🗺️ SLIDER */}
+            <div className="media-slider2">
+              <div className={`media-track2 ${showMap ? "show-map1" : ""}`}>
+                {/* IMAGEN */}
+                <div className="media-panel image-panel2">
+                  <img
+                  className='ImgX'
+                    src={SanroquePortada}
+                    alt='Xcopek'
+                  />
+                </div>
+
+                {/* MAPA */}
+                <div className="media-panel map-panel2">
+                  <iframe
+                      title="Xcopek Ubicación1"
+                      src="https://www.google.com/maps?q=20.689656488184507, -88.19957950501954&hl=en&z=15&output=embed"
+                      allowFullScreen=""
+                      loading="lazy"
+                    ></iframe>
+                </div>
+              </div>
+            </div>
+
+            {/* BOTÓN */}
+            <br />
+              <button
+                className="view-map-btn"
+                onClick={() => setShowMap(!showMap)}
+              >
+                {showMap ? "View image" : "View map"}
+              </button>
+
+              
+   
+
+      <div className="row g-4">
+        {sanRoqueImgs.map((img, index) => (
+          <div key={index} className="col-6 col-md-3">
+            <div
+              className="card shadow-sm border-0 h-100"
+              onClick={() => abrirImagen(sanRoqueImgs, index)}
+            >
+              <img src={img} className="card-img-top img-hover" />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p className='textosanroque'>
+                SAN ROQUE REGIONAL MUSEUM
+                Painting Exhibition: MAYAN ARCHITECTURE: STYLES AND CHRONOLOGY.
+                <br />
+                Come and see it.
+                <br />
+                Hours: Tuesday to Friday, 8:00 AM - 8:00 PM
+                Saturday and Sunday, 9:00 AM - 5:00 PM
+                Closed Mondays.
+                <br />
+                41st Street #193 x 38th Street
+                Downtown. Postal Code 97780
+                Valladolid, Yucatán.
+                Paintings by Luis Pech Moo.
+                </p>
+<br />
+      <hr />
 
        {/* 🖼️ / 🗺️ SLIDER */}
             <div className="media-slider1">

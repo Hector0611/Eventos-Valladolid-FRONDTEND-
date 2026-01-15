@@ -204,14 +204,16 @@ const Catalogo = () => {
       </div>
 
       <p className='textosanroque'>
-                SAN ROQUE REGIONAL MUSEUM
+                <strong> SAN ROQUE REGIONAL MUSEUM </strong>
+                 <br />
                 Painting Exhibition: MAYAN ARCHITECTURE: STYLES AND CHRONOLOGY.
                 <br />
                 Come and see it.
                 <br />
-                Hours: Tuesday to Friday, 8:00 AM - 8:00 PM
-                Saturday and Sunday, 9:00 AM - 5:00 PM
-                Closed Mondays.
+                Hours: <strong> Tuesday to Friday </strong>, 8:00 AM - 8:00 PM
+                <strong> Saturday and Sunday</strong> , 9:00 AM - 5:00 PM 
+                <br />
+                <strong> Closed Mondays.</strong>
                 <br />
                 41st Street #193 x 38th Street
                 Downtown. Postal Code 97780

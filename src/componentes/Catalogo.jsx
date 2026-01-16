@@ -16,6 +16,10 @@ import Corrida2 from './Imagenes/ImgTempo/Feria5.5.png'; /* Nuevo */
 import feria4 from './Imagenes/ImgTempo/Feria1.6.jpeg'; /* Nuevo */
 import Corrida3 from './Imagenes/ImgTempo/Feria10.png'; /* Nuevo */
 
+/* ms y matute */
+import bandaMS from './Imagenes/ImgTempo/Feria1.jpg'; /* MS */
+import matute from './Imagenes/ImgTempo/Feria2.jpg'; /* Matute */
+
 /* Carnaval */
 import CarnavalPortada from './Imagenes/ImgTempo/CarnavalPortada.jpg';
 import Carnaval1 from './Imagenes/ImgTempo/Carnaval1.jpg';
@@ -137,6 +141,67 @@ const Catalogo = () => {
           </div>
         ))}
       </div>
+
+      <div className="ticket-section">
+  <h3 className="ticket-title">🎟️ Buy Your Tickets</h3>
+
+  <div className="ticket-grid">
+
+    {/* 🎤 MATUTE */}
+    <div className="ticket-card">
+      <img src={matute} alt="Matute Poster" className="ticket-poster" />
+
+      <a
+        href="https://accesototal.mx/evento/matute"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="ticket-btn matute"
+      >
+        🎤 Matute
+        <span>Get Tickets</span>
+      </a>
+    </div>
+
+    {/* 🎶 BANDA MS */}
+    <div className="ticket-card">
+      <img src={bandaMS} alt="Banda MS Poster" className="ticket-poster" />
+
+      <a
+        href="https://accesototal.mx/evento/banda-ms"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="ticket-btn banda-ms"
+      >
+        🎶 Banda MS
+        <span>Get Tickets</span>
+      </a>
+    </div>
+
+    {/* O en el paalacio de Valladolid en la Zona de turismo */}
+    
+    <div className="ticket-card">
+                  <p className="textoOficiona" >
+                    You can also purchase your tickets at the tourist office
+                    <br />
+                </p>
+             <div className="media-panel map-panel4">
+                  <iframe
+                      title="Modulo de Informacion Turistica"
+                      src="https://www.google.com/maps?q=20.689747728795354, -88.20103222450994&hl=en&z=15&output=embed"
+                      allowFullScreen=""
+                      loading="lazy"
+                    ></iframe>
+
+                    
+                </div>
+
+                 
+    </div>
+
+
+  </div>
+</div>
+
 
       <hr />
 

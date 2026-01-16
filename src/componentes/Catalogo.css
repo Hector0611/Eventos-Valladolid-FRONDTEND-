@@ -303,8 +303,200 @@
     width: 100%;
     height: 500px;
   }
+  .imgferia{
+    height: 200px;
+  }
 
 }
+
+/* Feria botones de boletos */
+
+/* ==============================
+   🎟️ TICKET SECTION
+============================== */
+.ticket-section {
+  margin-top: 60px;
+  padding: 40px 30px;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #0b2e23, #12493a);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+/* fondo decorativo sutil */
+.ticket-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 60%);
+  pointer-events: none;
+}
+
+/* ==============================
+   🎟️ TITLE
+============================== */
+.ticket-title {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2.2rem;
+  margin-bottom: 35px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* ==============================
+   🎟️ GRID
+============================== */
+.ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+/* ==============================
+   🎟️ CARD
+============================== */
+.ticket-card {
+  background: linear-gradient(180deg, #0f3a2c, #09241b);
+  border-radius: 25px;
+  padding: 20px;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* efecto luz al pasar el mouse */
+.ticket-card::after {
+  content: "";
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.ticket-card:hover::after {
+  opacity: 1;
+}
+
+.ticket-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.9);
+}
+
+/* ==============================
+   🖼️ POSTER
+============================== */
+.ticket-poster {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* ==============================
+   🔘 BUTTON
+============================== */
+.ticket-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  border-radius: 18px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtítulo */
+.ticket-btn span {
+  font-size: 0.85rem;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+/* estilos por banda */
+.ticket-btn.matute {
+  background: linear-gradient(135deg, #7d3cff, #3f1f7a);
+}
+
+.ticket-btn.banda-ms {
+  background: linear-gradient(135deg, #ff9a00, #ff4e00);
+}
+
+/* brillo hover */
+.ticket-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.ticket-btn:hover::before {
+  transform: translateX(100%);
+}
+
+/* hover general */
+.ticket-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  color: #00ff1a;
+  text-decoration: none;
+}
+
+.textoOficiona{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.map-panel4 iframe {
+  width: 100%;
+  height: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/* ==============================
+   📱 RESPONSIVE
+============================== */
+@media (max-width: 600px) {
+  .ticket-title {
+    font-size: 1.8rem;
+  }
+
+  .ticket-poster {
+    height: 300px;
+  }
+
+  .ticket-btn {
+    font-size: 1.2rem;
+    height: 60px;
+  }
+}
+
 
 
 /* ======================================================

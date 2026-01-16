@@ -288,6 +288,16 @@
 
 }
 
+.imgferia{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 @media (max-width: 768px) {
   .media-slider1 {
     width: 100%;

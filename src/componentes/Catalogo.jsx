@@ -3,19 +3,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Catalogo.css';
 
 /* Feria */
-import feria01 from './Imagenes/ImgTempo/Feria0.1.jpeg';
+import feriaPortada from './Imagenes/ImgTempo/FeriaPortada.jpeg';
+
 import feria0 from './Imagenes/ImgTempo/Feria0.jpeg';
-import feria1 from './Imagenes/ImgTempo/Feria3.jpg';
-import feria2 from './Imagenes/ImgTempo/Feria8.jpg';
-import feria3 from './Imagenes/ImgTempo/Feria2.jpg';
-import feria35 from './Imagenes/ImgTempo/Feria3.5.png';
-import feria4 from './Imagenes/ImgTempo/Feria5.jpg';
-import feria5 from './Imagenes/ImgTempo/Feria9.jpg';
-import feria55 from './Imagenes/ImgTempo/Feria5.5.png';
-import feria6 from './Imagenes/ImgTempo/Feria4.jpg';
-import feria7 from './Imagenes/ImgTempo/Feria1.jpg';
-import feria8 from './Imagenes/ImgTempo/Feria6.jpg';
-import feria9 from './Imagenes/ImgTempo/Feria10.png';
+import feria011 from './Imagenes/ImgTempo/Feria1.1.jpeg'; /* Nuevo */
+import feria1 from './Imagenes/ImgTempo/Feria1.2.jpeg'; /* Nuevo */
+import feria2 from './Imagenes/ImgTempo/Feria1.3.jpeg'; /* Nuevo */
+import feria3 from './Imagenes/ImgTempo/Feria1.4.jpeg'; /* Nuevo */
+import Corrida from './Imagenes/ImgTempo/Feria3.5.png'; /* Nuevo */
+import feria35 from './Imagenes/ImgTempo/Feria1.5.jpeg'; /* Nuevo */
+import Corrida2 from './Imagenes/ImgTempo/Feria5.5.png'; /* Nuevo */
+import feria4 from './Imagenes/ImgTempo/Feria1.6.jpeg'; /* Nuevo */
+import Corrida3 from './Imagenes/ImgTempo/Feria10.png'; /* Nuevo */
 
 /* Carnaval */
 import CarnavalPortada from './Imagenes/ImgTempo/CarnavalPortada.jpg';
@@ -53,9 +52,8 @@ const Catalogo = () => {
       };
   const carnavalImgs = [Carnaval1, Carnaval2, Carnaval3];
   const feriaImgs = [
-    feria01, feria0, feria1, feria2, feria3,
-    feria35, feria4, feria5, feria55, feria6,
-    feria7, feria8, feria9
+     feria0, feria1, feria2, feria3,Corrida,
+    feria35, Corrida2, feria4, Corrida3
   ];
 
   const sanRoqueImgs = [SanRoque1, SanRoque2, SanRoque3, SanRoque4];
@@ -94,6 +92,39 @@ const Catalogo = () => {
         Expo Feria Valladolid 2026
       </h3>
 
+      {/* 🖼️ / 🗺️ SLIDER */}
+            <div className="media-slider2">
+              <div className={`media-track2 ${showMap ? "show-map1" : ""}`}>
+                {/* IMAGEN */}
+                <div className="media-panel image-panel2">
+                  <img
+                  className='ImgX'
+                    src={feriaPortada}
+                    alt='Xcopek'
+                  />
+                </div>
+
+                {/* MAPA */}
+                <div className="media-panel map-panel2">
+                  <iframe
+                      title="Xcopek Ubicación1"
+                      src="https://www.google.com/maps?q=20.67112532591333,-88.2286181270485&hl=en&z=13&output=embed"
+                      allowFullScreen=""
+                      loading="lazy"
+                    ></iframe>
+                </div>
+              </div>
+            </div>
+
+            {/* BOTÓN */}
+            <br />
+              <button
+                className="view-map-btn"
+                onClick={() => setShowMap(!showMap)}
+              >
+                {showMap ? "View image" : "View map"}
+              </button>
+
       <div className="row g-4">
         {feriaImgs.map((img, index) => (
           <div key={index} className="col-6 col-md-3">
@@ -101,22 +132,10 @@ const Catalogo = () => {
               className="card shadow-sm border-0 h-100"
               onClick={() => abrirImagen(feriaImgs, index)}
             >
-              <img src={img} className="card-img-top img-hover" />
+              <img src={img} className="imgferia" />
             </div>
           </div>
         ))}
-      </div>
-
-      <hr />
-
-      {/* MAPA */}
-       <div className="map-placeholder1">
-        <iframe
-          title="Ubicación Expo Feria Valladolid"
-          src="https://www.google.com/maps?q=20.67112532591333,-88.2286181270485&hl=en&z=13&output=embed"
-          allowFullScreen=""
-          loading="lazy"
-        ></iframe>
       </div>
 
       <hr />
@@ -186,10 +205,7 @@ const Catalogo = () => {
               >
                 {showMap ? "View image" : "View map"}
               </button>
-
               
-   
-
       <div className="row g-4">
         {sanRoqueImgs.map((img, index) => (
           <div key={index} className="col-6 col-md-3">

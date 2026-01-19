@@ -337,38 +337,7 @@ const Catalogo = () => {
                 {showMap ? "View image" : "View map"}
               </button>
 
-              {/* CristoBury */}
-              <div className="media-slider1">
-              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
-                {/* IMAGEN */}
-                <div className="media-panel image-panel1">
-                  <img
-                  className='ImgX'
-                    src={CristoBury}
-                    alt='Xcopek'
-                  />
-                </div>
-
-                {/* MAPA */}
-                <div className="media-panel map-panel1">
-                  <iframe
-                      title="Xcopek Ubicación1"
-                      src="https://www.google.com/maps?q=20.687623509132724, -88.20793254442528&hl=en&z=15&output=embed"
-                      allowFullScreen=""
-                      loading="lazy"
-                    ></iframe>
-                </div>
-              </div>
-            </div>
-
-            {/* BOTÓN */}
-            
-              <button
-                className="view-map-btn"
-                onClick={() => setShowMap(!showMap)}
-              >
-                {showMap ? "View image" : "View map"}
-              </button>
+              
 
     </div>
   );

@@ -76,9 +76,9 @@ const EventoCalendario = () => {
                   📍 Go to Event Location
                 </button>
               )}
-              <button className="btn-secundario" onClick={irAHoteles}>
+              {/* <button className="btn-secundario" onClick={irAHoteles}>
                 🏨 Search Hotels
-              </button>
+              </button> */}
             </div>
 
             <div className="descripcion-card" dangerouslySetInnerHTML={{ __html: mensaje.descripcion }}></div>

@@ -35,6 +35,7 @@ import LanguageSwitcher from './componentes/LanguageSwitcher';
 import Turismo26 from './componentes/Turismo26';
 import Destino from './componentes/Destino';
 import MapaSin from './componentes/MapaSin';
+import AgenciasTours from './componentes/AgenciasTours';
 
 /* Pages */
 import Home from "./pages/Home";
@@ -364,6 +365,28 @@ const App = () => {
 
                 </>
               } />  
+              <Route path="/agencias" element={
+                <>
+                <Seo
+                      title="Agencias y Tours | Visit Valladolid"
+                      description="Descubre las agencias y tours disponibles en Valladolid, Yucatán."
+                      canonical="https://visitavalladolidmx.com/agencias"
+                    />
+                    
+               
+                  <Header />
+                  <LanguageSwitcher />
+                  <AgenciasTours />
+
+                  {/* Footer global */}
+          <ProximoEvento />
+         
+          <Footer />
+
+                </>
+              } />
+
+
             </Routes>
           </center>
 

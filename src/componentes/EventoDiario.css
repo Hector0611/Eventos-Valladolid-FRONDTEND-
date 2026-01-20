@@ -320,11 +320,11 @@
 
   }
   .bottonEvent22{
-    width: clamp(380px, 10vw, 450px);   /* ajusta entre 80px y 150px */
+    width: clamp(300px, 10vw, 350px);   /* ajusta entre 80px y 150px */
     height: clamp(185px, 5vh, 250px);   /* ajusta entre 25px y 50px */
     padding: 70px 100px;
-    top: 75%;
-    left: 8%;
+    top: 73%;
+    left: 10%;
   }
   .bottonEvent2::after {
     font-size: 16px;
@@ -338,8 +338,8 @@
   }
   .texto_indicaciones{  
   /* Para que este abajo de la img del boton */
-  top: 70%;
-  left: 39%;
+  top: 55%;
+  left: 35%;
   font-size: 1.2rem;
 
 

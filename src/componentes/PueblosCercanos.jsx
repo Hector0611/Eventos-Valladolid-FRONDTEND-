@@ -197,8 +197,8 @@ const pueblosData = [
   {
     nombre: "Yalcón", /* Ya esta */
     imagen: "/Imagenes/pueblos/yalcon.jpg",
-    lat: 20.417623583921447,
-    lon: -88.03007469314717,
+    lat: 20.68018814240024,
+    lon: -88.15773967123836,
     descripcion: "Yalcón is a small rural community with strong Mayan roots.",
     distancia: "35 minutes from Valladolid",
     actividades: ["Maya village experience", "Nature"],
@@ -213,8 +213,8 @@ const pueblosData = [
   {
     nombre: "Tixhualactún", /* Ya esta */
     imagen: "/Imagenes/pueblos/tixhualactun.jpg",
-    lat: 20.417623583921447,
-    lon: -88.03007469314717,
+    lat: 20.64321470603286,
+    lon: -88.1428489275078,
     descripcion: "Tixhualactún is a small rural community with strong Mayan roots.",
     distancia: "35 minutes from Valladolid",
     actividades: ["Maya village experience", "Nature"],

@@ -35,8 +35,13 @@ const PrincipalRecarga = () => {
   }, [navigate]);
 
   return (
-<>  <Helmet>
-        <meta name="robots" content="noindex, nofollow" />
+<>  {/* 🔹 SEO SOLO PARA /home */}
+      <Helmet>
+        <title>Visit Valladolid | Tourism in Yucatán</title>
+        <link
+          rel="canonical"
+          href="https://visitavalladolidmx.com/"
+        />
       </Helmet>
     <div className={`contenedor-video ${fadeOut ? "fade-out" : ""}`}>
       <video

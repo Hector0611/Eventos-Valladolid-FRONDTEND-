@@ -84,7 +84,7 @@ const App = () => {
           <center>
             <Routes>
               {/* Splash */}
-                <Route path="/loading" element={
+                <Route path="/" element={
                   <>
                 
                     <Header2 />
@@ -93,10 +93,7 @@ const App = () => {
                 } />
 
                 {/* HOME REAL */}
-                <Route path="/" element={<Home />} />
-
-                {/* /home SOLO REDIRECCIONA */}
-                <Route path="/home" element={<Navigate to="/" replace />} />
+                <Route path="/home" element={<Home />} />
 
 
               <Route 

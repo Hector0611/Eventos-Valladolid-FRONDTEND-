@@ -24,7 +24,7 @@ const PrincipalRecarga = () => {
     const fadeTimer = setTimeout(() => setFadeOut(true), 5500);
 
     // Redirección
-    const navTimer = setTimeout(() => navigate("/"), 6000);
+    const navTimer = setTimeout(() => navigate("/home"), 6000);
 
     // Limpiar efectos
     return () => {

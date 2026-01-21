@@ -9,19 +9,10 @@ import EventoDiario from "../componentes/EventoDiario";
 import ProximoEvento from "../componentes/ProximoEvento";
 import Footer from "../componentes/Footer";
 import { ToastContainer } from "react-toastify";
-import { useEffect } from "react";
 
 
 export default function Home() {
 
-
- useEffect(() => {
-  const seen = sessionStorage.getItem("splash_seen");
-  if (!seen) {
-    sessionStorage.setItem("splash_seen", "true");
-    window.location.replace("/loading");
-  }
-}, []);
 
   return (
     <>

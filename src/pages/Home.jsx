@@ -30,15 +30,15 @@ export default function Home() {
       </Helmet>
 
       {/* 🔹 Contenido visible */}
-      <Header />
-      <LanguageSwitcher />
-      <ProgramarEvents />
-      <Cenotes />
-      <Catalogo />
-      <EventoDiario />
+      <Header /> {/* nohay */}
+      <LanguageSwitcher />  {/* nohay */}
+      <ProgramarEvents /> {/* nohay */}
+      <Cenotes /> {/* nohay */}
+      <Catalogo /> {/* Listo */}
+      <EventoDiario /> {/* nohay */}
       <ToastContainer />
-      <ProximoEvento />
-      <Footer />
+      <ProximoEvento /> {/* nohay */}
+      <Footer /> {/* nohay */}
     </>
   );
 }

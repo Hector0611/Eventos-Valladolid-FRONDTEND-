@@ -45,7 +45,7 @@ const Header = () => {
       {/* 🔼 HEADER SUPERIOR */}
       <header className={`header-top ${showHeader ? "visible" : "hidden"}`}>
         <div className="header-top-content">
-          <img src={logoTop} alt="Valladolid" className="header-logo" />
+          <img src={logoTop} alt="Valladolid" className="header-logo"/>
 
           <div className="google-translate-container">
             <div id="google_translate_element" />

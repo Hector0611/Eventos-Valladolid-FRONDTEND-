@@ -104,7 +104,7 @@ const Catalogo = () => {
                   <img
                   className='ImgX'
                     src={feriaPortada}
-                    alt='Xcopek'
+                    alt='FeriaPortada'
                   />
                 </div>
 
@@ -136,7 +136,7 @@ const Catalogo = () => {
               className="card shadow-sm border-0 h-100"
               onClick={() => abrirImagen(feriaImgs, index)}
             >
-              <img src={img} className="imgferia" />
+              <img src={img} className="imgferia" alt='Feria' />
             </div>
           </div>
         ))}
@@ -164,7 +164,7 @@ const Catalogo = () => {
 
     {/* 🎶 BANDA MS */}
     <div className="ticket-card">
-      <img src={bandaMS} alt="Banda MS Poster" className="ticket-poster" />
+      <img src={bandaMS} alt="Banda MS Poster" className="ticket-poster"/>
 
       <a
         href="https://accesototal.mx/evento/banda-ms"
@@ -209,7 +209,7 @@ const Catalogo = () => {
       <h3 className="text-center mb-4 display-5 fw-bold">Carnaval 2026</h3>
 
       <div className="folleto text-center mb-4">
-        <img src={CarnavalPortada} className="folleto-img rounded shadow" />
+        <img src={CarnavalPortada} className="folleto-img rounded shadow" alt='CarnavalPortada'/>
       </div>
 
       <div className="row g-4">
@@ -219,7 +219,7 @@ const Catalogo = () => {
               className="card shadow-sm border-0 h-100"
               onClick={() => abrirImagen(carnavalImgs, index)}
             >
-              <img src={img} className="card-img-top img-hover" />
+              <img src={img} className="card-img-top img-hover" alt='Carnaval'/>
             </div>
           </div>
         ))}
@@ -231,7 +231,7 @@ const Catalogo = () => {
       {imagenSeleccionada && (
         <div className="modal11" onClick={cerrarImagen}>
           <button className="anterior" onClick={anterior}>&#10094;</button>
-          <img className="modal-content11" src={imagenSeleccionada} />
+          <img className="modal-content11" src={imagenSeleccionada} alt='SelectecIMG'/>
           <button className="siguiente" onClick={siguiente}>&#10095;</button>
         </div>
       )}
@@ -278,7 +278,7 @@ const Catalogo = () => {
               className="card shadow-sm border-0 h-100"
               onClick={() => abrirImagen(sanRoqueImgs, index)}
             >
-              <img src={img} className="card-img-top img-hover" />
+              <img src={img} className="card-img-top img-hover" alt='SanRoque'/>
             </div>
           </div>
         ))}

@@ -246,7 +246,7 @@ const ProgramarEvents = () => {
                   <tr>
                     <th className='dias'>Monday</th> 
                     <th className='dias'>Tuesday</th> 
-                    <th className='dias'>Wednesday</th> 
+                    <th className='dias'>Wedsday</th> 
                     <th className='dias'>Thursday</th> 
                     <th className='dias'>Friday</th> 
                     <th className='dias'>Saturday</th>

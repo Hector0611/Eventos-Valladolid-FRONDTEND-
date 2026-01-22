@@ -39,6 +39,12 @@ import SanRoque2 from './Imagenes/MuseoSanRoque/2.jpeg';
 import SanRoque3 from './Imagenes/MuseoSanRoque/3.jpeg';
 import SanRoque4 from './Imagenes/MuseoSanRoque/4.jpeg';
 
+/* TourParanormal */
+import TourParanormal from './Imagenes/ImgTempo/TourParanormal.jpeg';
+
+/* Murem */
+import Murem from './Imagenes/ImgTempo/Murem.jpeg';
+
 const Catalogo = () => {
   const [indice, setIndice] = useState(0);
   const [galeriaActual, setGaleriaActual] = useState([]);
@@ -336,6 +342,76 @@ const Catalogo = () => {
               >
                 {showMap ? "View image" : "View map"}
               </button>
+
+{/* Murem */}
+ {/* 🖼️ / 🗺️ SLIDER */}
+            <div className="media-slider1">
+              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
+                {/* IMAGEN */}
+                <div className="media-panel image-panel1">
+                  <img
+                  className='ImgX'
+                    src={Murem}
+                    alt='Murem'
+                  />
+                </div>
+
+                {/* MAPA */}
+                <div className="media-panel map-panel1">
+                  <iframe
+                      title="Murem Ubicación"
+                      src="https://www.google.com/maps?q=20.683645590667318, -88.20103201053944&hl=en&z=15&output=embed"
+                      allowFullScreen=""
+                      loading="lazy"
+                    ></iframe>
+                </div>
+              </div>
+            </div>
+
+            {/* BOTÓN */}
+            
+              <button
+                className="view-map-btn"
+                onClick={() => setShowMap(!showMap)}
+              >
+                {showMap ? "View image" : "View map"}
+              </button>
+
+
+{/* Tour Paranormal */}
+              {/* 🖼️ / 🗺️ SLIDER */}
+            <div className="media-slider1">
+              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
+                {/* IMAGEN */}
+                <div className="media-panel image-panel1">
+                  <img
+                  className='ImgX'
+                    src={TourParanormal}
+                    alt='TourParanormal'
+                  />
+                </div>
+
+                {/* MAPA */}
+                <div className="media-panel map-panel1">
+                  <iframe
+                      title="TourParanormal Ubicación"
+                      src="https://www.google.com/maps?q=20.69691242106862, -88.21169642328422&hl=en&z=15&output=embed"
+                      allowFullScreen=""
+                      loading="lazy"
+                    ></iframe>
+                </div>
+              </div>
+            </div>
+
+            {/* BOTÓN */}
+            
+              <button
+                className="view-map-btn"
+                onClick={() => setShowMap(!showMap)}
+              >
+                {showMap ? "View image" : "View map"}
+              </button>
+
 
               
 

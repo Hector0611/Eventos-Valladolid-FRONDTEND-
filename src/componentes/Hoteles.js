@@ -13,7 +13,7 @@ import oficina from './Imagenes/maps/OFICINA_DE_TURISMO.png';
 import hotel from './Imagenes/maps/Hospedaje.png';
 /* restaurante */
 import restauranteIconUrl from './Imagenes/maps/Restaurantes.png';
-
+import expericias from './Imagenes/maps/Experiencias.png';
 
 
 // ====================== ICONOS ============================
@@ -53,6 +53,7 @@ const Hoteles = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedHotel, setSelectedHotel] = useState(null);
   const [restaurantes, setRestaurantes] = useState([]);
+  const [servicios, setServicios] = useState([]);
 
   const [mapFilter, setMapFilter] = useState("ALL");
 
@@ -68,6 +69,12 @@ const oficinaIcon = new L.Icon({
 const restauranteIcon = new L.Icon({
   iconUrl: restauranteIconUrl,
   iconSize: [35, 45],
+  iconAnchor: [20, 40]
+});
+
+const experienciaIcon = new L.Icon({
+  iconUrl: expericias,
+  iconSize: [50, 45],
   iconAnchor: [20, 40]
 });
 
@@ -105,7 +112,7 @@ const restauranteIcon = new L.Icon({
     axios.get('https://eventos-valladolid-backendt.onrender.com/api/cenote_mapa').then(res => setCenotes(res.data));
     axios.get('https://eventos-valladolid-backendt.onrender.com/api/hotsyrest_info').then(res => setHotsyrestInfo(res.data));
     axios.get('https://eventos-valladolid-backendt.onrender.com/api/restaurante').then(res => setRestaurantes(res.data));
-
+    axios.get('https://eventos-valladolid-backendt.onrender.com/api/servicios').then(res => setServicios(res.data));
 
   }, []);
 
@@ -143,17 +150,17 @@ const restauranteIcon = new L.Icon({
     const restauranteMatches = restaurantes.filter(r => r.hotel.toLowerCase().includes(value))
       .map(r => ({ type: 'Restaurante', name: r.hotel, data: r }));
 
+    const serviciosMatches = servicios.filter(s => s.servicio.toLowerCase().includes(value))
+      .map(s => ({ type: 'Servicio', name: s.servicio, data: s }));
+
 
     const oficinaMatch =
       oficinaTurismo.nombre.toLowerCase().includes(value)
         ? [{ type: "Oficina", name: oficinaTurismo.nombre, data: oficinaTurismo }]
         : [];
 
-    setFilteredResults([...hotelMatches, ...sitioMatches, ...cenoteMatches, ...oficinaMatch, ...restauranteMatches]);
+    setFilteredResults([...hotelMatches, ...sitioMatches, ...cenoteMatches, ...oficinaMatch, ...restauranteMatches, ...serviciosMatches]);
   };
-
-
-
 
   // ---------------- Render PANEL ----------------
   const renderInfoPanel = (item, type) => {
@@ -164,8 +171,9 @@ const restauranteIcon = new L.Icon({
       type === 'Sitio' ? item.sitio_arqueologico :
       type === 'Cenote' ? item.cenote :
       type === 'Restaurante' ? item.hotel : 
+      type === 'Servicio' ? item.servicio : 
       item.nombre;
-    
+     
     const extra = item.extra; // información extendida
 
     return (
@@ -180,7 +188,7 @@ const restauranteIcon = new L.Icon({
     {/* <p>📍 {item.localizacion}</p> */}
 
     {item.web_hotel || item.web_sitio || item.web_cenote ? (
-      <p> <a href={item.web_hotel || item.web_sitio || item.web_cenote} target="_blank" rel="noopener noreferrer" className='weblink' >{item.web_hotel || item.web_sitio || item.web_cenote}</a></p>
+      <p> <a href={item.web_hotel || item.web_sitio || item.web_cenote}  target="_blank" rel="noopener noreferrer" className='weblink' >{item.web_hotel || item.web_sitio || item.web_cenote}</a></p>
     ) : null}
 
     {item.telefono && (
@@ -353,6 +361,27 @@ const restauranteIcon = new L.Icon({
               )}
             </div>
 
+            {/* Servicios */}
+            <div className="accordion-section">
+              <h4 className="titel4" onClick={() => setOpenSection(openSection === 'servicios' ? null : 'servicios')}>
+                🧾 Services <span className={`arrow ${openSection === 'servicios' ? 'open' : ''}`}>▼</span>
+              </h4>
+
+              {openSection === 'servicios' && (
+                <div className="grid-container scrollable-items">
+                  {servicios.map(s => (
+                    <div
+                      key={s.id}
+                      onClick={() => setSelectedItem({ type: "Servicio", data: s })}
+                      className="grid-item"
+                    >
+                      <strong>{s.servicio}</strong>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
         </aside>
         {/* ------------------------------------------------
            MAPA
@@ -379,6 +408,11 @@ const restauranteIcon = new L.Icon({
             <button onClick={() => setMapFilter("RESTAURANTE")} className={mapFilter==="RESTAURANTE" ? "active" : ""}>
               🍽️ Restaurants
             </button>
+
+            <button onClick={() => setMapFilter("SERVICIO")} className={mapFilter==="SERVICIO" ? "active" : ""}>
+              🧾 Experiences
+            </button>
+
           </div>
 
           <MapContainer
@@ -504,6 +538,29 @@ const restauranteIcon = new L.Icon({
                 </Marker>
               ))}
 
+              {/* Servicios */}
+              { (mapFilter === "ALL" || mapFilter === "SERVICIO")  && servicios.map(s => (
+                <Marker
+                  key={s.id}
+                  position={[parseFloat(s.latitud), parseFloat(s.longitud)]}
+                  icon={experienciaIcon}
+                  eventHandlers={{
+                    click: () => {
+                      setSelectedItem({ type: "Servicio", data: s });
+                      setActiveTooltip(s.id);
+                    }
+                  }}
+                >
+                  <Tooltip
+                    direction="top"
+                    offset={[-2, -38]}
+                    opacity={0.9}
+                    permanent={true}
+                  >
+                    {s.servicio}
+                  </Tooltip>
+                </Marker>
+              ))}
 
             {/* Oficina de Turismo */}
             {/* Oficina de Turismo */}
@@ -568,7 +625,8 @@ const restauranteIcon = new L.Icon({
         {selectedHotel.hotel ||
         selectedHotel.cenote ||
         selectedHotel.sitio_arqueologico ||
-        selectedHotel.nombre}
+        selectedHotel.nombre  ||
+        selectedHotel.servicio}
       </h2>
 
 

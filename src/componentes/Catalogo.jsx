@@ -45,6 +45,10 @@ import TourParanormal from './Imagenes/ImgTempo/TourParanormal.jpeg';
 /* Murem */
 import Murem from './Imagenes/ImgTempo/Murem.jpeg';
 
+/* TranportePrecio */
+import TransportePrecio from './Imagenes/ImgTempo/TranportePrecio.png';
+import { t } from 'i18next';
+
 const Catalogo = () => {
   const [indice, setIndice] = useState(0);
   const [galeriaActual, setGaleriaActual] = useState([]);
@@ -147,6 +151,14 @@ const Catalogo = () => {
           </div>
         ))}
       </div>
+
+      {/* Tranporte Precio */}
+      <h3 className="text-center mb-4 display-5 fw-bold">Transport and Price</h3>
+
+      <div className="folleto text-center mb-4">
+        <img src={TransportePrecio} className="folleto-img rounded shadow" alt='TransportePrecio'/>
+      </div>
+
 
       <div className="ticket-section">
   <h3 className="ticket-title">🎟️ Buy Your Tickets</h3>

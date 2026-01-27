@@ -36,6 +36,7 @@ import Turismo26 from './componentes/Turismo26';
 import Destino from './componentes/Destino';
 import MapaSin from './componentes/MapaSin';
 import AgenciasTours from './componentes/AgenciasTours';
+import WalkingTours from './componentes/WalkingTours';
 
 /* Pages */
 import Home from "./pages/Home";
@@ -382,6 +383,29 @@ const App = () => {
 
                 </>
               } />
+              <Route path="/walkingtours" element={
+                <>
+                <Seo
+                      title="Walking Tours | Visit Valladolid"
+                      description="Explore walking tours with local guides in Valladolid, Yucatán."
+                      canonical="https://visitavalladolidmx.com/walkingtours"
+                    />
+                    
+               
+                  <Header />
+                  <LanguageSwitcher />
+                  <WalkingTours />
+
+                  {/* Footer global */}
+          <ProximoEvento />
+         
+          <Footer />
+
+                </>
+              } />
+
+              {/* Redirección por defecto a /home */}
+              <Route path="*" element={<Navigate to="/home" replace />} />
 
 
             </Routes>

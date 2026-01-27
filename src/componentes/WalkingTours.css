@@ -1,0 +1,228 @@
+/* ==============================
+   🎯 CONTENEDOR GENERAL
+============================== */
+.walking-container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 60px 20px;
+  background: linear-gradient(180deg, #f9fbfdad 0%, #ffffffab 100%);
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+
+/* ==============================
+   🏷 TÍTULOS
+============================== */
+.walking-title {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.walking-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* ==============================
+   ⏳ LOADING
+============================== */
+.walking-loading {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 60px;
+  color: #64748b;
+}
+
+/* ==============================
+   🧩 GRID DE TARJETAS
+============================== */
+.walking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* ==============================
+   🪪 TARJETA
+============================== */
+.walking-card {
+  background: #ffffff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.walking-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(13, 110, 253, 0.15),
+    rgba(34, 197, 94, 0.15)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.walking-card:hover::before {
+  opacity: 1;
+}
+
+.walking-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 35px 60px rgba(15, 23, 42, 0.15);
+}
+
+/* ==============================
+   🖼 IMAGEN
+============================== */
+.walking-image {
+  width: 80%;
+  height: 340px;
+  object-fit: center;
+  /* centrar la imagen */
+    margin: 20px auto 0 auto;
+    border-radius: 10%;
+    box-shadow:  0 10px 50px rgba(0, 0, 0, 0.673);
+
+
+  background: #e2e8f0;
+}
+
+/* ==============================
+   📄 CONTENIDO
+============================== */
+.walking-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.walking-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+/* ==============================
+   🧠 EXPERIENCIA
+============================== */
+.walking-exp {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0d6efd;
+  margin-bottom: 10px;
+}
+
+/* ==============================
+   🌍 IDIOMAS
+============================== */
+.walking-content p {
+  font-size: 0.95rem;
+  color: #334155;
+  margin-bottom: 10px;
+}
+
+/* ==============================
+   📝 DESCRIPCIÓN
+============================== */
+.walking-desc {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-top: 10px;
+  flex-grow: 1;
+  max-height: 720px;
+  overflow: hidden;
+  position: relative;
+}
+
+.walking-desc::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(transparent, #ffffff);
+}
+
+/* ==============================
+   🧾 FOOTER
+============================== */
+.walking-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* ==============================
+   💰 PRECIO
+============================== */
+.walking-price {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #16a34a;
+}
+
+/* ==============================
+   📲 BOTÓN
+============================== */
+.walking-btn {
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0d6efd, #22c55e);
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(13, 110, 253, 0.3);
+  white-space: nowrap;
+}
+
+.walking-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(34, 197, 94, 0.4);
+}
+
+/* ==============================
+   📱 RESPONSIVE
+============================== */
+@media (max-width: 768px) {
+  .walking-title {
+    font-size: 2rem;
+  }
+
+  .walking-img {
+    height: 200px;
+  }
+
+  .walking-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .walking-btn {
+    text-align: center;
+    width: 100%;
+  }
+}

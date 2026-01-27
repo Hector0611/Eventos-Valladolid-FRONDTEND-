@@ -91,6 +91,246 @@ a {
 a:hover .titel1 {
   color: #0056b3;
 }
+/* ===============================
+   Rutas de imágenes
+================================*/
+
+.rutas-section {
+  max-width: 1300px;
+  margin: auto;
+  padding: 30px 20px;
+  background: linear-gradient(180deg, #f8fafc, #ffffff);
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+/* ==============================
+   TÍTULO
+============================== */
+.rutas-title {
+  text-align: center;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 50px;
+}
+
+/* ==============================
+   GRID
+============================== */
+.rutas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 25px;
+}
+
+/* ==============================
+   CARD
+============================== */
+.ruta-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  background: #000;
+}
+
+.ruta-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 35px 60px rgba(15, 23, 42, 0.25);
+}
+
+/* ==============================
+   IMAGEN
+============================== */
+.ruta-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.4s ease;
+}
+
+.ruta-card:hover .ruta-img {
+  transform: scale(1.01);
+  filter: brightness(0.8);
+}
+
+/* ==============================
+   OVERLAY
+============================== */
+.ruta-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.1)
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.ruta-card:hover .ruta-overlay {
+  opacity: 1;
+}
+
+.ruta-overlay span {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* ==============================
+   🪟 MODAL BACKDROP
+============================== */
+.ruta-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ==============================
+   🖼 MODAL
+============================== */
+.ruta-modal {
+  background: #ffffff;
+  border-radius: 24px;
+  max-width: 90%;
+  max-height: 90%;
+  padding: 25px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+  animation: scaleIn 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ==============================
+   ❌ CERRAR
+============================== */
+.ruta-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(15, 23, 42, 0.1);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.ruta-modal-close:hover {
+  background: rgba(15, 23, 42, 0.25);
+  transform: scale(1.1);
+}
+
+/* ==============================
+   🏷 MODAL TÍTULO
+============================== */
+.ruta-modal h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+/* ==============================
+   🖼 MODAL IMG
+============================== */
+.ruta-modal-img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 15px;
+  background: #000;
+}
+/* ==============================
+    Siguiente y anterior
+============================== */
+.ruta-modal-prev {
+  position: absolute;
+  top: 50%;
+  left: -100px;
+  transform: translateY(-50%);
+  background: rgba(15, 23, 42, 0.655);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.ruta-modal-prev:hover {
+  background: rgba(15, 23, 42, 0.25);
+  transform: translateY(-50%) scale(1.1);
+}
+.ruta-modal-next {
+  position: absolute;
+  top: 50%;
+  right: -100px;
+  transform: translateY(-50%);
+  background: rgba(15, 23, 42, 0.585);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.ruta-modal-next:hover {
+  background: rgba(15, 23, 42, 0.25);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 768px) {
+  .ruta-img {
+    height: 200px;
+  }
+
+  .rutas-title {
+    font-size: 2rem;
+  }
+
+  .ruta-modal-img {
+    width: 100%;
+    height: 40vh;
+  }
+  .ruta-modal-prev {
+    left: -20px;
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+  .ruta-modal-next {
+    right: -20px;
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+
+  }
+}
 
 /* ===============================
    RESPONSIVE

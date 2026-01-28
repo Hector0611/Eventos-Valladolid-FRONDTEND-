@@ -171,13 +171,16 @@ body {
   position: relative;
   display: inline-block;
   top: 7%;
+  
+  
 }
 
 .popup-overlay1 {
   position: absolute;
-  top: 102%;
-  left: -240%;
-  width: 360px;
+  top: 100%;
+  left: -490%;
+  width: 450px;
+  border-radius: 12px;
   z-index: 2000;
   animation: fadeIn 0.3s ease-in-out;
 }
@@ -199,14 +202,12 @@ body {
   font-size: 0.6em;
   text-align: left;        /* ← ALINEA EL TEXTO */
   width: 100%;             /* ← OCUPA TODO EL ANCHO */
-  
   text-shadow: 0 0 0.2cm #fff;
   background-color: transparent;
   border: none;
   margin: 0px;
-  
- 
 }
+
 .textocontent1:hover {
   background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 0 0 5px rgb(0, 0, 0);
@@ -419,7 +420,7 @@ body {
     top: auto;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 90%;
     padding: 16px;
     animation: slideUp 0.3s ease;
   }

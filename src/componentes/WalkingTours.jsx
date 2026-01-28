@@ -30,10 +30,9 @@ export default function WalkingTours() {
     <div className="walking-container">
       <div className="Separacion"></div>
 
-      <h2 className="walking-title">🚶‍♂️ Walking Tours — Guías Locales</h2>
+      <h2 className="walking-title">Walking Tours</h2>
       <p className="walking-subtitle">
-        Conoce la ciudad con guías certificados. Cada recorrido es personalizado
-        según tus intereses.
+        Explore the city with certified guides. Each tour is personalized to suit your interests.
       </p>
 
       <div className="walking-grid">
@@ -48,13 +47,14 @@ export default function WalkingTours() {
                 alt={guia.lugar_nombre}
                 className="walking-image"
             />
+            <br />
 
             <div className="walking-content">
               <h3>{guia.nombre}</h3>
 
               <p className="walking-exp">{guia.experiencia}</p>
 
-              <p>
+              <p className="walking-languages">
                 <strong>Idiomas:</strong>{" "}
                 {guia.idiomas
                   ? guia.idiomas

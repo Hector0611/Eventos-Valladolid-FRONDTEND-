@@ -94,27 +94,29 @@ const Header = () => {
       onMouseEnter={() => setShowPopup(true)}
       onMouseLeave={() => setShowPopup(false)}
     >
-      <button className="botton2">{t("header.more")}</button>
+      <button className="botton2">MORE</button>
 
       {showPopup && (
         <div className="popup-overlay1">
           <div className="popup-content">
+         < hr />
             <h2 className="h2more">{t("header.moreInfo")}</h2>
+            <hr />
 
-            {/* <button className="textocontent1" onClick={() => navigateTo("/walkingtours")}>
+            <button className="textocontent1" onClick={() => navigateTo("/walkingtours")}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-check2-circle" viewBox="0 0 16 16">
                     <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0"/>
                     <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
                 </svg>
               WALKING TOURS & LOCAL GUIDES
-            </button> */}
+            </button>
 
             <button className="textocontent1" onClick={() => navigateTo("/agencias")}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-check2-circle" viewBox="0 0 16 16">
                     <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0"/>
                     <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
                 </svg>
-              TRAVEL AGENCIES & TOURS OPERATORS
+              TRAVEL AGENCIES
             </button>
 
             <button className="textocontent1" onClick={() => navigateTo("/Contacto")}>
@@ -147,6 +149,7 @@ const Header = () => {
             <hr />
 
             <h3 className="h2more">{t("header.follow")}</h3>
+            <br></br>
 
             <div className="links_F-I-Y">
               <a href="https://www.facebook.com/ByVisitValladolidMX/" target="_blank" rel="noreferrer">
@@ -165,6 +168,7 @@ const Header = () => {
                 </svg>
               </a>
             </div>
+            <br></br>
           </div>
         </div>
       )}

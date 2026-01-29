@@ -36,9 +36,12 @@ const Footer = () => {
                 <h3 className='Titulo'>{t("footer.useful")}</h3>
                 <ul className='texto1'>
                     {/* <li><a href="/hoteles">Maps</a></li> */}
-                    <li><a href="/contacto">{t("footer.contact")}</a></li>
+                    {/* <li><a href="/contacto">{t("footer.contact")}</a></li> */}
                     <li><a href="/LugaresTuristicos">{t("footer.history")}</a></li>
                     <li><a href="/estadisticas">{t("footer.tourism")}</a></li>
+                    <li><a href="/walkingtours"> Walking tours</a></li>
+                    <li><a href="/agencias">Travel agencies</a></li>
+                    <li><a href="/estadisticas">Routes in Valladolid</a></li>
                     {/* <li><a href="/estadisticas">Valladolid Statistics</a></li> */}
                 </ul>
                 </div>

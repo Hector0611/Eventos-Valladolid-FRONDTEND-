@@ -90,10 +90,12 @@ const Header = () => {
 
     {/* MÁS */}
     <div
-      className="popup-wrapper"
-      onMouseEnter={() => setShowPopup(true)}
-      onMouseLeave={() => setShowPopup(false)}
-    >
+        className="popup-wrapper"
+        onMouseEnter={() => setShowPopup(true)}
+        onMouseLeave={() => setShowPopup(false)}
+        onClick={() => setShowPopup(!showPopup)} // 📱 soporte móvil
+      >
+
       <button className="botton2">MORE</button>
 
       {showPopup && (
@@ -143,9 +145,7 @@ const Header = () => {
                 </svg>
               {t("header.stats")}
             </button>
-
-            
-
+        
             <hr />
 
             <h3 className="h2more">{t("header.follow")}</h3>

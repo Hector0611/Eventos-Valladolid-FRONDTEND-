@@ -34,11 +34,10 @@ const Footer = () => {
                 </div>
                 <div className="footer-section">
                 <h3 className='Titulo'>{t("footer.useful")}</h3>
-                <ul className='texto1'>
+                <ul className='ULLista'>
                     {/* <li><a href="/hoteles">Maps</a></li> */}
                     {/* <li><a href="/contacto">{t("footer.contact")}</a></li> */}
-                    <li><a href="/LugaresTuristicos">{t("footer.history")}</a></li>
-                    <li><a href="/estadisticas">{t("footer.tourism")}</a></li>
+                    <li><a className='quitarformato' href="/LugaresTuristicos">{t("footer.history")}</a></li>
                     <li><a href="/walkingtours"> Walking tours</a></li>
                     <li><a href="/agencias">Travel agencies</a></li>
                     <li><a href="/estadisticas">Routes in Valladolid</a></li>
@@ -89,18 +88,6 @@ const Footer = () => {
                         className="logo-Yucatan2"
                   
                   />
-                  {/* <img
-                        src={logo4}
-                        alt={`Yucatan`}
-                        className="logo-Yucatan"
-                  
-                  />
-                   <img
-                        src={logo3}
-                        alt={`Yucatan`}
-                        className="logo-Yucatan"
-                  
-                  /> */}
                   </div>
            <br />
             </div>

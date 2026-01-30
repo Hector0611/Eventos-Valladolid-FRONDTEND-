@@ -1,5 +1,5 @@
 .footer {
-    background-color: transparent;
+    background-color: #20656239;
     color: #000000;
     padding: 100px 60px;
     font-size: 20px;
@@ -20,31 +20,51 @@
     background-color: #a6f863ae;
     border-radius: 20px;
 }
-.texto1 li{
+
+.ULLista {
+    list-style-type: square;
+    padding: 0;
+    background-color: #f8c47100;
+    box-shadow: none;
+    list-style-type: none;
+}
+
+
+.ULLista li{
     text-align: justify;
     padding: 5px;
-    background-color: #f8c471ae;
+    background-color: #f8c47100;
     border-radius: 20px;
+    margin: 8px 0px;
+    /* Para que no se vea los puntos de LA LISTA */
+    list-style-type: none;
 }
-.texto1 li:hover{
-    background-color: #ff9800;
-    
+.ULLista li:hover{
+    background-color: rgba(249, 249, 255, 0.979);
     transition: 0.3s;
 }
 
-.footer-content {
 
+.quitarformato{
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    background: transparent;
+    box-shadow: none;
+}
+
+.footer-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 50px;
-    
 }
 
 .footer-section {
     flex: 1;
     min-width: 250px;
-    
 }
 
 .footer-section h3 {
@@ -60,10 +80,14 @@
 .footer-section ul {
     list-style-type: none;
     padding: 0;
+    list-style: none !important;
+  padding-left: 0;
+
 }
 
 .footer-section ul li {
     margin: 2px 0;
+    
 }
 
 .footer-section ul li a {
@@ -71,12 +95,13 @@
     color: #000000;
     transition: color 0.3s;
     font-size: 1.3rem;
-    background-color: #f8c471ae;
+    background-color: transparent;
     padding: 1px 20px;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .footer-section ul li a:hover {
@@ -91,24 +116,50 @@
     transition: color 0.3s;
 }
 
+/* Quita bullets normales */
+.footer-section ul {
+  list-style: none !important;
+  padding-left: 0;
+}
+
+/* Quita cualquier punto decorativo generado por CSS */
+.footer-section ul li::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Por si vienen de background o sombra */
+.footer-section ul li {
+  background-image: none !important;
+}
+
+
 .Facebook{
     color: #1e4393;
+    transition: 0.5s;
 }
 .Facebook:hover {
+    scale: 1.1;
     color: #0026ff;
 }
 .Instagram{
     color: #e5477c;
+    transition: 0.5s;
 }
 .Instagram:hover {
+    scale: 1.1;
     color: #fb0064;
 }
 .Youtube{
     color: #ff3f3f;
+    transition: 0.5s;
 }
 .Youtube:hover {
+    scale: 1.1;
     color: #ff0000;
 }
+
+
 
 .footer-bottom {
     text-align: center;
@@ -164,7 +215,7 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   font-size: 0.95rem;             /* tamaño legible en desktop */
   color: #ffffff;                 /* color del texto (ajusta según tu fondo) */
-  background: rgba(0,0,0,0.35);   /* fondo sutil tipo etiqueta (opcional) */
+  background: rgba(0, 0, 0, 0.859);   /* fondo sutil tipo etiqueta (opcional) */
   padding: 0.45rem 0.9rem;        /* espacio interior */
   border-radius: 10px;            /* esquinas redondeadas */
   box-shadow: 0 4px 10px rgba(0,0,0,0.18);
@@ -281,8 +332,3 @@
    }
   
 }
-
-
-
-
-

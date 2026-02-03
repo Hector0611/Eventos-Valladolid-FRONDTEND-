@@ -913,6 +913,19 @@
   background-image: none !important;
 }
 
+.cajadiario{
+  background-color: rgba(255, 255, 255, 0.705);
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px 20px;
+/* centrar caja */
+  margin: 0px auto 0 auto;
+  padding: 10px;
+  font-size: 1.8rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
 
 @keyframes girar {
   to {

@@ -51,14 +51,9 @@ const EventoDiario = () => {
     </button>
   </div>
 </div>
-
-
-                
-               {/*  <details>
-                    <summary>Conoces Valladolid</summary>
-                    <p>hola Valladolid</p>
-                </details> */}
+<hr />
             </div>
+            
 
     );
 

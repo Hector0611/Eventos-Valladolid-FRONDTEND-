@@ -100,11 +100,13 @@
 @media screen and (max-width: 768px) {
   .texto_EVETODIARIO {
     font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0px;
   }
   .texto_indicaciones,
   .texto_indicaciones1 {
     bottom: 0rem;
     font-size: clamp(1rem, 2vw, 2rem);
+    
   }
   
 }

@@ -274,8 +274,8 @@ p {
 p:not(:first-of-type) {
   font-weight: bold;
   font-size: 1.25rem;
-  color: #1f5f5b;
-  border-left: 4px solid #1f5f5b;
+
+
   padding-left: 10px;
 }
 
@@ -295,7 +295,7 @@ strong {
 }
 
 a {
-  color: #0a7c73;
+
   text-decoration: none;
 }
 

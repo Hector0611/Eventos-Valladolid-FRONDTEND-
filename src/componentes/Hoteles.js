@@ -6,7 +6,6 @@ import L from 'leaflet';
 import './Hoteles.css';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 
-import logo3 from './Imagenes/maps/Museo.png';
 import logo5 from './Imagenes/maps/Arqueologicas.png';
 import logoCenote from './Imagenes/maps/Cenote.png';
 import oficina from './Imagenes/maps/OFICINA_DE_TURISMO.png';
@@ -179,7 +178,7 @@ const experienciaIcon = new L.Icon({
     return (
 
   <div className="panel-content sitranslate" translate="yes">
-    {!isMobile && <button onClick={() => setSelectedItem(null)} className="close-button">✖</button>}
+    {!isMobile && <button onClick={() => setSelectedItem(null)} className="close-button">X</button>}
     <hr></hr>
     <h4>{nombreMostrar}</h4>
 
@@ -221,7 +220,7 @@ const experienciaIcon = new L.Icon({
           setShowModal(true);       // abres modal
         }}
       >
-        Más Info
+        More
       </button>
 
     </div>
@@ -388,29 +387,31 @@ const experienciaIcon = new L.Icon({
         ------------------------------------------------ */}
         <div className="map-wrapper notranslate" translate="no">
           <div className='sepa2'></div>
+          
           <div className="map-filters">
+            
             <button onClick={() => setMapFilter("ALL")} className={mapFilter==="ALL" ? "active" : ""}>
-              🌍 All
+              All
             </button>
 
             <button onClick={() => setMapFilter("HOTEL")} className={mapFilter==="HOTEL" ? "active" : ""}>
-              🏨 Hotels
+              Hotels
             </button>
 
             <button onClick={() => setMapFilter("CENOTE")} className={mapFilter==="CENOTE" ? "active" : ""}>
-              🏞️ Cenotes
+              Cenotes
             </button>
 
             <button onClick={() => setMapFilter("SITIO")} className={mapFilter==="SITIO" ? "active" : ""}>
-              🏛️ Sites
+              Sites
             </button>
 
             <button onClick={() => setMapFilter("RESTAURANTE")} className={mapFilter==="RESTAURANTE" ? "active" : ""}>
-              🍽️ Restaurants
+              Restaurants
             </button>
 
             <button onClick={() => setMapFilter("SERVICIO")} className={mapFilter==="SERVICIO" ? "active" : ""}>
-              🧾 Experiences
+              Experiences
             </button>
 
           </div>
@@ -600,7 +601,6 @@ const experienciaIcon = new L.Icon({
             
           ) : (
             <div className={`side-panel ${selectedItem ? 'open' : ''}`}>
-              <button className="close-button" onClick={() => setSelectedItem(null)}>✖</button>
               {selectedItem && renderInfoPanel(selectedItem.data, selectedItem.type)}
               
 
@@ -617,7 +617,7 @@ const experienciaIcon = new L.Icon({
     <div className="modal-cont1">
 
       <button className="modal-clo1" onClick={() => setShowModal(false)}>
-        ✖
+        X
       </button>
  <br></br>
  <hr></hr>

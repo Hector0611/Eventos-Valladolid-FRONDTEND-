@@ -166,7 +166,7 @@ const Catalogo = () => {
   <div className="ticket-grid">
 
     {/* 🎤 MATUTE */}
-    <div className="ticket-card">
+    {/* <div className="ticket-card">
       <img src={matute} alt="Matute Poster" className="ticket-poster" />
 
       <a
@@ -178,7 +178,7 @@ const Catalogo = () => {
         🎤 Matute
         <span>Get Tickets</span>
       </a>
-    </div>
+    </div> */}
 
     {/* 🎶 BANDA MS */}
     <div className="ticket-card">
@@ -355,39 +355,7 @@ const Catalogo = () => {
                 {showMap ? "View image" : "View map"}
               </button>
 
-{/* Murem */}
- {/* 🖼️ / 🗺️ SLIDER */}
-            <div className="media-slider1">
-              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
-                {/* IMAGEN */}
-                <div className="media-panel image-panel1">
-                  <img
-                  className='ImgX'
-                    src={Murem}
-                    alt='Murem'
-                  />
-                </div>
 
-                {/* MAPA */}
-                <div className="media-panel map-panel1">
-                  <iframe
-                      title="Murem Ubicación"
-                      src="https://www.google.com/maps?q=20.683645590667318, -88.20103201053944&hl=en&z=15&output=embed"
-                      allowFullScreen=""
-                      loading="lazy"
-                    ></iframe>
-                </div>
-              </div>
-            </div>
-
-            {/* BOTÓN */}
-            
-              <button
-                className="view-map-btn"
-                onClick={() => setShowMap(!showMap)}
-              >
-                {showMap ? "View image" : "View map"}
-              </button>
 
 
 {/* Tour Paranormal */}

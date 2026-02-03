@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 import { useTranslation } from "react-i18next";
+import EventoDiario from './EventoDiario';
 
 
 import { translateField } from '../utils/translateField';
@@ -387,43 +388,34 @@ const ProgramarEvents = () => {
              {/* Aqui eventos diarios que se repiten en todos los eventos */}
             
                     <div className="evento-info1">
+                      <hr />
                 <h2 className='titel11'>Daily Events</h2>
+
+                 <p className="info-text">
+                    Valladolid, Yucatán, offers daily cultural and traditional activities,including video mapping at the Convent of San Bernardino de Siena (evenings),tours along the Calzada de los Frailes, visits to the Cathedral of San Servasi,and the culinary experience at the Municipal Market. In February 2026, the highlight will be the Valladolid Expo Fair with the Magna Vaquería.
+                  </p>
+
+                  <ul className="info-list">
+                    <strong className="info-title">
+                      Featured events and activities in Valladolid:
+                    </strong>
+
+                    <li> <strong>Video Mapping:</strong> Evening performances in the Church of San Servacio and the Convent of San Bernardino de Siena, narrating local history.</li>
+                    <li> <strong>Expo Feria Valladolid 2026:</strong> Amusement rides, cultural events, traditional food, circus, etc... <strong>(It starts at 6 PM.)</strong></li>
+                    <li> <strong>Culture and Tradition:</strong> Visits to the House of the Deer, a walk along the Street of the Friars and a tour of the main park Francisco Cantón Rosado.</li>
+                    <li><strong>Nature:</strong> Daily visits to Chichen Itza, Ek Balam, cenotes, parks, towns and beaches.</li>
+                    <li><strong>Gastronomy:</strong> Breakfast and typical meals at the Municipal Market or in its different restaurants in the main square.</li>
+                    <hr />
+                  </ul>
+
+                <hr />
                 
                   <div className="evento-container11">
                     
                     
                     {/* Columna izquierda: eventos diarios */}
-                    <div className="eventoDiario111">
-                      <h3 className='titel11'>Every day there is video mapping in the center and Sisal</h3>
-                      <p>The schedule is from 9:00 p.m. "Spanish"</p>
-                      <p>The schedule is from 9:20 p.m. "English"</p>
-
-                      <h3 className='titel11'>Directions to get there</h3>
-
-                      <button
-                        className="bottonEvents11"
-                        onClick={() =>
-                          window.open(
-                            `https://www.google.com/maps/dir/?api=1&destination=20.689720,-88.201669`,
-                            "_blank"
-                          )
-                        }
-                      >
-                        San Servacio
-                      </button>
-                        
-                      <button
-                        className="bottonEvents22"
-                        onClick={() =>
-                          window.open(
-                            `https://www.google.com/maps/dir/?api=1&destination=20.686362823195388,-88.21000163440262`,
-                            "_blank"
-                          )
-                        }
-                      >
-                          San Bernardino
-                      </button>
-                    </div>
+                    <EventoDiario />
+                    
                   </div>
              
               </div>

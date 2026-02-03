@@ -1,361 +1,111 @@
-.titelevent{
-    font-size: 2rem;
-    color: #ebeaea;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.colordescription{
-  color: #fbfbfb;
-}
-.eventodiario-container {
-  padding: 1rem;
-}
-
-.search-input{
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-bottom: 1rem;
-}
-
-.titelevent {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.evento-card {
-  margin-bottom: 1rem;
-  padding: 12px 12px;
-  border-radius: 5px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  height: auto;
-  background-color: rgb(0, 0, 0);
-}
-
-.map-container {
-  margin-top: 1rem;
-  border-radius: 10px;
-  overflow: hidden;
-}
-.evento-card {
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 20px;
-  border-radius: 22px;
-}
-
-.evento-overlay {
-  position: relative;
-  width: 100%;
-  height: auto;
-}
-
-.imagen-fondo {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  filter: brightness(0.5); /* oscurece para que el texto resalte */
-}
-/* Centra el div   */
-
-.contenido-sobre-imagen1 {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-/* Botón 1 */
-.bottonEvent2 {
-  background-image: url("/src/componentes/Imagenes/iglesia1.png");
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  border: none;
-  color: white;
-  padding: 250px 480px;
-  text-align: center;
-  text-decoration: none;
-  position: absolute;
-  font-size: 20px;
-  top: 22%;
-  left: 42%;
-  cursor: pointer;
-  border-radius: 12px;
-  transition: all 0.4s ease;
-  animation: pulseAnimation 2s infinite ease-in-out; /* animación sutil */
-}
-
-/* Hover: amplía y brilla */
-.bottonEvent2:hover {
-  transform: scale(1.2);
- 
-}
-
-/* Tooltip */
-.bottonEvent2::after {
-
-  position: absolute;
-  top: 90%;
-  left: 37%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 6px 12px;
-  border-radius: 6px;
-  opacity: 0;
-  white-space: nowrap;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  font-size: 24px;
-}
-
-.bottonEvent2:hover::after {
-  opacity: 1;
-  transform: translateY(-50%) translateX(5px);
-}
-
-/* Botón 2 */
-.bottonEvent22 {
-  background-image: url("/src/componentes/Imagenes/iglesia2.png");
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  border: none;
-  color: white;
-  padding: 250px 480px;
-  text-align: center;
-  text-decoration: none;
-  position: absolute;
-  font-size: 20px;
-  top: 74%;
-  left: 18%;
-  cursor: pointer;
-  border-radius: 12px;
-  transition: all 0.4s ease;
-  animation: pulseAnimation 2s infinite ease-in-out;
-}
-
-.bottonEvent22:hover {
-  transform: scale(1.2);
-
-}
-
-/* Tooltip botón 2 */
-.bottonEvent22::after {
- 
-  position: absolute;
-  top: 74%;
-  left: 37%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 6px 12px;
-  border-radius: 6px;
-  opacity: 0;
-  white-space: nowrap;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  font-size: 24px;
-}
-
-.bottonEvent22:hover::after {
-  opacity: 1;
-  transform: translateY(-50%) translateX(5px);
-}
-
-.texto_indicaciones{  
-  /* Para que este abajo de la img del boton */
-  position: absolute;
-  top: 70%;
-  left: 37%;
-  font-size: 3.5rem;
-  background-color: black;
-  border-radius: 20%;
-
-}
-
-.texto_indicaciones1{  
-  /* Para que este abajo de la img del boton */
-  position: absolute;
-  top: 70%;
-  left: 37%;
-  font-size: 3.5rem;
-  background-color: black;
-  border-radius: 20%;
-
+/* CONTENEDOR DE REFERENCIA (ancla a la imagen) */
+.evento-card{
+ background-color: #000000;
+ border-radius: 10%;
 }
 
 .texto_EVETODIARIO{
-  position: relative;
-  font-size: 3.5rem;
-  color: #fbfbfb;
   text-align: center;
-  margin-top: 20px;
+  font-size: clamp(3.5rem, 2vw, 3.5rem);
+  color: white;
+  margin-bottom: 2rem;
 }
 
-/* 🔹 Animación de latido sutil */
-@keyframes pulseAnimation {
-  0% {
-    transform: scale(1);
-    filter: brightness(1);
-  }
-  50% {
-    transform: scale(1.05);
-    filter: brightness(1.2);
-  }
-  100% {
-    transform: scale(1);
-    filter: brightness(1);
-  }
+.img-wrapper {
+  position: relative;
+  width: 100%;
+  display: inline-block;
 }
 
-
-
-
-.colordescription {
-  background-image: url('./Imagenes/colores64.png');
-  border: transparent;
-  padding: 9px 6px;
-  background-size: cover;
-  background-clip: text;
-  color: transparent;
-  animation: animate 5s linear infinite;
-}
-
-@keyframes animate {
-  to {
-    background-position-x: -1200px;
-  }
-}
-
-.cartel-videoM{ 
+/* IMAGEN */
+.cartel-videoM {
   width: 90%;
   height: auto;
   border-radius: 10%;
-  box-shadow: 0 90px 58px rgb(255, 0, 0);
 }
 
 .cartel-videoM:hover {
-  box-shadow: 0 90px 58px rgb(0, 255, 13);
+  box-shadow: 0 9px 8px rgb(0, 255, 13);
   transition-duration: 0.4s;
 }
 
-@media (max-width: 1224px) {
-  .cartel-videoM {
-    width: 100%;
-    height: auto;
-  }
-
-  /* ✅ Usamos tamaños relativos en lugar de píxeles fijos */
-  .bottonEvent2 {
-    width: clamp(380px, 10vw, 450px);   /* ajusta entre 80px y 150px */
-    height: clamp(485px, 5vh, 250px);   /* ajusta entre 25px y 50px */
-    padding: 0;                       /* sin padding para mantener proporción */
-    font-size: clamp(10px, 1.5vw, 14px);
-    margin: 2vh 3vw;
-    top: 18%;
-    left: 50%;
-  }
-
-  .bottonEvent22 {
-    width: clamp(660px, 10vw, 150px);
-    height: clamp(485px, 5vh, 50px);
-    padding: 0;
-    font-size: clamp(10px, 1.5vw, 14px);
-    left: 15%;
-    top: 68%;
-  }
-
-  /* ✅ Tooltip ajustable y centrado automáticamente */
-  .bottonEvent2::after{
-    font-size: clamp(20px, 1.3vw, 16px);
-    top: 90%;        /* aparece justo debajo del botón */
-    left: 20%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-  }
-  .texto_indicaciones{  
-  /* Para que este abajo de la img del boton */
-  top: 70%;
-  left: 39%;
-  font-size: 1.2rem;
-
-
-}
-.texto_indicaciones1{  
-  /* Para que este abajo de la img del boton */
-  top: 70%;
-  left: 22%;
-  font-size: 1.2rem;
-
-
-}
-}
-
-
-
-@media (max-width: 768px) {
-  .cartel-videoM {
-    width: 100%;
-    height: auto;
-  }
-  .bottonEvent2{
-    width: clamp(150px, 10vw, 50px);   /* ajusta entre 80px y 150px */
-    height: clamp(255px, 5vh, 50px);   /* ajusta entre 25px y 50px */
-    padding: 10px 10px;
-    font-size: 10px;
-    margin: 35px 45px;
-
-  }
-  .bottonEvent22{
-    width: clamp(300px, 10vw, 350px);   /* ajusta entre 80px y 150px */
-    height: clamp(185px, 5vh, 250px);   /* ajusta entre 25px y 50px */
-    padding: 70px 100px;
-    top: 73%;
-    left: 10%;
-  }
-  .bottonEvent2::after {
-    font-size: 16px;
-    top: 85%;
-    left: -10%;
-  }
-  .bottonEvent22::after {
-    font-size: 16px;
-    top: 75%;
-    left: 27%;
-  }
-  .texto_indicaciones{  
-  /* Para que este abajo de la img del boton */
-  top: 55%;
-  left: 35%;
-  font-size: 1.2rem;
-
-
-}
-.texto_indicaciones1{  
-  /* Para que este abajo de la img del boton */
-  top: 70%;
-  left: 22%;
-  font-size: 1.2rem;
-
+/* BASE BOTONES */
+.bottonEvent2,
+.bottonEvent22 {
+  position: absolute;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  animation: zoomPulse 3s infinite ease-in-out;
 
 }
 
-.texto_EVETODIARIO{
-  font-size: 2rem;
-}
+/* BOTÓN 1 */
+.bottonEvent2 {
+  background-image: url("/src/componentes/Imagenes/iglesia1.png");
+  width: 90%;
+  height: 40%;
+  top: 10%;
+  left: 28%;
 }
 
+/* BOTÓN 2 */
+.bottonEvent22 {
+  background-image: url("/src/componentes/Imagenes/iglesia2.png");
+  width: 90%;
+  height: 30%;
+  top: 73%;
+  left: 5%;
+}
+
+/* HOVER */
+.bottonEvent2:hover,
+.bottonEvent22:hover {
+  transform: scale(1.1);
+}
+
+/* TEXTO DE INDICACIONES (centrado y fijo debajo del botón) */
+.texto_indicaciones,
+.texto_indicaciones1 {
+  position: absolute;
+  bottom: 3rem;
+  left: 51%;
+  transform: translateX(-50%);
+  font-size: clamp(1.2rem, 2vw, 3.5rem);
+  background-color: black;
+  color: white;
+  border-radius: 20%;
+  padding: 0.3rem 0.8rem;
+  white-space: nowrap;
+}
+
+/* ANIMACIÓN DE ZOOM SUAVE */
+@keyframes zoomPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .texto_EVETODIARIO {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+  .texto_indicaciones,
+  .texto_indicaciones1 {
+    bottom: 0rem;
+    font-size: clamp(1rem, 2vw, 2rem);
+  }
+  
+}
 

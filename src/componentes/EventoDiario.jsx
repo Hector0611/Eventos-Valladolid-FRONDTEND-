@@ -14,37 +14,44 @@ const EventoDiario = () => {
         <div className="evento-card">
             <br />
            
-             <h1 className='texto_EVETODIARIO'>Daily Events</h1>
+             <h1 className='texto_EVETODIARIO'></h1>
 
             <br />  
-            <div className='Img-videoM'>
-                    <img
-                        src={logo2}
-                        alt={`Yucatan`}
-                        className="cartel-videoM"
-                  
-                  />
-                </div>
+            <div className="Img-videoM">
+  <div className="img-wrapper">
+    <img
+      src={logo2}
+      alt="Yucatan"
+      className="cartel-videoM"
+    />
 
-                <div className="contenido-sobre-imagen1">
-                
-                
-                <button
-                    className="bottonEvent2"
-                    onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=20.689720,-88.201669`, "_blank")}
-                >
-                    <p className='texto_indicaciones1'>Indications</p>
+    {/* Botones ANCLADOS a la imagen */}
+    <button
+      className="bottonEvent2"
+      onClick={() =>
+        window.open(
+          "https://www.google.com/maps/dir/?api=1&destination=20.689720,-88.201669",
+          "_blank"
+        )
+      }
+    >
+      <p className="texto_indicaciones1">Indications</p>
+    </button>
 
-                </button>
-                <button
-                    className="bottonEvent22"
-                    onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=20.686362823195388,-88.21000163440262`, "_blank")}
-                >
-                    <p className='texto_indicaciones'>Indications</p>
+    <button
+      className="bottonEvent22"
+      onClick={() =>
+        window.open(
+          "https://www.google.com/maps/dir/?api=1&destination=20.686362823195388,-88.21000163440262",
+          "_blank"
+        )
+      }
+    >
+      <p className="texto_indicaciones">Indications</p>
+    </button>
+  </div>
+</div>
 
-                </button>
-                
-                </div>  
 
                 
                {/*  <details>

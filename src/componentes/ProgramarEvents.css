@@ -842,6 +842,78 @@
   line-height: 1.5;
 }
 
+/* LISTA DE INFORMACIÓN ADICIONAL */
+
+.info-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #2c2c2c;
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+  text-align: justify;
+  background-color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+}
+
+.info-list {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #f9f9f9, #f1f1f1);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  list-style: none;
+}
+
+.info-title {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #8c2f39;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.info-list li {
+  position: relative;
+  text-align: left;
+  padding-left: 1.8rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+    
+}
+
+.info-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #c89b3c;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* Quita bullets normales */
+.info-list {
+  list-style: none !important;
+  padding-left: 0;
+}
+
+/* Quita cualquier punto decorativo generado por CSS */
+.info-list li::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Por si vienen de background o sombra */
+.info-list li {
+  background-image: none !important;
+}
+
+
 @keyframes girar {
   to {
     transform: rotate(360deg);

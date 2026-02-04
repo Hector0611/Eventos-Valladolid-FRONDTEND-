@@ -452,15 +452,15 @@ const cenotesInfo = [
 
 const taxisES = [
     { nombre: "Union De Taxistas De Valladolid", tel: "+52985 133 1253 " },
-    { nombre: "Radio Taxi Valladolid", tel: "+529858565678" },
+    { nombre: "Radio Taxi Valladolid", tel: "+529851128331" },
     /* { nombre: "Servicio de Taxi Central", tel: "+529858569101" },
     { nombre: "Taxi Seguro Valladolid", tel: "+529858561122" },
     { nombre: "Taxi Rápido Valladolid", tel: "+529858563344" }, */
   ];
 
   const taxisEN = [
-    { nombre: "Union De Taxistas De Valladolid", tel: "+52985 133 1253 " },
-    { nombre: "Executive Taxi Valladolid", tel: "+529858565678" },
+    { nombre: "Union De Taxistas De Valladolid", tel: "+529851128331" },
+    { nombre: "Radio Taxi Valladolid", tel: "+529858565678" },
     /* { nombre: "Central Taxi Service", tel: "+529858569101" },
     { nombre: "Safe Taxi Valladolid", tel: "+529858561122" },
     { nombre: "Fast Taxi Valladolid", tel: "+529858563344" }, */

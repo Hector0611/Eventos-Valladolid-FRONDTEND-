@@ -240,9 +240,10 @@ body {
 
 /* TÍTULO */
 .h2more {
-  color: #ffffff;
-  text-shadow: 0 0 20px #000;
+  color: #000000;
+  text-shadow: 1px 1px 0px #ffffff;
   letter-spacing: 1px;
+  font-weight: 700;
 }
 
 /* OPCIONES */
@@ -260,7 +261,7 @@ body {
 }
 
 .textocontent1:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.538);
   transform: translateX(6px);
   cursor: pointer;
 }
@@ -356,6 +357,13 @@ body {
 
 .policia {
   color: green;
+}
+
+.DivLogosSeguir{
+  background-color: #ffffffbd;
+  border-radius: 15px;
+  padding: 10px;
+  justify-content: center;
 }
 
 /* =====================

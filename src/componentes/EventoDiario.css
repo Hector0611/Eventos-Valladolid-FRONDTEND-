@@ -22,12 +22,10 @@
   width: 90%;
   height: auto;
   border-radius: 10%;
+  box-shadow: 0 9px 8px rgb(0, 255, 13);
 }
 
-.cartel-videoM:hover {
-  box-shadow: 0 9px 8px rgb(0, 255, 13);
-  transition-duration: 0.4s;
-}
+
 
 /* BASE BOTONES */
 .bottonEvent2,
@@ -73,7 +71,7 @@
 .texto_indicaciones,
 .texto_indicaciones1 {
   position: absolute;
-  bottom: 3rem;
+  bottom: 1rem;
   left: 51%;
   transform: translateX(-50%);
   font-size: clamp(1.2rem, 2vw, 3.5rem);

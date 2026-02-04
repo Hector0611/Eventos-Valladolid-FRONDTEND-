@@ -37,7 +37,7 @@ const Footer = () => {
                 <ul className='ULLista'>
                     {/* <li><a href="/hoteles">Maps</a></li> */}
                     {/* <li><a href="/contacto">{t("footer.contact")}</a></li> */}
-                    <li><a className='quitarformato' href="/LugaresTuristicos">{t("footer.history")}</a></li>
+                    <li><a className='quitar' href="/lugares-turisticos">{t("footer.history")}</a></li>
                     <li><a href="/walkingtours"> Walking tours</a></li>
                     <li><a href="/agencias">Travel agencies</a></li>
                     <li><a href="/estadisticas">Routes in Valladolid</a></li>

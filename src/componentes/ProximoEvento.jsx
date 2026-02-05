@@ -79,9 +79,8 @@ const ProximoEvento = () => {
   return (
     <div className="proximos-eventos-container">
       
-
       <h2 className="eventtitel2">Upcoming Events</h2>
-
+      
       {/* 💬 Mensaje de evento del día de hoy */}
       {eventoHoy && (
         <div className="evento-hoy-banner">

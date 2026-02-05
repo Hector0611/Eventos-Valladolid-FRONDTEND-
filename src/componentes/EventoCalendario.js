@@ -100,7 +100,16 @@ const EventoCalendario = () => {
 
             <div className="descripcion-card" dangerouslySetInnerHTML={{ __html: mensaje.descripcion }}></div>
 
-            {/* Aqui eventos diarios que se repiten en todos los eventos */}
+            
+          </div>
+        ))
+
+        
+      ) : (
+        <p className="no-eventos">No events available for this day.</p>
+      )}
+
+      {/* Aqui eventos diarios que se repiten en todos los eventos */}
             
                     <div className="evento-info1">
                       <hr />
@@ -155,13 +164,6 @@ const EventoCalendario = () => {
                   </div>
              
               </div>
-          </div>
-        ))
-
-        
-      ) : (
-        <p className="no-eventos">No events available for this day.</p>
-      )}
     </div>
   );
 };

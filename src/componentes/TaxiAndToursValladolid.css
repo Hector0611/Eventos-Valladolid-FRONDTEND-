@@ -1,0 +1,229 @@
+/* =========================
+   CONTENEDOR GENERAL
+========================= */
+.taxi-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* =========================
+   TÍTULOS
+========================= */
+.taxi-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.taxi-description {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  color: #555;
+  font-size: 1.05rem;
+}
+
+/* =========================
+   MAPA
+========================= */
+.map-wrapper {
+  margin: 2.5rem 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.map {
+  width: 100%;
+  height: 420px;
+}
+
+.map-link {
+  color: #0077cc;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* =========================
+   GRID DE TARJETAS
+========================= */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* =========================
+   TARJETA
+========================= */
+.taxi-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 1rem;
+  border-left: 9px solid;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.888);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.taxi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.taxi-card p {
+  margin: 0.5rem 0;
+  color: #444;
+}
+
+/* =========================
+   BADGE
+========================= */
+.card-badge {
+  display: inline-block;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  margin-bottom: 0.8rem;
+}
+
+/* =========================
+   DESTINOS
+========================= */
+.card-destinos {
+  margin-top: 0.8rem;
+}
+
+.card-destinos ul {
+  padding-left: 1.2rem;
+  margin-top: 0.4rem;
+}
+
+.card-destinos li {
+  margin-bottom: 0.3rem;
+}
+
+/* =========================
+   BOTÓN
+========================= */
+.card-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+.card-button:hover {
+  opacity: 0.85;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.taxi-footer {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* =========================
+   TOOLTIP PERMANENTE MAPA
+========================= */
+.marker-tooltip {
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+}
+
+.leaflet-tooltip-top:before {
+  border-top-color: rgba(0, 0, 0, 0.75);
+}
+
+/* =========================
+   POPUP TAXIS MAPA
+========================= */
+.taxi-popup .leaflet-popup-content {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  min-width: 220px;
+}
+/* Body */
+.popup-body {
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 0 0 8px 8px;
+}
+
+.popup-body p {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 6px 0;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.popup-body strong {
+  font-weight: 600;
+}
+
+.popup-body .icon {
+  font-size: 1rem;
+}
+
+/* Link Google Maps */
+.popup-map-link1 {
+  display: block;
+  margin-top: 10px;
+  padding: 8px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #ffffff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.929);
+}
+
+.popup-map-link1:hover {
+  background: #f5f5f5;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+/* Ajustes flecha del popup */
+.leaflet-popup-tip {
+  background: #ffffff;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+  .taxi-title {
+    font-size: 2rem;
+  }
+
+  .map {
+    height: 320px;
+  }
+}

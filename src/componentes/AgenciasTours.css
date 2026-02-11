@@ -79,7 +79,7 @@
   max-width: 1300px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
   gap: 40px;
 }
 
@@ -97,8 +97,6 @@
   flex-direction: column;
   position: relative;
 }
-
-
 
 .agencia-card:hover::after {
   opacity: 1;

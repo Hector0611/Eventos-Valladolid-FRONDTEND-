@@ -495,10 +495,7 @@ const taxisES = [
 
   return (
     <div className="transporte-root">
-      <div className="Separacion">
-      
-            </div>
-          
+      <div className="Separacion"></div>
 
              {/* PANEL VERTICAL PARA CENOTES */}
           <div className="panel-vertical">

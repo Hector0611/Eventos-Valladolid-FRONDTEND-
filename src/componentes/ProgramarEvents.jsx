@@ -401,7 +401,7 @@ const ProgramarEvents = () => {
                     </strong>
 
                     <li> <strong>Video Mapping:</strong> Evening performances in the Church of San Servacio and the Convent of San Bernardino de Siena, narrating local history.</li>
-                    <li> <strong>Expo Feria Valladolid 2026:</strong> Amusement rides, cultural events, traditional food, circus, etc... <strong>(It starts at 6 PM.)</strong></li>
+                    <li><strong>Valladolid Carnival 2026:</strong> Colorful parades, live music, traditional costumes, dancing, family activities, and festive events throughout the city. <strong>(Main events usually begin in the evening.)"From February 11th to 18th, 2026"</strong></li>
                     <li> <strong>Culture and Tradition:</strong> Visits to the House of the Deer, a walk along the Street of the Friars and a tour of the main park Francisco Cantón Rosado.</li>
                     <li><strong>Nature:</strong> Daily visits to Chichen Itza, Ek Balam, cenotes, parks, towns and beaches.</li>
                     <li><strong>Gastronomy:</strong> Breakfast and typical meals at the Municipal Market or in its different restaurants in the main square.</li>

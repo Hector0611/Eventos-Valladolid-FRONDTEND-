@@ -3,6 +3,7 @@ import "./AgenciasTours.css";
 
 import MexiGo from "./Imagenes/agencias/MexiGo.png";
 import PremierAdventures from "./Imagenes/agencias/LogoPremierAdventures.png";
+import ViajesJosmar from "./Imagenes/agencias/ViajesJosmar.jpg";
 
 /* Datos de agencias */
 const agenciasData = [
@@ -34,20 +35,20 @@ const agenciasData = [
     latitud: 20.69086657097511,
     longitud: -88.20179264426147,
   },
-  /* {
+  {
     id: 3,
-    nombre: "Viajes Valladolid",
-    tipo: "Travel Agency",
+    nombre: "Viajes Josmar Valladolid",
+    tipo: "Travel Agency and Tour Operator",
     descripcion:
-      "We purchase our services from wholesale agencies with whom we have agreements, allowing us to offer you the best prices on the market. We have tour packages to the main destinations in Mexico and abroad.",
-    telefono: "+529994819215",
-    email: "ventas@premieradventures.com.mx",
-    web: "https://premieradventures.com.mx",
-    ubicacion: "Centro (Calle 39 #30), Calzada y Tren Maya. Valladolid, Yucatán",
-    imagen: PremierAdventures,
-    latitud: 20.69086657097511,
-    longitud: -88.20179264426147,
-  }, */
+      "Tours from Valladolid, trips outside Valladolid, tourist transport, all-inclusive packages, national and international.We offer international and domestic services, including transportation, flights, etc.",
+    telefono: "+529841271748",
+    email: "viajes_josmar@hotmail.com",
+    web: "www.viajesjosmar.com.mx",
+    ubicacion: "Calle 37 Entre 44 y 46, Valladolid, Mexico, 97780",
+    imagen: ViajesJosmar,
+    latitud: 20.691947427764134,
+    longitud: -88.20473590795075,
+  },
 ];
 
 const AgenciasTours = () => {

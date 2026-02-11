@@ -34,6 +34,7 @@ import Turismo26 from './componentes/Turismo26';
 import Destino from './componentes/Destino';
 import AgenciasTours from './componentes/AgenciasTours';
 import WalkingTours from './componentes/WalkingTours';
+import TaxiAndToursValladolid from './componentes/TaxiAndToursValladolid';
 
 /* Pages */
 import Home from "./pages/Home";
@@ -129,6 +130,7 @@ const App = () => {
                   
                     <Header />
                     <LanguageSwitcher />
+                    {/* <TaxiAndToursValladolid/> */}
                     <Transporte />
                     
                     {/* Footer global */}

@@ -223,6 +223,9 @@
   .hero-text h1 {
     font-size: 2.2rem;
   }
+  .agencias-grid {
+    grid-template-columns: 1fr;
+  }
 
   .agencias-container {
     padding: 50px 15px;

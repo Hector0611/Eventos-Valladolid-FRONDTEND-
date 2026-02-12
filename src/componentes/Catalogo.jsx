@@ -45,6 +45,9 @@ import TourParanormal from './Imagenes/ImgTempo/TourParanormal.jpeg';
 /* Murem */
 import Murem from './Imagenes/ImgTempo/Murem.jpeg';
 
+/* SanValetin */
+import SanValentin from './Imagenes/ImgTempo/Salsa.jpeg';
+
 /* TranportePrecio */
 import TransportePrecio from './Imagenes/ImgTempo/TranportePrecio.png';
 import { t } from 'i18next';
@@ -99,6 +102,38 @@ const Catalogo = () => {
     <div className="catalogo-container container py-5">
 
       
+      {/* 🖼️ / 🗺️ SLIDER */}
+            <div className="media-slider1">
+              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
+                {/* IMAGEN */}
+                <div className="media-panel image-panel1">
+                  <img
+                  className='ImgX'
+                    src={SanValentin}
+                    alt='SanValentin'
+                  />
+                </div>
+
+                {/* MAPA */}
+                <div className="media-panel map-panel1">
+                  <iframe
+                      title="SanValentin Ubicación1"
+                      src="https://www.google.com/maps?q=20.69023238257896, -88.20169384381701&hl=en&z=15&output=embed"
+                      allowFullScreen=""
+                      loading="lazy"
+                    ></iframe>
+                </div>
+              </div>
+            </div>
+
+            {/* BOTÓN */}
+            
+              <button
+                className="view-map-btn"
+                onClick={() => setShowMap(!showMap)}
+              >
+                {showMap ? "View image" : "View map"}
+              </button>
 
 
       <hr />
@@ -124,6 +159,9 @@ const Catalogo = () => {
       </div>
 
       <hr />
+
+      
+
 
       {/* MODAL */}
       {imagenSeleccionada && (
@@ -182,6 +220,7 @@ const Catalogo = () => {
         ))}
       </div>
 
+      
       <p className='textosanroque'>
                 <strong> SAN ROQUE REGIONAL MUSEUM </strong>
                  <br />

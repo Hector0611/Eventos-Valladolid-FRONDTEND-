@@ -94,12 +94,12 @@ const TaxiAndToursValladolid = () => {
     <div className="taxi-container">
         <div className="Separacion"></div>
       <h1 className="taxi-title">
-        🚕 Transporte Turístico en Valladolid
+        🚕 Tourist Transport in Valladolid
       </h1>
 
       <p className="taxi-description">
-        Desde estos puntos puedes tomar taxi o transporte colectivo para visitar
-        cenotes, zonas arqueológicas y destinos turísticos cercanos.
+        From these points you can take a taxi or public transport to visit
+        cenotes, archaeological sites and nearby tourist destinations.
       </p>
 
       {/* TARJETAS */}
@@ -118,7 +118,7 @@ const TaxiAndToursValladolid = () => {
             </span>
 
             <p>
-              <strong>📍 Ubicación:</strong> {sitio.ubicacion}
+              <strong>📍 Location:</strong> {sitio.ubicacion}
             </p>
 
             <p>
@@ -126,7 +126,7 @@ const TaxiAndToursValladolid = () => {
             </p>
 
             <div className="card-destinos">
-              <strong>🚐 Te puede llevar a:</strong>
+              <strong>🚐 It can lead you to:</strong>
               <ul>
                 {sitio.llevaA.map((destino, i) => (
                   <li key={i}>{destino}</li>
@@ -189,16 +189,16 @@ const TaxiAndToursValladolid = () => {
                         <div className="popup-body">
                             <p>
                             <span className="icon">📍</span>
-                            <strong>Ubicación:</strong> {sitio.ubicacion}
+                            <strong>Location:</strong> {sitio.ubicacion}
                             </p>
                             <p>
                             <span className="icon">🚐</span>
-                            <strong>Destinos:</strong> {sitio.llevaA.join(", ")}
+                            <strong>Destinations:</strong> {sitio.llevaA.join(", ")}
                             </p>
 
                             <p>
                             <span className="icon">💰</span>
-                            <strong>Costo:</strong>{" "}
+                            <strong>Cost:</strong>{" "}
                             {sitio.costos || "Consultar precio"}
                             </p>
 
@@ -208,7 +208,7 @@ const TaxiAndToursValladolid = () => {
                             rel="noopener noreferrer"
                             className="popup-map-link1"
                             >
-                            🧭 Cómo llegar
+                            🧭 How to get there
                             </a>
                         </div>
                         </Popup>

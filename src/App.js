@@ -130,8 +130,8 @@ const App = () => {
                   
                     <Header />
                     <LanguageSwitcher />
-                    {/* <TaxiAndToursValladolid/> */}
-                    <Transporte />
+                    {<TaxiAndToursValladolid/>}
+                    {/* <Transporte /> */}
                     
                     {/* Footer global */}
           <ProximoEvento />

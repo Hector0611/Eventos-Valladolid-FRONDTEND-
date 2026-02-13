@@ -151,7 +151,7 @@ const TaxiAndToursValladolid = () => {
       </div>
 
       {/* MAPA */}
-      <div className="map-wrapper">
+      <div className="map-wrapper notranslate" translate="no">
         <MapContainer
           center={[20.691413010759458, -88.2018443295267]}
           zoom={17}

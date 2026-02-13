@@ -61,12 +61,12 @@ const GoogleTranslate = () => {
   };
 
   const languages = {
-    en: "🇺🇸 English",
-    es: "🇪🇸 Español",
-    fr: "🇫🇷 Français",
-    de: "🇩🇪 Deutsch",
-    it: "🇮🇹 Italiano",
-    pt: "🇵🇹 Português",
+    en: "🇺🇸",
+    es: "🇪🇸",
+    fr: "🇫🇷",
+    de: "🇩🇪",
+    it: "🇮🇹",
+    pt: "🇵🇹",
   };
 
   return (

@@ -62,7 +62,7 @@ const GoogleTranslate = () => {
 
   const languages = {
     en: "🇺🇸",
-    es: "🇪🇸",
+    es: "🇲🇽",
     fr: "🇫🇷",
     de: "🇩🇪",
     it: "🇮🇹",

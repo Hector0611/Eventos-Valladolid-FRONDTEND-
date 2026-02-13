@@ -421,7 +421,8 @@ const experienciaIcon = new L.Icon({
             style={{ height: isMobile ? '400px' : '600px', width: '100%' }}
             closePopupOnClick={false}
             closeOnClick={false}
-
+            preferCanvas={true}
+            updateWhenIdle={true}
           >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 

@@ -157,6 +157,7 @@ const TaxiAndToursValladolid = () => {
           zoom={17}
           scrollWheelZoom={false}
           className="map"
+          preferCanvas={true} 
         >
           <TileLayer
             attribution="&copy; OpenStreetMap contributors"

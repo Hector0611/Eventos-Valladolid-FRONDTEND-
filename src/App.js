@@ -123,7 +123,7 @@ const App = () => {
                 } 
               />
               <Route 
-                path="/transporte" 
+                path="/transporte"
                 element={
                   <>
                     <Seo title="Transporte" description="Información sobre transporte en Valladolid" canonical="https://visitavalladolidmx.com/transporte"/>

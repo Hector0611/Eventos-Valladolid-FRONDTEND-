@@ -386,7 +386,6 @@ const experienciaIcon = new L.Icon({
            MAPA
         ------------------------------------------------ */}
         <div className="map-wrapper notranslate" translate="no">
-          <div className='sepa2'></div>
           
           <div className="map-filters">
             

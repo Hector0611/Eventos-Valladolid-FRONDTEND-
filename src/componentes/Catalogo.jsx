@@ -95,7 +95,7 @@ const Catalogo = () => {
     e.stopPropagation();
     const nuevo = (indice - 1 + galeriaActual.length) % galeriaActual.length;
     setIndice(nuevo);
-    setImagenSeleccionada(galeriaActual[nuevo]);
+    setImagenSeleccionada (galeriaActual[nuevo]);
   };
 
   return (

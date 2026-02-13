@@ -691,9 +691,7 @@ const taxisES = [
         <ul className="NumTaxiUl">{renderLista(taxisEN)}</ul>
       </div>
     </div>
-     <div>
-
-      </div>
+     <div>   </div>
     </div>
   );
 }

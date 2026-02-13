@@ -182,6 +182,11 @@
 /* 🌟 Ajustes para tablets y móviles (768px) */
 @media (max-width: 768px) {
 
+  .evento-item{
+    width: 100%;
+    height: 420px;
+  }
+
   /* Imagen más compacta y proporcional */
    .imagen-fondo {
     height: 100px;          /* altura más compacta */
@@ -191,7 +196,7 @@
   }
 
   .transparent {
-    min-width: 160px;       /* ancho más ajustado para ver todo el cuadro */
+    height: 200px;       /* ancho más ajustado para ver todo el cuadro */
   }
 
   /* Contenedor más compacto */

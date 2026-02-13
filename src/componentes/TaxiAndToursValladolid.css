@@ -30,9 +30,10 @@
    MAPA
 ========================= */
 .map-wrapper {
-  margin: 2.5rem 0;
+  margin: 1.5rem 0;
   border-radius: 20px;
   overflow: hidden;
+  zoom: 1;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
@@ -219,6 +220,15 @@
    RESPONSIVE
 ========================= */
 @media (max-width: 600px) {
+
+  .map-wrapper {
+    margin: 1rem 0;
+    border-radius: 20px;
+    overflow: hidden;
+    zoom: 1;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  }
+
   .taxi-title {
     font-size: 2rem;
   }

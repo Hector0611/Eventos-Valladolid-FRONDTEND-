@@ -674,11 +674,10 @@ li br {
 
 .map-filters {
   display: flex;
-
   padding: 10px;
   background: white;
   border-radius: 10px;
-  margin-bottom: 8px;
+  margin-bottom: 0px;
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 20px;

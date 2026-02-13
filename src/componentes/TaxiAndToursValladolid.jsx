@@ -56,7 +56,7 @@ const sitiosTaxi = [
         ubicacion: "Calle 44 x 41 y 39",
         coordenadas: [20.689544112339142, -88.20030350336401],
         color: "orange",
-        llevaA: ["Zona Arqueologica de Coba", "Suytun", "Cenote X'un ha", "Cenote Chunkum"],
+        llevaA: ["Zona Arqueologica de Coba", "Suytun", "Cenote X'un ha", "Cenote Chunkum","Tulum"],
         costos: "",
 
   },

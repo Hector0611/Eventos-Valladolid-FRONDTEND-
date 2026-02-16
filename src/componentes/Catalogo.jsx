@@ -101,22 +101,6 @@ const Catalogo = () => {
   return (
     <div className="catalogo-container container py-5">
 
-      
-      {/* 🖼️ / 🗺️ SLIDER */}
-           
-
-            {/* BOTÓN */}
-            
-              <button
-                className="view-map-btn"
-                onClick={() => setShowMap(!showMap)}
-              >
-                {showMap ? "View image" : "View map"}
-              </button>
-
-
-      <hr />
-
       {/* CARNAVAL */}
       <h3 className="text-center mb-4 display-5 fw-bold">Carnaval 2026</h3>
 

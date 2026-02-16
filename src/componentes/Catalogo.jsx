@@ -103,28 +103,7 @@ const Catalogo = () => {
 
       
       {/* 🖼️ / 🗺️ SLIDER */}
-            <div className="media-slider1">
-              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
-                {/* IMAGEN */}
-                <div className="media-panel image-panel1">
-                  <img
-                  className='ImgX'
-                    src={SanValentin}
-                    alt='SanValentin'
-                  />
-                </div>
-
-                {/* MAPA */}
-                <div className="media-panel map-panel1">
-                  <iframe
-                      title="SanValentin Ubicación1"
-                      src="https://www.google.com/maps?q=20.69023238257896, -88.20169384381701&hl=en&z=15&output=embed"
-                      allowFullScreen=""
-                      loading="lazy"
-                    ></iframe>
-                </div>
-              </div>
-            </div>
+           
 
             {/* BOTÓN */}
             

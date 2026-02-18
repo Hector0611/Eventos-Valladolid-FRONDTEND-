@@ -172,6 +172,15 @@ const ProgramarEvents = () => {
   }
 };
 
+const eventosPorDia = eventosSeleccionados
+  .sort((a, b) => a.dia_id - b.dia_id) // opcional: ordena por día
+  .reduce((acc, evento) => {
+    const key = `${evento.mes_id}-${evento.dia_id}`;
+    if (!acc[key]) acc[key] = [];
+    acc[key].push(evento);
+    return acc;
+  }, {});
+
 
   // ===========================
   // 🧩 Render principal
@@ -278,6 +287,8 @@ const ProgramarEvents = () => {
                               ) : (
                                 <div className="empty-day"></div>
                               )}  
+
+                              
                             </td>
                           );
                         })}
@@ -301,89 +312,70 @@ const ProgramarEvents = () => {
                 <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
                 </svg>
             </button>
-
-            {eventosSeleccionados.length === 0 ? (
-              <div className="no-events">
-            
-                <p className="titulo1"></p>
-              </div>
-
-
-            ) : (
-              eventosSeleccionados.map((evento) => (
-                <div key={evento.id} className="evento-if">
-                  <div className="caj">
-                    <br />
-                    <h1 className="fecha">{monthsData[selectedMonth]?.nombre || months[selectedMonth]} {evento.dia_id}, 2025</h1>
-                    <div className='cajaMensaje'>
-                      
-                      <h2 className="titel66">Events: {evento.titulo}</h2>
-                      <p className="TextoMens">{evento.mensaje}</p>
-                    
-                    <hr />
-                    <h3 className="horacolor">
-                      Event Date: {evento.dia_id}/{evento.mes_id}/2025 From {evento.hora_inicial} to {evento.hora_final}
-                    </h3>
-                    </div>
-                    <br />
-                    {evento.video && (
-                        <p className="evento-enlace">
-                          🌐 Website:{' '}
-                          <a
-                            href={evento.video}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="enlace-web"
-                          >
-                            Visit page
-                          </a>
-                        </p>
-                      )}
-                    <center>
-
-                    {/* quiero hacer que dias muestre las imagenes que tiene para correspondeer al mensaje evento */}
-
-                       <iframe
-                    title="Ubicación del evento"
-                    width="100%"
-                    height="420"
-                    style={{ border: 0, borderRadius: "12px" }}
-                    loading="lazy"
-                    allowFullScreen
-                    src={`https://www.google.com/maps?q=${evento.latitud},${evento.longitud}&hl=en&z=16&output=embed`}
-                  ></iframe>
-
-                  <hr />
-                      {/* <button
-                        className="boton-ver-eventos"
-                        onClick={() =>
-                          window.open(
-                            `https://www.google.com/maps/dir/?api=1&destination=${evento.latitud},${evento.longitud}`,
-                            "_blank"
-                          )
-                        }
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="currentColor123" viewBox="0 0 16 16">
-                          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
-                        </svg>
-                        Location
-                      </button> */}
-
-                      
-
-                    </center>
-                    <div
-                      className="texto-pre61"
-                      dangerouslySetInnerHTML={{ __html: evento.descripcion }}
-                    ></div>
-                    
-                  </div>
+<br />
+            {Object.keys(eventosPorDia).length === 0 ? (
+                <div className="no-events">
+                  <p className="titulo1"></p>
                 </div>
-              )
-            
-            )
-            )
-            }
+              ) : (
+                Object.entries(eventosPorDia).map(([key, eventos]) => (
+                  <div key={key} className="eventos-por-dia">
+
+                    {/* 🔹 TÍTULO DEL DÍA */}
+                    <hr />
+                    <div className="eventos-container">
+                      <h1 className="fecha">
+                        {monthsData[selectedMonth]?.nombre || months[eventos[0].mes_id]}{" "}
+                        {eventos[0].dia_id}, 2026
+                      </h1>
+                    </div>
+
+                    {/* 🔹 EVENTOS DE ESE DÍA */}
+                    {eventos.map((evento) => (
+                      <div key={evento.id} className="evento-if">
+                        <div className="caj">
+
+                          {evento.video && (
+                            <img
+                              src={evento.video}
+                              alt="Evento"
+                              className="responsive-img"
+                              loading="lazy"
+                            />
+                          )}
+
+                          <div className="cajaMensaje">
+                            <h2 className="titel66">Events: {evento.titulo}</h2>
+                            <p className="TextoMens">{evento.mensaje}</p>
+                            <hr />
+                            <h3 className="horacolor">
+                              Event Date: {evento.dia_id}/{evento.mes_id}/2026 From{" "}
+                              {evento.hora_inicial} to {evento.hora_final}
+                            </h3>
+                          </div>
+
+                          <br />
+
+                          <iframe
+                            title="Ubicación del evento"
+                            width="100%"
+                            height="420"
+                            style={{ border: 0, borderRadius: "12px" }}
+                            loading="lazy"
+                            allowFullScreen
+                            src={`https://www.google.com/maps?q=${evento.latitud},${evento.longitud}&hl=en&z=16&output=embed`}
+                          ></iframe>
+
+                          <div
+                            className="texto-pre61"
+                            dangerouslySetInnerHTML={{ __html: evento.descripcion }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ))
+              )}
             
              {/* Aqui eventos diarios que se repiten en todos los eventos */}
             

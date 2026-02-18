@@ -121,15 +121,24 @@
 .contact-buttons a {
   display: inline-block;
   text-decoration: none;
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 8px 12px;
   border-radius: 5px;
   margin-bottom: 6px;
   font-size: 14px;
 }
 
+.contact-buttons a:hover {
+  opacity: 0.9;
+
+}
+
 .btn-call-small {
   background: #0072b1;
+}
+
+.btn-call{
+  color: #000;
 }
 
 .btn-whatsapp-small {
@@ -174,7 +183,7 @@
 /* ASIDE */
 .map-placeholder  {
   background: #f1f1f1;
-  color: #888;
+  color: #000000;
   height: 350px;
   display: flex;
   align-items: center;

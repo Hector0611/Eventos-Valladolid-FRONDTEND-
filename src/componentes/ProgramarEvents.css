@@ -628,9 +628,6 @@
   box-shadow: 0 34px 28px rgba(255, 0, 0, 0.852);
 }
 
-
-
-
 /* ====== Botón con spinner ====== */
 .fecha-boton {
   background: linear-gradient(135deg, #007bff, #00b4d8);
@@ -924,6 +921,21 @@
   font-size: 1.8rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* tamaño del web IMG */
+.responsive-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;  /* o cover */
+  border-radius: 12px;
+  transition: 1s ease;
+
+}
+
+.responsive-img:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 

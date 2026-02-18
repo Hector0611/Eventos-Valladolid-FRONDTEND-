@@ -34,6 +34,7 @@ export default function Policia() {
 
   return (
     <div className="policia-page">
+      <br />
         <div className='Separacion'> 
         
                       </div>
@@ -161,13 +162,6 @@ export default function Policia() {
         </section>
       </main>
 
-      <footer className="policia-footer">
-        <p>© {new Date().getFullYear()} Municipal Police — Valladolid</p>
-        <p>
-          {/* 📧 <a href="mailto:info@policia.valladolid.mx">---@-----.valladolid.mx</a> |{" "} */}
-          <a href="#">Privacy Policy</a>
-        </p>
-      </footer>
     </div>
   );
 }

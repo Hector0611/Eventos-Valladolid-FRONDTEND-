@@ -122,10 +122,7 @@ const Catalogo = () => {
       </div>
 
       <hr />
-
       
-
-
       {/* MODAL */}
       {imagenSeleccionada && (
         <div className="modal11" onClick={cerrarImagen}>

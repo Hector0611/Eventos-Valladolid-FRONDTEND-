@@ -386,4 +386,11 @@ a:hover .titel1 {
   .pdf-cover {
     padding: 10px;
   }
+
+  /* Mapa */
+  .mapa-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
 }

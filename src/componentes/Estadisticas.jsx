@@ -17,6 +17,10 @@ import Ruta11 from './Imagenes/Rutas/RUTAS-11.webp';
 import Ruta12 from './Imagenes/Rutas/RUTAS-12_1.webp';
 import Ruta13 from './Imagenes/Rutas/RUTAS-13_1.webp';
 
+/* Mapa */
+import Mapa from './Imagenes/Rutas/VISTA01.png';
+import Mapa2 from './Imagenes/Rutas/VISTA02.png'; 
+
 const rutasData = [
   { id: 1, img: Ruta1, titulo: "Ruta 1" },
   { id: 2, img: Ruta2, titulo: "Ruta 2" },
@@ -32,6 +36,19 @@ const rutasData = [
   { id: 12, img: Ruta12, titulo: "Ruta 12" },
   { id: 13, img: Ruta13, titulo: "Ruta 13" }
 ];
+
+const descargarMapas = () => {
+  const urls = [Mapa, Mapa2];
+
+  urls.forEach((url, index) => {
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `mapa-${index + 1}.png`; // cambia extensión si es png
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+};
 
 /* Siguiente y anterior  para la imagen */
 const siguienteRuta = (ruta) => {
@@ -63,11 +80,25 @@ const Estadisticas = () => {
     <div>
       <div className="Separacion"></div>
 
+      {/* Mapa Seccion */}
+      <br />
+      <h4 className="rutas-title">🗺️ Mapa De Valladolid</h4>
+      <div className="mapa-section">
+        <img src={Mapa} alt="Mapa 1" className="mapa-img" />
+        <img src={Mapa2} alt="Mapa 2" className="mapa-img" />
+      </div>
+      {/* Para descargar los dos mapas*/}
+      <div className="mapa-download">
+        <button onClick={descargarMapas}>
+          Descargar mapas
+        </button>
+      </div>
+
       {/* =====================
           SECCIÓN RUTAS
       ===================== */}
       <div className="rutas-section">
-        <h1 className="rutas-title">🗺️ Rutas de Valladolid</h1>
+        <h4 className="rutas-title">🗺️ Rutas de Valladolid</h4>
 
         <div className="rutas-grid">
           {rutasData.map((ruta) => (

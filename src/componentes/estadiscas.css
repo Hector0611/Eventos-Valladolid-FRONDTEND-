@@ -301,6 +301,45 @@ a:hover .titel1 {
   transform: translateY(-50%) scale(1.1);
 }
 
+/* Mapa */
+.mapa-section {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+.mapa-img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mapa-img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 35px 60px rgba(15, 23, 42, 0.25);
+}
+
+/* Boton */
+.mapa-download {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.mapa-download button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.mapa-download button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
 /* ==============================
    RESPONSIVE
 ============================== */

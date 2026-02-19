@@ -334,14 +334,16 @@
 
 .fecha-texto1 {
   font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 15px;
+  font-weight: 700;
+  margin-bottom: 20px;
   color: #0a0a0a;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font: bold;
-  
+  padding: 5px 20px;
+  /* sombra de letras */
 
 }
+
 
 .fecha-inputs {
   display: flex;

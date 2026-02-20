@@ -20,6 +20,8 @@ import SanRoque2 from './Imagenes/MuseoSanRoque/2.jpeg';
 import SanRoque3 from './Imagenes/MuseoSanRoque/3.jpeg';
 import SanRoque4 from './Imagenes/MuseoSanRoque/4.jpeg';
 
+/* Murem */
+import MuremPortada from './Imagenes/ImgTempo/Murem.jpeg';
 
 import { t } from 'i18next';
 
@@ -124,6 +126,39 @@ const Catalogo = () => {
                   <iframe
                       title="Xoul Ubicación1"
                       src="https://www.google.com/maps?q=20.678446329789576, -88.19658280868688&hl=en&z=15&output=embed"
+                      allowFullScreen=""
+                      loading="lazy"
+                    ></iframe>
+                </div>
+              </div>
+            </div>
+
+            {/* BOTÓN */}
+            
+              <button
+                className="view-map-btn"
+                onClick={() => setShowMap(!showMap)}
+              >
+                {showMap ? "View image" : "View map"}
+              </button>
+
+              {/* Murem */}
+              <div className="media-slider1">
+              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
+                {/* IMAGEN */}
+                <div className="media-panel image-panel1">
+                  <img
+                  className='ImgX'
+                    src={MuremPortada}
+                    alt='Murem'
+                  />
+                </div>
+
+                {/* MAPA */}
+                <div className="media-panel map-panel1">
+                  <iframe
+                      title="Murem Ubicación1"
+                      src="https://www.google.com/maps?q=20.683634095566273, -88.201029308891&hl=en&z=15&output=embed"
                       allowFullScreen=""
                       loading="lazy"
                     ></iframe>

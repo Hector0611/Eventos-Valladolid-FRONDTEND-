@@ -3,9 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Catalogo.css';
 
 
-
-
-
 /* Xcopek */
 import xcopek from './Imagenes/ImgTempo/Xcopek.jpg';
 

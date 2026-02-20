@@ -109,43 +109,6 @@ const Catalogo = () => {
       <hr />
               
 
-
-
-{/* Tour Paranormal */}
-              {/* 🖼️ / 🗺️ SLIDER */}
-            <div className="media-slider1">
-              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
-                {/* IMAGEN */}
-                <div className="media-panel image-panel1">
-                  <img
-                  className='ImgX'
-                    src={TourParanormal}
-                    alt='TourParanormal'
-                  />
-                </div>
-
-                {/* MAPA */}
-                <div className="media-panel map-panel1">
-                  <iframe
-                      title="TourParanormal Ubicación"
-                      src="https://www.google.com/maps?q=20.69691242106862, -88.21169642328422&hl=en&z=15&output=embed"
-                      allowFullScreen=""
-                      loading="lazy"
-                    ></iframe>
-                </div>
-              </div>
-            </div>
-
-            {/* BOTÓN */}
-            
-              <button
-                className="view-map-btn"
-                onClick={() => setShowMap(!showMap)}
-              >
-                {showMap ? "View image" : "View map"}
-              </button>
-
-
 {/* Xoul */}
 
 <div className="media-slider1">

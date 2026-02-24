@@ -134,6 +134,7 @@ body {
   align-items: center;
   gap: 8px;
   margin-left: auto;
+  
 }
 
 /* =====================
@@ -182,15 +183,15 @@ body {
 /* HOME */
 .botton1 {
   border-radius: 10%;
-  background-image: url('./Imagenes/Colores4.jpg');
-  font-size: 1.9em;
+  font-size: 1em;
   padding: 5px 15px;
   background-clip: text;
   -webkit-background-clip: text;
-  color: transparent;
+  color: rgb(0, 0, 0);
   animation: animate 20s linear infinite;
   margin-top: -5px;
   transition: transform 0.3s ease;
+  border: none;
 }
 
 .botton1:hover {
@@ -207,17 +208,19 @@ body {
   top: 7%;
 }
 
-.popup-overlay1 {
+.popup-overlay11 {
   position: absolute;
   top: 100%;
   left: -490%;
   width: 450px;
   border-radius: 14px;
   z-index: 2000;
-  background: rgba(15, 15, 15, 0.95);
+
   backdrop-filter: blur(10px);
   box-shadow: 0 15px 45px rgba(0,0,0,0.4);
   animation: fadeIn 0.3s ease-in-out;
+
+ 
 }
 
 @keyframes fadeIn {
@@ -236,6 +239,23 @@ body {
   font-size: 1.5rem;
   font-weight: 800;
   padding: 16px;
+ 
+  border-radius: 20px;
+
+  background: linear-gradient(-45deg, 
+    #00f2fe, 
+    #4facfe, 
+    #43e97b, 
+    #38f9d7
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 8s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* TÍTULO */
@@ -419,16 +439,20 @@ body {
     position: static;
   }
 
-  .popup-overlay1 {
+  .popup-overlay11 {
     position: fixed;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 0);
     width: 95%;
     max-width: 580px;
     padding: 15px;
     border-radius: 20px 20px 0 0;
-    animation: slideUp 0.3s ease;
+
+    /* Refuerza el comportamiento de la imagen */
+    background-size: cover;
+    background-position: center;
+  
   }
 
   .popup-content {

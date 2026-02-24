@@ -18,7 +18,7 @@ import Header2 from './componentes/Header2';
 import ProximoEvento from './componentes/ProximoEvento';
 import ProgramarEvents from './componentes/ProgramarEvents';
 import EventoDiario from './componentes/EventoDiario';
-import Headercopia from './componentes/Headercopia';
+
 import ScrollToTop from './componentes/ScrollToTop';
 import PrincipalRecarga from './componentes/PrincipalRecarga';
 import Conventos from './componentes/Conventos';

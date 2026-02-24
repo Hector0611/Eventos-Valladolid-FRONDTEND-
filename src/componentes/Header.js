@@ -99,7 +99,7 @@ const Header = () => {
       <button className="botton2">MORE</button>
 
       {showPopup && (
-        <div className="popup-overlay1">
+        <div className="popup-overlay11">
           <div className="popup-content">
          < hr />
             <h2 className="h2more">{t("header.moreInfo")}</h2>

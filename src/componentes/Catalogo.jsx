@@ -22,6 +22,7 @@ import SanRoque4 from './Imagenes/MuseoSanRoque/4.jpeg';
 
 /* Murem */
 import MuremPortada from './Imagenes/ImgTempo/Murem.jpeg';
+import Murem2 from './Imagenes/ImgTempo/Murem2.jpeg';
 
 import { t } from 'i18next';
 
@@ -118,6 +119,9 @@ const Catalogo = () => {
                     src={MuremPortada}
                     alt='Murem'
                   />
+                  <br />
+
+                  <img className='Imgx' src={Murem2} alt="Murem2" />
                 </div>
 
                 {/* MAPA */}

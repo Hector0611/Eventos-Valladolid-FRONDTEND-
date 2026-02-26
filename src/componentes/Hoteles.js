@@ -13,12 +13,32 @@ import hotel from './Imagenes/maps/Hospedaje.png';
 /* restaurante */
 import restauranteIconUrl from './Imagenes/maps/Restaurantes.png';
 import expericias from './Imagenes/maps/Experiencias.png';
+import DOMPurify from "dompurify";
 
 
 // ====================== ICONOS ============================
 const hotelIcon = new L.Icon({ iconUrl: hotel, iconSize: [35, 45], iconAnchor: [20, 40] });
 const sitioIcon = new L.Icon({ iconUrl: logo5, iconSize: [35, 45], iconAnchor: [20, 40] });
 const cenoteIcon = new L.Icon({ iconUrl: logoCenote, iconSize: [35, 45], iconAnchor: [20, 40] });
+
+const oficinaIcon = new L.Icon({
+  iconUrl: oficina,
+  iconSize: [35, 45],
+  iconAnchor: [20, 40],
+  popupAnchor: [0, -40]
+});
+
+const restauranteIcon = new L.Icon({
+  iconUrl: restauranteIconUrl,
+  iconSize: [35, 45],
+  iconAnchor: [20, 40]
+});
+
+const experienciaIcon = new L.Icon({
+  iconUrl: expericias,
+  iconSize: [50, 45],
+  iconAnchor: [20, 40]
+});
 
 
 // ====================== FLY TO ============================
@@ -58,26 +78,6 @@ const Hoteles = () => {
 
 
 
-const oficinaIcon = new L.Icon({
-  iconUrl: oficina,
-  iconSize: [35, 45],
-  iconAnchor: [20, 40],
-  popupAnchor: [0, -40]
-});
-
-const restauranteIcon = new L.Icon({
-  iconUrl: restauranteIconUrl,
-  iconSize: [35, 45],
-  iconAnchor: [20, 40]
-});
-
-const experienciaIcon = new L.Icon({
-  iconUrl: expericias,
-  iconSize: [50, 45],
-  iconAnchor: [20, 40]
-});
-
-
 
 
   // -------- Oficina de turismo (dato local) --------
@@ -106,14 +106,24 @@ const experienciaIcon = new L.Icon({
 
   // ---------------- Obtener APIs ----------------
   useEffect(() => {
-    axios.get('https://eventos-valladolid-backendt.onrender.com/api/hoteles').then(res => setHoteles(res.data));
-    axios.get('https://eventos-valladolid-backendt.onrender.com/api/sitios').then(res => setSitios(res.data));
-    axios.get('https://eventos-valladolid-backendt.onrender.com/api/cenote_mapa').then(res => setCenotes(res.data));
-    axios.get('https://eventos-valladolid-backendt.onrender.com/api/hotsyrest_info').then(res => setHotsyrestInfo(res.data));
-    axios.get('https://eventos-valladolid-backendt.onrender.com/api/restaurante').then(res => setRestaurantes(res.data));
-    axios.get('https://eventos-valladolid-backendt.onrender.com/api/servicios').then(res => setServicios(res.data));
-
-  }, []);
+  Promise.all([
+    axios.get('https://eventos-valladolid-backendt.onrender.com/api/hoteles'),
+    axios.get('https://eventos-valladolid-backendt.onrender.com/api/sitios'),
+    axios.get('https://eventos-valladolid-backendt.onrender.com/api/cenote_mapa'),
+    axios.get('https://eventos-valladolid-backendt.onrender.com/api/hotsyrest_info'),
+    axios.get('https://eventos-valladolid-backendt.onrender.com/api/restaurante'),
+    axios.get('https://eventos-valladolid-backendt.onrender.com/api/servicios'),
+  ])
+  .then(([h, s, c, info, r, serv]) => {
+    setHoteles(h.data);
+    setSitios(s.data);
+    setCenotes(c.data);
+    setHotsyrestInfo(info.data);
+    setRestaurantes(r.data);
+    setServicios(serv.data);
+  })
+  .catch(err => console.error("Error cargando datos del mapa:", err));
+}, []);
 
 
   // ---------------- Estrellas ----------------
@@ -192,7 +202,7 @@ const experienciaIcon = new L.Icon({
 
     {item.telefono && (
       <p>
-        <a href={`tel:+52${item.telefono}`}>
+        <a href={`tel:${item.telefono.replace(/\s+/g, '')}`}>
           {item.telefono}
         </a>
       </p>
@@ -258,7 +268,7 @@ const experienciaIcon = new L.Icon({
                     key={idx} 
                     onClick={() => {
                       setSelectedItem(item);
-                      setActiveTooltip(item.data.id);
+                      /* setActiveTooltip(item.data.id); */
                     }}
                   >
 
@@ -468,7 +478,7 @@ const experienciaIcon = new L.Icon({
                   eventHandlers={{
                     click: () => {
                       setSelectedItem({ type: "Sitio", data: s });
-                      setActiveTooltip(s.id);
+                      /* setActiveTooltip(s.id); */
                     }
                   }}
                 >
@@ -499,7 +509,7 @@ const experienciaIcon = new L.Icon({
                 eventHandlers={{ 
                   click: () => {
                     setSelectedItem({ type: "Cenote", data: c });
-                    setActiveTooltip(c.id);
+                    /* setActiveTooltip(c.id); */
                   }
                 }}
               >
@@ -524,7 +534,7 @@ const experienciaIcon = new L.Icon({
                   eventHandlers={{
                     click: () => {
                       setSelectedItem({ type: "Restaurante", data: r });
-                      setActiveTooltip(r.id);
+                      /* setActiveTooltip(r.id); */
                     }
                   }}
                 >
@@ -548,7 +558,7 @@ const experienciaIcon = new L.Icon({
                   eventHandlers={{
                     click: () => {
                       setSelectedItem({ type: "Servicio", data: s });
-                      setActiveTooltip(s.id);
+                      /* setActiveTooltip(s.id); */
                     }
                   }}
                 >
@@ -572,7 +582,7 @@ const experienciaIcon = new L.Icon({
               eventHandlers={{
                 click: () => {
                   setSelectedItem({ type: "Oficina", data: oficinaTurismo });
-                  setActiveTooltip(oficinaTurismo.id);
+                  /* setActiveTooltip(oficinaTurismo.id); */
                 }
               }}
             >
@@ -632,12 +642,9 @@ const experienciaIcon = new L.Icon({
 
       <br></br>
 
-      <p className="texto-pres1" dangerouslySetInnerHTML={{ __html: selectedHotel.descripcion }}></p>
+      <p className='texto-pres1' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(selectedHotel.descripcion) }} />
 
       <p className="texto-pres1"> {selectedHotel.localizacion}</p>
-
-
-    
 
 {(selectedHotel.info_imagen || selectedHotel.img_resyhts) && (
   <img
@@ -725,7 +732,7 @@ const experienciaIcon = new L.Icon({
 
       {selectedHotel.info_video && selectedHotel.info_video !== "" && (
         <video controls width="100%">
-          <source src={`http://localhost:3001${selectedHotel.info_video}`} type="video/mp4" />
+         <source src={`https://eventos-valladolid-backendt.onrender.com${selectedHotel.info_video}`} />
         </video>
       )}
 

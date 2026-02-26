@@ -182,6 +182,7 @@ const eventosPorDia = eventosSeleccionados
   }, {});
 
 
+
   // ===========================
   // 🧩 Render principal
   // ===========================
@@ -208,7 +209,7 @@ const eventosPorDia = eventosSeleccionados
             <div className="fecha-inputs"> 
               <input type="date" value={fechaInicio} onChange={(e) => setFechaInicio(e.target.value)} />
               <span className="fecha-separador"> to </span>
-              <input
+              <input 
                 type="date"
                 value={fechaFin}
                 onChange={(e) => setFechaFin(e.target.value)}

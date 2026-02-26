@@ -1,28 +1,33 @@
-.programar-events {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-size: cover; /* Ajusta la imagen para que cubra todo el área */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    padding: 0px 100px;
+:root {
+  --radius-sm: 10px;
+  --radius-md: 15px;
+  --radius-lg: 25px;
+  --shadow-sm: 0 4px 8px rgba(0,0,0,0.2);
+  --shadow-md: 0 8px 16px rgba(0,0,0,0.25);
+  --glass: rgba(255,255,255,0.08);
 }
 
-.calendario1{
-    margin: 0px;
-    background-color: transparent;
-    text-align: center;
-    border-radius: 0px;
-    padding: 10px;
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: #ffffff;
-    text-shadow: 2px 3px 0px #000000;
-    letter-spacing: 2px;
-    background-color: #EF426F;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 25px;
+.programar-events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: center / cover no-repeat;
+  padding: clamp(10px, 1.5vw, 100px);
 }
+
+.calendario1 {
+  text-align: center;
+  padding: 10px;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 2px 3px 0px #000;
+  letter-spacing: 2px;
+  background-color: #EF426F;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
 .dias{
     text-shadow: 1px 2px 0px #000000;
     font-weight: 900;
@@ -49,9 +54,6 @@
 .contenedor1 {
     display: flex;
   }
-
-  
-
   .currentColor123{
     color: #ff0000;
   
@@ -67,10 +69,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
   }
-
-
-
-
 
 .titel2 {
   border-radius: 10%;
@@ -135,19 +133,12 @@
 }
 
 .modal-content {
-   background-image: url('./Imagenes/Fondo66.jpg'); /* Reemplaza con la URL o ruta de tu imagen */
-    background-color: rgba(252, 0, 0, 0.414);
-    background-size: cover; /* Ajusta la imagen para que cubra todo el área */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-repeat: repeat-y;
-  background-size: 100% auto; /* Se ajusta al ancho, repitiéndose hacia abajo */
+  background: center / cover repeat-y url('./Imagenes/Fondo66.jpg');
   padding: 1rem;
-  max-height: 100%;
+  max-height: 100vh;
   overflow-y: auto;
   border-radius: 30px;
   width: 100%;
-  top: 1%;
   max-width: 1200px;
   position: relative;
 }
@@ -218,7 +209,7 @@
   bottom: 0;
   right: 0;
   width: 50%;   /* solo ocupa la mitad derecha */
-  height: 6 px;  /* grosor de la línea */
+  height: 6px;  /* grosor de la línea */
   background: #ffffff; /* el color de la línea */
   border-bottom-right-radius: 40%;
 }
@@ -249,10 +240,10 @@
   border-radius: 20%;
 }
 .video-container1 iframe {
-  width: 80%;
-  height: 500px;
+  width: min(100%, 900px);
+  aspect-ratio: 16 / 9;
   border-radius: 20px;
-  box-shadow: 0 4px 18px rgba(0, 252, 84, 0.949);
+  box-shadow: 0 4px 18px rgba(0, 252, 84, 0.35);
 }
 
 .texto-pre61 {
@@ -277,7 +268,6 @@
   font-weight: 600;
 }
 
-
 .texto-pre61 ul {
  position: relative;
     padding-left: 20px; /* Espacio para las viñetas */
@@ -293,8 +283,6 @@
     background-color: rgba(255, 255, 255, 0);
     border-radius: 15px;
     box-shadow: none;
-  
-    
   }
 
   .texto-pre61 a {
@@ -401,35 +389,18 @@
   font-weight: 900;
 }
 
-.eventoDiario {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 10px 15px;
-  margin: 15px auto;
-  max-width: 360px;
-  font-size: 0.85rem;
-  color: #ffffff;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+.eventoDiario,
+.eventoDiario1,
+.eventoDiario11,
+.hoteles-section1 {
+  background: var(--glass);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
   backdrop-filter: blur(6px);
   transition: transform 0.2s ease;
 }
 
-.eventoDiario1 {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 10px 15px;
-  margin: 15px auto;
-  max-width: 560px;
-  font-size: 1.5rem;
-  color: #000000;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-  backdrop-filter: blur(6px); 
-  transition: transform 0.2s ease;
-}
 
 .eventoDiario:hover {
   transform: translateY(-3px);
@@ -442,41 +413,23 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-.bottonEvents {
-  background: linear-gradient(135deg, #00c853, #009624);
-  background-image: url("/src/componentes/Imagenes/Boton_1.png");
+.bottonEvents,
+.bottonEvents1,
+.bottonEvents2,
+.bottonEvent,
+.bottonEvent1 {
   border: none;
-  color: white;
-  padding: 6px 12px;
   border-radius: 6px;
-  margin: 5px;
-  font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 
 .bottonEvents:hover {
   /* background: linear-gradient(135deg, #00e676, #00c853); */
   transform: scale(1.05);
 }
-/* boton 1 */
-.bottonEvents1 {
-  background-image: url("/src/componentes/Imagenes/Boton_1.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  border: none;
-  
-  /* ✅ Texto alineado a la izquierda */
-  text-align: right;
-  padding: 12px 15px 12px 45px; /* top, right, bottom, left */
-  
-  border-radius: 6px;
-  margin: 8px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  color: #000000; /* opcional: color del texto */
-}
+
 
 /* Efecto hover opcional */
 .bottonEvents1:hover {
@@ -484,26 +437,6 @@
   transform: scale(1.05);
   filter: brightness(1.1);
   box-shadow: 0 4px 15px rgba(239, 4, 227, 0.996);
-}
-
-/* boton2 */
-
-.bottonEvents2 {
-  
-  background-image: url("/src/componentes/Imagenes/Boton_2.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%; /* Se ajusta al ancho, repitiéndose hacia abajo */
-  border: none;
-
-  /* ✅ Texto alineado a la izquierda */
-  text-align: right;
-  padding: 12px 15px 12px 45px; /* top, right, bottom, left */
- 
-  border-radius: 6px;
-  margin: 8px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 
@@ -515,19 +448,6 @@
   background-color: #d50cf057;
 }
 
-.bottonEvent{ 
-
-  border: none;
-
-  /* ✅ Texto alineado a la izquierda */
-  
-  border-radius: 6px;
-  margin: 8px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
 
 .evento-container1 {
   display: flex;
@@ -535,34 +455,6 @@
   align-items: flex-start;
   gap: 2rem;
   flex-wrap: wrap; /* Para que en pantallas pequeñas se acomode debajo */
-}
-
-.eventoDiario11 {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 20px 25px;
-  max-width: 560px;
-  font-size: 1rem;
-  color: #000000;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-  backdrop-filter: blur(6px); 
-  transition: transform 0.2s ease;
-}
-
-.hoteles-section1 {
-   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 10px 15px;
-  max-width: 560px;
-  font-size: 1.5rem;
-  color: #000000;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-  backdrop-filter: blur(6px); 
-  transition: transform 0.2s ease;
 }
 
 .hoteles-section1 h3 {
@@ -751,18 +643,6 @@
 .hoteles-section11 h3 {
   color: #e67e22;
   margin-bottom: 1rem;
-}
-
-/* Botón de hoteles */
-.bottonEvent1 {
-  padding: 0.6rem 1.2rem;
-  background-color: #e67e22;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
 }
 
 .bottonEvent1:hover {
@@ -964,6 +844,19 @@
 
 /* =================== EVENTOS MOBILE =================== */
 @media (max-width: 1024px) {
+
+  * {
+    backdrop-filter: none !important;
+    filter: none !important;
+  }
+
+  .eventoDiario,
+  .eventoDiario1,
+  .hoteles-section1 {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+
+  
   .fecha{
   font-size: 2.5rem;
 }

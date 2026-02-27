@@ -109,6 +109,8 @@ const Catalogo = () => {
       <hr />
               
 
+              <h4 className="text-center mb-5 display-4 fw-bold">Scheduled Events</h4>
+
               {/* Murem */}
               <div className="media-slider1">
               <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
@@ -121,7 +123,7 @@ const Catalogo = () => {
                   />
                   <br />
 
-                  <img className='Imgx' src={Murem2} alt="Murem2" />
+                  {/* <img className='Imgx' src={Murem2} alt="Murem2" /> */}
                 </div>
 
                 {/* MAPA */}

@@ -714,73 +714,110 @@ li br {
 
 
 /* ===== RESPONSIVE ===== */
+/* ======================= MOBILE OPTIMIZADO ======================= */
 @media (max-width: 768px) {
-  p {
-    font-size: 1.15rem;
-  }
 
-  ul {
-    padding: 18px;
-  }
-
-  ul > li {
-    font-size: 0.95rem;
-  }
-  .map-filters {
-    justify-content: center;
-  }
-  .map-filters button {
-    padding: 5px 8px;
-    font-size: 0.7rem;
-  }
-  .map-filters button.active {
-    padding: 5px 10px;
-    font-size: 0.7rem;
-  }
-  .sepa2{
-    height: 5px;
-  }
-
-  .modal-clo1 {
-    right: 43%;
-  }
-
-
-}
-
-
-
-/* ====== RESPONSIVE ====== */
-@media (max-width: 1024px) {
+  /* Layout general */
   .hoteles-container {
     flex-direction: column;
+    overflow-x: hidden;
   }
 
+  /* Sidebar */
   .hotel-list {
     width: 100%;
-    max-height: 65vh;
+    max-height: 50vh;
+    overflow-y: auto;
     box-shadow: none;
+    border-right: none;
     border-bottom: 1px solid #ddd;
   }
 
-  .map-wrapper {
-    height: auto;
+  .scrollable-sidebar {
+    height: auto;              /* 🔥 quita altura fija */
+    max-height: 50vh;
   }
 
-  .hotel-info {
+  /* Mapa */
+  .map-wrapper {
     width: 100%;
-    height: auto;
-    bottom: auto;
-    top: auto;
-    transform: none;
-    border-left: none;
-    border-top: 1px solid #ddd;
+    height: 50vh;              /* 🔥 asegura espacio real al mapa */
+    min-height: 300px;
   }
-  
-  .search-suggestions{
-    width: 80%; /* ocupa casi todo el ancho en mobile */
+
+  .leaflet-container {
+    height: 100%;
+    min-height: 300px;
+  }
+
+  /* Filtros del mapa */
+  .map-filters {
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .map-filters button {
+    padding: 10px 12px;        /* 🔥 botones tocables */
+    font-size: 0.8rem;
+    border-radius: 18px;
+  }
+
+  /* Panel de info mobile */
+  .mobile-info-container {
+    position: sticky;
+    bottom: 0;
+    z-index: 999;
+    border-radius: 18px 18px 0 0;
+  }
+
+  /* Panel deslizable desktop (ocultarlo en mobile) */
+  .side-panel {
+    display: none !important;
+  }
+
+  /* Buscador */
+  .search-input1 {
+    width: 95%;
+    font-size: 1rem;
+    padding: 12px 16px;
+  }
+
+  .search-suggestions {
+    width: 92%;
     left: 50%;
     transform: translateX(-50%);
+    max-height: 40vh;
   }
-  
+
+  /* Modal */
+  .modal-cont1 {
+    padding: 14px;
+    max-height: 92vh;
+    border-radius: 14px;
+  }
+
+  .modal-clo1 {
+    right: 50%;
+    transform: translateX(50%);
+    top: 6px;
+  }
+
+  .texto-pres1 {
+    font-size: 0.95rem;
+    padding: 12px 14px;
+  }
+
+  /* Listas */
+  .grid-item {
+    padding: 14px 10px;
+    font-size: 0.95rem;
+  }
+
+  /* Tooltips del mapa */
+  .leaflet-tooltip {
+    font-size: 10px;
+    padding: 4px 6px;
+    border-radius: 6px;
+  }
 }

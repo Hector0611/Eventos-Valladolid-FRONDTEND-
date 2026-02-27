@@ -243,6 +243,8 @@ const Hoteles = () => {
   return (
     <div>
       <div className="Separacion"></div>
+<br></br>
+      {/* <h4 className="mapaTutulo">Places in Valladolid</h4> */}
 
       <div className="hoteles-container">
 
@@ -396,7 +398,7 @@ const Hoteles = () => {
            MAPA
         ------------------------------------------------ */}
         <div className="map-wrapper notranslate" translate="no">
-          
+
           <div className="map-filters">
             
             <button onClick={() => setMapFilter("ALL")} className={mapFilter==="ALL" ? "active" : ""}>
@@ -426,9 +428,9 @@ const Hoteles = () => {
           </div>
 
           <MapContainer
-            center={[20.69018, -88.201223]}
+            center={[20.690246248005103, -88.20199601605206]}
             zoom={11}
-            style={{ height: isMobile ? '400px' : '600px', width: '100%' }}
+            style={{ height: isMobile ? '400px' : '520px', width: '100%' }}
             closePopupOnClick={false}
             closeOnClick={false}
             preferCanvas={true}

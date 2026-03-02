@@ -211,7 +211,7 @@ body {
 .popup-overlay11 {
   position: absolute;
   top: 100%;
-  left: -690%;
+  left: -550%;
   width: 450px;
   border-radius: 14px;
   z-index: 2000;

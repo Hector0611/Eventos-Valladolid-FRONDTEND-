@@ -123,7 +123,7 @@ const Catalogo = () => {
                   />
                   <br />
 
-                  {/* <img className='Imgx' src={Murem2} alt="Murem2" /> */}
+                  <img className='Imgx' src={Murem2} alt="Murem2" />
                 </div>
 
                 {/* MAPA */}

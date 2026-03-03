@@ -35,6 +35,7 @@ import Destino from './componentes/Destino';
 import AgenciasTours from './componentes/AgenciasTours';
 import WalkingTours from './componentes/WalkingTours';
 import TaxiAndToursValladolid from './componentes/TaxiAndToursValladolid';
+import ChatBot from './componentes/ChatBot';
 
 /* Pages */
 import Home from "./pages/Home";

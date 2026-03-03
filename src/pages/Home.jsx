@@ -9,6 +9,7 @@ import EventoDiario from "../componentes/EventoDiario";
 import ProximoEvento from "../componentes/ProximoEvento";
 import Footer from "../componentes/Footer";
 import { ToastContainer } from "react-toastify";
+import ChatBot from "../componentes/ChatBot";
 
 
 export default function Home() {
@@ -39,6 +40,7 @@ export default function Home() {
       <ToastContainer />
       <ProximoEvento /> {/* nohay */}
       <Footer /> {/* nohay */}
+      {/* <ChatBot /> {/* nohay */} 
     </>
   );
 }

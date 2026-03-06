@@ -6,7 +6,7 @@ const API_URL = "http://localhost:3001/api/chatbot"; // luego cambias a Render
 
 const ChatBot = () => {
   const [messages, setMessages] = useState([
-    { from: "bot", text: "Hola 👋 Soy tu guía turístico de Valladolid. ¿Qué te gustaría saber?" },
+    { from: "bot", text: "Hola 👋 Soy tu guía turístico de Valladolid. ¿Qué te gustaría saber?\n1.-Eventos (mes)\n2.-Evento (dia) de (mes)\n3. Hoteles o (Nombre) \n 4. Historia || de (lugar) \n5. Cenotes o del cenote (nombre) \n 6. Sitios arqueologicos (nombre del lugar) \n7. Policía \n8. Transporte" },
   ]);
   const [input, setInput] = useState("");
   const [open, setOpen] = useState(false);

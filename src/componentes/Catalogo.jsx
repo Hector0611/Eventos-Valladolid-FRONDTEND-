@@ -21,8 +21,7 @@ import SanRoque3 from './Imagenes/MuseoSanRoque/3.jpeg';
 import SanRoque4 from './Imagenes/MuseoSanRoque/4.jpeg';
 
 /* Murem */
-import MuremPortada from './Imagenes/ImgTempo/Murem.jpeg';
-import Murem2 from './Imagenes/ImgTempo/Murem2.jpeg';
+import MuremPortada from './Imagenes/ImgTempo/Murem3.jpg';
 
 /* Festival */
 import FestivalPortada from './Imagenes/ImgTempo/Festival.jpeg';
@@ -119,6 +118,41 @@ const Catalogo = () => {
               
 
               <h4 className="text-center mb-5 display-4 fw-bold">Scheduled Events</h4>
+
+
+              {/* Mujeres Empresarias */}
+<div className="media-slider1">
+              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
+                {/* IMAGEN */}
+                <div className="media-panel image-panel1">
+                  <img
+                  className='ImgX'
+                    src={MuremPortada}
+                    alt='Murem'
+                  />
+                  <br />
+                </div>
+
+                {/* MAPA */}
+                <div className="media-panel map-panel1">
+                  <iframe
+                      title="Murem Ubicación1"
+                      src="https://www.google.com/maps?q=20.683632048099284, -88.20102127772122&hl=en&z=15&output=embed"
+                      allowFullScreen=""
+                      loading="lazy"
+                    ></iframe>
+                </div>
+              </div>
+            </div>
+
+            {/* BOTÓN */}
+            
+              <button
+                className="view-map-btn"
+                onClick={() => setShowMap(!showMap)}
+              >
+                {showMap ? "View image" : "View map"}
+              </button>
 
               
 {/* Mujeres Empresarias */}

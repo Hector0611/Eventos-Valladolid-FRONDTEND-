@@ -40,7 +40,7 @@ export default function Home() {
       <ToastContainer />
       <ProximoEvento /> {/* nohay */}
       <Footer /> {/* nohay */}
-      {/* <ChatBot /> */} {/* nohay */} 
+      {<ChatBot />} {/* nohay */} 
     </>
   );
 }

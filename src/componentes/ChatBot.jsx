@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
-import "./ChatBot.css";
+import "./ChatBot1.css";
+import imgGavilan from "./Imagenes/Gavilan.png";
 
 const API_URL = "https://eventos-valladolid-backendt.onrender.com/api/chatbot"; // luego cambias a Render
 
@@ -45,14 +46,16 @@ const ChatBot = () => {
     <>
       {/* Botón flotante */}
       <button className="chatbot-toggle" onClick={() => setOpen(!open)}>
-        🤖
+        <img src={imgGavilan} alt="Gavilan" className="GavilanImg" />
       </button>
 
       {open && (
         <div className="chatbot-container">
           <div className="chatbot-header">
-            <span>guide for Valladolid</span>
-            <button onClick={() => setOpen(false)}>✖</button>
+            <span>Guide For Valladolid</span>
+            <button onClick={() => setOpen(false)}>
+              &times;
+            </button>
           </div>
 
           <div className="chatbot-messages">
@@ -88,7 +91,7 @@ const ChatBot = () => {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && sendMessage()}
             />
-            <button onClick={sendMessage}>Send</button>
+            <button onClick={sendMessage}>&#10148;</button>
           </div>
         </div>
       )}

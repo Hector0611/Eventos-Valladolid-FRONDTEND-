@@ -32,6 +32,9 @@ import LagoDeLosCisnes from './Imagenes/ImgTempo/LagoDeCisnes.png';
 /* Mujeres Empresarias */
 import MujeresEmpresarias from './Imagenes/ImgTempo/MujeresEmpresarias.jpeg';
 
+/* PlayBall */
+import PlayBall from './Imagenes/ImgTempo/Platball.jpeg';
+
 import { t } from 'i18next';
 
 const Catalogo = () => {
@@ -118,6 +121,46 @@ const Catalogo = () => {
               
 
               <h4 className="text-center mb-5 display-4 fw-bold">Scheduled Events</h4>
+
+{/*
+
+    media-slider1: edificio 
+    media-slider2: casa 
+
+*/}
+              {/* Playball */}
+                            <div className="media-slider2">
+              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
+                {/* IMAGEN */}
+                <div className="media-panel image-panel1">
+                  <img
+                  className='ImgX'
+                    src={PlayBall}
+                    alt='PlayBall'
+                  />
+                  <br />
+                </div>
+
+                {/* MAPA */}
+                <div className="media-panel map-panel1">
+                  <iframe
+                      title="PlayBall Ubicación1"
+                      src="https://www.google.com/maps?q=20.6918003740155, -88.21354301302055&hl=en&z=15&output=embed"
+                      allowFullScreen=""
+                      loading="lazy"
+                    ></iframe>
+                </div>
+              </div>
+            </div>
+
+            {/* BOTÓN */}
+            
+              <button
+                className="view-map-btn"
+                onClick={() => setShowMap(!showMap)}
+              >
+                {showMap ? "View image" : "View map"}
+              </button>
 
 
               

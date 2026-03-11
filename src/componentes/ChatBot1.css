@@ -29,7 +29,7 @@
 }
 
 .chatbot-toggle:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 
 }
 
@@ -38,10 +38,10 @@
   position: fixed;
   bottom: 90px;
   right: 8%;
-  top: 25%;
+  top: 20%;
   width: 450px;           /* ⬅️ más ancho */
-  max-width: 95vw;       /* ⬅️ responsive */
-  height: 520px;         /* ⬅️ más alto */
+  max-width: 100vw;       /* ⬅️ responsive */
+  height: 550px;         /* ⬅️ más alto */
   background: #ffffff;
   border-radius: 18px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
@@ -188,6 +188,15 @@
 .chatbot-messages::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 10px;
+}
+.copiButton{
+  background: rgba(0, 0, 255, 0.479);
+  border: none;
+  color: #0d1520;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 12px;
+
 }
 
 /* Version Mobile */

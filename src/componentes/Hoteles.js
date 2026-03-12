@@ -221,7 +221,7 @@ const Hoteles = () => {
         className="info-button"
       >
         <p>Indications</p>
-      </a>
+      </a>_________
       {/* NUEVO BOTÓN */}
         <button
         className="boton-masinfo"

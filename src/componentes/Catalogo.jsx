@@ -6,13 +6,6 @@ import './Catalogo.css';
 /* Xcopek */
 import xcopek from './Imagenes/ImgTempo/Xcopek.jpg';
 
-/* Tour Paranormal */
-import TourParanormal from './Imagenes/ImgTempo/TourParanormal.jpeg';
-
-/* Xoul */
-import Xoul from './Imagenes/ImgTempo/Xoul.jpeg';
-
-
 /* San Roque */
 import SanroquePortada from './Imagenes/MuseoSanRoque/Portada.jpeg';
 import SanRoque1 from './Imagenes/MuseoSanRoque/1.jpeg';
@@ -20,8 +13,6 @@ import SanRoque2 from './Imagenes/MuseoSanRoque/2.jpeg';
 import SanRoque3 from './Imagenes/MuseoSanRoque/3.jpeg';
 import SanRoque4 from './Imagenes/MuseoSanRoque/4.jpeg';
 
-/* Murem */
-import MuremPortada from './Imagenes/ImgTempo/Murem3.jpg';
 
 /* Festival */
 import FestivalPortada from './Imagenes/ImgTempo/Festival.jpeg';
@@ -29,14 +20,14 @@ import FestivalPortada from './Imagenes/ImgTempo/Festival.jpeg';
 /* Lago De los Cisnes */
 import LagoDeLosCisnes from './Imagenes/ImgTempo/LagoDeCisnes.png';
 
-/* Mujeres Empresarias */
-import MujeresEmpresarias from './Imagenes/ImgTempo/MujeresEmpresarias.jpeg';
-
 /* PlayBall */
 import PlayBall from './Imagenes/ImgTempo/Platball.jpeg';
 
 /* coro */
 import coro from './Imagenes/ImgTempo/Coro.jpeg';
+
+/* Yoga */
+import Yoga from './Imagenes/ImgTempo/Yoga.jpeg';
 
 import { t } from 'i18next';
 
@@ -220,6 +211,41 @@ const Catalogo = () => {
                   <iframe
                       title="Coro Ubicación1"
                       src="https://www.google.com/maps?q=20.686005855237735, -88.21002697851921&hl=en&z=15&output=embed"
+                      allowFullScreen=""
+                      loading="lazy"
+                    ></iframe>
+                </div>
+              </div>
+            </div>
+
+            {/* BOTÓN */}
+            
+              <button
+                className="view-map-btn"
+                onClick={() => setShowMap(!showMap)}
+              >
+                {showMap ? "View image" : "View map"}
+              </button>
+
+
+            {/* yoga */}
+            <div className="media-slider1">
+              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
+                {/* IMAGEN */}
+                <div className="media-panel image-panel1">
+                  <img
+                  className='ImgX'
+                    src={Yoga}
+                    alt='Yoga'
+                  />
+                  <br />
+                </div>
+
+                {/* MAPA */}
+                <div className="media-panel map-panel1">
+                  <iframe
+                      title="Yoga Ubicación1"
+                      src="https://www.google.com/maps?q=20.691638961430918, -88.19737516564014&hl=en&z=15&output=embed"
                       allowFullScreen=""
                       loading="lazy"
                     ></iframe>

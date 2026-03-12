@@ -35,6 +35,9 @@ import MujeresEmpresarias from './Imagenes/ImgTempo/MujeresEmpresarias.jpeg';
 /* PlayBall */
 import PlayBall from './Imagenes/ImgTempo/Platball.jpeg';
 
+/* coro */
+import coro from './Imagenes/ImgTempo/Coro.jpeg';
+
 import { t } from 'i18next';
 
 const Catalogo = () => {
@@ -197,6 +200,43 @@ const Catalogo = () => {
               >
                 {showMap ? "View image" : "View map"}
               </button>
+
+
+              {/* Coro */}
+              <div className="media-slider1">
+              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
+                {/* IMAGEN */}
+                <div className="media-panel image-panel1">
+                  <img
+                  className='ImgX'
+                    src={coro}
+                    alt='Coro'
+                  />
+                  <br />
+                </div>
+
+                {/* MAPA */}
+                <div className="media-panel map-panel1">
+                  <iframe
+                      title="Coro Ubicación1"
+                      src="https://www.google.com/maps?q=20.686005855237735, -88.21002697851921&hl=en&z=15&output=embed"
+                      allowFullScreen=""
+                      loading="lazy"
+                    ></iframe>
+                </div>
+              </div>
+            </div>
+
+            {/* BOTÓN */}
+            
+              <button
+                className="view-map-btn"
+                onClick={() => setShowMap(!showMap)}
+              >
+                {showMap ? "View image" : "View map"}
+              </button>
+
+
 
               {/* Lago De los Cisnes */}
               <div className="media-slider1">

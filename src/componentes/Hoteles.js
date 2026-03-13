@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';  
+import React, { useEffect, useState,useMemo } from 'react';  
 import axios from 'axios';
 import { MapContainer, TileLayer, Marker, Tooltip, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -14,6 +14,8 @@ import hotel from './Imagenes/maps/Hospedaje.png';
 import restauranteIconUrl from './Imagenes/maps/Restaurantes.png';
 import expericias from './Imagenes/maps/Experiencias.png';
 import DOMPurify from "dompurify";
+import { Result } from 'postcss';
+import { useDeferredValue } from 'react';
 
 
 // ====================== ICONOS ============================
@@ -64,7 +66,6 @@ const Hoteles = () => {
   const [openSection, setOpenSection] = useState('');
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
   const [searchTerm, setSearchTerm] = useState('');
-  const [filteredResults, setFilteredResults] = useState([]);
 
   const [activeTooltip, setActiveTooltip] = useState(null);
   const [hotsyrestInfo, setHotsyrestInfo] = useState([]);
@@ -75,6 +76,13 @@ const Hoteles = () => {
   const [servicios, setServicios] = useState([]);
 
   const [mapFilter, setMapFilter] = useState("ALL");
+
+  /* Nuevo Nose */
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const deferredSearch = useDeferredValue(searchTerm);
+
+  
 
 
 
@@ -106,7 +114,7 @@ const Hoteles = () => {
 
   // ---------------- Obtener APIs ----------------
   useEffect(() => {
-  Promise.all([
+  Promise.allSettled([
     axios.get('https://eventos-valladolid-backendt.onrender.com/api/hoteles'),
     axios.get('https://eventos-valladolid-backendt.onrender.com/api/sitios'),
     axios.get('https://eventos-valladolid-backendt.onrender.com/api/cenote_mapa'),
@@ -114,15 +122,19 @@ const Hoteles = () => {
     axios.get('https://eventos-valladolid-backendt.onrender.com/api/restaurante'),
     axios.get('https://eventos-valladolid-backendt.onrender.com/api/servicios'),
   ])
-  .then(([h, s, c, info, r, serv]) => {
-    setHoteles(h.data);
-    setSitios(s.data);
-    setCenotes(c.data);
-    setHotsyrestInfo(info.data);
-    setRestaurantes(r.data);
-    setServicios(serv.data);
+  .then(results => {
+    const [h, s, c, info, r, serv] = results;
+
+    if (h.status === 'fulfilled') setHoteles(h.value.data);
+    if (s.status === 'fulfilled') setSitios(s.value.data);
+    if (c.status === 'fulfilled') setCenotes(c.value.data);
+    if (info.status === 'fulfilled') setHotsyrestInfo(info.value.data);
+    if (r.status === 'fulfilled') setRestaurantes(r.value.data);
+    if (serv.status === 'fulfilled') setServicios(serv.value.data);
+    if (loading) return <div>Loading... </div>;
   })
-  .catch(err => console.error("Error cargando datos del mapa:", err));
+  .catch(err => console.error("Error cargando datos del mapa:", err))
+  .finally(() => setLoading(false));
 }, []);
 
 
@@ -142,34 +154,46 @@ const Hoteles = () => {
 
 
   // ---------------- BUSCADOR ----------------
-  const handleSearch = (e) => {
-    const value = e.target.value.toLowerCase();
-    setSearchTerm(value);
-    if (!value.trim()) return setFilteredResults([]);
+ const filteredResults = useMemo(() => {
+  const value = deferredSearch.toLowerCase();
 
-    const hotelMatches = hoteles.filter(h => h.hotel.toLowerCase().includes(value))
-      .map(h => ({ type: 'Hotel', name: h.hotel, data: h }));
+  if (!value.trim()) return [];
 
-    const sitioMatches = sitios.filter(s => s.sitio_arqueologico.toLowerCase().includes(value))
-      .map(s => ({ type: 'Sitio', name: s.sitio_arqueologico, data: s }));
+  const hotelMatches = hoteles
+    .filter(h => h.hotel.toLowerCase().includes(value))
+    .map(h => ({ type: 'Hotel', name: h.hotel, data: h }));
 
-    const cenoteMatches = cenotes.filter(c => c.cenote.toLowerCase().includes(value))
-      .map(c => ({ type: 'Cenote', name: c.cenote, data: c }));
+  const sitioMatches = sitios
+    .filter(s => s.sitio_arqueologico.toLowerCase().includes(value))
+    .map(s => ({ type: 'Sitio', name: s.sitio_arqueologico, data: s }));
 
-    const restauranteMatches = restaurantes.filter(r => r.hotel.toLowerCase().includes(value))
-      .map(r => ({ type: 'Restaurante', name: r.hotel, data: r }));
+  const cenoteMatches = cenotes
+    .filter(c => c.cenote.toLowerCase().includes(value))
+    .map(c => ({ type: 'Cenote', name: c.cenote, data: c }));
 
-    const serviciosMatches = servicios.filter(s => s.servicio.toLowerCase().includes(value))
-      .map(s => ({ type: 'Servicio', name: s.servicio, data: s }));
+  const restauranteMatches = restaurantes
+    .filter(r => r.hotel.toLowerCase().includes(value))
+    .map(r => ({ type: 'Restaurante', name: r.hotel, data: r }));
 
+  const serviciosMatches = servicios
+    .filter(s => s.servicio.toLowerCase().includes(value))
+    .map(s => ({ type: 'Servicio', name: s.servicio, data: s }));
 
-    const oficinaMatch =
-      oficinaTurismo.nombre.toLowerCase().includes(value)
-        ? [{ type: "Oficina", name: oficinaTurismo.nombre, data: oficinaTurismo }]
-        : [];
+  const oficinaMatch =
+    oficinaTurismo.nombre.toLowerCase().includes(value)
+      ? [{ type: "Oficina", name: oficinaTurismo.nombre, data: oficinaTurismo }]
+      : [];
 
-    setFilteredResults([...hotelMatches, ...sitioMatches, ...cenoteMatches, ...oficinaMatch, ...restauranteMatches, ...serviciosMatches]);
-  };
+  return [
+    ...hotelMatches,
+    ...sitioMatches,
+    ...cenoteMatches,
+    ...oficinaMatch,
+    ...restauranteMatches,
+    ...serviciosMatches
+  ];
+
+}, [deferredSearch, hoteles, sitios, cenotes, restaurantes, servicios]);
 
   // ---------------- Render PANEL ----------------
   const renderInfoPanel = (item, type) => {
@@ -192,7 +216,7 @@ const Hoteles = () => {
     <hr></hr>
     <h4>{nombreMostrar}</h4>
 
-    <p className="texto_item" dangerouslySetInnerHTML={{ __html: item.descripcion.slice(0,300)+" ..." }}></p>
+    <p className="texto_item" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.descripcion.slice(0,300)) + " ..." }} />
 
     {/* <p>📍 {item.localizacion}</p> */}
 
@@ -259,7 +283,7 @@ const Hoteles = () => {
             <input
               type="text"
               placeholder="Search..."
-              onChange={handleSearch}
+              onChange={e => setSearchTerm(e.target.value)}
               value={searchTerm}
               className="search-input1"
             />
@@ -683,16 +707,16 @@ const Hoteles = () => {
           <strong>Detailed information:</strong>
 
           {selectedHotel.info_descripcion && (
-            <pre
-              className="modal-pr1"
-              dangerouslySetInnerHTML={{ __html: selectedHotel.info_descripcion }}
+            <div 
+              className="modal-pr1" 
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(selectedHotel.info_descripcion) }} 
             />
           )}
 
           {selectedHotel.servicios_destacados && (
-            <pre
+            <div
               className="modal-pr1"
-              dangerouslySetInnerHTML={{ __html: selectedHotel.servicios_destacados }}
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(selectedHotel.servicios_destacados) }}
             />
           )}
         </div>

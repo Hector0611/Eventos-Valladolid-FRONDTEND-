@@ -29,6 +29,11 @@ import coro from './Imagenes/ImgTempo/Coro.jpeg';
 /* Yoga */
 import Yoga from './Imagenes/ImgTempo/Yoga.jpeg';
 
+/* Suspencion y atencion */
+import atencion from './Imagenes/ImgTempo/Atencion.jpeg';
+import suspencion from './Imagenes/ImgTempo/Suspendido.jpeg';
+
+
 import { t } from 'i18next';
 
 const Catalogo = () => {
@@ -113,6 +118,26 @@ const Catalogo = () => {
  */}
       <hr />
               
+              {/* Atencion */}
+             <h4 className="text-center mb-5 display-4 fw-bold">Attention</h4>
+              {/* IMAGEN */}
+                <div className="Atencion">
+                  <img
+                  className='ImgAtencion'
+                    src={atencion}
+                    alt='Atencion'
+                  />
+                  <br />
+                </div>
+                <div className="Suspencion">
+                  <img
+                  className='ImgSuspencion'
+                    src={suspencion}
+                    alt='suspencion'
+                  />
+                  <br />
+                </div>
+
 
               <h4 className="text-center mb-5 display-4 fw-bold">Scheduled Events</h4>
 

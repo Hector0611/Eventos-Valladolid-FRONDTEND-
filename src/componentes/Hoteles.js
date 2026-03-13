@@ -81,13 +81,7 @@ const Hoteles = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const deferredSearch = useDeferredValue(searchTerm);
-
-  
-
-
-
-
-
+ 
   // -------- Oficina de turismo (dato local) --------
   const oficinaTurismo = {
     id: "oficina_marker",

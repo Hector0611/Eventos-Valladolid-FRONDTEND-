@@ -479,6 +479,52 @@
   margin-top: 20px;
 }
 
+/* CONTENEDOR GENERAL */
+.Atencion,
+.Suspencion{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+}
+
+/* IMAGEN */
+.ImgAtencion{
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ImgSuspencion{
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* EFECTO HOVER */
+.ImgAtencion:hover{
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.ImgSuspencion:hover{
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* RESPONSIVE */
+@media (max-width:768px){
+  .ImgX{
+    max-width: 100%;
+  }
+}
+
 /* ==============================
    📱 RESPONSIVE
 ============================== */

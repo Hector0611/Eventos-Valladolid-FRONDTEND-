@@ -16,6 +16,10 @@ import './menuwhat.css';
 import Logo1 from './Imagenes/Iglesia.jpg';
 import Logo2 from './Imagenes/cenotezaki.jpg';
 import Logo3 from './Imagenes/fondo.gif';
+
+/* Suspencion y atencion */
+import atencion from './Imagenes/ImgTempo/Atencion.jpeg';
+import suspencion from './Imagenes/ImgTempo/Suspendido.jpeg';
 // import Logo4 from './Imagenes/eventosdiarios.jpg';
 
 
@@ -383,6 +387,27 @@ const eventosPorDia = eventosSeleccionados
                     <div className="evento-info1">
                       <hr />
                 <h2 className='titel11'>Daily Events</h2>
+
+                {/* Atencion */}
+             <h4 className="text-center mb-5 display-4 fw-bold">Attention</h4>
+              {/* IMAGEN */}
+                <div className="Atencion">
+                  <img
+                  className='ImgAtencion'
+                    src={atencion}
+                    alt='Atencion'
+                  />
+                  <br />
+                </div>
+                <div className="Suspencion">
+                  <img
+                  className='ImgSuspencion'
+                    src={suspencion}
+                    alt='suspencion'
+                  />
+                  <br />
+                </div>
+
 
                  <p className="info-text">
                     Valladolid, Yucatán, offers daily cultural and traditional activities,including video mapping at the Convent of San Bernardino de Siena (evenings),tours along the Calzada de los Frailes, visits to the Cathedral of San Servasi,and the culinary experience at the Municipal Market. In February 2026, the highlight will be the Valladolid Expo Fair with the Magna Vaquería.

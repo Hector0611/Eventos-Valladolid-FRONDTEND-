@@ -33,6 +33,10 @@ import Yoga from './Imagenes/ImgTempo/Yoga.jpeg';
 import atencion from './Imagenes/ImgTempo/Atencion.jpeg';
 import suspencion from './Imagenes/ImgTempo/Suspendido.jpeg';
 
+/* xbaun1 y xbaun2 */
+import xbutun1 from './Imagenes/ImgTempo/XBATUN2.jpeg'
+import xbutun2 from './Imagenes/ImgTempo/XBATUN1.jpeg'
+
 
 import { t } from 'i18next';
 
@@ -252,6 +256,40 @@ const Catalogo = () => {
                 {showMap ? "View image" : "View map"}
               </button>
 
+              {/* XBAUN1 */}
+              <div className="media-slider2">
+              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
+                {/* IMAGEN */}
+                <div className="media-panel image-panel1">
+                  <img
+                  className='ImgX'
+                    src={xbutun1}
+                    alt='XBATUN1'
+                  />
+                  <br />
+                </div>
+
+                {/* MAPA */}
+                <div className="media-panel map-panel1">
+                  <iframe
+                      title="XBATUN1 Ubicación1"
+                      src="https://www.google.com/maps?q=20.662271747039842, -88.19514276420871&hl=en&z=15&output=embed"
+                      allowFullScreen=""
+                      loading="lazy"
+                    ></iframe>
+                </div>
+              </div>
+            </div>
+
+            {/* BOTÓN */}
+            
+              <button
+                className="view-map-btn"
+                onClick={() => setShowMap(!showMap)}
+              >
+                {showMap ? "View image" : "View map"}
+              </button>
+
 
             {/* yoga */}
             <div className="media-slider1">
@@ -271,6 +309,40 @@ const Catalogo = () => {
                   <iframe
                       title="Yoga Ubicación1"
                       src="https://www.google.com/maps?q=20.691638961430918, -88.19737516564014&hl=en&z=15&output=embed"
+                      allowFullScreen=""
+                      loading="lazy"
+                    ></iframe>
+                </div>
+              </div>
+            </div>
+
+            {/* BOTÓN */}
+            
+              <button
+                className="view-map-btn"
+                onClick={() => setShowMap(!showMap)}
+              >
+                {showMap ? "View image" : "View map"}
+              </button>
+
+              {/* XBAUN2 */}
+              <div className="media-slider2">
+              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
+                {/* IMAGEN */}
+                <div className="media-panel image-panel1">
+                  <img
+                  className='ImgX'
+                    src={xbutun2}
+                    alt='XBATUN2'
+                  />
+                  <br />
+                </div>
+
+                {/* MAPA */}
+                <div className="media-panel map-panel1">
+                  <iframe
+                      title="XBATUN2 Ubicación1"
+                      src="https://www.google.com/maps?q=20.662271747039842, -88.19514276420871&hl=en&z=15&output=embed"
                       allowFullScreen=""
                       loading="lazy"
                     ></iframe>

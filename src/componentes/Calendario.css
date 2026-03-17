@@ -202,6 +202,26 @@
   border-radius: 18px;
 }
 
+/* Cambios */
+
+.day-with-event{
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.day-with-event:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* opcional: evita que se vea muy saturado */
+.day-with-event .message-popup{
+  font-size: 10px;
+  margin-top: 2px;
+}
+
 /* ==============================
    📱 RESPONSIVE
 ============================== */

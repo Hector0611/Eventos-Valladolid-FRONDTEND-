@@ -185,6 +185,29 @@ const eventosPorDia = eventosSeleccionados
     return acc;
   }, {});
 
+  // 🎨 Generador de color por texto (SIEMPRE mismo color)
+const stringToColor = (str) => {
+  let hash = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 9) - hash);
+  }
+
+  return `hsl(${hash % 300}, 100%, 80%)`;
+};
+
+// 🎯 Lógica final de color
+const getEventColor = (eventName) => {
+  if (!eventName) return "";
+
+  const name = eventName.toLowerCase().trim();
+
+  // 🚫 este no se pinta
+  if (name.includes("evento diario") || name.includes("daily")) return "";
+
+  return stringToColor(name);
+};
+
 
 
   // ===========================
@@ -245,7 +268,7 @@ const eventosPorDia = eventosSeleccionados
                     onClick={() => setSelectedMonth(index)}
                   >
                     <span>{month}</span>
-                  </div>
+                 </div>
                 ))}
               </div>
             </div>
@@ -278,10 +301,14 @@ const eventosPorDia = eventosSeleccionados
                             ? `day-${currentYear}-${selectedMonth}-${day}`
                             : `empty-${currentYear}-${selectedMonth}-${rowIndex}-${colIndex}`;
                           const hasEvent = getEventForDay(day);
+                          const eventColor = getEventColor(hasEvent);
                           return (
                             <td
                               key={key}
                               className={`day ${hasEvent ? "day-with-event" : ""} ${isToday(day) ? "today" : ""}`}
+                              style={{
+                                backgroundColor: eventColor || undefined
+                              }}
                               onClick={day ? () => handleDayClick(day) : undefined}
                             >
                               {day ? (

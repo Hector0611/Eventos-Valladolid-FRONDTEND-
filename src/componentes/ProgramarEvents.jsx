@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 import EventoDiario from './EventoDiario';
 
+import DOMPurify from 'dompurify';
 
 import { translateField } from '../utils/translateField';
 
@@ -66,34 +67,59 @@ const ProgramarEvents = () => {
   }
 
   setLoading(true);
+
   try {
-    let allEventos = [];
     const [anioI, mesI, diaI] = fechaInicio.split("-").map(Number);
     const [anioF, mesF, diaF] = fechaFin.split("-").map(Number);
 
-    let dia = diaI;
-    let mes = mesI;
+    let fechaActual = new Date(anioI, mesI - 1, diaI);
+    const fechaFinal = new Date(anioF, mesF - 1, diaF);
 
-    while (mes < mesF || (mes === mesF && dia <= diaF)) {
-      const res = await axios.get(
-        `https://eventos-valladolid-backendt.onrender.com/api/mensajes?dia_id=${dia}&mes_id=${mes}`
-      );
-      allEventos = [...allEventos, ...res.data];
-      dia++;
-      if (dia > 31) {
-        dia = 1;
-        mes++;
-      }
+    const diasDelRango = [];
+
+    // 🔹 Generar todos los días del rango
+    while (fechaActual <= fechaFinal) {
+      diasDelRango.push({
+        dia: fechaActual.getDate(),
+        mes: fechaActual.getMonth() + 1,
+      });
+
+      fechaActual.setDate(fechaActual.getDate() + 1);
     }
 
-    setEventosSeleccionados(allEventos);
+    // 🔥 Requests en paralelo (MUCHO más rápido)
+    const requests = diasDelRango.map(({ dia, mes }) =>
+      axios.get(
+        `https://eventos-valladolid-backendt.onrender.com/api/mensajes?dia_id=${dia}&mes_id=${mes}`
+      )
+    );
+
+    const results = await Promise.allSettled(requests);
+
+    // 🔹 Filtrar solo respuestas exitosas
+    const allEventos = results
+      .filter((r) => r.status === "fulfilled")
+      .flatMap((r) => r.value.data);
+
+    // 🔥 Traducir (mantienes tu lógica pro 💪)
+    const traducidos = await Promise.all(
+      allEventos.map(async (item) => ({
+        ...item,
+        mensaje: await translateField(item.mensaje),
+        descripcion: await translateField(item.descripcion || ""),
+      }))
+    );
+
+    setEventosSeleccionados(traducidos);
     setShowModal(true);
+
   } catch (error) {
     console.error("Error al buscar eventos en rango:", error);
   } finally {
     setLoading(false);
   }
 };
+
   // ===========================
   // Cargar meses y días
   // ===========================
@@ -358,7 +384,7 @@ const getEventColor = (eventName) => {
                     <div className="eventos-container">
                       <h1 className="fecha">
                         {monthsData[selectedMonth]?.nombre || months[eventos[0].mes_id]}{" "}
-                        {eventos[0].dia_id}, 2026
+                        {eventos[0].dia_id}, {currentYear}
                       </h1>
                     </div>
 
@@ -381,7 +407,7 @@ const getEventColor = (eventName) => {
                             <p className="TextoMens">{evento.mensaje}</p>
                             <hr />
                             <h3 className="horacolor">
-                              Event Date: {evento.dia_id}/{evento.mes_id}/2026 From{" "}
+                              Event Date: {evento.dia_id}/{evento.mes_id}/{currentYear} From{" "}
                               {evento.hora_inicial} to {evento.hora_final}
                             </h3>
                           </div>
@@ -400,9 +426,11 @@ const getEventColor = (eventName) => {
 
                           <div
                             className="texto-pre61"
-                            dangerouslySetInnerHTML={{ __html: evento.descripcion }}
+                            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(evento.descripcion) }}
                           />
                         </div>
+
+                        
                       </div>
                     ))}
                   </div>

@@ -151,76 +151,7 @@ const Catalogo = () => {
     media-slider2: casa 
 
 */}
-              {/* Playball */}
-                            <div className="media-slider2">
-              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
-                {/* IMAGEN */}
-                <div className="media-panel image-panel1">
-                  <img
-                  className='ImgX'
-                    src={PlayBall}
-                    alt='PlayBall'
-                  />
-                  <br />
-                </div>
-
-                {/* MAPA */}
-                <div className="media-panel map-panel1">
-                  <iframe
-                      title="PlayBall Ubicación1"
-                      src="https://www.google.com/maps?q=20.6918003740155, -88.21354301302055&hl=en&z=15&output=embed"
-                      allowFullScreen=""
-                      loading="lazy"
-                    ></iframe>
-                </div>
-              </div>
-            </div>
-
-            {/* BOTÓN */}
-            
-              <button
-                className="view-map-btn"
-                onClick={() => setShowMap(!showMap)}
-              >
-                {showMap ? "View image" : "View map"}
-              </button>
-
-
               
-              {/* Festival */}
-              <div className="media-slider1">
-              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
-                {/* IMAGEN */}
-                <div className="media-panel image-panel1">
-                  <img
-                  className='ImgX'
-                    src={FestivalPortada}
-                    alt='Festival'
-                  />
-                  <br />
-                </div>
-
-                {/* MAPA */}
-                <div className="media-panel map-panel1">
-                  <iframe
-                      title="Murem Ubicación1"
-                      src="https://www.google.com/maps?q=20.68599792657585, -88.21006627998169&hl=en&z=15&output=embed"
-                      allowFullScreen=""
-                      loading="lazy"
-                    ></iframe>
-                </div>
-              </div>
-            </div>
-
-            {/* BOTÓN */}
-            
-              <button
-                className="view-map-btn"
-                onClick={() => setShowMap(!showMap)}
-              >
-                {showMap ? "View image" : "View map"}
-              </button>
-
 
               {/* Coro */}
               <div className="media-slider1">

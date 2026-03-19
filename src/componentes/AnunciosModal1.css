@@ -1,0 +1,294 @@
+/* ================================
+   🌍 MODAL OVERLAY (fondo oscuro)
+================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.4s ease;
+}
+
+/* ================================
+   🧊 CONTENEDOR PRINCIPAL
+================================ */
+.modal-contenido {
+  width: 95%;
+  max-width: 520px;
+  border-radius: 20px;
+  overflow: hidden;
+
+  /* glassmorphism */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  color: white;
+  position: relative;
+  padding: 20px;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+
+  animation: scaleIn 0.4s ease;
+}
+
+/* ================================
+   ❌ BOTÓN CERRAR
+================================ */
+.cerrar-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cerrar-btn:hover {
+  background: rgba(255,255,255,0.3);
+  transform: rotate(0deg);
+}
+
+.cerrar_icon{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cerrar_icon:hover {
+  background: rgba(255, 0, 0, 0.87);
+  transform: rotate(360deg);
+}
+
+/* ================================
+   🏷️ TÍTULO
+================================ */
+.modal-contenido h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+/* ================================
+   ⏳ BARRA DE PROGRESO
+================================ */
+.progress-bar-wrap {
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  animation: progressAnim linear forwards;
+}
+
+/* ================================
+   🎞️ CARD DEL ANUNCIO
+================================ */
+.anuncios-lista {
+  display: flex;
+  justify-content: center;
+}
+
+.anuncio-card {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.3);
+
+  animation: fadeSlide 0.6s ease;
+}
+
+/* ================================
+   🖼️ IMAGEN
+================================ */
+.anuncio-card img {
+  width: 100%;
+  height: 250px;
+
+  object-fit: contain; /* 👈 respeta tamaño */
+  background: #000; /* relleno elegante */
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+
+  transition: transform 0.5s ease;
+}
+
+.anuncio-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ================================
+   📄 INFO
+================================ */
+.anuncio-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.anuncio-info h4 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.fecha-legible {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+
+/* ================================
+   🔘 BOTÓN
+================================ */
+.anuncio-info button {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.anuncio-info button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,114,255,0.5);
+}
+
+/* ================================
+   ⬅️➡️ CONTROLES
+================================ */
+.nav-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.nav-btn {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 1px;
+  color: white;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* ================================
+   ⚪ DOTS
+================================ */
+.dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: #00c6ff;
+  transform: scale(1.3);
+}
+
+/* ================================
+   🔢 CONTADOR
+================================ */
+.slide-counter {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* ================================
+   📱 RESPONSIVE
+================================ */
+@media (max-width: 480px) {
+  .anuncio-card img {
+    height: 200px;
+  }
+
+  .modal-contenido {
+    padding: 15px;
+  }
+
+  .anuncio-info h4 {
+    font-size: 1rem;
+  }
+}
+
+/* ================================
+   ✨ ANIMACIONES
+================================ */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes progressAnim {
+  from { width: 0%; }
+  to { width: 100%; }
+}

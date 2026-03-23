@@ -13,32 +13,18 @@ import SanRoque2 from './Imagenes/MuseoSanRoque/2.jpeg';
 import SanRoque3 from './Imagenes/MuseoSanRoque/3.jpeg';
 import SanRoque4 from './Imagenes/MuseoSanRoque/4.jpeg';
 
-
-/* Festival */
-import FestivalPortada from './Imagenes/ImgTempo/Festival.jpeg';
-
-/* Lago De los Cisnes */
-import LagoDeLosCisnes from './Imagenes/ImgTempo/LagoDeCisnes.png';
-
-/* PlayBall */
-import PlayBall from './Imagenes/ImgTempo/Platball.jpeg';
-
-/* coro */
-import coro from './Imagenes/ImgTempo/Coro.jpeg';
-
-/* Yoga */
-import Yoga from './Imagenes/ImgTempo/Yoga.jpeg';
-
 /* Suspencion y atencion */
 import atencion from './Imagenes/ImgTempo/Atencion.jpeg';
 import suspencion from './Imagenes/ImgTempo/Suspendido.jpeg';
 
-/* xbaun1 y xbaun2 */
-import xbutun1 from './Imagenes/ImgTempo/XBATUN2.jpeg'
-import xbutun2 from './Imagenes/ImgTempo/XBATUN1.jpeg'
+/* Suytun */
+import Suytun from './Imagenes/ImgTempo/Suytun.jpeg';
+
+import LagoDeLosCisnes from './Imagenes/ImgTempo/LagoDeCisnes.png';
 
 
 import { t } from 'i18next';
+import { Import } from 'lucide-react';
 
 const Catalogo = () => {
   const [indice, setIndice] = useState(0);
@@ -152,16 +138,15 @@ const Catalogo = () => {
 
 */}
               
-
-              {/* Coro */}
-              <div className="media-slider1">
+{/* Suytun */}
+<div className="media-slider1">
               <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
                 {/* IMAGEN */}
                 <div className="media-panel image-panel1">
                   <img
                   className='ImgX'
-                    src={coro}
-                    alt='Coro'
+                    src={Suytun}
+                    alt='Suytun'
                   />
                   <br />
                 </div>
@@ -169,8 +154,8 @@ const Catalogo = () => {
                 {/* MAPA */}
                 <div className="media-panel map-panel1">
                   <iframe
-                      title="Coro Ubicación1"
-                      src="https://www.google.com/maps?q=20.686005855237735, -88.21002697851921&hl=en&z=15&output=embed"
+                      title="Suytun Ubicación1"
+                      src="https://www.google.com/maps?q=20.698945048720155, -88.12442584620389&hl=en&z=15&output=embed"
                       allowFullScreen=""
                       loading="lazy"
                     ></iframe>
@@ -186,110 +171,6 @@ const Catalogo = () => {
               >
                 {showMap ? "View image" : "View map"}
               </button>
-
-              {/* XBAUN1 */}
-              <div className="media-slider2">
-              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
-                {/* IMAGEN */}
-                <div className="media-panel image-panel1">
-                  <img
-                  className='ImgX'
-                    src={xbutun1}
-                    alt='XBATUN1'
-                  />
-                  <br />
-                </div>
-
-                {/* MAPA */}
-                <div className="media-panel map-panel1">
-                  <iframe
-                      title="XBATUN1 Ubicación1"
-                      src="https://www.google.com/maps?q=20.662271747039842, -88.19514276420871&hl=en&z=15&output=embed"
-                      allowFullScreen=""
-                      loading="lazy"
-                    ></iframe>
-                </div>
-              </div>
-            </div>
-
-            {/* BOTÓN */}
-            
-              <button
-                className="view-map-btn"
-                onClick={() => setShowMap(!showMap)}
-              >
-                {showMap ? "View image" : "View map"}
-              </button>
-
-
-            {/* yoga */}
-            <div className="media-slider1">
-              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
-                {/* IMAGEN */}
-                <div className="media-panel image-panel1">
-                  <img
-                  className='ImgX'
-                    src={Yoga}
-                    alt='Yoga'
-                  />
-                  <br />
-                </div>
-
-                {/* MAPA */}
-                <div className="media-panel map-panel1">
-                  <iframe
-                      title="Yoga Ubicación1"
-                      src="https://www.google.com/maps?q=20.691638961430918, -88.19737516564014&hl=en&z=15&output=embed"
-                      allowFullScreen=""
-                      loading="lazy"
-                    ></iframe>
-                </div>
-              </div>
-            </div>
-
-            {/* BOTÓN */}
-            
-              <button
-                className="view-map-btn"
-                onClick={() => setShowMap(!showMap)}
-              >
-                {showMap ? "View image" : "View map"}
-              </button>
-
-              {/* XBAUN2 */}
-              <div className="media-slider2">
-              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
-                {/* IMAGEN */}
-                <div className="media-panel image-panel1">
-                  <img
-                  className='ImgX'
-                    src={xbutun2}
-                    alt='XBATUN2'
-                  />
-                  <br />
-                </div>
-
-                {/* MAPA */}
-                <div className="media-panel map-panel1">
-                  <iframe
-                      title="XBATUN2 Ubicación1"
-                      src="https://www.google.com/maps?q=20.662271747039842, -88.19514276420871&hl=en&z=15&output=embed"
-                      allowFullScreen=""
-                      loading="lazy"
-                    ></iframe>
-                </div>
-              </div>
-            </div>
-
-            {/* BOTÓN */}
-            
-              <button
-                className="view-map-btn"
-                onClick={() => setShowMap(!showMap)}
-              >
-                {showMap ? "View image" : "View map"}
-              </button>
-
 
 
               {/* Lago De los Cisnes */}

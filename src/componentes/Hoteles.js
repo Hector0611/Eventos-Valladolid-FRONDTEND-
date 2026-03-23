@@ -14,7 +14,6 @@ import hotel from './Imagenes/maps/Hospedaje.png';
 import restauranteIconUrl from './Imagenes/maps/Restaurantes.png';
 import expericias from './Imagenes/maps/Experiencias.png';
 import DOMPurify from "dompurify";
-import { Result } from 'postcss';
 import { useDeferredValue } from 'react';
 
 
@@ -67,7 +66,6 @@ const Hoteles = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const [activeTooltip, setActiveTooltip] = useState(null);
   const [hotsyrestInfo, setHotsyrestInfo] = useState([]);
 
   const [showModal, setShowModal] = useState(false);
@@ -83,7 +81,7 @@ const Hoteles = () => {
   const deferredSearch = useDeferredValue(searchTerm);
  
   // -------- Oficina de turismo (dato local) --------
-  const oficinaTurismo = {
+  const OFICINA_TURISMO = {
     id: "oficina_marker",
     type: "Oficina",
     nombre: "Tourist Office ",
@@ -125,7 +123,7 @@ const Hoteles = () => {
     if (info.status === 'fulfilled') setHotsyrestInfo(info.value.data);
     if (r.status === 'fulfilled') setRestaurantes(r.value.data);
     if (serv.status === 'fulfilled') setServicios(serv.value.data);
-    if (loading) return <div>Loading... </div>;
+   
   })
   .catch(err => console.error("Error cargando datos del mapa:", err))
   .finally(() => setLoading(false));
@@ -146,6 +144,7 @@ const Hoteles = () => {
     );
   };
 
+  
 
   // ---------------- BUSCADOR ----------------
  const filteredResults = useMemo(() => {
@@ -174,8 +173,8 @@ const Hoteles = () => {
     .map(s => ({ type: 'Servicio', name: s.servicio, data: s }));
 
   const oficinaMatch =
-    oficinaTurismo.nombre.toLowerCase().includes(value)
-      ? [{ type: "Oficina", name: oficinaTurismo.nombre, data: oficinaTurismo }]
+    OFICINA_TURISMO.nombre.toLowerCase().includes(value)
+      ? [{ type: "Oficina", name: OFICINA_TURISMO.nombre, data: OFICINA_TURISMO }]
       : [];
 
   return [
@@ -202,6 +201,8 @@ const Hoteles = () => {
       item.nombre;
      
     const extra = item.extra; // información extendida
+
+     if (loading) return <div>Loading...</div>;
 
     return (
 
@@ -301,11 +302,10 @@ const Hoteles = () => {
             <hr />
           {/* Oficina de Turismo */}
           <div className="accordion-section">
-            <h4 className="titel4" onClick={() => setSelectedItem({ type: "Oficina", data: oficinaTurismo })}>
+            <h4 className="titel4" onClick={() => setSelectedItem({ type: "Oficina", data: OFICINA_TURISMO })}>
               🏢 Tourist Office 
             </h4>
               
-         
           </div>
 
             
@@ -467,8 +467,6 @@ const Hoteles = () => {
                     const extraInfo = hotsyrestInfo.find(info => info.id_hotel === h.id);
                     setSelectedItem({ type: "Hotel", data: h, extra: extraInfo });
 
-                    // 🔥 Forzar render del tooltip permanente
-                    setTimeout(() => setActiveTooltip(h.id), 0);
                   }
                 }}
               >
@@ -597,12 +595,12 @@ const Hoteles = () => {
             {/* Oficina de Turismo */}
             <Marker
               key="oficina_marker"
-              position={[oficinaTurismo.latitud, oficinaTurismo.longitud]}
+              position={[OFICINA_TURISMO.latitud, OFICINA_TURISMO.longitud]}
               icon={oficinaIcon}
               eventHandlers={{
                 click: () => {
-                  setSelectedItem({ type: "Oficina", data: oficinaTurismo });
-                  /* setActiveTooltip(oficinaTurismo.id); */
+                  setSelectedItem({ type: "Oficina", data: OFICINA_TURISMO });
+                  /* setActiveTooltip(OFICINA_TURISMO.id); */
                 }
               }}
             >
@@ -612,7 +610,7 @@ const Hoteles = () => {
                 opacity={0.9}
                 permanent={true}
               >
-                {oficinaTurismo.nombre}
+                {OFICINA_TURISMO.nombre}
               </Tooltip>
             </Marker>
 

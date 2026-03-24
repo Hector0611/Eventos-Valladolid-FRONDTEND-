@@ -207,9 +207,7 @@ const Catalogo = () => {
                 {showMap ? "View image" : "View map"}
               </button>
 
-
-
-{/* Eventos Siempre */}              
+{/* Eventos Siempre */}
 
         {/* 🖼️ / 🗺️ SLIDER */}
             <div className="media-slider2">

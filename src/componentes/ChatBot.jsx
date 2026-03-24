@@ -4,6 +4,7 @@ import "./ChatBot1.css";
 import imgGavilan from "./Imagenes/Gavilan.png";
 
 const API_URL = "https://eventos-valladolid-backendt.onrender.com/api/chatbot";
+/* const API_URL = "http://localhost:3001/api/chatbot"; */
 
 const MAX_CHARS = 300;
 
@@ -16,7 +17,7 @@ const ChatBot = () => {
   const [messages, setMessages] = useState([
     {
       from: "bot",
-      text: "Hello 👋 I'm your touristic guide in Valladolid. What would you like to know?\n \n1.-Events (month)\n2.-Event (day) of (month)\n3. Hotels or (Name) \n 4. History || of (place) \n5. Cenotes or the cenote (name) \n 6. Archaeological sites (name of the place) \n7. Police \n8. Transportation \n \n I can only understand English and Spanish at the moment.",
+      text: "Hello 👋 I'm your touristic guide in Valladolid. What would you like to know?\n \n1.-Events (month)\n2.-Event (day) of (month)\n3. Hotels or (Name) \n 4. History || of (place) \n5. Cenotes or the cenote (name) \n 6. Archaeological sites (name of the place) \n7. Police \n8. Transportation \n \n You can also request our official map of Valladolid\n \n I can only understand English and Spanish at the moment.",
       time: formatTime(),
     },
   ]);

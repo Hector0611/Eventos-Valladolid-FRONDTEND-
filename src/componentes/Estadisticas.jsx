@@ -165,7 +165,7 @@ const Estadisticas = () => {
 
             {/* BOTONES */}
             <button
-              className="nav-btn prev"
+              className="nav-btn1 prev"
               onClick={(e) => {
                 e.stopPropagation();
                 setRutaActiva(prev => anteriorRuta(prev));
@@ -173,7 +173,7 @@ const Estadisticas = () => {
             >‹</button>
 
             <button
-              className="nav-btn next"
+              className="nav-btn1 next"
               onClick={(e) => {
                 e.stopPropagation();
                 setRutaActiva(prev => siguienteRuta(prev));
@@ -181,7 +181,7 @@ const Estadisticas = () => {
             >›</button>
 
             <button
-              className="close-btn"
+              className="close-btn1"
               onClick={(e) => {
                 e.stopPropagation();
                 setRutaActiva(null);

@@ -15,6 +15,8 @@ const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showText, setShowText] = useState(true);
 
+  const isMobile = window.innerWidth <= 1068;
+
   /* ⏱ OCULTAR TEXTO BOTONES FLOTANTES */
   useEffect(() => {
     const timer = setTimeout(() => setShowText(false), 5000);
@@ -90,9 +92,9 @@ const Header = () => {
     {/* MÁS */}
     <div
         className="popup-wrapper"
-        onMouseEnter={() => setShowPopup(true)}
-        onMouseLeave={() => setShowPopup(false)}
-        onClick={() => setShowPopup(!showPopup)} // 📱 soporte móvil
+        onMouseEnter={() => !isMobile && setShowPopup(true)}
+        onMouseLeave={() => !isMobile && setShowPopup(false)}
+        onClick={() => isMobile && setShowPopup(!showPopup)}
       >
 
       <button className="botton2">MORE</button>

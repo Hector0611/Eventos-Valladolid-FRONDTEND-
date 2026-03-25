@@ -118,6 +118,7 @@ const Estadisticas = () => {
     <div>
 
       <div className="Separacion"></div>
+      <br />
 
       {/* MAPAS */}
       <h4 className="rutas-title">🗺️ Mapa De Valladolid</h4>

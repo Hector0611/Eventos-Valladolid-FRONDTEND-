@@ -3,8 +3,8 @@ import axios from "axios";
 import "./ChatBot1.css";
 import imgGavilan from "./Imagenes/Gavilan.png";
 
-/* const API_URL = "https://eventos-valladolid-backendt.onrender.com/api/chatbot"; */
-const API_URL = "http://localhost:3001/api/chatbot";
+const API_URL = "https://eventos-valladolid-backendt.onrender.com/api/chatbot";
+/* const API_URL = "http://localhost:3001/api/chatbot"; */
 
 const MAX_CHARS = 300;
 

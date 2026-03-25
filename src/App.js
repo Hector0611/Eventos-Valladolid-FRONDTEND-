@@ -266,12 +266,12 @@ const App = () => {
                 </>
               } />
 
-              <Route path="/estadisticas" element={
+              <Route path="/rutas" element={
                 <>
                 <Seo
-                      title="Estadisticas | Visit Valladolid"
-                      description="Estadisticas de turismo en Valladolid, Yucatán."
-                      canonical="https://visitavalladolidmx.com/estadisticas"
+                      title="Rutas | Visit Valladolid"
+                      description="Descubre las rutas turísticas en Valladolid, Yucatán."
+                      canonical="https://visitavalladolidmx.com/rutas"
                     />
              
                   <Header />

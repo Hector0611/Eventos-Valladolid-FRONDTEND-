@@ -117,7 +117,7 @@ const Header = () => {
             </button>
             <br></br>
 
-            <button className="textocontent1" onClick={() => navigateTo("/estadisticas")}>
+            <button className="textocontent1" onClick={() => navigateTo("/rutas")}>
               ✅ ROUTES IN VALLADOLID
             </button>
 <br></br>

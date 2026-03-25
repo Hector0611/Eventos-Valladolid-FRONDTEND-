@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import './estadiscas.css';
 
-/* Rutas del 1 al 13 */
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+
+/* Rutas */
 import Ruta1 from './Imagenes/Rutas/RUTAS_01.webp';
 import Ruta2 from './Imagenes/Rutas/RUTAS-02.webp';
 import Ruta3 from './Imagenes/Rutas/RUTAS-03.webp';
@@ -17,9 +19,9 @@ import Ruta11 from './Imagenes/Rutas/RUTAS-11.webp';
 import Ruta12 from './Imagenes/Rutas/RUTAS-12_1.webp';
 import Ruta13 from './Imagenes/Rutas/RUTAS-13_1.webp';
 
-/* Mapa */
+/* Mapas */
 import Mapa from './Imagenes/Rutas/VISTA01.png';
-import Mapa2 from './Imagenes/Rutas/VISTA02.png'; 
+import Mapa2 from './Imagenes/Rutas/VISTA02.png';
 
 const rutasData = [
   { id: 1, img: Ruta1, titulo: "Ruta 1" },
@@ -37,69 +39,106 @@ const rutasData = [
   { id: 13, img: Ruta13, titulo: "Ruta 13" }
 ];
 
-const descargarMapas = () => {
-  const urls = [Mapa, Mapa2];
-
-  urls.forEach((url, index) => {
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `mapa-${index + 1}.png`; // cambia extensión si es png
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  });
-};
-
-/* Siguiente y anterior  para la imagen */
-const siguienteRuta = (ruta) => {
-  const currentIndex = rutasData.findIndex(r => r.id === ruta.id);
-  const nextIndex = (currentIndex + 1) % rutasData.length;
-  return rutasData[nextIndex];
-};
-
-const anteriorRuta = (ruta) => {
-  const currentIndex = rutasData.findIndex(r => r.id === ruta.id);
-  const prevIndex = (currentIndex - 1 + rutasData.length) % rutasData.length;
-  return rutasData[prevIndex];
-};
-
+/* PDF worker */
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 const Estadisticas = () => {
+
   const [pdfs, setPdfs] = useState([]);
   const [rutaActiva, setRutaActiva] = useState(null);
 
+  // 👉 swipe
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchEndX, setTouchEndX] = useState(0);
+
+  const [zoomActivo, setZoomActivo] = useState(false);
+
   useEffect(() => {
     fetch('https://eventos-valladolid-backendt.onrender.com/api/estadisticas')
-      .then(response => response.json())
+      .then(res => res.json())
       .then(data => setPdfs(data))
-      .catch(error => console.error('Error al cargar los PDFs:', error));
+      .catch(err => console.error(err));
   }, []);
+
+  /* ======================
+     FUNCIONES
+  ====================== */
+
+  const siguienteRuta = (ruta) => {
+    const i = rutasData.findIndex(r => r.id === ruta.id);
+    return rutasData[(i + 1) % rutasData.length];
+  };
+
+  const anteriorRuta = (ruta) => {
+    const i = rutasData.findIndex(r => r.id === ruta.id);
+    return rutasData[(i - 1 + rutasData.length) % rutasData.length];
+  };
+
+  const getIndex = (ruta) =>
+    rutasData.findIndex(r => r.id === ruta.id);
+
+  /* ======================
+     SWIPE
+  ====================== */
+
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    const diff = touchStartX - touchEndX;
+
+    if (diff > 50) {
+      setRutaActiva(prev => siguienteRuta(prev));
+    }
+
+    if (diff < -50) {
+      setRutaActiva(prev => anteriorRuta(prev));
+    }
+  };
+
+  /* ======================
+     DESCARGAR MAPAS
+  ====================== */
+
+  const descargarMapas = () => {
+    [Mapa, Mapa2].forEach((url, i) => {
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `mapa-${i + 1}.png`;
+      link.click();
+    });
+  };
 
   return (
     <div>
+
       <div className="Separacion"></div>
 
-      {/* Mapa Seccion */}
-      <br />
+      {/* MAPAS */}
       <h4 className="rutas-title">🗺️ Mapa De Valladolid</h4>
+
       <div className="mapa-section">
         <img src={Mapa} alt="Mapa 1" className="mapa-img" />
         <img src={Mapa2} alt="Mapa 2" className="mapa-img" />
       </div>
-      {/* Para descargar los dos mapas*/}
+
       <div className="mapa-download">
-        <button onClick={descargarMapas}>
-          Descargar mapas
-        </button>
+        <button onClick={descargarMapas}>Descargar mapas</button>
       </div>
 
       {/* =====================
-          SECCIÓN RUTAS
+          RUTAS
       ===================== */}
       <div className="rutas-section">
+
         <h4 className="rutas-title">🗺️ Rutas de Valladolid</h4>
 
+        {/* GRID */}
         <div className="rutas-grid">
           {rutasData.map((ruta) => (
             <div
@@ -107,63 +146,79 @@ const Estadisticas = () => {
               key={ruta.id}
               onClick={() => setRutaActiva(ruta)}
             >
-              <img
-                src={ruta.img}
-                alt={ruta.titulo}
-                className="ruta-img"
-              />
-
-              <div className="ruta-overlay">
-                <span>{ruta.titulo}</span>
-              </div>
+              <img src={ruta.img} alt={ruta.titulo} />
             </div>
           ))}
         </div>
-      </div>
 
-      {/* =====================
-          MODAL RUTA
-      ===================== */}
-      {rutaActiva && (
-        <div
-          className="ruta-modal-backdrop"
-          onClick={() => setRutaActiva(null)}
-        >
+        {/* VISOR */}
+        {rutaActiva && (
           <div
-            className="ruta-modal"
-            onClick={(e) => e.stopPropagation()}
+            className="ruta-viewer"
+            onClick={() => setRutaActiva(null)}
           >
 
-            <button
-              className="ruta-modal-close"
-              onClick={() => setRutaActiva(null)}
-            >
-              ✕
-            </button>
-            <button
-              className="ruta-modal-prev"
-              onClick={() => setRutaActiva(anteriorRuta(rutaActiva))}
-            >
-              &lt;
-            </button>
-            <button
-              className="ruta-modal-next"
-              onClick={() => setRutaActiva(siguienteRuta(rutaActiva))}
-            >
-              &gt;
-            </button>
-            
+            {/* INDICADOR */}
+            <div className="ruta-indicador">
+              {getIndex(rutaActiva) + 1} / {rutasData.length}
+            </div>
 
-            <h2>{rutaActiva.titulo}</h2>
+            {/* BOTONES */}
+            <button
+              className="nav-btn prev"
+              onClick={(e) => {
+                e.stopPropagation();
+                setRutaActiva(prev => anteriorRuta(prev));
+              }}
+            >‹</button>
 
-            <img
-              src={rutaActiva.img}
-              alt={rutaActiva.titulo}
-              className="ruta-modal-img"
-            />
+            <button
+              className="nav-btn next"
+              onClick={(e) => {
+                e.stopPropagation();
+                setRutaActiva(prev => siguienteRuta(prev));
+              }}
+            >›</button>
+
+            <button
+              className="close-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                setRutaActiva(null);
+              }}
+            >✕</button>
+
+            {/* ZOOM + SWIPE */}
+            <TransformWrapper
+                initialScale={1}
+                minScale={1}
+                maxScale={4}
+                onZoomStop={(ref) => {
+                  setZoomActivo(ref.state.scale > 1);
+                }}
+                onPanningStop={(ref) => {
+                  setZoomActivo(ref.state.scale > 1);
+                }}
+              >
+                <TransformComponent>
+                  <img
+                    src={rutaActiva.img}
+                    alt={rutaActiva.titulo}
+                    className="ruta-viewer-img"
+                    onClick={(e) => e.stopPropagation()}
+
+                    /* 👇 swipe SOLO si NO hay zoom */
+                    onTouchStart={!zoomActivo ? handleTouchStart : null}
+                    onTouchMove={!zoomActivo ? handleTouchMove : null}
+                    onTouchEnd={!zoomActivo ? handleTouchEnd : null}
+                  />
+                </TransformComponent>
+              </TransformWrapper>
+
           </div>
-        </div>
-      )}
+        )}
+
+      </div>
 
       {/* =====================
           PDFs
@@ -172,16 +227,14 @@ const Estadisticas = () => {
         {pdfs.map(pdf => (
           <div key={pdf.id} className="pdf-item">
             <h2 className="titel">{pdf.titulo}</h2>
+
             <a
               href={`https://eventos-valladolid-backendt.onrender.com/${pdf.ubicacion}`}
               target="_blank"
               rel="noopener noreferrer"
             >
               <div className="pdf-cover">
-                <Document
-                  file={`https://eventos-valladolid-backendt.onrender.com/${pdf.ubicacion}`}
-                  loading={<p>Loading cover...</p>}
-                >
+                <Document file={`https://eventos-valladolid-backendt.onrender.com/${pdf.ubicacion}`}>
                   <Page
                     pageNumber={1}
                     width={550}
@@ -191,11 +244,11 @@ const Estadisticas = () => {
                 </Document>
               </div>
             </a>
+
           </div>
         ))}
       </div>
 
-      <br />
     </div>
   );
 };

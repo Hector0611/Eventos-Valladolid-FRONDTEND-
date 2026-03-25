@@ -216,6 +216,8 @@ const ChatBot = () => {
             <div ref={messagesEndRef} />
           </div>
 
+          {/* HOLA */}
+
           <div className="chatbot-input">
             <div style={{ position: "relative", flex: 1 }}>
               <input

@@ -216,6 +216,70 @@
   background: #ffffff;
 }
 
+/* CONTENEDOR PRINCIPAL */
+.taxi-information {
+  background: linear-gradient(135deg, #fff8e1, #fff3cd);
+  border: 1px solid #ffe082;
+  border-radius: 16px;
+  padding: 16px 20px;
+  max-width: 600px;
+  margin: 15px auto;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  font-family: 'Roboto', sans-serif;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* EFECTO HOVER */
+.taxi-information:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* PÁRRAFOS */
+.taxi-Informacion,
+.taxis-Informacion {
+  margin: 10px 0;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* TITULOS / ICONOS */
+.taxi-Informacion strong:first-child,
+.taxis-Informacion strong:first-child {
+  color: #d97706; /* naranja elegante */
+  font-weight: 600;
+}
+
+/* PRECIOS */
+.taxis-Informacion strong {
+  color: #0d6efd; /* azul para destacar precios */
+  font-weight: bold;
+}
+
+.am {
+  color: #f59e0b; /* Amarillo */
+}
+.cf {
+  color: #6F4E37; /* Cafe */
+}
+.na {
+  color: #f97316; /* Naranja */
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .taxi-information {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .taxi-Informacion,
+  .taxis-Informacion {
+    font-size: 14px;
+  }
+}
+
 /* =========================
    RESPONSIVE
 ========================= */

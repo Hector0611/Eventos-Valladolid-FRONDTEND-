@@ -86,6 +86,7 @@ const App = () => {
               {/* Splash */}
                 <Route path="/" element={
                   <>
+                  <Seo title="Home | Visit Valladolid" description="Welcome to the official website of Visit Valladolid! Discover the best events, attractions, and experiences in Valladolid, Yucatán." />
                 
                     <Header2 />
                     <PrincipalRecarga />

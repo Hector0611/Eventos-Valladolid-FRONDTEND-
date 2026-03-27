@@ -22,6 +22,9 @@ import Suytun from './Imagenes/ImgTempo/Suytun.jpeg';
 
 import LagoDeLosCisnes from './Imagenes/ImgTempo/LagoDeCisnes.png';
 
+/* Exhibicion */
+import ExibicionPerros from './Imagenes/ImgTempo/Exibicion.jpeg';
+
 
 import { t } from 'i18next';
 import { Import } from 'lucide-react';
@@ -156,6 +159,40 @@ const Catalogo = () => {
                   <iframe
                       title="Suytun Ubicación1"
                       src="https://www.google.com/maps?q=20.698945048720155, -88.12442584620389&hl=en&z=15&output=embed"
+                      allowFullScreen=""
+                      loading="lazy"
+                    ></iframe>
+                </div>
+              </div>
+            </div>
+
+            {/* BOTÓN */}
+            
+              <button
+                className="view-map-btn"
+                onClick={() => setShowMap(!showMap)}
+              >
+                {showMap ? "View image" : "View map"}
+              </button>
+
+              {/* Exhibicion */}
+<div className="media-slider1">
+              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
+                {/* IMAGEN */}
+                <div className="media-panel image-panel1">
+                  <img
+                  className='ImgX'
+                    src={ExibicionPerros}
+                    alt='ExibicionPerros'
+                  />
+                  <br />
+                </div>
+
+                {/* MAPA */}
+                <div className="media-panel map-panel1">
+                  <iframe
+                      title="ExibicionPerros Ubicación1"
+                      src="https://www.google.com/maps?q=20.68622479929034, -88.21049745103832&hl=en&z=15&output=embed"
                       allowFullScreen=""
                       loading="lazy"
                     ></iframe>

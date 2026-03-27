@@ -107,7 +107,7 @@ const TaxiAndToursValladolid = () => {
           <strong>📌CITY TAXIS:</strong> They are colored: "<strong className="am">YELLOW</strong>,<strong className="cf">BROWN</strong> and <strong className="na">ORANGE</strong>"
         </p>
         <p className="taxis-Informacion">
-          <strong>📌 Price:</strong> From the city center to any point in the city (Within the city) <strong>40 to 50MXN </strong> <br /> From outside the city, the cost depends on the distance <strong>60 to --- MXN</strong>
+          <strong>📌 Price:</strong>  From the city center to any point in the city (Within the city) <strong>40 to 50MXN </strong> <br /> From outside the city, the cost depends on the distance <strong>60 to --- MXN</strong>
         </p>
       </div>
 

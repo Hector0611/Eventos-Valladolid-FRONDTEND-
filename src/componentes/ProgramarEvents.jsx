@@ -423,7 +423,6 @@ const getEventColor = (eventName) => {
                             allowFullScreen
                             src={`https://www.google.com/maps?q=${evento.latitud},${evento.longitud}&hl=en&z=16&output=embed`}
                           ></iframe>
-aaa
                           <div
                             className="texto-pre61"
                             dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(evento.descripcion) }}

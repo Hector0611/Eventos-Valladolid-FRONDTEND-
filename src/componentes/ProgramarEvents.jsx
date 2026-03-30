@@ -447,12 +447,7 @@ const getEventColor = (eventName) => {
              <h4 className="text-center mb-5 display-4 fw-bold">Attention</h4>
               {/* IMAGEN */}
                 <div className="Atencion">
-                  <img
-                  className='ImgAtencion'
-                    src={atencion}
-                    alt='Atencion'
-                  />
-                  <br />
+                
                 </div>
                 <div className="Suspencion">
                   <img

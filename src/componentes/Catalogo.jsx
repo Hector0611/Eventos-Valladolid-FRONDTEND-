@@ -25,6 +25,9 @@ import LagoDeLosCisnes from './Imagenes/ImgTempo/LagoDeCisnes.png';
 /* Exhibicion */
 import ExibicionPerros from './Imagenes/ImgTempo/Exibicion.jpeg';
 
+/* JuanBalam */
+import JuanBalam from './Imagenes/ImgTempo/JuanBalam.jpeg';
+
 
 import { t } from 'i18next';
 import { Import } from 'lucide-react';
@@ -115,11 +118,11 @@ const Catalogo = () => {
              <h4 className="text-center mb-5 display-4 fw-bold">Attention</h4>
               {/* IMAGEN */}
                 <div className="Atencion">
-                  <img
+                  {/* <img
                   className='ImgAtencion'
                     src={atencion}
                     alt='Atencion'
-                  />
+                  /> */}
                   <br />
                 </div>
                 <div className="Suspencion">
@@ -141,74 +144,6 @@ const Catalogo = () => {
 
 */}
               
-{/* Suytun */}
-<div className="media-slider1">
-              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
-                {/* IMAGEN */}
-                <div className="media-panel image-panel1">
-                  <img
-                  className='ImgX'
-                    src={Suytun}
-                    alt='Suytun'
-                  />
-                  <br />
-                </div>
-
-                {/* MAPA */}
-                <div className="media-panel map-panel1">
-                  <iframe
-                      title="Suytun Ubicación1"
-                      src="https://www.google.com/maps?q=20.698945048720155, -88.12442584620389&hl=en&z=15&output=embed"
-                      allowFullScreen=""
-                      loading="lazy"
-                    ></iframe>
-                </div>
-              </div>
-            </div>
-
-            {/* BOTÓN */}
-            
-              <button
-                className="view-map-btn"
-                onClick={() => setShowMap(!showMap)}
-              >
-                {showMap ? "View image" : "View map"}
-              </button>
-
-              {/* Exhibicion */}
-<div className="media-slider1">
-              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
-                {/* IMAGEN */}
-                <div className="media-panel image-panel1">
-                  <img
-                  className='ImgX'
-                    src={ExibicionPerros}
-                    alt='ExibicionPerros'
-                  />
-                  <br />
-                </div>
-
-                {/* MAPA */}
-                <div className="media-panel map-panel1">
-                  <iframe
-                      title="ExibicionPerros Ubicación1"
-                      src="https://www.google.com/maps?q=20.68622479929034, -88.21049745103832&hl=en&z=15&output=embed"
-                      allowFullScreen=""
-                      loading="lazy"
-                    ></iframe>
-                </div>
-              </div>
-            </div>
-
-            {/* BOTÓN */}
-            
-              <button
-                className="view-map-btn"
-                onClick={() => setShowMap(!showMap)}
-              >
-                {showMap ? "View image" : "View map"}
-              </button>
-
 
               {/* Lago De los Cisnes */}
               <div className="media-slider1">
@@ -228,6 +163,40 @@ const Catalogo = () => {
                   <iframe
                       title="Lago De los Cisnes Ubicación1"
                       src="https://www.google.com/maps?q=20.688662073480533, -88.20231948563776&hl=en&z=15&output=embed"
+                      allowFullScreen=""
+                      loading="lazy"
+                    ></iframe>
+                </div>
+              </div>
+            </div>
+
+            {/* BOTÓN */}
+            
+              <button
+                className="view-map-btn"
+                onClick={() => setShowMap(!showMap)}
+              >
+                {showMap ? "View image" : "View map"}
+              </button>
+
+               {/* Juan Balam */}
+              <div className="media-slider1">
+              <div className={`media-track1 ${showMap ? "show-map1" : ""}`}>
+                {/* IMAGEN */}
+                <div className="media-panel image-panel1">
+                  <img
+                  className='ImgX'
+                    src={JuanBalam}
+                    alt='Juan Balam'
+                  />
+                  <br />
+                </div>
+
+                {/* MAPA */}
+                <div className="media-panel map-panel1">
+                  <iframe
+                      title="Juan Balam Ubicación1"
+                      src="https://www.google.com/maps?q=20.59570362412065, -88.16537729803053&hl=en&z=15&output=embed"
                       allowFullScreen=""
                       loading="lazy"
                     ></iframe>
@@ -278,6 +247,7 @@ const Catalogo = () => {
               >
                 {showMap ? "View image" : "View map"}
               </button>
+
               
       <div className="row g-4">
         {sanRoqueImgs.map((img, index) => (

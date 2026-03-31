@@ -65,7 +65,7 @@ export default function WalkingTours() {
 
               <div className="walking-footer">
                 <span className="walking-price">
-                  ${Number(guia.precio).toFixed(2)} MXN por persona
+                  {/* ${Number(guia.precio).toFixed(2)} MXN por persona */}
                 </span>
 
                 <a

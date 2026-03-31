@@ -114,9 +114,9 @@ const Header = () => {
                  ✅ TRAVEL AGENCIES
             </button>
 
-            <button className="textocontent1" onClick={() => navigateTo("/Contacto")}>
+            {/* <button className="textocontent1" onClick={() => navigateTo("/Contacto")}>
                 ✅ {t("header.contact")}
-            </button>
+            </button> */}
             <br></br>
 
             <button className="textocontent1" onClick={() => navigateTo("/rutas")}>

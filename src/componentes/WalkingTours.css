@@ -5,7 +5,7 @@
   max-width: 1300px;
   margin: auto;
   padding: 60px 20px;
-  background: linear-gradient(180deg, #f9fbfdad 0%, #ffffffab 100%);
+  background: linear-gradient(280deg, #f9fbfdad 0%, #ffffffab 100%);
   font-family: "Inter", "Segoe UI", system-ui, sans-serif;
 }
 
@@ -45,7 +45,7 @@
 ============================== */
 .walking-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
   gap: 30px;
 }
 
@@ -112,10 +112,13 @@
 }
 
 .walking-content h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 800;
   color: #0f172a;
-  margin-bottom: 6px;
+  background-attachment: fixed;
+  background-color: #fbbe89;
+  border-radius: 20px;
+  margin-bottom: 8px;
 }
 
 /* ==============================
@@ -158,7 +161,6 @@
   left: 0;
   right: 0;
   height: 40px;
-  background: linear-gradient(transparent, #ffffff);
 }
 
 /* ==============================
@@ -185,16 +187,23 @@
    📲 BOTÓN
 ============================== */
 .walking-btn {
-  padding: 10px 20px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #0d6efd, #22c55e);
+  padding: 10px 30px;
+  border-radius: 10px;
+  background: linear-gradient(35deg, #0d6efd, #22c55e);
   color: rgb(0, 0, 0);
   text-decoration: none;
+  display: flex;
+  right: 60px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 800;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 20px rgba(13, 110, 253, 0.3);
+  box-shadow: 0 10px 40px rgba(13, 110, 253, 0.3);
   white-space: nowrap;
+}
+
+.ContacWhatsapp{
+  color: #16a34a;
 }
 
 .walking-btn:hover {

@@ -62,7 +62,7 @@ const sitiosTaxi = [
   },
   /* Ado Valladolid */
   {
-    nombre: "ADO",
+    nombre: "ADO Buses",
     ubicacion: "Calle 44 x 41 y 39",
     coordenadas: [20.690830793343842, -88.20477729067018],
     color: "black",
